@@ -20,9 +20,10 @@ def load_config(config_path="config/ips_config.json"):
     data = json.loads(Path(config_path).read_text())
     YEARS, PARAM, FACTOR_SPACE = data["YEARS"], data["PARAM"], data["FACTOR_SPACE"]
     RISK_SPLITS = {int(k): v for k, v in data["RISK_SPLITS"].items()}
-    return YEARS, PARAM, FACTOR_SPACE, RISK_SPLITS
+    FX_SCENARIOS = data.get("FX_SCENARIOS", {"Base": 1.0, "Stress": 0.9, "Growth": 1.1})
+    return YEARS, PARAM, FACTOR_SPACE, RISK_SPLITS, FX_SCENARIOS
 
-YEARS, PARAM, FACTOR_SPACE, RISK_SPLITS = load_config()
+YEARS, PARAM, FACTOR_SPACE, RISK_SPLITS, FX_SCENARIOS = load_config()
 
 # Consolidated Model Parameters
 MODEL_CONFIG = {
@@ -183,7 +184,7 @@ def calculate_cashflow(year, cfg, scenario=None, starting_age=None):
         'H_BONUS': h_salary * cfg["BONUS_PCT"] * bonus_factor,
         'HEL_SAL': hel_salary,
         'Daycare': -PARAM["DAYCARE"] if cfg["HEL_WORK"] == "Full‑time" and year < 5 else 0,
-        'Tuition': -(PARAM["TUITION_JHU_USD"] * data["FX_SCENARIOS"][cfg["FX_SCENARIO"]] 
+        'Tuition': -(PARAM["TUITION_JHU_USD"] * FX_SCENARIOS[cfg["FX_SCENARIO"]] 
                     if cfg["ED_PATH"] == "JohnsHopkins" else PARAM["TUITION_MCG"]) if 5 <= year < 10 else 0,
         'Mortgage': -mortgage_pmt(PARAM["MORT_RATE"], PARAM["MORT_TERM_YRS"], PARAM["HOUSE_PRICE"] * 0.75) 
                    if age < lc['mortgage_completion_age'] else 0,
@@ -388,6 +389,32 @@ def main():
     for _, row in results_df.head(3).iterrows():
         print(f"   {row['cfg_id']}: {row['ED_PATH']}, {row['HEL_WORK']}, "
               f"{row['BONUS_PCT']:.0%} bonus → {row['Financial_Stress_Rank']:.1%} stress")
+
+# --- Compatibility Stubs for Demos ---
+
+def cashflow_row(year, cfg):
+    """Alias for calculate_cashflow for compatibility with demos."""
+    return calculate_cashflow(year, cfg)
+
+class StressMonitor:
+    """Stub for compatibility. Add real logic as needed."""
+    def __init__(self, config, baseline_metrics):
+        self.config = config
+        self.baseline_metrics = baseline_metrics
+
+    def update_stress(self, current_metrics):
+        # Return a dummy response for now
+        return {
+            'stress_level': current_metrics.get('Financial_Stress_Rank', 0.2),
+            'stress_change': current_metrics.get('Financial_Stress_Rank', 0.2) - self.baseline_metrics.get('Financial_Stress_Rank', 0.2),
+            'alerts': [],
+            'recommendations': [],
+            'auto_interventions': []
+        }
+
+def simulate_intervention_impact(*args, **kwargs):
+    """Stub for compatibility. Add real logic as needed."""
+    return {}
 
 if __name__ == "__main__":
     main()
