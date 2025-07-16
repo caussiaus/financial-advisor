@@ -1,161 +1,39 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Portfolio Visualization</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+        }
+        #visualization {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .node {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Configuration Matrix</h1>
+    <div id="visualization"></div>
 
-{% block title %}Dashboard - Client Input Processing System{% endblock %}
-
-{% block content %}
-<div class="row">
-    <div class="col-lg-10 mx-auto">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2><i class="fas fa-chart-bar"></i> Processing Dashboard</h2>
-            <a href="/upload" class="btn btn-primary">
-                <i class="fas fa-upload"></i> Upload New File
-            </a>
-        </div>
-
-        {% if files %}
-        <!-- Summary Statistics -->
-        <div class="row mb-4">
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="card-body text-center">
-                        <i class="fas fa-file fa-2x mb-2"></i>
-                        <h4>{{ files|length }}</h4>
-                        <p class="mb-0">Files Processed</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="card-body text-center">
-                        <i class="fas fa-calendar-alt fa-2x mb-2"></i>
-                        <h4>{{ files|sum(attribute='events_extracted') }}</h4>
-                        <p class="mb-0">Total Events</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="card-body text-center">
-                        <i class="fas fa-sitemap fa-2x mb-2"></i>
-                        <h4>{{ files|sum(attribute='total_scenarios') }}</h4>
-                        <p class="mb-0">Total Scenarios</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card stats-card">
-                    <div class="card-body text-center">
-                        <i class="fas fa-exclamation-triangle fa-2x mb-2"></i>
-                        <h4>{{ files|sum(attribute='stressful_scenarios') }}</h4>
-                        <p class="mb-0">Stressful Scenarios</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Processed Files Table -->
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">
-                    <i class="fas fa-list"></i> Processed Files
-                </h5>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>File Name</th>
-                                <th>Processed</th>
-                                <th>Events</th>
-                                <th>Scenarios</th>
-                                <th>Feasible</th>
-                                <th>Stressful</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for file in files %}
-                            <tr>
-                                <td>
-                                    <i class="fas fa-file-pdf text-danger"></i>
-                                    {{ file.filename }}
-                                </td>
-                                <td>
-                                    <small class="text-muted">{{ file.timestamp[:10] }}</small>
-                                </td>
-                                <td>
-                                    <span class="badge bg-info">{{ file.events_extracted }}</span>
-                                </td>
-                                <td>
-                                    <span class="badge bg-secondary">{{ file.total_scenarios }}</span>
-                                </td>
-                                <td>
-                                    <span class="badge bg-success">{{ file.feasible_scenarios }}</span>
-                                </td>
-                                <td>
-                                    {% if file.stressful_scenarios > 0 %}
-                                    <span class="badge bg-warning">{{ file.stressful_scenarios }}</span>
-                                    {% else %}
-                                    <span class="badge bg-success">0</span>
-                                    {% endif %}
-                                </td>
-                                <td>
-                                    <a href="/results/{{ file.filename }}" class="btn btn-sm btn-outline-primary">
-                                        <i class="fas fa-eye"></i> View
-                                    </a>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Recent Activity -->
-        <div class="card mt-4">
-            <div class="card-header">
-                <h5 class="mb-0">
-                    <i class="fas fa-history"></i> Recent Activity
-                </h5>
-            </div>
-            <div class="card-body">
-                <div class="timeline">
-                    {% for file in files[:5] %}
-                    <div class="d-flex mb-3">
-                        <div class="flex-shrink-0">
-                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                                <i class="fas fa-file-pdf text-white"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h6 class="mb-1">{{ file.filename }}</h6>
-                            <p class="text-muted mb-1">
-                                Processed on {{ file.timestamp[:19] }}
-                            </p>
-                            <small class="text-muted">
-                                {{ file.events_extracted }} events extracted, 
-                                {{ file.total_scenarios }} scenarios analyzed
-                            </small>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        {% else %}
-        <!-- Empty State -->
-        <div class="text-center py-5">
-            <i class="fas fa-inbox fa-4x text-muted mb-4"></i>
-            <h4 class="text-muted">No files processed yet</h4>
-            <p class="text-muted">Upload your first document to see processing results here.</p>
-            <a href="/upload" class="btn btn-primary btn-lg">
-                <i class="fas fa-upload"></i> Upload Your First File
-            </a>
-        </div>
-        {% endif %}
-    </div>
-</div>
-{% endblock %} 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        // Visualization script will go here
+    </script>
+</body>
+</html> 
