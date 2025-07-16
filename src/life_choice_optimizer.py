@@ -53,7 +53,7 @@ class LifeChoiceOptimizer:
                 'skill_development': {'income_boost': 0.05, 'expense_impact': 0.02, 'time_commitment': 0.1}
             },
             'health': {
-                'health_improvement': {'income_boost': 0, 'expense_impact': 0.05, 'stress_impact': 0.3},
+                'health_improvement': {'income_boost': 0.05, 'expense_impact': 0.02, 'stress_impact': 0.2},
                 'medical_issue': {'income_boost': -0.1, 'expense_impact': 0.2, 'stress_impact': -0.3},
                 'insurance_upgrade': {'income_boost': 0, 'expense_impact': 0.1, 'stability_boost': 0.2}
             }
@@ -180,6 +180,7 @@ class LifeChoiceOptimizer:
         
         # Evaluate each choice
         choice_scores = []
+        client_age = self.portfolio_engine.client_config.get('age', 30)
         
         for category, choice in available_choices:
             # Create temporary portfolio state
@@ -217,10 +218,35 @@ class LifeChoiceOptimizer:
             if 'stability_boost' in impacts:
                 lifestyle_score += impacts['stability_boost'] * 0.2
             
-            # Weighted total score
-            weights = self.optimization_objectives[objective]['weight']
-            total_score = (financial_score * 0.4 + comfort_score * 0.3 + 
-                         risk_score * 0.2 + lifestyle_score * 0.1)
+            # Apply age-based adjustments
+            age_adjustment = 1.0
+            if choice == 'retirement' and client_age < 55:
+                age_adjustment = 0.3  # Penalize early retirement
+            elif choice == 'entrepreneur' and client_age > 60:
+                age_adjustment = 0.7  # Penalize late entrepreneurship
+            elif choice == 'children' and client_age > 50:
+                age_adjustment = 0.5  # Penalize late childbearing
+            
+            # Weighted total score based on objective
+            objective_weights = self.optimization_objectives[objective]['weight']
+            
+            # Apply objective-specific weighting
+            if objective == 'financial_growth':
+                total_score = (financial_score * 0.5 + comfort_score * 0.2 + 
+                             risk_score * 0.2 + lifestyle_score * 0.1) * age_adjustment
+            elif objective == 'comfort_stability':
+                total_score = (financial_score * 0.2 + comfort_score * 0.5 + 
+                             risk_score * 0.2 + lifestyle_score * 0.1) * age_adjustment
+            elif objective == 'risk_management':
+                total_score = (financial_score * 0.2 + comfort_score * 0.2 + 
+                             risk_score * 0.5 + lifestyle_score * 0.1) * age_adjustment
+            elif objective == 'lifestyle_quality':
+                total_score = (financial_score * 0.2 + comfort_score * 0.2 + 
+                             risk_score * 0.1 + lifestyle_score * 0.5) * age_adjustment
+            else:
+                # Default weighting
+                total_score = (financial_score * 0.4 + comfort_score * 0.3 + 
+                             risk_score * 0.2 + lifestyle_score * 0.1) * age_adjustment
             
             choice_scores.append({
                 'category': category,
@@ -264,7 +290,7 @@ class LifeChoiceOptimizer:
             fig.update_layout(title="Life Choice Optimization Dashboard")
             return fig
         
-        # Create subplots
+        # Create subplots with proper specs for pie chart
         fig = make_subplots(
             rows=3, cols=2,
             subplot_titles=(
@@ -272,6 +298,9 @@ class LifeChoiceOptimizer:
                 'Choice Impact Analysis', 'Comfort Score Over Time',
                 'Category Distribution', 'Optimization Recommendations'
             ),
+            specs=[[{"type": "xy"}, {"type": "xy"}],
+                   [{"type": "xy"}, {"type": "xy"}],
+                   [{"type": "domain"}, {"type": "xy"}]],
             vertical_spacing=0.1
         )
         

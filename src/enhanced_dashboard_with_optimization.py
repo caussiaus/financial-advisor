@@ -256,10 +256,15 @@ class EnhancedDashboardWithOptimization:
     
     def generate_interactive_html(self):
         """Generate interactive HTML with optimization toggle and life choice interface"""
+        import json
+        from datetime import datetime
+        
         html_content = f"""
         <!DOCTYPE html>
-        <html>
+        <html lang="en">
         <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Enhanced Portfolio Dashboard with Life Choice Optimization</title>
             <style>
                 body {{ font-family: Arial, sans-serif; margin: 20px; background-color: #f8f9fa; }}

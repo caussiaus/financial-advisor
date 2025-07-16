@@ -442,4 +442,5 @@ def create_enhanced_dashboard_demo():
     return dashboard
 
 if __name__ == "__main__":
-    create_enhanced_dashboard_demo() 
+    print("This script is not intended to be run directly.")
+    print("Please use 'run.py' to launch the application.") 

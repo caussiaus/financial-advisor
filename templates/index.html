@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Life Timeline Grid - AI-Powered Portfolio Planning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .upload-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .upload-box {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            background: rgba(102, 126, 234, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .upload-box:hover {
+            border-color: #764ba2;
+            background: rgba(118, 75, 162, 0.05);
+        }
+        
+        .upload-box.dragover {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+        
+        .upload-icon {
+            font-size: 4em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+        }
+        
+        .btn-demo {
+            background: linear-gradient(45deg, #FF9800, #F57C00);
+        }
+        
+        .action-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .demo-preview {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .tetris-grid-preview {
+            display: grid;
+            grid-template-columns: repeat(8, 40px);
+            grid-template-rows: repeat(6, 40px);
+            gap: 2px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .grid-block {
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .block-optimal { background: #00FF00; }
+        .block-feasible { background: #4CAF50; }
+        .block-stressed { background: #FF9800; }
+        .block-ruled-out { background: #757575; }
+        .block-unknown { background: #E0E0E0; }
+        
+        .grid-block:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #E0E0E0;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tetris-grid-preview {
+                grid-template-columns: repeat(8, 30px);
+                grid-template-rows: repeat(6, 30px);
+            }
+            
+            .legend {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Financial Life Timeline Grid</h1>
+            <p>AI-Powered Portfolio Planning with Interactive Scenario Visualization</p>
+            <p><strong>Drag & Drop Your PDF</strong> → <strong>See Tetris-Style Grid</strong> → <strong>Get Rebalancing Recommendations</strong></p>
+        </div>
+
+        <!-- Feature Overview -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧩</div>
+                <h3>Tetris-Style Grid</h3>
+                <p>Visualize all possible financial scenarios as colored blocks in an interactive grid. Watch optimal paths light up in green while infeasible ones fade to grey.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h3>Timeline Progression</h3>
+                <p>See how life events unfold over time and how they impact your financial scenarios. Each year reveals new optimal paths and rules out others.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Smart Rebalancing</h3>
+                <p>Get AI-powered portfolio rebalancing recommendations based on stress analysis across all scenarios in real-time.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📖</div>
+                <h3>Story-Driven</h3>
+                <p>Follow your financial journey like a game with narrative descriptions and recommended actions for each time period.</p>
+            </div>
+        </div>
+
+        <!-- Demo Preview -->
+        <div class="demo-preview">
+            <h2 style="text-align: center; margin-bottom: 20px;">🎮 Preview: Scenario Grid</h2>
+            <p style="text-align: center; margin-bottom: 20px;">This is what your financial scenarios look like in the timeline grid:</p>
+            
+            <div class="tetris-grid-preview" id="previewGrid">
+                <!-- Grid blocks will be generated by JavaScript -->
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color block-optimal"></div>
+                    <span>Optimal Paths</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color block-feasible"></div>
+                    <span>Feasible</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color block-stressed"></div>
+                    <span>Stressed</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color block-ruled-out"></div>
+                    <span>Ruled Out</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color block-unknown"></div>
+                    <span>Future/Unknown</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2>🚀 Start Your Financial Journey</h2>
+            <p>Upload your financial documents (PDF or TXT) to generate your personalized timeline grid</p>
+            
+            <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                <div class="upload-box" id="uploadBox">
+                    <div class="upload-icon">📄</div>
+                    <h3>Drag & Drop Your PDF Here</h3>
+                    <p>or click to browse files</p>
+                    <input type="file" id="fileInput" name="file" accept=".pdf,.txt" style="display: none;">
+                </div>
+            </form>
+            
+            <div class="progress-bar hidden" id="progressBar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="loading hidden" id="loading">
+                <div class="spinner"></div>
+                <p>Processing your file and generating timeline grid...</p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="/demo-timeline" class="btn btn-demo">🎮 Try Interactive Demo</a>
+            <a href="/dashboard" class="btn btn-secondary">📊 View Dashboard</a>
+            <a href="/upload" class="btn">📤 Upload Files</a>
+        </div>
+    </div>
+
+    <script>
+        // Initialize demo grid
+        function initializeDemoGrid() {
+            const grid = document.getElementById('previewGrid');
+            const blocks = ['optimal', 'feasible', 'stressed', 'ruled-out', 'unknown'];
+            
+            // Create 48 blocks (8x6 grid)
+            for (let i = 0; i < 48; i++) {
+                const block = document.createElement('div');
+                block.className = 'grid-block';
+                
+                // Assign random block types for demo
+                let blockType;
+                if (i < 8) blockType = 'optimal';
+                else if (i < 20) blockType = 'feasible';
+                else if (i < 30) blockType = 'stressed';
+                else if (i < 38) blockType = 'ruled-out';
+                else blockType = 'unknown';
+                
+                block.classList.add(`block-${blockType}`);
+                block.title = `Scenario ${i + 1}: ${blockType.replace('-', ' ')}`;
+                grid.appendChild(block);
+            }
+            
+            // Animate blocks
+            setTimeout(() => {
+                animateDemoGrid();
+            }, 1000);
+        }
+        
+        function animateDemoGrid() {
+            const blocks = document.querySelectorAll('.grid-block');
+            blocks.forEach((block, index) => {
+                setTimeout(() => {
+                    block.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        block.style.transform = 'scale(1)';
+                    }, 200);
+                }, index * 50);
+            });
+        }
+        
+        // File upload handling
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('fileInput');
+        const uploadForm = document.getElementById('uploadForm');
+        const progressBar = document.getElementById('progressBar');
+        const progressFill = document.getElementById('progressFill');
+        const loading = document.getElementById('loading');
+        
+        // Click to upload
+        uploadBox.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        // Drag and drop
+        uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.classList.add('dragover');
+        });
+        
+        uploadBox.addEventListener('dragleave', () => {
+            uploadBox.classList.remove('dragover');
+        });
+        
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                uploadFile();
+            }
+        });
+        
+        // File input change
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                uploadFile();
+            }
+        });
+        
+        function uploadFile() {
+            const file = fileInput.files[0];
+            if (!file) return;
+            
+            // Show loading
+            loading.classList.remove('hidden');
+            progressBar.classList.remove('hidden');
+            
+            // Simulate progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 90) {
+                    clearInterval(progressInterval);
+                    progress = 90;
+                }
+                progressFill.style.width = progress + '%';
+            }, 200);
+            
+            // Submit form
+            const formData = new FormData();
+            formData.append('file', file);
+            
+            fetch('/api/process-pdf', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                clearInterval(progressInterval);
+                progressFill.style.width = '100%';
+                
+                setTimeout(() => {
+                    if (data.error) {
+                        alert('Error: ' + data.error);
+                        loading.classList.add('hidden');
+                        progressBar.classList.add('hidden');
+                    } else {
+                        // Redirect to results
+                        window.location.href = `/results/${data.filename}`;
+                    }
+                }, 500);
+            })
+            .catch(error => {
+                clearInterval(progressInterval);
+                alert('Upload failed: ' + error.message);
+                loading.classList.add('hidden');
+                progressBar.classList.add('hidden');
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeDemoGrid();
+            
+            // Animate blocks every 5 seconds
+            setInterval(animateDemoGrid, 5000);
+        });
+    </script>
+</body>
+</html> 
