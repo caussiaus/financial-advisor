@@ -1,0 +1,42 @@
+{
+    "YEARS": 40,
+  
+    "PARAM": {
+      "FX_USDCAD": 1.30,
+      "TUITION_MCG": 6000,
+      "TUITION_JHU_USD": 110000,
+      "HOUSE_PRICE": 2500000,
+      "MORT_RATE": 0.0495,
+      "MORT_TERM_YRS": 25,
+      "PPTY_COST": 34000,
+      "DAYCARE": 25000,
+      "CHARITY_TARGET": 250000,
+      "SALARY_H": 150000,
+      "SALARY_HEL_PT": 70000,
+      "SALARY_HEL_FT": 140000
+    },
+  
+    "BONUS_PCT_LEVELS": [0.0, 0.10, 0.20, 0.30],
+  
+    "FX_SCENARIOS": {
+      "Base": 1.30,
+      "Stress": 1.35
+    },
+  
+    "FACTOR_SPACE": {
+      "ED_PATH"     : ["McGill", "JohnsHopkins"],
+      "HEL_WORK"    : ["Part‑time", "Full‑time"],
+      "BONUS_PCT"   : [0.0, 0.10, 0.20, 0.30],
+      "DON_STYLE"   : [0, 1, 2],
+      "MOM_GIFT_USE": [0, 1],
+      "FX_SCENARIO" : ["Base", "Stress"],
+      "RISK_BAND"   : [1, 2, 3]
+    },
+  
+    "RISK_SPLITS": {
+      "1": { "Cash": 0.20, "Bonds": 0.60, "Equities": 0.20, "Alts": 0.00 },
+      "2": { "Cash": 0.05, "Bonds": 0.45, "Equities": 0.45, "Alts": 0.05 },
+      "3": { "Cash": 0.02, "Bonds": 0.25, "Equities": 0.68, "Alts": 0.05 }
+    }
+  }
+  
