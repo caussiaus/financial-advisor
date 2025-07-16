@@ -22,11 +22,12 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 from pathlib import Path
+import sys
 
 # Import our stress monitoring system
+sys.path.append(str(Path(__file__).parent.parent / 'src'))
 from ips_model import (
-    StressMonitor, simulate_intervention_impact,
-    generate_stress_monitoring_report, STRESS_MONITORING,
+    StressMonitor, simulate_intervention_impact, STRESS_MONITORING,
     INTERVENTION_IMPACTS, PORTFOLIO_RULES
 )
 
@@ -248,80 +249,24 @@ def run_stress_monitoring_demo():
         
         demo_results.extend(scenario_results)
     
-    # Save demonstration results
-    demo_df = pd.DataFrame(demo_results)
-    demo_df.to_csv('stress_monitoring_demo_results.csv', index=False)
+    # Create final summary report
+    summary_df = pd.DataFrame(demo_results)
     
-    # Generate summary report
-    print(f"\n📊 DEMONSTRATION SUMMARY")
-    print("=" * 40)
+    output_dir = Path("ips_output")
+    output_dir.mkdir(exist_ok=True)
+    summary_path = output_dir / "stress_monitoring_summary.csv"
+    summary_df.to_csv(summary_path, index=False)
     
-    for scenario_name in scenarios:
-        scenario_data = demo_df[demo_df['scenario'] == scenario_name]
-        avg_stress_increase = scenario_data['stress_increase'].mean()
-        high_priority_clients = len(scenario_data[scenario_data['communication_urgency'].isin(['URGENT', 'HIGH'])])
-        
-        print(f"\n{scenario_name.upper().replace('_', ' ')}:")
-        print(f"   Average stress increase: {avg_stress_increase:.1%}")
-        print(f"   High-priority clients: {high_priority_clients}/{len(scenario_data)}")
-        print(f"   Auto-interventions triggered: {scenario_data['auto_interventions'].sum()}")
-    
-    print(f"\n💼 PORTFOLIO MANAGER WORKFLOW:")
-    print(f"   1. ✅ Monitor market conditions and client stress levels")
-    print(f"   2. ✅ Generate automated alerts for elevated stress")
-    print(f"   3. ✅ Rank intervention recommendations by impact/feasibility")
-    print(f"   4. ✅ Implement high-feasibility interventions automatically")
-    print(f"   5. ✅ Generate client communications with specific action plans")
-    print(f"   6. ✅ Track intervention effectiveness over time")
-    
-    print(f"\n🔄 AUTOMATION CAPABILITIES:")
-    print(f"   • Real-time stress level monitoring")
-    print(f"   • Automatic portfolio rebalancing based on stress thresholds")
-    print(f"   • Prioritized client communication based on urgency")
-    print(f"   • Intervention impact simulation and tracking")
-    print(f"   • Compliance reporting and audit trails")
-    
-    return demo_results
+    print("\n" + "="*60)
+    print("📊 STRESS MONITORING DEMO COMPLETE")
+    print(f"   Summary report saved to: {summary_path}")
+    print(f"   Scenarios tested: {len(scenarios)}")
+    print(f"   Total client simulations: {len(summary_df)}")
+    print("="*60)
 
-def create_intervention_dashboard_data():
-    """Create sample data for intervention dashboard"""
-    
-    dashboard_data = {
-        'clients_monitored': 50,
-        'avg_stress_level': 0.23,
-        'alerts_today': 7,
-        'interventions_pending': 12,
-        'auto_adjustments_made': 3,
-        'high_stress_clients': 8,
-        'review_overdue': 4,
-        'stress_trend': 'STABLE',
-        'top_interventions': [
-            {'intervention': 'increase_portfolio_conservatism', 'clients': 15, 'avg_impact': 0.06},
-            {'intervention': 'build_emergency_fund', 'clients': 12, 'avg_impact': 0.20},
-            {'intervention': 'reduce_bonus_dependency', 'clients': 8, 'avg_impact': 0.08}
-        ]
-    }
-    
-    # Save dashboard data
-    with open('stress_dashboard_data.json', 'w') as f:
-        json.dump(dashboard_data, f, indent=2)
-    
-    print(f"\n📊 DASHBOARD DATA CREATED:")
-    print(f"   Total clients monitored: {dashboard_data['clients_monitored']}")
-    print(f"   Average stress level: {dashboard_data['avg_stress_level']:.1%}")
-    print(f"   Active alerts: {dashboard_data['alerts_today']}")
-    print(f"   Pending interventions: {dashboard_data['interventions_pending']}")
-    
-    return dashboard_data
+def main():
+    """Main function to run the demo"""
+    run_stress_monitoring_demo()
 
 if __name__ == "__main__":
-    # Run the demonstration
-    demo_results = run_stress_monitoring_demo()
-    
-    # Create dashboard data
-    dashboard_data = create_intervention_dashboard_data()
-    
-    print(f"\n✅ Demonstration complete!")
-    print(f"   📁 Results saved to: stress_monitoring_demo_results.csv")
-    print(f"   📊 Dashboard data: stress_dashboard_data.json")
-    print(f"\n🚀 Ready for integration with portfolio management systems!") 
+    main() 

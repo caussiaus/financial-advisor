@@ -15,10 +15,14 @@ from scipy import stats
 # ------------------------------------------------------------------#
 
 # Load base configuration
-cfg_path = Path(__file__).with_name("ips_config.json")
-data = json.loads(cfg_path.read_text())
-YEARS, PARAM, FACTOR_SPACE = data["YEARS"], data["PARAM"], data["FACTOR_SPACE"]
-RISK_SPLITS = {int(k): v for k, v in data["RISK_SPLITS"].items()}
+def load_config(config_path="config/ips_config.json"):
+    """Loads configuration from a JSON file."""
+    data = json.loads(Path(config_path).read_text())
+    YEARS, PARAM, FACTOR_SPACE = data["YEARS"], data["PARAM"], data["FACTOR_SPACE"]
+    RISK_SPLITS = {int(k): v for k, v in data["RISK_SPLITS"].items()}
+    return YEARS, PARAM, FACTOR_SPACE, RISK_SPLITS
+
+YEARS, PARAM, FACTOR_SPACE, RISK_SPLITS = load_config()
 
 # Consolidated Model Parameters
 MODEL_CONFIG = {

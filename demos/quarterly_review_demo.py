@@ -23,8 +23,10 @@ import numpy as np
 import json
 from pathlib import Path
 from datetime import datetime, timedelta
+import sys
 
 # Import our toolkit components
+sys.path.append(str(Path(__file__).parent.parent / 'src'))
 from ips_model import StressMonitor, simulate_intervention_impact
 from visual_timeline_builder import TimelineVisualizer, load_enhanced_configurations
 
@@ -117,7 +119,9 @@ class QuarterlyReviewSession:
         self._generate_action_plan(client, optimal_configs)
         
         # Generate session summary
-        return self._create_session_summary(client, optimal_configs)
+        summary_path = self._create_session_summary(client, optimal_configs)
+        print(f"\n✅ Quarterly Review Complete. Summary saved to: {summary_path}")
+        return summary_path
     
     def _gather_life_updates(self, client):
         """Simulate gathering client life updates"""
@@ -234,7 +238,7 @@ class QuarterlyReviewSession:
         """Present visual timeline analysis to client"""
         
         print(f"📊 VISUAL TIMELINE PRESENTATION")
-        print(f"   (Showing client: visual_timelines/timeline_{configs['current']['cfg_id']}.png)")
+        print(f"   (Showing client: {self.visualizer.output_dir}/timeline_{configs['current']['cfg_id']}.png)")
         
         current = configs['current']
         
@@ -337,102 +341,47 @@ class QuarterlyReviewSession:
         print(f"   • Emergency consultation: Available if stress >40%")
     
     def _create_session_summary(self, client, configs):
-        """Create session summary report"""
+        """Creates a detailed summary document for the client"""
         
-        summary = {
-            'session_date': self.session_date.isoformat(),
-            'client_id': client['client_id'],
-            'client_name': client['name'],
-            'advisor': self.advisor_name,
-            'current_configuration': configs['current']['cfg_id'],
-            'current_stress_level': configs['current'].get('Financial_Stress_Rank', 0),
-            'current_qol_score': configs['current'].get('QoL_Score', 0),
-            'alternatives_considered': len(configs['alternatives']),
-            'recommendations_count': 3,  # Top 3 recommendations
-            'next_review_date': (self.session_date + timedelta(days=90)).isoformat(),
-            'session_duration_minutes': 15,
-            'visual_files_generated': [
-                f"timeline_{configs['current']['cfg_id']}.png",
-                "configuration_comparison.png"
-            ],
-            'action_items': [
-                "Review education cost alternatives",
-                "Consider work arrangement optimization", 
-                "Implement portfolio rebalancing",
-                "Monitor stress levels quarterly"
-            ]
-        }
+        output_dir = Path("ips_output")
+        output_dir.mkdir(exist_ok=True)
+        summary_path = output_dir / f"quarterly_review_summary_{client['client_id']}.md"
         
-        return summary
+        current = configs.get('current', {})
+        
+        with open(summary_path, 'w') as f:
+            f.write(f"# Quarterly Review Summary: {client['name']}\n\n")
+            f.write(f"**Date:** {self.session_date.strftime('%B %d, %Y')}  \n")
+            f.write(f"**Advisor:** {self.advisor_name}\n\n")
+            f.write("## Current Financial Snapshot\n")
+            f.write(f"- **Configuration:** {current.get('cfg_id', 'N/A')}\n")
+            f.write(f"- **Financial Stress:** {current.get('Financial_Stress_Rank', 0):.1%}\n")
+            f.write(f"- **Quality of Life Score:** {current.get('QoL_Score', 0):.2f}\n")
+            
+        return summary_path
 
 def run_quarterly_review_demo():
-    """Run complete quarterly review demonstration"""
-    
-    print("🏢 QUARTERLY REVIEW DEMONSTRATION")
-    print("Pinnacle Wealth Management - Financial Planning Division")
-    print("=" * 80)
+    """Main function to run the quarterly review demo"""
+    print("🚀 STARTING QUARTERLY REVIEW DEMONSTRATION")
     
     review_session = QuarterlyReviewSession()
-    
-    # Conduct reviews for sample clients
     session_summaries = []
     
     for client in review_session.sample_clients:
-        summary = review_session.conduct_review_session(client)
-        session_summaries.append(summary)
+        summary_path = review_session.conduct_review_session(client)
+        session_summaries.append(summary_path)
         
-        print(f"\n✅ SESSION COMPLETE")
-        print(f"   📁 Visual files ready for client")
-        print(f"   📊 Action plan generated")
-        print(f"   📅 Next review scheduled")
+        print(f"\n✅ SESSION COMPLETE FOR {client['name']}")
+    
+    print("\n" + "="*80)
+    print("📊 DEMONSTRATION SUMMARY")
+    print("="*80)
+    print(f"Total sessions conducted: {len(session_summaries)}")
+    print("Generated summary files:")
+    for path in session_summaries:
+        print(f"  - {path}")
         
-        print(f"\n" + "="*80)
-    
-    # Save session summaries
-    summaries_df = pd.DataFrame(session_summaries)
-    summaries_df.to_csv('quarterly_review_sessions.csv', index=False)
-    
-    # Generate final report
-    print(f"\n📊 QUARTERLY REVIEW SESSION SUMMARY")
-    print(f"=" * 50)
-    print(f"📅 Date: {datetime.now().strftime('%B %d, %Y')}")
-    print(f"👥 Clients Reviewed: {len(session_summaries)}")
-    print(f"⏱️  Average Session Duration: 15 minutes")
-    print(f"📊 Visual Timelines Generated: {len(session_summaries) * 2}")
-    print(f"💡 Action Plans Created: {len(session_summaries)}")
-    print(f"📈 Stress Improvements Identified: {sum(1 for s in session_summaries if s['alternatives_considered'] > 0)}")
-    
-    print(f"\n🎯 KEY OUTCOMES:")
-    for summary in session_summaries:
-        client_name = summary['client_name']
-        stress_level = summary['current_stress_level']
-        alternatives = summary['alternatives_considered']
-        
-        if stress_level > 0.3:
-            status = "🚨 HIGH STRESS - Immediate intervention needed"
-        elif stress_level > 0.2:
-            status = "⚠️ MODERATE STRESS - Monitoring recommended"
-        else:
-            status = "✅ LOW STRESS - Maintain current path"
-        
-        print(f"   • {client_name}: {status}")
-        if alternatives > 0:
-            print(f"     📊 {alternatives} alternative configuration(s) identified")
-    
-    print(f"\n📁 SESSION OUTPUTS:")
-    print(f"   📊 quarterly_review_sessions.csv - Session summaries")
-    print(f"   🎨 visual_timelines/ - Client presentation materials")
-    print(f"   📈 Individual timeline charts for each configuration")
-    print(f"   📊 Configuration comparison dashboards")
-    
-    print(f"\n💼 ADVISOR WORKFLOW EFFICIENCY:")
-    print(f"   ⏱️  15 minutes per client (vs 60+ minutes traditional)")
-    print(f"   🎯 100% scenario coverage (480+ configurations pre-modeled)")
-    print(f"   📊 Professional visual presentations ready instantly")
-    print(f"   💡 AI-powered intervention recommendations")
-    print(f"   🤖 Automated portfolio adjustments when needed")
-    
-    return session_summaries
+    print("\n💡 All tasks completed. The system is ready for client reviews.")
 
 if __name__ == "__main__":
-    session_summaries = run_quarterly_review_demo() 
+    run_quarterly_review_demo() 

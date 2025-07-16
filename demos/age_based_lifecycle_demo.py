@@ -18,11 +18,11 @@ from pathlib import Path
 import json, sys
 
 # Import from main model
-sys.path.append(str(Path(__file__).parent))
+sys.path.append(str(Path(__file__).parent.parent / 'src'))
 try:
     from ips_model import (get_age, interpolate_risk_aversion, calculate_allocation, 
                           get_lifecycle_stage, get_dynamic_profile, calculate_cashflow, MODEL_CONFIG)
-    data = json.loads(Path("ips_config.json").read_text())
+    data = json.loads(Path("config/ips_config.json").read_text())
     YEARS = data["YEARS"]
 except ImportError as e:
     print(f"⚠️  Import error: {e}")
