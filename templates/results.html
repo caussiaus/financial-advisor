@@ -202,6 +202,26 @@
             margin: 30px 0;
         }
         
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 5px;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #5a6fd8, #6d4190);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
         .alert {
             padding: 15px;
             border-radius: 8px;
@@ -409,6 +429,10 @@
                 </a>
             {% endif %}
             
+            <button id="housePurchaseBtn" class="btn btn-large btn-primary" onclick="analyzeHousePurchase()">
+                🏠 "I'm thinking of buying a house, what should I do?"
+            </button>
+            
             <a href="/api/scenario-analysis/{{ filename }}" class="btn" target="_blank">
                 📊 Detailed Analysis API
             </a>
@@ -420,6 +444,16 @@
             <a href="/upload" class="btn">
                 📤 Upload Another File
             </a>
+        </div>
+
+        <!-- House Purchase Analysis Results -->
+        <div id="housePurchaseResults" style="display: none; margin-top: 30px;">
+            <div class="results-card">
+                <h3>🏠 House Purchase Configuration Analysis</h3>
+                <div id="housePurchaseContent">
+                    <!-- Results will be loaded here -->
+                </div>
+            </div>
         </div>
 
         <!-- Technical Details -->
@@ -464,5 +498,156 @@
             {% endif %}
         </div>
     </div>
+
+    <script>
+        function analyzeHousePurchase() {
+            const button = document.getElementById('housePurchaseBtn');
+            const resultsDiv = document.getElementById('housePurchaseResults');
+            const contentDiv = document.getElementById('housePurchaseContent');
+            
+            // Show loading state
+            button.innerHTML = '🔄 Analyzing...';
+            button.disabled = true;
+            resultsDiv.style.display = 'block';
+            contentDiv.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <div style="font-size: 2em; margin-bottom: 20px;">🔄</div>
+                    <h3>Analyzing Configuration Mesh...</h3>
+                    <p>Processing transaction history and evaluating remaining decision poles...</p>
+                </div>
+            `;
+            
+            // Make API call
+            fetch('/api/house-purchase-analysis', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    filename: '{{ filename }}',
+                    house_price: null  // Let system determine optimal price
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Reset button
+                button.innerHTML = '🏠 "I\'m thinking of buying a house, what should I do?"';
+                button.disabled = false;
+                
+                if (data.success) {
+                    displayHousePurchaseResults(data.analysis);
+                } else {
+                    contentDiv.innerHTML = `
+                        <div class="alert alert-warning">
+                            <h4>⚠️ Analysis Error</h4>
+                            <p>${data.error || 'Unknown error occurred'}</p>
+                        </div>
+                    `;
+                }
+            })
+            .catch(error => {
+                // Reset button
+                button.innerHTML = '🏠 "I\'m thinking of buying a house, what should I do?"';
+                button.disabled = false;
+                
+                contentDiv.innerHTML = `
+                    <div class="alert alert-warning">
+                        <h4>❌ Network Error</h4>
+                        <p>Could not connect to analysis service. Please try again.</p>
+                    </div>
+                `;
+                console.error('Error:', error);
+            });
+        }
+        
+        function displayHousePurchaseResults(analysis) {
+            const contentDiv = document.getElementById('housePurchaseContent');
+            
+            const meshAnalysis = analysis.mesh_analysis || {};
+            const currentPosition = analysis.current_position || {};
+            const housePurchaseAnalysis = analysis.house_purchase_analysis || {};
+            const optimizationStrategy = analysis.optimization_strategy || {};
+            const similarCaseInsights = analysis.similar_case_insights || {};
+            
+            contentDiv.innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                    <div class="alert alert-info">
+                        <h4>🎯 Configuration Mesh Status</h4>
+                        <p><strong>Total Decision Poles:</strong> ${meshAnalysis.total_decision_poles || 'N/A'}</p>
+                        <p><strong>Available Options:</strong> ${meshAnalysis.available_poles || 'N/A'}</p>
+                        <p><strong>Eliminated by History:</strong> ${meshAnalysis.eliminated_by_history || 'N/A'}</p>
+                        <p><strong>Constraint Level:</strong> ${((meshAnalysis.constraint_percentage || 0) * 100).toFixed(1)}%</p>
+                    </div>
+                    
+                    <div class="alert alert-success">
+                        <h4>🏠 House Purchase Analysis</h4>
+                        <p><strong>House Price:</strong> $${(housePurchaseAnalysis.scenario?.house_price || 0).toLocaleString()}</p>
+                        <p><strong>Down Payment:</strong> $${(housePurchaseAnalysis.scenario?.down_payment || 0).toLocaleString()}</p>
+                        <p><strong>Affordability:</strong> ${housePurchaseAnalysis.affordability?.recommendation || 'Unknown'}</p>
+                        <p><strong>Remaining Options:</strong> ${housePurchaseAnalysis.scenario?.remaining_options || 0}</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>📊 Welfare State Projection</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px;">
+                        ${Object.entries(housePurchaseAnalysis.welfare_projection || {}).map(([key, value]) => `
+                            <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                                <div style="font-size: 1.2em; font-weight: bold; color: ${value > 0.7 ? '#4CAF50' : value > 0.4 ? '#FF9800' : '#F44336'};">
+                                    ${(value * 100).toFixed(0)}%
+                                </div>
+                                <div style="font-size: 0.9em; text-transform: capitalize;">
+                                    ${key.replace('_', ' ')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h4>🎯 Optimization Strategy</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <h5>Immediate Actions (High Priority)</h5>
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                ${(optimizationStrategy.immediate_actions || []).map(action => `
+                                    <li style="margin: 5px 0;">
+                                        <strong>${action.category || 'Action'}:</strong> ${action.description || 'No description'}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>Medium-Term Strategy</h5>
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                ${(optimizationStrategy.medium_term_strategy || []).map(action => `
+                                    <li style="margin: 5px 0;">
+                                        <strong>${action.category || 'Strategy'}:</strong> ${action.description || 'No description'}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h4>📈 Similar Case Insights</h4>
+                    <p><strong>Similarity Score:</strong> ${((similarCaseInsights.similarity_score || 0) * 100).toFixed(1)}% (${similarCaseInsights.interpretation || 'unknown'})</p>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        ${(similarCaseInsights.insights || []).map(insight => `
+                            <li style="margin: 5px 0;">${insight}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <small style="color: #666;">
+                        Analysis uses transaction mesh configuration analysis with temporal fsQCA integration.
+                        <br>This demo shows how past financial decisions constrain future options like poles in a sculpture.
+                    </small>
+                </div>
+            `;
+        }
+    </script>
 </body>
 </html> 

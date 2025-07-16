@@ -1,0 +1,233 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Financial Decision Report - Family Planning</title>
+            <script src="https://d3js.org/d3.v7.min.js"></script>
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    min-height: 100vh;
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    background: white;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                    overflow: hidden;
+                }
+                .header {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 30px;
+                    text-align: center;
+                }
+                .header h1 {
+                    margin: 0;
+                    font-size: 2.5em;
+                    font-weight: 300;
+                }
+                .header p {
+                    margin: 10px 0 0 0;
+                    opacity: 0.9;
+                    font-size: 1.1em;
+                }
+                .content {
+                    padding: 30px;
+                }
+                .report-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                    margin-bottom: 30px;
+                }
+                .report-card {
+                    background: #f8f9fa;
+                    padding: 20px;
+                    border-radius: 10px;
+                    border-left: 4px solid #667eea;
+                }
+                .report-card h3 {
+                    margin: 0 0 15px 0;
+                    color: #333;
+                }
+                .metric {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 8px 0;
+                    padding: 5px 0;
+                    border-bottom: 1px solid #eee;
+                }
+                .metric:last-child {
+                    border-bottom: none;
+                }
+                .optimal-choice {
+                    background: linear-gradient(135deg, #2ca02c 0%, #1f77b4 100%);
+                    color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin: 20px 0;
+                }
+                .closed-opportunities {
+                    background: #f8f9fa;
+                    padding: 15px;
+                    border-radius: 8px;
+                    border-left: 4px solid #dc3545;
+                }
+                .visualization {
+                    width: 100%;
+                    height: 400px;
+                    background: white;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                }
+                .timestamp {
+                    background: #e9ecef;
+                    padding: 10px;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>📊 Financial Decision Report</h1>
+                    <p>Family Planning - You are expecting your first child and need to plan for increased expenses</p>
+                </div>
+                
+                <div class="content">
+                    <div class="timestamp">
+                        📅 Decision Date: 2022-06-01 00:00
+                    </div>
+                    
+                    <div class="report-grid">
+                        <div class="report-card">
+                            <h3>📈 Current Situation</h3>
+                            <div class="metric">
+                                <span>Portfolio Value:</span>
+                                <strong>$550,000</strong>
+                            </div>
+                            <div class="metric">
+                                <span>Equity Allocation:</span>
+                                <strong>45.0%</strong>
+                            </div>
+                            <div class="metric">
+                                <span>Financial Stress:</span>
+                                <strong>5.0%</strong>
+                            </div>
+                            <div class="metric">
+                                <span>Risk Tolerance:</span>
+                                <strong>60.0%</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="report-card">
+                            <h3>🎯 Decision Metrics</h3>
+                            <div class="metric">
+                                <span>Available Choices:</span>
+                                <strong>2</strong>
+                            </div>
+                            <div class="metric">
+                                <span>Closed Opportunities:</span>
+                                <strong>0</strong>
+                            </div>
+                            <div class="metric">
+                                <span>Choice Availability:</span>
+                                <strong>100.0%</strong>
+                            </div>
+                            <div class="metric">
+                                <span>Decision Complexity:</span>
+                                <strong>Low</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="optimal-choice">
+                        <h3>⭐ Optimal Recommendation</h3>
+                        <p><strong>Increase emergency fund and reduce risk</strong></p>
+                        <p><em>Rationale: Reduces portfolio risk given current stress levels Reduces financial stress and improves well-being</em></p>
+                        <div style="margin-top: 15px;">
+                            <strong>Future Implications:</strong>
+                            <ul>
+                                <li>Lower volatility but potentially reduced returns</li><li>Improved financial peace of mind</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="closed-opportunities">
+                        <h3>🚫 Closed Opportunities</h3>
+                        <p>The following options are no longer available due to previous decisions:</p>
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="visualization">
+                        <h3>📊 Decision Visualization</h3>
+                        <div id="decision-chart"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                // Decision visualization data
+                const decisionData = {"choice_distribution": {"available": 2, "closed": 0, "optimal": 1}, "risk_distribution": {"low": 1, "medium": 1, "high": 0}, "impact_distribution": {"portfolio_focused": 2, "life_focused": 2, "balanced": 2}};
+                
+                // Create D3.js visualization
+                const margin = {top: 20, right: 20, bottom: 20, left: 20};
+                const width = 1160 - margin.left - margin.right;
+                const height = 360 - margin.top - margin.bottom;
+                
+                const svg = d3.select("#decision-chart")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                
+                // Create choice distribution chart
+                const choiceData = [
+                    {label: 'Available', value: decisionData.choice_distribution.available, color: '#d62728'},
+                    {label: 'Closed', value: decisionData.choice_distribution.closed, color: '#7f7f7f'},
+                    {label: 'Optimal', value: decisionData.choice_distribution.optimal, color: '#2ca02c'}
+                ];
+                
+                const radius = Math.min(width, height) / 2;
+                const arc = d3.arc().innerRadius(0).outerRadius(radius);
+                const pie = d3.pie().value(d => d.value);
+                
+                const g = svg.append("g")
+                    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+                
+                g.selectAll("path")
+                    .data(pie(choiceData))
+                    .enter()
+                    .append("path")
+                    .attr("d", arc)
+                    .attr("fill", d => d.data.color)
+                    .attr("stroke", "white")
+                    .style("stroke-width", "2px");
+                
+                // Add labels
+                g.selectAll("text")
+                    .data(pie(choiceData))
+                    .enter()
+                    .append("text")
+                    .text(d => d.data.label + ": " + d.data.value)
+                    .attr("transform", d => "translate(" + arc.centroid(d) + ")")
+                    .style("text-anchor", "middle")
+                    .style("font-size", "12px")
+                    .style("fill", "white");
+                
+                console.log("Decision report visualization loaded");
+            </script>
+        </body>
+        </html>
+        

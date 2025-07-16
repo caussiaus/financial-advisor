@@ -386,6 +386,33 @@ class DynamicPortfolioEngine:
         
         return fig
     
+    def simulate_portfolio_evolution(self, life_events):
+        """Simulate portfolio evolution with life events over time"""
+        # Convert RealisticLifeEvent objects to the format expected by add_life_event
+        for event in life_events:
+            # Map event types to impact scores
+            impact_mapping = {
+                'family_planning': -0.3,
+                'career_advancement': 0.4,
+                'portfolio_rebalancing': 0.2,
+                'education_planning': -0.2,
+                'education_decision': 0.3,
+                'work_arrangement': -0.4
+            }
+            
+            impact_score = impact_mapping.get(event.event_type, 0.0)
+            
+            # Add life event to portfolio engine
+            self.add_life_event(
+                event_type=event.event_type,
+                description=event.description,
+                impact_score=impact_score,
+                date=event.actual_date.strftime('%Y-%m-%d')
+            )
+            
+            # Take a snapshot after each event
+            self.get_portfolio_snapshot()
+    
     def export_data(self):
         """Export all data for analysis"""
         return {

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Story-Driven Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: 150px;
+            padding: 8px;
+            font: 12px sans-serif;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0;
+        }
+        #disappear-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #disappear-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button id="disappear-button">Disappear</button>
+    <svg width="960" height="600"></svg>
+    <div class="tooltip"></div>
+
+    <script>
+        // Create honeycomb pattern using circles
+        const svg = d3.select("svg");
+        const width = +svg.attr("width");
+        const height = +svg.attr("height");
+        const tooltip = d3.select(".tooltip");
+
+        const radius = 15;
+        const hexWidth = radius * 2;
+        const hexHeight = Math.sqrt(3) * radius;
+
+        // Generate honeycomb pattern
+        const circles = [];
+        for (let row = 0; row < height / hexHeight; row++) {
+            for (let col = 0; col < width / hexWidth; col++) {
+                const x = col * hexWidth + (row % 2) * radius;
+                const y = row * hexHeight;
+                if (x < width && y < height) {
+                    circles.push({
+                        id: circles.length,
+                        x: x,
+                        y: y,
+                        name: `Config ${circles.length}`,
+                        details: `Details for configuration ${circles.length}.`
+                    });
+                }
+            }
+        }
+
+        // Create circles
+        svg.selectAll("circle")
+            .data(circles)
+            .enter()
+            .append("circle")
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
+            .attr("r", radius)
+            .style("fill", "#fff")
+            .style("stroke", "#000")
+            .style("stroke-width", "1px")
+            .on("mouseover", function(event, d) {
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                tooltip.html(`<strong>${d.name}</strong><br/>${d.details}`)
+                    .style("left", (event.pageX + 5) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function(d) {
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+
+        // Disappear animation
+        d3.select("#disappear-button").on("click", function() {
+            const margin = 50;
+            const perimeterCircles = svg.selectAll("circle")
+                .filter(function(d) {
+                    return d.x < margin || d.x > width - margin || d.y < margin || d.y > height - margin;
+                });
+
+            perimeterCircles.transition()
+                .duration(500)
+                .style("fill", "yellow")
+                .transition()
+                .delay(500)
+                .duration(1000)
+                .style("fill", "rgba(255, 255, 0, 0.2)")
+                .attr("r", radius / 4);
+        });
+    </script>
+</body>
+</html> 

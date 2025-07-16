@@ -1,0 +1,192 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Enhanced IPS Parallel Sets Analysis</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+            }
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                overflow: hidden;
+            }
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 30px;
+                text-align: center;
+            }
+            .header h1 {
+                margin: 0;
+                font-size: 2.5em;
+                font-weight: 300;
+            }
+            .header p {
+                margin: 10px 0 0 0;
+                opacity: 0.9;
+                font-size: 1.1em;
+            }
+            .content {
+                padding: 30px;
+            }
+            .analysis-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+            .analysis-card {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                border-left: 4px solid #667eea;
+            }
+            .analysis-card h3 {
+                margin: 0 0 15px 0;
+                color: #333;
+            }
+            .metric {
+                display: flex;
+                justify-content: space-between;
+                margin: 8px 0;
+                padding: 5px 0;
+                border-bottom: 1px solid #eee;
+            }
+            .metric:last-child {
+                border-bottom: none;
+            }
+            .parallel-sets {
+                width: 100%;
+                height: 600px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            .controls {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .filter-btn {
+                margin: 5px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                background: #667eea;
+                color: white;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            .filter-btn:hover {
+                background: #5a6fd8;
+                transform: translateY(-2px);
+            }
+            .filter-btn.active {
+                background: #28a745;
+                box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            }
+            .tooltip {
+                position: absolute;
+                background: rgba(0,0,0,0.9);
+                color: white;
+                padding: 12px;
+                border-radius: 8px;
+                font-size: 12px;
+                pointer-events: none;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                z-index: 1000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>IPS Parallel Sets Analysis</h1>
+                <p>Interactive visualization of life events, portfolio allocations, and performance outcomes</p>
+            </div>
+            
+            <div class="content">
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>📊 Data Overview</h3>
+                        <div class="metric">
+                            <span>Total Life Events:</span>
+                            <strong>6</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Portfolio Categories:</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Market Conditions:</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Comfort Levels:</span>
+                            <strong>1</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="analysis-card">
+                        <h3>🎯 Key Insights</h3>
+                        <div class="metric">
+                            <span>Positive Events:</span>
+                            <strong style="color: #28a745;">3</strong>
+                        </div>
+                        <div class="metric">
+                            <span>High Impact Events:</span>
+                            <strong style="color: #dc3545;">0</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Conservative Allocations:</span>
+                            <strong>0</strong>
+                        </div>
+                        <div class="metric">
+                            <span>High Performance:</span>
+                            <strong style="color: #28a745;">6</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="filter-btn active" data-filter="all">Show All</button>
+                    <button class="filter-btn" data-filter="positive">Positive Events</button>
+                    <button class="filter-btn" data-filter="negative">Negative Events</button>
+                    <button class="filter-btn" data-filter="high-impact">High Impact</button>
+                    <button class="filter-btn" data-filter="conservative">Conservative</button>
+                </div>
+                
+                <div class="parallel-sets"></div>
+            </div>
+        </div>
+        
+        <script>
+            // Enhanced D3.js implementation would go here
+            // This is a placeholder for the full implementation
+            console.log("Enhanced parallel sets visualization loaded");
+            
+            // Add interactive functionality
+            d3.selectAll(".filter-btn").on("click", function() {
+                const filter = d3.select(this).attr("data-filter");
+                
+                // Update active button
+                d3.selectAll(".filter-btn").classed("active", false);
+                d3.select(this).classed("active", true);
+                
+                console.log("Filter applied:", filter);
+                // Implement filter logic here
+            });
+        </script>
+    </body>
+    </html>
+    
