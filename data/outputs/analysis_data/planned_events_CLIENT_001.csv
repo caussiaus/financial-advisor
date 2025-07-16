@@ -1,0 +1,7 @@
+event_id,event_type,planned_date,planned_year,description,cash_flow_impact,impact_amount,status
+PLANNED_DAYCARE_START,daycare_start,2025-07-16 12:19:55.936701,0,Daycare begins,negative,-12000,planned
+PLANNED_DAYCARE_END,daycare_end,2030-07-15 12:19:55.936701,5,Daycare ends,positive,12000,planned
+PLANNED_EDUCATION_START,education_start,2030-07-15 12:19:55.936701,5,JohnsHopkins education begins,negative,-40000,planned
+PLANNED_EDUCATION_END,education_end,2035-07-14 12:19:55.936701,10,JohnsHopkins education completed,positive,40000,planned
+PLANNED_CHARITABLE_GIVING,charitable_giving,2035-07-14 12:19:55.936701,10,Charitable donation,negative,-25000,planned
+PLANNED_MORTGAGE_PAYOFF,mortgage_payoff,2055-07-09 12:19:55.936701,30,Mortgage paid off,positive,36000,planned

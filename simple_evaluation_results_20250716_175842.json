@@ -1,0 +1,41 @@
+{
+  "evaluation_date": "2025-07-16T17:58:42.567182",
+  "subjects_tested": 5,
+  "average_effectiveness": 1.0599371557451267,
+  "overall_grade": "A+",
+  "overall_verdict": "Exceptional",
+  "total_recommendations": 118,
+  "average_mesh_nodes": 1001.0,
+  "individual_results": [
+    {
+      "name": "David",
+      "effectiveness": 1.762127258960585,
+      "recommendations": 35,
+      "mesh_nodes": 1001
+    },
+    {
+      "name": "Sarah",
+      "effectiveness": 0.24680173107158282,
+      "recommendations": 12,
+      "mesh_nodes": 1001
+    },
+    {
+      "name": "David",
+      "effectiveness": 0.2331100126572868,
+      "recommendations": 12,
+      "mesh_nodes": 1001
+    },
+    {
+      "name": "Michael",
+      "effectiveness": 0.2699066899883191,
+      "recommendations": 12,
+      "mesh_nodes": 1001
+    },
+    {
+      "name": "Jennifer",
+      "effectiveness": 2.78774008604786,
+      "recommendations": 47,
+      "mesh_nodes": 1001
+    }
+  ]
+}

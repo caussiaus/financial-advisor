@@ -1,0 +1,9 @@
+scenario,client_id,client_name,baseline_stress,new_stress,stress_increase,alert_count,top_recommendation,communication_urgency,auto_interventions
+mild_stress,CLIENT_001,John & Sarah Mitchell,0.435,0.494,0.059,1,increase_portfolio_conservatism,URGENT,3
+mild_stress,CLIENT_002,David & Lisa Chen,0.147,0.206,0.059,0,increase_portfolio_conservatism,NORMAL,0
+moderate_stress,CLIENT_001,John & Sarah Mitchell,0.435,0.55,0.11500000000000005,1,increase_portfolio_conservatism,URGENT,3
+moderate_stress,CLIENT_002,David & Lisa Chen,0.147,0.262,0.11500000000000002,1,increase_portfolio_conservatism,HIGH,0
+severe_stress,CLIENT_001,John & Sarah Mitchell,0.435,0.644,0.20900000000000002,2,increase_portfolio_conservatism,URGENT,3
+severe_stress,CLIENT_002,David & Lisa Chen,0.147,0.356,0.209,2,increase_portfolio_conservatism,HIGH,0
+inflation_spike,CLIENT_001,John & Sarah Mitchell,0.435,0.503,0.068,1,increase_portfolio_conservatism,URGENT,3
+inflation_spike,CLIENT_002,David & Lisa Chen,0.147,0.215,0.068,0,increase_portfolio_conservatism,NORMAL,0

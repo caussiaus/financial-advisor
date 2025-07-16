@@ -130,6 +130,11 @@ class StochasticMeshEngine:
             visibility_radius=self.max_lookahead_days
         )
         
+        # Add payment opportunities to initial node
+        initial_node.payment_opportunities = self._generate_payment_opportunities(
+            datetime.now(), self.current_state, milestones
+        )
+        
         self.nodes[initial_node.node_id] = initial_node
         self.omega_mesh.add_node(initial_node.node_id, node_data=initial_node)
         self.current_position = initial_node.node_id
@@ -138,6 +143,9 @@ class StochasticMeshEngine:
         self._generate_mesh_structure(milestones, time_horizon_years)
         
         print(f"Omega mesh initialized with {len(self.nodes)} nodes")
+        
+        # Return mesh status
+        return self.get_mesh_status()
     
     def _generate_mesh_structure(self, milestones: List, time_horizon_years: float):
         """

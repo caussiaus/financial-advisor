@@ -1,0 +1,4 @@
+event_id,event_type,actual_date,description,cash_flow_impact,impact_amount,notes,logged_date,status
+ACTUAL_EDUCATION_PATH_CHANGE_0,education_path_change,2030-01-11 12:19:55.936744,Decided to switch to McGill University,positive,20000,"Concerned about Johns Hopkins costs, switched to McGill",2025-07-16 12:19:55.936746,actual
+ACTUAL_WORK_ARRANGEMENT_CHANGE_1,work_arrangement_change,2027-07-16 12:19:55.936748,Switched to part-time work,mixed,-15000,"Work-life balance concerns, reduced hours",2025-07-16 12:19:55.936749,actual
+ACTUAL_BONUS_CHANGE_2,bonus_change,2026-07-16 12:19:55.936750,Bonus reduced to 15%,negative,-7500,Company performance affected bonus structure,2025-07-16 12:19:55.936752,actual

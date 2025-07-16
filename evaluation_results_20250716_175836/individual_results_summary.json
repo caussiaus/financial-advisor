@@ -1,0 +1,482 @@
+[
+  {
+    "subject_id": "subject_01_karen",
+    "profile_summary": {
+      "name": "Karen",
+      "age": 60,
+      "occupation": "Doctor",
+      "income": 200663,
+      "risk_tolerance": "Moderate"
+    },
+    "system_performance": {
+      "mesh_nodes": 10013,
+      "recommendations_count": 110,
+      "effectiveness_score": 1.8675213675213673,
+      "prediction_accuracy": 0.7713128773312433
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 2000,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $2,000"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1500,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,500"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 200663.0,
+        "priority": "HIGH",
+        "description": "Save $200,663 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 19187.0,
+        "priority": "HIGH",
+        "description": "Save $19,187 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 19187.0,
+        "priority": "HIGH",
+        "description": "Save $19,187 for investment"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_02_james",
+    "profile_summary": {
+      "name": "James",
+      "age": 40,
+      "occupation": "Therapist",
+      "income": 50112,
+      "risk_tolerance": "Conservative"
+    },
+    "system_performance": {
+      "mesh_nodes": 10040,
+      "recommendations_count": 68,
+      "effectiveness_score": 1.2142857142857142,
+      "prediction_accuracy": 0.8125827904093715
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 501.12,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $501"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 50112.0,
+        "priority": "HIGH",
+        "description": "Save $50,112 for family"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 50112.0,
+        "priority": "HIGH",
+        "description": "Save $50,112 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 7064.0,
+        "priority": "HIGH",
+        "description": "Save $7,064 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 7064.0,
+        "priority": "HIGH",
+        "description": "Save $7,064 for investment"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_03_donna",
+    "profile_summary": {
+      "name": "Donna",
+      "age": 43,
+      "occupation": "Real Estate Agent",
+      "income": 117189,
+      "risk_tolerance": "Moderate"
+    },
+    "system_performance": {
+      "mesh_nodes": 10024,
+      "recommendations_count": 112,
+      "effectiveness_score": 1.7,
+      "prediction_accuracy": 0.9009288378487391
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 1171.89,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,172"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1464.8625,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,465"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 117189.0,
+        "priority": "HIGH",
+        "description": "Save $117,189 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 15574.0,
+        "priority": "HIGH",
+        "description": "Save $15,574 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 15574.0,
+        "priority": "HIGH",
+        "description": "Save $15,574 for investment"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_04_karen",
+    "profile_summary": {
+      "name": "Karen",
+      "age": 45,
+      "occupation": "Doctor",
+      "income": 157797,
+      "risk_tolerance": "Moderate"
+    },
+    "system_performance": {
+      "mesh_nodes": 10049,
+      "recommendations_count": 86,
+      "effectiveness_score": 1.2777777777777777,
+      "prediction_accuracy": 0.9038006185340686
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 1577.97,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,578"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 157797.0,
+        "priority": "HIGH",
+        "description": "Save $157,797 for family"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 157797.0,
+        "priority": "HIGH",
+        "description": "Save $157,797 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 9935.0,
+        "priority": "HIGH",
+        "description": "Save $9,935 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 9935.0,
+        "priority": "HIGH",
+        "description": "Save $9,935 for investment"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_05_linda",
+    "profile_summary": {
+      "name": "Linda",
+      "age": 63,
+      "occupation": "Nurse",
+      "income": 62442,
+      "risk_tolerance": "Moderate"
+    },
+    "system_performance": {
+      "mesh_nodes": 10042,
+      "recommendations_count": 110,
+      "effectiveness_score": 2.0,
+      "prediction_accuracy": 0.9004222171891738
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 624.4200000000001,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $624"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 780.525,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $781"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 62442.0,
+        "priority": "HIGH",
+        "description": "Save $62,442 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 7670.0,
+        "priority": "HIGH",
+        "description": "Save $7,670 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 7670.0,
+        "priority": "HIGH",
+        "description": "Save $7,670 for investment"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_06_helen",
+    "profile_summary": {
+      "name": "Helen",
+      "age": 43,
+      "occupation": "Architect",
+      "income": 100290,
+      "risk_tolerance": "Very Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 10038,
+      "recommendations_count": 60,
+      "effectiveness_score": 1.0897435897435896,
+      "prediction_accuracy": 0.9198879671321133
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 1002.9000000000001,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,003"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 100290.0,
+        "priority": "HIGH",
+        "description": "Save $100,290 for family"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 100290.0,
+        "priority": "HIGH",
+        "description": "Save $100,290 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 13774.0,
+        "priority": "HIGH",
+        "description": "Save $13,774 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 13774.0,
+        "priority": "HIGH",
+        "description": "Save $13,774 for investment"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_07_donna",
+    "profile_summary": {
+      "name": "Donna",
+      "age": 58,
+      "occupation": "Financial Advisor",
+      "income": 57131,
+      "risk_tolerance": "Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 10020,
+      "recommendations_count": 86,
+      "effectiveness_score": 2.101010101010101,
+      "prediction_accuracy": 0.8749222326596383
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 571.3100000000001,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $571"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 714.1375,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $714"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 57131.0,
+        "priority": "HIGH",
+        "description": "Save $57,131 for family"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 57131.0,
+        "priority": "HIGH",
+        "description": "Save $57,131 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 4467.0,
+        "priority": "HIGH",
+        "description": "Save $4,467 for housing"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_08_jessica",
+    "profile_summary": {
+      "name": "Jessica",
+      "age": 48,
+      "occupation": "Writer",
+      "income": 53095,
+      "risk_tolerance": "Moderate"
+    },
+    "system_performance": {
+      "mesh_nodes": 10010,
+      "recommendations_count": 84,
+      "effectiveness_score": 1.1452991452991452,
+      "prediction_accuracy": 0.7695506776402455
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 530.9499999999999,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $531"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 53095.0,
+        "priority": "HIGH",
+        "description": "Save $53,095 for family"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 53095.0,
+        "priority": "HIGH",
+        "description": "Save $53,095 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 5019.0,
+        "priority": "HIGH",
+        "description": "Save $5,019 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 5019.0,
+        "priority": "HIGH",
+        "description": "Save $5,019 for investment"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_09_linda",
+    "profile_summary": {
+      "name": "Linda",
+      "age": 35,
+      "occupation": "Sales Representative",
+      "income": 78406,
+      "risk_tolerance": "Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 10040,
+      "recommendations_count": 112,
+      "effectiveness_score": 1.8015873015873014,
+      "prediction_accuracy": 0.772783326696413
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 784.06,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $784"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 980.0749999999999,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $980"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 78406.0,
+        "priority": "HIGH",
+        "description": "Save $78,406 for family"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 78406.0,
+        "priority": "HIGH",
+        "description": "Save $78,406 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 8868.0,
+        "priority": "HIGH",
+        "description": "Save $8,868 for housing"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_10_donna",
+    "profile_summary": {
+      "name": "Donna",
+      "age": 38,
+      "occupation": "Writer",
+      "income": 50080,
+      "risk_tolerance": "Very Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 10020,
+      "recommendations_count": 88,
+      "effectiveness_score": 1.8632478632478635,
+      "prediction_accuracy": 0.8449260888329666
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 500.79999999999995,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $501"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 625.9999999999999,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $626"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 50080.0,
+        "priority": "HIGH",
+        "description": "Save $50,080 for family"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 50080.0,
+        "priority": "HIGH",
+        "description": "Save $50,080 for housing"
+      },
+      {
+        "type": "savings_increase",
+        "amount": 3592.0,
+        "priority": "HIGH",
+        "description": "Save $3,592 for housing"
+      }
+    ]
+  }
+]

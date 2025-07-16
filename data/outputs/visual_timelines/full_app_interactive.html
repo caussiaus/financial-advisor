@@ -1,0 +1,216 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Enhanced Portfolio Dashboard with Life Choice Optimization</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; background-color: #f8f9fa; }
+                .header { background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+                .dashboard-container { display: flex; gap: 20px; }
+                .main-panel { flex: 2; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+                .optimization-panel { flex: 1; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+                .toggle-switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+                .toggle-switch input { opacity: 0; width: 0; height: 0; }
+                .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+                .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+                input:checked + .slider { background-color: #2196F3; }
+                input:checked + .slider:before { transform: translateX(26px); }
+                .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+                .metric { display: inline-block; margin: 10px; padding: 10px; background-color: #e9ecef; border-radius: 3px; }
+                .life-choice { margin: 10px 0; padding: 10px; border-left: 4px solid #007bff; }
+                .positive { border-left-color: #28a745; }
+                .negative { border-left-color: #dc3545; }
+                select, input, button { padding: 8px; margin: 5px; border: 1px solid #ddd; border-radius: 3px; }
+                button { background-color: #007bff; color: white; cursor: pointer; }
+                button:hover { background-color: #0056b3; }
+                .recommendation { background-color: #f8f9fa; padding: 10px; margin: 5px 0; border-radius: 5px; border-left: 4px solid #28a745; }
+                .hidden { display: none; }
+            </style>
+        </head>
+        <body>
+            <div class="header">
+                <h1>🎯 Enhanced Portfolio Dashboard with Life Choice Optimization</h1>
+                <p>Analyze your life path and optimize your next financial decisions</p>
+            </div>
+            
+            <div class="dashboard-container">
+                <div class="main-panel">
+                    <div class="section">
+                        <h2>📊 Portfolio Summary</h2>
+                        <div class="metric">
+                            <strong>Portfolio Value:</strong> $1,500,000
+                        </div>
+                        <div class="metric">
+                            <strong>Client Age:</strong> 42
+                        </div>
+                        <div class="metric">
+                            <strong>Risk Profile:</strong> 3/5
+                        </div>
+                        <div class="metric">
+                            <strong>Life Choices Made:</strong> 0
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2>📈 Portfolio Evolution</h2>
+                        <div id="portfolioChart"></div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2>📅 Life Choices Timeline</h2>
+                        <div id="lifeChoicesTimeline"></div>
+                    </div>
+                </div>
+                
+                <div class="optimization-panel">
+                    <div class="section">
+                        <h2>⚙️ Optimization Mode</h2>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="optimizationToggle" onchange="toggleOptimization()">
+                            <span class="slider"></span>
+                        </label>
+                        <span id="toggleLabel">Optimization: OFF</span>
+                    </div>
+                    
+                    <div class="section" id="lifeChoiceInterface">
+                        <h2>🎯 Life Choice Interface</h2>
+                        <p>Enter your life choices to see optimization recommendations:</p>
+                        
+                        <div>
+                            <label>Category:</label>
+                            <select id="choiceCategory">
+                                <option value="">Select category...</option>
+                                <option value="career">Career</option>
+                                <option value="family">Family</option>
+                                <option value="lifestyle">Lifestyle</option>
+                                <option value="education">Education</option>
+                                <option value="health">Health</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label>Choice:</label>
+                            <select id="choiceType" disabled>
+                                <option value="">Select choice...</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label>Date:</label>
+                            <input type="date" id="choiceDate" value="2025-07-16">
+                        </div>
+                        
+                        <button onclick="addLifeChoice()">Add Life Choice</button>
+                        <button onclick="optimizeNextChoice()">Optimize Next Choice</button>
+                    </div>
+                    
+                    <div class="section" id="optimizationResults" style="display: none;">
+                        <h2>🎯 Optimization Results</h2>
+                        <div id="optimizationContent"></div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2>📋 Current Recommendations</h2>
+                        <div id="recommendationsContent"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                // Life choice categories and options
+                const choiceOptions = {"career": {"promotion": {"income_boost": 0.15, "stress_impact": -0.1, "time_commitment": 0.2}, "job_change": {"income_boost": 0.25, "stress_impact": -0.2, "time_commitment": 0.1}, "part_time": {"income_boost": -0.3, "stress_impact": 0.3, "time_commitment": -0.4}, "entrepreneur": {"income_boost": 0.5, "stress_impact": -0.4, "time_commitment": 0.6}, "retirement": {"income_boost": -0.6, "stress_impact": 0.5, "time_commitment": -0.8}}, "family": {"marriage": {"income_boost": 0.1, "expense_impact": 0.2, "stability_boost": 0.3}, "children": {"income_boost": -0.1, "expense_impact": 0.4, "stability_boost": 0.2}, "divorce": {"income_boost": -0.2, "expense_impact": 0.3, "stability_boost": -0.4}, "elder_care": {"income_boost": -0.1, "expense_impact": 0.3, "stability_boost": 0.1}}, "lifestyle": {"move_city": {"income_boost": 0.1, "expense_impact": 0.1, "stress_impact": -0.1}, "buy_house": {"income_boost": 0, "expense_impact": 0.3, "stability_boost": 0.4}, "travel_extensive": {"income_boost": -0.1, "expense_impact": 0.2, "stress_impact": 0.2}, "downsize": {"income_boost": 0, "expense_impact": -0.2, "stability_boost": 0.1}}, "education": {"advanced_degree": {"income_boost": 0.2, "expense_impact": 0.3, "time_commitment": 0.4}, "certification": {"income_boost": 0.1, "expense_impact": 0.05, "time_commitment": 0.2}, "skill_development": {"income_boost": 0.05, "expense_impact": 0.02, "time_commitment": 0.1}}, "health": {"health_improvement": {"income_boost": 0, "expense_impact": 0.05, "stress_impact": 0.3}, "medical_issue": {"income_boost": -0.1, "expense_impact": 0.2, "stress_impact": -0.3}, "insurance_upgrade": {"income_boost": 0, "expense_impact": 0.1, "stability_boost": 0.2}}};
+                
+                // Update choice options when category is selected
+                document.getElementById('choiceCategory').addEventListener('change', function() {
+                    const category = this.value;
+                    const choiceSelect = document.getElementById('choiceType');
+                    choiceSelect.innerHTML = '<option value="">Select choice...</option>';
+                    
+                    if (category && choiceOptions[category]) {
+                        Object.keys(choiceOptions[category]).forEach(choice => {
+                            const option = document.createElement('option');
+                            option.value = choice;
+                            option.textContent = choice.replace('_', ' ');
+                            choiceSelect.appendChild(option);
+                        });
+                        choiceSelect.disabled = false;
+                    } else {
+                        choiceSelect.disabled = true;
+                    }
+                });
+                
+                // Toggle optimization mode
+                function toggleOptimization() {
+                    const toggle = document.getElementById('optimizationToggle');
+                    const label = document.getElementById('toggleLabel');
+                    const results = document.getElementById('optimizationResults');
+                    
+                    if (toggle.checked) {
+                        label.textContent = 'Optimization: ON';
+                        results.style.display = 'block';
+                        optimizeNextChoice();
+                    } else {
+                        label.textContent = 'Optimization: OFF';
+                        results.style.display = 'none';
+                    }
+                }
+                
+                // Add life choice
+                function addLifeChoice() {
+                    const category = document.getElementById('choiceCategory').value;
+                    const choice = document.getElementById('choiceType').value;
+                    const date = document.getElementById('choiceDate').value;
+                    
+                    if (!category || !choice || !date) {
+                        alert('Please fill in all fields');
+                        return;
+                    }
+                    
+                    // Here you would typically send this to the backend
+                    console.log('Adding life choice:', {category, choice, date});
+                    
+                    // For demo purposes, show a success message
+                    alert(`Life choice added: ${category} - ${choice} on ${date}`);
+                    
+                    // Clear form
+                    document.getElementById('choiceCategory').value = '';
+                    document.getElementById('choiceType').value = '';
+                    document.getElementById('choiceType').disabled = true;
+                }
+                
+                // Optimize next choice
+                function optimizeNextChoice() {
+                    const content = document.getElementById('optimizationContent');
+                    
+                    // Simulate optimization results
+                    const objectives = ['financial_growth', 'comfort_stability', 'risk_management', 'lifestyle_quality'];
+                    const recommendations = [
+                        {choice: 'promotion', category: 'career', score: 0.85, impact: '+15% income'},
+                        {choice: 'advanced_degree', category: 'education', score: 0.72, impact: '+20% income'},
+                        {choice: 'buy_house', category: 'lifestyle', score: 0.68, impact: '+40% stability'},
+                        {choice: 'health_improvement', category: 'health', score: 0.65, impact: '+30% comfort'}
+                    ];
+                    
+                    let html = '<h3>Top Recommendations:</h3>';
+                    recommendations.forEach((rec, i) => {
+                        html += `
+                            <div class="recommendation">
+                                <strong>${i+1}. ${rec.choice.replace('_', ' ').toUpperCase()}</strong> (${rec.category})
+                                <br>Score: ${rec.score} | Impact: ${rec.impact}
+                            </div>
+                        `;
+                    });
+                    
+                    content.innerHTML = html;
+                }
+                
+                // Initialize
+                document.addEventListener('DOMContentLoaded', function() {
+                    optimizeNextChoice();
+                });
+            </script>
+        </body>
+        </html>
+        

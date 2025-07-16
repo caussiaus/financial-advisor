@@ -1,0 +1,27 @@
+{
+  "clients_monitored": 50,
+  "avg_stress_level": 0.23,
+  "alerts_today": 7,
+  "interventions_pending": 12,
+  "auto_adjustments_made": 3,
+  "high_stress_clients": 8,
+  "review_overdue": 4,
+  "stress_trend": "STABLE",
+  "top_interventions": [
+    {
+      "intervention": "increase_portfolio_conservatism",
+      "clients": 15,
+      "avg_impact": 0.06
+    },
+    {
+      "intervention": "build_emergency_fund",
+      "clients": 12,
+      "avg_impact": 0.2
+    },
+    {
+      "intervention": "reduce_bonus_dependency",
+      "clients": 8,
+      "avg_impact": 0.08
+    }
+  ]
+}

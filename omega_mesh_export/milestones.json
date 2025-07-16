@@ -1,0 +1,80 @@
+[
+  {
+    "timestamp": "2026-07-16T18:08:49.272346",
+    "event_type": "education",
+    "description": "Child's college tuition payment - first year",
+    "financial_impact": 25000.0,
+    "probability": 0.9,
+    "dependencies": [],
+    "payment_flexibility": {
+      "structure_type": "flexible",
+      "percentage_based": true
+    },
+    "metadata": {
+      "source": "sample_generation"
+    }
+  },
+  {
+    "timestamp": "2027-07-16T18:08:49.272353",
+    "event_type": "housing",
+    "description": "House down payment for family home",
+    "financial_impact": 80000.0,
+    "probability": 0.7,
+    "dependencies": [],
+    "payment_flexibility": {
+      "structure_type": "flexible",
+      "custom_dates_allowed": true
+    },
+    "metadata": {
+      "source": "sample_generation"
+    }
+  },
+  {
+    "timestamp": "2028-07-15T18:08:49.272355",
+    "event_type": "investment",
+    "description": "Retirement account contribution catch-up",
+    "financial_impact": 15000.0,
+    "probability": 0.8,
+    "dependencies": [],
+    "payment_flexibility": {
+      "structure_type": "installments",
+      "frequency_options": [
+        "monthly",
+        "quarterly"
+      ]
+    },
+    "metadata": {
+      "source": "sample_generation"
+    }
+  },
+  {
+    "timestamp": "2026-01-12T18:08:49.272356",
+    "event_type": "family",
+    "description": "Wedding expenses for daughter",
+    "financial_impact": 35000.0,
+    "probability": 0.95,
+    "dependencies": [],
+    "payment_flexibility": {
+      "structure_type": "milestone_based",
+      "custom_dates_allowed": true
+    },
+    "metadata": {
+      "source": "sample_generation"
+    }
+  },
+  {
+    "timestamp": "2032-07-14T18:08:49.272357",
+    "event_type": "career",
+    "description": "Business investment opportunity",
+    "financial_impact": 50000.0,
+    "probability": 0.6,
+    "dependencies": [],
+    "payment_flexibility": {
+      "structure_type": "percentage_based",
+      "flexible": true
+    },
+    "metadata": {
+      "source": "sample_generation"
+    }
+  }
+]

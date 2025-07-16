@@ -1,0 +1,76 @@
+{
+  "evaluation_summary": {
+    "evaluation_date": "2025-07-16T17:58:36.726063",
+    "subjects_tested": 10,
+    "system_health_score": 0.997909932752879,
+    "system_grade": "A+",
+    "overall_verdict": "Exceptional"
+  },
+  "key_findings": {
+    "mesh_effectiveness": "160.6%",
+    "prediction_accuracy": "84.7%",
+    "recommendation_diversity": "70.0%",
+    "action_feasibility": "83.2%",
+    "temporal_consistency": "75.8%"
+  },
+  "performance_metrics": {
+    "average_nodes_per_mesh": "10030",
+    "average_recommendations_per_person": "91.6",
+    "mesh_path_efficiency": "0.0%",
+    "milestone_alignment": "70.7%"
+  },
+  "system_insights": [
+    "\u2705 Omega mesh demonstrates high effectiveness in generating relevant financial recommendations",
+    "\u26a0\ufe0f Prediction accuracy could be improved with better calibration",
+    "\u26a0\ufe0f Recommendation diversity is limited - consider expanding recommendation categories",
+    "\u2705 Recommendations maintain good temporal consistency over time",
+    "\u26a0\ufe0f System may be too conservative - consider adding growth opportunities"
+  ],
+  "detailed_statistics": {
+    "mesh_statistics": {
+      "avg_total_nodes": 10029.6,
+      "avg_solidified_nodes": 0.0,
+      "avg_visible_nodes": 10028.6,
+      "avg_current_wealth": 490409.878
+    },
+    "recommendation_statistics": {
+      "total_recommendations": 916,
+      "avg_recommendations_per_person": 91.6,
+      "recommendation_type_distribution": {
+        "emergency_fund": 240,
+        "debt_payoff": 144,
+        "investment": 240,
+        "savings_increase": 148,
+        "reallocation": 144
+      },
+      "priority_distribution": {
+        "HIGH": 532,
+        "MEDIUM": 240,
+        "LOW": 144
+      },
+      "risk_distribution": {
+        "Very Low": 408,
+        "Medium": 159,
+        "Low": 292,
+        "Very High": 5,
+        "High": 52
+      }
+    },
+    "evaluation_statistics": {
+      "avg_overall_effectiveness": 1.606047286047286,
+      "avg_recommendation_coverage": 4.1181418581418585,
+      "avg_strategy_diversification": 0.7,
+      "avg_mesh_path_efficiency": 0.0,
+      "avg_prediction_accuracy": 0.8471117634273974,
+      "avg_action_feasibility": 0.8315365892657274
+    },
+    "prediction_statistics": {
+      "avg_diversity_score": 0.7,
+      "avg_temporal_consistency": 0.7580437733939356,
+      "avg_milestone_alignment": 0.7066666666666667,
+      "avg_feasibility_score": 0.8569848129526652
+    },
+    "system_health_score": 0.997909932752879,
+    "subjects_analyzed": 10
+  }
+}

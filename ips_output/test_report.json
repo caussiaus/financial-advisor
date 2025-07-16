@@ -1,0 +1,106 @@
+{
+  "total_events": 2,
+  "scenarios": {
+    "SCENARIO_0000": {
+      "ED_PATH": "McGill",
+      "HEL_WORK": "Full-time",
+      "RISK_BAND": 2,
+      "scenario_id": "SCENARIO_0000",
+      "events": [],
+      "status": "active"
+    },
+    "SCENARIO_0001": {
+      "ED_PATH": "JohnsHopkins",
+      "HEL_WORK": "Part-time",
+      "RISK_BAND": 1,
+      "scenario_id": "SCENARIO_0001",
+      "events": [],
+      "status": "active"
+    },
+    "SCENARIO_0002": {
+      "ED_PATH": "McGill",
+      "HEL_WORK": "Part-time",
+      "RISK_BAND": 2,
+      "scenario_id": "SCENARIO_0002",
+      "events": [],
+      "status": "active"
+    },
+    "SCENARIO_0003": {
+      "ED_PATH": "JohnsHopkins",
+      "HEL_WORK": "Full-time",
+      "RISK_BAND": 3,
+      "scenario_id": "SCENARIO_0003",
+      "events": [],
+      "status": "active"
+    }
+  },
+  "feasible_scenarios": 4,
+  "stressful_scenarios": 0,
+  "ruled_out_scenarios": 0,
+  "balances": {
+    "SCENARIO_0000": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T16:14:27.599048",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T16:14:27.599050",
+        "description": "Updated after work",
+        "source_event": "work"
+      }
+    ],
+    "SCENARIO_0001": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T16:14:27.599051",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T16:14:27.599052",
+        "description": "Updated after work",
+        "source_event": "work"
+      }
+    ],
+    "SCENARIO_0002": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T16:14:27.599053",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T16:14:27.599054",
+        "description": "Updated after work",
+        "source_event": "work"
+      }
+    ],
+    "SCENARIO_0003": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T16:14:27.599055",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T16:14:27.599056",
+        "description": "Updated after work",
+        "source_event": "work"
+      }
+    ]
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "timestamp": "2025-07-16T13:44:59.601927",
+  "filename": "sample_client_update.txt",
+  "events_extracted": 3,
+  "total_scenarios": 4,
+  "feasible_scenarios": 4,
+  "stressful_scenarios": 1,
+  "ruled_out_scenarios": 0,
+  "event_details": [
+    {
+      "event_type": "education",
+      "description": "We've decided to send our child to Johns Hopkins University starting next year",
+      "planned_date": "2026-07-16T13:44:59.601710",
+      "cash_flow_impact": "neutral",
+      "impact_amount": 0.0,
+      "confidence": 0.8,
+      "source_text": "We've decided to send our child to Johns Hopkins University starting next year",
+      "extracted_date": "2025-07-16T13:44:59.601774"
+    },
+    {
+      "event_type": "work",
+      "description": "My wife is planning to work part-time starting in 3 months to help with \nchildcare costs and provide more flexibility for our family",
+      "planned_date": "2025-10-16T13:44:59.601788",
+      "cash_flow_impact": "positive",
+      "impact_amount": 3.0,
+      "confidence": 0.8,
+      "source_text": "My wife is planning to work part-time starting in 3 months to help with \nchildcare costs and provide more flexibility for our family",
+      "extracted_date": "2025-07-16T13:44:59.601843"
+    },
+    {
+      "event_type": "housing",
+      "description": "We're also considering buying a new house in 2 years for around $2",
+      "planned_date": "2027-07-16T13:44:59.601846",
+      "cash_flow_impact": "negative",
+      "impact_amount": 2.0,
+      "confidence": 0.8,
+      "source_text": "We're also considering buying a new house in 2 years for around $2",
+      "extracted_date": "2025-07-16T13:44:59.601852"
+    }
+  ],
+  "scenario_summary": {
+    "SCENARIO_0000": {
+      "config": {
+        "ED_PATH": "McGill",
+        "HEL_WORK": "Full-time",
+        "RISK_BAND": 2,
+        "scenario_id": "SCENARIO_0000",
+        "events": [],
+        "status": "active"
+      },
+      "status": "active",
+      "stress_level": 0.0
+    },
+    "SCENARIO_0001": {
+      "config": {
+        "ED_PATH": "JohnsHopkins",
+        "HEL_WORK": "Part-time",
+        "RISK_BAND": 1,
+        "scenario_id": "SCENARIO_0001",
+        "events": [],
+        "status": "active"
+      },
+      "status": "active",
+      "stress_level": 0.0
+    },
+    "SCENARIO_0002": {
+      "config": {
+        "ED_PATH": "McGill",
+        "HEL_WORK": "Part-time",
+        "RISK_BAND": 2,
+        "scenario_id": "SCENARIO_0002",
+        "events": [],
+        "status": "active"
+      },
+      "status": "active",
+      "stress_level": 0.0
+    },
+    "SCENARIO_0003": {
+      "config": {
+        "ED_PATH": "JohnsHopkins",
+        "HEL_WORK": "Full-time",
+        "RISK_BAND": 3,
+        "scenario_id": "SCENARIO_0003",
+        "events": [],
+        "status": "active",
+        "stress_level": 0.5499999999999999
+      },
+      "status": "active",
+      "stress_level": 0.5499999999999999
+    }
+  },
+  "balances": {
+    "SCENARIO_0000": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T13:44:59.601902",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T13:44:59.601909",
+        "description": "Updated after work",
+        "source_event": "work"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000001.0,
+        "date": "2025-07-16T13:44:59.601911",
+        "description": "Updated after housing",
+        "source_event": "housing"
+      }
+    ],
+    "SCENARIO_0001": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T13:44:59.601913",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T13:44:59.601914",
+        "description": "Updated after work",
+        "source_event": "work"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000001.0,
+        "date": "2025-07-16T13:44:59.601915",
+        "description": "Updated after housing",
+        "source_event": "housing"
+      }
+    ],
+    "SCENARIO_0002": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T13:44:59.601916",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T13:44:59.601917",
+        "description": "Updated after work",
+        "source_event": "work"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000001.0,
+        "date": "2025-07-16T13:44:59.601918",
+        "description": "Updated after housing",
+        "source_event": "housing"
+      }
+    ],
+    "SCENARIO_0003": [
+      {
+        "account_type": "total",
+        "balance": 1000000.0,
+        "date": "2025-07-16T13:44:59.601919",
+        "description": "Updated after education",
+        "source_event": "education"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000003.0,
+        "date": "2025-07-16T13:44:59.601919",
+        "description": "Updated after work",
+        "source_event": "work"
+      },
+      {
+        "account_type": "total",
+        "balance": 1000001.0,
+        "date": "2025-07-16T13:44:59.601920",
+        "description": "Updated after housing",
+        "source_event": "housing"
+      }
+    ]
+  }
+}

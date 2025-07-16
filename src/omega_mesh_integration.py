@@ -26,7 +26,7 @@ class OmegaMeshIntegration:
     
     def __init__(self, initial_financial_state: Dict[str, float]):
         self.pdf_processor = EnhancedPDFProcessor()
-        self.mesh_engine = StochasticMeshEngine(initial_financial_state)
+        self.mesh_engine = StochasticMeshEngine(current_financial_state=initial_financial_state)
         self.accounting_engine = AccountingReconciliationEngine()
         
         # Initialize accounting with current financial state

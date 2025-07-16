@@ -1,0 +1,577 @@
+{
+  "portfolio_snapshots": [
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.32,
+        "cash": 0.1,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.75,
+        "volatility": 0.0992,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.1,
+        "issues": [
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.3
+      },
+      "market_data": {
+        "equity_volatility": 0.16,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.0,
+        "market_stress": 0.3,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.32,
+        "cash": 0.1,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.75,
+        "volatility": 0.0992,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.1,
+        "issues": [
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.3
+      },
+      "market_data": {
+        "equity_volatility": 0.16,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.0,
+        "market_stress": 0.3,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.48,
+        "bonds": 0.41600000000000004,
+        "cash": 0.10400000000000001,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.5,
+        "volatility": 0.12624,
+        "potential_drawdown": 0.192,
+        "cash_buffer": 0.10400000000000001,
+        "issues": [
+          "Volatility (12.6%) exceeds comfort threshold",
+          "Potential drawdown (19.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider reducing equity allocation",
+          "Consider increasing bond allocation",
+          "High market stress - consider defensive positioning"
+        ],
+        "market_stress": 0.8
+      },
+      "market_data": {
+        "equity_volatility": 0.25,
+        "bond_yields": 0.03,
+        "economic_outlook": -0.3,
+        "market_stress": 0.8,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.75,
+        "volatility": 0.1128,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.08400000000000002,
+        "issues": [
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.4
+      },
+      "market_data": {
+        "equity_volatility": 0.18,
+        "bond_yields": 0.05,
+        "economic_outlook": 0.2,
+        "market_stress": 0.4,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.63,
+        "bonds": 0.296,
+        "cash": 0.074,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.75,
+        "volatility": 0.09708000000000001,
+        "potential_drawdown": 0.252,
+        "cash_buffer": 0.074,
+        "issues": [
+          "Potential drawdown (25.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.2
+      },
+      "market_data": {
+        "equity_volatility": 0.14,
+        "bond_yields": 0.06,
+        "economic_outlook": 0.6,
+        "market_stress": 0.2,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.5,
+        "volatility": 0.13432,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.08400000000000002,
+        "issues": [
+          "Volatility (13.4%) exceeds comfort threshold",
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider reducing equity allocation",
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.6
+      },
+      "market_data": {
+        "equity_volatility": 0.22,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.1,
+        "market_stress": 0.6,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.5,
+        "volatility": 0.13432,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.08400000000000002,
+        "issues": [
+          "Volatility (13.4%) exceeds comfort threshold",
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider reducing equity allocation",
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.6
+      },
+      "market_data": {
+        "equity_volatility": 0.22,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.1,
+        "market_stress": 0.6,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.5,
+        "volatility": 0.13432,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.08400000000000002,
+        "issues": [
+          "Volatility (13.4%) exceeds comfort threshold",
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider reducing equity allocation",
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.6
+      },
+      "market_data": {
+        "equity_volatility": 0.22,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.1,
+        "market_stress": 0.6,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.5,
+        "volatility": 0.13432,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.08400000000000002,
+        "issues": [
+          "Volatility (13.4%) exceeds comfort threshold",
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider reducing equity allocation",
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.6
+      },
+      "market_data": {
+        "equity_volatility": 0.22,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.1,
+        "market_stress": 0.6,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.5,
+        "volatility": 0.13432,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.08400000000000002,
+        "issues": [
+          "Volatility (13.4%) exceeds comfort threshold",
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider reducing equity allocation",
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.6
+      },
+      "market_data": {
+        "equity_volatility": 0.22,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.1,
+        "market_stress": 0.6,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "portfolio": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "comfort_metrics": {
+        "comfort_score": 0.5,
+        "volatility": 0.13432,
+        "potential_drawdown": 0.23199999999999998,
+        "cash_buffer": 0.08400000000000002,
+        "issues": [
+          "Volatility (13.4%) exceeds comfort threshold",
+          "Potential drawdown (23.2%) exceeds comfort threshold"
+        ],
+        "recommendations": [
+          "Consider reducing equity allocation",
+          "Consider increasing bond allocation"
+        ],
+        "market_stress": 0.6
+      },
+      "market_data": {
+        "equity_volatility": 0.22,
+        "bond_yields": 0.04,
+        "economic_outlook": 0.1,
+        "market_stress": 0.6,
+        "equity_returns": 0.08,
+        "bond_returns": 0.04
+      }
+    }
+  ],
+  "rebalancing_history": [
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": -0.09999999999999998,
+        "bonds": 0.09600000000000003,
+        "cash": 0.0040000000000000036
+      },
+      "comfort_score": 0.5,
+      "market_stress": 0.8
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": 0.09999999999999998,
+        "bonds": -0.07999999999999996,
+        "cash": -0.01999999999999999
+      },
+      "comfort_score": 0.75,
+      "market_stress": 0.4
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": 0.050000000000000044,
+        "bonds": -0.04000000000000009,
+        "cash": -0.010000000000000023
+      },
+      "comfort_score": 0.75,
+      "market_stress": 0.2
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": -0.050000000000000044,
+        "bonds": 0.04000000000000009,
+        "cash": 0.010000000000000023
+      },
+      "comfort_score": 0.5,
+      "market_stress": 0.6
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": 0.5799995833336111,
+        "bonds": 0.3359998000001334,
+        "cash": 0.08399995000003335
+      },
+      "comfort_score": 0.75,
+      "market_stress": 0.6
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": 0.5799996533335644,
+        "bonds": 0.3359997480001681,
+        "cash": 0.08399993200004535
+      },
+      "comfort_score": 0.75,
+      "market_stress": 0.6
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": 0.5799996733335511,
+        "bonds": 0.3359997340001774,
+        "cash": 0.08399992600004935
+      },
+      "comfort_score": 0.75,
+      "market_stress": 0.6
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": 0.5799995933336044,
+        "bonds": 0.33599979200013874,
+        "cash": 0.08399994800003469
+      },
+      "comfort_score": 0.75,
+      "market_stress": 0.6
+    },
+    {
+      "date": "2025-07-16",
+      "changes": {
+        "equity": 0.5799996433335711,
+        "bonds": 0.33599975500016344,
+        "cash": 0.08399993500004335
+      },
+      "comfort_score": 0.75,
+      "market_stress": 0.6
+    }
+  ],
+  "life_events_log": [
+    {
+      "date": "2024-03-15",
+      "type": "career_change",
+      "description": "Promotion to senior role - increased income stability",
+      "impact_score": 0.3,
+      "portfolio_before": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "portfolio_after": {
+        "equity": 4.1666638888907406e-07,
+        "bonds": 1.9999986666675562e-07,
+        "cash": 4.9999966666688906e-08,
+        "value": 1500000
+      },
+      "allocation_change": {
+        "equity": -0.5799995833336111,
+        "bonds": -0.3359998000001334,
+        "cash": -0.08399995000003335
+      }
+    },
+    {
+      "date": "2024-06-20",
+      "type": "family_expansion",
+      "description": "Second child born - increased expenses and need for stability",
+      "impact_score": -0.4,
+      "portfolio_before": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "portfolio_after": {
+        "equity": 3.4666643555570963e-07,
+        "bonds": 2.51999832000112e-07,
+        "cash": 6.79999546666969e-08,
+        "value": 1500000
+      },
+      "allocation_change": {
+        "equity": -0.5799996533335644,
+        "bonds": -0.3359997480001681,
+        "cash": -0.08399993200004535
+      }
+    },
+    {
+      "date": "2024-09-10",
+      "type": "market_crash",
+      "description": "Major market correction - client concerned about losses",
+      "impact_score": -0.6,
+      "portfolio_before": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "portfolio_after": {
+        "equity": 3.2666644888903406e-07,
+        "bonds": 2.6599982266678493e-07,
+        "cash": 7.399995066669957e-08,
+        "value": 1500000
+      },
+      "allocation_change": {
+        "equity": -0.5799996733335511,
+        "bonds": -0.3359997340001774,
+        "cash": -0.08399992600004935
+      }
+    },
+    {
+      "date": "2024-12-05",
+      "type": "inheritance",
+      "description": "Received inheritance - increased portfolio value and flexibility",
+      "impact_score": 0.2,
+      "portfolio_before": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "portfolio_after": {
+        "equity": 4.066663955557363e-07,
+        "bonds": 2.0799986133342582e-07,
+        "cash": 5.1999965333356455e-08,
+        "value": 1500000
+      },
+      "allocation_change": {
+        "equity": -0.5799995933336044,
+        "bonds": -0.33599979200013874,
+        "cash": -0.08399994800003469
+      }
+    },
+    {
+      "date": "2025-02-15",
+      "type": "health_concern",
+      "description": "Family health issue - need for more conservative approach",
+      "impact_score": -0.3,
+      "portfolio_before": {
+        "equity": 0.58,
+        "bonds": 0.3360000000000001,
+        "cash": 0.08400000000000002,
+        "value": 1500000
+      },
+      "portfolio_after": {
+        "equity": 3.5666642888904736e-07,
+        "bonds": 2.4499983666677557e-07,
+        "cash": 6.499995666669557e-08,
+        "value": 1500000
+      },
+      "allocation_change": {
+        "equity": -0.5799996433335711,
+        "bonds": -0.33599975500016344,
+        "cash": -0.08399993500004335
+      }
+    }
+  ],
+  "client_config": {
+    "income": 250000,
+    "disposable_cash": 8000,
+    "allowable_var": 0.15,
+    "age": 42,
+    "risk_profile": 3,
+    "portfolio_value": 1500000,
+    "target_allocation": {
+      "equity": 0.58,
+      "bonds": 0.32,
+      "cash": 0.1
+    }
+  },
+  "comfort_thresholds": {
+    "max_drawdown": 0.15,
+    "max_volatility": 0.12,
+    "min_cash_buffer": 0.05,
+    "max_equity_deviation": 0.1
+  }
+}

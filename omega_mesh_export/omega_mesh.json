@@ -1,0 +1,43 @@
+{
+  "current_position": "omega_0_0",
+  "nodes": {
+    "omega_0_0": {
+      "timestamp": "2025-07-16T18:08:49.272407",
+      "financial_state": {
+        "total_wealth": 500000,
+        "cash": 100000,
+        "savings": 150000,
+        "investments": 250000,
+        "debts": 0
+      },
+      "probability": 1.0,
+      "visibility_radius": 1825,
+      "is_solidified": false,
+      "payment_opportunities": {}
+    },
+    "omega_1_0": {
+      "timestamp": "2025-07-17T18:08:49.272414",
+      "financial_state": {
+        "total_wealth": 504099.45299232705,
+        "cash": 100000,
+        "savings": 150000,
+        "investments": 250000,
+        "debts": 0
+      },
+      "probability": 1.0,
+      "visibility_radius": 1825.0,
+      "is_solidified": false,
+      "payment_opportunities": {
+        "education_2026": {
+          "target_amount": 25000.0,
+          "remaining_amount": 25000.0,
+          "min_payment": 250.0,
+          "max_payment": 25000.0,
+          "flexible_dates": true,
+          "payment_methods": [
+            "percentage_based",
+            "custom_amount",
+            "milestone_triggered",
+            "date_specific"
+          ],
+          "deadline": 

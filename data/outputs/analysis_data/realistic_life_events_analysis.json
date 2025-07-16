@@ -1,0 +1,154 @@
+{
+  "events": [
+    {
+      "event_type": "family_planning",
+      "description": "First child born - increased need for financial stability",
+      "actual_date": "2020-03-15T00:00:00",
+      "planned_date": "2020-06-01T00:00:00",
+      "cash_flow_impact": "negative",
+      "impact_amount": -25000,
+      "confidence": 1.0,
+      "trigger_reason": "Family expansion",
+      "portfolio_adjustment": {
+        "risk_reduction": 0.15,
+        "cash_increase": 0.1
+      },
+      "life_stage": "young_family"
+    },
+    {
+      "event_type": "career_advancement",
+      "description": "Promotion to senior role - increased income and bonus",
+      "actual_date": "2021-01-15T00:00:00",
+      "planned_date": "2021-03-01T00:00:00",
+      "cash_flow_impact": "positive",
+      "impact_amount": 30000,
+      "confidence": 0.95,
+      "trigger_reason": "Strong performance review",
+      "portfolio_adjustment": {
+        "equity_increase": 0.1,
+        "risk_band": 3
+      },
+      "life_stage": "career_growth"
+    },
+    {
+      "event_type": "portfolio_rebalancing",
+      "description": "COVID market recovery - increased risk tolerance",
+      "actual_date": "2022-06-01T00:00:00",
+      "planned_date": "2022-01-01T00:00:00",
+      "cash_flow_impact": "neutral",
+      "impact_amount": 0,
+      "confidence": 0.85,
+      "trigger_reason": "Market conditions improved",
+      "portfolio_adjustment": {
+        "equity_increase": 0.2,
+        "bonds_decrease": 0.15
+      },
+      "life_stage": "accumulation"
+    },
+    {
+      "event_type": "education_planning",
+      "description": "Starting education fund - considering Johns Hopkins vs McGill",
+      "actual_date": "2023-09-01T00:00:00",
+      "planned_date": "2023-06-01T00:00:00",
+      "cash_flow_impact": "negative",
+      "impact_amount": -15000,
+      "confidence": 0.9,
+      "trigger_reason": "Child approaching school age",
+      "portfolio_adjustment": {
+        "education_fund": 0.12,
+        "risk_band": 2
+      },
+      "life_stage": "education_planning"
+    },
+    {
+      "event_type": "education_decision",
+      "description": "Chose McGill over Johns Hopkins - cost concerns",
+      "actual_date": "2024-02-15T00:00:00",
+      "planned_date": "2024-06-01T00:00:00",
+      "cash_flow_impact": "positive",
+      "impact_amount": 75000,
+      "confidence": 1.0,
+      "trigger_reason": "Financial stress analysis showed Johns Hopkins too risky",
+      "portfolio_adjustment": {
+        "stress_reduction": 0.25,
+        "cash_freed": 75000
+      },
+      "life_stage": "education_commitment"
+    },
+    {
+      "event_type": "work_arrangement",
+      "description": "Switched to part-time work for better work-life balance",
+      "actual_date": "2025-01-01T00:00:00",
+      "planned_date": "2025-03-01T00:00:00",
+      "cash_flow_impact": "negative",
+      "impact_amount": -40000,
+      "confidence": 0.95,
+      "trigger_reason": "Quality of life priority after portfolio stress analysis",
+      "portfolio_adjustment": {
+        "conservative_shift": 0.2,
+        "risk_band": 1
+      },
+      "life_stage": "lifestyle_optimization"
+    }
+  ],
+  "analysis_report": {
+    "analysis_period": "2020-2025",
+    "total_events": 6,
+    "portfolio_performance": {
+      "starting_value": 470588.23529411765,
+      "ending_value": 764560.9726667746,
+      "total_return": 0.624692066916896,
+      "average_annual_return": 0.07276114081996433,
+      "volatility": 0.10981078835277981,
+      "best_year": "2021",
+      "worst_year": "2022"
+    },
+    "life_events_impact": {
+      "positive_events": 2,
+      "negative_events": 3,
+      "total_cash_impact": 25000,
+      "biggest_positive_impact": 75000,
+      "biggest_negative_impact": -40000
+    },
+    "stress_analysis": {
+      "average_stress": 0.18333333333333335,
+      "peak_stress_year": "2020",
+      "peak_stress_level": 0.25,
+      "stress_trend": "stable"
+    },
+    "portfolio_evolution": {
+      "equity_trend": "decreasing",
+      "final_allocation": {
+        "equity": 0.4434937611408199,
+        "bonds": 0.5119429590017824,
+        "cash": 0.04456327985739751
+      }
+    },
+    "key_decisions": [
+      {
+        "year": 2020,
+        "decision": "First child born - increased need for financial stability",
+        "impact": -25000,
+        "rationale": "Family expansion"
+      },
+      {
+        "year": 2021,
+        "decision": "Promotion to senior role - increased income and bonus",
+        "impact": 30000,
+        "rationale": "Strong performance review"
+      },
+      {
+        "year": 2024,
+        "decision": "Chose McGill over Johns Hopkins - cost concerns",
+        "impact": 75000,
+        "rationale": "Financial stress analysis showed Johns Hopkins too risky"
+      },
+      {
+        "year": 2025,
+        "decision": "Switched to part-time work for better work-life balance",
+        "impact": -40000,
+        "rationale": "Quality of life priority after portfolio stress analysis"
+      }
+    ]
+  }
+}
