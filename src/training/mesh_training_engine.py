@@ -27,12 +27,12 @@ from scipy.spatial.distance import cosine
 from scipy.stats import wasserstein_distance
 
 # Import existing components
-from ..synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
-from ..commutator_decision_engine import CommutatorDecisionEngine, FinancialState, CommutatorOperation
-from ..core.stochastic_mesh_engine import StochasticMeshEngine
-from ..core.state_space_mesh_engine import EnhancedMeshEngine, EnhancedMeshNode
-from ..unified_cash_flow_model import UnifiedCashFlowModel, CashFlowEvent
-from ..layers.financial_space_mapper import FinancialSpaceMapper
+from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
+from src.commutator_decision_engine import CommutatorDecisionEngine, FinancialState, CommutatorOperation
+from src.core.stochastic_mesh_engine import StochasticMeshEngine
+from src.core.state_space_mesh_engine import EnhancedMeshEngine, EnhancedMeshNode
+from src.unified_cash_flow_model import UnifiedCashFlowModel, CashFlowEvent
+from src.layers.financial_space_mapper import FinancialSpaceMapper
 
 
 @dataclass

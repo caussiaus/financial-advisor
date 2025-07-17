@@ -32,11 +32,11 @@ from scipy import stats
 import pickle
 
 # Import existing components
-from ..analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
-from ..analysis.mesh_backtesting_framework import MeshBacktestingFramework, BacktestReport
-from ..analysis.mesh_vector_database import MeshVectorDatabase
-from ..synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
-from ..json_to_vector_converter import JSONToVectorConverter
+from src.analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+from src.analysis.mesh_backtesting_framework import MeshBacktestingFramework, BacktestReport
+from src.analysis.mesh_vector_database import MeshVectorDatabase
+from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
+from src.json_to_vector_converter import JSONToVectorConverter
 
 
 @dataclass
@@ -192,7 +192,7 @@ class ComprehensiveMeshTesting:
     
     def _create_synthetic_client_from_trial_person(self, person: Dict[str, Any]) -> SyntheticClientData:
         """Create synthetic client data from trial person data"""
-        from .synthetic_data_generator import PersonProfile
+        from src.synthetic_data_generator import PersonProfile
         
         # Extract financial profile
         financial_profile = person['financial_profile']

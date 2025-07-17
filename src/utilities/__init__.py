@@ -7,9 +7,9 @@ Support utilities and frameworks:
 - Comprehensive testing framework
 """
 
-from .adaptive_mesh_generator import AdaptiveMeshGenerator
-from .mesh_memory_manager import MeshMemoryManager, CompressedNode
-from .mesh_testing_framework import ComprehensiveMeshTesting, TestResult
+from src.utilities.adaptive_mesh_generator import AdaptiveMeshGenerator
+from src.utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
+from src.utilities.mesh_testing_framework import ComprehensiveMeshTesting, TestResult
 
 __all__ = [
     'AdaptiveMeshGenerator',

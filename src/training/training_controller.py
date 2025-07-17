@@ -16,15 +16,15 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import all training components
 try:
-    from .mesh_training_engine import MeshTrainingEngine, TrainingScenario, CommutatorRoute, TrainingResult
+    from src.training.mesh_training_engine import MeshTrainingEngine, TrainingScenario, CommutatorRoute, TrainingResult
     
     # Import dependencies from core controller pattern
-    from ..core.stochastic_mesh_engine import StochasticMeshEngine
-    from ..core.state_space_mesh_engine import EnhancedMeshEngine
-    from ..commutator_decision_engine import CommutatorDecisionEngine, FinancialState, CommutatorOperation
-    from ..synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
-    from ..unified_cash_flow_model import UnifiedCashFlowModel, CashFlowEvent
-    from ..layers.financial_space_mapper import FinancialSpaceMapper
+    from src.core.stochastic_mesh_engine import StochasticMeshEngine
+    from src.core.state_space_mesh_engine import EnhancedMeshEngine
+    from src.commutator_decision_engine import CommutatorDecisionEngine, FinancialState, CommutatorOperation
+    from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
+    from src.unified_cash_flow_model import UnifiedCashFlowModel, CashFlowEvent
+    from src.layers.financial_space_mapper import FinancialSpaceMapper
     
     IMPORT_SUCCESS = True
     IMPORT_ERROR = None

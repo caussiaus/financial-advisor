@@ -31,9 +31,9 @@ from plotly.subplots import make_subplots
 import networkx as nx
 
 # Import existing components
-from .mesh_vector_database import MeshVectorDatabase, SimilarityMatch
-from .synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
-from .json_to_vector_converter import ClientVectorProfile, LifeStage, EventCategory
+from src.mesh_vector_database import MeshVectorDatabase, SimilarityMatch
+from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
+from src.json_to_vector_converter import ClientVectorProfile, LifeStage, EventCategory
 
 
 @dataclass

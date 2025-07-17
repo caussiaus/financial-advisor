@@ -18,12 +18,12 @@ import os
 import numpy as np
 import networkx as nx
 
-from .layers.pdf_processor import PDFProcessorLayer, FinancialMilestone, FinancialEntity
-from .layers.mesh_engine import MeshEngineLayer, MeshConfig
-from .layers.accounting import AccountingLayer, Transaction, TransactionType
-from .layers.recommendation_engine import RecommendationEngineLayer, Recommendation
-from .layers.ui import UILayer
-from .layers.financial_space_mapper import FinancialSpaceMapper, FinancialSpaceMap
+from src.layers.pdf_processor import PDFProcessorLayer, FinancialMilestone, FinancialEntity
+from src.layers.mesh_engine import MeshEngineLayer, MeshConfig
+from src.layers.accounting import AccountingLayer, Transaction, TransactionType
+from src.layers.recommendation_engine import RecommendationEngineLayer, Recommendation
+from src.layers.ui import UILayer
+from src.layers.financial_space_mapper import FinancialSpaceMapper, FinancialSpaceMap
 
 
 @dataclass

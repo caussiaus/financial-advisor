@@ -24,8 +24,8 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from .mintt_core import MINTTCore, FeatureSelection, CongruenceTriangle
-from .trial_people_manager import TrialPeopleManager, TrialPerson
+from src.mintt_core import MINTTCore, FeatureSelection, CongruenceTriangle
+from src.trial_people_manager import TrialPeopleManager, TrialPerson
 
 
 @dataclass

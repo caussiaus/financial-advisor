@@ -27,9 +27,9 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 import queue
 
-from .mintt_cuda_core import CUDAMINTTCore, CUDAFeatureSelection
-from .mintt_cuda_interpolation import CUDAMINTTInterpolation
-from .enhanced_pdf_processor import EnhancedPDFProcessor
+from src.mintt_cuda_core import CUDAMINTTCore, CUDAFeatureSelection
+from src.mintt_cuda_interpolation import CUDAMINTTInterpolation
+from src.enhanced_pdf_processor import EnhancedPDFProcessor
 
 
 @dataclass

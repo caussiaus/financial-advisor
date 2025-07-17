@@ -13,10 +13,21 @@ from .mesh_training_engine import (
     TrainingResult
 )
 
+# Import portfolio training engine
+from .portfolio_training_engine import (
+    PortfolioTrainingEngine,
+    PortfolioWeights,
+    TrainingScenario as PortfolioTrainingScenario
+)
+
 __all__ = [
     # Training engine classes
     'MeshTrainingEngine',
     'TrainingScenario',
     'CommutatorRoute', 
-    'TrainingResult'
+    'TrainingResult',
+    # Portfolio training engine classes
+    'PortfolioTrainingEngine',
+    'PortfolioWeights',
+    'PortfolioTrainingScenario'
 ] 

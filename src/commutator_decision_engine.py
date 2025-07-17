@@ -12,6 +12,7 @@ from scipy.optimize import minimize
 from scipy.spatial.distance import cosine
 import json
 import math
+from src.dl_friendly_storage import save_analysis_results
 
 
 @dataclass
@@ -490,8 +491,6 @@ class CommutatorDecisionEngine:
     
     def export_state_data(self, filepath: str):
         """Export current state and analysis data"""
-        from .dl_friendly_storage import save_analysis_results
-        
         export_data = {
             'current_state': {
                 'cash': self.current_state.cash,

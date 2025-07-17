@@ -24,8 +24,8 @@ from enum import Enum
 import logging
 
 # Import existing components
-from .core.time_uncertainty_mesh import SeedEvent, EventVector, TimeUncertaintyMeshEngine
-from .synthetic_data_generator import PersonProfile
+from src.core.time_uncertainty_mesh import SeedEvent, EventVector, TimeUncertaintyMeshEngine
+from src.synthetic_data_generator import PersonProfile
 
 
 class LifeStage(Enum):

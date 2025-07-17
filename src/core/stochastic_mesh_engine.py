@@ -44,9 +44,9 @@ except ImportError:
     device = None
     print("GPU acceleration not available. Installing PyTorch may improve performance.")
 
-from ..utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
-from ..utilities.adaptive_mesh_generator import AdaptiveMeshGenerator
-from ..vectorized_accounting import VectorizedAccountingEngine, AccountingState
+from src.utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
+from src.utilities.adaptive_mesh_generator import AdaptiveMeshGenerator
+from src.vectorized_accounting import VectorizedAccountingEngine, AccountingState
 
 def accelerated_process_paths(paths, drift, volatility, dt, random_shocks):
     """Process paths using available acceleration (Metal/CUDA/CPU)"""

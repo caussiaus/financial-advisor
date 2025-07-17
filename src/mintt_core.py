@@ -34,9 +34,9 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Import existing components
-from .enhanced_pdf_processor import EnhancedPDFProcessor, FinancialMilestone, FinancialEntity
-from .mesh_congruence_engine import MeshCongruenceEngine
-from .trial_people_manager import TrialPeopleManager, TrialPerson, InterpolatedSurface
+from src.enhanced_pdf_processor import EnhancedPDFProcessor, FinancialMilestone, FinancialEntity
+from src.mesh_congruence_engine import MeshCongruenceEngine
+from src.trial_people_manager import TrialPeopleManager, TrialPerson, InterpolatedSurface
 
 
 @dataclass

@@ -33,9 +33,9 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 import pickle
 
 # Import existing components
-from .mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult, BacktestResult
-from src.synthetic_lifestyle_engine import SyntheticClientData
-from .mesh_vector_database import MeshVectorDatabase
+from src.analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult, BacktestResult
+from src.analysis.mesh_vector_database import MeshVectorDatabase
+from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine
 
 
 @dataclass
@@ -45,7 +45,7 @@ class BacktestScenario:
     start_date: datetime
     end_date: datetime
     market_conditions: Dict[str, float]
-    client_data: SyntheticClientData
+    client_data: SyntheticLifestyleEngine
     expected_outcomes: Dict[str, float]
     actual_outcomes: Optional[Dict[str, float]] = None
 
@@ -111,7 +111,7 @@ class MeshBacktestingFramework:
         
         return logger
     
-    def create_backtest_scenarios(self, client_data: SyntheticClientData,
+    def create_backtest_scenarios(self, client_data: SyntheticLifestyleEngine,
                                 start_date: datetime, end_date: datetime,
                                 num_scenarios: int = 100) -> List[BacktestScenario]:
         """
@@ -176,7 +176,7 @@ class MeshBacktestingFramework:
         
         return conditions
     
-    def _generate_expected_outcomes(self, client_data: SyntheticClientData,
+    def _generate_expected_outcomes(self, client_data: SyntheticLifestyleEngine,
                                   market_conditions: Dict[str, float]) -> Dict[str, float]:
         """Generate expected outcomes based on client profile and market conditions"""
         outcomes = {}
@@ -230,7 +230,7 @@ class MeshBacktestingFramework:
         }
         return adjustments.get(life_stage.value, 0.0)
     
-    def run_comprehensive_backtest(self, client_data: SyntheticClientData,
+    def run_comprehensive_backtest(self, client_data: SyntheticLifestyleEngine,
                                  start_date: datetime, end_date: datetime,
                                  num_scenarios: int = 100) -> BacktestReport:
         """
@@ -675,7 +675,6 @@ class MeshBacktestingFramework:
 
 def create_demo_backtesting_framework():
     """Create and demonstrate the backtesting framework"""
-    from .synthetic_lifestyle_engine import SyntheticLifestyleEngine
     
     # Create framework
     framework = MeshBacktestingFramework()

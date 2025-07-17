@@ -1,0 +1,415 @@
+[
+  {
+    "route_id": "route_scenario_0003",
+    "shock_type": "interest_rate_spike",
+    "shock_magnitude": -0.05578253769788569,
+    "success_score": 0.2671226255048021,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0003"
+    }
+  },
+  {
+    "route_id": "route_scenario_0004",
+    "shock_type": "none",
+    "shock_magnitude": 0,
+    "success_score": 0.30695480999999997,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0004"
+    }
+  },
+  {
+    "route_id": "route_scenario_0007",
+    "shock_type": "none",
+    "shock_magnitude": 0,
+    "success_score": 0.3170426396,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0007"
+    }
+  },
+  {
+    "route_id": "route_scenario_0009",
+    "shock_type": "none",
+    "shock_magnitude": 0,
+    "success_score": 0.6504486887471115,
+    "recovery_time": 90,
+    "edge_path": [
+      "failed_edge_0",
+      "failed_edge_1",
+      "failed_edge_2",
+      "edge_3_income_optimization"
+    ],
+    "commutator_sequence": [
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 7982.895599999999,
+        "risk_change": 0.02,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 7982.895599999999,
+        "risk_change": 0.01,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 7982.895599999999,
+        "risk_change": 0.15,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 600.3480079999999,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 600.3480079999999,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      }
+    ],
+    "metadata": {
+      "scenario_id": "scenario_0009"
+    }
+  },
+  {
+    "route_id": "route_scenario_0010",
+    "shock_type": "none",
+    "shock_magnitude": 0,
+    "success_score": 0.5244188023736781,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0010"
+    }
+  },
+  {
+    "route_id": "route_scenario_0014",
+    "shock_type": "none",
+    "shock_magnitude": 0,
+    "success_score": 0.284344396307655,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0014"
+    }
+  },
+  {
+    "route_id": "route_scenario_0027",
+    "shock_type": "interest_rate_spike",
+    "shock_magnitude": -0.07294069569010309,
+    "success_score": 0.3008215192,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0027"
+    }
+  },
+  {
+    "route_id": "route_scenario_0030",
+    "shock_type": "market_crash",
+    "shock_magnitude": -0.18379567638621186,
+    "success_score": 0.9986497965616016,
+    "recovery_time": 90,
+    "edge_path": [
+      "failed_edge_0",
+      "failed_edge_1",
+      "failed_edge_2",
+      "edge_3_income_optimization"
+    ],
+    "commutator_sequence": [
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 225159.7338,
+        "risk_change": 0.02,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 225159.7338,
+        "risk_change": 0.01,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 225159.7338,
+        "risk_change": 0.15,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 13005.518936000002,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 13005.518936000002,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      }
+    ],
+    "metadata": {
+      "scenario_id": "scenario_0030"
+    }
+  },
+  {
+    "route_id": "route_scenario_0031",
+    "shock_type": "job_loss",
+    "shock_magnitude": -0.5810557692897466,
+    "success_score": 0.40694167357040767,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0031"
+    }
+  },
+  {
+    "route_id": "route_scenario_0032",
+    "shock_type": "inflation_shock",
+    "shock_magnitude": -0.13427788701133936,
+    "success_score": 0.3098712484,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0032"
+    }
+  },
+  {
+    "route_id": "route_scenario_0035",
+    "shock_type": "market_crash",
+    "shock_magnitude": -0.21304486877533824,
+    "success_score": 0.7399597398984543,
+    "recovery_time": 90,
+    "edge_path": [
+      "failed_edge_0",
+      "failed_edge_1",
+      "failed_edge_2",
+      "edge_3_income_optimization"
+    ],
+    "commutator_sequence": [
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 26271.9774,
+        "risk_change": 0.02,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 26271.9774,
+        "risk_change": 0.01,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 26271.9774,
+        "risk_change": 0.15,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 1464.81154,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 1464.81154,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      }
+    ],
+    "metadata": {
+      "scenario_id": "scenario_0035"
+    }
+  },
+  {
+    "route_id": "route_scenario_0040",
+    "shock_type": "none",
+    "shock_magnitude": 0,
+    "success_score": 0.7681240466256,
+    "recovery_time": 90,
+    "edge_path": [
+      "failed_edge_0",
+      "failed_edge_1",
+      "failed_edge_2",
+      "edge_3_income_optimization"
+    ],
+    "commutator_sequence": [
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 39198.2031,
+        "risk_change": 0.02,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 39198.2031,
+        "risk_change": 0.01,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 39198.2031,
+        "risk_change": 0.15,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 1687.9924359999998,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 1687.9924359999998,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      }
+    ],
+    "metadata": {
+      "scenario_id": "scenario_0040"
+    }
+  },
+  {
+    "route_id": "route_scenario_0041",
+    "shock_type": "interest_rate_spike",
+    "shock_magnitude": -0.06035910911308914,
+    "success_score": 0.3091420792,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0041"
+    }
+  },
+  {
+    "route_id": "route_scenario_0042",
+    "shock_type": "job_loss",
+    "shock_magnitude": -0.33194161548233936,
+    "success_score": 0.6688454153903611,
+    "recovery_time": 90,
+    "edge_path": [
+      "failed_edge_0",
+      "failed_edge_1",
+      "failed_edge_2",
+      "edge_3_income_optimization"
+    ],
+    "commutator_sequence": [
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 12887.726400000001,
+        "risk_change": 0.02,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 12887.726400000001,
+        "risk_change": 0.01,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 12887.726400000001,
+        "risk_change": 0.15,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 800.8188840000001,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 800.8188840000001,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      }
+    ],
+    "metadata": {
+      "scenario_id": "scenario_0042"
+    }
+  },
+  {
+    "route_id": "route_scenario_0043",
+    "shock_type": "none",
+    "shock_magnitude": 0,
+    "success_score": 0.5936363820144341,
+    "recovery_time": 90,
+    "edge_path": [
+      "failed_edge_0",
+      "failed_edge_1",
+      "edge_2_income_optimization"
+    ],
+    "commutator_sequence": [
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 5739.5034,
+        "risk_change": 0.02,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "capital_efficiency",
+        "capital_required": 5739.5034,
+        "risk_change": 0.01,
+        "success_probability": 0.95
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 328.14304400000003,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      },
+      {
+        "operation_type": "income_optimization",
+        "capital_required": 328.14304400000003,
+        "risk_change": 0.01,
+        "success_probability": 0.7
+      }
+    ],
+    "metadata": {
+      "scenario_id": "scenario_0043"
+    }
+  },
+  {
+    "route_id": "route_scenario_0047",
+    "shock_type": "interest_rate_spike",
+    "shock_magnitude": -0.12601497437239567,
+    "success_score": 0.3215103236,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0047"
+    }
+  },
+  {
+    "route_id": "route_scenario_0049",
+    "shock_type": "medical_emergency",
+    "shock_magnitude": 0.23008228138780487,
+    "success_score": 0.48789192461527187,
+    "recovery_time": 0,
+    "edge_path": [],
+    "commutator_sequence": [],
+    "metadata": {
+      "scenario_id": "scenario_0049"
+    }
+  }
+]

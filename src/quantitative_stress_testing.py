@@ -30,11 +30,11 @@ warnings.filterwarnings('ignore')
 
 # Import core components
 try:
-    from .core.stochastic_mesh_engine import StochasticMeshEngine
-    from .core.state_space_mesh_engine import EnhancedMeshEngine
-    from .analysis.mesh_congruence_engine import MeshCongruenceEngine
-    from .analysis.mesh_vector_database import MeshVectorDatabase
-    from .synthetic_lifestyle_engine import SyntheticLifestyleEngine
+    from src.core.stochastic_mesh_engine import StochasticMeshEngine
+    from src.core.state_space_mesh_engine import EnhancedMeshEngine
+    from src.analysis.mesh_congruence_engine import MeshCongruenceEngine
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+    from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine
 except ImportError:
     # Fallback for direct execution
     import sys
