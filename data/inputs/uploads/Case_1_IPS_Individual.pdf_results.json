@@ -1,3 +1,13 @@
 {
-  "error": "'utf-8' codec can't decode byte 0xb5 in position 11: invalid start byte"
+  "source_file": "Case_1_IPS_Individual.pdf",
+  "extraction_time": "2025-07-16T21:25:35.781391",
+  "milestones": [
+    {
+      "timestamp": "2025-07-16T21:25:35.577795",
+      "event_type": "education",
+      "description": "Fina 411: Portfolio Management\nCase #1 \u201cA Good Life\u201d\nHoratio, 45, graduated with a degree in political science with a major in Chinese literature from Western\nUniversity in London, Ontario. His anglophone father and francophone mother created a rich,\ncosmopolitan, and multi-lingual household. Personable, tactful, adventurous, and curious, he travelled\nextensively as a student. The continent that fascinated him the most was Asia and in particular ancient\nChina. At university, this attraction led ",
+      "financial_impact": 411.0,
+      "probability": 0.7
+    }
+  ]
 }

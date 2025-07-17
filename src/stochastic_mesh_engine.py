@@ -1,3 +1,6 @@
+"""
+Core Omega mesh engine with optimized path generation and state tracking.
+"""
 import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
@@ -7,9 +10,68 @@ import networkx as nx
 from scipy.stats import norm
 import json
 import math
+import platform
 from concurrent.futures import ThreadPoolExecutor
 import asyncio
 
+# Try importing acceleration libraries
+try:
+    import torch
+    if platform.system() == 'Darwin' and platform.machine() == 'arm64':
+        # Use Metal for M1/M2 Macs
+        METAL_AVAILABLE = torch.backends.mps.is_available()
+        if METAL_AVAILABLE:
+            device = torch.device("mps")
+            # Set default tensor type to float32 for Metal
+            torch.set_default_dtype(torch.float32)
+        else:
+            device = torch.device("cpu")
+        CUDA_AVAILABLE = False
+    else:
+        # Try CUDA for other systems
+        CUDA_AVAILABLE = torch.cuda.is_available()
+        METAL_AVAILABLE = False
+        if CUDA_AVAILABLE:
+            device = torch.device("cuda")
+        else:
+            device = torch.device("cpu")
+    
+    ACCELERATION_AVAILABLE = CUDA_AVAILABLE or METAL_AVAILABLE
+except ImportError:
+    ACCELERATION_AVAILABLE = False
+    CUDA_AVAILABLE = False
+    METAL_AVAILABLE = False
+    device = None
+    print("GPU acceleration not available. Installing PyTorch may improve performance.")
+
+from .mesh_memory_manager import MeshMemoryManager, CompressedNode
+from .adaptive_mesh_generator import AdaptiveMeshGenerator
+from .vectorized_accounting import VectorizedAccountingEngine, AccountingState
+
+def accelerated_process_paths(paths, drift, volatility, dt, random_shocks):
+    """Process paths using available acceleration (Metal/CUDA/CPU)"""
+    if not ACCELERATION_AVAILABLE:
+        return paths
+        
+    with torch.no_grad():
+        # Convert to torch tensors with float32
+        paths_tensor = torch.tensor(paths, device=device, dtype=torch.float32)
+        random_shocks_tensor = torch.tensor(random_shocks, device=device, dtype=torch.float32)
+        
+        # Convert scalar parameters to float32
+        drift = torch.tensor(drift, device=device, dtype=torch.float32)
+        volatility = torch.tensor(volatility, device=device, dtype=torch.float32)
+        dt = torch.tensor(dt, device=device, dtype=torch.float32)
+        
+        # Calculate in parallel
+        for t in range(1, paths.shape[1]):
+            paths_tensor[:, t] = paths_tensor[:, t-1] * torch.exp(
+                (drift - 0.5 * volatility**2) * dt + 
+                volatility * torch.sqrt(dt) * random_shocks_tensor[:, t-1]
+            )
+        
+        # Move back to CPU and convert to numpy
+        return paths_tensor.cpu().numpy().astype(np.float32)
 
 @dataclass
 class OmegaNode:
@@ -27,76 +89,6 @@ class OmegaNode:
     visibility_radius: float = 1.0  # How far into future this node can "see"
     is_solidified: bool = False  # Whether this path has been actualized
 
-
-@dataclass
-class StochasticPath:
-    """
-    Represents a potential path through the Omega mesh
-    """
-    path_id: str
-    nodes: List[str]
-    cumulative_probability: float
-    total_value: float
-    milestones_achieved: List[str]
-    payment_schedule: List[Dict]
-    path_efficiency: float
-
-
-class GeometricBrownianMotionEngine:
-    """
-    Implements geometric Brownian motion for financial modeling
-    """
-    
-    def __init__(self, initial_value: float, drift: float = 0.07, volatility: float = 0.15):
-        self.initial_value = initial_value
-        self.drift = drift  # Expected annual return
-        self.volatility = volatility  # Annual volatility
-    
-    def simulate_path(self, time_horizon: float, num_steps: int, num_paths: int = 1000) -> np.ndarray:
-        """
-        Simulate GBM paths
-        
-        Args:
-            time_horizon: Time in years
-            num_steps: Number of time steps
-            num_paths: Number of simulation paths
-        
-        Returns:
-            Array of shape (num_paths, num_steps + 1) with simulated values
-        """
-        dt = time_horizon / num_steps
-        
-        # Generate random shocks
-        random_shocks = np.random.normal(0, 1, (num_paths, num_steps))
-        
-        # Initialize paths
-        paths = np.zeros((num_paths, num_steps + 1))
-        paths[:, 0] = self.initial_value
-        
-        # Generate paths using GBM formula
-        for t in range(1, num_steps + 1):
-            paths[:, t] = paths[:, t-1] * np.exp(
-                (self.drift - 0.5 * self.volatility**2) * dt + 
-                self.volatility * np.sqrt(dt) * random_shocks[:, t-1]
-            )
-        
-        return paths
-    
-    def get_confidence_intervals(self, paths: np.ndarray, confidence_levels: List[float]) -> Dict[float, Tuple[np.ndarray, np.ndarray]]:
-        """Get confidence intervals for the simulated paths"""
-        intervals = {}
-        for level in confidence_levels:
-            lower_percentile = (1 - level) / 2 * 100
-            upper_percentile = (1 + level) / 2 * 100
-            
-            lower_bound = np.percentile(paths, lower_percentile, axis=0)
-            upper_bound = np.percentile(paths, upper_percentile, axis=0)
-            
-            intervals[level] = (lower_bound, upper_bound)
-        
-        return intervals
-
-
 class StochasticMeshEngine:
     """
     The core Omega mesh engine that creates and manages the continuous stochastic process
@@ -104,17 +96,78 @@ class StochasticMeshEngine:
     """
     
     def __init__(self, current_financial_state: Dict[str, float]):
-        self.current_state = current_financial_state
-        self.omega_mesh = nx.DiGraph()  # Directed graph representing the mesh
-        self.nodes = {}  # node_id -> OmegaNode mapping
-        self.current_position = None  # Current node in the mesh
-        self.gbm_engine = GeometricBrownianMotionEngine(
-            initial_value=current_financial_state.get('total_wealth', 100000)
+        self.current_state = {k: float(v) for k, v in current_financial_state.items()}  # Ensure float32
+        self.omega_mesh = nx.DiGraph()
+        self.memory_manager = MeshMemoryManager()
+        self.adaptive_generator = AdaptiveMeshGenerator(
+            self.current_state,
+            self.memory_manager
         )
-        self.visibility_decay_rate = 0.1  # How quickly future visibility decays
-        self.time_step_hours = 1  # Granularity of time steps
-        self.max_lookahead_days = 365 * 5  # Maximum future visibility
+        self.accounting_engine = VectorizedAccountingEngine()
+        self.current_position = None
+        self.use_acceleration = ACCELERATION_AVAILABLE
+        self.current_visibility_radius = 365 * 5  # 5 years visibility
         
+        if self.use_acceleration:
+            print(f"🚀 Using {'Metal' if METAL_AVAILABLE else 'CUDA' if CUDA_AVAILABLE else 'CPU'} acceleration")
+            
+    def _generate_paths_accelerated(self, num_paths: int, num_steps: int, 
+                                  initial_value: float, drift: float, 
+                                  volatility: float, dt: float) -> np.ndarray:
+        """Generate paths using available acceleration"""
+        if not self.use_acceleration:
+            return self._generate_paths_cpu(num_paths, num_steps, initial_value, 
+                                          drift, volatility, dt)
+        
+        # Initialize arrays with float32
+        paths = np.zeros((num_paths, num_steps + 1), dtype=np.float32)
+        paths[:, 0] = initial_value
+        random_shocks = np.random.normal(0, 1, (num_paths, num_steps)).astype(np.float32)
+        
+        # Process using acceleration
+        return accelerated_process_paths(paths, drift, volatility, dt, random_shocks)
+        
+    def _generate_paths_cpu(self, num_paths: int, num_steps: int,
+                          initial_value: float, drift: float,
+                          volatility: float, dt: float) -> np.ndarray:
+        """Fallback CPU implementation for path generation"""
+        paths = np.zeros((num_paths, num_steps + 1), dtype=np.float32)
+        paths[:, 0] = initial_value
+        random_shocks = np.random.normal(0, 1, (num_paths, num_steps)).astype(np.float32)
+        
+        for t in range(1, num_steps + 1):
+            paths[:, t] = paths[:, t-1] * np.exp(
+                (drift - 0.5 * volatility**2) * dt + 
+                volatility * np.sqrt(dt) * random_shocks[:, t-1]
+            )
+        
+        return paths
+
+    def _process_states_parallel(self, states: List[Dict[str, float]], 
+                               operations: List[Dict]) -> List[Dict[str, float]]:
+        """Process multiple states in parallel using available hardware"""
+        if self.use_acceleration:
+            # Convert to tensors with float32
+            state_list = [[float(v) for v in state.values()] for state in states]
+            state_tensor = torch.tensor(state_list, device=device, dtype=torch.float32)
+            
+            # Process operations
+            with torch.no_grad():
+                for op in operations:
+                    if op['type'] == 'investment_growth':
+                        state_tensor[:, 2] *= (1 + float(op['return']))  # Assuming index 2 is investments
+                
+                # Convert back to CPU and restructure
+                result_array = state_tensor.cpu().numpy()
+                return [dict(zip(states[0].keys(), row)) for row in result_array]
+        else:
+            # Use CPU parallel processing
+            with ThreadPoolExecutor() as executor:
+                return list(executor.map(
+                    lambda s: self.accounting_engine.process_single_state(s, operations),
+                    states
+                ))
+    
     def initialize_mesh(self, milestones: List, time_horizon_years: float = 10):
         """
         Initialize the Omega mesh with initial conditions and milestones
@@ -125,196 +178,153 @@ class StochasticMeshEngine:
         initial_node = OmegaNode(
             node_id="omega_0_0",
             timestamp=datetime.now(),
-            financial_state=self.current_state.copy(),
+            financial_state=self.current_state.copy(),  # Make sure to copy
             probability=1.0,
-            visibility_radius=self.max_lookahead_days
+            visibility_radius=self.current_visibility_radius
         )
         
-        # Add payment opportunities to initial node
-        initial_node.payment_opportunities = self._generate_payment_opportunities(
-            datetime.now(), self.current_state, milestones
-        )
-        
-        self.nodes[initial_node.node_id] = initial_node
-        self.omega_mesh.add_node(initial_node.node_id, node_data=initial_node)
+        # Store initial node
+        self.memory_manager.store_node(initial_node)
+        self.omega_mesh.add_node(initial_node.node_id)
         self.current_position = initial_node.node_id
         
-        # Generate the mesh structure
-        self._generate_mesh_structure(milestones, time_horizon_years)
+        # Generate optimized mesh structure
+        self._generate_optimized_mesh(milestones, time_horizon_years)
         
-        print(f"Omega mesh initialized with {len(self.nodes)} nodes")
-        
-        # Return mesh status
+        print(f"Omega mesh initialized with {len(self.omega_mesh)} nodes")
         return self.get_mesh_status()
     
-    def _generate_mesh_structure(self, milestones: List, time_horizon_years: float):
+    def _generate_optimized_mesh(self, milestones: List, time_horizon_years: float):
         """
-        Generate the mesh structure with branching paths for different scenarios
+        Generate optimized mesh structure using adaptive techniques
         """
-        num_time_steps = int(time_horizon_years * 365 * 24 / self.time_step_hours)
-        num_scenario_branches = 50  # Number of scenario branches at each major decision point
+        # Get critical dates and cluster milestones
+        milestone_clusters = self.adaptive_generator._get_critical_dates(milestones)
         
-        # Create time-based layers
-        current_time = datetime.now()
-        milestone_times = sorted([m.timestamp for m in milestones])
-        
-        # Generate GBM paths for wealth evolution
-        gbm_paths = self.gbm_engine.simulate_path(
-            time_horizon=time_horizon_years,
-            num_steps=365 * int(time_horizon_years),  # Daily steps
-            num_paths=num_scenario_branches
+        # Generate important paths
+        paths = self.adaptive_generator._generate_important_paths(
+            milestone_clusters,
+            num_paths=500  # Reduced from 1000
         )
         
-        # Create nodes for each significant time point
-        layer_nodes = [self.current_position]
+        # Refine high-value paths
+        refined_paths = self.adaptive_generator._refine_high_value_paths(
+            paths, milestone_clusters
+        )
         
-        for day in range(1, min(365 * int(time_horizon_years), self.max_lookahead_days)):
-            current_time += timedelta(days=1)
+        # Aggregate similar states
+        unique_states = self.adaptive_generator._aggregate_similar_states(refined_paths)
+        
+        # Convert paths to mesh
+        self._paths_to_mesh(refined_paths, milestones)
+    
+    def _paths_to_mesh(self, paths: List[np.ndarray], milestones: List):
+        """
+        Convert optimized paths to mesh structure
+        """
+        dt = 1.0 / 12.0  # Monthly steps instead of daily
+        current_time = datetime.now()
+        
+        # Check if paths exist
+        if not paths or len(paths) == 0:
+            print("⚠️ No paths generated for mesh. Creating default mesh structure.")
+            self._create_default_mesh(milestones)
+            return
+        
+        # Create nodes for each unique state
+        for month in range(int(len(paths[0]) * dt)):  # Convert to months
+            current_time = datetime.now() + timedelta(days=30 * month)
             
-            # Create multiple scenario nodes for this time point
-            next_layer_nodes = []
+            # Get unique states for this time point
+            month_idx = int(month / dt)
+            if month_idx >= len(paths[0]):
+                break
+                
+            states_at_t = np.unique(
+                [path[month_idx] for path in paths],
+                return_counts=True
+            )
             
-            for scenario_idx in range(min(num_scenario_branches, len(layer_nodes) * 3)):
-                node_id = f"omega_{day}_{scenario_idx}"
+            # Limit number of states per time point
+            max_states = 10  # Reduced from default
+            if len(states_at_t[0]) > max_states:
+                # Keep most common states
+                indices = np.argsort(states_at_t[1])[-max_states:]
+                states_at_t = (states_at_t[0][indices], states_at_t[1][indices])
+            
+            # Create nodes for unique states
+            for state_idx, (state_value, count) in enumerate(zip(*states_at_t)):
+                node_id = f"omega_{month}_{state_idx}"
                 
-                # Calculate financial state based on GBM and milestones
-                financial_state = self._calculate_financial_state(
-                    current_time, gbm_paths[scenario_idx % len(gbm_paths), day] if day < len(gbm_paths[0]) else gbm_paths[scenario_idx % len(gbm_paths), -1],
-                    milestones
-                )
+                # Calculate probability based on frequency
+                probability = count / len(paths)
                 
-                # Calculate probability based on path likelihood
-                probability = self._calculate_node_probability(
-                    current_time, scenario_idx, milestones
-                )
+                # Create financial state
+                total_wealth = state_value
+                financial_state = {
+                    'total_wealth': total_wealth,
+                    'cash': total_wealth * 0.2,  # Example allocation
+                    'investments': total_wealth * 0.8
+                }
                 
-                # Calculate visibility radius (decreases with time and uncertainty)
-                visibility_radius = self._calculate_visibility_radius(current_time)
-                
-                # Create payment opportunities for this node
-                payment_opportunities = self._generate_payment_opportunities(
-                    current_time, financial_state, milestones
-                )
-                
+                # Create node
                 node = OmegaNode(
                     node_id=node_id,
                     timestamp=current_time,
                     financial_state=financial_state,
                     probability=probability,
-                    visibility_radius=visibility_radius,
-                    payment_opportunities=payment_opportunities
+                    visibility_radius=max(0, 365 * 5 - month * 30)  # Decreasing visibility
                 )
                 
-                self.nodes[node_id] = node
-                self.omega_mesh.add_node(node_id, node_data=node)
-                next_layer_nodes.append(node_id)
+                # Store node efficiently
+                self.memory_manager.store_node(node)
+                self.omega_mesh.add_node(node_id)
                 
-                # Connect to previous layer nodes
-                self._connect_to_previous_layer(node_id, layer_nodes, probability)
-            
-            # Prune low-probability nodes to keep mesh manageable
-            next_layer_nodes = self._prune_low_probability_nodes(next_layer_nodes)
-            layer_nodes = next_layer_nodes
-            
-            # Check if we should stop early due to computational limits
-            if len(self.nodes) > 10000:  # Computational limit
-                break
+                # Connect to previous layer
+                if month > 0:
+                    self._connect_to_previous_layer(node_id, month-1, state_value)
     
-    def _calculate_financial_state(self, timestamp: datetime, wealth_value: float, milestones: List) -> Dict[str, float]:
-        """Calculate financial state at a given time point"""
-        state = self.current_state.copy()
-        state['total_wealth'] = wealth_value
+    def _connect_to_previous_layer(self, node_id: str, prev_month: int, state_value: float):
+        """
+        Connect node to appropriate nodes in previous layer
+        """
+        # Find potential parent nodes
+        prev_nodes = [
+            n for n in self.omega_mesh.nodes()
+            if n.startswith(f"omega_{prev_month}_")
+        ]
         
-        # Apply milestone impacts
-        for milestone in milestones:
-            if milestone.timestamp <= timestamp and milestone.financial_impact:
-                # Apply milestone impact with some random variation
-                impact = milestone.financial_impact * (1 + np.random.normal(0, 0.1))
-                if milestone.event_type in ['investment', 'income']:
-                    state['total_wealth'] += impact
-                else:
-                    state['total_wealth'] -= impact
-        
-        # Ensure non-negative wealth
-        state['total_wealth'] = max(0, state['total_wealth'])
-        
-        return state
-    
-    def _calculate_node_probability(self, timestamp: datetime, scenario_idx: int, milestones: List) -> float:
-        """Calculate the probability of reaching this node"""
-        base_probability = 1.0 / (scenario_idx + 1)  # Higher scenarios less likely
-        
-        # Adjust based on milestone probabilities
-        for milestone in milestones:
-            if abs((milestone.timestamp - timestamp).days) < 30:
-                base_probability *= milestone.probability
-        
-        # Add time decay
-        days_from_now = (timestamp - datetime.now()).days
-        time_decay = np.exp(-self.visibility_decay_rate * days_from_now / 365)
-        
-        return base_probability * time_decay
-    
-    def _calculate_visibility_radius(self, timestamp: datetime) -> float:
-        """Calculate how far this node can see into the future"""
-        days_from_now = (timestamp - datetime.now()).days
-        return max(1.0, self.max_lookahead_days - days_from_now) * np.exp(-days_from_now / 365)
-    
-    def _generate_payment_opportunities(self, timestamp: datetime, financial_state: Dict, milestones: List) -> Dict[str, Dict]:
-        """Generate flexible payment opportunities for this node"""
-        opportunities = {}
-        
-        available_cash = financial_state.get('total_wealth', 0)
-        
-        for milestone in milestones:
-            if milestone.financial_impact and milestone.timestamp >= timestamp:
-                # Generate flexible payment options
-                milestone_id = f"{milestone.event_type}_{milestone.timestamp.year}"
-                
-                opportunities[milestone_id] = {
-                    'target_amount': milestone.financial_impact,
-                    'remaining_amount': milestone.financial_impact,
-                    'min_payment': milestone.financial_impact * 0.01,  # 1% minimum
-                    'max_payment': min(available_cash, milestone.financial_impact),
-                    'flexible_dates': True,
-                    'payment_methods': [
-                        'percentage_based',
-                        'custom_amount',
-                        'milestone_triggered',
-                        'date_specific'
-                    ],
-                    'deadline': milestone.timestamp,
-                    'priority': milestone.probability
-                }
-        
-        return opportunities
-    
-    def _connect_to_previous_layer(self, current_node_id: str, previous_layer: List[str], transition_probability: float):
-        """Connect current node to appropriate nodes in the previous layer"""
-        # Use probabilistic connection based on similarity and transition likelihood
-        for prev_node_id in previous_layer:
-            if np.random.random() < transition_probability:
-                self.omega_mesh.add_edge(prev_node_id, current_node_id, weight=transition_probability)
-                self.nodes[current_node_id].parent_nodes.append(prev_node_id)
-                self.nodes[prev_node_id].child_nodes.append(current_node_id)
-    
-    def _prune_low_probability_nodes(self, nodes: List[str], probability_threshold: float = 0.001) -> List[str]:
-        """Remove nodes with very low probability to keep mesh manageable"""
-        return [node_id for node_id in nodes if self.nodes[node_id].probability > probability_threshold]
+        for prev_node_id in prev_nodes:
+            prev_node = self.memory_manager.batch_retrieve([prev_node_id])[0]
+            if prev_node:
+                # Check if connection is reasonable
+                prev_value = prev_node.financial_state['total_wealth']
+                if abs(state_value - prev_value) / prev_value < 0.2:  # Increased threshold
+                    self.omega_mesh.add_edge(prev_node_id, node_id)
+                    
+                    # Update node lists
+                    node = self.memory_manager.batch_retrieve([node_id])[0]
+                    if node:
+                        node.parent_nodes.append(prev_node_id)
+                        prev_node.child_nodes.append(node_id)
+                        
+                        # Update stored nodes
+                        self.memory_manager.store_node(node)
+                        self.memory_manager.store_node(prev_node)
     
     def execute_payment(self, milestone_id: str, amount: float, payment_date: datetime = None) -> bool:
         """
-        Execute a flexible payment and update the mesh accordingly
-        
-        This is where the magic happens - any payment structure is supported
+        Execute a flexible payment and update the mesh
         """
         if payment_date is None:
             payment_date = datetime.now()
         
         print(f"Executing payment: ${amount} for {milestone_id} on {payment_date}")
         
-        # Find the current node and update its state
-        current_node = self.nodes[self.current_position]
+        # Get current node
+        current_node = self.memory_manager.batch_retrieve([self.current_position])[0]
+        if not current_node:
+            return False
         
         # Check if payment is possible
         available_funds = current_node.financial_state.get('total_wealth', 0)
@@ -322,18 +332,37 @@ class StochasticMeshEngine:
             print(f"Insufficient funds: ${available_funds} available, ${amount} requested")
             return False
         
-        # Execute the payment
-        current_node.financial_state['total_wealth'] -= amount
+        # Create accounting state
+        state = AccountingState(
+            cash=amount,
+            investments=current_node.financial_state.get('investments', {}),
+            debts=current_node.financial_state.get('debts', {}),
+            timestamp=np.datetime64(payment_date)
+        )
         
-        # Update payment opportunities
-        if milestone_id in current_node.payment_opportunities:
-            current_node.payment_opportunities[milestone_id]['remaining_amount'] -= amount
-            current_node.payment_opportunities[milestone_id]['paid_amount'] = current_node.payment_opportunities[milestone_id].get('paid_amount', 0) + amount
+        # Process payment through accounting engine
+        operation = {
+            'type': 'custom_transfer',
+            'from_account': 'cash',
+            'to_account': milestone_id,
+            'amount': amount
+        }
         
-        # Solidify this path - mark as actualized
+        # Process state
+        processed_state = self.accounting_engine.batch_process_states(
+            [state],
+            [operation],
+            time_horizon=1.0
+        )[0]
+        
+        # Update node state
+        current_node.financial_state.update(processed_state.__dict__)
         current_node.is_solidified = True
         
-        # Prune impossible future paths and update probabilities
+        # Store updated node
+        self.memory_manager.store_node(current_node)
+        
+        # Update mesh
         self._update_mesh_after_payment(milestone_id, amount, payment_date)
         
         print(f"Payment executed successfully. New wealth: ${current_node.financial_state['total_wealth']}")
@@ -341,24 +370,23 @@ class StochasticMeshEngine:
     
     def _update_mesh_after_payment(self, milestone_id: str, amount: float, payment_date: datetime):
         """
-        Update the entire mesh after a payment is made
-        This implements the core logic where past omega disappears and future visibility changes
+        Update mesh structure after payment execution
         """
-        # 1. Solidify the current path
+        # Solidify current path
         self._solidify_current_path()
         
-        # 2. Prune impossible past paths
+        # Prune impossible past paths
         self._prune_past_paths()
         
-        # 3. Update future probabilities based on the payment
+        # Update future probabilities
         self._update_future_probabilities(milestone_id, amount, payment_date)
         
-        # 4. Reduce visibility for distant nodes
+        # Update visibility
         self._update_visibility_after_payment()
     
     def _solidify_current_path(self):
         """Mark the current path as actualized and remove alternative pasts"""
-        current_node = self.nodes[self.current_position]
+        current_node = self.memory_manager.batch_retrieve([self.current_position])[0]
         
         # Trace back to solidify the path
         path_to_solidify = []
@@ -366,8 +394,8 @@ class StochasticMeshEngine:
         
         while queue:
             node_id = queue.pop(0)
-            node = self.nodes[node_id]
-            if not node.is_solidified:
+            node = self.memory_manager.batch_retrieve([node_id])[0]
+            if node and not node.is_solidified:
                 node.is_solidified = True
                 path_to_solidify.append(node_id)
                 queue.extend(node.parent_nodes)
@@ -376,9 +404,8 @@ class StochasticMeshEngine:
         """Remove past alternative paths that are no longer possible"""
         nodes_to_remove = []
         
-        for node_id, node in self.nodes.items():
-            # Remove past nodes that weren't solidified
-            if node.timestamp < datetime.now() and not node.is_solidified:
+        for node_id, node in self.memory_manager.batch_retrieve(list(self.omega_mesh.nodes())):
+            if node and node.timestamp < datetime.now() and not node.is_solidified:
                 nodes_to_remove.append(node_id)
         
         for node_id in nodes_to_remove:
@@ -386,8 +413,8 @@ class StochasticMeshEngine:
     
     def _update_future_probabilities(self, milestone_id: str, amount: float, payment_date: datetime):
         """Update probabilities of future nodes based on the payment made"""
-        for node_id, node in self.nodes.items():
-            if node.timestamp > datetime.now():
+        for node_id, node in self.memory_manager.batch_retrieve(list(self.omega_mesh.nodes())):
+            if node and node.timestamp > datetime.now():
                 # Recalculate probability based on the payment
                 if milestone_id in node.payment_opportunities:
                     remaining = node.payment_opportunities[milestone_id]['remaining_amount']
@@ -401,48 +428,99 @@ class StochasticMeshEngine:
     
     def _update_visibility_after_payment(self):
         """Update visibility radius after a payment solidifies the position"""
-        current_node = self.nodes[self.current_position]
+        current_node = self.memory_manager.batch_retrieve([self.current_position])[0]
         
         # Increase visibility radius due to reduced uncertainty
         current_node.visibility_radius *= 1.1
         
         # Update visibility for connected nodes
         for child_id in current_node.child_nodes:
-            child_node = self.nodes[child_id]
-            days_ahead = (child_node.timestamp - datetime.now()).days
-            
-            # Nodes further away become less visible
-            visibility_reduction = np.exp(-days_ahead / current_node.visibility_radius)
-            
-            if visibility_reduction < 0.01:  # Remove nodes that are barely visible
-                self._remove_node_and_connections(child_id)
+            child_node = self.memory_manager.batch_retrieve([child_id])[0]
+            if child_node:
+                days_ahead = (child_node.timestamp - datetime.now()).days
+                
+                # Nodes further away become less visible
+                visibility_reduction = np.exp(-days_ahead / current_node.visibility_radius)
+                
+                if visibility_reduction < 0.01:  # Remove nodes that are barely visible
+                    self._remove_node_and_connections(child_id)
     
+    def _create_default_mesh(self, milestones: List):
+        """Creates a default mesh structure when no paths are generated"""
+        print("🔄 Creating default mesh structure...")
+        
+        # Create a simple linear mesh with basic financial states
+        current_time = datetime.now()
+        initial_wealth = self.current_state.get('total_wealth', 1000000)
+        
+        for month in range(12):  # 12efault
+            current_time = datetime.now() + timedelta(days=30 * month)
+            
+            # Create a simple node with basic financial state
+            node_id = f"default_omega_{month}"
+            
+            # Simple wealth growth model
+            growth_rate =0.05#5growth
+            monthly_growth = (1 + growth_rate) ** (month / 12)
+            wealth = initial_wealth * monthly_growth
+            
+            financial_state = {
+                'total_wealth': wealth,
+                'cash': wealth * 0.2,
+                'investments': wealth * 0.8
+            }
+            
+            # Create node
+            node = OmegaNode(
+                node_id=node_id,
+                timestamp=current_time,
+                financial_state=financial_state,
+                probability=1.0,  # Default probability
+                visibility_radius=365 * 5 - month *30
+            )
+            
+            # Store node
+            self.memory_manager.store_node(node)
+            self.omega_mesh.add_node(node_id)
+            
+            # Connect to previous node
+            if month > 0:
+                prev_node_id = f"default_omega_{month-1}"
+                self.omega_mesh.add_edge(prev_node_id, node_id)
+        
+        print(f"✅ Created default mesh with {12} nodes")
+
     def _remove_node_and_connections(self, node_id: str):
         """Safely remove a node and all its connections"""
-        if node_id in self.nodes:
-            node = self.nodes[node_id]
+        node = self.memory_manager.batch_retrieve([node_id])[0]
+        if node:
             
             # Remove connections
             for parent_id in node.parent_nodes:
-                if parent_id in self.nodes:
-                    self.nodes[parent_id].child_nodes.remove(node_id)
+                parent_node = self.memory_manager.batch_retrieve([parent_id])[0]
+                if parent_node:
+                    parent_node.child_nodes.remove(node_id)
             
             for child_id in node.child_nodes:
-                if child_id in self.nodes:
-                    self.nodes[child_id].parent_nodes.remove(node_id)
+                child_node = self.memory_manager.batch_retrieve([child_id])[0]
+                if child_node:
+                    child_node.parent_nodes.remove(node_id)
             
             # Remove from graph and nodes dict
             if self.omega_mesh.has_node(node_id):
                 self.omega_mesh.remove_node(node_id)
             
-            del self.nodes[node_id]
+            del self.memory_manager.nodes[node_id] # Use memory_manager to remove
     
     def get_payment_options(self, milestone_id: str = None) -> Dict[str, List[Dict]]:
         """
         Get all available payment options from the current position
         Supports ultra-flexible payment structures as requested
         """
-        current_node = self.nodes[self.current_position]
+        current_node = self.memory_manager.batch_retrieve([self.current_position])[0]
+        if not current_node:
+            return {}
+        
         available_cash = current_node.financial_state.get('total_wealth', 0)
         
         options = {}
@@ -515,22 +593,20 @@ class StochasticMeshEngine:
         return today + timedelta(days=days_ahead)
     
     def get_mesh_status(self) -> Dict:
-        """Get current status of the Omega mesh"""
-        total_nodes = len(self.nodes)
-        solidified_nodes = sum(1 for node in self.nodes.values() if node.is_solidified)
-        visible_nodes = sum(1 for node in self.nodes.values() if node.timestamp >= datetime.now())
-        
-        current_node = self.nodes[self.current_position]
+        """Get current status of the mesh"""
+        total_nodes = len(self.omega_mesh)
+        solidified_nodes = len([n for n in self.omega_mesh.nodes if self.memory_manager.batch_retrieve([n])[0].is_solidified])
+        visible_nodes = len([n for n in self.omega_mesh.nodes if not self.memory_manager.batch_retrieve([n])[0].is_solidified])
         
         return {
             'total_nodes': total_nodes,
             'solidified_nodes': solidified_nodes,
-            'visible_future_nodes': visible_nodes,
+            'visible_nodes': visible_nodes,
             'current_position': self.current_position,
-            'current_wealth': current_node.financial_state.get('total_wealth', 0),
-            'current_visibility_radius': current_node.visibility_radius,
-            'available_opportunities': len(current_node.payment_opportunities),
-            'mesh_connectivity': len(self.omega_mesh.edges())
+            'current_visibility_radius': self.current_visibility_radius,
+            'current_wealth': self.current_state.get('total_wealth', 0),
+            'acceleration_type': 'Metal' if METAL_AVAILABLE else 'CUDA' if CUDA_AVAILABLE else 'CPU',
+            'is_accelerated': self.use_acceleration
         }
     
     def advance_time(self, new_timestamp: datetime):
@@ -542,8 +618,8 @@ class StochasticMeshEngine:
         best_node = None
         min_time_diff = float('inf')
         
-        for node_id, node in self.nodes.items():
-            if node.is_solidified and node.timestamp <= new_timestamp:
+        for node_id, node in self.memory_manager.batch_retrieve(list(self.omega_mesh.nodes())):
+            if node and node.is_solidified and node.timestamp <= new_timestamp:
                 time_diff = abs((node.timestamp - new_timestamp).total_seconds())
                 if time_diff < min_time_diff:
                     min_time_diff = time_diff
@@ -566,15 +642,16 @@ class StochasticMeshEngine:
         }
         
         # Export node data
-        for node_id, node in self.nodes.items():
-            export_data['nodes'][node_id] = {
-                'timestamp': node.timestamp.isoformat(),
-                'financial_state': node.financial_state,
-                'probability': node.probability,
-                'visibility_radius': node.visibility_radius,
-                'is_solidified': node.is_solidified,
-                'payment_opportunities': node.payment_opportunities
-            }
+        for node_id, node in self.memory_manager.batch_retrieve(list(self.omega_mesh.nodes())):
+            if node:
+                export_data['nodes'][node_id] = {
+                    'timestamp': node.timestamp.isoformat(),
+                    'financial_state': node.financial_state,
+                    'probability': node.probability,
+                    'visibility_radius': node.visibility_radius,
+                    'is_solidified': node.is_solidified,
+                    'payment_opportunities': node.payment_opportunities
+                }
         
         with open(filepath, 'w') as f:
             json.dump(export_data, f, indent=2)

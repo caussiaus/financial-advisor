@@ -1,358 +1,399 @@
+"""
+Enhanced PDF processor for financial milestone extraction with NLP
+"""
+import os
 import re
-import json
+import traceback
 from datetime import datetime, timedelta
-from typing import List, Dict, Tuple, Optional
-import pdfplumber
-import pandas as pd
+from typing import List, Dict, Optional, Tuple
 from dataclasses import dataclass
-import numpy as np
-from dateutil.parser import parse as parse_date
+import pdfplumber
+import json
+import spacy
+from collections import defaultdict
 
+@dataclass
+class FinancialEntity:
+    """Represents a person or entity with financial tracking"""
+    name: str
+    entity_type: str  # 'person', 'child', 'spouse', 'organization', 'fund'
+    initial_balances: Dict[str, float]
+    metadata: Dict = None
+    
+    def __post_init__(self):
+        if self.metadata is None:
+            self.metadata = {}
 
 @dataclass
 class FinancialMilestone:
-    """Represents a financial milestone or life event extracted from PDF"""
+    """Represents a financial milestone or event"""
     timestamp: datetime
     event_type: str
     description: str
-    financial_impact: Optional[float]
-    probability: float
-    dependencies: List[str]
-    payment_flexibility: Dict[str, any]
-    metadata: Dict[str, any]
+    financial_impact: Optional[float] = None
+    probability: float = 0.6  # Default probability if not specified
+    dependencies: List[str] = None
+    payment_flexibility: Dict = None
+    metadata: Dict = None
+    entity: Optional[str] = None  # Link to FinancialEntity
 
+    def __post_init__(self):
+        if self.dependencies is None:
+            self.dependencies = []
+        if self.payment_flexibility is None:
+            self.payment_flexibility = {'structure_type': 'flexible'}
+        if self.metadata is None:
+            self.metadata = {}
 
 class EnhancedPDFProcessor:
     """
-    Advanced PDF processor that extracts life milestones and financial events
-    with sophisticated pattern recognition for various payment structures
+    Enhanced PDF processor that extracts financial milestones and entities
+    using advanced NLP techniques with chunking and coordination
     """
     
     def __init__(self):
-        self.milestone_patterns = {
-            'education': [
-                r'college|university|graduate|degree|tuition|student loan',
-                r'MBA|PhD|masters|bachelor',
-                r'education|academic|school'
+        # Load spaCy model for NLP processing
+        try:
+            self.nlp = spacy.load("en_core_web_sm")
+            print("✅ Loaded spaCy model for NLP processing")
+        except OSError:
+            print("⚠️ spaCy model not found. Installing...")
+            os.system("python -m spacy download en_core_web_sm")
+            self.nlp = spacy.load("en_core_web_sm")
+        
+        self.event_types = {
+            'education': ['education', 'tuition', 'school', 'university', 'college', 'graduate', 'degree'],
+            'housing': ['house', 'home', 'mortgage', 'rent', 'property', 'buy', 'purchase'],
+            'investment': ['investment', 'portfolio', 'stock', 'bond', 'fund', 'ent'],
+            'career': ['career', 'job', 'salary', 'promotion', 'retirement', 'work'],
+            'family': ['family', 'wedding', 'child', 'children', 'parent', 'marriage'],
+            'health': ['health', 'medical', 'insurance', 'hospital', 'doctor']
+        }
+        
+        self.amount_pattern = r'\$?([0-9,]+(?:\.[0-9]{2})?)'
+        self.date_pattern = r'\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b'
+        self.probability_pattern = r'(\d+(?:\.\d+)?)\s*%'
+        # Entity tracking
+        self.entities = {}
+        self.entity_balances = defaultdict(dict)
+    
+    def process_pdf(self, pdf_path: str) -> Tuple[List[FinancialMilestone], List[FinancialEntity]]:
+        """Process PDF and extract financial milestones and entities"""
+        if not os.path.exists(pdf_path):
+            print(f"Error: File not found - {pdf_path}")
+            return [], []
+            
+        milestones = []
+        entities = []
+        current_time = datetime.now()
+        
+        try:
+            print(f"Opening PDF: {pdf_path}")
+            with pdfplumber.open(pdf_path) as pdf:
+                text = ""
+                for i, page in enumerate(pdf.pages):
+                    try:
+                        page_text = page.extract_text()
+                        if page_text:
+                            text += page_text + "\n"
+                            print(f"Extracted text from page {i+1}")
+                    except Exception as e:
+                        print(f"Error extracting text from page {i+1}: {e}")
+                        print(traceback.format_exc())
+                
+                # Process text using chunking and coordination architecture
+                milestones, entities = self._process_text_with_nlp(text, pdf_path)
+                
+                # Initialize accounting balances for entities
+                self._initialize_entity_balances(entities, current_time)
+        
+        except Exception as e:
+            print(f"Error processing PDF: {e}")
+            print(traceback.format_exc())
+            return [], []
+        
+        # Sort milestones by date
+        milestones.sort(key=lambda x: x.timestamp)
+        print(f"\nExtracted {len(milestones)} milestones and {len(entities)} entities")
+        
+        # Save results for debugging
+        try:
+            self._save_results(milestones, entities, pdf_path)
+            print("Saved results to JSON")
+        except Exception as e:
+            print(f"Error saving results: {e}")
+            print(traceback.format_exc())
+        
+        return milestones, entities
+    
+    def _process_text_with_nlp(self, text: str, pdf_path: str) -> Tuple[List[FinancialMilestone], List[FinancialEntity]]:
+        """Process text using NLP with chunking and coordination"""
+        print("🔄 Processing text with NLP chunking and coordination...")
+        
+        # Step 1: Chunk the text into manageable segments
+        chunks = self._create_chunks(text)
+        print(f"Created {len(chunks)} chunks for processing")
+        
+        # Step 2: Process each chunk for entities and events
+        chunk_results = []
+        for i, chunk in enumerate(chunks):
+            print(f"Processing chunk {i+1}/{len(chunks)}")
+            chunk_entities, chunk_milestones = self._process_chunk(chunk, i, pdf_path)
+            chunk_results.append({
+                'chunk_id': i,
+                'entities': chunk_entities,
+                'milestones': chunk_milestones
+            })
+        
+        # Step 3: Coordinate and merge results (tree-style aggregation)
+        all_entities = self._coordinate_entities(chunk_results)
+        all_milestones = self._coordinate_milestones(chunk_results)
+        
+        # Step 4: Link entities to milestones
+        linked_milestones = self._link_entities_to_milestones(all_milestones, all_entities)
+        
+        return linked_milestones, list(all_entities.values())
+    
+    def _create_chunks(self, text: str, max_chunk_size: int = 1000) -> List[str]:
+        """Create chunks of text for processing"""
+        # Split by sentences first
+        doc = self.nlp(text)
+        sentences = [sent.text.strip() for sent in doc.sents if len(sent.text.strip()) > 10]
+        
+        chunks = []
+        current_chunk = ""
+        for sentence in sentences:
+            if len(current_chunk) + len(sentence) < max_chunk_size:
+                current_chunk += sentence + " "
+            else:
+                if current_chunk:
+                    chunks.append(current_chunk.strip())
+                current_chunk = sentence + " "
+        if current_chunk:
+            chunks.append(current_chunk.strip())
+        
+        return chunks
+    
+    def _process_chunk(self, chunk_text: str, chunk_id: int, pdf_path: str) -> Tuple[Dict[str, FinancialEntity], List[FinancialMilestone]]:
+        """Process a single chunk for entities and milestones"""
+        doc = self.nlp(chunk_text)
+        
+        # Extract entities
+        entities = {}
+        for ent in doc.ents:
+            if ent.label_ == "PERSON":
+                entity_name = ent.text.strip()
+                entity_type = self._determine_entity_type(entity_name, chunk_text)
+                
+                if entity_name not in entities:
+                    entities[entity_name] = FinancialEntity(
+                        name=entity_name,
+                        entity_type=entity_type,
+                        initial_balances={},
+                        metadata={'chunk_id': chunk_id, 'source': pdf_path}
+                    )
+        
+        # Extract milestones
+        milestones = []
+        sentences = list(doc.sents)
+        
+        for sent in sentences:
+            milestone = self._extract_milestone_from_sentence(sent, chunk_id)
+            if milestone:
+                milestones.append(milestone)
+        
+        return entities, milestones
+    
+    def _determine_entity_type(self, entity_name: str, context: str) -> str:
+        """Determine the type of entity based on context"""
+        context_lower = context.lower()
+        entity_lower = entity_name.lower()
+        
+        # Check for family relationships
+        if any(word in context_lower for word in ["child", "children", "son", "daughter"]):
+            return 'child'
+        elif any(word in context_lower for word in ["spouse", "wife", "husband", "partner"]):
+            return 'spouse'
+        elif any(word in context_lower for word in ["university", "college", "school"]):
+            return 'organization'
+        elif any(word in context_lower for word in ["fund", "account", "savings"]):
+            return 'fund'
+        else:
+            return 'person'
+    
+    def _extract_milestone_from_sentence(self, sentence, chunk_id: int) -> Optional[FinancialMilestone]:
+        """Extract milestone from a single sentence"""
+        sent_text = sentence.text.lower()
+        
+        # Check for event indicators
+        event_type = None
+        for event_category, keywords in self.event_types.items():
+            if any(keyword in sent_text for keyword in keywords):
+                event_type = event_category
+                break
+        
+        if not event_type:
+            return None
+        
+        # Extract financial amount
+        financial_impact = self._extract_amount_from_sentence(sentence.text)
+        
+        # Extract date
+        timestamp = self._extract_date_from_sentence(sentence.text)
+        if not timestamp:
+            timestamp = datetime.now() + timedelta(days=365)
+        
+        # Extract probability
+        probability = self._extract_probability_from_sentence(sentence.text)
+        
+        # Extract entity reference
+        entity_ref = self._extract_entity_reference(sentence)
+        
+        return FinancialMilestone(
+            timestamp=timestamp,
+            event_type=event_type,
+            description=sentence.text.strip()[:500],
+            financial_impact=financial_impact,
+            probability=probability,
+            entity=entity_ref,
+            metadata={'chunk_id': chunk_id}
+        )
+    
+    def _extract_amount_from_sentence(self, text: str) -> Optional[float]:
+        """Extract financial amount from sentence"""
+        matches = re.findall(self.amount_pattern, text)
+        if matches:
+            try:
+                amount_str = matches[0].replace(',', '')
+                return float(amount_str)
+            except (ValueError, IndexError):
+                return None
+        return None
+    
+    def _extract_date_from_sentence(self, text: str) -> Optional[datetime]:
+        """Extract date from sentence"""
+        matches = re.findall(self.date_pattern, text)
+        if matches:
+            try:
+                date_str = matches[0]
+                try:
+                    return datetime.strptime(date_str, '%Y-%m-%d')
+                except ValueError:
+                    try:
+                        return datetime.strptime(date_str, '%Y/%m/%d')
+                    except ValueError:
+                        return None
+            except (ValueError, IndexError):
+                return None
+        return None
+    
+    def _extract_probability_from_sentence(self, text: str) -> float:
+        """Extract probability from sentence"""
+        matches = re.findall(self.probability_pattern, text)
+        if matches:
+            try:
+                prob = float(matches[0]) / 100.0
+                return min(1.0, max(0.0, prob))  # Clamp between 0 and 1
+            except (ValueError, IndexError):
+                return 0.7  # Default probability
+        return 0.7  # Default probability
+    
+    def _extract_entity_reference(self, sentence) -> Optional[str]:
+        """Extract entity reference from sentence"""
+        for ent in sentence.ents:
+            if ent.label_ == "PERSON":
+                return ent.text.strip()
+        return None
+    
+    def _coordinate_entities(self, chunk_results: List[Dict]) -> Dict[str, FinancialEntity]:
+        """Coordinate and merge entities from all chunks"""
+        all_entities = {}
+        
+        for chunk_result in chunk_results:
+            for entity_name, entity in chunk_result['entities'].items():
+                if entity_name not in all_entities:
+                    all_entities[entity_name] = entity
+                else:
+                    # Merge metadata from different chunks
+                    all_entities[entity_name].metadata.update(entity.metadata)
+        
+        return all_entities
+    
+    def _coordinate_milestones(self, chunk_results: List[Dict]) -> List[FinancialMilestone]:
+        """Coordinate and merge milestones from all chunks"""
+        all_milestones = []
+        
+        for chunk_result in chunk_results:
+            all_milestones.extend(chunk_result['milestones'])
+        
+        return all_milestones
+    
+    def _link_entities_to_milestones(self, milestones: List[FinancialMilestone], entities: Dict[str, FinancialEntity]) -> List[FinancialMilestone]:
+        """Ties to milestones and update entity balances"""
+        for milestone in milestones:
+            if milestone.entity and milestone.entity in entities:
+                # Update entity's initial balances based on milestone
+                entity = entities[milestone.entity]
+                if milestone.financial_impact:
+                    if milestone.event_type not in entity.initial_balances:
+                        entity.initial_balances[milestone.event_type] = 0
+                    entity.initial_balances[milestone.event_type] += milestone.financial_impact
+        
+        return milestones
+    
+    def _initialize_entity_balances(self, entities: List[FinancialEntity], current_time: datetime):
+        """Initialize accounting balances for all entities"""
+        print("💰 Initializing entity balances for accounting framework...")
+        
+        for entity in entities:
+            # Set default balances if none exist
+            if not entity.initial_balances:
+                if entity.entity_type == 'person':
+                    entity.initial_balances = {
+                        'salary': 0,
+                        'savings': 0,
+                        'investments': 0
+                    }
+                elif entity.entity_type == 'child':
+                    entity.initial_balances = {
+                        'education_fund': 0,
+                        'allowance': 0
+                    }
+                elif entity.entity_type == 'fund':
+                    entity.initial_balances = {
+                        'balance': 0
+                    }
+            
+            print(f"  {entity.name} ({entity.entity_type}): {entity.initial_balances}")
+    
+    def _save_results(self, milestones: List[FinancialMilestone], entities: List[FinancialEntity], pdf_path: str):
+        """Save extraction results for debugging"""
+        results = {
+            'source_file': os.path.basename(pdf_path),
+            'extraction_time': datetime.now().isoformat(),
+            'entities': [
+                {
+                    'name': e.name,
+                    'type': e.entity_type,
+                    'initial_balances': e.initial_balances,
+                    'metadata': e.metadata
+                }
+                for e in entities
             ],
-            'career': [
-                r'promotion|salary|bonus|raise|career|job',
-                r'retirement|401k|pension|social security',
-                r'unemployment|layoff|career change'
-            ],
-            'family': [
-                r'marriage|wedding|spouse|partner',
-                r'children|baby|pregnancy|family',
-                r'divorce|separation|custody'
-            ],
-            'housing': [
-                r'house|home|mortgage|rent|property',
-                r'down payment|closing costs|refinance',
-                r'moving|relocation'
-            ],
-            'health': [
-                r'medical|health|insurance|hospital',
-                r'disability|illness|surgery',
-                r'life insurance|health insurance'
-            ],
-            'investment': [
-                r'investment|portfolio|stocks|bonds',
-                r'mutual funds|ETF|real estate',
-                r'savings|emergency fund|retirement'
+            'milestones': [
+                {
+                    'timestamp': m.timestamp.isoformat(),
+                    'event_type': m.event_type,
+                    'description': m.description,
+                    'financial_impact': m.financial_impact,
+                    'probability': m.probability,
+                    'entity': m.entity
+                }
+                for m in milestones
             ]
         }
         
-        self.payment_structure_patterns = {
-            'lump_sum': r'lump sum|one time|single payment|pay in full',
-            'installments': r'installments|monthly|quarterly|annual|payments',
-            'percentage_based': r'percentage|%|percent|portion|fraction',
-            'milestone_based': r'upon|when|after|completion|achievement',
-            'flexible': r'flexible|variable|custom|as needed|any amount'
-        }
-        
-        self.date_patterns = [
-            r'\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b',
-            r'\b\w+\s+\d{1,2},?\s+\d{4}\b',
-            r'\b\d{4}[-/]\d{1,2}[-/]\d{1,2}\b',
-            r'\bin\s+\d{4}\b',
-            r'\bby\s+\w+\s+\d{4}\b'
-        ]
-
-    def extract_text_from_pdf(self, pdf_path: str) -> str:
-        """Extract text from PDF file"""
-        try:
-            with pdfplumber.open(pdf_path) as pdf:
-                text = ""
-                for page in pdf.pages:
-                    if page.extract_text():
-                        text += page.extract_text() + "\n"
-                return text
-        except Exception as e:
-            print(f"Error extracting text from PDF: {e}")
-            return ""
-
-    def identify_milestones(self, text: str) -> List[FinancialMilestone]:
-        """Identify financial milestones and life events from text"""
-        milestones = []
-        sentences = text.split('.')
-        
-        for sentence in sentences:
-            sentence = sentence.strip().lower()
-            if len(sentence) < 10:  # Skip very short sentences
-                continue
-                
-            # Check for milestone patterns
-            for category, patterns in self.milestone_patterns.items():
-                for pattern in patterns:
-                    if re.search(pattern, sentence, re.IGNORECASE):
-                        milestone = self._create_milestone_from_sentence(
-                            sentence, category, text
-                        )
-                        if milestone:
-                            milestones.append(milestone)
-                        break
-        
-        return self._deduplicate_milestones(milestones)
-
-    def _create_milestone_from_sentence(self, sentence: str, category: str, full_text: str) -> Optional[FinancialMilestone]:
-        """Create a milestone from a sentence with extracted metadata"""
-        try:
-            # Extract timestamp
-            timestamp = self._extract_timestamp(sentence, full_text)
-            
-            # Extract financial impact
-            financial_impact = self._extract_financial_amount(sentence)
-            
-            # Determine payment flexibility
-            payment_flexibility = self._analyze_payment_flexibility(sentence, full_text)
-            
-            # Calculate probability based on language certainty
-            probability = self._calculate_probability(sentence)
-            
-            # Extract dependencies
-            dependencies = self._extract_dependencies(sentence, full_text)
-            
-            return FinancialMilestone(
-                timestamp=timestamp,
-                event_type=category,
-                description=sentence.strip(),
-                financial_impact=financial_impact,
-                probability=probability,
-                dependencies=dependencies,
-                payment_flexibility=payment_flexibility,
-                metadata={
-                    'source_sentence': sentence,
-                    'extraction_confidence': self._calculate_extraction_confidence(sentence)
-                }
-            )
-        except Exception as e:
-            print(f"Error creating milestone: {e}")
-            return None
-
-    def _extract_timestamp(self, sentence: str, full_text: str) -> datetime:
-        """Extract timestamp from sentence or infer from context"""
-        # Look for explicit dates in sentence
-        for pattern in self.date_patterns:
-            match = re.search(pattern, sentence, re.IGNORECASE)
-            if match:
-                try:
-                    return parse_date(match.group())
-                except:
-                    continue
-        
-        # Look for relative time indicators
-        relative_patterns = {
-            r'next year': timedelta(days=365),
-            r'in \d+ years?': lambda m: timedelta(days=365 * int(re.search(r'\d+', m.group()).group())),
-            r'retirement': timedelta(days=365 * 30),  # Assume 30 years to retirement
-            r'college': timedelta(days=365 * 18),  # Assume 18 years for college
-        }
-        
-        base_date = datetime.now()
-        for pattern, delta in relative_patterns.items():
-            if re.search(pattern, sentence, re.IGNORECASE):
-                if callable(delta):
-                    match = re.search(pattern, sentence, re.IGNORECASE)
-                    delta = delta(match)
-                return base_date + delta
-        
-        # Default to current date if no timestamp found
-        return base_date
-
-    def _extract_financial_amount(self, sentence: str) -> Optional[float]:
-        """Extract financial amounts from sentence"""
-        # Look for currency amounts
-        currency_patterns = [
-            r'\$[\d,]+\.?\d*',
-            r'[\d,]+\.?\d*\s*dollars?',
-            r'[\d,]+\.?\d*\s*USD'
-        ]
-        
-        for pattern in currency_patterns:
-            match = re.search(pattern, sentence, re.IGNORECASE)
-            if match:
-                amount_str = re.sub(r'[^\d.]', '', match.group())
-                try:
-                    return float(amount_str)
-                except:
-                    continue
-        
-        return None
-
-    def _analyze_payment_flexibility(self, sentence: str, full_text: str) -> Dict[str, any]:
-        """Analyze payment structure flexibility from text"""
-        flexibility = {
-            'structure_type': 'flexible',
-            'min_payment': None,
-            'max_payment': None,
-            'frequency_options': [],
-            'custom_dates_allowed': True,
-            'percentage_based': False
-        }
-        
-        # Check for payment structure patterns
-        for structure_type, pattern in self.payment_structure_patterns.items():
-            if re.search(pattern, sentence, re.IGNORECASE):
-                flexibility['structure_type'] = structure_type
-                break
-        
-        # Look for percentage indicators
-        if re.search(r'\d+%|\d+\s*percent', sentence, re.IGNORECASE):
-            flexibility['percentage_based'] = True
-        
-        # Look for frequency indicators
-        frequency_patterns = {
-            'daily': r'daily|every day',
-            'weekly': r'weekly|every week',
-            'monthly': r'monthly|every month',
-            'quarterly': r'quarterly|every quarter',
-            'annually': r'annually|yearly|every year'
-        }
-        
-        for freq, pattern in frequency_patterns.items():
-            if re.search(pattern, sentence, re.IGNORECASE):
-                flexibility['frequency_options'].append(freq)
-        
-        return flexibility
-
-    def _calculate_probability(self, sentence: str) -> float:
-        """Calculate probability based on language certainty indicators"""
-        certainty_indicators = {
-            'high': ['will', 'must', 'definitely', 'certainly', 'plan to'],
-            'medium': ['should', 'likely', 'probably', 'expect to', 'intend to'],
-            'low': ['might', 'may', 'could', 'possibly', 'consider']
-        }
-        
-        for certainty, words in certainty_indicators.items():
-            for word in words:
-                if word in sentence.lower():
-                    if certainty == 'high':
-                        return 0.9
-                    elif certainty == 'medium':
-                        return 0.7
-                    else:
-                        return 0.4
-        
-        return 0.6  # Default probability
-
-    def _extract_dependencies(self, sentence: str, full_text: str) -> List[str]:
-        """Extract dependencies between milestones"""
-        dependency_patterns = [
-            r'after|once|when|upon|following|depends on',
-            r'requires|needs|must have|conditional on'
-        ]
-        
-        dependencies = []
-        for pattern in dependency_patterns:
-            if re.search(pattern, sentence, re.IGNORECASE):
-                # This is a simplified implementation
-                # In practice, would use NLP to identify the dependency
-                dependencies.append('conditional_event')
-        
-        return dependencies
-
-    def _calculate_extraction_confidence(self, sentence: str) -> float:
-        """Calculate confidence in the extraction quality"""
-        confidence = 0.5
-        
-        # Boost confidence for specific financial terms
-        financial_terms = ['dollar', 'payment', 'cost', 'price', 'amount']
-        for term in financial_terms:
-            if term in sentence.lower():
-                confidence += 0.1
-        
-        # Boost confidence for specific dates
-        for pattern in self.date_patterns:
-            if re.search(pattern, sentence):
-                confidence += 0.2
-                break
-        
-        return min(confidence, 1.0)
-
-    def _deduplicate_milestones(self, milestones: List[FinancialMilestone]) -> List[FinancialMilestone]:
-        """Remove duplicate milestones based on similarity"""
-        if not milestones:
-            return []
-        
-        unique_milestones = []
-        for milestone in milestones:
-            is_duplicate = False
-            for existing in unique_milestones:
-                # Simple similarity check
-                if (milestone.event_type == existing.event_type and
-                    abs((milestone.timestamp - existing.timestamp).days) < 30 and
-                    milestone.description[:50] == existing.description[:50]):
-                    is_duplicate = True
-                    break
-            
-            if not is_duplicate:
-                unique_milestones.append(milestone)
-        
-        return unique_milestones
-
-    def process_pdf(self, pdf_path: str) -> List[FinancialMilestone]:
-        """Main method to process PDF and extract milestones"""
-        text = self.extract_text_from_pdf(pdf_path)
-        if not text:
-            return []
-        
-        milestones = self.identify_milestones(text)
-        
-        # Sort by timestamp
-        milestones.sort(key=lambda m: m.timestamp)
-        
-        return milestones
-
-    def export_milestones_to_json(self, milestones: List[FinancialMilestone], output_path: str):
-        """Export milestones to JSON format"""
-        data = []
-        for milestone in milestones:
-            data.append({
-                'timestamp': milestone.timestamp.isoformat(),
-                'event_type': milestone.event_type,
-                'description': milestone.description,
-                'financial_impact': milestone.financial_impact,
-                'probability': milestone.probability,
-                'dependencies': milestone.dependencies,
-                'payment_flexibility': milestone.payment_flexibility,
-                'metadata': milestone.metadata
-            })
-        
+        # Save to JSON file
+        output_path = pdf_path + '_results.json'
         with open(output_path, 'w') as f:
-            json.dump(data, f, indent=2)
-
-
-if __name__ == "__main__":
-    processor = EnhancedPDFProcessor()
-    
-    # Example usage
-    pdf_path = "data/uploads/Case_1_IPS_Individual.pdf"
-    milestones = processor.process_pdf(pdf_path)
-    
-    print(f"Extracted {len(milestones)} milestones:")
-    for milestone in milestones:
-        print(f"- {milestone.event_type}: {milestone.description[:100]}...")
-        print(f"  Timestamp: {milestone.timestamp}")
-        print(f"  Financial Impact: ${milestone.financial_impact}")
-        print(f"  Payment Flexibility: {milestone.payment_flexibility['structure_type']}")
-        print()
+            json.dump(results, f, indent=2)

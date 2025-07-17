@@ -1,587 +1,334 @@
+"""
+Omega Mesh Integration Engine
+
+This module orchestrates the end-to-end pipeline for adaptive, scenario-based financial planning:
+- NLP-based milestone/entity extraction from narrative PDFs
+- Stochastic mesh (omega) generation for all possible financial futures
+- Adaptive database and similarity matching for event clustering
+- Ultra-flexible payment execution and scheduling
+- Real-time accounting and constraint validation
+- Monthly recommendations and configuration matrices
+"""
+
 import os
-import json
 from datetime import datetime, timedelta
-from typing import List, Dict, Optional, Tuple
-from decimal import Decimal
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-import plotly.express as px
-from plotly.subplots import make_subplots
+from typing import List, Dict, Tuple, Optional
 
-from enhanced_pdf_processor import EnhancedPDFProcessor, FinancialMilestone
-from stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
-from accounting_reconciliation import AccountingReconciliationEngine
-
+from .enhanced_pdf_processor import EnhancedPDFProcessor, FinancialMilestone, FinancialEntity
+from .stochastic_mesh_engine import StochasticMeshEngine
+from .accounting_reconciliation import AccountingReconciliationEngine
+from .adaptive_mesh_generator import AdaptiveMeshGenerator
+from .financial_recommendation_engine import FinancialRecommendationEngine
+from .mesh_memory_manager import MeshMemoryManager
+from .enhanced_client_profile import TextToMathematicalConverter, ClientProfile, VectorDBManager
 
 class OmegaMeshIntegration:
     """
-    Main integration engine that demonstrates the complete system:
-    - PDF processing for milestone extraction
-    - Stochastic mesh generation with geometric Brownian motion
-    - Ultra-flexible payment execution
-    - Accounting constraint validation
+    Orchestrates the Omega Mesh financial planning pipeline.
     """
-    
     def __init__(self, initial_financial_state: Dict[str, float]):
+        # NLP-based PDF processor
         self.pdf_processor = EnhancedPDFProcessor()
+        # Stochastic mesh engine (omega mesh)
         self.mesh_engine = StochasticMeshEngine(current_financial_state=initial_financial_state)
+        # Memory manager for efficient mesh storage
+        self.memory_manager = MeshMemoryManager(max_nodes=10000)
+        # Adaptive mesh generator for similarity matching and clustering
+        self.adaptive_mesh = AdaptiveMeshGenerator(initial_state=initial_financial_state, memory_manager=self.memory_manager)
+        # Double-entry accounting engine
         self.accounting_engine = AccountingReconciliationEngine()
-        
-        # Initialize accounting with current financial state
-        self._initialize_accounting_state(initial_financial_state)
-        
-        self.milestones = []
-        self.payment_history = []
+        # Recommendation engine
+        self.recommendation_engine = FinancialRecommendationEngine(self.mesh_engine, self.accounting_engine)
+        # Enhanced client profile system
+        self.client_profile_converter = TextToMathematicalConverter()
+        self.vector_db = VectorDBManager()
+
+        self.milestones: List[FinancialMilestone] = []
+        self.entities: List[FinancialEntity] = []
+        self.payment_history: List[Dict] = []
         self.system_status = {
             'initialized': True,
             'mesh_active': False,
             'milestones_loaded': False,
+            'entities_loaded': False,
             'last_update': datetime.now()
         }
-        
+        self._initialize_accounting_state(initial_financial_state)
         print("🌟 Omega Mesh Integration System Initialized!")
-        print("Ready to process PDFs and create stochastic financial mesh")
-    
-    def _initialize_accounting_state(self, financial_state: Dict[str, float]):
-        """Initialize accounting system with current financial state"""
-        # Map financial state to accounting accounts
-        account_mapping = {
-            'total_wealth': 'cash_checking',
-            'cash': 'cash_checking',
-            'savings': 'cash_savings',
-            'investments': 'investments_stocks',
-            'stocks': 'investments_stocks',
-            'bonds': 'investments_bonds',
-            'retirement': 'investments_retirement',
-            'real_estate': 'real_estate',
-            'mortgage': 'mortgage',
-            'student_loans': 'student_loans',
-            'credit_cards': 'credit_cards'
-        }
-        
-        for key, value in financial_state.items():
-            if key in account_mapping and value > 0:
-                account_id = account_mapping[key]
-                self.accounting_engine.set_account_balance(account_id, Decimal(str(value)))
-        
-        print(f"💰 Accounting initialized with ${sum(financial_state.values()):,.2f} total wealth")
-    
-    def process_ips_document(self, pdf_path: str) -> List[FinancialMilestone]:
+        print("Ready to process PDFs and create stochastic financial mesh.")
+
+    def _initialize_accounting_state(self, initial_state: Dict[str, float]):
+        """Initialize accounting engine with initial financial state."""
+        print(f"💰 Accounting initialized with ${initial_state.get('total_wealth', 0):,.2f} total wealth")
+        # Set initial balances for key accounts
+        if 'total_wealth' in initial_state:
+            total_wealth = initial_state['total_wealth']
+            from decimal import Decimal
+            self.accounting_engine.set_account_balance('cash_checking', Decimal(str(total_wealth * 0.1)))
+            self.accounting_engine.set_account_balance('cash_savings', Decimal(str(total_wealth * 0.2)))
+            self.accounting_engine.set_account_balance('investments_stocks', Decimal(str(total_wealth * 0.3)))
+            self.accounting_engine.set_account_balance('investments_bonds', Decimal(str(total_wealth * 0.2)))
+            self.accounting_engine.set_account_balance('investments_retirement', Decimal(str(total_wealth * 0.2)))
+
+    def process_ips_document(self, pdf_path: str) -> Tuple[List[FinancialMilestone], List[FinancialEntity]]:
         """
-        Process IPS document to extract milestones and initialize the mesh
-        
-        This is the main demonstration entry point
+        Process IPS document to extract milestones and entities, then initialize the mesh.
         """
         print(f"📄 Processing IPS document: {pdf_path}")
-        
-        # Extract milestones from PDF
-        self.milestones = self.pdf_processor.process_pdf(pdf_path)
-        
-        if not self.milestones:
-            print("⚠️ No milestones found in PDF. Creating sample milestones for demonstration.")
-            self.milestones = self._create_sample_milestones()
-        
-        print(f"🎯 Extracted {len(self.milestones)} financial milestones:")
-        for i, milestone in enumerate(self.milestones):
-            print(f"  {i+1}. {milestone.event_type}: {milestone.description[:80]}...")
-            print(f"     📅 {milestone.timestamp.strftime('%Y-%m-%d')}")
-            print(f"     💵 ${milestone.financial_impact:,.2f}" if milestone.financial_impact else "     💵 Amount TBD")
-            print(f"     🎲 {milestone.probability:.1%} probability")
-            print()
-        
-        # Initialize the Omega mesh with milestones
-        self.mesh_engine.initialize_mesh(self.milestones, time_horizon_years=10)
-        
-        self.system_status['milestones_loaded'] = True
-        self.system_status['mesh_active'] = True
-        self.system_status['last_update'] = datetime.now()
-        
-        print("🌐 Omega mesh initialized with geometric Brownian motion!")
-        print("🔮 Infinite payment paths generated with stochastic modeling")
-        
-        return self.milestones
-    
-    def _create_sample_milestones(self) -> List[FinancialMilestone]:
-        """Create sample milestones for demonstration when PDF processing doesn't find any"""
-        sample_milestones = [
-            FinancialMilestone(
-                timestamp=datetime.now() + timedelta(days=365),
-                event_type="education",
-                description="Child's college tuition payment - first year",
-                financial_impact=25000.0,
-                probability=0.9,
-                dependencies=[],
-                payment_flexibility={'structure_type': 'flexible', 'percentage_based': True},
-                metadata={'source': 'sample_generation'}
-            ),
-            FinancialMilestone(
-                timestamp=datetime.now() + timedelta(days=730),
-                event_type="housing",
-                description="House down payment for family home",
-                financial_impact=80000.0,
-                probability=0.7,
-                dependencies=[],
-                payment_flexibility={'structure_type': 'flexible', 'custom_dates_allowed': True},
-                metadata={'source': 'sample_generation'}
-            ),
-            FinancialMilestone(
-                timestamp=datetime.now() + timedelta(days=1095),
-                event_type="investment",
-                description="Retirement account contribution catch-up",
-                financial_impact=15000.0,
-                probability=0.8,
-                dependencies=[],
-                payment_flexibility={'structure_type': 'installments', 'frequency_options': ['monthly', 'quarterly']},
-                metadata={'source': 'sample_generation'}
-            ),
-            FinancialMilestone(
-                timestamp=datetime.now() + timedelta(days=180),
-                event_type="family",
-                description="Wedding expenses for daughter",
-                financial_impact=35000.0,
-                probability=0.95,
-                dependencies=[],
-                payment_flexibility={'structure_type': 'milestone_based', 'custom_dates_allowed': True},
-                metadata={'source': 'sample_generation'}
-            ),
-            FinancialMilestone(
-                timestamp=datetime.now() + timedelta(days=2555),
-                event_type="career",
-                description="Business investment opportunity",
-                financial_impact=50000.0,
-                probability=0.6,
-                dependencies=[],
-                payment_flexibility={'structure_type': 'percentage_based', 'flexible': True},
-                metadata={'source': 'sample_generation'}
+        try:
+            # Extract basic milestones and entities
+            self.milestones, self.entities = self.pdf_processor.process_pdf(pdf_path)
+            
+            # Extract comprehensive client profile from text content
+            text_content = self._extract_text_content(pdf_path)
+            self.client_profile = self.client_profile_converter.extract_client_profile(
+                text_content, self.entities, self.milestones
             )
-        ]
-        
-        return sample_milestones
-    
-    def demonstrate_flexible_payment(self, milestone_id: str = None) -> Dict:
-        """
-        Demonstrate the ultra-flexible payment system
-        Shows the "1% today, 11% next Tuesday, rest on grandmother's birthday" capability
-        """
-        print("💳 DEMONSTRATING ULTRA-FLEXIBLE PAYMENT SYSTEM")
-        print("=" * 60)
-        
-        # Get payment options
-        payment_options = self.mesh_engine.get_payment_options(milestone_id)
-        
-        if not payment_options:
-            print("⚠️ No payment opportunities available in current mesh position")
-            return {}
-        
-        # Show available options
-        for m_id, options in payment_options.items():
-            print(f"\n🎯 Milestone: {m_id}")
-            print(f"   Payment Options Available:")
             
-            for i, option in enumerate(options):
-                if option['type'] == 'percentage_immediate':
-                    print(f"   {i+1}. 💸 Pay {option['amount']:,.2f} (1%) TODAY")
-                elif option['type'] == 'percentage_scheduled':
-                    print(f"   {i+1}. 📅 Pay {option['amount']:,.2f} (11%) on {option['date'].strftime('%A, %B %d')}")
-                elif option['type'] == 'custom_date':
-                    print(f"   {i+1}. 🎂 Pay {option['amount']:,.2f} (remainder) on {option['description']}")
-                elif option['type'] == 'fully_custom':
-                    print(f"   {i+1}. 🎨 Pay ANY AMOUNT on ANY DATE (completely flexible)")
-                elif option['type'] == 'milestone_triggered':
-                    print(f"   {i+1}. ⚡ Pay when specific condition is met")
-        
-        # Demonstrate executing the flexible payments
-        demo_results = {}
-        
-        for m_id in list(payment_options.keys())[:1]:  # Demo with first milestone
-            print(f"\n🚀 EXECUTING FLEXIBLE PAYMENT DEMO for {m_id}")
-            print("-" * 50)
+            # Add client profile to vector DB for similarity matching
+            self.vector_db.add_profile(self.client_profile)
             
-            # Get milestone details for demo
-            milestone_amount = None
-            for milestone in self.milestones:
-                if f"{milestone.event_type}_{milestone.timestamp.year}" == m_id:
-                    milestone_amount = milestone.financial_impact
-                    break
+            # Get financial backing recommendations from similar profiles
+            financial_backing = self.vector_db.get_financial_backing(self.client_profile)
             
-            if not milestone_amount:
-                milestone_amount = 50000  # Default for demo
+            print(f"🎯 Extracted {len(self.milestones)} financial milestones.")
+            print(f"👥 Extracted {len(self.entities)} financial entities.")
+            print(f"👤 Client Archetype: {self.client_profile.archetype.value}")
+            print(f"💰 Portfolio Value: ${self.client_profile.portfolio_value:,0.2f}")
+            print(f"📊 Risk Tolerance: {self.client_profile.risk_tolerance.value}")
             
-            demo_payments = []
+            # Initialize entity accounting with enhanced profile
+            self._initialize_entity_accounting_with_profile(self.client_profile)
             
-            # 1. Pay 1% today
-            amount_1_percent = milestone_amount * 0.01
-            success1 = self._execute_demo_payment(m_id, amount_1_percent, datetime.now(), "1% payment today")
-            if success1:
-                demo_payments.append({"amount": amount_1_percent, "date": "today", "percentage": 1})
+            # Initialize mesh with shock modeling
+            self._initialize_mesh_with_shocks(self.client_profile)
             
-            # 2. Pay 11% next Tuesday
-            next_tuesday = self._get_next_tuesday()
-            amount_11_percent = milestone_amount * 0.11
-            success2 = self._execute_demo_payment(m_id, amount_11_percent, next_tuesday, "11% payment next Tuesday")
-            if success2:
-                demo_payments.append({"amount": amount_11_percent, "date": "next Tuesday", "percentage": 11})
-            
-            # 3. Remaining on grandmother's birthday
-            grandma_birthday = datetime(datetime.now().year, 6, 15)
-            if grandma_birthday < datetime.now():
-                grandma_birthday = datetime(datetime.now().year + 1, 6, 15)
-            
-            remaining_amount = milestone_amount * (1 - 0.01 - 0.11)
-            success3 = self._execute_demo_payment(m_id, remaining_amount, grandma_birthday, "Remaining balance on grandmother's birthday")
-            if success3:
-                demo_payments.append({"amount": remaining_amount, "date": "grandmother's birthday", "percentage": 88})
-            
-            demo_results[m_id] = {
-                "total_milestone_amount": milestone_amount,
-                "payments_scheduled": demo_payments,
-                "payment_flexibility_demonstrated": True,
-                "mesh_updated": True
+            self.system_status['milestones_loaded'] = True
+            self.system_status['entities_loaded'] = True
+            self.system_status['mesh_active'] = True
+            self.system_status['last_update'] = datetime.now()
+            self.system_status['client_profile'] = {
+                'archetype': self.client_profile.archetype.value,
+                'risk_tolerance': self.client_profile.risk_tolerance.value,
+                'portfolio_value': self.client_profile.portfolio_value,
+                'financial_backing': financial_backing
             }
             
-            print(f"✅ Demo payments scheduled for {m_id}")
-            print(f"   💰 Total: ${milestone_amount:,.2f}")
-            print(f"   📊 Split: 1% + 11% + 88% across custom dates")
-            print(f"   🌐 Omega mesh updated with new payment paths")
+            return self.milestones, self.entities
+        except Exception as e:
+            print(f"Error processing document: {e}")
+            import traceback
+            print(traceback.format_exc())
+            return [], []
+
+    def _extract_text_content(self, pdf_path: str) -> str:
+        """Extract text content from PDF for client profile analysis."""
+        try:
+            import pdfplumber
+            text_content = ""
+            with pdfplumber.open(pdf_path) as pdf:
+                for page in pdf.pages:
+                    text_content += page.extract_text() + "\n"
+            return text_content
+        except Exception as e:
+            print(f"Error extracting text content: {e}")
+            return ""
+
+    def _initialize_entity_accounting_with_profile(self, client_profile: ClientProfile):
+        """Initialize accounting framework with enhanced client profile."""
+        print("🏦 Initializing entity-based accounting framework with enhanced profile...")
         
-        return demo_results
-    
-    def _execute_demo_payment(self, milestone_id: str, amount: float, payment_date: datetime, description: str) -> bool:
-        """Execute a demo payment with proper accounting validation"""
-        # Check accounting constraints
-        available_capacity = self.accounting_engine.get_payment_capacity("cash_checking")
-        max_payment = float(available_capacity.get('max_single_payment', 0))
+        # Apply mathematical implications from client profile
+        cash_flow_multipliers = client_profile.cash_flow_multipliers
+        risk_adjustment_factors = client_profile.risk_adjustment_factors
         
-        if amount > max_payment:
-            print(f"⚠️ Payment of ${amount:,.2f} exceeds available capacity of ${max_payment:,.2f}")
-            return False
+        for entity in self.entities:
+            entity_state = {
+                'entity_name': entity.name,
+                'entity_type': entity.entity_type,
+                'balances': entity.initial_balances.copy(),
+                'transactions': [],
+                'milestones': [m for m in self.milestones if m.entity == entity.name]
+            }
+            
+            # Apply cash flow multipliers to balances
+            for balance_type, amount in entity_state['balances'].items():
+                if balance_type in cash_flow_multipliers:
+                    entity_state['balances'][balance_type] = amount * cash_flow_multipliers[balance_type]
+            
+            self.accounting_engine.register_entity(entity_state)
+            print(f"📊 Registered {entity.name} with enhanced balances: {entity_state['balances']}")
+
+    def _initialize_mesh_with_shocks(self, client_profile: ClientProfile):
+        """Initialize mesh with shock modeling from client profile."""
+        print("⚡ Initializing mesh with shock modeling...")
         
-        # Execute in accounting system
-        success, result = self.accounting_engine.execute_payment(
-            from_account="cash_checking",
-            to_account="milestone_payments",
-            amount=Decimal(str(amount)),
-            description=description,
-            reference_id=milestone_id,
-            transaction_date=payment_date
+        # Add shock milestones to the mesh
+        shock_milestones = []
+        for shock in client_profile.potential_shocks:
+            shock_milestone = FinancialMilestone(
+                timestamp=datetime.now() + timedelta(days=365),  # Default to 1 year
+                event_type='shock',
+                description=shock['description'],
+                financial_impact=shock['financial_impact'],
+                probability=shock['probability'],
+                entity='system',
+                metadata={'shock_type': shock['type'], 'timing': shock['timing']}
+            )
+            shock_milestones.append(shock_milestone)
+        
+        # Combine regular milestones with shock milestones
+        all_milestones = self.milestones + shock_milestones
+        
+        # Initialize mesh with enhanced milestone set
+        self.mesh_engine.initialize_mesh(all_milestones)
+        
+        print(f"✅ Initialized mesh with {len(all_milestones)} milestones ({len(shock_milestones)} shocks)")
+
+    def _initialize_entity_accounting(self):
+        """Initialize accounting framework for all entities."""
+        print("🏦 Initializing entity-based accounting framework...")
+        for entity in self.entities:
+            entity_state = {
+                'entity_name': entity.name,
+                'entity_type': entity.entity_type,
+                'balances': entity.initial_balances.copy(),
+                'transactions': [],
+                'milestones': [m for m in self.milestones if m.entity == entity.name]
+            }
+            self.accounting_engine.register_entity(entity_state)
+            print(f"  📊 Registered {entity.name} with balances: {entity.initial_balances}")
+
+    def _create_sample_milestones(self) -> List[FinancialMilestone]:
+        """Create sample milestones for demonstration purposes."""
+        now = datetime.now()
+        return [
+            FinancialMilestone(timestamp=now, event_type='education', description='Start college', financial_impact=80000, probability=0.9, entity='Child'),
+            FinancialMilestone(timestamp=now, event_type='housing', description='Buy house', financial_impact=300000, probability=0.7, entity='Horatio'),
+            FinancialMilestone(timestamp=now, event_type='investment', description='Portfolio rebalancing', financial_impact=50000, probability=0.8, entity='Horatio')
+        ]
+
+    def _create_sample_entities(self) -> List[FinancialEntity]:
+        """Create sample entities for demonstration purposes."""
+        return [
+            FinancialEntity(name='Horatio', entity_type='person', initial_balances={'salary': 100000, 'savings': 20000}, metadata={'age': 45, 'occupation': 'Professional'}),
+            FinancialEntity(name='Child', entity_type='child', initial_balances={'education_fund': 0}, metadata={'age': 15, 'education_level': 'school'})
+        ]
+
+    def demonstrate_flexible_payment(self, milestone_idx: int = 0, amount: Optional[float] = None, payment_date: Optional[datetime] = None) -> Dict:
+        """
+        Demonstrate ultra-flexible payment execution with entity tracking.
+        """
+        print("💳 Demonstrating ultra-flexible payment execution...")
+        if not self.milestones:
+            print("No milestones available for payment demonstration.")
+            return {}
+        milestone = self.milestones[milestone_idx]
+        entity_name = milestone.entity or 'Unknown'
+        payment_amount = amount if amount is not None else (milestone.financial_impact or 10000)
+        payment_date = payment_date or datetime.now()
+        print(f"Processing payment for: {milestone.event_type} | Entity: {entity_name} | Amount: ${payment_amount:,.2f}")
+        payment_result = self.mesh_engine.execute_payment(
+            milestone_id=f"{entity_name}_{milestone.event_type}",
+            amount=payment_amount,
+            payment_date=payment_date
         )
-        
-        if success:
-            # Update mesh
-            mesh_success = self.mesh_engine.execute_payment(milestone_id, amount, payment_date)
-            self.payment_history.append({
-                'milestone_id': milestone_id,
-                'amount': amount,
-                'date': payment_date,
-                'description': description,
-                'accounting_txn_id': result,
-                'mesh_updated': mesh_success
-            })
-            print(f"   ✅ ${amount:,.2f} scheduled for {payment_date.strftime('%Y-%m-%d')} - {description}")
-            return True
-        else:
-            print(f"   ❌ Payment failed: {result}")
-            return False
-    
-    def _get_next_tuesday(self) -> datetime:
-        """Get the date of next Tuesday"""
-        today = datetime.now()
-        days_ahead = 1 - today.weekday()  # Tuesday is 1
-        if days_ahead <= 0:  # Target day already happened this week
-            days_ahead += 7
-        return today + timedelta(days=days_ahead)
-    
-    def show_omega_mesh_evolution(self) -> Dict:
-        """
-        Show how the Omega mesh evolves as payments are made
-        Demonstrates the core concept of past omega disappearing and future visibility changing
-        """
-        print("🌐 OMEGA MESH EVOLUTION DEMONSTRATION")
-        print("=" * 60)
-        
-        mesh_status = self.mesh_engine.get_mesh_status()
-        
-        print(f"📊 Current Mesh Statistics:")
-        print(f"   🌟 Total nodes: {mesh_status['total_nodes']:,}")
-        print(f"   ⚡ Solidified paths: {mesh_status['solidified_nodes']:,}")
-        print(f"   🔮 Future possibilities: {mesh_status['visible_future_nodes']:,}")
-        print(f"   👁️ Current visibility radius: {mesh_status['current_visibility_radius']:.1f} days")
-        print(f"   💰 Current wealth: ${mesh_status['current_wealth']:,.2f}")
-        print(f"   🎯 Available opportunities: {mesh_status['available_opportunities']}")
-        
-        print(f"\n🔄 Mesh Evolution Concept:")
-        print(f"   • As you make payments, past alternatives disappear (solidify)")
-        print(f"   • Future visibility adjusts based on your actions")
-        print(f"   • Geometric Brownian motion creates continuous stochastic paths")
-        print(f"   • Payment flexibility is unlimited within accounting constraints")
-        
-        # Simulate mesh evolution over time
-        evolution_data = {
-            'timestamps': [],
-            'total_nodes': [],
-            'solidified_nodes': [],
-            'visible_nodes': [],
-            'wealth_trajectory': []
+        if payment_result:
+            self._update_entity_balances(entity_name, milestone.event_type, payment_amount)
+        return {
+            'milestone': milestone.event_type,
+            'entity': entity_name,
+            'amount': payment_amount,
+            'payment_successful': payment_result,
+            'timestamp': payment_date.isoformat()
         }
-        
-        # Simulate several time advances
-        current_time = datetime.now()
-        for days_ahead in [0, 30, 90, 180, 365]:
-            future_time = current_time + timedelta(days=days_ahead)
-            
-            # Simulate mesh evolution
-            simulated_status = self._simulate_mesh_at_time(future_time)
-            
-            evolution_data['timestamps'].append(future_time)
-            evolution_data['total_nodes'].append(simulated_status['total_nodes'])
-            evolution_data['solidified_nodes'].append(simulated_status['solidified_nodes'])
-            evolution_data['visible_nodes'].append(simulated_status['visible_nodes'])
-            evolution_data['wealth_trajectory'].append(simulated_status['wealth'])
-        
-        return evolution_data
-    
-    def _simulate_mesh_at_time(self, timestamp: datetime) -> Dict:
-        """Simulate what the mesh would look like at a future time"""
-        days_from_now = (timestamp - datetime.now()).days
-        
-        # Simulate mesh compression over time
-        base_nodes = len(self.mesh_engine.nodes)
-        solidification_rate = min(0.8, days_from_now / 365)  # More paths solidify over time
+
+    def _update_entity_balances(self, entity_name: str, event_type: str, amount: float):
+        """Update entity balances after payment."""
+        for entity in self.entities:
+            if entity.name == entity_name:
+                if event_type in entity.initial_balances:
+                    entity.initial_balances[event_type] += amount
+                else:
+                    entity.initial_balances[event_type] = amount
+                print(f"Updated {entity_name} {event_type} balance: ${entity.initial_balances[event_type]:,.2f}")
+                break
+
+    def run_adaptive_mesh_similarity(self):
+        """
+        Run adaptive mesh generator to cluster similar events and states for optimization.
+        """
+        print("🔄 Running adaptive mesh similarity matching...")
+        if not self.milestones:
+            print("No milestones loaded for similarity matching.")
+            return set()
+        mesh_paths = self.mesh_engine.get_all_paths()
+        milestone_clusters = self.adaptive_mesh.cluster_milestones(self.milestones)
+        unique_states = self.adaptive_mesh._aggregate_similar_states(mesh_paths)
+        print(f"Aggregated {len(unique_states)} unique financial states after similarity matching.")
+        return unique_states
+
+    def generate_monthly_recommendations(self, months_ahead: int = 12) -> List[Dict]:
+        """
+        Generate monthly recommendations for purchases, investments, and reallocations.
+        """
+        print("📅 Generating monthly recommendations...")
+        if not self.milestones:
+            print("No milestones loaded for recommendations.")
+            return []
+        profile_data = {'base_income': 100000, 'risk_tolerance': 'moderate'}  # Example; should be dynamic
+        recommendations = self.recommendation_engine.generate_monthly_recommendations(
+            self.milestones, profile_data, months_ahead=months_ahead
+        )
+        print(f"Generated {len(recommendations)} monthly recommendations.")
+        return recommendations
+
+    def create_configuration_matrix(self, scenarios: int = 3) -> Dict:
+        """
+        Create configuration matrices showing possible financial paths and allocations over time.
+        """
+        print("🧮 Creating configuration matrix...")
+        if not self.milestones:
+            print("No milestones loaded for configuration matrix.")
+            return {}
+        profile_data = {'base_income': 100000, 'risk_tolerance': 'moderate'}  # Example; should be dynamic
+        config_matrix = self.recommendation_engine.create_configuration_matrix(
+            'user', self.milestones, profile_data, scenarios=scenarios
+        )
+        print("Configuration matrix created.")
+        return config_matrix
+
+    def get_system_status(self) -> Dict:
+        """Get current system status."""
+        return {
+            **self.system_status,
+            'milestones_count': len(self.milestones),
+            'entities_count': len(self.entities),
+            'mesh_nodes_count': len(self.mesh_engine.nodes) if hasattr(self.mesh_engine, 'nodes') else 0
+        } 
+
+    def get_client_profile_summary(self) -> Dict:
+        """A summary of the client profile and financial implications."""
+        if not hasattr(self, 'client_profile'):
+            return {}
         
         return {
-            'total_nodes': max(100, int(base_nodes * (1 - solidification_rate * 0.5))),
-            'solidified_nodes': int(base_nodes * solidification_rate),
-            'visible_nodes': max(50, int(base_nodes * (1 - solidification_rate))),
-            'wealth': self.mesh_engine.current_state.get('total_wealth', 100000) * (1 + np.random.normal(0.07, 0.15) * days_from_now / 365)
+            'archetype': self.client_profile.archetype.value,
+            'risk_tolerance': self.client_profile.risk_tolerance.value,
+            'life_stage': self.client_profile.life_stage.value,
+            'portfolio_value': self.client_profile.portfolio_value,
+            'net_worth': self.client_profile.net_worth,
+            'base_income': self.client_profile.base_income,
+            'family_size': self.client_profile.family_size,
+            'dependents': self.client_profile.dependents,
+            'potential_shocks': len(self.client_profile.potential_shocks),
+            'cash_flow_multipliers': self.client_profile.cash_flow_multipliers,
+            'risk_adjustment_factors': self.client_profile.risk_adjustment_factors
         }
-    
-    def generate_comprehensive_report(self) -> Dict:
-        """Generate a comprehensive report of the entire system"""
-        print("📋 GENERATING COMPREHENSIVE SYSTEM REPORT")
-        print("=" * 60)
-        
-        report = {
-            'system_overview': {
-                'milestones_processed': len(self.milestones),
-                'mesh_active': self.system_status['mesh_active'],
-                'payments_executed': len(self.payment_history),
-                'last_update': self.system_status['last_update'].isoformat()
-            },
-            'milestones_summary': [],
-            'mesh_statistics': self.mesh_engine.get_mesh_status(),
-            'financial_statement': self.accounting_engine.generate_financial_statement(),
-            'payment_history': self.payment_history,
-            'payment_capacity': {},
-            'omega_evolution': self.show_omega_mesh_evolution()
-        }
-        
-        # Milestone summary
-        for milestone in self.milestones:
-            report['milestones_summary'].append({
-                'event_type': milestone.event_type,
-                'description': milestone.description,
-                'timestamp': milestone.timestamp.isoformat(),
-                'financial_impact': milestone.financial_impact,
-                'probability': milestone.probability,
-                'payment_flexibility': milestone.payment_flexibility
-            })
-        
-        # Payment capacity for major accounts
-        for account_id in ['cash_checking', 'cash_savings', 'investments_stocks']:
-            capacity = self.accounting_engine.get_payment_capacity(account_id)
-            if capacity:
-                report['payment_capacity'][account_id] = {
-                    'max_single_payment': float(capacity['max_single_payment']),
-                    'current_balance': float(capacity['current_balance']),
-                    'minimum_balance_required': float(capacity['minimum_balance_required'])
-                }
-        
-        print("✅ Comprehensive report generated!")
-        print(f"   📊 {len(self.milestones)} milestones analyzed")
-        print(f"   🌐 {report['mesh_statistics']['total_nodes']} mesh nodes")
-        print(f"   💳 {len(self.payment_history)} payments tracked")
-        
-        return report
-    
-    def create_visualization_dashboard(self, output_path: str = "omega_mesh_dashboard.html"):
-        """Create an interactive dashboard showing the mesh and payment options"""
-        # Create subplots
-        fig = make_subplots(
-            rows=2, cols=2,
-            subplot_titles=('Milestone Timeline', 'Omega Mesh Evolution', 
-                          'Payment Flexibility Options', 'Wealth Trajectory'),
-            specs=[[{"secondary_y": True}, {"type": "scatter"}],
-                   [{"type": "bar"}, {"secondary_y": True}]]
-        )
-        
-        # 1. Milestone Timeline
-        milestone_dates = [m.timestamp for m in self.milestones]
-        milestone_amounts = [m.financial_impact or 0 for m in self.milestones]
-        milestone_types = [m.event_type for m in self.milestones]
-        
-        fig.add_trace(
-            go.Scatter(
-                x=milestone_dates,
-                y=milestone_amounts,
-                mode='markers+text',
-                marker=dict(size=[m.probability*30 for m in self.milestones], opacity=0.7),
-                text=milestone_types,
-                textposition="top center",
-                name="Milestones"
-            ),
-            row=1, col=1
-        )
-        
-        # 2. Mesh Evolution
-        evolution_data = self.show_omega_mesh_evolution()
-        fig.add_trace(
-            go.Scatter(
-                x=evolution_data['timestamps'],
-                y=evolution_data['total_nodes'],
-                name="Total Nodes",
-                line=dict(color='blue')
-            ),
-            row=1, col=2
-        )
-        
-        fig.add_trace(
-            go.Scatter(
-                x=evolution_data['timestamps'],
-                y=evolution_data['solidified_nodes'],
-                name="Solidified",
-                line=dict(color='green')
-            ),
-            row=1, col=2
-        )
-        
-        # 3. Payment Flexibility
-        payment_types = ['1% Today', '11% Tuesday', '88% Custom Date', 'Milestone Triggered', 'Fully Custom']
-        flexibility_scores = [100, 95, 90, 85, 100]  # Flexibility rating
-        
-        fig.add_trace(
-            go.Bar(
-                x=payment_types,
-                y=flexibility_scores,
-                name="Flexibility Rating",
-                marker_color='lightblue'
-            ),
-            row=2, col=1
-        )
-        
-        # 4. Wealth Trajectory
-        fig.add_trace(
-            go.Scatter(
-                x=evolution_data['timestamps'],
-                y=evolution_data['wealth_trajectory'],
-                name="Wealth Projection",
-                line=dict(color='gold', width=3)
-            ),
-            row=2, col=2
-        )
-        
-        # Update layout
-        fig.update_layout(
-            title="🌐 Omega Mesh Financial System Dashboard",
-            height=800,
-            showlegend=True
-        )
-        
-        # Save dashboard
-        fig.write_html(output_path)
-        print(f"📊 Interactive dashboard saved to: {output_path}")
-        
-        return output_path
-    
-    def export_system_state(self, output_dir: str = "omega_mesh_export"):
-        """Export complete system state for analysis"""
-        os.makedirs(output_dir, exist_ok=True)
-        
-        # Export milestones
-        self.pdf_processor.export_milestones_to_json(
-            self.milestones, 
-            os.path.join(output_dir, "milestones.json")
-        )
-        
-        # Export mesh state
-        self.mesh_engine.export_mesh_state(
-            os.path.join(output_dir, "omega_mesh.json")
-        )
-        
-        # Export accounting data
-        self.accounting_engine.export_accounting_data(
-            os.path.join(output_dir, "accounting.json")
-        )
-        
-        # Export comprehensive report
-        report = self.generate_comprehensive_report()
-        with open(os.path.join(output_dir, "comprehensive_report.json"), 'w') as f:
-            json.dump(report, f, indent=2, default=str)
-        
-        print(f"💾 Complete system state exported to: {output_dir}")
-        return output_dir
 
-
-def main_demonstration():
-    """
-    Main demonstration function showing the complete Omega mesh system
-    """
-    print("🚀 OMEGA MESH FINANCIAL SYSTEM DEMONSTRATION")
-    print("=" * 70)
-    print("A Continuous Stochastic Process for Ultra-Flexible Financial Planning")
-    print("=" * 70)
-    
-    # Initialize with sample financial state
-    initial_state = {
-        'total_wealth': 500000,
-        'cash': 100000,
-        'savings': 150000,
-        'investments': 250000,
-        'debts': 0
-    }
-    
-    # Initialize system
-    omega_system = OmegaMeshIntegration(initial_state)
-    
-    # Process PDF (using sample data if no PDF found)
-    pdf_path = "data/uploads/Case_1_IPS_Individual.pdf"
-    if not os.path.exists(pdf_path):
-        print(f"📄 PDF not found at {pdf_path}, using sample milestones")
-        pdf_path = None
-    
-    milestones = omega_system.process_ips_document(pdf_path or "sample")
-    
-    # Demonstrate flexible payments
-    payment_demo = omega_system.demonstrate_flexible_payment()
-    
-    # Show mesh evolution
-    evolution = omega_system.show_omega_mesh_evolution()
-    
-    # Generate comprehensive report
-    report = omega_system.generate_comprehensive_report()
-    
-    # Create visualization dashboard
-    dashboard_path = omega_system.create_visualization_dashboard()
-    
-    # Export system state
-    export_dir = omega_system.export_system_state()
-    
-    print("\n🎉 DEMONSTRATION COMPLETE!")
-    print("=" * 50)
-    print("✅ PDF processed and milestones extracted")
-    print("✅ Omega mesh initialized with stochastic modeling")
-    print("✅ Ultra-flexible payment system demonstrated")
-    print("✅ Accounting constraints validated")
-    print("✅ Mesh evolution and path solidification shown")
-    print("✅ Interactive dashboard created")
-    print("✅ Complete system state exported")
-    
-    print(f"\n📊 Dashboard: {dashboard_path}")
-    print(f"💾 Export Directory: {export_dir}")
-    
-    return omega_system, report
-
-
-if __name__ == "__main__":
-    system, report = main_demonstration()
+    def get_financial_backing_recommendations(self) -> Dict:
+        """Financial backing recommendations from vector DB."""
+        if not hasattr(self, 'client_profile'):
+            return {}
+        
+        return self.vector_db.get_financial_backing(self.client_profile) 

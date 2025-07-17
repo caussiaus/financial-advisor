@@ -405,6 +405,37 @@ class AccountingReconciliationEngine:
             self.accounts[account_id].last_updated = datetime.now()
             self._update_net_worth()
     
+    def register_entity(self, entity_state: Dict):
+        """Register a financial entity with the accounting system."""
+        entity_name = entity_state.get('entity_name', 'Unknown')
+        entity_type = entity_state.get('entity_type', 'person')
+        balances = entity_state.get('balances', {})
+
+        # Create entity-specific accounts
+        for account_name, balance in balances.items():
+            account_id = f"{entity_name.lower().replace(' ', '_')}_{account_name}"
+
+            # Determine account type based on the balance name
+            if account_name in ['salary', 'income', 'investment_income']:
+                account_type = AccountType.INCOME
+            elif account_name in ['savings', 'investments', 'education_fund', 'housing', 'investment']:
+                account_type = AccountType.ASSET
+            elif account_name in ['allowance', 'expenses']:
+                account_type = AccountType.EXPENSE
+            else:
+                account_type = AccountType.ASSET  # Default to asset
+
+            # Create the account
+            account = Account(
+                account_id=account_id,
+                name=f"{entity_name} - {account_name.replace('_', ' ').title()}",
+                account_type=account_type,
+                balance=Decimal(str(balance))
+            )
+
+            self.accounts[account_id] = account
+            self.logger.info(f"Registered entity account: {account_id} with balance ${balance}")
+    
     def get_payment_capacity(self, account_id: str) -> Dict[str, Decimal]:
         """
         Get the maximum payment capacity for an account considering all constraints

@@ -1,0 +1,567 @@
+{
+  "source_file": "Case_1_Clean.pdf",
+  "extraction_time": "2025-07-16T23:22:15.856429",
+  "entities": [
+    {
+      "name": "Helene",
+      "type": "child",
+      "initial_balances": {
+        "housing": 1200000.0
+      },
+      "metadata": {
+        "chunk_id": 9,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    },
+    {
+      "name": "Cinema",
+      "type": "child",
+      "initial_balances": {
+        "education_fund": 0,
+        "allowance": 0
+      },
+      "metadata": {
+        "chunk_id": 2,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    },
+    {
+      "name": "Ray 14",
+      "type": "child",
+      "initial_balances": {
+        "education_fund": 0,
+        "allowance": 0
+      },
+      "metadata": {
+        "chunk_id": 2,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    },
+    {
+      "name": "Mia",
+      "type": "child",
+      "initial_balances": {
+        "education_fund": 0,
+        "allowance": 0
+      },
+      "metadata": {
+        "chunk_id": 2,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    },
+    {
+      "name": "Fina 411",
+      "type": "person",
+      "initial_balances": {
+        "investment": 411.0
+      },
+      "metadata": {
+        "chunk_id": 3,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    },
+    {
+      "name": "Wally",
+      "type": "person",
+      "initial_balances": {
+        "salary": 0,
+        "savings": 0,
+        "investments": 0
+      },
+      "metadata": {
+        "chunk_id": 6,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    },
+    {
+      "name": "Ray",
+      "type": "child",
+      "initial_balances": {
+        "education_fund": 0,
+        "allowance": 0
+      },
+      "metadata": {
+        "chunk_id": 9,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    },
+    {
+      "name": "Helene\u2019s Mom",
+      "type": "child",
+      "initial_balances": {
+        "education_fund": 0,
+        "allowance": 0
+      },
+      "metadata": {
+        "chunk_id": 9,
+        "source": "data/inputs/uploads/Case_1_Clean.pdf"
+      }
+    }
+  ],
+  "milestones": [
+    {
+      "timestamp": "2026-07-16T23:22:15.662449",
+      "event_type": "education",
+      "description": "Horatio, 45, graduated with a degree in political science with a major in Chinese literature from Western\nUniversity in London, Ontario.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.662552",
+      "event_type": "housing",
+      "description": "His anglophone father and francophone mother created a rich,\ncosmopolitan, and multi-lingual household.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.662581",
+      "event_type": "investment",
+      "description": "Personable, tactful, adventurous, and curious, he travelled\nextensively as a student.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.662607",
+      "event_type": "investment",
+      "description": "The continent that fascinated him the most was Asia and in particular ancient\nChina.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.662637",
+      "event_type": "education",
+      "description": "At university, this attraction led him to major in Chinese studies.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.662677",
+      "event_type": "career",
+      "description": "Hard work, and the gift of a\nmusical ear permitted him to learn to read, write the basics, and speak Chinese (Mandarin dialect) with\nmoderate fluency.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.662712",
+      "event_type": "investment",
+      "description": "Those that knew him certainly were not surprised when he choose a career in the\ndiplomatic service with the Canadian Government.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.662744",
+      "event_type": "housing",
+      "description": "His current salary is $150,000 per year which may sound low for this prestigious position.",
+      "financial_impact": 150000.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.680865",
+      "event_type": "housing",
+      "description": "All housing expenses\nsuch as heating, electricity, repairs, property taxes, and insurance are paid by the Canadian Embassy\nwherever he is posted.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.680902",
+      "event_type": "housing",
+      "description": "Essentially he is living rent-free.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.680934",
+      "event_type": "investment",
+      "description": "Finally, he can look forward to a very generous\ndefined benefit pension plan and is eligible for retirement at age 55.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.680974",
+      "event_type": "investment",
+      "description": "At that time he will receive as an\nannual pension equal to 70% of his average salary earned in his last five years of active employment with\nthe Canadian diplomatic service.",
+      "financial_impact": 70.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.703004",
+      "event_type": "education",
+      "description": "Until that time, promotions to various degrees of ambassadorships are\nstill possible\nHis spouse, Helene, 41, graduated from Concordia University in Cinema some years back and had been\nquite successful despite interludes to raise their young family.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Helene"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.703063",
+      "event_type": "investment",
+      "description": "Her three children, daughter Doe 19, son\nRay 14, and the youngest daughter Mia, 11, are her joy and top priority and consequently works only as a\nfreelance on a part-time basis.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Ray 14"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.703098",
+      "event_type": "career",
+      "description": "She has a flair for\ncharacterizations and enjoys her work.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.703140",
+      "event_type": "investment",
+      "description": "Although a fickle\nsource of income, her recent success led a new client to inquire if she would be interested to work as a\nfull-time employee and possibly doubling her earnings.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.703180",
+      "event_type": "education",
+      "description": "However, as Mia approaches high school age, and the children becoming more independent,\nshe is considering the offer.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Mia"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.723317",
+      "event_type": "education",
+      "description": "At a recent diplomatic dinner party, they met up with an old classmate, Wally Street, CFA, a finance major\ngraduate of JMSB.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.723371",
+      "event_type": "investment",
+      "description": "His favourite course was Fina 411, Portfolio Management which motivated him to\npursue a CFA charter upon graduation and ultimately a career as a portfolio manager with Blue Sky\nInvestment Management Inc.",
+      "financial_impact": 411.0,
+      "probability": 0.7,
+      "entity": "Fina 411"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.723430",
+      "event_type": "investment",
+      "description": "Wally suggested to Horatio and Helene that this was a critical but still an\nopportune time to think of their retirement and financial futures although earlier planning would have\nbeen better\nAn appointment was made at Wally\u2019s office the following week.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.723467",
+      "event_type": "health",
+      "description": "Horatio and Helene stated that they were\nin good health.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Helene"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.723502",
+      "event_type": "investment",
+      "description": "Since diplomats are eligible for retirement at age 55, Horatio and Helene share the goal of\nretiring in ten years while still in excellent physical condition to pursue travel.",
+      "financial_impact": 55.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.745238",
+      "event_type": "investment",
+      "description": "Adventurous in\nlife, they are, on the contrary, very conservative in the world of investments.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.745296",
+      "event_type": "education",
+      "description": "1\nWally learns that both have not participated in RRSP\u2019s (registered retirement savings plans), TFSA\u2019s (Tax-\nfree savings accounts) or RESP\u2019s (registered education savings plan) and last year they paid an average\ntax rate of 35%.",
+      "financial_impact": 1.0,
+      "probability": 0.35,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.745338",
+      "event_type": "housing",
+      "description": "They also expressed the desire to buy a house by year end 2023 as house prices have declined.",
+      "financial_impact": 2023.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.745363",
+      "event_type": "housing",
+      "description": "The\ncurrent accommodations are adequate but tight for their growing children.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.745389",
+      "event_type": "housing",
+      "description": "They have focused on an area\nwhere houses are older but exude charm and selling for approximately $2,500,000.",
+      "financial_impact": 2500000.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.745430",
+      "event_type": "housing",
+      "description": "They plan to purchase\nthe house with a 25% down payment, financing the balance with a fixed rate mortgage at the semi-annual\ncompounded rate of 4.95%, five year term amortized over 25 years.",
+      "financial_impact": 25.0,
+      "probability": 0.25,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.745470",
+      "event_type": "housing",
+      "description": "Annual costs of owning the house\n(property taxes, utilities, insurance, repairs, etc.) are estimated to be $34,000 per year.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.769562",
+      "event_type": "housing",
+      "description": "These home costs\nwould no longer be covered by the diplomatic housing allowance.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.769604",
+      "event_type": "housing",
+      "description": "But then on the other hand, they would\nbenefit from the inevitable appreciation in house prices.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.769638",
+      "event_type": "investment",
+      "description": "Helene\u2019s mother, a widow, 80, is not independently wealthy but is comfortable.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.769662",
+      "event_type": "family",
+      "description": "One thing for certain, she\nadores her grandchildren.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.769689",
+      "event_type": "housing",
+      "description": "She is willing to advance her life-savings of $500,000 as a gift to help purchase\na new house.",
+      "financial_impact": 500000.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.769736",
+      "event_type": "housing",
+      "description": "Besides, their new house would be\ncloser to her home and she would see her grandchildren more often.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.769778",
+      "event_type": "investment",
+      "description": "An\nhour a day on her piano, despite her arthritis, daily walks with her dog, Bond-bond, and her twice weekly\ncommunity service activities keeps her fit.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.792624",
+      "event_type": "housing",
+      "description": "Any money not needed for the house will be invested back in Helene\u2019s name.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.792670",
+      "event_type": "housing",
+      "description": "Horatio and Helene currently have a portfolio of $1,200,000 at market values invested 60% in Canada\nbonds at an interest rate of 2.25% and the balance in Apple stock.",
+      "financial_impact": 1200000.0,
+      "probability": 0.6,
+      "entity": "Helene"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.792704",
+      "event_type": "investment",
+      "description": "Horatio has the large holding in Apple\nthrough luck rather than investment skill.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.792741",
+      "event_type": "investment",
+      "description": "Impressed with his first computer, the Apple \u201cMacintosh\u201d, he\ninvested in Apple stock early at $6 per share (post-split valuation).",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.792772",
+      "event_type": "investment",
+      "description": "When it comes to investments, both Horatio and Helene are considered risk-adverse.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.792808",
+      "event_type": "investment",
+      "description": "Aside from Apple\nstock, Horatio had lost money heavily in the stock market having invested in stocks on the Shanghai stock\nexchange and a dally with cannabis stocks and cryptocurrency.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.792855",
+      "event_type": "investment",
+      "description": "All told, they are adamant about\nnot investing in emerging markets, technology and oil stocks, nor commodities.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.813179",
+      "event_type": "investment",
+      "description": "Derivatives, trading on\nmargin, short-selling, hedge funds and complicated instruments like collateralized debt obligations are\nalso strictly frowned upon.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.813240",
+      "event_type": "housing",
+      "description": "He believes that the current\nhigher inflation rates are here to stay.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.813281",
+      "event_type": "education",
+      "description": "Doe is an exceptional student, competent, and ambitious, she is currently applying for medical school for\nthe 2023 Fall semester.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.813326",
+      "event_type": "education",
+      "description": "Although locally, McGill University\u2019s medical faculty is world-renown, her first\nchoice would be Johns Hopkins University in Baltimore, the top medical school in the United States.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.836064",
+      "event_type": "education",
+      "description": "Staying in Montreal would\nbasically be free since tuition in Quebec is about $6,000, the lowest in Canada and she can continue to\n2\nlive at home.",
+      "financial_impact": 6000.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.836120",
+      "event_type": "education",
+      "description": "The tuition at Johns Hopkins University, on the other hand, is $70,000 USD for out of state\nstudents and would require living costs of another $40,000 USD.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.836158",
+      "event_type": "family",
+      "description": "Ray is the athlete of the three children.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Ray"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.836213",
+      "event_type": "housing",
+      "description": "His potential as top world 100 player is readily\napparent.",
+      "financial_impact": 100.0,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.836259",
+      "event_type": "investment",
+      "description": "The coaching and the\nnumerous tournaments throughout the world are largely covered financially by Tennis Canada and by\ncorporate sponsorships, such as Nike.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.855961",
+      "event_type": "investment",
+      "description": "Nevertheless, approximately $20,000 per year is spend by the\nfamily to travel and watch Ray compete in some of the tournaments.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Ray"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.856000",
+      "event_type": "investment",
+      "description": "Horatio and Helene are \u201ctree huggers\u201d, committed environmentalists.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Helene"
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.856046",
+      "event_type": "family",
+      "description": "And of course, they want to leave a meaningful inheritance to their three children.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.856079",
+      "event_type": "housing",
+      "description": "Experiencing the\ncurrent financial challenges of buying a home, they realize that home ownership for the next generation\nwithout parental help might only be a dream.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.856107",
+      "event_type": "housing",
+      "description": "The simple fact is that income has not kept up with the\nincrease in house prices.",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": null
+    },
+    {
+      "timestamp": "2026-07-16T23:22:15.856147",
+      "event_type": "career",
+      "description": "Is it not the harsh reality that despite both having enviable careers and income,\nthey still appreciate the help from Helene\u2019s Mom?\n3",
+      "financial_impact": null,
+      "probability": 0.7,
+      "entity": "Helene\u2019s Mom"
+    }
+  ]
+}

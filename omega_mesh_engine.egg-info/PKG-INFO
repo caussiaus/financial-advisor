@@ -1,0 +1,312 @@
+Metadata-Version: 2.4
+Name: omega-mesh-engine
+Version: 1.0.0
+Summary: Omega Mesh Financial Engine with CUDA Acceleration
+Author: Casey Jussaume
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Office/Business :: Financial
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: networkx>=3.0
+Requires-Dist: scipy>=1.10.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: matplotlib>=3.7.0
+Requires-Dist: plotly>=5.13.0
+Requires-Dist: flask>=2.2.0
+Requires-Dist: python-dateutil>=2.8.0
+Requires-Dist: pdfplumber>=0.7.0
+Provides-Extra: cuda
+Requires-Dist: cupy-cuda12x>=12.0.0; extra == "cuda"
+Requires-Dist: numba>=0.57.0; extra == "cuda"
+Requires-Dist: torch>=2.0.0; extra == "cuda"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🌐 Omega Mesh Financial System
+
+**A Continuous Stochastic Process for Ultra-Flexible Financial Planning**
+
+## Overview
+
+The Omega Mesh Financial System is a sophisticated financial modeling framework that implements a continuous stochastic process for managing financial milestones and payment structures. The system treats financial decision-making as a geometric Brownian motion process where infinite paths exist, and as decisions are made, past alternatives solidify while future possibilities evolve dynamically.
+
+## 🎯 Core Concept
+
+The system addresses your specific use case:
+
+> *"Give the front-end the case PDF and the PDF gets life milestone and financial change moments. Timestamp them and refine the logic that creates the framework that evaluates all execution methodologies for the financial milestones - the different payment structures they may have."*
+
+The **Omega mesh** represents all possible financial states and decisions. As you progress through time and make payments:
+- Past paths in the omega disappear (solidify)
+- Future visibility adjusts based on your actions  
+- The system supports ultra-flexible payment structures
+- Accounting constraints are always respected
+
+## 🚀 Key Features
+
+### 1. PDF Processing & Milestone Extraction
+- **Enhanced PDF Processor** extracts life milestones and financial events
+- Automatically timestamps events and estimates financial impacts
+- Identifies payment flexibility requirements for each milestone
+- Supports various document formats and structures
+
+### 2. Stochastic Mesh Engine (The "Omega")
+- **Geometric Brownian Motion** modeling for wealth evolution
+- **Infinite path generation** with probabilistic branching
+- **Dynamic mesh evolution** where past alternatives disappear
+- **Visibility radius** that adjusts based on uncertainty and time
+- **Path solidification** as decisions are actualized
+
+### 3. Ultra-Flexible Payment System
+The system supports any payment structure imaginable:
+
+```python
+# Examples of supported payment flexibility:
+"1% today, 11% next Tuesday, 88% on grandmother's birthday"
+"Any amount on any date"
+"Milestone-triggered payments"
+"Percentage-based installments"
+"Custom frequency scheduling"
+```
+
+### 4. Accounting Reconciliation Engine
+- **Double-entry bookkeeping** for financial accuracy
+- **Payment constraint validation** (minimum balances, daily limits)
+- **Real-time balance checking** before payment execution
+- **Transaction approval workflows** for large amounts
+- **Comprehensive financial statements**
+
+## 🏗️ System Architecture
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌────────────────────┐
+│   PDF Input     │────│  Milestone       │────│   Omega Mesh       │
+│                 │    │  Extraction      │    │   Generation       │
+│ • IPS Documents │    │                  │    │                    │
+│ • Financial     │    │ • Event Dating   │    │ • GBM Modeling     │
+│   Plans         │    │ • Impact Analysis│    │ • Path Branching   │
+│ • Life Events   │    │ • Flexibility    │    │ • Probability      │
+└─────────────────┘    │   Assessment     │    │   Calculation      │
+                       └──────────────────┘    └────────────────────┘
+                                │                        │
+                                ▼                        ▼
+┌─────────────────┐    ┌──────────────────┐    ┌────────────────────┐
+│   Payment       │────│  Accounting      │────│   Mesh Evolution   │
+│   Execution     │    │  Validation      │    │                    │
+│                 │    │                  │    │ • Path Solidify    │
+│ • Flexible      │    │ • Balance Check  │    │ • Visibility Update│
+│   Scheduling    │    │ • Constraint     │    │ • Future Pruning   │
+│ • Amount        │    │   Validation     │    │ • Probability      │
+│   Customization │    │ • Double-entry   │    │   Recalculation    │
+└─────────────────┘    │   Recording      │    └────────────────────┘
+                       └──────────────────┘
+```
+
+## 🎬 Quick Start
+
+1. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the Demonstration**
+   ```bash
+   python demo_omega_mesh.py
+   ```
+
+3. **With Your Own PDF**
+   ```python
+   # Place your IPS PDF in data/uploads/
+   # The system will automatically extract milestones
+   ```
+
+## 💡 Example Usage
+
+```python
+from src.omega_mesh_integration import OmegaMeshIntegration
+
+# Initialize with your financial state
+initial_state = {
+    'total_wealth': 500000,
+    'cash': 100000,
+    'savings': 150000,
+    'investments': 250000
+}
+
+# Create the Omega mesh system
+omega_system = OmegaMeshIntegration(initial_state)
+
+# Process your IPS document
+milestones = omega_system.process_ips_document("your_ips.pdf")
+
+# Demonstrate ultra-flexible payments
+payment_demo = omega_system.demonstrate_flexible_payment()
+
+# Show mesh evolution
+evolution = omega_system.show_omega_mesh_evolution()
+```
+
+## 🌊 The Stochastic Process Explained
+
+### Geometric Brownian Motion
+The system uses GBM to model wealth evolution:
+```
+dS(t) = μS(t)dt + σS(t)dW(t)
+```
+Where:
+- `S(t)` = wealth at time t
+- `μ` = drift (expected return)
+- `σ` = volatility
+- `dW(t)` = Wiener process (random component)
+
+### Mesh Evolution
+1. **Initial State**: Omega contains all possible financial paths
+2. **Decision Making**: When payments are made, paths solidify
+3. **Past Pruning**: Alternative histories disappear from the mesh
+4. **Future Adjustment**: Visibility and probabilities update
+5. **Continuous Process**: The mesh evolves continuously over time
+
+### Payment Flexibility
+The system supports any payment structure:
+
+```python
+# Ultra-flexible payment options
+options = {
+    'immediate': "1% payment today",
+    'scheduled': "11% payment next Tuesday", 
+    'custom_date': "88% on grandmother's birthday",
+    'milestone_triggered': "Pay when goal achieved",
+    'fully_custom': "Any amount, any date"
+}
+```
+
+## 📊 Generated Outputs
+
+### 1. Interactive Dashboard
+- **Milestone Timeline**: Visual representation of financial events
+- **Mesh Evolution**: Real-time view of path solidification
+- **Payment Options**: Flexible scheduling interface
+- **Wealth Trajectory**: Projected financial outcomes
+
+### 2. Comprehensive Reports
+- **System Overview**: High-level statistics and status
+- **Milestone Analysis**: Detailed event breakdown
+- **Mesh Statistics**: Node counts, probabilities, visibility
+- **Financial Statements**: Balance sheets and transaction history
+- **Payment History**: Complete record of all transactions
+
+### 3. Export Formats
+- **JSON**: Machine-readable system state
+- **HTML**: Interactive visualizations
+- **CSV**: Data for external analysis
+
+## 🔧 Configuration
+
+### Mesh Parameters
+```python
+{
+    'time_horizon_years': 10,
+    'visibility_decay_rate': 0.1,
+    'max_lookahead_days': 1825,
+    'scenario_branches': 50,
+    'probability_threshold': 0.001
+}
+```
+
+### Accounting Constraints
+```python
+{
+    'min_balance': 1000,
+    'max_single_payment': 50000,
+    'daily_limit': 100000,
+    'monthly_limit': 500000,
+    'requires_approval': True
+}
+```
+
+## 🎯 Real-World Applications
+
+### Financial Planning
+- **Retirement Planning**: Model various contribution strategies
+- **Education Funding**: Flexible payment schedules for tuition
+- **Major Purchases**: Optimize timing for house/car purchases
+- **Investment Strategies**: Dynamic portfolio rebalancing
+
+### Risk Management
+- **Scenario Planning**: Test multiple financial futures
+- **Stress Testing**: Evaluate performance under adverse conditions
+- **Liquidity Management**: Ensure adequate cash flow
+- **Constraint Compliance**: Maintain regulatory/personal limits
+
+### Decision Support
+- **Payment Optimization**: Find optimal payment structures
+- **Timing Analysis**: Identify best execution windows
+- **Trade-off Evaluation**: Compare different milestone approaches
+- **Sensitivity Analysis**: Understand impact of parameter changes
+
+## 🧮 Technical Details
+
+### Dependencies
+- **NumPy/SciPy**: Numerical computations and GBM modeling
+- **Pandas**: Data manipulation and analysis
+- **NetworkX**: Graph-based mesh representation
+- **Plotly**: Interactive visualizations
+- **PDFPlumber**: Advanced PDF text extraction
+- **Decimal**: Precise financial calculations
+
+### Performance
+- **Mesh Size**: Efficiently handles 10,000+ nodes
+- **Computation**: Optimized for real-time updates
+- **Memory**: Intelligent pruning of irrelevant paths
+- **Scalability**: Modular architecture for expansion
+
+## 🔮 Future Enhancements
+
+- **Machine Learning**: Improve milestone extraction accuracy
+- **Real-time Data**: Live market data integration
+- **Advanced Visualization**: 3D mesh representations
+- **Mobile Interface**: Responsive web application
+- **API Integration**: Connect to banking and investment platforms
+- **Collaborative Planning**: Multi-user financial planning
+
+## 📋 System Requirements
+
+- **Python**: 3.8 or higher
+- **Memory**: 4GB RAM minimum (8GB recommended)
+- **Storage**: 1GB for full system with data
+- **OS**: Linux, macOS, or Windows
+
+## 🤝 Contributing
+
+The Omega Mesh Financial System is designed to be extensible. Key areas for contribution:
+
+1. **Enhanced PDF Processing**: Better extraction algorithms
+2. **Alternative Models**: Additional stochastic processes
+3. **Visualization**: New dashboard components
+4. **Integration**: External system connectors
+5. **Testing**: Comprehensive test suites
+
+## 📄 License
+
+This project demonstrates advanced financial modeling concepts. Please ensure compliance with relevant financial regulations in your jurisdiction.
+
+---
+
+**Built with ❤️ for sophisticated financial planning**
+
+*"The beauty of the model is that it supports a person wanting to pay for 1% of something today and 11% next Tuesday and the remaining on their grandmother's birthday. The continuous mesh needs to support the ability to pay for things in our own way but needs to respect the constraints of accounting balances."*
