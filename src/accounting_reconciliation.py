@@ -1,12 +1,15 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple, Optional, Any
 from dataclasses import dataclass, field
 from decimal import Decimal, ROUND_HALF_UP
 import json
 from enum import Enum
 import logging
+from .enhanced_accounting_logger import (
+    EnhancedAccountingLogger, FlowItemCategory, BalanceItemCategory, LogItemType
+)
 
 
 class AccountType(Enum):
@@ -80,6 +83,9 @@ class AccountingReconciliationEngine:
         self.constraints = {}  # account_id -> PaymentConstraint
         self.pending_transactions = []  # Transactions awaiting approval
         self.logger = self._setup_logging()
+        
+        # Initialize enhanced logging
+        self.enhanced_logger = EnhancedAccountingLogger()
         
         # Initialize default accounts
         self._initialize_default_accounts()
@@ -293,6 +299,10 @@ class AccountingReconciliationEngine:
     def _execute_transaction(self, transaction: Transaction) -> Tuple[bool, str]:
         """Execute a validated transaction and update account balances"""
         try:
+            # Store previous balances for logging
+            previous_debit_balance = self.accounts[transaction.debit_account].balance
+            previous_credit_balance = self.accounts[transaction.credit_account].balance
+            
             # Update balances based on double-entry bookkeeping
             debit_account = self.accounts[transaction.debit_account]
             credit_account = self.accounts[transaction.credit_account]
@@ -319,6 +329,41 @@ class AccountingReconciliationEngine:
             transaction.is_pending = False
             self.transactions.append(transaction)
             
+            # Enhanced logging for flow items
+            flow_category = self._determine_flow_category(transaction)
+            self.enhanced_logger.log_flow_item(
+                category=flow_category,
+                amount=transaction.amount,
+                from_account=transaction.debit_account,
+                to_account=transaction.credit_account,
+                description=transaction.description,
+                transaction_id=transaction.transaction_id,
+                reference_id=transaction.reference_id,
+                metadata={
+                    'transaction_type': transaction.transaction_type.value,
+                    'created_by': transaction.created_by
+                }
+            )
+            
+            # Enhanced logging for balance changes
+            self.enhanced_logger.log_balance_item(
+                category=self._determine_balance_category(debit_account.account_type),
+                account_id=transaction.debit_account,
+                balance=debit_account.balance,
+                previous_balance=previous_debit_balance,
+                change_amount=debit_account.balance - previous_debit_balance,
+                metadata={'transaction_id': transaction.transaction_id}
+            )
+            
+            self.enhanced_logger.log_balance_item(
+                category=self._determine_balance_category(credit_account.account_type),
+                account_id=transaction.credit_account,
+                balance=credit_account.balance,
+                previous_balance=previous_credit_balance,
+                change_amount=credit_account.balance - previous_credit_balance,
+                metadata={'transaction_id': transaction.transaction_id}
+            )
+            
             self.logger.info(f"Transaction {transaction.transaction_id} executed successfully")
             
             # Update net worth
@@ -328,6 +373,12 @@ class AccountingReconciliationEngine:
             
         except Exception as e:
             self.logger.error(f"Error executing transaction {transaction.transaction_id}: {str(e)}")
+            self.enhanced_logger.log_error(f"Transaction execution failed: {str(e)}", {
+                'transaction_id': transaction.transaction_id,
+                'debit_account': transaction.debit_account,
+                'credit_account': transaction.credit_account,
+                'amount': str(transaction.amount)
+            })
             return False, f"Transaction failed: {str(e)}"
     
     def approve_pending_transaction(self, transaction_id: str) -> Tuple[bool, str]:
@@ -607,6 +658,70 @@ class AccountingReconciliationEngine:
         
         with open(filepath, 'w') as f:
             json.dump(export_data, f, indent=2)
+    
+    def _determine_flow_category(self, transaction: Transaction) -> FlowItemCategory:
+        """Determine the flow category for a transaction"""
+        if transaction.transaction_type == TransactionType.INCOME:
+            return FlowItemCategory.INCOME
+        elif transaction.transaction_type == TransactionType.PAYMENT:
+            return FlowItemCategory.PAYMENT
+        elif transaction.transaction_type == TransactionType.INVESTMENT:
+            return FlowItemCategory.INVESTMENT
+        elif transaction.transaction_type == TransactionType.WITHDRAWAL:
+            return FlowItemCategory.WITHDRAWAL
+        elif transaction.transaction_type == TransactionType.TRANSFER:
+            return FlowItemCategory.TRANSFER
+        elif transaction.transaction_type == TransactionType.MILESTONE_PAYMENT:
+            return FlowItemCategory.PAYMENT
+        else:
+            return FlowItemCategory.TRANSFER
+    
+    def _determine_balance_category(self, account_type: AccountType) -> BalanceItemCategory:
+        """Determine the balance category for an account type"""
+        if account_type == AccountType.ASSET:
+            return BalanceItemCategory.ASSET
+        elif account_type == AccountType.LIABILITY:
+            return BalanceItemCategory.LIABILITY
+        elif account_type == AccountType.EQUITY:
+            return BalanceItemCategory.EQUITY
+        elif account_type == AccountType.INCOME:
+            return BalanceItemCategory.INCOME
+        elif account_type == AccountType.EXPENSE:
+            return BalanceItemCategory.EXPENSE
+        else:
+            return BalanceItemCategory.ASSET
+    
+    def log_reconciliation_summary(self):
+        """Log a reconciliation summary with enhanced logging"""
+        total_assets = Decimal('0')
+        total_liabilities = Decimal('0')
+        accounts_involved = []
+        
+        for account in self.accounts.values():
+            if account.account_type == AccountType.ASSET:
+                total_assets += account.balance
+            elif account.account_type == AccountType.LIABILITY:
+                total_liabilities += account.balance
+            accounts_involved.append(account.account_id)
+        
+        net_worth = total_assets - total_liabilities
+        
+        self.enhanced_logger.log_reconciliation(
+            reconciliation_type="periodic_reconciliation",
+            accounts_involved=accounts_involved,
+            total_assets=total_assets,
+            total_liabilities=total_liabilities,
+            net_worth=net_worth,
+            metadata={'reconciliation_method': 'double_entry_bookkeeping'}
+        )
+    
+    def export_enhanced_logs(self, filepath: str):
+        """Export enhanced logs to file"""
+        self.enhanced_logger.export_logs(filepath)
+    
+    def get_enhanced_log_statistics(self) -> Dict[str, Any]:
+        """Get enhanced logging statistics"""
+        return self.enhanced_logger.get_statistics()
 
 
 if __name__ == "__main__":
