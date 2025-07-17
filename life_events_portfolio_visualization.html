@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Events Portfolio Impact Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .visualization-container {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            min-height: 600px;
+        }
+        
+        .chart-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .chart-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .timeline-container {
+            grid-column: 1 / -1;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .event-marker {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .event-marker:hover {
+            transform: scale(1.1);
+        }
+        
+        .event-tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            max-width: 250px;
+        }
+        
+        .portfolio-line {
+            stroke-width: 3;
+            fill: none;
+        }
+        
+        .portfolio-area {
+            opacity: 0.3;
+        }
+        
+        .allocation-bar {
+            transition: all 0.5s ease;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        .stats-panel {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        
+        .comparison-mode {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+        }
+        
+        @media (max-width: 768px) {
+            .visualization-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Life Events Portfolio Impact</h1>
+            <p>Visualizing how life events affect portfolio values and allocation strategies</p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <button class="btn btn-primary" onclick="startAnimation()">▶️ Start Animation</button>
+                <button class="btn btn-secondary" onclick="resetAnimation()">🔄 Reset</button>
+                <button class="btn btn-success" onclick="injectHoratio()">👤 Inject Horatio's Profile</button>
+            </div>
+            <div class="control-group">
+                <label>Animation Speed:</label>
+                <input type="range" id="speedSlider" min="0.5" max="3" step="0.1" value="1" onchange="updateSpeed()">
+                <span id="speedValue">1x</span>
+            </div>
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="showComparison" onchange="toggleComparison()">
+                    Show Dynamic Reallocation Comparison
+                </label>
+            </div>
+        </div>
+        
+        <div class="visualization-container" id="visualizationContainer">
+            <div class="chart-panel">
+                <div class="chart-title">Portfolio Value Timeline</div>
+                <div id="portfolioChart"></div>
+            </div>
+            
+            <div class="chart-panel">
+                <div class="chart-title">Asset Allocation Evolution</div>
+                <div id="allocationChart"></div>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="chart-title">Life Events Timeline</div>
+                <div id="timelineChart"></div>
+            </div>
+        </div>
+        
+        <div class="stats-panel">
+            <div class="stats-grid" id="statsGrid">
+                <!-- Stats will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data for the 5 life events
+        const lifeEventsData = {
+            "events": [
+                {
+                    "event_type": "family_planning",
+                    "description": "First child born - increased need for financial stability",
+                    "actual_date": "2020-03-15T00:00:00",
+                    "planned_date": "2020-06-01T00:00:00",
+                    "cash_flow_impact": "negative",
+                    "impact_amount": -25000,
+                    "confidence": 1.0,
+                    "trigger_reason": "Family expansion",
+                    "portfolio_adjustment": {
+                        "risk_reduction": 0.15,
+                        "cash_increase": 0.1
+                    },
+                    "life_stage": "young_family"
+                },
+                {
+                    "event_type": "career_advancement",
+                    "description": "Promotion to senior role - increased income and bonus",
+                    "actual_date": "2021-01-15T00:00:00",
+                    "planned_date": "2021-03-01T00:00:00",
+                    "cash_flow_impact": "positive",
+                    "impact_amount": 30000,
+                    "confidence": 0.95,
+                    "trigger_reason": "Strong performance review",
+                    "portfolio_adjustment": {
+                        "equity_increase": 0.1,
+                        "risk_band": 3
+                    },
+                    "life_stage": "career_growth"
+                },
+                {
+                    "event_type": "portfolio_rebalancing",
+                    "description": "COVID market recovery - increased risk tolerance",
+                    "actual_date": "2022-06-01T00:00:00",
+                    "planned_date": "2022-01-01T00:00:00",
+                    "cash_flow_impact": "neutral",
+                    "impact_amount": 0,
+                    "confidence": 0.85,
+                    "trigger_reason": "Market conditions improved",
+                    "portfolio_adjustment": {
+                        "equity_increase": 0.2,
+                        "bonds_decrease": 0.15
+                    },
+                    "life_stage": "accumulation"
+                },
+                {
+                    "event_type": "education_planning",
+                    "description": "Starting education fund - considering Johns Hopkins vs McGill",
+                    "actual_date": "2023-09-01T00:00:00",
+                    "planned_date": "2023-06-01T00:00:00",
+                    "cash_flow_impact": "negative",
+                    "impact_amount": -15000,
+                    "confidence": 0.9,
+                    "trigger_reason": "Child approaching school age",
+                    "portfolio_adjustment": {
+                        "education_fund": 0.12,
+                        "risk_band": 2
+                    },
+                    "life_stage": "education_planning"
+                },
+                {
+                    "event_type": "education_decision",
+                    "description": "Chose McGill over Johns Hopkins - cost concerns",
+                    "actual_date": "2024-02-15T00:00:00",
+                    "planned_date": "2024-06-01T00:00:00",
+                    "cash_flow_impact": "positive",
+                    "impact_amount": 75000,
+                    "confidence": 1.0,
+                    "trigger_reason": "Financial stress analysis showed Johns Hopkins too risky",
+                    "portfolio_adjustment": {
+                        "stress_reduction": 0.25,
+                        "cash_freed": 75000
+                    },
+                    "life_stage": "education_commitment"
+                }
+            ],
+            "analysis_report": {
+                "analysis_period": "2020-2025",
+                "total_events": 5,
+                "portfolio_performance": {
+                    "starting_value": 470588.23529411765,
+                    "ending_value": 764560.9726667746,
+                    "total_return": 0.624692066916896,
+                    "average_annual_return": 0.07276114081996433,
+                    "volatility": 0.10981078835277981,
+                    "best_year": "2021",
+                    "worst_year": "2022"
+                },
+                "life_events_impact": {
+                    "positive_events": 2,
+                    "negative_events": 2,
+                    "total_cash_impact": 35000,
+                    "biggest_positive_impact": 75000,
+                    "biggest_negative_impact": -25000
+                }
+            }
+        };
+
+        // Horatio's profile data
+        const horatioProfile = {
+            "client_id": "horatio",
+            "profile": {
+                "name": "Horatio",
+                "age": 42,
+                "base_income": 125000,
+                "occupation": "Senior Financial Analyst",
+                "education": "MBA in Finance",
+                "marital_status": "married",
+                "dependents": 2,
+                "location": "New York, NY",
+                "industry": "Financial Services"
+            },
+            "vector_profile": {
+                "life_stage": "mid_career",
+                "risk_tolerance": 0.65,
+                "investment_horizon": "long_term",
+                "financial_sophistication": "high",
+                "income_stability": "stable",
+                "debt_to_income_ratio": 0.28,
+                "emergency_fund_months": 6,
+                "retirement_savings_rate": 0.15
+            },
+            "financial_profile": {
+                "total_assets": 850000,
+                "liquid_assets": 150000,
+                "investment_portfolio": 500000,
+                "real_estate": 200000,
+                "total_liabilities": 180000,
+                "monthly_expenses": 8500,
+                "monthly_savings": 3000,
+                "credit_score": 780
+            },
+            "lifestyle_events": [
+                {
+                    "event_id": "career_advancement_2024",
+                    "event_type": "income_change",
+                    "description": "Promotion to Senior Financial Analyst",
+                    "estimated_date": "2024-06-15",
+                    "amount": 25000,
+                    "category": "career",
+                    "impact": "positive",
+                    "probability": 0.95
+                },
+                {
+                    "event_id": "child_college_2035",
+                    "event_type": "major_expense",
+                    "description": "First child starts college",
+                    "estimated_date": "2035-09-01",
+                    "amount": -50000,
+                    "category": "education",
+                    "impact": "negative",
+                    "probability": 0.90
+                },
+                {
+                    "event_id": "retirement_2048",
+                    "event_type": "life_transition",
+                    "description": "Planned retirement",
+                    "estimated_date": "2048-01-01",
+                    "amount": -125000,
+                    "category": "retirement",
+                    "impact": "negative",
+                    "probability": 0.85
+                },
+                {
+                    "event_id": "market_downturn_2025",
+                    "event_type": "investment_loss",
+                    "description": "Potential market correction",
+                    "estimated_date": "2025-03-01",
+                    "amount": -75000,
+                    "category": "market",
+                    "impact": "negative",
+                    "probability": 0.30
+                }
+            ],
+            "investment_preferences": {
+                "asset_allocation": {
+                    "stocks": 0.60,
+                    "bonds": 0.25,
+                    "real_estate": 0.10,
+                    "cash": 0.05
+                },
+                "investment_style": "growth_and_income",
+                "tax_considerations": "tax_advantaged_first",
+                "esg_preferences": "moderate",
+                "international_exposure": 0.25
+            },
+            "risk_profile": {
+                "risk_capacity": "high",
+                "risk_willingness": "moderate",
+                "risk_need": "medium",
+                "volatility_tolerance": 0.65,
+                "loss_tolerance": 0.40,
+                "time_horizon": "long_term"
+            }
+        };
+
+        // Global variables
+        let currentData = lifeEventsData;
+        let animationSpeed = 1;
+        let isAnimating = false;
+        let currentYear = 2020;
+        let horatioInjected = false;
+        let comparisonMode = false;
+
+        // Generate portfolio data based on events
+        function generatePortfolioData(events, startValue = 470588.24) {
+            const portfolioData = [];
+            let currentValue = startValue;
+            let currentEquity = 0.53;
+            let currentBonds = 0.41;
+            let currentCash = 0.06;
+            
+            // Generate monthly data from 2020 to 2025
+            for (let year = 2020; year <= 2025; year++) {
+                for (let month = 0; month < 12; month++) {
+                    const date = new Date(year, month, 1);
+                    const dateStr = date.toISOString().split('T')[0];
+                    
+                    // Check for events in this month
+                    const event = events.find(e => {
+                        const eventDate = new Date(e.actual_date);
+                        return eventDate.getFullYear() === year && eventDate.getMonth() === month;
+                    });
+                    
+                    if (event) {
+                        // Apply event impact
+                        currentValue += event.impact_amount;
+                        
+                        // Apply portfolio adjustments
+                        if (event.portfolio_adjustment) {
+                            if (event.portfolio_adjustment.risk_reduction) {
+                                currentEquity -= event.portfolio_adjustment.risk_reduction;
+                                currentCash += event.portfolio_adjustment.cash_increase || 0;
+                                currentBonds = 1 - currentEquity - currentCash;
+                            }
+                            if (event.portfolio_adjustment.equity_increase) {
+                                currentEquity += event.portfolio_adjustment.equity_increase;
+                                if (event.portfolio_adjustment.bonds_decrease) {
+                                    currentBonds -= event.portfolio_adjustment.bonds_decrease;
+                                }
+                                currentCash = 1 - currentEquity - currentBonds;
+                            }
+                        }
+                    }
+                    
+                    // Add market returns (simplified)
+                    const marketReturn = (Math.random() - 0.5) * 0.02; // ±1% monthly
+                    currentValue *= (1 + marketReturn);
+                    
+                    portfolioData.push({
+                        date: dateStr,
+                        value: currentValue,
+                        equity: currentEquity,
+                        bonds: currentBonds,
+                        cash: currentCash,
+                        event: event || null
+                    });
+                }
+            }
+            
+            return portfolioData;
+        }
+
+        // Generate Horatio's dynamic reallocation data
+        function generateHoratioData() {
+            const horatioData = [];
+            let currentValue = 850000; // Horatio's starting portfolio
+            let currentStocks = 0.60;
+            let currentBonds = 0.25;
+            let currentRealEstate = 0.10;
+            let currentCash = 0.05;
+            
+            // Generate data for Horatio's timeline
+            for (let year = 2024; year <= 2035; year++) {
+                for (let month = 0; month < 12; month++) {
+                    const date = new Date(year, month, 1);
+                    const dateStr = date.toISOString().split('T')[0];
+                    
+                    // Check for Horatio's events
+                    const event = horatioProfile.lifestyle_events.find(e => {
+                        const eventDate = new Date(e.estimated_date);
+                        return eventDate.getFullYear() === year && eventDate.getMonth() === month;
+                    });
+                    
+                    if (event) {
+                        currentValue += event.amount;
+                        
+                        // Dynamic reallocation based on event type
+                        if (event.event_type === 'major_expense') {
+                            // Increase cash for major expenses
+                            currentCash += 0.1;
+                            currentStocks -= 0.05;
+                            currentBonds -= 0.05;
+                        } else if (event.event_type === 'income_change') {
+                            // Increase equity for positive income changes
+                            currentStocks += 0.1;
+                            currentCash -= 0.1;
+                        }
+                    }
+                    
+                    // Dynamic rebalancing based on market conditions
+                    const marketStress = Math.random();
+                    if (marketStress > 0.7) {
+                        // High stress - reduce risk
+                        currentStocks -= 0.05;
+                        currentBonds += 0.03;
+                        currentCash += 0.02;
+                    } else if (marketStress < 0.3) {
+                        // Low stress - increase risk
+                        currentStocks += 0.03;
+                        currentBonds -= 0.02;
+                        currentCash -= 0.01;
+                    }
+                    
+                    // Normalize allocations
+                    const total = currentStocks + currentBonds + currentRealEstate + currentCash;
+                    currentStocks /= total;
+                    currentBonds /= total;
+                    currentRealEstate /= total;
+                    currentCash /= total;
+                    
+                    // Add market returns
+                    const marketReturn = (Math.random() - 0.5) * 0.015; // Slightly lower volatility
+                    currentValue *= (1 + marketReturn);
+                    
+                    horatioData.push({
+                        date: dateStr,
+                        value: currentValue,
+                        stocks: currentStocks,
+                        bonds: currentBonds,
+                        realEstate: currentRealEstate,
+                        cash: currentCash,
+                        event: event || null
+                    });
+                }
+            }
+            
+            return horatioData;
+        }
+
+        // Create portfolio value chart
+        function createPortfolioChart(data, containerId) {
+            const margin = {top: 20, right: 30, bottom: 40, left: 60};
+            const width = 600 - margin.left - margin.right;
+            const height = 300 - margin.top - margin.bottom;
+            
+            const container = d3.select(containerId);
+            container.selectAll("*").remove();
+            
+            const svg = container.append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+            const x = d3.scaleTime()
+                .domain(d3.extent(data, d => new Date(d.date)))
+                .range([0, width]);
+            
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(data, d => d.value)])
+                .range([height, 0]);
+            
+            // Add area
+            const area = d3.area()
+                .x(d => x(new Date(d.date)))
+                .y0(height)
+                .y1(d => y(d.value));
+            
+            svg.append("path")
+                .datum(data)
+                .attr("class", "portfolio-area")
+                .attr("fill", "url(#areaGradient)")
+                .attr("d", area);
+            
+            // Add line
+            const line = d3.line()
+                .x(d => x(new Date(d.date)))
+                .y(d => y(d.value));
+            
+            svg.append("path")
+                .datum(data)
+                .attr("class", "portfolio-line")
+                .attr("stroke", "#667eea")
+                .attr("d", line);
+            
+            // Add event markers
+            svg.selectAll(".event-marker")
+                .data(data.filter(d => d.event))
+                .enter().append("circle")
+                .attr("class", "event-marker")
+                .attr("cx", d => x(new Date(d.date)))
+                .attr("cy", d => y(d.value))
+                .attr("r", 6)
+                .attr("fill", d => d.event.cash_flow_impact === "positive" ? "#28a745" : 
+                                  d.event.cash_flow_impact === "negative" ? "#dc3545" : "#ffc107")
+                .attr("stroke", "white")
+                .attr("stroke-width", 2)
+                .on("mouseover", function(event, d) {
+                    const tooltip = d3.select("body").append("div")
+                        .attr("class", "event-tooltip")
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                    
+                    tooltip.html(`
+                        <strong>${d.event.description}</strong><br/>
+                        Impact: $${d.event.impact_amount.toLocaleString()}<br/>
+                        Type: ${d.event.event_type}<br/>
+                        Date: ${new Date(d.event.actual_date).toLocaleDateString()}
+                    `);
+                })
+                .on("mouseout", function() {
+                    d3.selectAll(".event-tooltip").remove();
+                });
+            
+            // Add axes
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y")));
+            
+            svg.append("g")
+                .call(d3.axisLeft(y).tickFormat(d => "$" + (d/1000) + "k"));
+            
+            // Add gradient
+            const defs = svg.append("defs");
+            const gradient = defs.append("linearGradient")
+                .attr("id", "areaGradient")
+                .attr("gradientUnits", "userSpaceOnUse")
+                .attr("x1", 0).attr("y1", height)
+                .attr("x2", 0).attr("y2", 0);
+            
+            gradient.append("stop")
+                .attr("offset", "0%")
+                .attr("stop-color", "#667eea")
+                .attr("stop-opacity", 0.3);
+            
+            gradient.append("stop")
+                .attr("offset", "100%")
+                .attr("stop-color", "#667eea")
+                .attr("stop-opacity", 0.1);
+        }
+
+        // Create allocation chart
+        function createAllocationChart(data, containerId) {
+            const margin = {top: 20, right: 30, bottom: 40, left: 60};
+            const width = 600 - margin.left - margin.right;
+            const height = 300 - margin.top - margin.bottom;
+            
+            const container = d3.select(containerId);
+            container.selectAll("*").remove();
+            
+            const svg = container.append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+            const x = d3.scaleTime()
+                .domain(d3.extent(data, d => new Date(d.date)))
+                .range([0, width]);
+            
+            const y = d3.scaleLinear()
+                .domain([0, 1])
+                .range([height, 0]);
+            
+            const color = d3.scaleOrdinal()
+                .domain(["equity", "bonds", "cash"])
+                .range(["#667eea", "#28a745", "#ffc107"]);
+            
+            // Create stack
+            const stack = d3.stack()
+                .keys(["equity", "bonds", "cash"])
+                .order(d3.stackOrderNone)
+                .offset(d3.stackOffsetDiverging);
+            
+            const series = stack(data);
+            
+            // Add areas
+            svg.selectAll(".allocation-area")
+                .data(series)
+                .enter().append("path")
+                .attr("class", "allocation-area")
+                .attr("fill", d => color(d.key))
+                .attr("d", d3.area()
+                    .x(d => x(new Date(d.data.date)))
+                    .y0(d => y(d[0]))
+                    .y1(d => y(d[1]))
+                );
+            
+            // Add axes
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y")));
+            
+            svg.append("g")
+                .call(d3.axisLeft(y).tickFormat(d3.format(".0%")));
+            
+            // Add legend
+            const legend = svg.append("g")
+                .attr("transform", `translate(${width - 100}, 20)`);
+            
+            legend.selectAll(".legend-item")
+                .data(["equity", "bonds", "cash"])
+                .enter().append("g")
+                .attr("class", "legend-item")
+                .attr("transform", (d, i) => `translate(0, ${i * 20})`)
+                .each(function(d) {
+                    d3.select(this).append("rect")
+                        .attr("width", 15)
+                        .attr("height", 15)
+                        .attr("fill", color(d));
+                    
+                    d3.select(this).append("text")
+                        .attr("x", 20)
+                        .attr("y", 12)
+                        .text(d.charAt(0).toUpperCase() + d.slice(1));
+                });
+        }
+
+        // Create timeline chart
+        function createTimelineChart(events, containerId) {
+            const margin = {top: 20, right: 30, bottom: 40, left: 60};
+            const width = 1200 - margin.left - margin.right;
+            const height = 200 - margin.top - margin.bottom;
+            
+            const container = d3.select(containerId);
+            container.selectAll("*").remove();
+            
+            const svg = container.append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+            const x = d3.scaleTime()
+                .domain(d3.extent(events, d => new Date(d.actual_date)))
+                .range([0, width]);
+            
+            const y = d3.scaleLinear()
+                .domain([0, 1])
+                .range([height, 0]);
+            
+            // Add timeline line
+            svg.append("line")
+                .attr("x1", 0)
+                .attr("x2", width)
+                .attr("y1", height / 2)
+                .attr("y2", height / 2)
+                .attr("stroke", "#ddd")
+                .attr("stroke-width", 2);
+            
+            // Add event markers
+            svg.selectAll(".timeline-event")
+                .data(events)
+                .enter().append("g")
+                .attr("class", "timeline-event")
+                .each(function(d, i) {
+                    const g = d3.select(this);
+                    const xPos = x(new Date(d.actual_date));
+                    const yPos = height / 2;
+                    
+                    // Add event circle
+                    g.append("circle")
+                        .attr("cx", xPos)
+                        .attr("cy", yPos)
+                        .attr("r", 8)
+                        .attr("fill", d.cash_flow_impact === "positive" ? "#28a745" : 
+                                      d.cash_flow_impact === "negative" ? "#dc3545" : "#ffc107")
+                        .attr("stroke", "white")
+                        .attr("stroke-width", 2);
+                    
+                    // Add event label
+                    g.append("text")
+                        .attr("x", xPos)
+                        .attr("y", yPos + 25)
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", "10px")
+                        .text(d.event_type.replace("_", " "));
+                    
+                    // Add impact amount
+                    g.append("text")
+                        .attr("x", xPos)
+                        .attr("y", yPos - 15)
+                        .attr("text-anchor", "middle")
+                        .attr("font-size", "12px")
+                        .attr("font-weight", "bold")
+                        .text("$" + d.impact_amount.toLocaleString());
+                });
+            
+            // Add time axis
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y")));
+        }
+
+        // Update statistics
+        function updateStats(data) {
+            const statsGrid = d3.select("#statsGrid");
+            statsGrid.selectAll("*").remove();
+            
+            const stats = [
+                {
+                    label: "Starting Value",
+                    value: "$" + Math.round(data[0].value).toLocaleString()
+                },
+                {
+                    label: "Ending Value",
+                    value: "$" + Math.round(data[data.length - 1].value).toLocaleString()
+                },
+                {
+                    label: "Total Return",
+                    value: ((data[data.length - 1].value / data[0].value - 1) * 100).toFixed(1) + "%"
+                },
+                {
+                    label: "Total Events",
+                    value: currentData.events.length
+                },
+                {
+                    label: "Positive Events",
+                    value: currentData.events.filter(e => e.cash_flow_impact === "positive").length
+                },
+                {
+                    label: "Negative Events",
+                    value: currentData.events.filter(e => e.cash_flow_impact === "negative").length
+                }
+            ];
+            
+            statsGrid.selectAll(".stat-card")
+                .data(stats)
+                .enter().append("div")
+                .attr("class", "stat-card")
+                .each(function(d) {
+                    d3.select(this).append("div")
+                        .attr("class", "stat-value")
+                        .text(d.value);
+                    
+                    d3.select(this).append("div")
+                        .attr("class", "stat-label")
+                        .text(d.label);
+                });
+        }
+
+        // Animation functions
+        function startAnimation() {
+            if (isAnimating) return;
+            
+            isAnimating = true;
+            currentYear = 2020;
+            
+            const portfolioData = generatePortfolioData(currentData.events);
+            const filteredData = portfolioData.filter(d => {
+                const year = new Date(d.date).getFullYear();
+                return year <= currentYear;
+            });
+            
+            createPortfolioChart(filteredData, "#portfolioChart");
+            createAllocationChart(filteredData, "#allocationChart");
+            updateStats(filteredData);
+            
+            const animate = () => {
+                if (currentYear <= 2025 && isAnimating) {
+                    currentYear++;
+                    const newFilteredData = portfolioData.filter(d => {
+                        const year = new Date(d.date).getFullYear();
+                        return year <= currentYear;
+                    });
+                    
+                    createPortfolioChart(newFilteredData, "#portfolioChart");
+                    createAllocationChart(newFilteredData, "#allocationChart");
+                    updateStats(newFilteredData);
+                    
+                    setTimeout(animate, 1000 / animationSpeed);
+                } else {
+                    isAnimating = false;
+                }
+            };
+            
+            animate();
+        }
+
+        function resetAnimation() {
+            isAnimating = false;
+            currentYear = 2020;
+            
+            const portfolioData = generatePortfolioData(currentData.events);
+            createPortfolioChart(portfolioData, "#portfolioChart");
+            createAllocationChart(portfolioData, "#allocationChart");
+            createTimelineChart(currentData.events, "#timelineChart");
+            updateStats(portfolioData);
+        }
+
+        function updateSpeed() {
+            animationSpeed = parseFloat(document.getElementById("speedSlider").value);
+            document.getElementById("speedValue").textContent = animationSpeed + "x";
+        }
+
+        function injectHoratio() {
+            horatioInjected = true;
+            comparisonMode = true;
+            
+            // Generate both datasets
+            const originalData = generatePortfolioData(currentData.events);
+            const horatioData = generateHoratioData();
+            
+            // Create comparison visualization
+            createComparisonCharts(originalData, horatioData);
+            
+            // Update container class for styling
+            document.getElementById("visualizationContainer").classList.add("comparison-mode");
+        }
+
+        function createComparisonCharts(originalData, horatioData) {
+            // Create side-by-side portfolio charts
+            const container = d3.select("#visualizationContainer");
+            container.selectAll("*").remove();
+            
+            // Original portfolio chart
+            container.append("div")
+                .attr("class", "chart-panel")
+                .html('<div class="chart-title">Original Portfolio Strategy</div><div id="originalChart"></div>');
+            
+            // Horatio's dynamic portfolio chart
+            container.append("div")
+                .attr("class", "chart-panel")
+                .html('<div class="chart-title">Horatio\'s Dynamic Reallocation</div><div id="horatioChart"></div>');
+            
+            // Timeline comparison
+            container.append("div")
+                .attr("class", "timeline-container")
+                .html('<div class="chart-title">Strategy Comparison Timeline</div><div id="comparisonTimeline"></div>');
+            
+            createPortfolioChart(originalData, "#originalChart");
+            createPortfolioChart(horatioData, "#horatioChart");
+            createComparisonTimeline(originalData, horatioData, "#comparisonTimeline");
+            
+            // Update stats for comparison
+            updateComparisonStats(originalData, horatioData);
+        }
+
+        function createComparisonTimeline(originalData, horatioData, containerId) {
+            const margin = {top: 20, right: 30, bottom: 40, left: 60};
+            const width = 1200 - margin.left - margin.right;
+            const height = 300 - margin.top - margin.bottom;
+            
+            const container = d3.select(containerId);
+            container.selectAll("*").remove();
+            
+            const svg = container.append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+            const x = d3.scaleTime()
+                .domain([new Date("2020-01-01"), new Date("2035-12-31")])
+                .range([0, width]);
+            
+            const y = d3.scaleLinear()
+                .domain([0, Math.max(d3.max(originalData, d => d.value), d3.max(horatioData, d => d.value))])
+                .range([height, 0]);
+            
+            // Add original portfolio line
+            const originalLine = d3.line()
+                .x(d => x(new Date(d.date)))
+                .y(d => y(d.value));
+            
+            svg.append("path")
+                .datum(originalData)
+                .attr("class", "portfolio-line")
+                .attr("stroke", "#667eea")
+                .attr("stroke-width", 3)
+                .attr("fill", "none")
+                .attr("d", originalLine);
+            
+            // Add Horatio's portfolio line
+            const horatioLine = d3.line()
+                .x(d => x(new Date(d.date)))
+                .y(d => y(d.value));
+            
+            svg.append("path")
+                .datum(horatioData)
+                .attr("class", "portfolio-line")
+                .attr("stroke", "#28a745")
+                .attr("stroke-width", 3)
+                .attr("fill", "none")
+                .attr("d", horatioLine);
+            
+            // Add axes
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y")));
+            
+            svg.append("g")
+                .call(d3.axisLeft(y).tickFormat(d => "$" + (d/1000) + "k"));
+            
+            // Add legend
+            const legend = svg.append("g")
+                .attr("transform", `translate(${width - 200}, 20)`);
+            
+            legend.append("line")
+                .attr("x1", 0).attr("x2", 30)
+                .attr("y1", 0).attr("y2", 0)
+                .attr("stroke", "#667eea")
+                .attr("stroke-width", 3);
+            
+            legend.append("text")
+                .attr("x", 40)
+                .attr("y", 5)
+                .text("Original Strategy");
+            
+            legend.append("line")
+                .attr("x1", 0).attr("x2", 30)
+                .attr("y1", 20).attr("y2", 20)
+                .attr("stroke", "#28a745")
+                .attr("stroke-width", 3);
+            
+            legend.append("text")
+                .attr("x", 40)
+                .attr("y", 25)
+                .text("Horatio's Dynamic Reallocation");
+        }
+
+        function updateComparisonStats(originalData, horatioData) {
+            const statsGrid = d3.select("#statsGrid");
+            statsGrid.selectAll("*").remove();
+            
+            const originalReturn = (originalData[originalData.length - 1].value / originalData[0].value - 1) * 100;
+            const horatioReturn = (horatioData[horatioData.length - 1].value / horatioData[0].value - 1) * 100;
+            
+            const stats = [
+                {
+                    label: "Original Strategy Return",
+                    value: originalReturn.toFixed(1) + "%"
+                },
+                {
+                    label: "Horatio's Strategy Return",
+                    value: horatioReturn.toFixed(1) + "%"
+                },
+                {
+                    label: "Improvement",
+                    value: (horatioReturn - originalReturn).toFixed(1) + "%"
+                },
+                {
+                    label: "Original Volatility",
+                    value: calculateVolatility(originalData).toFixed(2) + "%"
+                },
+                {
+                    label: "Horatio's Volatility",
+                    value: calculateVolatility(horatioData).toFixed(2) + "%"
+                },
+                {
+                    label: "Risk Reduction",
+                    value: (calculateVolatility(originalData) - calculateVolatility(horatioData)).toFixed(2) + "%"
+                }
+            ];
+            
+            statsGrid.selectAll(".stat-card")
+                .data(stats)
+                .enter().append("div")
+                .attr("class", "stat-card")
+                .each(function(d) {
+                    d3.select(this).append("div")
+                        .attr("class", "stat-value")
+                        .text(d.value);
+                    
+                    d3.select(this).append("div")
+                        .attr("class", "stat-label")
+                        .text(d.label);
+                });
+        }
+
+        function calculateVolatility(data) {
+            const returns = [];
+            for (let i = 1; i < data.length; i++) {
+                returns.push((data[i].value / data[i-1].value - 1) * 100);
+            }
+            
+            const mean = returns.reduce((a, b) => a + b, 0) / returns.length;
+            const variance = returns.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / returns.length;
+            return Math.sqrt(variance);
+        }
+
+        function toggleComparison() {
+            comparisonMode = document.getElementById("showComparison").checked;
+            if (comparisonMode && horatioInjected) {
+                // Recreate comparison charts
+                const originalData = generatePortfolioData(currentData.events);
+                const horatioData = generateHoratioData();
+                createComparisonCharts(originalData, horatioData);
+            } else if (!comparisonMode) {
+                // Return to single chart view
+                resetAnimation();
+            }
+        }
+
+        // Initialize visualization
+        function init() {
+            const portfolioData = generatePortfolioData(currentData.events);
+            createPortfolioChart(portfolioData, "#portfolioChart");
+            createAllocationChart(portfolioData, "#allocationChart");
+            createTimelineChart(currentData.events, "#timelineChart");
+            updateStats(portfolioData);
+        }
+
+        // Start the visualization when page loads
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html> 

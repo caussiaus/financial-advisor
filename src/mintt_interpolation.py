@@ -483,7 +483,20 @@ class MINTTInterpolation:
             
             for profile_id, person in source_profiles.items():
                 if person.mesh_data and feature_key in person.mesh_data:
-                    values.append(person.mesh_data[feature_key])
+                    feature_value = person.mesh_data[feature_key]
+                    
+                    # Handle different types of values
+                    if isinstance(feature_value, (list, np.ndarray)):
+                        # For array-like values, interpolate each element
+                        if not values:
+                            values = [[] for _ in range(len(feature_value))]
+                        for i, val in enumerate(feature_value):
+                            if i < len(values):
+                                values[i].append(val)
+                    else:
+                        # For scalar values
+                        values.append(feature_value)
+                    
                     weights.append(congruence_scores.get(profile_id, 0.5))
             
             if values and weights:
@@ -491,8 +504,20 @@ class MINTTInterpolation:
                 total_weight = sum(weights)
                 if total_weight > 0:
                     normalized_weights = [w / total_weight for w in weights]
-                    interpolated_value = sum(v * w for v, w in zip(values, normalized_weights))
-                    interpolated_features[feature_key] = interpolated_value
+                    
+                    # Handle different value types
+                    if isinstance(values[0], list):
+                        # Array-like values
+                        interpolated_array = []
+                        for i in range(len(values[0])):
+                            array_values = [v[i] if i < len(v) else 0 for v in values]
+                            interpolated_element = sum(v * w for v, w in zip(array_values, normalized_weights))
+                            interpolated_array.append(interpolated_element)
+                        interpolated_features[feature_key] = interpolated_array
+                    else:
+                        # Scalar values
+                        interpolated_value = sum(v * w for v, w in zip(values, normalized_weights))
+                        interpolated_features[feature_key] = interpolated_value
         
         return interpolated_features
     
@@ -535,7 +560,23 @@ class MINTTInterpolation:
             
             for profile_id, person in source_profiles.items():
                 if person.mesh_data and feature_key in person.mesh_data:
-                    values.append(person.mesh_data[feature_key])
+                    feature_value = person.mesh_data[feature_key]
+                    
+                    # Handle different types of values
+                    if isinstance(feature_value, (list, np.ndarray)):
+                        # For array-like values, interpolate each element
+                        if not values:
+                            values = [[] for _ in range(len(feature_value))]
+                        for i, val in enumerate(feature_value):
+                            if i < len(values):
+                                values[i].append(val)
+                    elif isinstance(feature_value, dict):
+                        # For dictionary values, skip for now (complex interpolation)
+                        continue
+                    else:
+                        # For scalar values
+                        values.append(feature_value)
+                    
                     # Use congruence score as weight
                     congruence_weight = congruence_scores.get(profile_id, 0.5)
                     weights.append(congruence_weight)
@@ -545,8 +586,20 @@ class MINTTInterpolation:
                 total_weight = sum(weights)
                 if total_weight > 0:
                     normalized_weights = [w / total_weight for w in weights]
-                    interpolated_value = sum(v * w for v, w in zip(values, normalized_weights))
-                    interpolated_features[feature_key] = interpolated_value
+                    
+                    # Handle different value types
+                    if isinstance(values[0], list):
+                        # Array-like values
+                        interpolated_array = []
+                        for i in range(len(values[0])):
+                            array_values = [v[i] if i < len(v) else 0 for v in values]
+                            interpolated_element = sum(v * w for v, w in zip(array_values, normalized_weights))
+                            interpolated_array.append(interpolated_element)
+                        interpolated_features[feature_key] = interpolated_array
+                    else:
+                        # Scalar values
+                        interpolated_value = sum(v * w for v, w in zip(values, normalized_weights))
+                        interpolated_features[feature_key] = interpolated_value
         
         return interpolated_features
     

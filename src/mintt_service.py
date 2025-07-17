@@ -24,7 +24,7 @@ import threading
 from concurrent.futures import ThreadPoolExecutor
 import queue
 
-from .mintt_core import MINTTCore, FeatureSelection
+from .mintt_core import MINTTCore, FeatureSelection, ContextAnalyzer
 from .mintt_interpolation import MINTTInterpolation
 from .enhanced_pdf_processor import EnhancedPDFProcessor
 
