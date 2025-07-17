@@ -57,6 +57,7 @@ def upload_file():
         # Process file
         try:
             milestones, entities = omega_system.process_ips_document(file_path)
+            print(f"✅ Processed document: {len(milestones)} milestones, {len(entities)} entities")
         except Exception as e:
             print(f"Error processing document: {e}")
             print(traceback.format_exc())
@@ -69,35 +70,73 @@ def upload_file():
         # Initialize mesh with milestones
         try:
             status = omega_system.mesh_engine.initialize_mesh(milestones)
+            print(f"✅ Initialized mesh with status: {type(status)}")
         except Exception as e:
             print(f"Error initializing mesh: {e}")
             print(traceback.format_exc())
             return jsonify({'error': f'Error initializing mesh: {str(e)}'}), 500
             
-        return jsonify({
-            'success': True,
-            'status': status,
-            'milestones': [
-                {
+        # Ensure status is JSON serializable
+        if status:
+            status = omega_system.mesh_engine._convert_to_json_serializable(status)
+            print(f"✅ Converted status to JSON serializable")
+            
+        # Convert milestones and entities to ensure JSON serializable
+        serializable_milestones = []
+        for m in milestones:
+            try:
+                serializable_milestones.append({
                     'event_type': m.event_type,
                     'description': m.description,
                     'timestamp': m.timestamp.isoformat(),
-                    'financial_impact': m.financial_impact,
-                    'probability': m.probability,
+                    'financial_impact': float(m.financial_impact) if m.financial_impact is not None else 0.0,
+                    'probability': float(m.probability) if m.probability is not None else 0.7,
                     'entity': m.entity
-                }
-                for m in milestones
-            ],
-            'entities': [
-                {
+                })
+            except Exception as e:
+                print(f"⚠️ Error converting milestone {m}: {e}")
+                continue
+                
+        serializable_entities = []
+        for e in entities:
+            try:
+                serializable_entities.append({
                     'name': e.name,
                     'entity_type': e.entity_type,
-                    'initial_balances': e.initial_balances,
+                    'initial_balances': {k: float(v) if v is not None else 0.0 for k, v in e.initial_balances.items()},
                     'metadata': e.metadata
-                }
-                for e in entities
-            ]
-        })
+                })
+            except Exception as e:
+                print(f"⚠️ Error converting entity {e}: {e}")
+                continue
+                
+        print(f"✅ Converted {len(serializable_milestones)} milestones and {len(serializable_entities)} entities")
+            
+        try:
+            response_data = {
+                'success': True,
+                'status': status,
+                'milestones': serializable_milestones,
+                'entities': serializable_entities
+            }
+            
+            # Use DL-friendly storage to ensure serialization
+            from src.dl_friendly_storage import DLFriendlyStorage
+            storage = DLFriendlyStorage()
+            serialized_response = storage._convert_to_json_serializable(response_data)
+            
+            return jsonify(serialized_response)
+        except Exception as e:
+            print(f"❌ JSON serialization error: {e}")
+            print(f"❌ Error type: {type(e)}")
+            # Try to identify the problematic data
+            for key, value in response_data.items():
+                try:
+                    json.dumps(value)
+                    print(f"✅ {key} is JSON serializable")
+                except Exception as json_error:
+                    print(f"❌ {key} is NOT JSON serializable: {json_error}")
+            return jsonify({'error': f'JSON serialization error: {str(e)}'}), 500
     except Exception as e:
         print(f"Unexpected error: {e}")
         print(traceback.format_exc())
@@ -124,6 +163,10 @@ def run_demo():
             print(traceback.format_exc())
             return jsonify({'error': f'Error initializing mesh: {str(e)}'}), 500
         
+        # Ensure status is JSON serializable
+        if status:
+            status = omega_system.mesh_engine._convert_to_json_serializable(status)
+        
         # Generate some sample payments
         try:
             payment_demo = omega_system.demonstrate_flexible_payment()
@@ -132,26 +175,36 @@ def run_demo():
             print(traceback.format_exc())
             return jsonify({'error': f'Error generating payment demo: {str(e)}'}), 500
         
-        # Show mesh evolution
+        # Get system status and recommendations
         try:
-            evolution = omega_system.show_omega_mesh_evolution()
+            system_status = omega_system.get_system_status()
+            recommendations = omega_system.generate_monthly_recommendations(months_ahead=6)
         except Exception as e:
-            print(f"Error showing mesh evolution: {e}")
+            print(f"Error getting system status: {e}")
             print(traceback.format_exc())
-            return jsonify({'error': f'Error showing mesh evolution: {str(e)}'}), 500
+            return jsonify({'error': f'Error getting system status: {str(e)}'}), 500
+        
+        # Ensure all data is JSON serializable
+        if payment_demo:
+            payment_demo = omega_system.mesh_engine._convert_to_json_serializable(payment_demo)
+        if system_status:
+            system_status = omega_system.mesh_engine._convert_to_json_serializable(system_status)
+        if recommendations:
+            recommendations = omega_system.mesh_engine._convert_to_json_serializable(recommendations)
         
         return jsonify({
             'success': True,
             'status': status,
             'payment_demo': payment_demo,
-            'evolution': evolution,
+            'system_status': system_status,
+            'recommendations': recommendations,
             'milestones': [
                 {
                     'event_type': m.event_type,
                     'description': m.description,
                     'timestamp': m.timestamp.isoformat(),
-                    'financial_impact': m.financial_impact,
-                    'probability': m.probability,
+                    'financial_impact': float(m.financial_impact) if m.financial_impact is not None else 0.0,
+                    'probability': float(m.probability) if m.probability is not None else 0.7,
                     'entity': m.entity
                 }
                 for m in milestones
@@ -160,14 +213,55 @@ def run_demo():
                 {
                     'name': e.name,
                     'entity_type': e.entity_type,
-                    'initial_balances': e.initial_balances,
+                    'initial_balances': {k: float(v) if v is not None else 0.0 for k, v in e.initial_balances.items()},
                     'metadata': e.metadata
                 }
                 for e in entities
             ]
         })
     except Exception as e:
-        print(f"Unexpected error: {e}")
+        print(f"Unexpected error in demo: {e}")
+        print(traceback.format_exc())
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/commutator/optimize', methods=['POST'])
+def optimize_with_commutators():
+    """Optimize financial state using commutator algorithms"""
+    try:
+        data = request.get_json() or {}
+        target_metrics = data.get('target_metrics', None)
+        
+        # Optimize state using commutator algorithms
+        result = omega_system.optimize_financial_state_with_commutators(target_metrics)
+        
+        return jsonify(result)
+    except Exception as e:
+        print(f"Error in commutator optimization: {e}")
+        print(traceback.format_exc())
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/commutator/analysis', methods=['GET'])
+def get_commutator_analysis():
+    """Get commutator analysis of current state"""
+    try:
+        analysis = omega_system.get_commutator_analysis()
+        return jsonify(analysis)
+    except Exception as e:
+        print(f"Error getting commutator analysis: {e}")
+        print(traceback.format_exc())
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/commutator/execute', methods=['POST'])
+def execute_commutator_sequence():
+    """Execute specific commutator operations"""
+    try:
+        data = request.get_json() or {}
+        operation_types = data.get('operation_types', None)
+        
+        result = omega_system.execute_commutator_sequence(operation_types)
+        return jsonify(result)
+    except Exception as e:
+        print(f"Error executing commutator sequence: {e}")
         print(traceback.format_exc())
         return jsonify({'error': str(e)}), 500
 
