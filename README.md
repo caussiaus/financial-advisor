@@ -1,146 +1,229 @@
-# MINTT v1 - Multiple INterpolation Trial Triangle
+# Financial Mesh Training System with Advanced PDF Extraction
 
 ## Overview
 
-MINTT v1 is a refactored financial analysis system that focuses on:
-- **Multiple profile ingestion** from PDF documents
-- **Feature selection** with dynamic unit detection
-- **Congruence triangle matching** for mesh interpolation
-- **Context-aware summarization** with number detection
-- **Real-time service** for PDF processing and analysis
+This system combines **advanced PDF extraction** with **financial mesh training** to create a comprehensive pipeline for:
+- **ML-powered document understanding** with confidence scoring
+- **Synthetic people generation** with realistic financial profiles
+- **Financial shock simulation** and recovery analysis
+- **Commutator route learning** for optimal financial strategies
+- **Mesh-based portfolio comparison** and optimization
 
 ## Key Components
 
-### Core MINTT System
-- `src/mintt_core.py` - Core MINTT system with feature selection
-- `src/mintt_interpolation.py` - Multiple profile interpolation
-- `src/mintt_service.py` - Service for number detection and context analysis
-
-### PDF Processing
+### PDF Extraction & Document Understanding
+- `src/extraction/` - ML-based PDF extraction with multiple models
 - `src/enhanced_pdf_processor.py` - Advanced PDF processing with NLP
-- `src/trial_people_manager.py` - Trial people management and interpolation
+- `src/layers/pdf_processor.py` - Document layout analysis and text extraction
 
-### Mesh Engine
-- `src/mesh_congruence_engine.py` - Congruence triangle matching
-- `src/mesh_vector_database.py` - Vector database for similarity matching
-- `src/stochastic_mesh_engine.py` - Stochastic mesh generation
+### Financial Mesh Training System
+- `src/training/mesh_training_engine.py` - Core training engine for synthetic scenarios
+- `src/training/training_controller.py` - Controller for training system management
+- `src/commutator_decision_engine.py` - Optimal financial strategy learning
+- `src/core/stochastic_mesh_engine.py` - Stochastic mesh generation and evolution
 
-### Synthetic Data
+### Core Mesh Engines
+- `src/core/state_space_mesh_engine.py` - State-space mesh with full cash flow tracking
+- `src/core/time_uncertainty_mesh.py` - Time uncertainty modeling
+- `src/integration/mesh_engine_layer.py` - Unified mesh engine interface
+
+### Analysis & Visualization
+- `src/analysis/mesh_congruence_engine.py` - Congruence triangle matching
+- `src/analysis/mesh_vector_database.py` - Vector database for similarity matching
+- `src/visualization/mesh_3d_visualizer.py` - 3D mesh visualization
+- `src/visualization/flexibility_comfort_mesh.py` - Financial comfort analysis
+
+### Synthetic Data Generation
 - `src/synthetic_lifestyle_engine.py` - Synthetic lifestyle generation
-- `src/json_to_vector_converter.py` - JSON to vector conversion
 - `src/synthetic_data_generator.py` - Synthetic data generation
+- `src/json_to_vector_converter.py` - JSON to vector conversion
 
 ## Quick Start
 
-1. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 1. Environment Setup
 
-2. **Start the MINTT service:**
-   ```bash
-   python -c "from src.mintt_service import MINTTService; service = MINTTService()"
-   ```
+**For Linux (GPU Support):**
+```bash
+# Install system dependencies
+sudo apt-get update
+sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+sudo apt-get install -y libgl1-mesa-glx libglib2.0-0
 
-3. **Process PDFs with feature selection:**
-   ```python
-   from src.mintt_core import MINTTCore
-   
-   mintt = MINTTCore()
-   result = mintt.process_pdf_with_feature_selection("path/to/document.pdf")
-   ```
+# Create conda environment
+conda create -n financial-mesh python=3.11
+conda activate financial-mesh
 
-4. **Interpolate multiple profiles:**
-   ```python
-   from src.mintt_interpolation import MINTTInterpolation
-   
-   interpolation = MINTTInterpolation(mintt_core, trial_manager)
-   result = interpolation.interpolate_profiles(target_id, source_ids)
-   ```
+# Install PyTorch with CUDA support
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Install other dependencies
+pip install -r requirements.txt
+```
+
+**For Mac (CPU Only):**
+```bash
+# Install system dependencies
+brew install tesseract tesseract-lang
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 2. PDF Extraction Setup
+
+```bash
+# Download pre-trained models
+python -c "from transformers import AutoTokenizer, AutoModel; AutoTokenizer.from_pretrained('microsoft/layoutlmv3-base'); AutoModel.from_pretrained('microsoft/layoutlmv3-base')"
+
+# Test PDF extraction
+python demos/demo_pdf_extraction.py
+```
+
+### 3. Training System Setup
+
+```bash
+# Run training demo
+python demos/demo_training_engine.py
+
+# Run basic training
+python run_training.py 50
+
+# Check system status
+python run_training.py --status
+```
+
+### 4. Portfolio Comparison
+
+```bash
+# Run portfolio comparison demo
+python demos/demo_portfolio_comparison.py
+
+# Start 3D visualizer
+python start_3d_visualizer.py
+```
 
 ## Architecture
 
-### Feature Selection Pipeline
+### PDF Extraction Pipeline
 ```
-PDF Input → Feature Detection → Unit Normalization → Context Analysis → Feature Summary
-```
-
-### Interpolation Pipeline
-```
-Multiple Profiles → Congruence Triangle Matching → Feature Interpolation → Quality Assessment
+PDF Input → Layout Analysis → Text Extraction → ML Classification → Confidence Scoring → JSON Output
 ```
 
-### Service Pipeline
+### Training Pipeline
 ```
-Service Request → Number Detection → Context Analysis → Summarization → Response
+Synthetic People → Financial Shocks → Mesh Simulation → Commutator Learning → Route Optimization
+```
+
+### Portfolio Comparison Pipeline
+```
+Two Portfolios → Mesh Evolution → Path Analysis → Commutator Comparison → Strategy Optimization
 ```
 
 ## Key Features
 
-### 1. Advanced Feature Selection
-- Automatic detection of financial amounts, dates, and categorical data
-- Dynamic unit detection and conversion
-- Confidence scoring for extracted features
-- Context-aware feature analysis
+### 1. Advanced PDF Extraction
+- **Multiple ML Models**: Donut, LayoutLMv3, docTR, EasyOCR
+- **Hybrid Approach**: ML + Rule-based extraction with confidence thresholds
+- **Layout Analysis**: Detect tables, forms, and complex document structures
+- **Confidence Scoring**: Automatic fallback to rule-based extraction for low-confidence cases
+- **GPU Acceleration**: Optimized for NVIDIA RTX 4090 with mixed precision
 
-### 2. Multiple Profile Interpolation
-- Congruence triangle matching for similarity
-- Multiple interpolation methods (linear, polynomial, spline, RBF)
-- Quality assessment and confidence scoring
-- Real-time interpolation network
+### 2. Financial Mesh Training
+- **Synthetic People Generation**: Realistic financial profiles with age-based distributions
+- **Financial Shock Simulation**: Market crashes, job loss, medical emergencies, etc.
+- **Commutator Route Learning**: Optimal sequences of financial moves for recovery
+- **Edge Path Tracking**: Complete tracking of financial state transitions
+- **Success Metrics**: Recovery rate, time, and strategy effectiveness
 
-### 3. Context-Aware Service
-- Number detection with context analysis
-- Unit conversion and normalization
-- Summarization with backing analysis
-- Real-time processing capabilities
+### 3. Portfolio Comparison
+- **Side-by-Side Analysis**: Compare two portfolios under identical conditions
+- **Mesh Evolution Visualization**: 3D visualization of financial state evolution
+- **Commutator Strategy Comparison**: Compare recovery strategies between portfolios
+- **Performance Metrics**: Risk-adjusted returns, drawdown analysis, path dependency
 
 ### 4. Mesh Congruence Engine
-- Delaunay triangulation for optimal mesh structure
-- Centroidal Voronoi tessellations for density optimization
-- Edge collapsing for mesh decimation
-- Congruence scoring and validation
+- **Delaunay Triangulation**: Optimal mesh structure for financial state space
+- **Centroidal Voronoi Tessellations**: Density optimization for mesh nodes
+- **Edge Collapsing**: Mesh decimation for performance optimization
+- **Congruence Scoring**: Validation of mesh structure quality
 
 ## Data Structure
 
-### Trial People
+### PDF Extraction Output
 ```
-data/inputs/trial_people/
-├── person_1/
-│   ├── PERSONAL_INFO.json
-│   ├── LIFESTYLE_EVENTS.json
-│   ├── FINANCIAL_PROFILE.json
-│   └── GOALS.json
-└── person_2/
-    └── ...
+data/outputs/extraction/
+├── raw_extractions/          # Raw ML model outputs
+├── processed_extractions/    # Post-processed JSON data
+├── confidence_scores/        # Confidence metrics
+└── fallback_logs/           # Rule-based fallback logs
 ```
 
-### Outputs
+### Training Data
 ```
-data/outputs/
-├── trial_analysis/          # Trial people analysis
-├── mesh_congruence/         # Congruence analysis
-├── vector_db/              # Vector database
-├── visual_timelines/       # Visualizations
-└── reports/                # Analysis reports
+data/outputs/training/
+├── successful_routes.json    # Successful commutator routes
+├── training_history.json     # Training session history
+├── training_analysis.png     # Visualization of results
+└── model_checkpoints/        # Saved model states
+```
+
+### Portfolio Comparison
+```
+data/outputs/comparison/
+├── portfolio_pairs/          # Paired portfolio analysis
+├── mesh_evolution/           # Mesh state evolution data
+├── commutator_comparison/    # Strategy comparison results
+└── visualizations/           # Comparison plots and charts
 ```
 
 ## Development
 
-### Adding New Features
-1. Extend `MINTTCore` for new feature types
-2. Add interpolation methods to `MINTTInterpolation`
-3. Implement service endpoints in `MINTTService`
+### Adding New PDF Extraction Models
+1. Implement `IExtractor` interface in `src/extraction/`
+2. Add confidence scoring and fallback logic
+3. Update the hybrid pipeline in `src/enhanced_pdf_processor.py`
+
+### Extending Training System
+1. Add new shock types in `src/training/mesh_training_engine.py`
+2. Implement new commutator operations in `src/commutator_decision_engine.py`
+3. Create new visualization components in `src/visualization/`
 
 ### Testing
 ```bash
+# Run all tests
 python -m pytest tests/
+
+# Run specific test categories
+python -m pytest tests/test_extraction.py
+python -m pytest tests/test_training.py
+python -m pytest tests/test_mesh.py
 ```
 
 ### Documentation
-- Core modules: `CORE_MODULES_SUMMARY.md`
-- Mesh database: `MESH_VECTOR_DATABASE_SUMMARY.md`
-- Synthetic engine: `SYNTHETIC_LIFESTYLE_ENGINE_SUMMARY.md`
+- PDF Extraction: `docs/PDF_EXTRACTION_README.md`
+- Training System: `docs/TRAINING_ENGINE_README.md`
+- Mesh Architecture: `docs/MESH_SYSTEM_SUMMARY.md`
+
+## Performance Optimization
+
+### GPU Acceleration
+- **CUDA Support**: Automatic detection and utilization of NVIDIA GPUs
+- **Mixed Precision**: FP16 training for faster convergence
+- **Batch Processing**: Optimized batch sizes for memory efficiency
+
+### Memory Management
+- **Mesh Memory Manager**: Efficient storage and retrieval of mesh nodes
+- **Compressed Representations**: Lossless compression of financial state data
+- **Lazy Loading**: On-demand loading of mesh components
+
+### Cross-Platform Compatibility
+- **Linux (GPU)**: Full CUDA acceleration with all ML models
+- **Mac (CPU)**: CPU-only fallback with optimized performance
+- **Docker Support**: Containerized deployment for consistent environments
 
 ## License
 

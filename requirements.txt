@@ -131,3 +131,53 @@ Werkzeug==3.1.3
 wrapt==1.17.2
 yfinance==0.2.65
 zipp==3.23.0
+
+# PDF Extraction and ML Document Understanding Dependencies
+# Core ML Models for Document Understanding
+doctr==0.7.0
+layoutlmft==0.1.0
+pytesseract==0.3.10
+opencv-python==4.9.0.80
+easyocr==1.7.0
+
+# Document Layout Analysis
+detectron2 @ git+https://github.com/facebookresearch/detectron2.git
+layoutparser[ocr]==0.3.4
+layoutparser[effdet]==0.3.4
+
+# Advanced PDF Processing
+camelot-py[cv]==0.11.0
+tabula-py==2.9.0
+pdf2image==1.17.0
+pymupdf==1.24.4
+
+# OCR and Text Recognition
+tesseract-ocr==0.1.0
+pytesseract==0.3.10
+
+# Image Processing for Document Analysis
+Pillow==11.3.0
+opencv-python==4.9.0.80
+scikit-image==0.22.0
+
+# ML Pipeline and Confidence Scoring
+scikit-learn==1.7.0
+confidence-calibration==0.1.0
+
+# GPU Support (Optional - for Linux with CUDA)
+# torch==2.7.1  # Already included above
+# torchvision==0.22.1  # Already included above
+
+# Container and Environment Management
+docker==7.0.0
+conda==4.15.0
+
+# Testing and Validation
+pytest==8.4.1
+pytest-cov==6.2.1
+pytest-mock==3.12.0
+
+# Development Tools
+black==25.1.0
+flake8==7.3.0
+mypy==1.17.0
