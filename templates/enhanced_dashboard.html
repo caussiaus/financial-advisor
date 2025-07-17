@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Mesh Congruence System Dashboard</title>
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.css" rel="stylesheet">
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --light-bg: #ecf0f1;
+            --dark-bg: #34495e;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: bold;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .metric-card h3 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .metric-card h6 {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-healthy { background-color: var(--success-color); }
+        .status-degraded { background-color: var(--warning-color); }
+        .status-unhealthy { background-color: var(--danger-color); }
+        
+        .btn-control {
+            border-radius: 25px;
+            font-weight: 500;
+            padding: 8px 20px;
+        }
+        
+        .table-responsive {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .alert-custom {
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        .system-controls {
+            background: var(--dark-bg);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .performance-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .client-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid var(--secondary-color);
+            transition: transform 0.2s;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .event-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .event-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px 15px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-project-diagram me-2"></i>
+                Enhanced Mesh Congruence System
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text me-3">
+                    <span id="system-status" class="status-indicator status-healthy"></span>
+                    <span id="status-text">System Healthy</span>
+                </span>
+                <button class="btn btn-outline-light btn-sm" onclick="showSystemControls()">
+                    <i class="fas fa-cog"></i> Controls
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <!-- System Controls Modal -->
+        <div class="modal fade" id="systemControlsModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="fas fa-cogs me-2"></i>System Controls
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-heartbeat me-2"></i>System Health</h6>
+                                <div id="health-status"></div>
+                                
+                                <h6 class="mt-3"><i class="fas fa-tachometer-alt me-2"></i>Performance Metrics</h6>
+                                <div id="performance-metrics"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-tools me-2"></i>System Actions</h6>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-warning btn-control" onclick="restartComponents()">
+                                        <i class="fas fa-redo me-2"></i>Restart Components
+                                    </button>
+                                    <button class="btn btn-info btn-control" onclick="clearCache()">
+                                        <i class="fas fa-broom me-2"></i>Clear Cache
+                                    </button>
+                                    <button class="btn btn-success btn-control" onclick="exportData()">
+                                        <i class="fas fa-download me-2"></i>Export Data
+                                    </button>
+                                    <button class="btn btn-primary btn-control" onclick="importData()">
+                                        <i class="fas fa-upload me-2"></i>Import Data
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="performance-metrics" id="performance-metrics-display"></div>
+
+        <!-- Main Dashboard -->
+        <div class="row">
+            <!-- Client Management -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-user-plus me-2"></i>Add New Client</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="add-client-form">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Age</label>
+                                    <input type="number" class="form-control" name="age" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Income</label>
+                                    <input type="number" class="form-control" name="income" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-control mt-3">
+                                <i class="fas fa-plus me-2"></i>Add Client
+                            </button>
+                        </form>
+                        <div id="add-client-result" class="mt-3"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-users me-2"></i>Client List</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="client-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Simulation & Recommendations -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-bolt me-2"></i>Simulate Event</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="simulate-event-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">Client</label>
+                                    <select class="form-control" name="client_id" id="event-client-select"></select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Event Type</label>
+                                    <input type="text" class="form-control" name="event_type" value="synthetic">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-warning btn-control mt-3">
+                                <i class="fas fa-play me-2"></i>Simulate Event
+                            </button>
+                        </form>
+                        <div id="simulate-event-result" class="mt-3"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-lightbulb me-2"></i>Recommendations</h5>
+                    </div>
+                    <div class="card-body" id="recommendations-box">
+                        <div class="text-center text-muted">
+                            <i class="fas fa-user-check fa-3x mb-3"></i>
+                            <p>Select a client to view recommendations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mesh Congruence Dashboard -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-chart-network me-2"></i>Mesh Congruence Dashboard</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="chart-container">
+                                    <canvas id="congruence-chart"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div id="congruence-stats"></div>
+                            </div>
+                        </div>
+                        <div id="mesh-dashboard-table" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Dashboard -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-chart-bar me-2"></i>Analytics Dashboard</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="chart-container">
+                                    <canvas id="client-distribution-chart"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="chart-container">
+                                    <canvas id="event-timeline-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let congruenceChart = null;
+        let clientDistributionChart = null;
+        let eventTimelineChart = null;
+        let selectedClient = null;
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboard();
+            setInterval(updateSystemStatus, 30000); // Update every 30 seconds
+        });
+
+        async function loadDashboard() {
+            try {
+                await Promise.all([
+                    loadSystemHealth(),
+                    loadClients(),
+                    loadMeshDashboard(),
+                    loadAnalytics()
+                ]);
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+                showAlert('Error loading dashboard', 'danger');
+            }
+        }
+
+        async function loadSystemHealth() {
+            try {
+                const response = await axios.get('/api/health');
+                const data = response.data;
+                
+                updateSystemStatus(data.status, data.components);
+                updatePerformanceMetrics(data.performance);
+            } catch (error) {
+                console.error('Error loading system health:', error);
+            }
+        }
+
+        function updateSystemStatus(status, components) {
+            const statusElement = document.getElementById('system-status');
+            const statusText = document.getElementById('status-text');
+            
+            statusElement.className = `status-indicator status-${status}`;
+            statusText.textContent = `System ${status.charAt(0).toUpperCase() + status.slice(1)}`;
+            
+            // Update health status in modal
+            const healthStatus = document.getElementById('health-status');
+            if (healthStatus) {
+                let html = `<div class="alert alert-${status === 'healthy' ? 'success' : status === 'degraded' ? 'warning' : 'danger'} alert-custom">`;
+                html += `<strong>Overall Status:</strong> ${status}<br>`;
+                html += '<strong>Components:</strong><br>';
+                for (const [component, compStatus] of Object.entries(components)) {
+                    html += `<span class="status-indicator status-${compStatus}"></span>${component}: ${compStatus}<br>`;
+                }
+                html += '</div>';
+                healthStatus.innerHTML = html;
+            }
+        }
+
+        function updatePerformanceMetrics(metrics) {
+            const metricsDisplay = document.getElementById('performance-metrics-display');
+            const modalMetrics = document.getElementById('performance-metrics');
+            
+            const metricsHtml = `
+                <div class="metric-card">
+                    <h6><i class="fas fa-clock me-2"></i>Uptime</h6>
+                    <h3>${formatUptime(metrics.uptime_seconds)}</h3>
+                </div>
+                <div class="metric-card">
+                    <h6><i class="fas fa-exchange-alt me-2"></i>Requests</h6>
+                    <h3>${metrics.requests_processed}</h3>
+                </div>
+                <div class="metric-card">
+                    <h6><i class="fas fa-tachometer-alt me-2"></i>Avg Response</h6>
+                    <h3>${metrics.avg_response_time.toFixed(2)}s</h3>
+                </div>
+                <div class="metric-card">
+                    <h6><i class="fas fa-exclamation-triangle me-2"></i>Errors</h6>
+                    <h3>${metrics.errors}</h3>
+                </div>
+            `;
+            
+            if (metricsDisplay) metricsDisplay.innerHTML = metricsHtml;
+            if (modalMetrics) modalMetrics.innerHTML = metricsHtml;
+        }
+
+        function formatUptime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            return `${hours}h ${minutes}m`;
+        }
+
+        async function loadClients() {
+            try {
+                const response = await axios.get('/api/clients');
+                const data = response.data;
+                
+                displayClients(data.clients);
+                updateClientSelect(data.clients);
+            } catch (error) {
+                console.error('Error loading clients:', error);
+            }
+        }
+
+        function displayClients(clients) {
+            const clientList = document.getElementById('client-list');
+            
+            if (clients.length === 0) {
+                clientList.innerHTML = '<div class="text-center text-muted"><i class="fas fa-users fa-2x mb-2"></i><p>No clients added yet</p></div>';
+                return;
+            }
+            
+            let html = '';
+            clients.forEach(client => {
+                html += `
+                    <div class="client-card" onclick="selectClient('${client.id}')">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-1">${client.name}</h6>
+                                <small class="text-muted">Age: ${client.age} | Income: $${client.income.toLocaleString()}</small>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-primary">${client.life_stage}</span>
+                                <span class="badge bg-secondary">${client.risk_tolerance}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            clientList.innerHTML = html;
+        }
+
+        function updateClientSelect(clients) {
+            const select = document.getElementById('event-client-select');
+            select.innerHTML = '<option value="">Select a client</option>';
+            
+            clients.forEach(client => {
+                select.innerHTML += `<option value="${client.id}">${client.name}</option>`;
+            });
+        }
+
+        async function loadMeshDashboard() {
+            try {
+                const response = await axios.get('/api/mesh/congruence');
+                const data = response.data;
+                
+                displayMeshCongruence(data);
+            } catch (error) {
+                console.error('Error loading mesh dashboard:', error);
+            }
+        }
+
+        function displayMeshCongruence(data) {
+            const statsDiv = document.getElementById('congruence-stats');
+            const tableDiv = document.getElementById('mesh-dashboard-table');
+            
+            // Display stats
+            let statsHtml = `
+                <div class="metric-card">
+                    <h6>Total Clients</h6>
+                    <h3>${data.total_clients}</h3>
+                </div>
+                <div class="metric-card">
+                    <h6>Total Events</h6>
+                    <h3>${data.total_events}</h3>
+                </div>
+            `;
+            
+            if (data.congruence_results.length > 0) {
+                const avgCongruence = data.congruence_results.reduce((sum, r) => sum + r.congruence, 0) / data.congruence_results.length;
+                statsHtml += `
+                    <div class="metric-card">
+                        <h6>Avg Congruence</h6>
+                        <h3>${(avgCongruence * 100).toFixed(1)}%</h3>
+                    </div>
+                `;
+            }
+            
+            statsDiv.innerHTML = statsHtml;
+            
+            // Display table
+            if (data.congruence_results.length > 0) {
+                let tableHtml = `
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Client 1</th>
+                                    <th>Client 2</th>
+                                    <th>Congruence</th>
+                                    <th>Triangulation</th>
+                                    <th>Density</th>
+                                    <th>Efficiency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+                
+                data.congruence_results.forEach(result => {
+                    tableHtml += `
+                        <tr>
+                            <td>${result.client_1}</td>
+                            <td>${result.client_2}</td>
+                            <td>${(result.congruence * 100).toFixed(1)}%</td>
+                            <td>${(result.triangulation_quality * 100).toFixed(1)}%</td>
+                            <td>${(result.density_score * 100).toFixed(1)}%</td>
+                            <td>${(result.edge_efficiency * 100).toFixed(1)}%</td>
+                        </tr>
+                    `;
+                });
+                
+                tableHtml += '</tbody></table></div>';
+                tableDiv.innerHTML = tableHtml;
+            } else {
+                tableDiv.innerHTML = '<div class="text-center text-muted">Need at least 2 clients for congruence analysis</div>';
+            }
+        }
+
+        async function loadAnalytics() {
+            try {
+                const response = await axios.get('/api/analytics/dashboard');
+                const data = response.data;
+                
+                createClientDistributionChart(data.clients);
+                createEventTimelineChart(data.events);
+            } catch (error) {
+                console.error('Error loading analytics:', error);
+            }
+        }
+
+        function createClientDistributionChart(clients) {
+            const ctx = document.getElementById('client-distribution-chart').getContext('2d');
+            
+            if (clientDistributionChart) {
+                clientDistributionChart.destroy();
+            }
+            
+            const labels = Object.keys(clients.by_life_stage);
+            const data = Object.values(clients.by_life_stage);
+            
+            clientDistributionChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            '#FF6384',
+                            '#36A2EB',
+                            '#FFCE56',
+                            '#4BC0C0',
+                            '#9966FF'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Client Distribution by Life Stage'
+                        }
+                    }
+                }
+            });
+        }
+
+        function createEventTimelineChart(events) {
+            const ctx = document.getElementById('event-timeline-chart').getContext('2d');
+            
+            if (eventTimelineChart) {
+                eventTimelineChart.destroy();
+            }
+            
+            const labels = Object.keys(events.by_type);
+            const data = Object.values(events.by_type);
+            
+            eventTimelineChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Events by Type',
+                        data: data,
+                        backgroundColor: '#36A2EB'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Events by Type'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Form handlers
+        document.getElementById('add-client-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                name: formData.get('name'),
+                age: parseInt(formData.get('age')),
+                income: parseFloat(formData.get('income'))
+            };
+            
+            try {
+                const response = await axios.post('/api/clients', data);
+                showAlert('Client added successfully!', 'success');
+                e.target.reset();
+                loadClients();
+            } catch (error) {
+                showAlert('Error adding client: ' + error.response?.data?.error || error.message, 'danger');
+            }
+        });
+
+        document.getElementById('simulate-event-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                client_id: formData.get('client_id'),
+                event_type: formData.get('event_type')
+            };
+            
+            if (!data.client_id) {
+                showAlert('Please select a client', 'warning');
+                return;
+            }
+            
+            try {
+                const response = await axios.post('/api/events', data);
+                showAlert('Event simulated successfully!', 'success');
+                loadMeshDashboard();
+            } catch (error) {
+                showAlert('Error simulating event: ' + error.response?.data?.error || error.message, 'danger');
+            }
+        });
+
+        // Client selection
+        function selectClient(clientId) {
+            selectedClient = clientId;
+            loadRecommendations(clientId);
+        }
+
+        async function loadRecommendations(clientId) {
+            try {
+                const response = await axios.get(`/api/recommendations/${clientId}`);
+                const data = response.data;
+                
+                displayRecommendations(data.recommendations);
+            } catch (error) {
+                console.error('Error loading recommendations:', error);
+                showAlert('Error loading recommendations', 'danger');
+            }
+        }
+
+        function displayRecommendations(recommendations) {
+            const recommendationsBox = document.getElementById('recommendations-box');
+            
+            let html = '';
+            for (const [category, items] of Object.entries(recommendations)) {
+                html += `
+                    <div class="mb-3">
+                        <h6 class="text-primary">${category.replace('_', ' ').toUpperCase()}</h6>
+                        <ul class="list-unstyled">
+                `;
+                
+                items.forEach(item => {
+                    html += `<li><i class="fas fa-check text-success me-2"></i>${item}</li>`;
+                });
+                
+                html += '</ul></div>';
+            }
+            
+            recommendationsBox.innerHTML = html;
+        }
+
+        // System controls
+        function showSystemControls() {
+            const modal = new bootstrap.Modal(document.getElementById('systemControlsModal'));
+            modal.show();
+        }
+
+        async function restartComponents() {
+            try {
+                const response = await axios.post('/api/system/control', { action: 'restart_components' });
+                showAlert('Components restarted successfully!', 'success');
+                loadSystemHealth();
+            } catch (error) {
+                showAlert('Error restarting components: ' + error.response?.data?.error || error.message, 'danger');
+            }
+        }
+
+        async function clearCache() {
+            try {
+                const response = await axios.post('/api/system/control', { action: 'clear_cache' });
+                showAlert('Cache cleared successfully!', 'success');
+                loadDashboard();
+            } catch (error) {
+                showAlert('Error clearing cache: ' + error.response?.data?.error || error.message, 'danger');
+            }
+        }
+
+        async function exportData() {
+            try {
+                const response = await axios.post('/api/system/control', { action: 'export_data' });
+                const data = response.data;
+                
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `mesh_dashboard_export_${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                showAlert('Data exported successfully!', 'success');
+            } catch (error) {
+                showAlert('Error exporting data: ' + error.response?.data?.error || error.message, 'danger');
+            }
+        }
+
+        function importData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = async function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    try {
+                        const text = await file.text();
+                        const data = JSON.parse(text);
+                        
+                        const response = await axios.post('/api/system/control', { 
+                            action: 'import_data',
+                            data: data
+                        });
+                        
+                        showAlert('Data imported successfully!', 'success');
+                        loadDashboard();
+                    } catch (error) {
+                        showAlert('Error importing data: ' + error.message, 'danger');
+                    }
+                }
+            };
+            input.click();
+        }
+
+        // Utility functions
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show alert-custom`;
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.querySelector('.container-fluid').insertBefore(alertDiv, document.querySelector('.performance-metrics'));
+            
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        }
+
+        function updateSystemStatus() {
+            loadSystemHealth();
+        }
+    </script>
+</body>
+</html> 
