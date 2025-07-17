@@ -8,13 +8,13 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Tuple, Optional
 import json
 
-from .time_uncertainty_mesh import (
+from ..core.time_uncertainty_mesh import (
     TimeUncertaintyMeshEngine, 
     SeedEvent, 
     EventVector
 )
-from .stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
-from .enhanced_pdf_processor import FinancialMilestone
+from ..core.stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+from ..enhanced_pdf_processor import FinancialMilestone
 
 class TimeUncertaintyIntegration:
     """

@@ -1,0 +1,1398 @@
+{
+  "test_timestamp": "2025-07-17T11:22:53.429329",
+  "uploaded_clients": [
+    "Michelle Thornton",
+    "Walter Mendoza",
+    "Charles Hancock",
+    "Daniel Cox",
+    "Sheila Davila"
+  ],
+  "mesh_results": {
+    "Michelle Thornton": {
+      "clients": [
+        "Michelle Thornton",
+        "Walter Mendoza",
+        "Charles Hancock",
+        "Daniel Cox",
+        "Sheila Davila"
+      ],
+      "congruence_results": [
+        {
+          "client_1": "William",
+          "client_2": "Daniel",
+          "congruence": 0.742292081583013,
+          "density_score": 0.4858913031818632,
+          "edge_efficiency": 0.7572700167121477,
+          "triangulation_quality": 0.8572723085041409
+        },
+        {
+          "client_1": "William",
+          "client_2": "Sarah",
+          "congruence": 0.32389784957061013,
+          "density_score": 0.7542141063245067,
+          "edge_efficiency": 0.8731534314392319,
+          "triangulation_quality": 0.7791524174692149
+        },
+        {
+          "client_1": "William",
+          "client_2": "Lisa",
+          "congruence": 0.7439952493331123,
+          "density_score": 0.7638240303523564,
+          "edge_efficiency": 0.6113741539205974,
+          "triangulation_quality": 0.8204699721476376
+        },
+        {
+          "client_1": "William",
+          "client_2": "William",
+          "congruence": 0.7175561386271482,
+          "density_score": 0.564666554404351,
+          "edge_efficiency": 0.8829614474899521,
+          "triangulation_quality": 0.6369416702830017
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Sarah",
+          "congruence": 0.37104436323174245,
+          "density_score": 0.673873618081368,
+          "edge_efficiency": 0.7555485034960643,
+          "triangulation_quality": 0.8882149118734578
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Lisa",
+          "congruence": 0.7957614619153077,
+          "density_score": 0.7983618940859137,
+          "edge_efficiency": 0.7614224852237905,
+          "triangulation_quality": 0.5252603880877434
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "William",
+          "congruence": 0.39078789578070605,
+          "density_score": 0.49154905966206336,
+          "edge_efficiency": 0.8455804933441123,
+          "triangulation_quality": 0.8294918258459062
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "Lisa",
+          "congruence": 0.45702765142395113,
+          "density_score": 0.47587737769571586,
+          "edge_efficiency": 0.6127176109277357,
+          "triangulation_quality": 0.7850032360327469
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "William",
+          "congruence": 0.44023833877831814,
+          "density_score": 0.4895506665439036,
+          "edge_efficiency": 0.8474439804625118,
+          "triangulation_quality": 0.7398537170514733
+        },
+        {
+          "client_1": "Lisa",
+          "client_2": "William",
+          "congruence": 0.7084323728193321,
+          "density_score": 0.798935271930288,
+          "edge_efficiency": 0.7870003558161054,
+          "triangulation_quality": 0.5444300279748745
+        }
+      ],
+      "total_clients": 5,
+      "total_events": 0
+    },
+    "Walter Mendoza": {
+      "clients": [
+        "Michelle Thornton",
+        "Walter Mendoza",
+        "Charles Hancock",
+        "Daniel Cox",
+        "Sheila Davila"
+      ],
+      "congruence_results": [
+        {
+          "client_1": "William",
+          "client_2": "Daniel",
+          "congruence": 0.5731552744195116,
+          "density_score": 0.6920784446981812,
+          "edge_efficiency": 0.8872804812649889,
+          "triangulation_quality": 0.5358578962402765
+        },
+        {
+          "client_1": "William",
+          "client_2": "Sarah",
+          "congruence": 0.6188932372263347,
+          "density_score": 0.5700714033979486,
+          "edge_efficiency": 0.6056404856485257,
+          "triangulation_quality": 0.8660222481974638
+        },
+        {
+          "client_1": "William",
+          "client_2": "Lisa",
+          "congruence": 0.6599817259602676,
+          "density_score": 0.5133818848148917,
+          "edge_efficiency": 0.7302441410592148,
+          "triangulation_quality": 0.5729362327705181
+        },
+        {
+          "client_1": "William",
+          "client_2": "William",
+          "congruence": 0.6492677527426989,
+          "density_score": 0.6924910551956445,
+          "edge_efficiency": 0.62720964304495,
+          "triangulation_quality": 0.7456331899026117
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Sarah",
+          "congruence": 0.573004056369093,
+          "density_score": 0.5929954876892193,
+          "edge_efficiency": 0.8890008707603424,
+          "triangulation_quality": 0.7039569692820892
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Lisa",
+          "congruence": 0.6001264525501426,
+          "density_score": 0.615904899810375,
+          "edge_efficiency": 0.874639448977166,
+          "triangulation_quality": 0.5580652441799983
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "William",
+          "congruence": 0.3616010278542387,
+          "density_score": 0.7163931992191996,
+          "edge_efficiency": 0.7584016300374623,
+          "triangulation_quality": 0.5390810879774273
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "Lisa",
+          "congruence": 0.5662654755803167,
+          "density_score": 0.7206594820499033,
+          "edge_efficiency": 0.7083173027488543,
+          "triangulation_quality": 0.852676927025551
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "William",
+          "congruence": 0.46045283785087515,
+          "density_score": 0.4691797413886037,
+          "edge_efficiency": 0.7207625442153404,
+          "triangulation_quality": 0.7184414860789299
+        },
+        {
+          "client_1": "Lisa",
+          "client_2": "William",
+          "congruence": 0.6283808314192947,
+          "density_score": 0.654991099176122,
+          "edge_efficiency": 0.8255255337604059,
+          "triangulation_quality": 0.6733497075584381
+        }
+      ],
+      "total_clients": 5,
+      "total_events": 0
+    },
+    "Charles Hancock": {
+      "clients": [
+        "Michelle Thornton",
+        "Walter Mendoza",
+        "Charles Hancock",
+        "Daniel Cox",
+        "Sheila Davila"
+      ],
+      "congruence_results": [
+        {
+          "client_1": "William",
+          "client_2": "Daniel",
+          "congruence": 0.6412991425770354,
+          "density_score": 0.4229360703924192,
+          "edge_efficiency": 0.8114084626650507,
+          "triangulation_quality": 0.5075927814834269
+        },
+        {
+          "client_1": "William",
+          "client_2": "Sarah",
+          "congruence": 0.7112955412529651,
+          "density_score": 0.6205619973963195,
+          "edge_efficiency": 0.770073324395883,
+          "triangulation_quality": 0.5346887576616641
+        },
+        {
+          "client_1": "William",
+          "client_2": "Lisa",
+          "congruence": 0.762431994348749,
+          "density_score": 0.6972074492602407,
+          "edge_efficiency": 0.6502187458635507,
+          "triangulation_quality": 0.6350202896672206
+        },
+        {
+          "client_1": "William",
+          "client_2": "William",
+          "congruence": 0.6161352779357869,
+          "density_score": 0.7855164356836353,
+          "edge_efficiency": 0.8951535169204965,
+          "triangulation_quality": 0.6946192315269524
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Sarah",
+          "congruence": 0.5390569286540473,
+          "density_score": 0.5984251144230194,
+          "edge_efficiency": 0.748793545818633,
+          "triangulation_quality": 0.7624657355995855
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Lisa",
+          "congruence": 0.5365830561635297,
+          "density_score": 0.574486444196147,
+          "edge_efficiency": 0.8763834127155986,
+          "triangulation_quality": 0.5674606316899032
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "William",
+          "congruence": 0.6792263032782994,
+          "density_score": 0.647734067936232,
+          "edge_efficiency": 0.6961550401548745,
+          "triangulation_quality": 0.5622410509485694
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "Lisa",
+          "congruence": 0.6464066746385437,
+          "density_score": 0.7752156974416156,
+          "edge_efficiency": 0.8167411944767874,
+          "triangulation_quality": 0.8096328278471032
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "William",
+          "congruence": 0.7305918827293649,
+          "density_score": 0.6126737664937536,
+          "edge_efficiency": 0.8111079650977995,
+          "triangulation_quality": 0.8800970442565227
+        },
+        {
+          "client_1": "Lisa",
+          "client_2": "William",
+          "congruence": 0.4773431180956065,
+          "density_score": 0.7453836525257438,
+          "edge_efficiency": 0.821771502531485,
+          "triangulation_quality": 0.6745403135034767
+        }
+      ],
+      "total_clients": 5,
+      "total_events": 0
+    },
+    "Daniel Cox": {
+      "clients": [
+        "Michelle Thornton",
+        "Walter Mendoza",
+        "Charles Hancock",
+        "Daniel Cox",
+        "Sheila Davila"
+      ],
+      "congruence_results": [
+        {
+          "client_1": "William",
+          "client_2": "Daniel",
+          "congruence": 0.46094915999035246,
+          "density_score": 0.5987857436546481,
+          "edge_efficiency": 0.8044689505109457,
+          "triangulation_quality": 0.7024053189795418
+        },
+        {
+          "client_1": "William",
+          "client_2": "Sarah",
+          "congruence": 0.6316210630582014,
+          "density_score": 0.6134569037792363,
+          "edge_efficiency": 0.8069270767973169,
+          "triangulation_quality": 0.7567636031902086
+        },
+        {
+          "client_1": "William",
+          "client_2": "Lisa",
+          "congruence": 0.7236570490818516,
+          "density_score": 0.46665038366192024,
+          "edge_efficiency": 0.642436055029589,
+          "triangulation_quality": 0.8884753601488132
+        },
+        {
+          "client_1": "William",
+          "client_2": "William",
+          "congruence": 0.7662400384157095,
+          "density_score": 0.6081700687055055,
+          "edge_efficiency": 0.8408435051492551,
+          "triangulation_quality": 0.8759401057324736
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Sarah",
+          "congruence": 0.4219547819709812,
+          "density_score": 0.6221025885786184,
+          "edge_efficiency": 0.7516271402718888,
+          "triangulation_quality": 0.606891120401511
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Lisa",
+          "congruence": 0.4935797849265956,
+          "density_score": 0.5080212344841822,
+          "edge_efficiency": 0.7265918534062913,
+          "triangulation_quality": 0.5960579430721613
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "William",
+          "congruence": 0.7646709291885636,
+          "density_score": 0.4266529105254989,
+          "edge_efficiency": 0.8878593466805096,
+          "triangulation_quality": 0.6316416356388767
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "Lisa",
+          "congruence": 0.4086796063631958,
+          "density_score": 0.44045262375390454,
+          "edge_efficiency": 0.7968123963660663,
+          "triangulation_quality": 0.5132590914828317
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "William",
+          "congruence": 0.3711631991163641,
+          "density_score": 0.5173431111706129,
+          "edge_efficiency": 0.7459164771924474,
+          "triangulation_quality": 0.7992156746464998
+        },
+        {
+          "client_1": "Lisa",
+          "client_2": "William",
+          "congruence": 0.5367539531688172,
+          "density_score": 0.6062897238185666,
+          "edge_efficiency": 0.6839577119373633,
+          "triangulation_quality": 0.8011593950863753
+        }
+      ],
+      "total_clients": 5,
+      "total_events": 0
+    },
+    "Sheila Davila": {
+      "clients": [
+        "Michelle Thornton",
+        "Walter Mendoza",
+        "Charles Hancock",
+        "Daniel Cox",
+        "Sheila Davila"
+      ],
+      "congruence_results": [
+        {
+          "client_1": "William",
+          "client_2": "Daniel",
+          "congruence": 0.36770816525300964,
+          "density_score": 0.7514787776094993,
+          "edge_efficiency": 0.8315413924436873,
+          "triangulation_quality": 0.8175932460559234
+        },
+        {
+          "client_1": "William",
+          "client_2": "Sarah",
+          "congruence": 0.38105397811045294,
+          "density_score": 0.6856571726769037,
+          "edge_efficiency": 0.8336574597204002,
+          "triangulation_quality": 0.6951509508195279
+        },
+        {
+          "client_1": "William",
+          "client_2": "Lisa",
+          "congruence": 0.3180986414210337,
+          "density_score": 0.7579771345688688,
+          "edge_efficiency": 0.7356183520304465,
+          "triangulation_quality": 0.6210743498619403
+        },
+        {
+          "client_1": "William",
+          "client_2": "William",
+          "congruence": 0.48269715823177534,
+          "density_score": 0.7548552776816785,
+          "edge_efficiency": 0.7894651504545183,
+          "triangulation_quality": 0.8343894445829694
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Sarah",
+          "congruence": 0.47261638212162693,
+          "density_score": 0.5961221181489743,
+          "edge_efficiency": 0.7160282020368689,
+          "triangulation_quality": 0.8847008537914888
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "Lisa",
+          "congruence": 0.7902384792673778,
+          "density_score": 0.4452711537516001,
+          "edge_efficiency": 0.7473365859462795,
+          "triangulation_quality": 0.7366609727315657
+        },
+        {
+          "client_1": "Daniel",
+          "client_2": "William",
+          "congruence": 0.4293880569394193,
+          "density_score": 0.7478797724670508,
+          "edge_efficiency": 0.6940351528678205,
+          "triangulation_quality": 0.6077762537580328
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "Lisa",
+          "congruence": 0.6932115541949175,
+          "density_score": 0.5831617645492789,
+          "edge_efficiency": 0.7158210508982896,
+          "triangulation_quality": 0.6667642889787914
+        },
+        {
+          "client_1": "Sarah",
+          "client_2": "William",
+          "congruence": 0.42603341911019144,
+          "density_score": 0.6466662497528283,
+          "edge_efficiency": 0.85203270236508,
+          "triangulation_quality": 0.6355262415668577
+        },
+        {
+          "client_1": "Lisa",
+          "client_2": "William",
+          "congruence": 0.633729638243039,
+          "density_score": 0.5675588390685951,
+          "edge_efficiency": 0.7614767387217051,
+          "triangulation_quality": 0.8143387503542758
+        }
+      ],
+      "total_clients": 5,
+      "total_events": 0
+    }
+  },
+  "comparison_data": {
+    "benchmark_performance": {
+      "total_return": 0.08,
+      "volatility": 0.15,
+      "sharpe_ratio": 0.53,
+      "max_drawdown": -0.12
+    },
+    "strategy_performance": {
+      "total_return": 0.12,
+      "volatility": 0.18,
+      "sharpe_ratio": 0.67,
+      "max_drawdown": -0.15
+    },
+    "control_group_performance": {
+      "total_return": 0.06,
+      "volatility": 0.12,
+      "sharpe_ratio": 0.5,
+      "max_drawdown": -0.08
+    },
+    "client_recommendations": {
+      "Michelle Thornton": {
+        "client_id": "Michelle Thornton",
+        "generated_at": "2025-07-17T11:22:53.392856",
+        "recommendations": {
+          "cash_flow_management": [
+            "Maintain 3-6 months emergency fund",
+            "Automate savings transfers",
+            "Track expenses monthly",
+            "Consider debt consolidation if applicable"
+          ],
+          "investment_strategy": [
+            "Consider 0.0516096 investment allocation",
+            "Diversify across multiple asset classes",
+            "Review portfolio quarterly",
+            "Consider tax-efficient investment strategies"
+          ],
+          "life_planning": [
+            "Plan for pre_retirement stage goals",
+            "Consider insurance needs",
+            "Review retirement timeline",
+            "Plan for major life events"
+          ],
+          "risk_management": [
+            "Review insurance coverage annually",
+            "Consider umbrella liability insurance",
+            "Diversify income sources",
+            "Maintain adequate emergency reserves"
+          ]
+        }
+      },
+      "Walter Mendoza": {
+        "client_id": "Walter Mendoza",
+        "generated_at": "2025-07-17T11:22:53.398523",
+        "recommendations": {
+          "cash_flow_management": [
+            "Maintain 3-6 months emergency fund",
+            "Automate savings transfers",
+            "Track expenses monthly",
+            "Consider debt consolidation if applicable"
+          ],
+          "investment_strategy": [
+            "Consider 0.1451488 investment allocation",
+            "Diversify across multiple asset classes",
+            "Review portfolio quarterly",
+            "Consider tax-efficient investment strategies"
+          ],
+          "life_planning": [
+            "Plan for mid_career stage goals",
+            "Consider insurance needs",
+            "Review retirement timeline",
+            "Plan for major life events"
+          ],
+          "risk_management": [
+            "Review insurance coverage annually",
+            "Consider umbrella liability insurance",
+            "Diversify income sources",
+            "Maintain adequate emergency reserves"
+          ]
+        }
+      },
+      "Charles Hancock": {
+        "client_id": "Charles Hancock",
+        "generated_at": "2025-07-17T11:22:53.403079",
+        "recommendations": {
+          "cash_flow_management": [
+            "Maintain 3-6 months emergency fund",
+            "Automate savings transfers",
+            "Track expenses monthly",
+            "Consider debt consolidation if applicable"
+          ],
+          "investment_strategy": [
+            "Consider 0.130569 investment allocation",
+            "Diversify across multiple asset classes",
+            "Review portfolio quarterly",
+            "Consider tax-efficient investment strategies"
+          ],
+          "life_planning": [
+            "Plan for pre_retirement stage goals",
+            "Consider insurance needs",
+            "Review retirement timeline",
+            "Plan for major life events"
+          ],
+          "risk_management": [
+            "Review insurance coverage annually",
+            "Consider umbrella liability insurance",
+            "Diversify income sources",
+            "Maintain adequate emergency reserves"
+          ]
+        }
+      },
+      "Daniel Cox": {
+        "client_id": "Daniel Cox",
+        "generated_at": "2025-07-17T11:22:53.407913",
+        "recommendations": {
+          "cash_flow_management": [
+            "Maintain 3-6 months emergency fund",
+            "Automate savings transfers",
+            "Track expenses monthly",
+            "Consider debt consolidation if applicable"
+          ],
+          "investment_strategy": [
+            "Consider 0.36480000000000007 investment allocation",
+            "Diversify across multiple asset classes",
+            "Review portfolio quarterly",
+            "Consider tax-efficient investment strategies"
+          ],
+          "life_planning": [
+            "Plan for established stage goals",
+            "Consider insurance needs",
+            "Review retirement timeline",
+            "Plan for major life events"
+          ],
+          "risk_management": [
+            "Review insurance coverage annually",
+            "Consider umbrella liability insurance",
+            "Diversify income sources",
+            "Maintain adequate emergency reserves"
+          ]
+        }
+      },
+      "Sheila Davila": {
+        "client_id": "Sheila Davila",
+        "generated_at": "2025-07-17T11:22:53.412156",
+        "recommendations": {
+          "cash_flow_management": [
+            "Maintain 3-6 months emergency fund",
+            "Automate savings transfers",
+            "Track expenses monthly",
+            "Consider debt consolidation if applicable"
+          ],
+          "investment_strategy": [
+            "Consider 0.32900500000000005 investment allocation",
+            "Diversify across multiple asset classes",
+            "Review portfolio quarterly",
+            "Consider tax-efficient investment strategies"
+          ],
+          "life_planning": [
+            "Plan for established stage goals",
+            "Consider insurance needs",
+            "Review retirement timeline",
+            "Plan for major life events"
+          ],
+          "risk_management": [
+            "Review insurance coverage annually",
+            "Consider umbrella liability insurance",
+            "Diversify income sources",
+            "Maintain adequate emergency reserves"
+          ]
+        }
+      }
+    },
+    "control_group_actions": {
+      "Michelle Thornton": {
+        "client_id": "Unknown",
+        "monthly_income": 0.0,
+        "monthly_expenses": 0,
+        "disposable_income": 0.0,
+        "affordable_savings": 0,
+        "current_cash": 0,
+        "current_investments": 0,
+        "min_cash_reserve": 0,
+        "max_cash_reserve": 0,
+        "action": "SAVE_AFFORDABLE",
+        "action_amount": 0,
+        "reason": "Cash reserves acceptable, saving 0 monthly",
+        "expected_return": 0.06,
+        "expected_volatility": 0.12,
+        "strategy_type": "control_group_rule_based"
+      },
+      "Walter Mendoza": {
+        "client_id": "Unknown",
+        "monthly_income": 0.0,
+        "monthly_expenses": 0,
+        "disposable_income": 0.0,
+        "affordable_savings": 0,
+        "current_cash": 0,
+        "current_investments": 0,
+        "min_cash_reserve": 0,
+        "max_cash_reserve": 0,
+        "action": "SAVE_AFFORDABLE",
+        "action_amount": 0,
+        "reason": "Cash reserves acceptable, saving 0 monthly",
+        "expected_return": 0.06,
+        "expected_volatility": 0.12,
+        "strategy_type": "control_group_rule_based"
+      },
+      "Charles Hancock": {
+        "client_id": "Unknown",
+        "monthly_income": 0.0,
+        "monthly_expenses": 0,
+        "disposable_income": 0.0,
+        "affordable_savings": 0,
+        "current_cash": 0,
+        "current_investments": 0,
+        "min_cash_reserve": 0,
+        "max_cash_reserve": 0,
+        "action": "SAVE_AFFORDABLE",
+        "action_amount": 0,
+        "reason": "Cash reserves acceptable, saving 0 monthly",
+        "expected_return": 0.06,
+        "expected_volatility": 0.12,
+        "strategy_type": "control_group_rule_based"
+      },
+      "Daniel Cox": {
+        "client_id": "Unknown",
+        "monthly_income": 0.0,
+        "monthly_expenses": 0,
+        "disposable_income": 0.0,
+        "affordable_savings": 0,
+        "current_cash": 0,
+        "current_investments": 0,
+        "min_cash_reserve": 0,
+        "max_cash_reserve": 0,
+        "action": "SAVE_AFFORDABLE",
+        "action_amount": 0,
+        "reason": "Cash reserves acceptable, saving 0 monthly",
+        "expected_return": 0.06,
+        "expected_volatility": 0.12,
+        "strategy_type": "control_group_rule_based"
+      },
+      "Sheila Davila": {
+        "client_id": "Unknown",
+        "monthly_income": 0.0,
+        "monthly_expenses": 0,
+        "disposable_income": 0.0,
+        "affordable_savings": 0,
+        "current_cash": 0,
+        "current_investments": 0,
+        "min_cash_reserve": 0,
+        "max_cash_reserve": 0,
+        "action": "SAVE_AFFORDABLE",
+        "action_amount": 0,
+        "reason": "Cash reserves acceptable, saving 0 monthly",
+        "expected_return": 0.06,
+        "expected_volatility": 0.12,
+        "strategy_type": "control_group_rule_based"
+      }
+    },
+    "analytics": {
+      "clients": {
+        "by_life_stage": {
+          "established": 2,
+          "mid_career": 1,
+          "pre_retirement": 2
+        },
+        "by_risk_tolerance": {
+          "0.0516096": 1,
+          "0.130569": 1,
+          "0.1451488": 1,
+          "0.32900500000000005": 1,
+          "0.36480000000000007": 1
+        },
+        "income_distribution": {
+          "avg": 47874.0,
+          "max": 80396.0,
+          "min": 28468.0
+        },
+        "total": 5
+      },
+      "events": {
+        "by_type": {},
+        "recent": [],
+        "total": 0
+      },
+      "performance": {
+        "avg_response_time": 0.00545344902918889,
+        "errors": 0,
+        "memory_usage_mb": 384.4375,
+        "requests_processed": 52,
+        "uptime_seconds": 468.598615
+      },
+      "system": {
+        "components": {
+          "cash_flow_model": "healthy",
+          "congruence_engine": "healthy",
+          "lifestyle_engine": "healthy",
+          "vector_db": "healthy"
+        },
+        "last_health_check": "2025-07-17T11:22:34.865293",
+        "status": "healthy"
+      }
+    },
+    "comparison_metrics": {
+      "strategy_vs_benchmark": {
+        "excess_return": 0.04,
+        "risk_adjusted_improvement": 0.14
+      },
+      "control_vs_benchmark": {
+        "excess_return": -0.02,
+        "risk_adjusted_improvement": -0.03
+      },
+      "strategy_vs_control": {
+        "excess_return": 0.06,
+        "risk_adjusted_improvement": 0.17
+      }
+    }
+  },
+  "sliding_analysis": {
+    "window_size": 12,
+    "total_periods": 60,
+    "sliding_windows": [
+      {
+        "period": "Months 1-12",
+        "benchmark_annualized_return": 0.2732186216613069,
+        "strategy_annualized_return": 0.41482025442371906,
+        "control_annualized_return": 0.12758190820517853,
+        "benchmark_volatility": 0.13139104657874756,
+        "strategy_volatility": 0.12000546825636908,
+        "control_volatility": 0.11863945600203864,
+        "strategy_vs_benchmark_excess": 0.14160163276241222,
+        "control_vs_benchmark_excess": -0.14563671345612836,
+        "strategy_vs_control_excess": 0.2872383462185406
+      },
+      {
+        "period": "Months 2-13",
+        "benchmark_annualized_return": 0.2672310540463687,
+        "strategy_annualized_return": 0.33339562660444616,
+        "control_annualized_return": 0.14275395396642912,
+        "benchmark_volatility": 0.13255733481064763,
+        "strategy_volatility": 0.16111759805500078,
+        "control_volatility": 0.1170843091470614,
+        "strategy_vs_benchmark_excess": 0.06616457255807745,
+        "control_vs_benchmark_excess": -0.1244771000799396,
+        "strategy_vs_control_excess": 0.19064167263801707
+      },
+      {
+        "period": "Months 3-14",
+        "benchmark_annualized_return": 0.23571805289672842,
+        "strategy_annualized_return": 0.29908694903911903,
+        "control_annualized_return": 0.14381746240723692,
+        "benchmark_volatility": 0.12816413391679368,
+        "strategy_volatility": 0.15966057781387027,
+        "control_volatility": 0.11691873125193698,
+        "strategy_vs_benchmark_excess": 0.06336889614239062,
+        "control_vs_benchmark_excess": -0.09190059048949148,
+        "strategy_vs_control_excess": 0.15526948663188211
+      },
+      {
+        "period": "Months 4-15",
+        "benchmark_annualized_return": 0.20381402383132557,
+        "strategy_annualized_return": 0.27954024904858654,
+        "control_annualized_return": 0.1600721931808713,
+        "benchmark_volatility": 0.12348255919182452,
+        "strategy_volatility": 0.1564705152857571,
+        "control_volatility": 0.11806798038654945,
+        "strategy_vs_benchmark_excess": 0.07572622521726097,
+        "control_vs_benchmark_excess": -0.043741830650454276,
+        "strategy_vs_control_excess": 0.11946805586771525
+      },
+      {
+        "period": "Months 5-16",
+        "benchmark_annualized_return": 0.10185934673136836,
+        "strategy_annualized_return": 0.24545551093297913,
+        "control_annualized_return": 0.15753833226162753,
+        "benchmark_volatility": 0.12161370331601322,
+        "strategy_volatility": 0.14600739392629777,
+        "control_volatility": 0.11778347689072799,
+        "strategy_vs_benchmark_excess": 0.14359616420161075,
+        "control_vs_benchmark_excess": 0.05567898553025916,
+        "strategy_vs_control_excess": 0.0879171786713516
+      },
+      {
+        "period": "Months 6-17",
+        "benchmark_annualized_return": 0.02619390110047233,
+        "strategy_annualized_return": 0.20391493281762607,
+        "control_annualized_return": 0.1988420258608931,
+        "benchmark_volatility": 0.11374376608593793,
+        "strategy_volatility": 0.15863515133238554,
+        "control_volatility": 0.12879058158500348,
+        "strategy_vs_benchmark_excess": 0.17772103171715375,
+        "control_vs_benchmark_excess": 0.17264812476042077,
+        "strategy_vs_control_excess": 0.0050729069567329865
+      },
+      {
+        "period": "Months 7-18",
+        "benchmark_annualized_return": 0.049239226586608495,
+        "strategy_annualized_return": 0.16652245335699659,
+        "control_annualized_return": 0.17170870064764285,
+        "benchmark_volatility": 0.11625930851383333,
+        "strategy_volatility": 0.16489768268757624,
+        "control_volatility": 0.13409597166930054,
+        "strategy_vs_benchmark_excess": 0.11728322677038808,
+        "control_vs_benchmark_excess": 0.12246947406103434,
+        "strategy_vs_control_excess": -0.005186247290646262
+      },
+      {
+        "period": "Months 8-19",
+        "benchmark_annualized_return": 0.0404265180144123,
+        "strategy_annualized_return": 0.16422663928373193,
+        "control_annualized_return": 0.0178228222324692,
+        "benchmark_volatility": 0.11636656507368248,
+        "strategy_volatility": 0.16455481813360423,
+        "control_volatility": 0.1122926043158631,
+        "strategy_vs_benchmark_excess": 0.12380012126931964,
+        "control_vs_benchmark_excess": -0.0226036957819431,
+        "strategy_vs_control_excess": 0.1464038170512627
+      },
+      {
+        "period": "Months 9-20",
+        "benchmark_annualized_return": 0.017694126644445522,
+        "strategy_annualized_return": 0.069529018341005,
+        "control_annualized_return": 0.0535944171608089,
+        "benchmark_volatility": 0.11637221468690126,
+        "strategy_volatility": 0.1830198571563473,
+        "control_volatility": 0.12027340818428789,
+        "strategy_vs_benchmark_excess": 0.05183489169655947,
+        "control_vs_benchmark_excess": 0.03590029051636337,
+        "strategy_vs_control_excess": 0.015934601180196097
+      },
+      {
+        "period": "Months 10-21",
+        "benchmark_annualized_return": 0.0747672691803357,
+        "strategy_annualized_return": 0.053937250412902586,
+        "control_annualized_return": 0.07887463179272527,
+        "benchmark_volatility": 0.11888409685037296,
+        "strategy_volatility": 0.18615642578223157,
+        "control_volatility": 0.12612843598686244,
+        "strategy_vs_benchmark_excess": -0.020830018767433116,
+        "control_vs_benchmark_excess": 0.004107362612389569,
+        "strategy_vs_control_excess": -0.024937381379822685
+      },
+      {
+        "period": "Months 11-22",
+        "benchmark_annualized_return": 0.14274137138297588,
+        "strategy_annualized_return": -0.010695365444178512,
+        "control_annualized_return": 0.07151449952702162,
+        "benchmark_volatility": 0.09346390847267651,
+        "strategy_volatility": 0.1861875121736029,
+        "control_volatility": 0.12640040145659776,
+        "strategy_vs_benchmark_excess": -0.1534367368271544,
+        "control_vs_benchmark_excess": -0.07122687185595426,
+        "strategy_vs_control_excess": -0.08220986497120013
+      },
+      {
+        "period": "Months 12-23",
+        "benchmark_annualized_return": 0.14390602336119207,
+        "strategy_annualized_return": -0.07047311879514148,
+        "control_annualized_return": 0.1821461272290518,
+        "benchmark_volatility": 0.09403778070027115,
+        "strategy_volatility": 0.1775139238526281,
+        "control_volatility": 0.14410937833650111,
+        "strategy_vs_benchmark_excess": -0.21437914215633355,
+        "control_vs_benchmark_excess": 0.03824010386785974,
+        "strategy_vs_control_excess": -0.2526192460241933
+      },
+      {
+        "period": "Months 13-24",
+        "benchmark_annualized_return": 0.1588157694104429,
+        "strategy_annualized_return": -0.10315344347585287,
+        "control_annualized_return": 0.26068733928381826,
+        "benchmark_volatility": 0.10035654024640477,
+        "strategy_volatility": 0.16135730428572698,
+        "control_volatility": 0.13022067581562324,
+        "strategy_vs_benchmark_excess": -0.26196921288629577,
+        "control_vs_benchmark_excess": 0.1018715698733754,
+        "strategy_vs_control_excess": -0.36384078275967113
+      },
+      {
+        "period": "Months 14-25",
+        "benchmark_annualized_return": 0.16720702907267354,
+        "strategy_annualized_return": 0.018103701512333183,
+        "control_annualized_return": 0.3195818608600103,
+        "benchmark_volatility": 0.0990460825343026,
+        "strategy_volatility": 0.14857535421031545,
+        "control_volatility": 0.13555597646598197,
+        "strategy_vs_benchmark_excess": -0.14910332756034037,
+        "control_vs_benchmark_excess": 0.1523748317873367,
+        "strategy_vs_control_excess": -0.3014781593476771
+      },
+      {
+        "period": "Months 15-26",
+        "benchmark_annualized_return": 0.14895149821008338,
+        "strategy_annualized_return": -0.010074816492362786,
+        "control_annualized_return": 0.2960795424888538,
+        "benchmark_volatility": 0.09884827239996857,
+        "strategy_volatility": 0.14827411708458485,
+        "control_volatility": 0.1428410114538533,
+        "strategy_vs_benchmark_excess": -0.15902631470244616,
+        "control_vs_benchmark_excess": 0.1471280442787704,
+        "strategy_vs_control_excess": -0.3061543589812166
+      },
+      {
+        "period": "Months 16-27",
+        "benchmark_annualized_return": 0.21339454724896784,
+        "strategy_annualized_return": -0.05146521048309527,
+        "control_annualized_return": 0.28220684103609145,
+        "benchmark_volatility": 0.1210869802149109,
+        "strategy_volatility": 0.14199962795293705,
+        "control_volatility": 0.14302882614365497,
+        "strategy_vs_benchmark_excess": -0.26485975773206305,
+        "control_vs_benchmark_excess": 0.06881229378712364,
+        "strategy_vs_control_excess": -0.3336720515191867
+      },
+      {
+        "period": "Months 17-28",
+        "benchmark_annualized_return": 0.21632232712144825,
+        "strategy_annualized_return": -0.1495118762650916,
+        "control_annualized_return": 0.27316676892138314,
+        "benchmark_volatility": 0.11981242446159654,
+        "strategy_volatility": 0.13447464416798366,
+        "control_volatility": 0.1431837821241126,
+        "strategy_vs_benchmark_excess": -0.3658342033865399,
+        "control_vs_benchmark_excess": 0.056844441799934906,
+        "strategy_vs_control_excess": -0.42267864518647474
+      },
+      {
+        "period": "Months 18-29",
+        "benchmark_annualized_return": 0.26312911806195527,
+        "strategy_annualized_return": -0.09431853198442042,
+        "control_annualized_return": 0.2775757992392719,
+        "benchmark_volatility": 0.11304595843242823,
+        "strategy_volatility": 0.13005389672044143,
+        "control_volatility": 0.14464248790391362,
+        "strategy_vs_benchmark_excess": -0.3574476500463757,
+        "control_vs_benchmark_excess": 0.014446681177316609,
+        "strategy_vs_control_excess": -0.3718943312236923
+      },
+      {
+        "period": "Months 19-30",
+        "benchmark_annualized_return": 0.16875890158678214,
+        "strategy_annualized_return": -0.030430157160565886,
+        "control_annualized_return": 0.30085492021053156,
+        "benchmark_volatility": 0.14122420383629428,
+        "strategy_volatility": 0.13334673209626627,
+        "control_volatility": 0.13867896079384012,
+        "strategy_vs_benchmark_excess": -0.19918905874734805,
+        "control_vs_benchmark_excess": 0.1320960186237494,
+        "strategy_vs_control_excess": -0.3312850773710974
+      },
+      {
+        "period": "Months 20-31",
+        "benchmark_annualized_return": 0.1145488385791674,
+        "strategy_annualized_return": -0.14707143692995384,
+        "control_annualized_return": 0.3964657033965426,
+        "benchmark_volatility": 0.1561697893601667,
+        "strategy_volatility": 0.14482798241628383,
+        "control_volatility": 0.11380695015033714,
+        "strategy_vs_benchmark_excess": -0.26162027550912126,
+        "control_vs_benchmark_excess": 0.2819168648173752,
+        "strategy_vs_control_excess": -0.5435371403264965
+      },
+      {
+        "period": "Months 21-32",
+        "benchmark_annualized_return": 0.15968288453359486,
+        "strategy_annualized_return": -0.03337398552600932,
+        "control_annualized_return": 0.33798930269065786,
+        "benchmark_volatility": 0.15679489521775739,
+        "strategy_volatility": 0.13911930478366724,
+        "control_volatility": 0.12031868188199178,
+        "strategy_vs_benchmark_excess": -0.19305687005960417,
+        "control_vs_benchmark_excess": 0.17830641815706302,
+        "strategy_vs_control_excess": -0.3713632882166672
+      },
+      {
+        "period": "Months 22-33",
+        "benchmark_annualized_return": 0.09809852607738817,
+        "strategy_annualized_return": 0.03377811713945067,
+        "control_annualized_return": 0.3002190117830528,
+        "benchmark_volatility": 0.15834532336643511,
+        "strategy_volatility": 0.1360811078779713,
+        "control_volatility": 0.11993620434234244,
+        "strategy_vs_benchmark_excess": -0.0643204089379375,
+        "control_vs_benchmark_excess": 0.20212048570566463,
+        "strategy_vs_control_excess": -0.26644089464360216
+      },
+      {
+        "period": "Months 23-34",
+        "benchmark_annualized_return": 0.10173236911692758,
+        "strategy_annualized_return": 0.08174506710538608,
+        "control_annualized_return": 0.2930847093416832,
+        "benchmark_volatility": 0.15827266874344859,
+        "strategy_volatility": 0.13198920563324587,
+        "control_volatility": 0.12172919342668784,
+        "strategy_vs_benchmark_excess": -0.019987302011541502,
+        "control_vs_benchmark_excess": 0.1913523402247556,
+        "strategy_vs_control_excess": -0.2113396422362971
+      },
+      {
+        "period": "Months 24-35",
+        "benchmark_annualized_return": 0.006389238694618438,
+        "strategy_annualized_return": 0.04080101337226239,
+        "control_annualized_return": 0.26030094713395985,
+        "benchmark_volatility": 0.15428006331703084,
+        "strategy_volatility": 0.1417020871866842,
+        "control_volatility": 0.10800521444229998,
+        "strategy_vs_benchmark_excess": 0.03441177467764396,
+        "control_vs_benchmark_excess": 0.2539117084393414,
+        "strategy_vs_control_excess": -0.21949993376169746
+      },
+      {
+        "period": "Months 25-36",
+        "benchmark_annualized_return": 0.0064911731135878226,
+        "strategy_annualized_return": 0.043409311768089855,
+        "control_annualized_return": 0.2658827454415137,
+        "benchmark_volatility": 0.15432021261342038,
+        "strategy_volatility": 0.14276545887118747,
+        "control_volatility": 0.10874344477490232,
+        "strategy_vs_benchmark_excess": 0.03691813865450203,
+        "control_vs_benchmark_excess": 0.25939157232792587,
+        "strategy_vs_control_excess": -0.22247343367342381
+      },
+      {
+        "period": "Months 26-37",
+        "benchmark_annualized_return": -0.01846750065816278,
+        "strategy_annualized_return": 0.04426609832871428,
+        "control_annualized_return": 0.2362489091076303,
+        "benchmark_volatility": 0.15589244847424047,
+        "strategy_volatility": 0.14299048117998447,
+        "control_volatility": 0.10025756572240774,
+        "strategy_vs_benchmark_excess": 0.06273359898687707,
+        "control_vs_benchmark_excess": 0.2547164097657931,
+        "strategy_vs_control_excess": -0.19198281077891605
+      },
+      {
+        "period": "Months 27-38",
+        "benchmark_annualized_return": -0.03725454735411733,
+        "strategy_annualized_return": 0.04192846223482166,
+        "control_annualized_return": 0.2579090809425254,
+        "benchmark_volatility": 0.15612776628274144,
+        "strategy_volatility": 0.1432669605832963,
+        "control_volatility": 0.09144304157622263,
+        "strategy_vs_benchmark_excess": 0.079183009588939,
+        "control_vs_benchmark_excess": 0.2951636282966427,
+        "strategy_vs_control_excess": -0.21598061870770371
+      },
+      {
+        "period": "Months 28-39",
+        "benchmark_annualized_return": -0.13960628250125504,
+        "strategy_annualized_return": 0.07269183410933544,
+        "control_annualized_return": 0.19663098341780733,
+        "benchmark_volatility": 0.12604991080177694,
+        "strategy_volatility": 0.14526040695476808,
+        "control_volatility": 0.11212571797084572,
+        "strategy_vs_benchmark_excess": 0.21229811661059045,
+        "control_vs_benchmark_excess": 0.3362372659190624,
+        "strategy_vs_control_excess": -0.12393914930847189
+      },
+      {
+        "period": "Months 29-40",
+        "benchmark_annualized_return": -0.04409646120985177,
+        "strategy_annualized_return": 0.2102029735906718,
+        "control_annualized_return": 0.21362097325332427,
+        "benchmark_volatility": 0.14197327264151474,
+        "strategy_volatility": 0.15459767767811616,
+        "control_volatility": 0.11326676988847137,
+        "strategy_vs_benchmark_excess": 0.2542994348005236,
+        "control_vs_benchmark_excess": 0.257717434463176,
+        "strategy_vs_control_excess": -0.0034179996626524517
+      },
+      {
+        "period": "Months 30-41",
+        "benchmark_annualized_return": -0.056935013686522304,
+        "strategy_annualized_return": 0.23397163681806038,
+        "control_annualized_return": 0.1733110562817056,
+        "benchmark_volatility": 0.1397549167620325,
+        "strategy_volatility": 0.15463154923055547,
+        "control_volatility": 0.0994369617625632,
+        "strategy_vs_benchmark_excess": 0.2909066505045827,
+        "control_vs_benchmark_excess": 0.23024606996822788,
+        "strategy_vs_control_excess": 0.060660580536354806
+      },
+      {
+        "period": "Months 31-42",
+        "benchmark_annualized_return": 0.02508870486930432,
+        "strategy_annualized_return": 0.14024014353804942,
+        "control_annualized_return": 0.1664624158945225,
+        "benchmark_volatility": 0.12434225867002592,
+        "strategy_volatility": 0.17126890124036384,
+        "control_volatility": 0.10067795062078407,
+        "strategy_vs_benchmark_excess": 0.11515143866874511,
+        "control_vs_benchmark_excess": 0.14137371102521817,
+        "strategy_vs_control_excess": -0.026222272356473064
+      },
+      {
+        "period": "Months 32-43",
+        "benchmark_annualized_return": 0.1544938221576111,
+        "strategy_annualized_return": 0.30468472855209494,
+        "control_annualized_return": 0.07543324893862126,
+        "benchmark_volatility": 0.12530019389805305,
+        "strategy_volatility": 0.1554405493875408,
+        "control_volatility": 0.11064876395886658,
+        "strategy_vs_benchmark_excess": 0.15019090639448388,
+        "control_vs_benchmark_excess": -0.07906057321898982,
+        "strategy_vs_control_excess": 0.2292514796134737
+      },
+      {
+        "period": "Months 33-44",
+        "benchmark_annualized_return": 0.11354496095507095,
+        "strategy_annualized_return": 0.1783215750945185,
+        "control_annualized_return": 0.06314722084432721,
+        "benchmark_volatility": 0.1238149105810482,
+        "strategy_volatility": 0.18587657078604966,
+        "control_volatility": 0.11323769182843087,
+        "strategy_vs_benchmark_excess": 0.06477661413944752,
+        "control_vs_benchmark_excess": -0.050397740110743744,
+        "strategy_vs_control_excess": 0.11517435425019126
+      },
+      {
+        "period": "Months 34-45",
+        "benchmark_annualized_return": 0.2128224455000322,
+        "strategy_annualized_return": 0.13329515521603139,
+        "control_annualized_return": 0.0639973482116161,
+        "benchmark_volatility": 0.13310573160380262,
+        "strategy_volatility": 0.1878356120369779,
+        "control_volatility": 0.11326809821898291,
+        "strategy_vs_benchmark_excess": -0.07952729028400081,
+        "control_vs_benchmark_excess": -0.14882509728841609,
+        "strategy_vs_control_excess": 0.06929780700441529
+      },
+      {
+        "period": "Months 35-46",
+        "benchmark_annualized_return": 0.22424039897778178,
+        "strategy_annualized_return": 0.08020342575718342,
+        "control_annualized_return": 0.12263670279647734,
+        "benchmark_volatility": 0.13263103238438043,
+        "strategy_volatility": 0.19287790472130198,
+        "control_volatility": 0.11948074448760064,
+        "strategy_vs_benchmark_excess": -0.14403697322059836,
+        "control_vs_benchmark_excess": -0.10160369618130444,
+        "strategy_vs_control_excess": -0.04243327703929393
+      },
+      {
+        "period": "Months 36-47",
+        "benchmark_annualized_return": 0.27922094961053345,
+        "strategy_annualized_return": 0.08275777970428905,
+        "control_annualized_return": 0.08297022016924716,
+        "benchmark_volatility": 0.11949943284041967,
+        "strategy_volatility": 0.19217018120332335,
+        "control_volatility": 0.11038616295888583,
+        "strategy_vs_benchmark_excess": -0.1964631699062444,
+        "control_vs_benchmark_excess": -0.1962507294412863,
+        "strategy_vs_control_excess": -0.00021244046495811145
+      },
+      {
+        "period": "Months 37-48",
+        "benchmark_annualized_return": 0.18104517936687559,
+        "strategy_annualized_return": 0.04998719134213246,
+        "control_annualized_return": 0.022193449948886272,
+        "benchmark_volatility": 0.12504227324304282,
+        "strategy_volatility": 0.1850670730754095,
+        "control_volatility": 0.10800494779029463,
+        "strategy_vs_benchmark_excess": -0.13105798802474314,
+        "control_vs_benchmark_excess": -0.15885172941798933,
+        "strategy_vs_control_excess": 0.02779374139324619
+      },
+      {
+        "period": "Months 38-49",
+        "benchmark_annualized_return": 0.1715877080784759,
+        "strategy_annualized_return": 0.06546833191304079,
+        "control_annualized_return": 0.000981230774478932,
+        "benchmark_volatility": 0.12819215581429447,
+        "strategy_volatility": 0.18875583490682088,
+        "control_volatility": 0.10308952411804295,
+        "strategy_vs_benchmark_excess": -0.1061193761654351,
+        "control_vs_benchmark_excess": -0.17060647730399697,
+        "strategy_vs_control_excess": 0.06448710113856185
+      },
+      {
+        "period": "Months 39-50",
+        "benchmark_annualized_return": 0.22804967039434187,
+        "strategy_annualized_return": 0.014188264272368384,
+        "control_annualized_return": 0.02648566699814115,
+        "benchmark_volatility": 0.12726830767534672,
+        "strategy_volatility": 0.20021616262654734,
+        "control_volatility": 0.10407977753233309,
+        "strategy_vs_benchmark_excess": -0.21386140612197352,
+        "control_vs_benchmark_excess": -0.20156400339620073,
+        "strategy_vs_control_excess": -0.01229740272577277
+      },
+      {
+        "period": "Months 40-51",
+        "benchmark_annualized_return": 0.2665540508718457,
+        "strategy_annualized_return": -0.006764726451936261,
+        "control_annualized_return": 0.08714124098399118,
+        "benchmark_volatility": 0.12156144839889255,
+        "strategy_volatility": 0.19824740953362346,
+        "control_volatility": 0.09138083455399675,
+        "strategy_vs_benchmark_excess": -0.27331877732378196,
+        "control_vs_benchmark_excess": -0.17941280988785452,
+        "strategy_vs_control_excess": -0.09390596743592744
+      },
+      {
+        "period": "Months 41-52",
+        "benchmark_annualized_return": 0.20349197298337343,
+        "strategy_annualized_return": -0.16037027702286208,
+        "control_annualized_return": 0.07531121220365687,
+        "benchmark_volatility": 0.11553620627491609,
+        "strategy_volatility": 0.18134520412841673,
+        "control_volatility": 0.0886907479595062,
+        "strategy_vs_benchmark_excess": -0.3638622500062355,
+        "control_vs_benchmark_excess": -0.12818076077971655,
+        "strategy_vs_control_excess": -0.23568148922651894
+      },
+      {
+        "period": "Months 42-53",
+        "benchmark_annualized_return": 0.290808197838537,
+        "strategy_annualized_return": -0.19333510938128168,
+        "control_annualized_return": 0.05671291548064665,
+        "benchmark_volatility": 0.14060720229958532,
+        "strategy_volatility": 0.17601953020575825,
+        "control_volatility": 0.08490785013150154,
+        "strategy_vs_benchmark_excess": -0.4841433072198187,
+        "control_vs_benchmark_excess": -0.23409528235789034,
+        "strategy_vs_control_excess": -0.2500480248619283
+      },
+      {
+        "period": "Months 43-54",
+        "benchmark_annualized_return": 0.26647029876687034,
+        "strategy_annualized_return": -0.03886323744628144,
+        "control_annualized_return": 0.08927527571656321,
+        "benchmark_volatility": 0.14411469028166093,
+        "strategy_volatility": 0.19808046900389614,
+        "control_volatility": 0.085975183432399,
+        "strategy_vs_benchmark_excess": -0.30533353621315173,
+        "control_vs_benchmark_excess": -0.17719502305030715,
+        "strategy_vs_control_excess": -0.12813851316284464
+      },
+      {
+        "period": "Months 44-55",
+        "benchmark_annualized_return": 0.26423415232358805,
+        "strategy_annualized_return": -0.1805644802955953,
+        "control_annualized_return": 0.10257910422199974,
+        "benchmark_volatility": 0.14333866577745596,
+        "strategy_volatility": 0.18062173535016307,
+        "control_volatility": 0.07813587767951867,
+        "strategy_vs_benchmark_excess": -0.4447986326191833,
+        "control_vs_benchmark_excess": -0.16165504810158832,
+        "strategy_vs_control_excess": -0.283143584517595
+      },
+      {
+        "period": "Months 45-56",
+        "benchmark_annualized_return": 0.25243333455165007,
+        "strategy_annualized_return": -0.08780943721417085,
+        "control_annualized_return": 0.18110105027748993,
+        "benchmark_volatility": 0.14596689431157694,
+        "strategy_volatility": 0.16640114565174857,
+        "control_volatility": 0.08156131953104824,
+        "strategy_vs_benchmark_excess": -0.3402427717658209,
+        "control_vs_benchmark_excess": -0.07133228427416012,
+        "strategy_vs_control_excess": -0.2689104874916608
+      },
+      {
+        "period": "Months 46-57",
+        "benchmark_annualized_return": 0.1824618734571735,
+        "strategy_annualized_return": -0.014311439985651313,
+        "control_annualized_return": 0.14408444706523932,
+        "benchmark_volatility": 0.1349303260653435,
+        "strategy_volatility": 0.1764113407434745,
+        "control_volatility": 0.09111543641542005,
+        "strategy_vs_benchmark_excess": -0.1967733134428248,
+        "control_vs_benchmark_excess": -0.038377426391934186,
+        "strategy_vs_control_excess": -0.15839588705089064
+      },
+      {
+        "period": "Months 47-58",
+        "benchmark_annualized_return": 0.2020998389310405,
+        "strategy_annualized_return": 0.008094041293794095,
+        "control_annualized_return": 0.0744007887021871,
+        "benchmark_volatility": 0.13669318399997302,
+        "strategy_volatility": 0.17330184544933178,
+        "control_volatility": 0.08682316370563346,
+        "strategy_vs_benchmark_excess": -0.1940057976372464,
+        "control_vs_benchmark_excess": -0.12769905022885342,
+        "strategy_vs_control_excess": -0.066306747408393
+      },
+      {
+        "period": "Months 48-59",
+        "benchmark_annualized_return": 0.11632546658153345,
+        "strategy_annualized_return": 0.06341864841637633,
+        "control_annualized_return": 0.11413495629245288,
+        "benchmark_volatility": 0.15864736244117217,
+        "strategy_volatility": 0.1665984599323107,
+        "control_volatility": 0.09844586049049082,
+        "strategy_vs_benchmark_excess": -0.05290681816515711,
+        "control_vs_benchmark_excess": -0.0021905102890805578,
+        "strategy_vs_control_excess": -0.050716307876076554
+      },
+      {
+        "period": "Months 49-60",
+        "benchmark_annualized_return": 0.18355801764411253,
+        "strategy_annualized_return": 0.02056368905444919,
+        "control_annualized_return": 0.16710940444923625,
+        "benchmark_volatility": 0.15185167518126466,
+        "strategy_volatility": 0.1652806889502412,
+        "control_volatility": 0.09462676492929685,
+        "strategy_vs_benchmark_excess": -0.16299432858966334,
+        "control_vs_benchmark_excess": -0.016448613194876283,
+        "strategy_vs_control_excess": -0.14654571539478706
+      }
+    ],
+    "summary_stats": {
+      "avg_strategy_excess": -0.0839293789933654,
+      "avg_control_excess": 0.025341601521573064,
+      "avg_strategy_vs_control_excess": -0.10927098051493846,
+      "strategy_win_rate": 0.3877551020408163,
+      "control_win_rate": 0.5102040816326531,
+      "strategy_vs_control_win_rate": 0.2857142857142857,
+      "consistent_strategy_outperformance": 0.3877551020408163,
+      "consistent_control_outperformance": 0.4897959183673469
+    }
+  }
+}

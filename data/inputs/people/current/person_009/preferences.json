@@ -1,0 +1,44 @@
+{
+  "id": "person_009",
+  "risk_tolerance": {
+    "level": "high",
+    "score": 8,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "real_estate",
+      "commodities",
+      "crypto"
+    ],
+    "avoided_asset_classes": [
+      "real_estate",
+      "crypto"
+    ],
+    "target_asset_allocation": {
+      "private_equity": 0.51,
+      "commodities": 0.41,
+      "real_estate": 0.08
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 18162,
+    "monthly_cash_flow_needs": 2894,
+    "liquidity_priority": "medium"
+  },
+  "tax_considerations": {
+    "tax_bracket": "10%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": true
+  },
+  "constraints": {
+    "ethical_investing": false,
+    "geographic_preferences": [
+      "Saint Helena",
+      "China"
+    ],
+    "minimum_investment_amounts": {
+      "commodities": 2338
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "person_004",
+  "risk_tolerance": {
+    "level": "moderate",
+    "score": 8,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "stocks",
+      "commodities",
+      "cash"
+    ],
+    "avoided_asset_classes": [
+      "commodities",
+      "real_estate"
+    ],
+    "target_asset_allocation": {
+      "stocks": 0.18,
+      "bonds": 0.04,
+      "crypto": 0.78
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 71215,
+    "monthly_cash_flow_needs": 5949,
+    "liquidity_priority": "high"
+  },
+  "tax_considerations": {
+    "tax_bracket": "24%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": true
+  },
+  "constraints": {
+    "ethical_investing": true,
+    "geographic_preferences": [
+      "Serbia",
+      "Northern Mariana Islands"
+    ],
+    "minimum_investment_amounts": {
+      "cash": 43425
+    }
+  }
+}

@@ -85,10 +85,12 @@ class DashboardManager:
                 time.sleep(2)  # Wait for process to terminate
             
             # Start the dashboard
-            cmd = [sys.executable, 'enhanced_mesh_dashboard.py']
+            cmd = [sys.executable, os.path.join('dashboards', 'enhanced_mesh_dashboard.py')]
             env = os.environ.copy()
             env['FLASK_ENV'] = 'development' if debug else 'production'
             env['FLASK_DEBUG'] = '1' if debug else '0'
+            # Add project root to PYTHONPATH
+            env['PYTHONPATH'] = os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + os.pathsep + env.get('PYTHONPATH', '')
             
             logger.info(f"Starting enhanced dashboard on port {self.port}")
             self.process = subprocess.Popen(

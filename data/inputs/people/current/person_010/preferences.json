@@ -1,0 +1,44 @@
+{
+  "id": "person_010",
+  "risk_tolerance": {
+    "level": "high",
+    "score": 5,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "commodities",
+      "real_estate",
+      "bonds"
+    ],
+    "avoided_asset_classes": [
+      "bonds",
+      "commodities"
+    ],
+    "target_asset_allocation": {
+      "private_equity": 0.15,
+      "crypto": 0.43,
+      "real_estate": 0.42
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 38283,
+    "monthly_cash_flow_needs": 6241,
+    "liquidity_priority": "medium"
+  },
+  "tax_considerations": {
+    "tax_bracket": "24%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": false
+  },
+  "constraints": {
+    "ethical_investing": false,
+    "geographic_preferences": [
+      "Australia",
+      "Uzbekistan"
+    ],
+    "minimum_investment_amounts": {
+      "real_estate": 7709
+    }
+  }
+}

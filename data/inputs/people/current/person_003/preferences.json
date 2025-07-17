@@ -1,0 +1,44 @@
+{
+  "id": "person_003",
+  "risk_tolerance": {
+    "level": "moderate",
+    "score": 4,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "crypto",
+      "real_estate",
+      "stocks"
+    ],
+    "avoided_asset_classes": [
+      "stocks",
+      "bonds"
+    ],
+    "target_asset_allocation": {
+      "cash": 0.21,
+      "bonds": 0.39,
+      "stocks": 0.4
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 90848,
+    "monthly_cash_flow_needs": 8204,
+    "liquidity_priority": "low"
+  },
+  "tax_considerations": {
+    "tax_bracket": "37%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": false
+  },
+  "constraints": {
+    "ethical_investing": false,
+    "geographic_preferences": [
+      "San Marino",
+      "Romania"
+    ],
+    "minimum_investment_amounts": {
+      "private_equity": 40715
+    }
+  }
+}

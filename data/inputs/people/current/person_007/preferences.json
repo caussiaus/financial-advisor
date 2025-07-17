@@ -1,0 +1,44 @@
+{
+  "id": "person_007",
+  "risk_tolerance": {
+    "level": "low",
+    "score": 3,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "commodities",
+      "stocks",
+      "private_equity"
+    ],
+    "avoided_asset_classes": [
+      "bonds",
+      "real_estate"
+    ],
+    "target_asset_allocation": {
+      "bonds": 0.14,
+      "stocks": 0.37,
+      "real_estate": 0.49
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 52519,
+    "monthly_cash_flow_needs": 4406,
+    "liquidity_priority": "low"
+  },
+  "tax_considerations": {
+    "tax_bracket": "12%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": true
+  },
+  "constraints": {
+    "ethical_investing": false,
+    "geographic_preferences": [
+      "Mozambique",
+      "France"
+    ],
+    "minimum_investment_amounts": {
+      "cash": 14039
+    }
+  }
+}

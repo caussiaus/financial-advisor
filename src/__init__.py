@@ -72,7 +72,7 @@ from .utilities import (
 
 # Visualization
 from .visualization import (
-    FlexibilityComfortMesh,
+    FlexibilityComfortMeshEngine,
     PaymentType
 )
 
@@ -117,7 +117,7 @@ __all__ = [
     'TestResult',
     
     # Visualization
-    'FlexibilityComfortMesh',
+    'FlexibilityComfortMeshEngine',
     'PaymentType',
     
     # Legacy

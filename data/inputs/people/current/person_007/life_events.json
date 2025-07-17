@@ -1,0 +1,42 @@
+{
+  "id": "person_007",
+  "past_events": [
+    {
+      "id": "event_001",
+      "name": "Auto past event",
+      "date": "2024-08-03",
+      "financial_impact": -39627,
+      "description": "Random past event",
+      "category": "housing"
+    }
+  ],
+  "planned_events": [
+    {
+      "id": "event_002",
+      "name": "Planned event 2",
+      "date": "2027-01-06",
+      "expected_impact": -93427,
+      "description": "Auto-generated future event",
+      "category": "investment",
+      "probability": 0.7
+    },
+    {
+      "id": "event_003",
+      "name": "Planned event 3",
+      "date": "2031-07-30",
+      "expected_impact": -87608,
+      "description": "Auto-generated future event",
+      "category": "retirement",
+      "probability": 0.23
+    },
+    {
+      "id": "event_004",
+      "name": "Planned event 4",
+      "date": "2034-12-30",
+      "expected_impact": -51054,
+      "description": "Auto-generated future event",
+      "category": "investment",
+      "probability": 0.85
+    }
+  ]
+}

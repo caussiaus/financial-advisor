@@ -32,9 +32,9 @@ from scipy import stats
 import pickle
 
 # Import existing components
-from src.analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
-from src.analysis.mesh_backtesting_framework import MeshBacktestingFramework, BacktestReport
-from src.analysis.mesh_vector_database import MeshVectorDatabase
+from ..analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+from ..analysis.mesh_backtesting_framework import MeshBacktestingFramework, BacktestReport
+from ..analysis.mesh_vector_database import MeshVectorDatabase
 from ..synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
 from ..json_to_vector_converter import JSONToVectorConverter
 

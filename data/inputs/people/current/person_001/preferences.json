@@ -1,0 +1,44 @@
+{
+  "id": "person_001",
+  "risk_tolerance": {
+    "level": "low",
+    "score": 9,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "crypto",
+      "private_equity",
+      "cash"
+    ],
+    "avoided_asset_classes": [
+      "commodities",
+      "cash"
+    ],
+    "target_asset_allocation": {
+      "private_equity": 0.37,
+      "crypto": 0.4,
+      "commodities": 0.23
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 79270,
+    "monthly_cash_flow_needs": 2962,
+    "liquidity_priority": "medium"
+  },
+  "tax_considerations": {
+    "tax_bracket": "24%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": false
+  },
+  "constraints": {
+    "ethical_investing": false,
+    "geographic_preferences": [
+      "North Macedonia",
+      "Mauritania"
+    ],
+    "minimum_investment_amounts": {
+      "stocks": 13461
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "financial_profiles": {
+    "total_people": 10,
+    "age_distribution": [
+      19,
+      62,
+      80,
+      46,
+      63,
+      72,
+      56,
+      40,
+      22,
+      53
+    ],
+    "income_distribution": [
+      80396,
+      30040,
+      35545,
+      28468,
+      64921,
+      20610,
+      90358,
+      55539,
+      178454,
+      26803
+    ],
+    "wealth_distribution": [
+      1632843,
+      453084,
+      1106624,
+      1370339,
+      606358,
+      988384,
+      458008,
+      295056,
+      992922,
+      549493
+    ],
+    "risk_tolerance_distribution": {
+      "high": 4,
+      "low": 2,
+      "moderate": 4
+    },
+    "family_status_distribution": {
+      "widowed": 3,
+      "divorced": 4,
+      "married_with_children": 1,
+      "divorced_single_parent": 1,
+      "single": 1
+    },
+    "asset_allocation": {
+      "cash": 10,
+      "investments": 10,
+      "real_estate": 7,
+      "retirement_accounts": 10,
+      "other_assets": 10
+    },
+    "liability_distribution": [
+      72119,
+      11821,
+      157145,
+      35661,
+      268055,
+      154566,
+      75763,
+      135232,
+      22135,
+      10599
+    ],
+    "goal_analysis": {
+      "total_goals": 30
+    },
+    "life_events_analysis": {
+      "total_events": 40
+    },
+    "age_stats": {
+      "mean": 51.3,
+      "std": 18.937000818503442,
+      "min": 

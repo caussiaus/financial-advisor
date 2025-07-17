@@ -1,0 +1,325 @@
+2025-07-17 07:33:05,061 - INFO - Using port 5001
+2025-07-17 07:33:05,062 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 07:33:05,063 - INFO - Dashboard started with PID 40771
+2025-07-17 07:33:08,069 - ERROR - Dashboard failed to start. stdout: , stderr: /opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/caseyjussaume/ips_case1/enhanced_mesh_dashboard.py': [Errno 2] No such file or directory
+
+2025-07-17 07:35:06,855 - INFO - Using port 5001
+2025-07-17 07:35:06,855 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 07:35:06,856 - INFO - Dashboard started with PID 41390
+2025-07-17 07:35:09,862 - ERROR - Dashboard failed to start. stdout: , stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.mesh_vector_database import MeshVectorDatabase
+ModuleNotFoundError: No module named 'src'
+
+2025-07-17 10:39:08,653 - INFO - Using port 5001
+2025-07-17 10:39:08,653 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:39:08,655 - INFO - Dashboard started with PID 56984
+2025-07-17 10:39:11,660 - ERROR - Dashboard failed to start. stdout: , stderr: /opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/caseyjussaume/ips_case1/enhanced_mesh_dashboard.py': [Errno 2] No such file or directory
+
+2025-07-17 10:39:46,213 - INFO - Using port 5001
+2025-07-17 10:39:46,214 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:39:46,215 - INFO - Dashboard started with PID 57452
+2025-07-17 10:39:49,221 - ERROR - Dashboard failed to start. stdout: , stderr: /opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/caseyjussaume/ips_case1/enhanced_mesh_dashboard.py': [Errno 2] No such file or directory
+
+2025-07-17 10:40:08,277 - INFO - Using port 5001
+2025-07-17 10:40:08,278 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:40:08,279 - INFO - Dashboard started with PID 57671
+2025-07-17 10:40:11,285 - ERROR - Dashboard failed to start. stdout: , stderr: /opt/homebrew/Cellar/python@3.13/3.13.4/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/caseyjussaume/ips_case1/enhanced_mesh_dashboard.py': [Errno 2] No such file or directory
+
+2025-07-17 10:40:32,423 - INFO - Using port 5001
+2025-07-17 10:40:32,423 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:40:32,425 - INFO - Dashboard started with PID 57855
+2025-07-17 10:40:35,430 - ERROR - Dashboard failed to start. stdout: , stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+ModuleNotFoundError: No module named 'src'
+
+2025-07-17 10:41:59,973 - INFO - Using port 5001
+2025-07-17 10:41:59,974 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:41:59,976 - INFO - Dashboard started with PID 58387
+2025-07-17 10:42:02,976 - INFO - Dashboard started successfully!
+2025-07-17 10:43:58,344 - INFO - Using port 5001
+2025-07-17 10:43:58,345 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:43:58,346 - INFO - Dashboard started with PID 60227
+2025-07-17 10:44:01,352 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 10, in <module>
+    from .enhanced_pdf_processor import FinancialMilestone
+ImportError: attempted relative import with no known parent package
+
+2025-07-17 10:44:09,637 - INFO - Using port 5001
+2025-07-17 10:44:09,637 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:44:09,639 - INFO - Dashboard started with PID 60366
+2025-07-17 10:44:12,640 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'stochastic_mesh_engine'
+
+2025-07-17 10:45:13,545 - INFO - Using port 5001
+2025-07-17 10:45:13,545 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:45:13,547 - INFO - Dashboard started with PID 60924
+2025-07-17 10:45:16,553 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from src.stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'src.stochastic_mesh_engine'
+
+2025-07-17 10:46:56,545 - INFO - Using port 5001
+2025-07-17 10:46:56,545 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:46:56,547 - INFO - Dashboard started with PID 61138
+2025-07-17 10:46:59,552 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from ..financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from src.stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'src.stochastic_mesh_engine'
+
+2025-07-17 10:47:12,906 - INFO - Using port 5001
+2025-07-17 10:47:12,906 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:47:12,908 - INFO - Dashboard started with PID 61287
+2025-07-17 10:47:15,914 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from ..financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'src.stochastic_mesh_engine'
+
+2025-07-17 10:47:34,301 - INFO - Using port 5001
+2025-07-17 10:47:34,301 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:47:34,303 - INFO - Dashboard started with PID 61437
+2025-07-17 10:47:37,305 - ERROR - Dashboard failed to start. stdout: , stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 32, in <module>
+    from .core import (
+    ...<8 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/core/__init__.py", line 10, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine
+  File "/Users/caseyjussaume/ips_case1/src/core/stochastic_mesh_engine.py", line 47, in <module>
+    from ..utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
+  File "/Users/caseyjussaume/ips_case1/src/utilities/__init__.py", line 12, in <module>
+    from .mesh_testing_framework import ComprehensiveMeshTesting, TestResult
+  File "/Users/caseyjussaume/ips_case1/src/utilities/mesh_testing_framework.py", line 35, in <module>
+    from ..analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+  File "/Users/caseyjussaume/ips_case1/src/analysis/__init__.py", line 10, in <module>
+    from .mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+  File "/Users/caseyjussaume/ips_case1/src/analysis/mesh_congruence_engine.py", line 36, in <module>
+    from .mesh_vector_database import MeshVectorDatabase, MeshEmbedding, SimilarityMatch
+  File "/Users/caseyjussaume/ips_case1/src/analysis/mesh_vector_database.py", line 31, in <module>
+    from .synthetic_lifestyle_engine import SyntheticLifestyleEngine
+ModuleNotFoundError: No module named 'src.analysis.synthetic_lifestyle_engine'
+
+2025-07-17 10:48:43,873 - INFO - Using port 5001
+2025-07-17 10:48:43,874 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:48:43,876 - INFO - Dashboard started with PID 61936
+2025-07-17 10:48:46,881 - INFO - Dashboard started successfully!
+2025-07-17 10:49:38,086 - INFO - Using port 5001
+2025-07-17 10:49:38,086 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:49:38,088 - INFO - Dashboard started with PID 62267
+2025-07-17 10:49:41,094 - ERROR - Dashboard failed to start. stdout: , stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 32, in <module>
+    from .core import (
+    ...<8 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/core/__init__.py", line 10, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine
+  File "/Users/caseyjussaume/ips_case1/src/core/stochastic_mesh_engine.py", line 47, in <module>
+    from ..utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
+  File "/Users/caseyjussaume/ips_case1/src/utilities/__init__.py", line 12, in <module>
+    from .mesh_testing_framework import ComprehensiveMeshTesting, TestResult
+  File "/Users/caseyjussaume/ips_case1/src/utilities/mesh_testing_framework.py", line 35, in <module>
+    from ..analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+  File "/Users/caseyjussaume/ips_case1/src/analysis/__init__.py", line 10, in <module>
+    from .mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+  File "/Users/caseyjussaume/ips_case1/src/analysis/mesh_congruence_engine.py", line 36, in <module>
+    from .mesh_vector_database import MeshVectorDatabase, MeshEmbedding, SimilarityMatch
+  File "/Users/caseyjussaume/ips_case1/src/analysis/mesh_vector_database.py", line 31, in <module>
+    from .synthetic_lifestyle_engine import SyntheticLifestyleEngine
+ModuleNotFoundError: No module named 'src.analysis.synthetic_lifestyle_engine'
+
+2025-07-17 10:49:54,285 - INFO - Using port 5001
+2025-07-17 10:49:54,285 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:49:54,287 - INFO - Dashboard started with PID 62421
+2025-07-17 10:49:57,292 - INFO - Dashboard started successfully!
+2025-07-17 10:50:29,617 - INFO - Using port 5001
+2025-07-17 10:50:29,617 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:50:29,619 - INFO - Dashboard started with PID 62920
+2025-07-17 10:50:32,624 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from ..financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'src.stochastic_mesh_engine'
+
+2025-07-17 10:50:59,751 - INFO - Using port 5001
+2025-07-17 10:50:59,751 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:50:59,753 - INFO - Dashboard started with PID 63101
+2025-07-17 10:51:02,759 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from ..financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 57, in <module>
+    class FinancialRecommendationEngine:
+    ...<580 lines>...
+                json.dump(evaluation_data, f, indent=2)
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 63, in FinancialRecommendationEngine
+    def __init__(self, mesh_engine: StochasticMeshEngine, accounting_engine: AccountingReconciliationEngine):
+                                    ^^^^^^^^^^^^^^^^^^^^
+NameError: name 'StochasticMeshEngine' is not defined
+
+2025-07-17 10:51:39,570 - INFO - Using port 5001
+2025-07-17 10:51:39,570 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:51:39,572 - INFO - Dashboard started with PID 63272
+2025-07-17 10:51:42,580 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from ..financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'src.stochastic_mesh_engine'
+
+2025-07-17 10:52:05,009 - INFO - Using port 5001
+2025-07-17 10:52:05,010 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:52:05,011 - INFO - Dashboard started with PID 63418
+2025-07-17 10:52:08,018 - ERROR - Dashboard failed to start. stdout: , stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 14, in <module>
+    from .time_uncertainty_integration import TimeUncertaintyIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/time_uncertainty_integration.py", line 11, in <module>
+    from .time_uncertainty_mesh import (
+    ...<3 lines>...
+    )
+ModuleNotFoundError: No module named 'src.integration.time_uncertainty_mesh'
+
+2025-07-17 10:52:24,640 - INFO - Using port 5001
+2025-07-17 10:52:24,640 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:52:24,642 - INFO - Dashboard started with PID 63599
+2025-07-17 10:52:27,648 - ERROR - Dashboard failed to start. stdout: , stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+ImportError: cannot import name 'MeshMarketIntegration' from 'src.integration' (/Users/caseyjussaume/ips_case1/src/integration/__init__.py)
+
+2025-07-17 10:52:38,157 - INFO - Using port 5001
+2025-07-17 10:52:38,157 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:52:38,159 - INFO - Dashboard started with PID 63758
+2025-07-17 10:52:41,165 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from ..financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'src.stochastic_mesh_engine'
+
+2025-07-17 10:53:50,553 - INFO - Using port 5001
+2025-07-17 10:53:50,553 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:53:50,554 - INFO - Dashboard started with PID 63915
+2025-07-17 10:53:53,560 - ERROR - Dashboard failed to start. stdout: ⚠️ QuantLib not available - using simplified calculations
+, stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.core_controller import get_core_controller, initialize_system, get_system_status, get_components
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 55, in <module>
+    from .integration import (
+    ...<6 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/integration/__init__.py", line 13, in <module>
+    from .market_mesh_integration import MeshMarketIntegration
+  File "/Users/caseyjussaume/ips_case1/src/integration/market_mesh_integration.py", line 30, in <module>
+    from ..financial_recommendation_engine import FinancialRecommendationEngine
+  File "/Users/caseyjussaume/ips_case1/src/financial_recommendation_engine.py", line 11, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+ModuleNotFoundError: No module named 'src.stochastic_mesh_engine'
+

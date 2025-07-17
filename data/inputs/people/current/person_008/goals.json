@@ -1,0 +1,33 @@
+{
+  "id": "person_008",
+  "short_term_goals": [
+    {
+      "id": "goal_001",
+      "name": "Short-term goal",
+      "target_amount": 1981,
+      "target_date": "2026-01-13",
+      "priority": "low",
+      "description": "Auto-generated short-term goal"
+    }
+  ],
+  "medium_term_goals": [
+    {
+      "id": "goal_002",
+      "name": "Medium-term goal",
+      "target_amount": 130863,
+      "target_date": "2028-07-16",
+      "priority": "medium",
+      "description": "Auto-generated medium-term goal"
+    }
+  ],
+  "long_term_goals": [
+    {
+      "id": "goal_003",
+      "name": "Long-term goal",
+      "target_amount": 1176444,
+      "target_date": "2045-07-12",
+      "priority": "high",
+      "description": "Auto-generated long-term goal"
+    }
+  ]
+}

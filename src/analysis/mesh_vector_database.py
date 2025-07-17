@@ -28,7 +28,7 @@ import hashlib
 
 # Import existing components
 from ..json_to_vector_converter import ClientVectorProfile, LifeStage, EventCategory
-from ..synthetic_lifestyle_engine import SyntheticClientData
+from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine
 from ..core.time_uncertainty_mesh import TimeUncertaintyMeshEngine
 
 
@@ -87,7 +87,7 @@ class MeshVectorDatabase:
         
         return logger
     
-    def _generate_mesh_composition_features(self, client_data: SyntheticClientData) -> Dict[str, Any]:
+    def _generate_mesh_composition_features(self, client_data: SyntheticLifestyleEngine) -> Dict[str, Any]:
         """
         Generate features that describe the mesh network composition
         
@@ -264,7 +264,7 @@ class MeshVectorDatabase:
         
         return embedding
     
-    def add_client(self, client_data: SyntheticClientData) -> str:
+    def add_client(self, client_data: SyntheticLifestyleEngine) -> str:
         """
         Add a client to the vector database
         
@@ -588,7 +588,6 @@ def create_demo_vector_database():
     vector_db = MeshVectorDatabase(embedding_dim=128, similarity_threshold=0.7)
     
     # Create synthetic lifestyle engine
-    from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine
     engine = SyntheticLifestyleEngine(use_gpu=False)
     
     # Generate synthetic clients

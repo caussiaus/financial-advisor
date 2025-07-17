@@ -44,7 +44,7 @@ except ImportError:
     device = None
     print("GPU acceleration not available. Installing PyTorch may improve performance.")
 
-from src.utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
+from ..utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
 from ..utilities.adaptive_mesh_generator import AdaptiveMeshGenerator
 from ..vectorized_accounting import VectorizedAccountingEngine, AccountingState
 

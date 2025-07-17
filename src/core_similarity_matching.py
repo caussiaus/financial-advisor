@@ -21,7 +21,7 @@ from .stochastic_mesh_engine import StochasticMeshEngine
 from .accounting_reconciliation import AccountingReconciliationEngine
 from .unified_cash_flow_model import UnifiedCashFlowModel
 from .mesh_vector_database import MeshVectorDatabase
-from .synthetic_lifestyle_engine import SyntheticLifestyleEngine
+from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine
 
 warnings.filterwarnings('ignore')
 

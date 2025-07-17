@@ -1,0 +1,31 @@
+{
+  "id": "person_009",
+  "timestamp": "2025-07-17T11:22:22.178701Z",
+  "assets": {
+    "cash": 97073,
+    "investments": 433994,
+    "real_estate": 149761,
+    "retirement_accounts": 291993,
+    "other_assets": 42236
+  },
+  "liabilities": {
+    "mortgage": 18981,
+    "student_loans": 0,
+    "credit_cards": 657,
+    "other_debt": 2497
+  },
+  "income": {
+    "annual_salary": 178454,
+    "bonus": 34600,
+    "other_income": 31580
+  },
+  "expenses": {
+    "monthly_living": 14871,
+    "monthly_mortgage": 52.73,
+    "monthly_utilities": 579,
+    "monthly_food": 562,
+    "monthly_transportation": 441,
+    "monthly_entertainment": 267,
+    "monthly_savings": 3261.53
+  }
+}

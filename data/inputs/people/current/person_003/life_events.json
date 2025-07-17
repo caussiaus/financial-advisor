@@ -1,0 +1,42 @@
+{
+  "id": "person_003",
+  "past_events": [
+    {
+      "id": "event_001",
+      "name": "Auto past event",
+      "date": "2024-04-05",
+      "financial_impact": -41723,
+      "description": "Random past event",
+      "category": "education"
+    }
+  ],
+  "planned_events": [
+    {
+      "id": "event_002",
+      "name": "Planned event 2",
+      "date": "2031-02-07",
+      "expected_impact": 89785,
+      "description": "Auto-generated future event",
+      "category": "investment",
+      "probability": 0.38
+    },
+    {
+      "id": "event_003",
+      "name": "Planned event 3",
+      "date": "2033-09-25",
+      "expected_impact": 52984,
+      "description": "Auto-generated future event",
+      "category": "family",
+      "probability": 0.16
+    },
+    {
+      "id": "event_004",
+      "name": "Planned event 4",
+      "date": "2032-06-28",
+      "expected_impact": 2617,
+      "description": "Auto-generated future event",
+      "category": "career",
+      "probability": 0.64
+    }
+  ]
+}

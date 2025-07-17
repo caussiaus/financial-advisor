@@ -20,14 +20,14 @@ warnings.filterwarnings('ignore')
 # Add src to path for imports
 sys.path.append('src')
 
-from market_tracking_backtest import (
+from ..market_tracking_backtest import (
     MarketDataTracker, PersonalFinanceInvestmentMapper, BacktestEngine, 
     BacktestAnalyzer, PersonalFinanceAction, InvestmentDecision, BacktestResult
 )
-from stochastic_mesh_engine import StochasticMeshEngine
-from enhanced_pdf_processor import EnhancedPDFProcessor, FinancialMilestone
-from accounting_reconciliation import AccountingReconciliationEngine
-from financial_recommendation_engine import FinancialRecommendationEngine
+from ..core.stochastic_mesh_engine import StochasticMeshEngine
+from ..enhanced_pdf_processor import EnhancedPDFProcessor, FinancialMilestone
+from ..accounting_reconciliation import AccountingReconciliationEngine
+from ..financial_recommendation_engine import FinancialRecommendationEngine
 
 class MeshMarketIntegration:
     """

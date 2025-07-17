@@ -7,9 +7,9 @@ Specialized visualization tools:
 - Financial scenario plotting
 """
 
-from .flexibility_comfort_mesh import FlexibilityComfortMesh, PaymentType
+from .flexibility_comfort_mesh import FlexibilityComfortMeshEngine, PaymentType
 
 __all__ = [
-    'FlexibilityComfortMesh',
+    'FlexibilityComfortMeshEngine',
     'PaymentType'
 ] 

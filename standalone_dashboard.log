@@ -1,0 +1,2 @@
+2025-07-17 10:54:46,345 - __main__ - ERROR - Failed to import components: attempted relative import beyond top-level package
+2025-07-17 10:54:46,345 - __main__ - ERROR - Failed to start standalone dashboard: Component import failed: attempted relative import beyond top-level package

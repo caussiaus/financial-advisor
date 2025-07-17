@@ -1,0 +1,27 @@
+2025-07-17 10:49:38,086 - INFO - Using port 5001
+2025-07-17 10:49:38,086 - INFO - Starting enhanced dashboard on port 5001
+2025-07-17 10:49:38,088 - INFO - Dashboard started with PID 62267
+2025-07-17 10:49:41,094 - ERROR - Dashboard failed to start. stdout: , stderr: Traceback (most recent call last):
+  File "/Users/caseyjussaume/ips_case1/dashboards/enhanced_mesh_dashboard.py", line 27, in <module>
+    from src.analysis.mesh_vector_database import MeshVectorDatabase
+  File "/Users/caseyjussaume/ips_case1/src/__init__.py", line 32, in <module>
+    from .core import (
+    ...<8 lines>...
+    )
+  File "/Users/caseyjussaume/ips_case1/src/core/__init__.py", line 10, in <module>
+    from .stochastic_mesh_engine import StochasticMeshEngine
+  File "/Users/caseyjussaume/ips_case1/src/core/stochastic_mesh_engine.py", line 47, in <module>
+    from ..utilities.mesh_memory_manager import MeshMemoryManager, CompressedNode
+  File "/Users/caseyjussaume/ips_case1/src/utilities/__init__.py", line 12, in <module>
+    from .mesh_testing_framework import ComprehensiveMeshTesting, TestResult
+  File "/Users/caseyjussaume/ips_case1/src/utilities/mesh_testing_framework.py", line 35, in <module>
+    from ..analysis.mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+  File "/Users/caseyjussaume/ips_case1/src/analysis/__init__.py", line 10, in <module>
+    from .mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult
+  File "/Users/caseyjussaume/ips_case1/src/analysis/mesh_congruence_engine.py", line 36, in <module>
+    from .mesh_vector_database import MeshVectorDatabase, MeshEmbedding, SimilarityMatch
+  File "/Users/caseyjussaume/ips_case1/src/analysis/mesh_vector_database.py", line 31, in <module>
+    from .synthetic_lifestyle_engine import SyntheticLifestyleEngine
+ModuleNotFoundError: No module named 'src.analysis.synthetic_lifestyle_engine'
+
+❌ Failed to start dashboard

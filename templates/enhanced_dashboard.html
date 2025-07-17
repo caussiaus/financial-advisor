@@ -2,966 +2,2571 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Animated Backtest Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TradingView-Style Mesh Dashboard</title>
-    
-    <!-- D3.js for advanced charting -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    
-    <!-- CSS Libraries -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        :root {
-            --tradingview-bg: #131722;
-            --tradingview-panel: #1e222d;
-            --tradingview-border: #2a2e39;
-            --tradingview-text: #d1d4dc;
-            --tradingview-accent: #2962ff;
-            --tradingview-success: #089981;
-            --tradingview-danger: #f23645;
-            --tradingview-warning: #ff9800;
+        body { background: #f4f6fa; }
+        .dashboard-container { margin-top: 1rem; }
+        .portfolio-bar {
+            height: 40px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            transition: all 0.8s ease-in-out;
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding-left: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-label { 
+            min-width: 150px; 
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .portfolio-value {
+            margin-left: 16px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .portfolio-change {
+            margin-left: auto;
+            margin-right: 16px;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        .ticker-window {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .title { color: #2a3b4c; }
+        .control-panel {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-indicator {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3273dc, #23d160);
+            transition: width 0.5s ease;
+        }
+        .stats-panel {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .animation-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .date-range-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .entity-selector {
+            margin-bottom: 1rem;
+        }
+        .performance-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            background: rgba(255,255,255,0.3);
+            transition: left 0.8s ease-in-out;
         }
         
-        body {
-            background-color: var(--tradingview-bg);
-            color: var(--tradingview-text);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+        /* People Profiles Styles */
+        .people-profiles-section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
         }
-
-        .tradingview-header {
-            background: var(--tradingview-panel);
-            border-bottom: 1px solid var(--tradingview-border);
-            padding: 10px 20px;
+        
+        .people-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .person-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #3273dc;
+            transition: all 0.3s ease;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .person-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .person-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3273dc, #23d160);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+        
+        .person-info h4 {
+            margin: 0;
+            color: #2a3b4c;
+        }
+        
+        .person-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .events-section {
+            margin-top: 1rem;
+        }
+        
+        .event-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #23d160;
+        }
+        
+        .event-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        
+        .event-details {
+            flex: 1;
+        }
+        
+        .event-name {
+            font-weight: 600;
+            color: #2a3b4c;
+            margin: 0;
+        }
+        
+        .event-date {
+            font-size: 0.8rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .event-impact {
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .impact-positive {
+            color: #23d160;
+        }
+        
+        .impact-negative {
+            color: #ff3860;
+        }
+        
+        .reallocations-section {
+            margin-top: 1rem;
+        }
+        
+        .reallocation-item {
+            background: #e8f4fd;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #3273dc;
+        }
+        
+        .reallocation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reallocation-icon {
+            font-size: 1.1rem;
+            margin-right: 0.5rem;
+        }
+        
+        .reallocation-type {
+            font-weight: 600;
+            color: #3273dc;
+            margin: 0;
+        }
+        
+        .reallocation-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Stress Test Styles */
+        .stress-test-section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stress-test-results {
+            margin-top: 1rem;
+        }
+        
+        .scenario-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ff3860;
+        }
+        
+        .scenario-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 0.5rem;
         }
-
-        .tradingview-logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--tradingview-accent);
+        
+        .scenario-name {
+            font-weight: 600;
+            color: #2a3b4c;
+            margin: 0;
         }
-
-        .tradingview-controls {
-            display: flex;
-            gap: 10px;
-        }
-
-        .tradingview-btn {
-            background: var(--tradingview-panel);
-            border: 1px solid var(--tradingview-border);
-            color: var(--tradingview-text);
-            padding: 8px 16px;
+        
+        .stress-level {
+            padding: 0.25rem 0.5rem;
             border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: all 0.2s;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
-
-        .tradingview-btn:hover {
-            background: var(--tradingview-accent);
+        
+        .stress-low {
+            background: #23d160;
             color: white;
         }
-
-        .tradingview-btn.active {
-            background: var(--tradingview-accent);
+        
+        .stress-medium {
+            background: #ffdd57;
+            color: #2a3b4c;
+        }
+        
+        .stress-high {
+            background: #ff3860;
             color: white;
         }
-
-        .main-container {
-            display: flex;
-            height: calc(100vh - 60px);
+        
+        .scenario-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
-
-        .sidebar {
-            width: 300px;
-            background: var(--tradingview-panel);
-            border-right: 1px solid var(--tradingview-border);
-            padding: 20px;
-            overflow-y: auto;
+        
+        .stat-item {
+            text-align: center;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
         }
-
-        .chart-area {
-            flex: 1;
-            position: relative;
-            background: var(--tradingview-bg);
+        
+        .stat-value {
+            font-weight: 600;
+            color: #2a3b4c;
+            margin: 0;
         }
-
-        .chart-container {
-            position: absolute;
-            top: 0;
-            left: 0;
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .recommendations-list {
+            margin-top: 1rem;
+        }
+        
+        .recommendation-item {
+            background: white;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #23d160;
+        }
+        
+        .recommendation-person {
+            font-weight: 600;
+            color: #2a3b4c;
+            margin-bottom: 0.25rem;
+        }
+        
+        .recommendation-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Mesh Debug Styles */
+        .mesh-debug-section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .mesh-debug-results {
+            margin-top: 1rem;
+        }
+        
+        .network-state-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3273dc;
+        }
+        
+        .network-status {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .status-active {
+            background: #23d160;
+            color: white;
+        }
+        
+        .status-inactive {
+            background: #ff3860;
+            color: white;
+        }
+        
+        .status-unknown {
+            background: #ffdd57;
+            color: #2a3b4c;
+        }
+        
+        .debug-recommendation-item {
+            background: white;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ffdd57;
+        }
+        
+        .recommendation-source {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .source-static {
+            background: #ff3860;
+            color: white;
+        }
+        
+        .source-network {
+            background: #23d160;
+            color: white;
+        }
+        
+        .network-influence-bar {
             width: 100%;
-            height: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
             overflow: hidden;
+            margin-top: 0.5rem;
         }
-
-        .chart-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        
+        .network-influence-fill {
             height: 100%;
-            pointer-events: none;
-            z-index: 10;
+            background: linear-gradient(90deg, #3273dc, #23d160);
+            transition: width 0.3s ease;
         }
-
-        .analysis-window {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 8px;
-            background: linear-gradient(to bottom, #ffd700, #ffed4e, #ffd700);
-            border: 2px solid #333;
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-            z-index: 15;
-            left: 70%;
-        }
-
-        .now-marker {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: linear-gradient(to bottom, #00ff00, #32cd32, #00ff00);
-            border: 2px solid #333;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-            z-index: 15;
-            left: 60%;
-        }
-
-        .chart-controls {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(30, 34, 45, 0.9);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid var(--tradingview-border);
-            z-index: 20;
-        }
-
-        .metrics-panel {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(30, 34, 45, 0.9);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid var(--tradingview-border);
-            z-index: 20;
-            min-width: 200px;
-        }
-
-        .metric-item {
+        
+        .component-status {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 12px;
-        }
-
-        .metric-label {
-            color: var(--tradingview-text);
-            opacity: 0.8;
-        }
-
-        .metric-value {
-            font-weight: bold;
-            color: var(--tradingview-accent);
-        }
-
-        .metric-value.positive {
-            color: var(--tradingview-success);
-        }
-
-        .metric-value.negative {
-            color: var(--tradingview-danger);
-        }
-
-        .time-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(30, 34, 45, 0.9);
-            color: var(--tradingview-text);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid var(--tradingview-border);
-            z-index: 20;
-        }
-
-        .sidebar-section {
-            margin-bottom: 25px;
-        }
-
-        .sidebar-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--tradingview-accent);
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--tradingview-border);
-            padding-bottom: 5px;
-        }
-
-        .client-card {
-            background: var(--tradingview-panel);
-            border: 1px solid var(--tradingview-border);
-            border-radius: 6px;
-            padding: 12px;
-            margin-bottom: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .client-card:hover {
-            border-color: var(--tradingview-accent);
-            background: rgba(41, 98, 255, 0.1);
-        }
-
-        .client-card.selected {
-            border-color: var(--tradingview-accent);
-            background: rgba(41, 98, 255, 0.2);
-        }
-
-        .client-name {
-            font-weight: bold;
-            font-size: 13px;
-            margin-bottom: 4px;
-        }
-
-        .client-details {
-            font-size: 11px;
-            opacity: 0.8;
-        }
-
-        .status-indicator {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin-right: 6px;
-        }
-
-        .status-healthy { background-color: var(--tradingview-success); }
-        .status-degraded { background-color: var(--tradingview-warning); }
-        .status-unhealthy { background-color: var(--tradingview-danger); }
-
-        .zoom-controls {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 10px;
-        }
-
-        .zoom-btn {
-            background: var(--tradingview-panel);
-            border: 1px solid var(--tradingview-border);
-            color: var(--tradingview-text);
-            padding: 6px 12px;
+            align-items: center;
+            padding: 0.5rem;
+            background: white;
             border-radius: 4px;
-            cursor: pointer;
-            font-size: 11px;
-            transition: all 0.2s;
+            margin-bottom: 0.5rem;
         }
-
-        .zoom-btn:hover {
-            background: var(--tradingview-accent);
-            color: white;
+        
+        .component-name {
+            font-weight: 600;
+            color: #2a3b4c;
         }
-
-        .alert-custom {
-            background: var(--tradingview-panel);
-            border: 1px solid var(--tradingview-border);
-            color: var(--tradingview-text);
+        
+        .component-status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 0.5rem;
+        }
+        
+        .status-indicator-active {
+            background: #23d160;
+        }
+        
+        .status-indicator-inactive {
+            background: #ff3860;
+        }
+        
+        /* Statistics Panel Styles */
+        .statistics-panel {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            height: fit-content;
+            position: sticky;
+            top: 1rem;
+        }
+        
+        .portfolio-chart-container {
+            margin-bottom: 1rem;
+            background: white;
             border-radius: 6px;
-            margin-bottom: 15px;
+            padding: 0.5rem;
         }
-
-        .modal-content {
-            background: var(--tradingview-panel);
-            border: 1px solid var(--tradingview-border);
-            color: var(--tradingview-text);
+        
+        .statistics-summary {
+            background: white;
+            border-radius: 6px;
+            padding: 1rem;
         }
-
-        .modal-header {
-            background: var(--tradingview-panel);
-            border-bottom: 1px solid var(--tradingview-border);
-            color: var(--tradingview-text);
+        
+        .statistics-summary .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
         }
-
-        .form-control {
-            background: var(--tradingview-bg);
-            border: 1px solid var(--tradingview-border);
-            color: var(--tradingview-text);
+        
+        .statistics-summary .stat-item:last-child {
+            border-bottom: none;
         }
-
-        .form-control:focus {
-            background: var(--tradingview-bg);
-            border-color: var(--tradingview-accent);
-            color: var(--tradingview-text);
-            box-shadow: 0 0 0 0.2rem rgba(41, 98, 255, 0.25);
+        
+        .statistics-summary .stat-label {
+            font-weight: 600;
+            color: #2a3b4c;
+            font-size: 0.9rem;
         }
-
-        .btn-primary {
-            background: var(--tradingview-accent);
-            border-color: var(--tradingview-accent);
+        
+        .statistics-summary .stat-value {
+            font-weight: 700;
+            color: #3273dc;
+            font-size: 0.9rem;
         }
-
-        .btn-primary:hover {
-            background: #1e4bd8;
-            border-color: #1e4bd8;
+        
+        /* Updated People Card Styles */
+        .people-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .person-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #3273dc;
+            transition: all 0.3s ease;
+        }
+        
+        .person-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .person-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .person-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3273dc, #23d160);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+        
+        .person-info h4 {
+            margin: 0;
+            color: #2a3b4c;
+        }
+        
+        .person-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .events-section {
+            margin-top: 1rem;
+        }
+        
+        .events-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .event-bullet {
+            display: flex;
+            align-items: flex-start;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .event-bullet:last-child {
+            border-bottom: none;
+        }
+        
+        .event-bullet-icon {
+            font-size: 1rem;
+            margin-right: 0.5rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+        
+        .event-bullet-content {
+            flex: 1;
+        }
+        
+        .event-bullet-title {
+            font-weight: 600;
+            color: #2a3b4c;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .event-bullet-details {
+            font-size: 0.8rem;
+            color: #666;
+            margin: 0.25rem 0 0 0;
+        }
+        
+        .event-bullet-impact {
+            font-weight: 600;
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .impact-positive {
+            color: #23d160;
+        }
+        
+        .impact-negative {
+            color: #ff3860;
+        }
+        
+        .reallocations-section {
+            margin-top: 1rem;
+        }
+        
+        .reallocation-item {
+            background: #e8f4fd;
+            border-radius: 6px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #3273dc;
+        }
+        
+        .reallocation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reallocation-icon {
+            font-size: 1.1rem;
+            margin-right: 0.5rem;
+        }
+        
+        .reallocation-type {
+            font-weight: 600;
+            color: #3273dc;
+            margin: 0;
+        }
+        
+        .reallocation-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <!-- TradingView-Style Header -->
-    <div class="tradingview-header">
-        <div class="tradingview-logo">
-            <i class="fas fa-chart-line me-2"></i>
-            Mesh Portfolio Analysis
-        </div>
-        <div class="tradingview-controls">
-            <span class="status-indicator status-healthy" id="system-status"></span>
-            <span id="status-text">System Healthy</span>
-            <button class="tradingview-btn" onclick="showSystemControls()">
-                <i class="fas fa-cog"></i> Controls
-            </button>
-        </div>
-    </div>
-
-    <div class="main-container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="sidebar-section">
-                <div class="sidebar-title">
-                    <i class="fas fa-users me-2"></i>Clients
-                </div>
-                <div id="client-list">
-                    <div class="text-center text-muted">
-                        <i class="fas fa-users fa-2x mb-2"></i>
-                        <p>Loading clients...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">
-                    <i class="fas fa-chart-bar me-2"></i>System Health
-                </div>
-                <div id="health-status">
-                    <div class="alert alert-success alert-custom">
-                        <strong>Status:</strong> Healthy<br>
-                        <strong>Components:</strong> All operational
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-title">
-                    <i class="fas fa-lightbulb me-2"></i>Recommendations
-                </div>
-                <div id="recommendations-box">
-                    <div class="text-muted">Select a client to view recommendations</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Chart Area -->
-        <div class="chart-area">
-            <div class="chart-container">
-                <svg id="portfolio-chart" width="100%" height="100%"></svg>
+<section class="section">
+    <div class="container">
+        <h1 class="title is-3 has-text-centered">🎯 Animated Backtest Dashboard</h1>
+        <h2 class="subtitle has-text-centered">Real-time Portfolio Performance Analysis</h2>
+        
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <h3 class="title is-4">📊 Backtest Controls</h3>
+            
+            <!-- Animation Controls -->
+            <div class="animation-controls">
+                <button id="playPauseBtn" class="button is-success" onclick="toggleAnimation()">
+                    <span class="icon"><i class="fas fa-play"></i></span>
+                    <span>Play</span>
+                </button>
+                <button class="button is-info" onclick="nextWindow()">Next Window</button>
+                <button class="button is-warning" onclick="previousWindow()">Previous Window</button>
+                <button class="button is-danger" onclick="resetAnimation()">Reset</button>
             </div>
             
-            <div class="chart-overlay">
-                <div class="now-marker" id="now-marker"></div>
-                <div class="analysis-window" id="analysis-window"></div>
-            </div>
-
-            <!-- Chart Controls -->
-            <div class="chart-controls">
-                <div class="zoom-controls">
-                    <button class="zoom-btn" onclick="adjustZoom(1.2)">Zoom In</button>
-                    <button class="zoom-btn" onclick="adjustZoom(0.8)">Zoom Out</button>
-                    <button class="zoom-btn" onclick="resetZoom()">Reset</button>
+            <!-- Date Range Controls -->
+            <div class="date-range-controls">
+                <div class="field">
+                    <label class="label">Start Date</label>
+                    <input id="startDate" type="date" class="input" onchange="updateDateRange()">
                 </div>
-                <div style="font-size: 11px; color: var(--tradingview-text); opacity: 0.8;">
-                    Fixed Analysis Window
+                <div class="field">
+                    <label class="label">End Date</label>
+                    <input id="endDate" type="date" class="input" onchange="updateDateRange()">
                 </div>
-            </div>
-
-            <!-- Metrics Panel -->
-            <div class="metrics-panel">
-                <div class="sidebar-title">Portfolio Metrics</div>
-                <div class="metric-item">
-                    <span class="metric-label">Our Avg:</span>
-                    <span class="metric-value" id="our-avg">$0</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Competition Avg:</span>
-                    <span class="metric-value" id="competition-avg">$0</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Outperformance:</span>
-                    <span class="metric-value positive" id="outperformance">+0%</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Volatility:</span>
-                    <span class="metric-value" id="volatility">0%</span>
+                <div class="field">
+                    <label class="label">Window Size</label>
+                    <input id="windowSize" type="number" class="input" value="20" min="5" max="100" onchange="updateWindowSize()">
                 </div>
             </div>
-
-            <!-- Time Indicator -->
-            <div class="time-indicator" id="time-indicator">
-                Portfolio Analysis Active
+            
+            <!-- Entity Selector -->
+            <div class="entity-selector">
+                <label class="label">Compare Entities</label>
+                <div id="entityCheckboxes" class="field">
+                    <!-- Will be populated dynamically -->
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- System Controls Modal -->
-    <div class="modal fade" id="systemControlsModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">System Controls</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6>System Health</h6>
-                            <div id="modal-health-status"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <h6>Performance Metrics</h6>
-                            <div id="modal-performance-metrics"></div>
-                        </div>
+        
+        <!-- Timeline Indicator -->
+        <div class="timeline-indicator">
+            <h4 class="title is-5">📈 Timeline Progress</h4>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+            </div>
+            <div class="has-text-centered" style="margin-top: 0.5rem;">
+                <span id="currentWindowInfo">Window 0 of 0</span> | 
+                <span id="currentDateRange">No data loaded</span>
+            </div>
+        </div>
+        
+        <!-- Main Visualization -->
+        <div class="ticker-window">
+            <h3 class="title is-4">🏆 Portfolio Performance Battle</h3>
+            <div id="battle-bars" class="battle-container"></div>
+        </div>
+        
+        <!-- Statistics Panel -->
+        <div class="stats-panel">
+            <h3 class="title is-4">📊 Performance Statistics</h3>
+            <div class="columns">
+                <div class="column">
+                    <div class="stat-card">
+                        <h5 class="title is-6">Best Performer</h5>
+                        <p id="bestPerformer">-</p>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <h6>System Actions</h6>
-                            <button class="tradingview-btn" onclick="restartComponents()">
-                                <i class="fas fa-redo"></i> Restart Components
-                            </button>
-                            <button class="tradingview-btn" onclick="clearCache()">
-                                <i class="fas fa-broom"></i> Clear Cache
-                            </button>
-                            <button class="tradingview-btn" onclick="exportData()">
-                                <i class="fas fa-download"></i> Export Data
-                            </button>
-                            <button class="tradingview-btn" onclick="importData()">
-                                <i class="fas fa-upload"></i> Import Data
-                            </button>
-                        </div>
+                </div>
+                <div class="column">
+                    <div class="stat-card">
+                        <h5 class="title is-6">Worst Performer</h5>
+                        <p id="worstPerformer">-</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="stat-card">
+                        <h5 class="title is-6">Consistency Score</h5>
+                        <p id="consistencyScore">-</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="stat-card">
+                        <h5 class="title is-6">Total Windows</h5>
+                        <p id="totalWindows">-</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- People Profiles Section -->
+        <div class="people-profiles-section">
+            <h3 class="title is-4">👥 Individual Profiles & Events</h3>
+            <div class="columns">
+                <div class="column is-8">
+                    <div id="peopleProfiles" class="people-container">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="statistics-panel">
+                        <h4 class="title is-5">📊 Portfolio Statistics</h4>
+                        <div class="portfolio-chart-container">
+                            <canvas id="portfolioChart" width="400" height="300"></canvas>
+                        </div>
+                        <div class="statistics-summary">
+                            <div class="stat-item">
+                                <span class="stat-label">Total People:</span>
+                                <span id="totalPeopleCount" class="stat-value">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Total Portfolio Value:</span>
+                                <span id="totalPortfolioValue" class="stat-value">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Average Portfolio:</span>
+                                <span id="averagePortfolioValue" class="stat-value">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Highest Portfolio:</span>
+                                <span id="highestPortfolioValue" class="stat-value">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Lowest Portfolio:</span>
+                                <span id="lowestPortfolioValue" class="stat-value">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Stress Test Section -->
+        <div class="stress-test-section">
+            <h3 class="title is-4">🧪 Market Stress Test</h3>
+            <div class="field">
+                <button id="runStressTestBtn" class="button is-danger" onclick="runMarketStressTest()">
+                    <span class="icon"><i class="fas fa-flask"></i></span>
+                    <span>Run Market Stress Test</span>
+                </button>
+            </div>
+            <div id="stressTestResults" class="stress-test-results">
+                <!-- Will be populated after stress test -->
+            </div>
+        </div>
+
+        <!-- Mesh Network Debug Section -->
+        <div class="mesh-debug-section">
+            <h3 class="title is-4">🔍 Mesh Network Debug</h3>
+            <div class="field has-addons">
+                <div class="control">
+                    <button id="checkNetworkBtn" class="button is-info" onclick="checkMeshNetwork()">
+                        <span class="icon"><i class="fas fa-network-wired"></i></span>
+                        <span>Check Network State</span>
+                    </button>
+                </div>
+                <div class="control">
+                    <button id="debugRecommendationsBtn" class="button is-warning" onclick="debugRecommendations()">
+                        <span class="icon"><i class="fas fa-bug"></i></span>
+                        <span>Debug Recommendations</span>
+                    </button>
+                </div>
+                <div class="control">
+                    <button id="showNetworkVizBtn" class="button is-success" onclick="showNetworkVisualization()">
+                        <span class="icon"><i class="fas fa-project-diagram"></i></span>
+                        <span>Network Visualization</span>
+                    </button>
+                </div>
+            </div>
+            <div id="meshDebugResults" class="mesh-debug-results">
+                <!-- Will be populated with debug information -->
+            </div>
+        </div>
     </div>
+</section>
 
-    <script>
-        // Global variables
-        let selectedClient = null;
-        let currentZoom = 1;
-        let chartOffset = 0;
-        let allPaths = [];
-        let xScale, yScale, line;
-        let chart, svg;
-        let animationId = null;
+<!-- Person Profile Modal -->
+<div id="personProfileModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 480px;">
+        <header class="modal-card-head">
+            <p class="modal-card-title" id="modalPersonName"></p>
+            <button class="delete" aria-label="close" onclick="closePersonModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            <canvas id="personPieChart" width="400" height="300"></canvas>
+            <div id="modalTimeline" style="margin-top: 1rem;"></div>
+        </section>
+    </div>
+</div>
 
-        // Configuration
-        const config = {
-            width: window.innerWidth - 300, // Account for sidebar
-            height: window.innerHeight - 60, // Account for header
-            margin: { top: 40, right: 60, bottom: 60, left: 60 }
+<script>
+const COLORS = [
+    '#3273dc', '#23d160', '#ff3860', '#ffdd57', '#b86bff', '#ff8c42', '#00d1b2', '#ff5e57', '#48c774', '#f14668'
+];
+
+// Global state
+let windowIndex = 0;
+let windowSize = 20;
+let portfolios = [];
+let timeline = [];
+let isAnimating = false;
+let animationInterval = null;
+let selectedEntities = [];
+let previousValues = [];
+
+// Animation speed (ms between windows)
+const ANIMATION_SPEED = 1500;
+
+async function fetchPortfolioData() {
+    try {
+        // Try to fetch a sample timeline file from the backend
+        const resp = await fetch('/api/data/files');
+        const data = await resp.json();
+        
+        // Find a timeline CSV file
+        const timelineFile = data.data_files.find(f => f.name.startsWith('lifecycle_') && f.name.endsWith('.csv'));
+        
+        if (!timelineFile) {
+            document.getElementById('battle-bars').innerHTML = `
+                <div class="notification is-info">
+                    <h4 class="title is-4">No Analysis Data Available</h4>
+                    <p>No timeline data found. Please run your analysis first to generate the required CSV files.</p>
+                    <p><strong>Available files:</strong> ${data.total_files} files found</p>
+                    <p><strong>Next steps:</strong></p>
+                    <ul>
+                        <li>Run your analysis script to generate lifecycle CSV files</li>
+                        <li>Refresh this page after analysis completes</li>
+                        <li>Or click "Next Window" to see demo data</li>
+                    </ul>
+                </div>`;
+            return;
+        }
+        
+        // Fetch the CSV data
+        const csvResp = await fetch('/' + timelineFile.path);
+        if (!csvResp.ok) {
+            throw new Error(`Failed to load ${timelineFile.name}: ${csvResp.status}`);
+        }
+        const csvText = await csvResp.text();
+        parseTimelineCSV(csvText);
+        
+    } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('battle-bars').innerHTML = `
+            <div class="notification is-warning">
+                <h4 class="title is-4">Data Loading Error</h4>
+                <p>Error: ${error.message}</p>
+                <p>Please run your analysis first to generate the required data files.</p>
+            </div>`;
+    }
+}
+
+function parseTimelineCSV(csvText) {
+    // Parse CSV: assume columns are [date, portfolio1, portfolio2, ...]
+    const lines = csvText.trim().split('\n');
+    const headers = lines[0].split(',');
+    portfolios = headers.slice(1);
+    timeline = lines.slice(1).map(line => {
+        const parts = line.split(',');
+        return {
+            date: parts[0],
+            values: parts.slice(1).map(Number)
         };
+    });
+    
+    // Initialize selected entities to all portfolios
+    selectedEntities = portfolios.map((_, i) => i);
+    
+    // Set up date range controls
+    if (timeline.length > 0) {
+        const startDate = timeline[0].date;
+        const endDate = timeline[timeline.length - 1].date;
+        document.getElementById('startDate').value = startDate;
+        document.getElementById('endDate').value = endDate;
+    }
+    
+    windowIndex = 0;
+    updateEntityCheckboxes();
+    renderBattle();
+    updateStatistics();
+}
 
-        // Initialize dashboard
-        document.addEventListener('DOMContentLoaded', function() {
-            initChart();
-            loadSystemHealth();
-            loadClients();
-            startChartAnimation();
+function renderBattle() {
+    const bars = document.getElementById('battle-bars');
+    if (timeline.length === 0) {
+        bars.innerHTML = '<p>No data loaded.</p>';
+        return;
+    }
+    
+    // Sliding window
+    const start = Math.max(0, windowIndex);
+    const end = Math.min(timeline.length, windowIndex + windowSize);
+    const windowData = timeline.slice(start, end);
+    
+    // Calculate current values for selected entities only
+    const currentValues = selectedEntities.map(entityIndex => 
+        windowData.reduce((acc, row) => acc + (row.values[entityIndex] || 0), 0)
+    );
+    
+    // Calculate changes from previous window
+    const changes = currentValues.map((value, i) => {
+        const prevValue = previousValues[i] || 0;
+        return value - prevValue;
+    });
+    
+    const maxValue = Math.max(...currentValues, 1);
+    
+    bars.innerHTML = selectedEntities.map((entityIndex, i) => {
+        const portfolioName = portfolios[entityIndex];
+        const value = currentValues[i];
+        const change = changes[i];
+        const width = (value / maxValue * 100).toFixed(1);
+        const changeText = change >= 0 ? `+${change.toFixed(2)}` : `${change.toFixed(2)}`;
+        const changeClass = change >= 0 ? 'has-text-success' : 'has-text-danger';
+        
+        return `
+            <div class="portfolio-bar clickable-portfolio" 
+                 style="width:${width}%;background:${COLORS[entityIndex%COLORS.length]}"
+                 onclick="showPortfolioInsights('${portfolioName}')"
+                 data-portfolio="${portfolioName}">
+                <div class="performance-line" style="left: ${width}%"></div>
+                <span class="portfolio-label">${portfolioName}</span>
+                <span class="portfolio-value">${value.toFixed(2)}</span>
+                <span class="portfolio-change ${changeClass}">${changeText}</span>
+            </div>
+        `;
+    }).join('');
+    
+    // Update previous values for next comparison
+    previousValues = [...currentValues];
+    
+    // Update timeline indicator
+    updateTimelineIndicator();
+}
+
+function updateTimelineIndicator() {
+    const progress = timeline.length > 0 ? (windowIndex / (timeline.length - windowSize)) * 100 : 0;
+    document.getElementById('progressFill').style.width = `${Math.min(100, progress)}%`;
+    
+    const totalWindows = Math.max(0, timeline.length - windowSize + 1);
+    document.getElementById('currentWindowInfo').textContent = `Window ${windowIndex + 1} of ${totalWindows}`;
+    
+    if (timeline.length > 0) {
+        const startDate = timeline[windowIndex]?.date || 'N/A';
+        const endDate = timeline[Math.min(windowIndex + windowSize - 1, timeline.length - 1)]?.date || 'N/A';
+        document.getElementById('currentDateRange').textContent = `${startDate} to ${endDate}`;
+    }
+}
+
+function updateStatistics() {
+    if (timeline.length === 0) return;
+    
+    // Calculate performance across all windows
+    const performances = selectedEntities.map(entityIndex => {
+        const totalValue = timeline.reduce((acc, row) => acc + (row.values[entityIndex] || 0), 0);
+        return { name: portfolios[entityIndex], value: totalValue };
+    });
+    
+    // Sort by performance
+    performances.sort((a, b) => b.value - a.value);
+    
+    document.getElementById('bestPerformer').textContent = `${performances[0]?.name || '-'} (${performances[0]?.value.toFixed(2) || '-'})`;
+    document.getElementById('worstPerformer').textContent = `${performances[performances.length - 1]?.name || '-'} (${performances[performances.length - 1]?.value.toFixed(2) || '-'})`;
+    
+    // Calculate consistency (variance)
+    const values = performances.map(p => p.value);
+    const mean = values.reduce((a, b) => a + b, 0) / values.length;
+    const variance = values.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / values.length;
+    const consistency = Math.max(0, 100 - (variance / mean * 100));
+    
+    document.getElementById('consistencyScore').textContent = `${consistency.toFixed(1)}%`;
+    document.getElementById('totalWindows').textContent = Math.max(0, timeline.length - windowSize + 1);
+}
+
+function updateEntityCheckboxes() {
+    const container = document.getElementById('entityCheckboxes');
+    container.innerHTML = portfolios.map((portfolio, index) => `
+        <label class="checkbox">
+            <input type="checkbox" value="${index}" ${selectedEntities.includes(index) ? 'checked' : ''} onchange="toggleEntity(${index})">
+            ${portfolio}
+        </label>
+    `).join('');
+}
+
+function toggleEntity(entityIndex) {
+    const index = selectedEntities.indexOf(entityIndex);
+    if (index > -1) {
+        selectedEntities.splice(index, 1);
+    } else {
+        selectedEntities.push(entityIndex);
+    }
+    renderBattle();
+    updateStatistics();
+}
+
+function toggleAnimation() {
+    const btn = document.getElementById('playPauseBtn');
+    if (isAnimating) {
+        // Stop animation
+        clearInterval(animationInterval);
+        isAnimating = false;
+        btn.innerHTML = '<span class="icon"><i class="fas fa-play"></i></span><span>Play</span>';
+        btn.className = 'button is-success';
+    } else {
+        // Start animation
+        isAnimating = true;
+        btn.innerHTML = '<span class="icon"><i class="fas fa-pause"></i></span><span>Pause</span>';
+        btn.className = 'button is-warning';
+        
+        animationInterval = setInterval(() => {
+            nextWindow();
+        }, ANIMATION_SPEED);
+    }
+}
+
+function nextWindow() {
+    if (timeline.length === 0) {
+        showDemoData();
+        return;
+    }
+    
+    windowIndex += windowSize;
+    if (windowIndex >= timeline.length) {
+        windowIndex = 0;
+        if (isAnimating) {
+            // Stop animation when we reach the end
+            toggleAnimation();
+        }
+    }
+    renderBattle();
+    updateStatistics();
+}
+
+function previousWindow() {
+    if (timeline.length === 0) return;
+    
+    windowIndex -= windowSize;
+    if (windowIndex < 0) windowIndex = Math.max(0, timeline.length - windowSize);
+    renderBattle();
+    updateStatistics();
+}
+
+function resetAnimation() {
+    if (isAnimating) {
+        toggleAnimation();
+    }
+    windowIndex = 0;
+    renderBattle();
+    updateStatistics();
+}
+
+function updateDateRange() {
+    const startDate = document.getElementById('startDate').value;
+    const endDate = document.getElementById('endDate').value;
+    
+    if (startDate && endDate && timeline.length > 0) {
+        // Filter timeline to date range
+        const filteredTimeline = timeline.filter(row => 
+            row.date >= startDate && row.date <= endDate
+        );
+        
+        if (filteredTimeline.length > 0) {
+            timeline = filteredTimeline;
+            windowIndex = 0;
+            renderBattle();
+            updateStatistics();
+        }
+    }
+}
+
+function updateWindowSize() {
+    const newSize = parseInt(document.getElementById('windowSize').value);
+    if (newSize >= 5 && newSize <= 100) {
+        windowSize = newSize;
+        windowIndex = 0;
+        renderBattle();
+        updateStatistics();
+    }
+}
+
+function showDemoData() {
+    // Generate demo portfolio data
+    portfolios = ['Conservative Portfolio', 'Balanced Portfolio', 'Aggressive Portfolio', 'Index Fund'];
+    timeline = [];
+    
+    // Generate 200 demo data points with realistic patterns
+    for (let i = 0; i < 200; i++) {
+        const baseValue = 1000 + i * 5; // Growing trend
+        const noise = (Math.random() - 0.5) * 100; // Random noise
+        
+        timeline.push({
+            date: `2025-${Math.floor(i/30) + 1}-${(i % 30) + 1}`,
+            values: [
+                baseValue * 0.8 + noise * 0.5,  // Conservative
+                baseValue + noise * 0.8,         // Balanced
+                baseValue * 1.2 + noise * 1.2,   // Aggressive
+                baseValue * 0.95 + noise * 0.6   // Index
+            ]
         });
+    }
+    
+    selectedEntities = portfolios.map((_, i) => i);
+    windowIndex = 0;
+    updateEntityCheckboxes();
+    renderBattle();
+    updateStatistics();
+    
+    // Update the button text
+    document.querySelector('button').textContent = 'Next Window (Demo Mode)';
+}
 
-        // Initialize TradingView-style chart
-        function initChart() {
-            // Generate synthetic portfolio data
-            const people = generatePeopleData();
-            allPaths = generatePortfolioPaths(people);
-            
-            // Setup D3 chart
-            setupChart();
-            
-            // Initial draw
-            drawPortfolioLines();
+window.onload = fetchPortfolioData;
+
+// Load people data and display profiles
+async function loadPeopleData() {
+    try {
+        const response = await fetch('/api/people');
+        const data = await response.json();
+        
+        if (data.error) {
+            console.error('Error loading people data:', data.error);
+            return;
         }
+        
+        displayPeopleProfiles(data.people);
+    } catch (error) {
+        console.error('Error loading people data:', error);
+    }
+}
 
-        // Generate synthetic people data
-        function generatePeopleData() {
-            const people = [];
-            
-            // Our clients (15 people)
-            for (let i = 1; i <= 15; i++) {
-                people.push({
-                    id: `our_${i}`,
-                    name: `Client ${i}`,
-                    type: 'our',
-                    initialValue: 50000 + Math.random() * 150000,
-                    riskProfile: 0.3 + Math.random() * 0.4,
-                    incomeLevel: 50000 + Math.random() * 100000
-                });
-            }
-            
-            // Competition clients (12 people)
-            for (let i = 1; i <= 12; i++) {
-                people.push({
-                    id: `competition_${i}`,
-                    name: `Competitor ${i}`,
-                    type: 'competition',
-                    initialValue: 40000 + Math.random() * 120000,
-                    riskProfile: 0.2 + Math.random() * 0.3,
-                    incomeLevel: 40000 + Math.random() * 80000
-                });
-            }
-            
-            return people;
-        }
-
-        // Generate portfolio paths
-        function generatePortfolioPaths(people) {
-            const startDate = new Date('2022-01-01');
-            const endDate = new Date('2025-12-31');
-            const days = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
-            
-            const allPaths = [];
-            
-            people.forEach(person => {
-                const path = [];
-                let currentValue = person.initialValue;
-                
-                for (let i = 0; i <= days; i += 7) {
-                    const date = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
-                    
-                    let volatility, drift;
-                    if (person.type === 'our') {
-                        volatility = 0.02 + person.riskProfile * 0.03;
-                        drift = 0.0008 + person.riskProfile * 0.0004;
-                    } else {
-                        volatility = 0.015 + person.riskProfile * 0.02;
-                        drift = 0.0005 + person.riskProfile * 0.0002;
-                    }
-                    
-                    const randomReturn = Math.random();
-                    const logReturn = Math.log(1 + drift) - 0.5 * volatility * volatility + 
-                                    volatility * Math.sqrt(1/52) * (randomReturn - 0.5);
-                    
-                    currentValue *= Math.exp(logReturn);
-                    
-                    path.push({
-                        date: date,
-                        value: currentValue,
-                        personId: person.id,
-                        personName: person.name,
-                        type: person.type,
-                        quarter: `Q${Math.floor((date.getMonth() / 3) + 1)} ${date.getFullYear()}`
-                    });
-                }
-                
-                allPaths.push({
-                    person: person,
-                    path: path
-                });
-            });
-            
-            return allPaths;
-        }
-
-        // Setup D3 chart
-        function setupChart() {
-            svg = d3.select('#portfolio-chart')
-                .attr('width', config.width)
-                .attr('height', config.height);
-            
-            const chartWidth = config.width - config.margin.left - config.margin.right;
-            const chartHeight = config.height - config.margin.top - config.margin.bottom;
-            
-            const allData = allPaths.flatMap(p => p.path);
-            const allDates = allData.map(d => d.date);
-            const allValues = allData.map(d => d.value);
-            
-            xScale = d3.scaleTime()
-                .domain(d3.extent(allDates))
-                .range([0, chartWidth]);
-            
-            yScale = d3.scaleLinear()
-                .domain([0, d3.max(allValues)])
-                .range([chartHeight, 0]);
-            
-            line = d3.line()
-                .x(d => xScale(d.date))
-                .y(d => yScale(d.value))
-                .curve(d3.curveMonotoneX);
-            
-            chart = svg.append('g')
-                .attr('transform', `translate(${config.margin.left}, ${config.margin.top})`);
-            
-            // Add grid
-            chart.append('g')
-                .attr('class', 'grid')
-                .attr('transform', `translate(0, ${chartHeight})`)
-                .call(d3.axisBottom(xScale).tickSize(-chartHeight).tickFormat(''));
-            
-            chart.append('g')
-                .attr('class', 'grid')
-                .call(d3.axisLeft(yScale).tickSize(-chartWidth).tickFormat(''));
-            
-            // Add axes
-            chart.append('g')
-                .attr('class', 'x-axis')
-                .attr('transform', `translate(0, ${chartHeight})`)
-                .call(d3.axisBottom(xScale));
-            
-            chart.append('g')
-                .attr('class', 'y-axis')
-                .call(d3.axisLeft(yScale));
-        }
-
-        // Draw portfolio lines
-        function drawPortfolioLines() {
-            chart.selectAll('.portfolio-line, .portfolio-outline').remove();
-            
-            const chartWidth = config.width - config.margin.left - config.margin.right;
-            const chartHeight = config.height - config.margin.top - config.margin.bottom;
-            
-            const allData = allPaths.flatMap(p => p.path);
-            const allDates = allData.map(d => d.date);
-            const allValues = allData.map(d => d.value);
-            
-            const dateRange = d3.extent(allDates);
-            const dateSpan = dateRange[1] - dateRange[0];
-            const zoomedDateRange = [
-                dateRange[0] + (dateSpan * chartOffset),
-                dateRange[0] + (dateSpan * (chartOffset + 1/currentZoom))
-            ];
-            
-            xScale.domain(zoomedDateRange);
-            
-            const visibleData = allPaths.map(portfolio => {
-                const visiblePath = portfolio.path.filter(d => 
-                    d.date >= zoomedDateRange[0] && d.date <= zoomedDateRange[1]
-                );
-                return visiblePath;
-            }).flat();
-            
-            const visibleValues = visibleData.map(d => d.value);
-            if (visibleValues.length > 0) {
-                const valueRange = d3.extent(visibleValues);
-                const valueSpan = valueRange[1] - valueRange[0];
-                const zoomedValueSpan = valueSpan / currentZoom;
-                const centerValue = (valueRange[0] + valueRange[1]) / 2;
-                
-                yScale.domain([
-                    Math.max(0, centerValue - zoomedValueSpan / 2),
-                    centerValue + zoomedValueSpan / 2
-                ]);
-            }
-            
-            line.x(d => xScale(d.date)).y(d => yScale(d.value));
-            
-            chart.select('.x-axis').call(d3.axisBottom(xScale));
-            chart.select('.y-axis').call(d3.axisLeft(yScale));
-            
-            allPaths.forEach((portfolio, index) => {
-                const isOurClient = portfolio.person.type === 'our';
-                const strokeColor = isOurClient ? '#2962ff' : '#787b86';
-                const outlineColor = isOurClient ? '#089981' : '#f23645';
-                const strokeWidth = isOurClient ? 2 : 1.5;
-                const opacity = isOurClient ? 0.8 : 0.6;
-                
-                const visiblePath = portfolio.path.filter(d => 
-                    d.date >= zoomedDateRange[0] && d.date <= zoomedDateRange[1]
-                );
-                
-                if (visiblePath.length > 0) {
-                    chart.append('path')
-                        .datum(visiblePath)
-                        .attr('class', `portfolio-line ${portfolio.person.type}-line`)
-                        .attr('d', line)
-                        .style('fill', 'none')
-                        .style('stroke', strokeColor)
-                        .style('stroke-width', strokeWidth)
-                        .style('opacity', opacity);
-                    
-                    chart.append('path')
-                        .datum(visiblePath)
-                        .attr('class', `portfolio-outline ${portfolio.person.type}-outline`)
-                        .attr('d', line)
-                        .style('fill', 'none')
-                        .style('stroke', outlineColor)
-                        .style('stroke-width', strokeWidth + 2)
-                        .style('opacity', 0.3);
-                }
-            });
-            
-            updateMetrics();
-        }
-
-        // Update metrics
-        function updateMetrics() {
-            const currentOurValues = allPaths
-                .filter(p => p.person.type === 'our')
-                .map(p => {
-                    const midIndex = Math.floor(p.path.length * 0.6);
-                    return p.path[midIndex]?.value || 0;
-                })
-                .filter(v => v > 0);
-            
-            const currentCompetitionValues = allPaths
-                .filter(p => p.person.type === 'competition')
-                .map(p => {
-                    const midIndex = Math.floor(p.path.length * 0.6);
-                    return p.path[midIndex]?.value || 0;
-                })
-                .filter(v => v > 0);
-            
-            const ourAvg = currentOurValues.length > 0 ? 
-                currentOurValues.reduce((a, b) => a + b, 0) / currentOurValues.length : 0;
-            const competitionAvg = currentCompetitionValues.length > 0 ? 
-                currentCompetitionValues.reduce((a, b) => a + b, 0) / currentCompetitionValues.length : 0;
-            const outperformance = ourAvg > 0 ? ((ourAvg - competitionAvg) / competitionAvg * 100) : 0;
-            
-            document.getElementById('our-avg').textContent = `$${ourAvg.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
-            document.getElementById('competition-avg').textContent = `$${competitionAvg.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
-            document.getElementById('outperformance').textContent = `${outperformance > 0 ? '+' : ''}${outperformance.toFixed(1)}%`;
-            document.getElementById('outperformance').className = `metric-value ${outperformance > 0 ? 'positive' : 'negative'}`;
-        }
-
-        // Start chart animation
-        function startChartAnimation() {
-            const maxOffset = 0.8;
-            let direction = 1;
-            
-            function animate() {
-                chartOffset += 0.002 * direction;
-                
-                if (chartOffset >= maxOffset) {
-                    direction = -1;
-                } else if (chartOffset <= 0) {
-                    direction = 1;
-                }
-                
-                drawPortfolioLines();
-                
-                const allData = allPaths.flatMap(p => p.path);
-                const allDates = allData.map(d => d.date);
-                const dateRange = d3.extent(allDates);
-                const currentDate = new Date(dateRange[0].getTime() + 
-                    (dateRange[1] - dateRange[0]) * (0.5 + chartOffset * 0.3));
-                const currentQuarter = `Q${Math.floor((currentDate.getMonth() / 3) + 1)} ${currentDate.getFullYear()}`;
-                
-                document.getElementById('time-indicator').textContent = `Moving: ${currentQuarter}`;
-                
-                animationId = requestAnimationFrame(animate);
-            }
-            
-            animate();
-        }
-
-        // Zoom control functions
-        function adjustZoom(factor) {
-            currentZoom *= factor;
-            currentZoom = Math.max(0.5, Math.min(3, currentZoom));
-            drawPortfolioLines();
-        }
-
-        function resetZoom() {
-            currentZoom = 1;
-            chartOffset = 0;
-            drawPortfolioLines();
-        }
-
-        // API functions
-        async function loadSystemHealth() {
-            try {
-                const response = await axios.get('/api/health');
-                const data = response.data;
-                updateSystemStatus(data.status, data.components);
-            } catch (error) {
-                console.error('Error loading system health:', error);
-            }
-        }
-
-        async function loadClients() {
-            try {
-                const response = await axios.get('/api/clients');
-                const data = response.data;
-                displayClients(data.clients);
-            } catch (error) {
-                console.error('Error loading clients:', error);
-            }
-        }
-
-        function updateSystemStatus(status, components) {
-            const statusElement = document.getElementById('system-status');
-            const statusText = document.getElementById('status-text');
-            
-            statusElement.className = `status-indicator status-${status}`;
-            statusText.textContent = `System ${status.charAt(0).toUpperCase() + status.slice(1)}`;
-        }
-
-        function displayClients(clients) {
-            const clientList = document.getElementById('client-list');
-            
-            if (clients.length === 0) {
-                clientList.innerHTML = '<div class="text-center text-muted"><i class="fas fa-users fa-2x mb-2"></i><p>No clients added yet</p></div>';
-                return;
-            }
-            
-            let html = '';
-            clients.forEach(client => {
-                html += `
-                    <div class="client-card" onclick="selectClient('${client.id}')">
-                        <div class="client-name">${client.name}</div>
-                        <div class="client-details">Age: ${client.age} | Income: $${client.income.toLocaleString()}</div>
-                    </div>
-                `;
-            });
-            
-            clientList.innerHTML = html;
-        }
-
-        function selectClient(clientId) {
-            selectedClient = clientId;
-            document.querySelectorAll('.client-card').forEach(card => {
-                card.classList.remove('selected');
-            });
-            event.target.closest('.client-card').classList.add('selected');
-            loadRecommendations(clientId);
-        }
-
-        async function loadRecommendations(clientId) {
-            try {
-                const response = await axios.get(`/api/recommendations/${clientId}`);
-                const data = response.data;
-                displayRecommendations(data.recommendations);
-            } catch (error) {
-                console.error('Error loading recommendations:', error);
-            }
-        }
-
-        function displayRecommendations(recommendations) {
-            const recommendationsBox = document.getElementById('recommendations-box');
-            
-            let html = '';
-            for (const [category, items] of Object.entries(recommendations)) {
-                html += `
-                    <div style="margin-bottom: 10px;">
-                        <div style="font-size: 12px; color: var(--tradingview-accent); margin-bottom: 5px;">
-                            ${category.replace('_', ' ').toUpperCase()}
-                        </div>
-                        <ul style="font-size: 11px; margin: 0; padding-left: 15px;">
-                `;
-                
-                items.forEach(item => {
-                    html += `<li style="margin-bottom: 2px;">${item}</li>`;
-                });
-                
-                html += '</ul></div>';
-            }
-            
-            recommendationsBox.innerHTML = html;
-        }
-
-        function showSystemControls() {
-            const modal = new bootstrap.Modal(document.getElementById('systemControlsModal'));
-            modal.show();
-        }
-
-        async function restartComponents() {
-            try {
-                await axios.post('/api/system/control', { action: 'restart_components' });
-                alert('Components restarted successfully!');
-                loadSystemHealth();
-            } catch (error) {
-                alert('Error restarting components: ' + error.response?.data?.error || error.message);
-            }
-        }
-
-        async function clearCache() {
-            try {
-                await axios.post('/api/system/control', { action: 'clear_cache' });
-                alert('Cache cleared successfully!');
-            } catch (error) {
-                alert('Error clearing cache: ' + error.response?.data?.error || error.message);
-            }
-        }
-
-        async function exportData() {
-            try {
-                const response = await axios.post('/api/system/control', { action: 'export_data' });
-                const data = response.data;
-                
-                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `mesh_dashboard_export_${new Date().toISOString().split('T')[0]}.json`;
-                a.click();
-                URL.revokeObjectURL(url);
-                
-                alert('Data exported successfully!');
-            } catch (error) {
-                alert('Error exporting data: ' + error.response?.data?.error || error.message);
-            }
-        }
-
-        function importData() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.json';
-            input.onchange = async function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    try {
-                        const text = await file.text();
-                        const data = JSON.parse(text);
-                        
-                        await axios.post('/api/system/control', { 
-                            action: 'import_data',
-                            data: data
-                        });
-                        
-                        alert('Data imported successfully!');
-                        loadClients();
-                    } catch (error) {
-                        alert('Error importing data: ' + error.message);
-                    }
-                }
+function displayPeopleProfiles(people) {
+    const container = document.getElementById('peopleProfiles');
+    
+    if (!people || people.length === 0) {
+        container.innerHTML = `
+            <div class="notification is-info">
+                <p>No people data available. Please ensure people data is loaded in the system.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    container.innerHTML = people.map(person => createPersonCard(person)).join('');
+    
+    // Add click listeners
+    setTimeout(() => {
+        document.querySelectorAll('.person-card').forEach(card => {
+            card.onclick = function(e) {
+                // Prevent click on links/buttons inside card
+                if (e.target.closest('button, a, .reallocation-item, .event-bullet')) return;
+                const personId = card.getAttribute('data-person-id');
+                const person = people.find(p => p.id === personId);
+                if (person) openPersonModal(person);
             };
-            input.click();
-        }
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            config.width = window.innerWidth - 300;
-            config.height = window.innerHeight - 60;
-            
-            svg.attr('width', config.width).attr('height', config.height);
-            setupChart();
-            drawPortfolioLines();
         });
-    </script>
+    }, 0);
+
+    // Update portfolio statistics and chart
+    updatePortfolioStatistics(people);
+}
+
+function createPersonCard(person) {
+    const financialState = person.financial_state || {};
+    const assets = financialState.assets || {};
+    const totalAssets = Object.values(assets).reduce((sum, val) => sum + (val || 0), 0);
+    
+    // Map event id/date to effect for quick lookup
+    const eventEffects = {};
+    (person.event_reallocation_effects || []).forEach(eff => {
+        if (eff.event && eff.event.date) eventEffects[eff.event.date] = eff;
+    });
+    
+    const eventsHtml = person.recent_events && person.recent_events.length > 0 
+        ? person.recent_events.map(event => {
+            let effect = eventEffects[event.date];
+            return createEventBullet(event, effect);
+        }).join('')
+        : '<p class="has-text-grey-light">No recent events</p>';
+    
+    const reallocationsHtml = person.reallocations && person.reallocations.length > 0
+        ? person.reallocations.map(reallocation => createReallocationItem(reallocation)).join('')
+        : '<p class="has-text-grey-light">No reallocations recommended</p>';
+    
+    return `
+        <div class="person-card" data-person-id="${person.id}">
+            <div class="person-header">
+                <div class="person-avatar">
+                    ${person.name.charAt(0).toUpperCase()}
+                </div>
+                <div class="person-info">
+                    <h4>${person.name}</h4>
+                    <p>Total Assets: $${totalAssets.toLocaleString()}</p>
+                </div>
+            </div>
+            
+            <div class="events-section">
+                <h5 class="title is-6">📅 Significant Events (Recent Quarters)</h5>
+                <ul class="events-list">
+                    ${eventsHtml}
+                </ul>
+            </div>
+            
+            <div class="allocation-history-section" style="margin-top:1rem;">
+                <h5 class="title is-6">💹 Capital Allocation History</h5>
+                ${createAllocationHistoryTable(person.allocation_history)}
+            </div>
+            
+            <div class="reallocations-section">
+                <h5 class="title is-6">📊 Reallocation Recommendations</h5>
+                ${reallocationsHtml}
+            </div>
+        </div>
+    `;
+}
+
+function createAllocationHistoryTable(history) {
+    if (!history || history.length === 0) {
+        return '<p class="has-text-grey-light">No allocation history available</p>';
+    }
+    let header = `<tr><th>Quarter</th><th>Cash</th><th>Investments</th><th>Real Estate</th><th>Retirement</th></tr>`;
+    let rows = history.map(h =>
+        `<tr><td>${h.quarter}</td><td>${(h.cash*100).toFixed(1)}%</td><td>${(h.investments*100).toFixed(1)}%</td><td>${(h.real_estate*100).toFixed(1)}%</td><td>${(h.retirement*100).toFixed(1)}%</td></tr>`
+    ).join('');
+    return `<table class="table is-bordered is-narrow is-fullwidth" style="font-size:0.85em; margin-bottom:0;">${header}${rows}</table>`;
+}
+
+function createEventBullet(event, effect) {
+    const impact = event.financial_impact || event.expected_impact || 0;
+    const impactClass = impact >= 0 ? 'impact-positive' : 'impact-negative';
+    const impactText = impact >= 0 ? `+$${Math.abs(impact).toLocaleString()}` : `-$${Math.abs(impact).toLocaleString()}`;
+    const eventType = event.type === 'past' ? 'Past' : 'Planned';
+    let reallocationHtml = '';
+    if (effect) {
+        reallocationHtml = createEventReallocationEffect(effect);
+    }
+    return `
+        <li class="event-bullet">
+            <div class="event-bullet-icon">${event.icon}</div>
+            <div class="event-bullet-content">
+                <p class="event-bullet-title">${event.name}</p>
+                <p class="event-bullet-details">${event.date} (${eventType})</p>
+                ${reallocationHtml}
+            </div>
+            <span class="event-bullet-impact ${impactClass}">${impactText}</span>
+        </li>
+    `;
+}
+
+function createEventReallocationEffect(effect) {
+    // Show before/after allocation and reallocation summary
+    const before = effect.allocation_before;
+    const after = effect.allocation_after;
+    const rec = effect.reallocation;
+    if (!before && !after && !rec) return '';
+    let table = '<table class="table is-bordered is-narrow is-fullwidth" style="font-size:0.8em; margin:0.25em 0;">';
+    table += '<tr><th></th><th>Cash</th><th>Investments</th><th>Real Estate</th><th>Retirement</th></tr>';
+    if (before) table += `<tr><td>Before</td><td>${(before.cash*100).toFixed(1)}%</td><td>${(before.investments*100).toFixed(1)}%</td><td>${(before.real_estate*100).toFixed(1)}%</td><td>${(before.retirement*100).toFixed(1)}%</td></tr>`;
+    if (after) table += `<tr><td>After</td><td>${(after.cash*100).toFixed(1)}%</td><td>${(after.investments*100).toFixed(1)}%</td><td>${(after.real_estate*100).toFixed(1)}%</td><td>${(after.retirement*100).toFixed(1)}%</td></tr>`;
+    table += '</table>';
+    let recHtml = '';
+    if (rec) {
+        recHtml = `<div class="notification is-primary is-light" style="font-size:0.85em; margin:0.25em 0; padding:0.5em 0.75em;">${rec.recommendation}</div>`;
+    }
+    return table + recHtml;
+}
+
+function createReallocationItem(reallocation) {
+    return `
+        <div class="reallocation-item">
+            <div class="reallocation-header">
+                <div class="reallocation-icon">${reallocation.icon}</div>
+                <p class="reallocation-type">${reallocation.type.replace('_', ' ').toUpperCase()}</p>
+            </div>
+            <p class="reallocation-description">${reallocation.recommendation}</p>
+        </div>
+    `;
+}
+
+async function runMarketStressTest() {
+    const button = document.getElementById('runStressTestBtn');
+    const resultsContainer = document.getElementById('stressTestResults');
+    
+    // Update button state
+    button.disabled = true;
+    button.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Running Test...</span>';
+    
+    try {
+        const response = await fetch('/api/market/stress_test');
+        const data = await response.json();
+        
+        if (data.error) {
+            resultsContainer.innerHTML = `
+                <div class="notification is-danger">
+                    <p>Error running stress test: ${data.error}</p>
+                </div>
+            `;
+            return;
+        }
+        
+        displayStressTestResults(data);
+        
+    } catch (error) {
+        console.error('Error running stress test:', error);
+        resultsContainer.innerHTML = `
+            <div class="notification is-danger">
+                <p>Error running stress test: ${error.message}</p>
+            </div>
+        `;
+    } finally {
+        // Reset button
+        button.disabled = false;
+        button.innerHTML = '<span class="icon"><i class="fas fa-flask"></i></span><span>Run Market Stress Test</span>';
+    }
+}
+
+function displayStressTestResults(data) {
+    const container = document.getElementById('stressTestResults');
+    
+    const summaryHtml = `
+        <div class="notification is-info">
+            <h5 class="title is-5">📊 Stress Test Summary</h5>
+            <p><strong>Total People:</strong> ${data.total_people}</p>
+            <p><strong>Total Portfolio Value:</strong> $${data.summary.total_portfolio_value.toLocaleString()}</p>
+            <p><strong>Highest Risk Scenario:</strong> ${data.summary.highest_risk_scenario}</p>
+            <p><strong>Average Stress Impact:</strong> $${Math.abs(data.summary.average_stress_impact).toLocaleString()}</p>
+        </div>
+    `;
+    
+    const scenariosHtml = data.scenarios.map(scenario => createScenarioCard(scenario)).join('');
+    
+    container.innerHTML = summaryHtml + scenariosHtml;
+}
+
+function createScenarioCard(scenario) {
+    const stressClass = scenario.stress_level > 0.7 ? 'stress-high' : 
+                       scenario.stress_level > 0.4 ? 'stress-medium' : 'stress-low';
+    
+    const recommendationsHtml = scenario.reallocation_recommendations.length > 0
+        ? scenario.reallocation_recommendations.map(rec => `
+            <div class="recommendation-item">
+                <p class="recommendation-person">${rec.person_name}</p>
+                <p class="recommendation-text">${rec.recommendation}</p>
+            </div>
+        `).join('')
+        : '<p class="has-text-grey-light">No specific recommendations for this scenario</p>';
+    
+    return `
+        <div class="scenario-card">
+            <div class="scenario-header">
+                <h5 class="scenario-name">${scenario.scenario}</h5>
+                <span class="stress-level ${stressClass}">${(scenario.stress_level * 100).toFixed(0)}% Stress</span>
+            </div>
+            
+            <div class="scenario-stats">
+                <div class="stat-item">
+                    <p class="stat-value">${scenario.people_affected}</p>
+                    <p class="stat-label">People Affected</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-value">$${Math.abs(scenario.total_portfolio_impact).toLocaleString()}</p>
+                    <p class="stat-label">Portfolio Impact</p>
+                </div>
+                <div class="stat-item">
+                    <p class="stat-value">${(scenario.market_decline * 100).toFixed(1)}%</p>
+                    <p class="stat-label">Market Decline</p>
+                </div>
+            </div>
+            
+            <div class="recommendations-list">
+                <h6 class="title is-6">📋 Reallocation Recommendations</h6>
+                ${recommendationsHtml}
+            </div>
+        </div>
+    `;
+}
+
+// Load people data when page loads
+window.addEventListener('load', () => {
+    fetchPortfolioData();
+    loadPeopleData();
+});
+
+// Portfolio Chart Functions
+let portfolioChart = null;
+
+function updatePortfolioStatistics(people) {
+    if (!people || people.length === 0) return;
+    
+    const portfolios = people.map(person => {
+        const financialState = person.financial_state || {};
+        const assets = financialState.assets || {};
+        return {
+            name: person.name,
+            value: Object.values(assets).reduce((sum, val) => sum + (val || 0), 0)
+        };
+    });
+    
+    const totalValue = portfolios.reduce((sum, p) => sum + p.value, 0);
+    const averageValue = totalValue / portfolios.length;
+    const highestValue = Math.max(...portfolios.map(p => p.value));
+    const lowestValue = Math.min(...portfolios.map(p => p.value));
+    
+    // Update statistics
+    document.getElementById('totalPeopleCount').textContent = people.length;
+    document.getElementById('totalPortfolioValue').textContent = `$${totalValue.toLocaleString()}`;
+    document.getElementById('averagePortfolioValue').textContent = `$${averageValue.toLocaleString()}`;
+    document.getElementById('highestPortfolioValue').textContent = `$${highestValue.toLocaleString()}`;
+    document.getElementById('lowestPortfolioValue').textContent = `$${lowestValue.toLocaleString()}`;
+    
+    // Create portfolio chart
+    createPortfolioChart(portfolios);
+}
+
+function createPortfolioChart(portfolios) {
+    const ctx = document.getElementById('portfolioChart').getContext('2d');
+    
+    // Destroy existing chart if it exists
+    if (portfolioChart) {
+        portfolioChart.destroy();
+    }
+    
+    // Sort portfolios by value for better visualization
+    const sortedPortfolios = portfolios.sort((a, b) => b.value - a.value);
+    
+    portfolioChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: sortedPortfolios.map(p => p.name),
+            datasets: [{
+                label: 'Portfolio Value ($)',
+                data: sortedPortfolios.map(p => p.value),
+                borderColor: '#3273dc',
+                backgroundColor: 'rgba(50, 115, 220, 0.1)',
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `$${context.parsed.y.toLocaleString()}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        maxRotation: 45,
+                        minRotation: 45
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Mesh Network Debug Functions
+async function checkMeshNetwork() {
+    const button = document.getElementById('checkNetworkBtn');
+    const resultsContainer = document.getElementById('meshDebugResults');
+    
+    // Update button state
+    button.disabled = true;
+    button.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Checking...</span>';
+    
+    try {
+        const response = await fetch('/api/mesh/network_state');
+        const data = await response.json();
+        
+        if (data.error) {
+            resultsContainer.innerHTML = `
+                <div class="notification is-danger">
+                    <p>Error checking network state: ${data.error}</p>
+                </div>
+            `;
+            return;
+        }
+        
+        displayNetworkState(data);
+        
+    } catch (error) {
+        console.error('Error checking network state:', error);
+        resultsContainer.innerHTML = `
+            <div class="notification is-danger">
+                <p>Error checking network state: ${error.message}</p>
+            </div>
+        `;
+    } finally {
+        // Reset button
+        button.disabled = false;
+        button.innerHTML = '<span class="icon"><i class="fas fa-network-wired"></i></span><span>Check Network State</span>';
+    }
+}
+
+function displayNetworkState(data) {
+    const container = document.getElementById('meshDebugResults');
+    
+    const networkStatus = data.network_active ? 'active' : 'inactive';
+    const statusClass = data.network_active ? 'status-active' : 'status-inactive';
+    
+    const componentsHtml = Object.entries(data).filter(([key, value]) => 
+        key in ['vector_db', 'congruence_engine', 'lifestyle_engine']
+    ).map(([component, status]) => `
+        <div class="component-status">
+            <span class="component-name">${component.replace('_', ' ').toUpperCase()}</span>
+            <span class="network-status ${status === 'active' ? 'status-active' : 'status-inactive'}">${status}</span>
+        </div>
+    `).join('');
+    
+    const nodesHtml = data.nodes && data.nodes.length > 0 ? `
+        <div class="notification is-info">
+            <h6 class="title is-6">Network Nodes</h6>
+            <p>Active nodes: ${data.nodes.length}</p>
+            <p>Node types: ${[...new Set(data.nodes.map(n => n.type))].join(', ')}</p>
+        </div>
+    ` : '<p class="has-text-grey-light">No active nodes found</p>';
+    
+    container.innerHTML = `
+        <div class="network-state-card">
+            <h5 class="title is-5">🌐 Mesh Network State</h5>
+            <p><strong>Status:</strong> <span class="network-status ${statusClass}">${networkStatus.toUpperCase()}</span></p>
+            <p><strong>Timestamp:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+            
+            <h6 class="title is-6" style="margin-top: 1rem;">Components</h6>
+            ${componentsHtml}
+            
+            <h6 class="title is-6" style="margin-top: 1rem;">Network Nodes</h6>
+            ${nodesHtml}
+        </div>
+    `;
+}
+
+async function debugRecommendations() {
+    const button = document.getElementById('debugRecommendationsBtn');
+    const resultsContainer = document.getElementById('meshDebugResults');
+    
+    // Update button state
+    button.disabled = true;
+    button.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Debugging...</span>';
+    
+    try {
+        // Get first person for debugging
+        const peopleResponse = await fetch('/api/people');
+        const peopleData = await peopleResponse.json();
+        
+        if (peopleData.error || !peopleData.people || peopleData.people.length === 0) {
+            resultsContainer.innerHTML = `
+                <div class="notification is-warning">
+                    <p>No people data available for debugging</p>
+                </div>
+            `;
+            return;
+        }
+        
+        const firstPerson = peopleData.people[0];
+        const response = await fetch(`/api/mesh/recommendations/debug/${firstPerson.id}`);
+        const data = await response.json();
+        
+        if (data.error) {
+            resultsContainer.innerHTML = `
+                <div class="notification is-danger">
+                    <p>Error debugging recommendations: ${data.error}</p>
+                </div>
+            `;
+            return;
+        }
+        
+        displayRecommendationDebug(data);
+        
+    } catch (error) {
+        console.error('Error debugging recommendations:', error);
+        resultsContainer.innerHTML = `
+            <div class="notification is-danger">
+                <p>Error debugging recommendations: ${error.message}</p>
+            </div>
+        `;
+    } finally {
+        // Reset button
+        button.disabled = false;
+        button.innerHTML = '<span class="icon"><i class="fas fa-bug"></i></span><span>Debug Recommendations</span>';
+    }
+}
+
+function displayRecommendationDebug(data) {
+    const container = document.getElementById('meshDebugResults');
+    
+    const componentsHtml = Object.entries(data.mesh_components || {}).map(([component, status]) => `
+        <div class="component-status">
+            <span class="component-name">${component.replace('_', ' ').toUpperCase()}</span>
+            <span class="network-status ${status === 'active' ? 'status-active' : 'status-inactive'}">${status}</span>
+        </div>
+    `).join('');
+    
+    const recommendationsHtml = data.recommendations && data.recommendations.length > 0 ? 
+        data.recommendations.map(rec => {
+            const sourceClass = rec.source === 'network' ? 'source-network' : 'source-static';
+            const influencePercent = (rec.network_influence * 100).toFixed(1);
+            
+            return `
+                <div class="debug-recommendation-item">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h6 class="title is-6">${rec.type.replace('_', ' ').toUpperCase()}</h6>
+                        <span class="recommendation-source ${sourceClass}">${rec.source.toUpperCase()}</span>
+                    </div>
+                    <p><strong>Description:</strong> ${rec.description}</p>
+                    <p><strong>Recommendation:</strong> ${rec.recommendation}</p>
+                    <p><strong>Network Influence:</strong> ${influencePercent}%</p>
+                    <div class="network-influence-bar">
+                        <div class="network-influence-fill" style="width: ${influencePercent}%"></div>
+                    </div>
+                    <p><strong>Components Used:</strong> ${rec.mesh_components_used.join(', ')}</p>
+                </div>
+            `;
+        }).join('') : '<p class="has-text-grey-light">No recommendations found</p>';
+    
+    const staticVsDynamic = data.static_vs_dynamic || {};
+    const dynamicPercentage = staticVsDynamic.dynamic_percentage || 0;
+    
+    container.innerHTML = `
+        <div class="notification is-info">
+            <h5 class="title is-5">🔍 Recommendation Debug: ${data.person_name}</h5>
+            <p><strong>Person ID:</strong> ${data.person_id}</p>
+            <p><strong>Timestamp:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+        </div>
+        
+        <div class="network-state-card">
+            <h6 class="title is-6">Mesh Components</h6>
+            ${componentsHtml}
+        </div>
+        
+        <div class="network-state-card">
+            <h6 class="title is-6">Static vs Network Recommendations</h6>
+            <p><strong>Static:</strong> ${staticVsDynamic.static_recommendations || 0}</p>
+            <p><strong>Network:</strong> ${staticVsDynamic.network_recommendations || 0}</p>
+            <p><strong>Dynamic Percentage:</strong> ${dynamicPercentage.toFixed(1)}%</p>
+            
+            <div class="network-influence-bar">
+                <div class="network-influence-fill" style="width: ${dynamicPercentage}%"></div>
+            </div>
+        </div>
+        
+        <div class="network-state-card">
+            <h6 class="title is-6">Detailed Recommendations</h6>
+            ${recommendationsHtml}
+        </div>
+    `;
+}
+
+async function showNetworkVisualization() {
+    const button = document.getElementById('showNetworkVizBtn');
+    const resultsContainer = document.getElementById('meshDebugResults');
+    
+    // Update button state
+    button.disabled = true;
+    button.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Generating...</span>';
+    
+    try {
+        const response = await fetch('/api/mesh/network/visualization');
+        const data = await response.json();
+        
+        if (data.error) {
+            resultsContainer.innerHTML = `
+                <div class="notification is-danger">
+                    <p>Error generating visualization: ${data.error}</p>
+                </div>
+            `;
+            return;
+        }
+        
+        displayNetworkVisualization(data);
+        
+    } catch (error) {
+        console.error('Error generating visualization:', error);
+        resultsContainer.innerHTML = `
+            <div class="notification is-danger">
+                <p>Error generating visualization: ${error.message}</p>
+            </div>
+        `;
+    } finally {
+        // Reset button
+        button.disabled = false;
+        button.innerHTML = '<span class="icon"><i class="fas fa-project-diagram"></i></span><span>Network Visualization</span>';
+    }
+}
+
+function displayNetworkVisualization(data) {
+    const container = document.getElementById('meshDebugResults');
+    
+    const networkStatus = data.network_active ? 'active' : 'inactive';
+    const statusClass = data.network_active ? 'status-active' : 'status-inactive';
+    
+    const nodesByGroup = {};
+    if (data.nodes) {
+        data.nodes.forEach(node => {
+            if (!nodesByGroup[node.group]) {
+                nodesByGroup[node.group] = [];
+            }
+            nodesByGroup[node.group].push(node);
+        });
+    }
+    
+    const nodesHtml = Object.entries(nodesByGroup).map(([group, nodes]) => `
+        <div class="notification is-info">
+            <h6 class="title is-6">${group.toUpperCase()} Nodes (${nodes.length})</h6>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
+                ${nodes.slice(0, 5).map(node => `
+                    <div style="background: white; padding: 0.5rem; border-radius: 4px;">
+                        <strong>${node.label}</strong><br>
+                        <small>ID: ${node.id}</small><br>
+                        <small>Size: ${node.size}</small>
+                    </div>
+                `).join('')}
+                ${nodes.length > 5 ? `<div style="background: white; padding: 0.5rem; border-radius: 4px; text-align: center;">
+                    <strong>+${nodes.length - 5} more</strong>
+                </div>` : ''}
+            </div>
+        </div>
+    `).join('');
+    
+    container.innerHTML = `
+        <div class="notification is-info">
+            <h5 class="title is-5">📊 Network Visualization</h5>
+            <p><strong>Status:</strong> <span class="network-status ${statusClass}">${networkStatus.toUpperCase()}</span></p>
+            <p><strong>Total Nodes:</strong> ${data.total_nodes || 0}</p>
+            <p><strong>Total Edges:</strong> ${data.total_edges || 0}</p>
+            <p><strong>Timestamp:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+        </div>
+        
+        ${nodesHtml}
+        
+        <div class="notification is-warning">
+            <h6 class="title is-6">Network Analysis</h6>
+            <p>This visualization shows the mesh network structure with:</p>
+            <ul>
+                <li><strong>Person Nodes:</strong> Individual people in the system</li>
+                <li><strong>Event Nodes:</strong> Life events connected to people</li>
+                <li><strong>Component Nodes:</strong> Active mesh components (vector_db, congruence_engine, etc.)</li>
+                <li><strong>Edges:</strong> Connections showing influence and relationships</li>
+            </ul>
+            <p><strong>Network Active:</strong> ${data.network_active ? 'Yes - Recommendations are network-based' : 'No - Using static rules'}</p>
+        </div>
+    `;
+}
+
+let personPieChart = null;
+let modalPerson = null;
+let modalAllocHistory = [];
+let modalQuarterIndex = 0;
+
+function openPersonModal(person) {
+    modalPerson = person;
+    modalAllocHistory = person.allocation_history || [];
+    modalQuarterIndex = modalAllocHistory.length - 1; // default to most recent
+    document.getElementById('modalPersonName').textContent = person.name;
+    document.getElementById('personProfileModal').classList.add('is-active');
+    renderPersonPieChart();
+    renderModalTimeline();
+    document.addEventListener('keydown', escModalListener);
+}
+
+function closePersonModal() {
+    document.getElementById('personProfileModal').classList.remove('is-active');
+    if (personPieChart) { personPieChart.destroy(); personPieChart = null; }
+    document.removeEventListener('keydown', escModalListener);
+}
+
+function escModalListener(e) {
+    if (e.key === 'Escape') closePersonModal();
+}
+
+function renderPersonPieChart() {
+    const ctx = document.getElementById('personPieChart').getContext('2d');
+    if (personPieChart) personPieChart.destroy();
+    if (!modalAllocHistory[modalQuarterIndex]) return;
+    const alloc = modalAllocHistory[modalQuarterIndex];
+    personPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Cash', 'Investments', 'Real Estate', 'Retirement'],
+        datasets: [{
+          data: [alloc.cash, alloc.investments, alloc.real_estate, alloc.retirement].map(x => Math.round(x*1000)/10),
+          backgroundColor: ['#23d160', '#3273dc', '#ffdd57', '#ff3860'],
+        }]
+      },
+      options: {
+        plugins: { legend: { position: 'bottom' } },
+        responsive: false,
+        maintainAspectRatio: false,
+        animation: false
+      }
+    });
+}
+
+function renderModalTimeline() {
+    const timelineDiv = document.getElementById('modalTimeline');
+    if (!modalAllocHistory.length) { timelineDiv.innerHTML = ''; return; }
+    let html = '<div style="display:flex; gap:0.5em; flex-wrap:wrap; justify-content:center;">';
+    modalAllocHistory.forEach((alloc, idx) => {
+      html += `<button class="button is-small${idx===modalQuarterIndex?' is-link is-light':''}" onclick="selectModalQuarter(${idx})">${alloc.quarter}</button>`;
+    });
+    html += '</div>';
+    timelineDiv.innerHTML = html;
+}
+
+function selectModalQuarter(idx) {
+    modalQuarterIndex = idx;
+    renderPersonPieChart();
+    renderModalTimeline();
+}
+
+// Portfolio Insights Modal
+let portfolioInsightsChart = null;
+
+async function showPortfolioInsights(portfolioName) {
+    const modal = document.getElementById('portfolioInsightsModal');
+    const loadingDiv = document.getElementById('portfolioInsightsLoading');
+    const contentDiv = document.getElementById('portfolioInsightsContent');
+    
+    // Show modal with loading state
+    modal.classList.add('is-active');
+    loadingDiv.style.display = 'block';
+    contentDiv.style.display = 'none';
+    
+    try {
+        const response = await fetch(`/api/portfolio/insights/${encodeURIComponent(portfolioName)}`);
+        const data = await response.json();
+        
+        if (data.error) {
+            contentDiv.innerHTML = `
+                <div class="notification is-danger">
+                    <p>Error loading portfolio insights: ${data.error}</p>
+                </div>
+            `;
+            return;
+        }
+        
+        displayPortfolioInsights(data);
+        
+    } catch (error) {
+        console.error('Error loading portfolio insights:', error);
+        contentDiv.innerHTML = `
+            <div class="notification is-danger">
+                <p>Error loading portfolio insights: ${error.message}</p>
+            </div>
+        `;
+    } finally {
+        loadingDiv.style.display = 'none';
+        contentDiv.style.display = 'block';
+    }
+}
+
+function closePortfolioInsights() {
+    document.getElementById('portfolioInsightsModal').classList.remove('is-active');
+    if (portfolioInsightsChart) {
+        portfolioInsightsChart.destroy();
+        portfolioInsightsChart = null;
+    }
+}
+
+function displayPortfolioInsights(data) {
+    const contentDiv = document.getElementById('portfolioInsightsContent');
+    const portfolioName = data.portfolio_name;
+    
+    // Create performance timeline chart
+    const timeline = data.performance_timeline || [];
+    const chartData = {
+        labels: timeline.map(item => item.date),
+        datasets: [{
+            label: 'Portfolio Value',
+            data: timeline.map(item => item.value),
+            borderColor: '#3273dc',
+            backgroundColor: 'rgba(50, 115, 220, 0.1)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.4
+        }]
+    };
+    
+    // Render chart
+    const ctx = document.getElementById('portfolioPerformanceChart').getContext('2d');
+    if (portfolioInsightsChart) {
+        portfolioInsightsChart.destroy();
+    }
+    
+    portfolioInsightsChart = new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `$${context.parsed.y.toLocaleString()}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            },
+            animation: {
+                duration: 2000,
+                easing: 'easeInOutQuart'
+            }
+        }
+    });
+    
+    // Create insights HTML
+    const meshAnalysis = data.mesh_analysis || {};
+    const recentEvents = data.recent_events || [];
+    const rebalancingHistory = data.rebalancing_history || [];
+    const recommendations = data.recommendations || [];
+    
+    const eventsHtml = recentEvents.map(event => `
+        <div class="event-insight-card">
+            <div class="event-header">
+                <h6 class="title is-6">${event.event.name}</h6>
+                <span class="event-date">${event.event.date}</span>
+            </div>
+            <div class="event-details">
+                <p><strong>Category:</strong> ${event.event.category || 'Unknown'}</p>
+                <p><strong>Financial Impact:</strong> $${(event.event.financial_impact || event.event.expected_impact || 0).toLocaleString()}</p>
+                <p><strong>Mesh Influence:</strong> ${(event.mesh_influence * 100).toFixed(1)}%</p>
+            </div>
+            ${event.rebalancing ? `
+                <div class="rebalancing-details">
+                    <h6 class="title is-6">Rebalancing Action</h6>
+                    <p>${event.rebalancing.recommendation || 'Portfolio rebalanced based on event'}</p>
+                </div>
+            ` : ''}
+        </div>
+    `).join('');
+    
+    const rebalancingHtml = rebalancingHistory.map(item => `
+        <div class="rebalancing-item">
+            <div class="rebalancing-date">${item.date}</div>
+            <div class="rebalancing-event">${item.event_name}</div>
+            <div class="rebalancing-influence">Mesh Influence: ${(item.mesh_influence * 100).toFixed(1)}%</div>
+        </div>
+    `).join('');
+    
+    const recommendationsHtml = recommendations.map(rec => `
+        <div class="recommendation-item ${rec.priority}">
+            <h6 class="title is-6">${rec.title}</h6>
+            <p>${rec.description}</p>
+            <span class="priority-badge ${rec.priority}">${rec.priority.toUpperCase()}</span>
+        </div>
+    `).join('');
+    
+    contentDiv.innerHTML = `
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">📊 Portfolio Insights: ${portfolioName}</p>
+                <button class="delete" aria-label="close" onclick="closePortfolioInsights()"></button>
+            </header>
+            
+            <section class="modal-card-body">
+                <div class="columns">
+                    <div class="column is-8">
+                        <div class="chart-container" style="height: 300px;">
+                            <canvas id="portfolioPerformanceChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="mesh-analysis-card">
+                            <h6 class="title is-6">Mesh Analysis</h6>
+                            <div class="analysis-item">
+                                <span class="label">Congruence Score:</span>
+                                <span class="value">${(meshAnalysis.congruence_score * 100).toFixed(1)}%</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="label">Network Influence:</span>
+                                <span class="value">${(meshAnalysis.network_influence * 100).toFixed(1)}%</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="label">Dynamic Recommendations:</span>
+                                <span class="value">${meshAnalysis.dynamic_recommendations || 0}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="columns">
+                    <div class="column is-6">
+                        <h6 class="title is-6">📈 Recent Events & Rebalancing</h6>
+                        <div class="events-container">
+                            ${eventsHtml || '<p class="has-text-grey-light">No recent events found</p>'}
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <h6 class="title is-6">💡 Recommendations</h6>
+                        <div class="recommendations-container">
+                            ${recommendationsHtml || '<p class="has-text-grey-light">No recommendations available</p>'}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    `;
+}
+
+// Horatio Mesh Visualization
+let horatioChart = null;
+
+async function loadHoratioMesh() {
+    const button = document.querySelector('button[onclick="loadHoratioMesh()"]');
+    const originalText = button.innerHTML;
+    
+    // Update button state
+    button.disabled = true;
+    button.innerHTML = '<span class="icon"><i class="fas fa-spinner fa-spin"></i></span><span>Loading...</span>';
+    
+    try {
+        const response = await fetch('/api/visualize/horatio_mesh');
+        const data = await response.json();
+        
+        if (data.error) {
+            alert(`Error loading Horatio's mesh: ${data.error}`);
+            return;
+        }
+        
+        displayHoratioMesh(data);
+        
+    } catch (error) {
+        console.error('Error loading Horatio mesh:', error);
+        alert(`Error loading Horatio's mesh: ${error.message}`);
+    } finally {
+        // Reset button
+        button.disabled = false;
+        button.innerHTML = originalText;
+    }
+}
+
+function displayHoratioMesh(data) {
+    // Display financial summary
+    const summary = data.financial_summary;
+    const profile = data.profile;
+    document.getElementById('horatioSummary').innerHTML = `
+        <div class="content">
+            <p><strong>Name:</strong> ${profile.name}</p>
+            <p><strong>Age:</strong> ${profile.age}</p>
+            <p><strong>Income:</strong> $${profile.income.toLocaleString()}</p>
+            <p><strong>Current Net Worth:</strong> $${summary.current_net_worth.toLocaleString()}</p>
+            <p><strong>Total Assets:</strong> $${summary.total_assets.toLocaleString()}</p>
+            <p><strong>Total Liabilities:</strong> $${summary.total_liabilities.toLocaleString()}</p>
+            <p><strong>Monthly Expenses:</strong> $${summary.monthly_expenses.toLocaleString()}</p>
+            <p><strong>Monthly Savings:</strong> $${summary.monthly_savings.toLocaleString()}</p>
+        </div>
+    `;
+    
+    // Display feasible space
+    const feasible = data.feasible_space;
+    document.getElementById('feasibleSpace').innerHTML = `
+        <div class="content">
+            <p><strong>Current Income:</strong> $${feasible.current_income.toLocaleString()}</p>
+            <p><strong>Total Spending:</strong> $${feasible.total_spending.toLocaleString()}</p>
+            <p><strong>Surplus:</strong> $${feasible.surplus.toLocaleString()}</p>
+            <p><strong>Savings Rate:</strong> ${(feasible.savings_rate * 100).toFixed(1)}%</p>
+            <p><strong>Debt Ratio:</strong> ${(feasible.debt_ratio * 100).toFixed(1)}%</p>
+        </div>
+    `;
+    
+    // Create time vs money chart
+    const vizData = data.visualization_data;
+    const ctx = document.getElementById('horatioTimeMoneyChart').getContext('2d');
+    
+    if (horatioChart) {
+        horatioChart.destroy();
+    }
+    
+    horatioChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: vizData.years,
+            datasets: [{
+                label: 'Net Worth Projection',
+                data: vizData.net_worth_values,
+                borderColor: '#3273dc',
+                backgroundColor: 'rgba(50, 115, 220, 0.1)',
+                borderWidth: 3,
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Horatio\'s Net Worth Over Time (2025-2048)'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `Net Worth: $${context.parsed.y.toLocaleString()}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Net Worth ($)'
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Year'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Display spending categories
+    const categories = data.spending_categories;
+    let categoriesHtml = '<div class="content">';
+    categories.forEach((cat, index) => {
+        const priorityColor = cat.priority === 'essential' ? '#ff3860' : 
+                             cat.priority === 'high' ? '#ffdd57' : '#23d160';
+        categoriesHtml += `
+            <div class="box" style="border-left: 4px solid ${priorityColor};">
+                <div class="level">
+                    <div class="level-left">
+                        <div>
+                            <p class="has-text-weight-bold">${cat.category}</p>
+                            <p class="is-size-7 has-text-grey">${cat.description}</p>
+                        </div>
+                    </div>
+                    <div class="level-right">
+                        <p class="has-text-weight-bold">$${cat.amount.toLocaleString()}</p>
+                        <span class="tag is-small is-${cat.priority === 'essential' ? 'danger' : cat.priority === 'high' ? 'warning' : 'success'}">${cat.priority}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    categoriesHtml += '</div>';
+    document.getElementById('spendingCategories').innerHTML = categoriesHtml;
+    
+    // Display cash flow matrix
+    if (data.cash_flow_matrix && data.cash_flow_matrix.visualization_data) {
+        const matrixData = data.cash_flow_matrix.visualization_data;
+        const summary = data.cash_flow_matrix.summary;
+        
+        let matrixHtml = `
+            <div class="content">
+                <div class="notification is-info is-light mb-4">
+                    <h6 class="title is-6">Matrix Summary</h6>
+                    <p><strong>Total Positive Flows:</strong> $${summary.total_positive_flows.toLocaleString()}</p>
+                    <p><strong>Total Negative Flows:</strong> $${summary.total_negative_flows.toLocaleString()}</p>
+                    <p><strong>Average Annual Net:</strong> $${summary.average_annual_net.toLocaleString()}</p>
+                    <p><strong>Peak Income Year:</strong> ${summary.peak_income_year}</p>
+                    <p><strong>Peak Expense Year:</strong> ${summary.peak_expense_year}</p>
+                </div>
+                
+                <div class="table-container cash-flow-matrix">
+                    <table class="table is-bordered is-striped is-narrow is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+        `;
+        
+        // Add year headers
+        matrixData.years.forEach(year => {
+            matrixHtml += `<th>${year}</th>`;
+        });
+        matrixHtml += '</tr></thead><tbody>';
+        
+        // Add data rows
+        matrixData.categories.forEach((category, rowIndex) => {
+            matrixHtml += `<tr>`;
+            matrixHtml += `<td><strong>${category}</strong></td>`;
+            
+            matrixData.years.forEach((year, colIndex) => {
+                const value = matrixData.values[rowIndex][colIndex];
+                const color = matrixData.color_scale[rowIndex][colIndex];
+                const formattedValue = value >= 0 ? `+$${value.toLocaleString()}` : `-$${Math.abs(value).toLocaleString()}`;
+                
+                matrixHtml += `<td style="background-color: ${color}; color: ${value >= 0 ? 'white' : 'white'}; font-weight: bold; text-align: center;">${formattedValue}</td>`;
+            });
+            
+            matrixHtml += `</tr>`;
+        });
+        
+        matrixHtml += '</tbody></table></div></div>';
+        document.getElementById('cashFlowMatrix').innerHTML = matrixHtml;
+    } else {
+        document.getElementById('cashFlowMatrix').innerHTML = '<p class="has-text-grey-light">No cash flow matrix data available</p>';
+    }
+}
+</script>
+
+<!-- Portfolio Insights Modal -->
+<div id="portfolioInsightsModal" class="modal">
+    <div class="modal-background" onclick="closePortfolioInsights()"></div>
+    <div class="modal-content" style="width: 90%; max-width: 1200px;">
+        <div id="portfolioInsightsLoading" style="display: none;">
+            <div class="has-text-centered" style="padding: 2rem;">
+                <span class="icon is-large">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                </span>
+                <p class="mt-3">Loading portfolio insights...</p>
+            </div>
+        </div>
+        <div id="portfolioInsightsContent" style="display: none;">
+            <!-- Content will be populated by JavaScript -->
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closePortfolioInsights()"></button>
+</div>
+
+<!-- Add CSS for portfolio insights -->
+<style>
+.clickable-portfolio {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clickable-portfolio:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.event-insight-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3273dc;
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.event-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.rebalancing-details {
+    background: white;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border-left: 3px solid #23d160;
+}
+
+.rebalancing-item {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recommendation-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.recommendation-item.high {
+    border-left: 4px solid #ff3860;
+}
+
+.recommendation-item.medium {
+    border-left: 4px solid #ffdd57;
+}
+
+.recommendation-item.low {
+    border-left: 4px solid #23d160;
+}
+
+.priority-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.priority-badge.high {
+    background: #ff3860;
+    color: white;
+}
+
+.priority-badge.medium {
+    background: #ffdd57;
+    color: #333;
+}
+
+.priority-badge.low {
+    background: #23d160;
+    color: white;
+}
+
+.mesh-analysis-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.analysis-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.analysis-item .label {
+    font-weight: 600;
+    color: #666;
+}
+
+.analysis-item .value {
+    font-weight: bold;
+    color: #3273dc;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cash-flow-matrix {
+    overflow-x: auto;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.cash-flow-matrix table {
+    font-size: 0.8rem;
+}
+
+.cash-flow-matrix th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.cash-flow-matrix td {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cash-flow-matrix td:first-child {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    background-color: #f5f5f5;
+    z-index: 5;
+}
+
+.positive-flow {
+    background-color: #2E8B57 !important;
+    color: white !important;
+}
+
+.negative-flow {
+    background-color: #DC143C !important;
+    color: white !important;
+}
+
+.neutral-flow {
+    background-color: #D3D3D3 !important;
+    color: #333 !important;
+}
+</style>
+
+<!-- Horatio's Financial Mesh Visualization -->
+<div class="section">
+    <div class="container">
+        <h2 class="title is-3">🎯 Horatio's Financial Mesh</h2>
+        <p class="subtitle is-5">Condensed visualization of time vs money with spending categories</p>
+        
+        <div class="columns">
+            <div class="column is-4">
+                <div class="card">
+                    <div class="card-content">
+                        <h4 class="title is-5">📊 Financial Summary</h4>
+                        <div id="horatioSummary">
+                            <p class="has-text-grey-light">Click "Load Horatio's Mesh" to see data</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-content">
+                        <h4 class="title is-5">💰 Feasible Financial Space</h4>
+                        <div id="feasibleSpace">
+                            <p class="has-text-grey-light">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column is-8">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="level">
+                            <div class="level-left">
+                                <h4 class="title is-5">📈 Time vs Money Projection</h4>
+                            </div>
+                            <div class="level-right">
+                                <button class="button is-primary" onclick="loadHoratioMesh()">
+                                    <span class="icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </span>
+                                    <span>Load Horatio's Mesh</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chart-container" style="height: 400px;">
+                            <canvas id="horatioTimeMoneyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-content">
+                        <h4 class="title is-5">💸 Spending Categories (Ascending)</h4>
+                        <div id="spendingCategories">
+                            <p class="has-text-grey-light">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-content">
+                        <h4 class="title is-5">📊 Cash Flow Matrix</h4>
+                        <p class="subtitle is-6">Implied cash flows associated with all financial metadata</p>
+                        <div id="cashFlowMatrix">
+                            <p class="has-text-grey-light">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html> 

@@ -1,0 +1,132 @@
+{
+  "total_tests": 20,
+  "passed_tests": 0,
+  "failed_tests": 20,
+  "accounting_validations": [
+    {
+      "person_id": "person_003",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_004",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_005",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_002",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_010",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_009",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_007",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_001",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_006",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    },
+    {
+      "person_id": "person_008",
+      "error": "AccountingReconciliationEngine.register_entity() takes 2 positional arguments but 3 were given",
+      "is_balanced": false
+    }
+  ],
+  "mesh_tests": [
+    {
+      "person_id": "person_003",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_004",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_005",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_002",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_010",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_009",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_007",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_001",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_006",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    },
+    {
+      "person_id": "person_008",
+      "error": "'total_wealth'",
+      "payment_success_rate": 0
+    }
+  ],
+  "stress_scenarios": [
+    {
+      "name": "High Frequency Transactions",
+      "total_transactions": 1000,
+      "successful": 1000,
+      "failed": 0,
+      "success_rate": 1.0
+    },
+    {
+      "name": "Large Payment Stress",
+      "total_payments": 10,
+      "successful": 8,
+      "failed": 2,
+      "success_rate": 0.8
+    },
+    {
+      "name": "Concurrent Processing",
+      "total_tests": 5,
+      "successful": 5,
+      "failed": 0,
+      "success_rate": 1.0
+    }
+  ]
+}

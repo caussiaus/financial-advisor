@@ -13,9 +13,9 @@ import json
 import logging
 from pathlib import Path
 
-from .enhanced_mesh_node import EnhancedMeshEngine, EnhancedMeshNode, CashFlowSeries, FinancialState
-from .unified_cash_flow_model import UnifiedCashFlowModel, CashFlowEvent
-from .time_uncertainty_mesh import TimeUncertaintyMeshEngine
+from ..core.state_space_mesh_engine import EnhancedMeshEngine, EnhancedMeshNode, CashFlowSeries, FinancialState
+from ..unified_cash_flow_model import UnifiedCashFlowModel, CashFlowEvent
+from ..core.time_uncertainty_mesh import TimeUncertaintyMeshEngine
 
 class EnhancedMeshIntegration:
     """

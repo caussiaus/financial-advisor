@@ -1,0 +1,44 @@
+{
+  "id": "person_008",
+  "risk_tolerance": {
+    "level": "high",
+    "score": 3,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "commodities",
+      "bonds",
+      "crypto"
+    ],
+    "avoided_asset_classes": [
+      "cash",
+      "real_estate"
+    ],
+    "target_asset_allocation": {
+      "real_estate": 0.48,
+      "crypto": 0.12,
+      "bonds": 0.4
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 28471,
+    "monthly_cash_flow_needs": 6417,
+    "liquidity_priority": "medium"
+  },
+  "tax_considerations": {
+    "tax_bracket": "32%",
+    "prefer_tax_advantaged_accounts": true,
+    "tax_loss_harvesting": true
+  },
+  "constraints": {
+    "ethical_investing": true,
+    "geographic_preferences": [
+      "Qatar",
+      "Norway"
+    ],
+    "minimum_investment_amounts": {
+      "cash": 3808
+    }
+  }
+}

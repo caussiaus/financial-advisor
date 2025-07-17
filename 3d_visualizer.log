@@ -1,0 +1,27 @@
+2025-07-17 13:07:09,562 - src.visualization.mesh_3d_visualizer - INFO - ✅ Loaded mesh data from horatio_mesh_timelapse.json
+2025-07-17 13:07:09,563 - __main__ - INFO - 🚀 Starting 3D Mesh Visualizer on localhost:5002
+2025-07-17 13:07:09,584 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5002
+2025-07-17 13:07:09,584 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 13:07:09,587 - werkzeug - INFO -  * Restarting with stat
+2025-07-17 13:07:11,813 - src.visualization.mesh_3d_visualizer - INFO - ✅ Loaded mesh data from horatio_mesh_timelapse.json
+2025-07-17 13:07:11,814 - __main__ - INFO - 🚀 Starting 3D Mesh Visualizer on localhost:5002
+2025-07-17 13:07:11,828 - werkzeug - WARNING -  * Debugger is active!
+2025-07-17 13:07:11,836 - werkzeug - INFO -  * Debugger PIN: 425-460-048
+2025-07-17 13:26:48,244 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 13:26:48] "GET / HTTP/1.1" 200 -
+2025-07-17 13:26:48,471 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 13:26:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-17 13:27:35,938 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 13:27:35] "GET /api/health HTTP/1.1" 200 -
+2025-07-17 13:27:37,320 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 13:27:37] "GET /api/health HTTP/1.1" 200 -
+2025-07-17 13:27:39,648 - __main__ - ERROR - Error generating 3D visualization: 'position'
+2025-07-17 13:27:39,649 - werkzeug - INFO - 127.0.0.1 - - [17/Jul/2025 13:27:39] "[35m[1mGET /api/3d-visualization?type=mesh&snapshot=0 HTTP/1.1[0m" 500 -
+2025-07-17 13:27:45,314 - werkzeug - INFO -  * Detected change in '/Users/caseyjussaume/ips_case1/dashboards/3d_mesh_visualizer_app.py', reloading
+2025-07-17 13:28:20,364 - src.visualization.mesh_3d_visualizer - INFO - ✅ Loaded mesh data from horatio_mesh_timelapse.json
+2025-07-17 13:28:20,365 - __main__ - INFO - 🚀 Starting 3D Mesh Visualizer on localhost:5002
+2025-07-17 13:28:20,391 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5002
+2025-07-17 13:28:20,391 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-17 13:28:20,394 - werkzeug - INFO -  * Restarting with stat
+2025-07-17 13:28:22,646 - src.visualization.mesh_3d_visualizer - INFO - ✅ Loaded mesh data from horatio_mesh_timelapse.json
+2025-07-17 13:28:22,647 - __main__ - INFO - 🚀 Starting 3D Mesh Visualizer on localhost:5002
+2025-07-17 13:28:22,662 - werkzeug - WARNING -  * Debugger is active!
+2025-07-17 13:28:22,672 - werkzeug - INFO -  * Debugger PIN: 425-460-048

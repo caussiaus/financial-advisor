@@ -74,7 +74,7 @@ class MeshMemoryManager:
         self.base_states = {}
         self.node_clusters = {}
     
-    def store_node(self, node: 'OmegaNode'):
+    def store_node(self, node):  # type: 'OmegaNode'
         """Efficiently store node with compression"""
         compressed_state = self.state_compressor.compress(node.financial_state)
         compressed_node = CompressedNode(
@@ -87,12 +87,12 @@ class MeshMemoryManager:
         )
         self.node_cache.put(node.node_id, compressed_node)
     
-    def batch_retrieve(self, node_ids: List[str]) -> List['OmegaNode']:
+    def batch_retrieve(self, node_ids: List[str]):  # -> List['OmegaNode']
         """Batch retrieval of nodes"""
         compressed_nodes = self.node_cache.batch_get(node_ids)
         return [self._decompress_node(cn) if cn else None for cn in compressed_nodes]
     
-    def _generate_aggregation_key(self, node: 'OmegaNode') -> str:
+    def _generate_aggregation_key(self, node):  # type: 'OmegaNode' -> str
         """Generate key for state space aggregation"""
         # Round financial values to reduce state space
         rounded_state = {
@@ -102,7 +102,7 @@ class MeshMemoryManager:
         timestamp_key = node.timestamp.strftime('%Y%m%d')
         return f"{timestamp_key}_{hash(frozenset(rounded_state.items()))}"
     
-    def _decompress_node(self, compressed_node: CompressedNode) -> 'OmegaNode':
+    def _decompress_node(self, compressed_node: CompressedNode):  # -> 'OmegaNode'
         """Reconstruct full node from compressed data"""
         if not compressed_node:
             return None
@@ -124,7 +124,7 @@ class MeshMemoryManager:
         )
         
         # Import here to avoid circular imports
-        from src.stochastic_mesh_engine import OmegaNode
+        from src.core.stochastic_mesh_engine import OmegaNode
         
         return OmegaNode(
             node_id=compressed_node.node_id,

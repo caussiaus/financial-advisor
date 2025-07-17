@@ -1,0 +1,42 @@
+{
+  "id": "person_002",
+  "past_events": [
+    {
+      "id": "event_001",
+      "name": "Auto past event",
+      "date": "2024-10-14",
+      "financial_impact": -44194,
+      "description": "Random past event",
+      "category": "career"
+    }
+  ],
+  "planned_events": [
+    {
+      "id": "event_002",
+      "name": "Planned event 2",
+      "date": "2033-05-22",
+      "expected_impact": -55650,
+      "description": "Auto-generated future event",
+      "category": "retirement",
+      "probability": 0.21
+    },
+    {
+      "id": "event_003",
+      "name": "Planned event 3",
+      "date": "2033-01-09",
+      "expected_impact": -27059,
+      "description": "Auto-generated future event",
+      "category": "career",
+      "probability": 0.58
+    },
+    {
+      "id": "event_004",
+      "name": "Planned event 4",
+      "date": "2033-10-17",
+      "expected_impact": 78504,
+      "description": "Auto-generated future event",
+      "category": "family",
+      "probability": 0.45
+    }
+  ]
+}

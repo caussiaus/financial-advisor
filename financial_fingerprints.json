@@ -1,0 +1,527 @@
+[
+  {
+    "person_name": "current_person_003",
+    "characteristics": {
+      "risk_tolerance": 0.6751041596666891,
+      "income_stability": 0.3042,
+      "debt_ratio": 0.12434630062930804,
+      "savings_rate": 0.2215069033530572,
+      "investment_aggressiveness": 0.4527672905068003
+    },
+    "color_hsv": [
+      0.7194055403373005,
+      0.55751018715204,
+      0.9626961098112075
+    ],
+    "color_rgb": [
+      0.5958170207568095,
+      0.4259832214598203,
+      0.9626961098112075
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Low income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "current_person_004",
+    "characteristics": {
+      "risk_tolerance": 0.6899304570578779,
+      "income_stability": 0.24764666666666665,
+      "debt_ratio": 0.02536344238975818,
+      "savings_rate": 0.2047659299539667,
+      "investment_aggressiveness": 0.44498382624768945
+    },
+    "color_hsv": [
+      0.7308836430486713,
+      0.5325538145409735,
+      0.9923909672830724
+    ],
+    "color_rgb": [
+      0.667522018859213,
+      0.46388937214046577,
+      0.9923909672830724
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Low income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "current_person_005",
+    "characteristics": {
+      "risk_tolerance": 0.6974976264749764,
+      "income_stability": 0.55436,
+      "debt_ratio": 0.3065542255204349,
+      "savings_rate": 0.07024893570964717,
+      "investment_aggressiveness": 0.5529123294878058
+    },
+    "color_hsv": [
+      0.7115474136169058,
+      0.6876176988463417,
+      0.9080337323438695
+    ],
+    "color_rgb": [
+      0.4517895291600616,
+      0.283653666834723,
+      0.9080337323438695
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Moderate debt ratio, Low savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "current_person_002",
+    "characteristics": {
+      "risk_tolerance": 0.5762308368036284,
+      "income_stability": 0.2685133333333333,
+      "debt_ratio": 0.025426700078510663,
+      "savings_rate": 0.21862303547930578,
+      "investment_aggressiveness": 0.7
+    },
+    "color_hsv": [
+      0.6199554438994895,
+      0.6174053333333334,
+      0.9923719899764467
+    ],
+    "color_rgb": [
+      0.3796762307143753,
+      0.5513948393107474,
+      0.9923719899764467
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Low income stability, Low debt ratio, Moderate savings rate, Aggressive investment style"
+  },
+  {
+    "person_name": "current_person_010",
+    "characteristics": {
+      "risk_tolerance": 0.6938314226610119,
+      "income_stability": 0.21491333333333335,
+      "debt_ratio": 0.018923676824521687,
+      "savings_rate": 0.09326922480379689,
+      "investment_aggressiveness": 0.7
+    },
+    "color_hsv": [
+      0.7124852676217713,
+      0.5959653333333333,
+      0.9943228969526434
+    ],
+    "color_rgb": [
+      0.5646485829773406,
+      0.40174092022929564,
+      0.9943228969526434
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Low income stability, Low debt ratio, Low savings rate, Aggressive investment style"
+  },
+  {
+    "person_name": "current_person_009",
+    "characteristics": {
+      "risk_tolerance": 0.6268845550561417,
+      "income_stability": 1.0,
+      "debt_ratio": 0.021806657163095274,
+      "savings_rate": 0.1599874097631564,
+      "investment_aggressiveness": 0.6315963039595867
+    },
+    "color_hsv": [
+      0.658882037008773,
+      0.8894788911878759,
+      0.9934580028510713
+    ],
+    "color_rgb": [
+      0.10979808003337872,
+      0.15107187148933066,
+      0.9934580028510713
+    ],
+    "fingerprint_description": "Moderate risk tolerance, High income stability, Low debt ratio, Low savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "current_person_007",
+    "characteristics": {
+      "risk_tolerance": 0.5470434256388124,
+      "income_stability": 0.63888,
+      "debt_ratio": 0.14193914618815934,
+      "savings_rate": 0.10597921362384173,
+      "investment_aggressiveness": 0.7
+    },
+    "color_hsv": [
+      0.5682392683635807,
+      0.765552,
+      0.9574182561435521
+    ],
+    "color_rgb": [
+      0.2244647953163435,
+      0.6573210086751334,
+      0.9574182561435521
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Low savings rate, Aggressive investment style"
+  },
+  {
+    "person_name": "current_person_001",
+    "characteristics": {
+      "risk_tolerance": 0.664427458044526,
+      "income_stability": 0.6258933333333333,
+      "debt_ratio": 0.042299476469270285,
+      "savings_rate": 0.2490315708746964,
+      "investment_aggressiveness": 0.49492328215940407
+    },
+    "color_hsv": [
+      0.7142337722194653,
+      0.6988343179811546,
+      0.9873101570592189
+    ],
+    "color_rgb": [
+      0.49426211297224265,
+      0.29734393681487303,
+      0.9873101570592189
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "current_person_006",
+    "characteristics": {
+      "risk_tolerance": 0.6766597713992359,
+      "income_stability": 0.16728666666666667,
+      "debt_ratio": 0.13523426221619494,
+      "savings_rate": 0.21422866935001794,
+      "investment_aggressiveness": 0.5257491092254196
+    },
+    "color_hsv": [
+      0.7195055052692395,
+      0.5246393994342926,
+      0.9594297213351415
+    ],
+    "color_rgb": [
+      0.6156551337489364,
+      0.45607508853446216,
+      0.9594297213351415
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Low income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "current_person_008",
+    "characteristics": {
+      "risk_tolerance": 0.6637557272789442,
+      "income_stability": 0.46181333333333335,
+      "debt_ratio": 0.3142825270516491,
+      "savings_rate": 0.20208164915117216,
+      "investment_aggressiveness": 0.6086405087507127
+    },
+    "color_hsv": [
+      0.7041720571091786,
+      0.6673174859585471,
+      0.9057152418845051
+    ],
+    "color_rgb": [
+      0.43732508566113587,
+      0.3013156236757998,
+      0.9057152418845051
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Moderate debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_alex",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_garcia_family",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_sarah_johnson",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_emily_thompson",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_sam",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_patel_household",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_david_wilson",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_alex_chen",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_drew",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_michael_rodriguez",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_morgan",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_johnson_family",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_taylor",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_casey",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  },
+  {
+    "person_name": "archived_jordan",
+    "characteristics": {
+      "risk_tolerance": 0.5,
+      "income_stability": 0.5,
+      "debt_ratio": 0.3,
+      "savings_rate": 0.2,
+      "investment_aggressiveness": 0.5
+    },
+    "color_hsv": [
+      0.54,
+      0.65,
+      0.9099999999999999
+    ],
+    "color_rgb": [
+      0.31849999999999995,
+      0.7680399999999998,
+      0.9099999999999999
+    ],
+    "fingerprint_description": "Moderate risk tolerance, Moderate income stability, Low debt ratio, Moderate savings rate, Moderate investment style"
+  }
+]

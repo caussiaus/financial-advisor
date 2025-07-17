@@ -1,0 +1,44 @@
+{
+  "id": "person_006",
+  "risk_tolerance": {
+    "level": "low",
+    "score": 1,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "cash",
+      "real_estate",
+      "private_equity"
+    ],
+    "avoided_asset_classes": [
+      "real_estate",
+      "commodities"
+    ],
+    "target_asset_allocation": {
+      "cash": 0.24,
+      "stocks": 0.42,
+      "crypto": 0.34
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 35237,
+    "monthly_cash_flow_needs": 8375,
+    "liquidity_priority": "low"
+  },
+  "tax_considerations": {
+    "tax_bracket": "32%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": false
+  },
+  "constraints": {
+    "ethical_investing": true,
+    "geographic_preferences": [
+      "Ireland",
+      "Lesotho"
+    ],
+    "minimum_investment_amounts": {
+      "commodities": 47429
+    }
+  }
+}

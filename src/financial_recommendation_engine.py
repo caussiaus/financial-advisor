@@ -8,7 +8,7 @@ from enum import Enum
 import random
 
 from .enhanced_pdf_processor import FinancialMilestone
-from .stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
+from .core.stochastic_mesh_engine import StochasticMeshEngine, OmegaNode
 from .accounting_reconciliation import AccountingReconciliationEngine
 
 

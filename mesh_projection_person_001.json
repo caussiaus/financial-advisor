@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2025-07-17T12:43:02.093865",
+    "financial_state": {
+      "total_wealth": "1.2975788e+06",
+      "cash": "259515.75",
+      "investments": "1.038063e+06"
+    },
+    "event_triggers": [],
+    "parent_nodes": []
+  }
+]

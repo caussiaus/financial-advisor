@@ -1,0 +1,42 @@
+{
+  "id": "person_004",
+  "past_events": [
+    {
+      "id": "event_001",
+      "name": "Auto past event",
+      "date": "2020-09-05",
+      "financial_impact": -1660,
+      "description": "Random past event",
+      "category": "family"
+    }
+  ],
+  "planned_events": [
+    {
+      "id": "event_002",
+      "name": "Planned event 2",
+      "date": "2027-12-05",
+      "expected_impact": -8476,
+      "description": "Auto-generated future event",
+      "category": "career",
+      "probability": 0.46
+    },
+    {
+      "id": "event_003",
+      "name": "Planned event 3",
+      "date": "2027-09-14",
+      "expected_impact": -49273,
+      "description": "Auto-generated future event",
+      "category": "family",
+      "probability": 0.21
+    },
+    {
+      "id": "event_004",
+      "name": "Planned event 4",
+      "date": "2026-02-07",
+      "expected_impact": -64411,
+      "description": "Auto-generated future event",
+      "category": "family",
+      "probability": 0.41
+    }
+  ]
+}

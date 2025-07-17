@@ -1,0 +1,121 @@
+================================================================================
+fsQCA SUCCESS PATH ANALYSIS REPORT
+================================================================================
+
+📊 SUMMARY STATISTICS
+----------------------------------------
+Total success paths analyzed: 400
+Success clusters identified: 5
+Solution coverage: 100.00%
+Solution consistency: 43.68%
+
+🔍 NECESSARY CONDITIONS
+----------------------------------------
+high_cash_ratio: 10.62%
+high_investment_ratio: 51.38%
+low_debt_ratio: 100.00%
+diversified_assets: 100.00%
+income_stability: 81.50%
+expense_control: 17.50%
+low_volatility: 76.75%
+high_liquidity: 19.88%
+balanced_risk: 72.62%
+condition_market_stress: 25.00%
+condition_interest_rate_volatility: 25.00%
+condition_correlation_breakdown: 25.00%
+condition_liquidity_crisis: 25.00%
+condition_bull_market: 12.50%
+condition_bear_market: 12.50%
+
+✅ SUFFICIENT CONDITIONS
+----------------------------------------
+high_cash_ratio: 100.00%
+high_investment_ratio: 100.00%
+low_debt_ratio: 100.00%
+diversified_assets: 100.00%
+income_stability: 100.00%
+expense_control: 100.00%
+low_volatility: 100.00%
+high_liquidity: 100.00%
+balanced_risk: 100.00%
+condition_market_stress: 100.00%
+condition_interest_rate_volatility: 100.00%
+condition_correlation_breakdown: 100.00%
+condition_liquidity_crisis: 100.00%
+condition_bull_market: 100.00%
+condition_bear_market: 100.00%
+
+🎯 FEATURE IMPORTANCE
+----------------------------------------
+low_volatility: 0.700
+high_cash_ratio: 0.539
+high_liquidity: 0.518
+high_investment_ratio: 0.440
+diversified_assets: 0.199
+low_debt_ratio: 0.135
+income_stability: 0.103
+balanced_risk: 0.045
+expense_control: 0.025
+
+📈 MARKET CONDITION ANALYSIS
+----------------------------------------
+market_stress:
+  Success rate: 80.59%
+  Stability score: 0.267
+  Wealth growth: 0.986
+  Path count: 100
+interest_rate_volatility:
+  Success rate: 80.07%
+  Stability score: 0.184
+  Wealth growth: 0.990
+  Path count: 100
+correlation_breakdown:
+  Success rate: 81.49%
+  Stability score: 0.189
+  Wealth growth: 0.987
+  Path count: 100
+liquidity_crisis:
+  Success rate: 81.31%
+  Stability score: 0.224
+  Wealth growth: 0.981
+  Path count: 100
+bull_market:
+  Success rate: 80.84%
+  Stability score: 0.085
+  Wealth growth: 0.980
+  Path count: 50
+bear_market:
+  Success rate: 85.85%
+  Stability score: 0.335
+  Wealth growth: 0.994
+  Path count: 50
+
+🔺 SUCCESS CLUSTER INSIGHTS
+----------------------------------------
+Cluster 0:
+  Success rate: 82.45%
+  Stability score: 0.281
+  Market conditions: liquidity_crisis, interest_rate_volatility, market_stress, correlation_breakdown, bear_market
+  Representative path: node_4_44
+Cluster 1:
+  Success rate: 80.71%
+  Stability score: 0.106
+  Market conditions: bull_market, liquidity_crisis, interest_rate_volatility, market_stress, correlation_breakdown
+  Representative path: node_5_37
+Cluster 2:
+  Success rate: 79.77%
+  Stability score: 0.238
+  Market conditions: bull_market, liquidity_crisis, interest_rate_volatility, market_stress, correlation_breakdown, bear_market
+  Representative path: node_6_36
+Cluster 3:
+  Success rate: 80.98%
+  Stability score: 0.138
+  Market conditions: bull_market, liquidity_crisis, interest_rate_volatility, market_stress, correlation_breakdown
+  Representative path: node_5_18
+Cluster 4:
+  Success rate: 84.88%
+  Stability score: 0.297
+  Market conditions: liquidity_crisis, interest_rate_volatility, market_stress, correlation_breakdown, bear_market
+  Representative path: node_4_40
+
+================================================================================

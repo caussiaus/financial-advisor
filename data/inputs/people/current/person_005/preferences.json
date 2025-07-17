@@ -1,0 +1,44 @@
+{
+  "id": "person_005",
+  "risk_tolerance": {
+    "level": "low",
+    "score": 9,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "real_estate",
+      "commodities",
+      "stocks"
+    ],
+    "avoided_asset_classes": [
+      "private_equity",
+      "cash"
+    ],
+    "target_asset_allocation": {
+      "private_equity": 0.27,
+      "real_estate": 0.44,
+      "bonds": 0.29
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 23950,
+    "monthly_cash_flow_needs": 9665,
+    "liquidity_priority": "high"
+  },
+  "tax_considerations": {
+    "tax_bracket": "32%",
+    "prefer_tax_advantaged_accounts": false,
+    "tax_loss_harvesting": false
+  },
+  "constraints": {
+    "ethical_investing": true,
+    "geographic_preferences": [
+      "Australia",
+      "Tunisia"
+    ],
+    "minimum_investment_amounts": {
+      "commodities": 37082
+    }
+  }
+}

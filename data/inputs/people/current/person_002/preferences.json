@@ -1,0 +1,44 @@
+{
+  "id": "person_002",
+  "risk_tolerance": {
+    "level": "high",
+    "score": 6,
+    "description": "Auto-generated risk profile"
+  },
+  "investment_preferences": {
+    "preferred_asset_classes": [
+      "real_estate",
+      "bonds",
+      "crypto"
+    ],
+    "avoided_asset_classes": [
+      "cash",
+      "bonds"
+    ],
+    "target_asset_allocation": {
+      "real_estate": 0.24,
+      "bonds": 0.58,
+      "cash": 0.18
+    }
+  },
+  "liquidity_needs": {
+    "emergency_fund_target": 29265,
+    "monthly_cash_flow_needs": 6992,
+    "liquidity_priority": "low"
+  },
+  "tax_considerations": {
+    "tax_bracket": "37%",
+    "prefer_tax_advantaged_accounts": true,
+    "tax_loss_harvesting": false
+  },
+  "constraints": {
+    "ethical_investing": false,
+    "geographic_preferences": [
+      "Malaysia",
+      "Fiji"
+    ],
+    "minimum_investment_amounts": {
+      "cash": 21236
+    }
+  }
+}

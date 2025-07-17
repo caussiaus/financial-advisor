@@ -19,11 +19,15 @@ app = Flask(__name__)
 def index():
     """Serve the main visualization page"""
     try:
-        with open('life_events_portfolio_visualization.html', 'r') as f:
+        # Get the directory where this script is located
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        html_file = os.path.join(script_dir, 'strategy_comparison_visualization.html')
+        
+        with open(html_file, 'r') as f:
             html_content = f.read()
         return html_content
     except FileNotFoundError:
-        return "Visualization file not found. Please ensure life_events_portfolio_visualization.html exists.", 404
+        return "Visualization file not found. Please ensure strategy_comparison_visualization.html exists.", 404
 
 @app.route('/api/health')
 def health():
@@ -35,7 +39,12 @@ def get_life_events_data():
     """API endpoint to get life events data"""
     import json
     try:
-        with open('data/outputs/analysis_data/realistic_life_events_analysis.json', 'r') as f:
+        # Get the project root directory (two levels up from visualizations/)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(script_dir)
+        data_file = os.path.join(project_root, 'data/outputs/analysis_data/realistic_life_events_analysis.json')
+        
+        with open(data_file, 'r') as f:
             data = json.load(f)
         return data
     except FileNotFoundError:
@@ -46,7 +55,12 @@ def get_horatio_profile():
     """API endpoint to get Horatio's profile data"""
     import json
     try:
-        with open('horatio_profile.json', 'r') as f:
+        # Get the project root directory (two levels up from visualizations/)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(script_dir)
+        profile_file = os.path.join(project_root, 'horatio_profile.json')
+        
+        with open(profile_file, 'r') as f:
             data = json.load(f)
         return data
     except FileNotFoundError:
