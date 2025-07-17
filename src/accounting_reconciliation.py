@@ -1,12 +1,17 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple, Optional, Any
 from dataclasses import dataclass, field
 from decimal import Decimal, ROUND_HALF_UP
 import json
 from enum import Enum
 import logging
+
+# Enhanced logging imports
+from .enhanced_accounting_logger import (
+    EnhancedAccountingLogger, FlowItemCategory, BalanceItemCategory, LogItemType
+)
 
 
 class AccountType(Enum):
@@ -81,6 +86,9 @@ class AccountingReconciliationEngine:
         self.pending_transactions = []  # Transactions awaiting approval
         self.logger = self._setup_logging()
         
+        # NEW: Enhanced logging integration
+        self.enhanced_logger = EnhancedAccountingLogger()
+        
         # Initialize default accounts
         self._initialize_default_accounts()
     
@@ -98,6 +106,71 @@ class AccountingReconciliationEngine:
             logger.addHandler(handler)
         
         return logger
+    
+    def _determine_flow_category(self, transaction: Transaction) -> FlowItemCategory:
+        """
+        Determine the flow category for a transaction based on its type and accounts.
+        
+        Args:
+            transaction: The transaction to categorize
+            
+        Returns:
+            FlowItemCategory for the transaction
+        """
+        # Map transaction types to flow categories
+        type_to_category = {
+            TransactionType.PAYMENT: FlowItemCategory.EXPENSE,
+            TransactionType.INCOME: FlowItemCategory.INCOME,
+            TransactionType.INVESTMENT: FlowItemCategory.INVESTMENT,
+            TransactionType.WITHDRAWAL: FlowItemCategory.EXPENSE,
+            TransactionType.TRANSFER: FlowItemCategory.TRANSFER,
+            TransactionType.MILESTONE_PAYMENT: FlowItemCategory.EXPENSE
+        }
+        
+        # Get base category from transaction type
+        base_category = type_to_category.get(transaction.transaction_type, FlowItemCategory.OTHER)
+        
+        # Refine based on account types
+        debit_account = self.accounts.get(transaction.debit_account)
+        credit_account = self.accounts.get(transaction.credit_account)
+        
+        if debit_account and credit_account:
+            # Specific refinements based on account types
+            if (debit_account.account_type == AccountType.ASSET and 
+                credit_account.account_type == AccountType.EXPENSE):
+                return FlowItemCategory.EXPENSE
+            elif (debit_account.account_type == AccountType.INCOME and 
+                  credit_account.account_type == AccountType.ASSET):
+                return FlowItemCategory.INCOME
+            elif (debit_account.account_type == AccountType.ASSET and 
+                  credit_account.account_type == AccountType.ASSET):
+                return FlowItemCategory.TRANSFER
+            elif (debit_account.account_type == AccountType.ASSET and 
+                  credit_account.account_type == AccountType.LIABILITY):
+                return FlowItemCategory.LOAN_PAYMENT
+        
+        return base_category
+    
+    def _determine_balance_category(self, account_type: AccountType) -> BalanceItemCategory:
+        """
+        Determine the balance category for an account based on its type.
+        
+        Args:
+            account_type: The account type to categorize
+            
+        Returns:
+            BalanceItemCategory for the account
+        """
+        # Map account types to balance categories
+        type_to_category = {
+            AccountType.ASSET: BalanceItemCategory.CASH,
+            AccountType.LIABILITY: BalanceItemCategory.LOAN,
+            AccountType.EQUITY: BalanceItemCategory.OTHER,
+            AccountType.INCOME: BalanceItemCategory.OTHER,
+            AccountType.EXPENSE: BalanceItemCategory.OTHER
+        }
+        
+        return type_to_category.get(account_type, BalanceItemCategory.OTHER)
     
     def _initialize_default_accounts(self):
         """Initialize standard chart of accounts"""
@@ -293,6 +366,10 @@ class AccountingReconciliationEngine:
     def _execute_transaction(self, transaction: Transaction) -> Tuple[bool, str]:
         """Execute a validated transaction and update account balances"""
         try:
+            # Store previous balances for logging
+            previous_debit_balance = self.accounts[transaction.debit_account].balance
+            previous_credit_balance = self.accounts[transaction.credit_account].balance
+            
             # Update balances based on double-entry bookkeeping
             debit_account = self.accounts[transaction.debit_account]
             credit_account = self.accounts[transaction.credit_account]
@@ -319,6 +396,41 @@ class AccountingReconciliationEngine:
             transaction.is_pending = False
             self.transactions.append(transaction)
             
+            # NEW: Enhanced logging for flow items
+            flow_category = self._determine_flow_category(transaction)
+            self.enhanced_logger.log_flow_item(
+                category=flow_category,
+                amount=transaction.amount,
+                from_account=transaction.debit_account,
+                to_account=transaction.credit_account,
+                description=transaction.description,
+                transaction_id=transaction.transaction_id,
+                reference_id=transaction.reference_id,
+                metadata={
+                    'transaction_type': transaction.transaction_type.value,
+                    'created_by': transaction.created_by
+                }
+            )
+            
+            # NEW: Enhanced logging for balance changes
+            self.enhanced_logger.log_balance_item(
+                category=self._determine_balance_category(debit_account.account_type),
+                account_id=transaction.debit_account,
+                balance=debit_account.balance,
+                previous_balance=previous_debit_balance,
+                change_amount=debit_account.balance - previous_debit_balance,
+                metadata={'transaction_id': transaction.transaction_id}
+            )
+            
+            self.enhanced_logger.log_balance_item(
+                category=self._determine_balance_category(credit_account.account_type),
+                account_id=transaction.credit_account,
+                balance=credit_account.balance,
+                previous_balance=previous_credit_balance,
+                change_amount=credit_account.balance - previous_credit_balance,
+                metadata={'transaction_id': transaction.transaction_id}
+            )
+            
             self.logger.info(f"Transaction {transaction.transaction_id} executed successfully")
             
             # Update net worth
@@ -327,6 +439,13 @@ class AccountingReconciliationEngine:
             return True, transaction.transaction_id
             
         except Exception as e:
+            # NEW: Enhanced error logging
+            self.enhanced_logger.log_error(f"Transaction execution failed: {str(e)}", {
+                'transaction_id': transaction.transaction_id,
+                'debit_account': transaction.debit_account,
+                'credit_account': transaction.credit_account,
+                'amount': str(transaction.amount)
+            })
             self.logger.error(f"Error executing transaction {transaction.transaction_id}: {str(e)}")
             return False, f"Transaction failed: {str(e)}"
     
@@ -607,6 +726,91 @@ class AccountingReconciliationEngine:
         
         with open(filepath, 'w') as f:
             json.dump(export_data, f, indent=2)
+        
+        self.logger.info(f"Accounting data exported to {filepath}")
+    
+    def log_reconciliation_summary(self, reconciliation_type: str = "daily"):
+        """
+        Log a reconciliation summary with enhanced logging.
+        
+        Args:
+            reconciliation_type: Type of reconciliation (daily, monthly, etc.)
+        """
+        try:
+            # Generate reconciliation data
+            total_assets = Decimal('0')
+            total_liabilities = Decimal('0')
+            total_income = Decimal('0')
+            total_expenses = Decimal('0')
+            
+            for account in self.accounts.values():
+                if account.account_type == AccountType.ASSET:
+                    total_assets += account.balance
+                elif account.account_type == AccountType.LIABILITY:
+                    total_liabilities += account.balance
+                elif account.account_type == AccountType.INCOME:
+                    total_income += account.balance
+                elif account.account_type == AccountType.EXPENSE:
+                    total_expenses += account.balance
+            
+            net_worth = total_assets - total_liabilities
+            
+            # Log reconciliation with enhanced logger
+            self.enhanced_logger.log_reconciliation(
+                reconciliation_type=reconciliation_type,
+                status='completed',
+                details={
+                    'total_assets': str(total_assets),
+                    'total_liabilities': str(total_liabilities),
+                    'total_income': str(total_income),
+                    'total_expenses': str(total_expenses),
+                    'net_worth': str(net_worth),
+                    'accounts_reconciled': len(self.accounts),
+                    'transactions_processed': len(self.transactions)
+                },
+                metadata={
+                    'reconciliation_date': datetime.now().isoformat(),
+                    'system_version': 'enhanced_accounting_v1.0'
+                }
+            )
+            
+            self.logger.info(f"{reconciliation_type.capitalize()} reconciliation completed successfully")
+            
+        except Exception as e:
+            self.enhanced_logger.log_error(f"Reconciliation summary failed: {str(e)}", {
+                'reconciliation_type': reconciliation_type,
+                'error_type': 'reconciliation_failure'
+            })
+            self.logger.error(f"Error during reconciliation summary: {str(e)}")
+    
+    def export_enhanced_logs(self, file_path: str):
+        """
+        Export enhanced logs from the accounting engine.
+        
+        Args:
+            file_path: Path to export the enhanced logs
+        """
+        try:
+            self.enhanced_logger.export_logs(file_path, format="json")
+            self.logger.info(f"Enhanced logs exported to {file_path}")
+        except Exception as e:
+            self.logger.error(f"Failed to export enhanced logs: {str(e)}")
+    
+    def generate_reconciliation_summary(self) -> Dict[str, Decimal]:
+        """
+        Generate a reconciliation summary of all account balances.
+        
+        Returns:
+            Dictionary mapping account IDs to balances
+        """
+        summary = {}
+        for account_id, account in self.accounts.items():
+            summary[account_id] = account.balance
+        
+        # Log the reconciliation summary
+        self.log_reconciliation_summary("summary")
+        
+        return summary
 
 
 if __name__ == "__main__":
