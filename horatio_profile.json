@@ -1,0 +1,163 @@
+{
+  "client_id": "horatio",
+  "profile": {
+    "name": "Horatio",
+    "age": 42,
+    "base_income": 125000,
+    "occupation": "Senior Financial Analyst",
+    "education": "MBA in Finance",
+    "marital_status": "married",
+    "dependents": 2,
+    "location": "New York, NY",
+    "industry": "Financial Services"
+  },
+  "vector_profile": {
+    "life_stage": "mid_career",
+    "risk_tolerance": 0.65,
+    "investment_horizon": "long_term",
+    "financial_sophistication": "high",
+    "income_stability": "stable",
+    "debt_to_income_ratio": 0.28,
+    "emergency_fund_months": 6,
+    "retirement_savings_rate": 0.15
+  },
+  "financial_profile": {
+    "total_assets": 850000,
+    "liquid_assets": 150000,
+    "investment_portfolio": 500000,
+    "real_estate": 200000,
+    "total_liabilities": 180000,
+    "monthly_expenses": 8500,
+    "monthly_savings": 3000,
+    "credit_score": 780
+  },
+  "goals": {
+    "primary_goals": [
+      {
+        "goal_id": "retirement_planning",
+        "description": "Secure retirement by age 65",
+        "target_amount": 2500000,
+        "target_date": "2048-01-01",
+        "priority": "high",
+        "current_progress": 0.20
+      },
+      {
+        "goal_id": "college_funding",
+        "description": "Fund children's college education",
+        "target_amount": 400000,
+        "target_date": "2035-01-01",
+        "priority": "medium",
+        "current_progress": 0.15
+      },
+      {
+        "goal_id": "debt_reduction",
+        "description": "Pay off mortgage early",
+        "target_amount": 180000,
+        "target_date": "2030-01-01",
+        "priority": "medium",
+        "current_progress": 0.60
+      }
+    ],
+    "secondary_goals": [
+      {
+        "goal_id": "vacation_fund",
+        "description": "Annual family vacation fund",
+        "target_amount": 15000,
+        "target_date": "2026-01-01",
+        "priority": "low",
+        "current_progress": 0.80
+      }
+    ]
+  },
+  "lifestyle_events": [
+    {
+      "event_id": "career_advancement_2024",
+      "event_type": "income_change",
+      "description": "Promotion to Senior Financial Analyst",
+      "estimated_date": "2024-06-15",
+      "amount": 25000,
+      "category": "career",
+      "impact": "positive",
+      "probability": 0.95
+    },
+    {
+      "event_id": "child_college_2035",
+      "event_type": "major_expense",
+      "description": "First child starts college",
+      "estimated_date": "2035-09-01",
+      "amount": -50000,
+      "category": "education",
+      "impact": "negative",
+      "probability": 0.90
+    },
+    {
+      "event_id": "retirement_2048",
+      "event_type": "life_transition",
+      "description": "Planned retirement",
+      "estimated_date": "2048-01-01",
+      "amount": -125000,
+      "category": "retirement",
+      "impact": "negative",
+      "probability": 0.85
+    },
+    {
+      "event_id": "market_downturn_2025",
+      "event_type": "investment_loss",
+      "description": "Potential market correction",
+      "estimated_date": "2025-03-01",
+      "amount": -75000,
+      "category": "market",
+      "impact": "negative",
+      "probability": 0.30
+    }
+  ],
+  "investment_preferences": {
+    "asset_allocation": {
+      "stocks": 0.60,
+      "bonds": 0.25,
+      "real_estate": 0.10,
+      "cash": 0.05
+    },
+    "investment_style": "growth_and_income",
+    "tax_considerations": "tax_advantaged_first",
+    "esg_preferences": "moderate",
+    "international_exposure": 0.25
+  },
+  "risk_profile": {
+    "risk_capacity": "high",
+    "risk_willingness": "moderate",
+    "risk_need": "medium",
+    "volatility_tolerance": 0.65,
+    "loss_tolerance": 0.40,
+    "time_horizon": "long_term"
+  },
+  "insurance_needs": {
+    "life_insurance": {
+      "coverage_amount": 1000000,
+      "current_coverage": 750000,
+      "type": "term",
+      "priority": "high"
+    },
+    "disability_insurance": {
+      "coverage_amount": 8000,
+      "current_coverage": 6000,
+      "type": "long_term",
+      "priority": "medium"
+    },
+    "health_insurance": {
+      "coverage_type": "employer_provided",
+      "deductible": 2000,
+      "priority": "high"
+    }
+  },
+  "tax_situation": {
+    "filing_status": "married_filing_jointly",
+    "tax_bracket": "24%",
+    "state_tax_rate": 0.0685,
+    "itemized_deductions": true,
+    "tax_loss_harvesting": true
+  },
+  "created_at": "2025-07-17T05:55:00.000Z",
+  "last_updated": "2025-07-17T05:55:00.000Z",
+  "profile_version": "1.0"
+} 

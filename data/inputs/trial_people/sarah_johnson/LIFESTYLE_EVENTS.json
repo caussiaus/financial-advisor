@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "event_type": "family",
+      "expected_age": 36,
+      "estimated_cost": 8000,
+      "probability": 0.9
+    },
+    {
+      "event_type": "housing",
+      "expected_age": 37,
+      "estimated_cost": 80000,
+      "probability": 0.8
+    },
+    {
+      "event_type": "career_change",
+      "expected_age": 40,
+      "estimated_cost": 5000,
+      "probability": 0.5
+    }
+  ]
+}

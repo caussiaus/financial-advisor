@@ -1,0 +1,47 @@
+{
+  "mesh_statistics": {
+    "avg_total_nodes": 50.0,
+    "avg_solidified_nodes": 0.0,
+    "avg_visible_nodes": 50.0,
+    "avg_current_wealth": 255056.11199999996
+  },
+  "recommendation_statistics": {
+    "total_recommendations": 794,
+    "avg_recommendations_per_person": 79.4,
+    "recommendation_type_distribution": {
+      "emergency_fund": 240,
+      "debt_payoff": 144,
+      "investment": 240,
+      "savings_increase": 50,
+      "reallocation": 120
+    },
+    "priority_distribution": {
+      "HIGH": 434,
+      "MEDIUM": 240,
+      "LOW": 120
+    },
+    "risk_distribution": {
+      "Very Low": 455,
+      "Low": 195,
+      "Medium": 66,
+      "High": 65,
+      "Very High": 13
+    }
+  },
+  "evaluation_statistics": {
+    "avg_overall_effectiveness": 3.1211111111111114,
+    "avg_recommendation_coverage": 8.68,
+    "avg_strategy_diversification": 0.6833333333333333,
+    "avg_mesh_path_efficiency": 0.0,
+    "avg_prediction_accuracy": 0.832165955823507,
+    "avg_action_feasibility": 0.9338130578556507
+  },
+  "prediction_statistics": {
+    "avg_diversity_score": 0.6833333333333333,
+    "avg_temporal_consistency": 0.8848036314718797,
+    "avg_milestone_alignment": 0.7333333333333334,
+    "avg_feasibility_score": 0.9395959542045847
+  },
+  "system_health_score": 1.4900086987466077,
+  "subjects_analyzed": 10
+}

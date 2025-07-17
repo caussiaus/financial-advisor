@@ -1,0 +1,164 @@
+{
+  "timestamp": "20250717_052059",
+  "trial_people": {
+    "alex": {
+      "name": "Alex",
+      "age": 45,
+      "life_stage": "established",
+      "income": 120000,
+      "net_worth": 30000,
+      "risk_tolerance": 0.8,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "garcia_family": {
+      "name": "Garcia Family",
+      "age": 50,
+      "life_stage": "established",
+      "income": 150000,
+      "net_worth": 40000,
+      "risk_tolerance": 0.8,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "sarah_johnson": {
+      "name": "Sarah Johnson",
+      "age": 35,
+      "life_stage": "mid_career",
+      "income": 85000,
+      "net_worth": 120000,
+      "risk_tolerance": 0.6,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "emily_thompson": {
+      "name": "Emily Thompson",
+      "age": 58,
+      "life_stage": "pre_retirement",
+      "income": 95000,
+      "net_worth": 800000,
+      "risk_tolerance": 0.3,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "sam": {
+      "name": "Sam",
+      "age": 38,
+      "life_stage": "mid_career",
+      "income": 95000,
+      "net_worth": 40000,
+      "risk_tolerance": 0.7,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "patel_household": {
+      "name": "Patel Household",
+      "age": 32,
+      "life_stage": "mid_career",
+      "income": 60000,
+      "net_worth": 10000,
+      "risk_tolerance": 0.5,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "david_wilson": {
+      "name": "David Wilson",
+      "age": 68,
+      "life_stage": "retirement",
+      "income": 45000,
+      "net_worth": 1200000,
+      "risk_tolerance": 0.2,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "alex_chen": {
+      "name": "Alex Chen",
+      "age": 28,
+      "life_stage": "early_career",
+      "income": 65000,
+      "net_worth": 25000,
+      "risk_tolerance": 0.8,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "drew": {
+      "name": "Drew",
+      "age": 50,
+      "life_stage": "established",
+      "income": 200000,
+      "net_worth": 60000,
+      "risk_tolerance": 1.0,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "michael_rodriguez": {
+      "name": "Michael Rodriguez",
+      "age": 42,
+      "life_stage": "established",
+      "income": 110000,
+      "net_worth": 350000,
+      "risk_tolerance": 0.4,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "morgan": {
+      "name": "Morgan",
+      "age": 45,
+      "life_stage": "established",
+      "income": 130000,
+      "net_worth": 50000,
+      "risk_tolerance": 0.8,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "johnson_family": {
+      "name": "Johnson Family",
+      "age": 38,
+      "life_stage": "mid_career",
+      "income": 80000,
+      "net_worth": 200000,
+      "risk_tolerance": 0.7999999999999999,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "taylor": {
+      "name": "Taylor",
+      "age": 55,
+      "life_stage": "established",
+      "income": 65000,
+      "net_worth": 20000,
+      "risk_tolerance": 0.5,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "casey": {
+      "name": "Casey",
+      "age": 32,
+      "life_stage": "mid_career",
+      "income": 78000,
+      "net_worth": 25000,
+      "risk_tolerance": 0.5,
+      "has_mesh_data": true,
+      "has_embedding": true
+    },
+    "jordan": {
+      "name": "Jordan",
+      "age": 38,
+      "life_stage": "mid_career",
+      "income": 85000,
+      "net_worth": 45000,
+      "risk_tolerance": 0.8999999999999999,
+      "has_mesh_data": true,
+      "has_embedding": true
+    }
+  },
+  "interpolated_surfaces": {},
+  "task_schedule": {
+    "queued_tasks": 5,
+    "completed_tasks": 0
+  },
+  "vector_database_stats": {
+    "total_embeddings": 13,
+    "embedding_dimension": 128
+  }
+}

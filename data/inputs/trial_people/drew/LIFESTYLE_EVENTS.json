@@ -1,0 +1,10 @@
+{
+  "events": [
+    {
+      "event_type": "career",
+      "expected_age": 50,
+      "estimated_cost": 200000,
+      "probability": 1.0
+    }
+  ]
+}

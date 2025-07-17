@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "event_type": "retirement",
+      "expected_age": 65,
+      "estimated_cost": 0,
+      "probability": 0.95
+    },
+    {
+      "event_type": "health",
+      "expected_age": 60,
+      "estimated_cost": 15000,
+      "probability": 0.6
+    }
+  ]
+}

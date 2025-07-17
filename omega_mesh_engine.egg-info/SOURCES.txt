@@ -1,9 +1,0 @@
-LICENSE
-README.md
-setup.py
-omega_mesh_engine.egg-info/PKG-INFO
-omega_mesh_engine.egg-info/SOURCES.txt
-omega_mesh_engine.egg-info/dependency_links.txt
-omega_mesh_engine.egg-info/requires.txt
-omega_mesh_engine.egg-info/top_level.txt
-tests/test_cuda_acceleration.py

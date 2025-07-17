@@ -1,0 +1,482 @@
+[
+  {
+    "subject_id": "subject_01_christopher",
+    "profile_summary": {
+      "name": "Christopher",
+      "age": 36,
+      "occupation": "Marketing Manager",
+      "income": 63792,
+      "risk_tolerance": "Conservative"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 77,
+      "effectiveness_score": 3.755555555555555,
+      "prediction_accuracy": 0.8802369538129249
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 637.9200000000001,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $638"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 797.4,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $797"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 637.9200000000001,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $638"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 797.4,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $797"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 637.9200000000001,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $638"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_02_mary",
+    "profile_summary": {
+      "name": "Mary",
+      "age": 28,
+      "occupation": "Accountant",
+      "income": 48961,
+      "risk_tolerance": "Conservative"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 77,
+      "effectiveness_score": 3.755555555555555,
+      "prediction_accuracy": 0.7620245601373662
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 489.61000000000007,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $490"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 612.0125,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $612"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 489.61000000000007,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $490"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 612.0125,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $612"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 489.61000000000007,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $490"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_03_patricia",
+    "profile_summary": {
+      "name": "Patricia",
+      "age": 26,
+      "occupation": "Consultant",
+      "income": 144751,
+      "risk_tolerance": "Conservative"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 101,
+      "effectiveness_score": 3.8111111111111113,
+      "prediction_accuracy": 0.756181640471209
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 1447.5100000000002,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,448"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1500,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,500"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 1447.5100000000002,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,448"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1500,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,500"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 1447.5100000000002,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,448"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_04_robert",
+    "profile_summary": {
+      "name": "Robert",
+      "age": 51,
+      "occupation": "Consultant",
+      "income": 113749,
+      "risk_tolerance": "Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 101,
+      "effectiveness_score": 3.8111111111111113,
+      "prediction_accuracy": 0.8712333072732812
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 1137.49,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,137"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1421.8625,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,422"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 1137.49,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,137"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1421.8625,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,422"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 1137.49,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,137"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_05_linda",
+    "profile_summary": {
+      "name": "Linda",
+      "age": 48,
+      "occupation": "Architect",
+      "income": 89113,
+      "risk_tolerance": "Conservative"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 53,
+      "effectiveness_score": 2.1,
+      "prediction_accuracy": 0.8281629335378252
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 891.13,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $891"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 891.13,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $891"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 891.13,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $891"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 891.13,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $891"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 891.13,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $891"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_06_robert",
+    "profile_summary": {
+      "name": "Robert",
+      "age": 59,
+      "occupation": "Therapist",
+      "income": 57596,
+      "risk_tolerance": "Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 77,
+      "effectiveness_score": 2.1555555555555554,
+      "prediction_accuracy": 0.882590761457085
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 575.96,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $576"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 575.96,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $576"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 575.96,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $576"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 575.96,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $576"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 575.96,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $576"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_07_anthony",
+    "profile_summary": {
+      "name": "Anthony",
+      "age": 28,
+      "occupation": "Doctor",
+      "income": 181880,
+      "risk_tolerance": "Moderate"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 101,
+      "effectiveness_score": 3.8111111111111113,
+      "prediction_accuracy": 0.7546049852280093
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 1818.8000000000002,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,819"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1500,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,500"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 1818.8000000000002,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,819"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 1500,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $1,500"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 1818.8000000000002,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $1,819"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_08_barbara",
+    "profile_summary": {
+      "name": "Barbara",
+      "age": 56,
+      "occupation": "Entrepreneur",
+      "income": 68856,
+      "risk_tolerance": "Very Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 53,
+      "effectiveness_score": 2.1,
+      "prediction_accuracy": 0.8748139771133194
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 688.56,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $689"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 688.56,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $689"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 688.56,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $689"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 688.56,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $689"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 688.56,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $689"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_09_jessica",
+    "profile_summary": {
+      "name": "Jessica",
+      "age": 59,
+      "occupation": "Chef",
+      "income": 50886,
+      "risk_tolerance": "Very Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 77,
+      "effectiveness_score": 3.755555555555555,
+      "prediction_accuracy": 0.8602282469324984
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 508.85999999999996,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $509"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 636.0749999999999,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $636"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 508.85999999999996,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $509"
+      },
+      {
+        "type": "debt_payoff",
+        "amount": 636.0749999999999,
+        "priority": "HIGH",
+        "description": "Extra debt payment of $636"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 508.85999999999996,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $509"
+      }
+    ]
+  },
+  {
+    "subject_id": "subject_10_jennifer",
+    "profile_summary": {
+      "name": "Jennifer",
+      "age": 49,
+      "occupation": "Marketing Manager",
+      "income": 94789,
+      "risk_tolerance": "Very Aggressive"
+    },
+    "system_performance": {
+      "mesh_nodes": 50,
+      "recommendations_count": 77,
+      "effectiveness_score": 2.1555555555555554,
+      "prediction_accuracy": 0.8515821922715529
+    },
+    "top_recommendations": [
+      {
+        "type": "emergency_fund",
+        "amount": 947.89,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $948"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 947.89,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $948"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 947.89,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $948"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 947.89,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $948"
+      },
+      {
+        "type": "emergency_fund",
+        "amount": 947.89,
+        "priority": "HIGH",
+        "description": "Increase emergency fund by $948"
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "monthly_income": 16666.666666666668,
+  "monthly_expenses": 11666.666666666666,
+  "savings_rate": 0.3000000000000001,
+  "debt_to_income_ratio": 0.2,
+  "investment_portfolio": {
+    "stocks": 0.6,
+    "bonds": 0.3,
+    "cash": 0.1
+  }
+}

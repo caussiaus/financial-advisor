@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexibility vs. Comfort Financial Mesh Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        .panel {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+        }
+        .client-selector {
+            margin-bottom: 20px;
+        }
+        .client-selector select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .mesh-chart {
+            height: 500px;
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .recommendations {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .recommendation {
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .recommendation.high {
+            background-color: #ffebee;
+            border-left-color: #f44336;
+        }
+        .recommendation.medium {
+            background-color: #fff3e0;
+            border-left-color: #ff9800;
+        }
+        .recommendation.low {
+            background-color: #e8f5e8;
+            border-left-color: #4caf50;
+        }
+        .client-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .metric-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Flexibility vs. Comfort Financial Mesh Dashboard</h1>
+            <p>Visualize your financial future through the lens of flexibility and comfort</p>
+        </div>
+        
+        <div class="content">
+            <div class="panel">
+                <div class="client-selector">
+                    <label for="clientSelect">Select Client:</label>
+                    <select id="clientSelect">
+                        <option value="">Choose a client...</option>
+                        {% for client_id, client_data in clients.items() %}
+                        <option value="{{ client_id }}">{{ client_data.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="metrics" id="metrics" style="display: none;">
+                    <div class="metric-card">
+                        <div class="metric-value" id="totalAssets">$0</div>
+                        <div class="metric-label">Total Assets</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="flexibilityScore">0.0</div>
+                        <div class="metric-label">Flexibility Score</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="comfortScore">0.0</div>
+                        <div class="metric-label">Comfort Score</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="savingsRate">0%</div>
+                        <div class="metric-label">Savings Rate</div>
+                    </div>
+                </div>
+                
+                <div class="mesh-chart" id="meshChart"></div>
+            </div>
+            
+            <div class="panel">
+                <h3>Recommendations</h3>
+                <div class="recommendations" id="recommendations"></div>
+                
+                <h3>Financial Goals & Payments</h3>
+                <div id="goalPayments"></div>
+                
+                <h3>Client Data Editor</h3>
+                <div class="client-form" id="clientForm" style="display: none;">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" id="clientName" />
+                    </div>
+                    <div class="form-group">
+                        <label>Age:</label>
+                        <input type="number" id="clientAge" />
+                    </div>
+                    <div class="form-group">
+                        <label>Income:</label>
+                        <input type="number" id="clientIncome" />
+                    </div>
+                    <div class="form-group">
+                        <label>Expenses:</label>
+                        <input type="number" id="clientExpenses" />
+                    </div>
+                    <div class="form-group">
+                        <label>Risk Tolerance:</label>
+                        <select id="clientRiskTolerance">
+                            <option value="conservative">Conservative</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="aggressive">Aggressive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Cash:</label>
+                        <input type="number" id="clientCash" />
+                    </div>
+                    <div class="form-group">
+                        <label>Stocks:</label>
+                        <input type="number" id="clientStocks" />
+                    </div>
+                    <div class="form-group">
+                        <label>Bonds:</label>
+                        <input type="number" id="clientBonds" />
+                    </div>
+                    <div class="form-group">
+                        <label>Real Estate:</label>
+                        <input type="number" id="clientRealEstate" />
+                    </div>
+                    <button class="btn" onclick="updateClientData()">Update Client Data</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentClientId = null;
+        
+        $('#clientSelect').change(function() {
+            const clientId = $(this).val();
+            if (clientId) {
+                loadClientData(clientId);
+            }
+        });
+        
+        function loadClientData(clientId) {
+            currentClientId = clientId;
+            
+            // Load mesh data
+            $.get(`/api/mesh/${clientId}`)
+                .done(function(data) {
+                    updateMeshChart(data);
+                    updateRecommendations(data.recommendations);
+                    updateGoalPayments(data.goal_payments);
+                    updateMetrics(data.client_summary, data.current_position);
+                    loadClientForm(clientId);
+                })
+                .fail(function(xhr, status, error) {
+                    console.error('Error loading client data:', error);
+                });
+        }
+        
+        function updateMeshChart(data) {
+            const scenarios = data.scenarios;
+            
+            const trace1 = {
+                x: scenarios.map(s => s.x),
+                y: scenarios.map(s => s.y),
+                mode: 'markers',
+                type: 'scatter',
+                marker: {
+                    size: scenarios.map(s => s.size),
+                    color: scenarios.map(s => s.color),
+                    opacity: 0.7
+                },
+                text: scenarios.map((s, i) => `Scenario ${i + 1}`),
+                hovertemplate: '<b>%{text}</b><br>Flexibility: %{x:.3f}<br>Comfort: %{y:.3f}<extra></extra>',
+                name: 'Financial Scenarios'
+            };
+            
+            const trace2 = {
+                x: data.target_zone.map(p => p[0]) + [data.target_zone[0][0]],
+                y: data.target_zone.map(p => p[1]) + [data.target_zone[0][1]],
+                mode: 'lines',
+                type: 'scatter',
+                line: {color: 'green', width: 3, dash: 'dash'},
+                name: 'Target Zone'
+            };
+            
+            const trace3 = {
+                x: data.optimal_path.map(p => p[0]),
+                y: data.optimal_path.map(p => p[1]),
+                mode: 'lines+markers',
+                type: 'scatter',
+                line: {color: 'blue', width: 2},
+                marker: {size: 8, color: 'blue'},
+                name: 'Optimal Path'
+            };
+            
+            const layout = {
+                title: 'Financial Mesh: Flexibility vs. Comfort',
+                xaxis: {title: 'Flexibility Score', range: [0, 1]},
+                yaxis: {title: 'Comfort Score', range: [0, 1]},
+                width: 600,
+                height: 500
+            };
+            
+            Plotly.newPlot('meshChart', [trace1, trace2, trace3], layout);
+        }
+        
+        function updateRecommendations(recommendations) {
+            const container = $('#recommendations');
+            container.empty();
+            
+            recommendations.forEach(rec => {
+                const recHtml = `
+                    <div class="recommendation ${rec.priority}">
+                        <h4>${rec.type.charAt(0).toUpperCase() + rec.type.slice(1)}</h4>
+                        <p>${rec.description}</p>
+                        <ul>
+                            ${rec.actions.map(action => `<li>${action}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+                container.append(recHtml);
+            });
+        }
+        
+        function updateGoalPayments(goalPayments) {
+            const container = $('#goalPayments');
+            container.empty();
+            
+            goalPayments.forEach(goal => {
+                const goalHtml = `
+                    <div style="margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+                        <h4>${goal.name}</h4>
+                        <p><strong>Amount:</strong> $${goal.amount.toLocaleString()}</p>
+                        <p><strong>Year:</strong> ${goal.year} (${goal.years_to_goal} years)</p>
+                        <p><strong>Payment Type:</strong> ${goal.payment_type}</p>
+                        <p><strong>Payment Amount:</strong> $${goal.payment_amount.toLocaleString()}</p>
+                    </div>
+                `;
+                container.append(goalHtml);
+            });
+        }
+        
+        function updateMetrics(summary, position) {
+            $('#totalAssets').text('$' + summary.total_assets.toLocaleString());
+            $('#flexibilityScore').text(position.flexibility.toFixed(3));
+            $('#comfortScore').text(position.comfort.toFixed(3));
+            $('#savingsRate').text((summary.savings_rate * 100).toFixed(1) + '%');
+            $('#metrics').show();
+        }
+        
+        function loadClientForm(clientId) {
+            $.get(`/api/client/${clientId}`)
+                .done(function(data) {
+                    $('#clientName').val(data.name);
+                    $('#clientAge').val(data.age);
+                    $('#clientIncome').val(data.income);
+                    $('#clientExpenses').val(data.expenses);
+                    $('#clientRiskTolerance').val(data.risk_tolerance);
+                    $('#clientCash').val(data.current_assets.cash);
+                    $('#clientStocks').val(data.current_assets.stocks);
+                    $('#clientBonds').val(data.current_assets.bonds);
+                    $('#clientRealEstate').val(data.current_assets.real_estate);
+                    $('#clientForm').show();
+                });
+        }
+        
+        function updateClientData() {
+            if (!currentClientId) return;
+            
+            const updatedData = {
+                name: $('#clientName').val(),
+                age: parseInt($('#clientAge').val()),
+                income: parseFloat($('#clientIncome').val()),
+                expenses: parseFloat($('#clientExpenses').val()),
+                risk_tolerance: $('#clientRiskTolerance').val(),
+                current_assets: {
+                    cash: parseFloat($('#clientCash').val()),
+                    stocks: parseFloat($('#clientStocks').val()),
+                    bonds: parseFloat($('#clientBonds').val()),
+                    real_estate: parseFloat($('#clientRealEstate').val())
+                }
+            };
+            
+            $.ajax({
+                url: `/api/client/${currentClientId}`,
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(updatedData)
+            })
+            .done(function(response) {
+                alert('Client data updated successfully!');
+                loadClientData(currentClientId);
+            })
+            .fail(function(xhr, status, error) {
+                alert('Error updating client data: ' + error);
+            });
+        }
+    </script>
+</body>
+</html>

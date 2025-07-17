@@ -50,113 +50,85 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center my-4">🎯 Unified Cash Flow Model Dashboard</h1>
-                <p class="text-center text-muted">Interactive visualization of time uncertainty mesh and key decision moments</p>
+                <h1 class="text-center my-4">🌐 Mesh Congruence System Dashboard</h1>
+                <p class="text-center text-muted">End-to-end mesh congruence, event simulation, and recommendations</p>
             </div>
         </div>
 
-        <!-- Model Overview -->
+        <!-- New Client Entry -->
         <div class="row mb-4">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        <h5>📊 Model Overview</h5>
-                    </div>
-                    <div class="card-body" id="model-overview">
-                        <div class="loading">Loading model information...</div>
+                    <div class="card-header"><h5>➕ Add New Client</h5></div>
+                    <div class="card-body">
+                        <form id="add-client-form">
+                            <div class="mb-2">
+                                <label>Name</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="mb-2">
+                                <label>Age</label>
+                                <input type="number" class="form-control" name="age" required>
+                            </div>
+                            <div class="mb-2">
+                                <label>Income</label>
+                                <input type="number" class="form-control" name="base_income" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Client</button>
+                        </form>
+                        <div id="add-client-result" class="mt-2"></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        <h5>⚖️ Accounting Metrics</h5>
-                    </div>
-                    <div class="card-body" id="accounting-metrics">
-                        <div class="loading">Loading accounting metrics...</div>
+                    <div class="card-header"><h5>👥 Client List</h5></div>
+                    <div class="card-body">
+                        <ul id="client-list" class="list-group"></ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Cash Flow Timeline -->
+        <!-- Event Simulation & Recommendations -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"><h5>⚡ Simulate Event</h5></div>
+                    <div class="card-body">
+                        <form id="simulate-event-form">
+                            <div class="mb-2">
+                                <label>Client</label>
+                                <select class="form-control" name="client_id" id="event-client-select"></select>
+                            </div>
+                            <div class="mb-2">
+                                <label>Event Type</label>
+                                <input type="text" class="form-control" name="event_type" value="synthetic">
+                            </div>
+                            <button type="submit" class="btn btn-warning">Simulate Event</button>
+                        </form>
+                        <div id="simulate-event-result" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"><h5>💡 Recommendations</h5></div>
+                    <div class="card-body" id="recommendations-box">
+                        <div class="loading">Select a client to view recommendations.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mesh Congruence Dashboard -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h5>📈 Cash Flow Timeline</h5>
-                    </div>
+                    <div class="card-header"><h5>📊 Mesh Congruence Dashboard</h5></div>
                     <div class="card-body">
-                        <div id="timeline-chart" class="chart-container"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Decision Moments -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>🎯 Key Decision Moments</h5>
-                    </div>
-                    <div class="card-body" id="decision-moments">
-                        <div class="loading">Loading decision moments...</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mesh Visualization -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>🌐 Time Uncertainty Mesh</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="mesh-chart" class="chart-container"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>⚠️ Risk Analysis</h5>
-                    </div>
-                    <div class="card-body" id="risk-analysis">
-                        <div class="loading">Loading risk analysis...</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Custom Simulation -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>🔧 Custom Simulation</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="initial-wealth" class="form-label">Initial Wealth ($)</label>
-                                <input type="number" class="form-control" id="initial-wealth" value="1000000">
-                            </div>
-                            <div class="col-md-4">
-                                <label for="event-type" class="form-label">Event Type</label>
-                                <select class="form-control" id="event-type">
-                                    <option value="income">Income</option>
-                                    <option value="expense">Expense</option>
-                                    <option value="transfer">Transfer</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-primary mt-4" onclick="runCustomSimulation()">Run Simulation</button>
-                            </div>
-                        </div>
-                        <div id="custom-simulation-results" class="mt-3"></div>
+                        <div id="mesh-dashboard" class="chart-container"></div>
+                        <div id="mesh-dashboard-table" class="mt-3"></div>
                     </div>
                 </div>
             </div>
@@ -172,6 +144,8 @@
             loadDecisionMoments();
             loadMeshVisualization();
             loadRiskAnalysis();
+            loadClients(); // Added for new client form
+            loadMeshDashboard(); // Added for mesh dashboard
         });
 
         function loadModelInfo() {
@@ -402,6 +376,92 @@
                     `;
                     $('#custom-simulation-results').html(html);
                 }
+            });
+        }
+
+        // --- Add Client ---
+        $('#add-client-form').on('submit', function(e) {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(this));
+            $.ajax({
+                url: '/api/add_client',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(res) {
+                    $('#add-client-result').html('<span class="text-success">Client added: ' + res.client_id + '</span>');
+                    loadClients();
+                },
+                error: function(xhr) {
+                    $('#add-client-result').html('<span class="text-danger">Error: ' + xhr.responseJSON.error + '</span>');
+                }
+            });
+        });
+
+        // --- Load Clients ---
+        function loadClients() {
+            $.get('/api/clients', function(res) {
+                let html = '';
+                res.clients.forEach(function(client) {
+                    html += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>${client}</span>
+                        <button class="btn btn-sm btn-outline-info" onclick="showRecommendations('${client}')">Recommendations</button>
+                    </li>`;
+                });
+                $('#client-list').html(html);
+                // Update event client select
+                let options = res.clients.map(c => `<option value="${c}">${c}</option>`).join('');
+                $('#event-client-select').html(options);
+            });
+        }
+
+        // --- Simulate Event ---
+        $('#simulate-event-form').on('submit', function(e) {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(this));
+            $.ajax({
+                url: '/api/simulate_event',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(res) {
+                    $('#simulate-event-result').html('<span class="text-success">Event simulated!</span>');
+                    loadMeshDashboard();
+                },
+                error: function(xhr) {
+                    $('#simulate-event-result').html('<span class="text-danger">Error: ' + xhr.responseJSON.error + '</span>');
+                }
+            });
+        });
+
+        // --- Show Recommendations ---
+        function showRecommendations(client_id) {
+            $.get('/api/recommendations?client_id=' + client_id, function(res) {
+                let html = '<h6>Recommendations for ' + client_id + ':</h6>';
+                for (const [cat, recs] of Object.entries(res.recommendations)) {
+                    html += `<b>${cat}:</b><ul>`;
+                    recs.forEach(r => { html += `<li>${r}</li>`; });
+                    html += '</ul>';
+                }
+                $('#recommendations-box').html(html);
+            });
+        }
+
+        // --- Mesh Dashboard ---
+        function loadMeshDashboard() {
+            $.get('/api/mesh_dashboard', function(res) {
+                // Table
+                let table = '<table class="table table-bordered"><thead><tr><th>Client 1</th><th>Client 2</th><th>Congruence</th></tr></thead><tbody>';
+                res.congruence_results.forEach(function(row) {
+                    table += `<tr><td>${row.client_1}</td><td>${row.client_2}</td><td>${row.congruence.toFixed(3)}</td></tr>`;
+                });
+                table += '</tbody></table>';
+                $('#mesh-dashboard-table').html(table);
+                // Chart
+                let x = res.congruence_results.map(r => r.client_1 + ' & ' + r.client_2);
+                let y = res.congruence_results.map(r => r.congruence);
+                let data = [{ x: x, y: y, type: 'bar', marker: { color: '#667eea' } }];
+                Plotly.newPlot('mesh-dashboard', data, { title: 'Mesh Congruence Scores', yaxis: { title: 'Congruence' } });
             });
         }
     </script>

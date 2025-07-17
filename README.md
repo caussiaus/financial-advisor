@@ -1,273 +1,147 @@
-# 🌐 Omega Mesh Financial System
-
-**A Continuous Stochastic Process for Ultra-Flexible Financial Planning**
+# MINTT v1 - Multiple INterpolation Trial Triangle
 
 ## Overview
 
-The Omega Mesh Financial System is a sophisticated financial modeling framework that implements a continuous stochastic process for managing financial milestones and payment structures. The system treats financial decision-making as a geometric Brownian motion process where infinite paths exist, and as decisions are made, past alternatives solidify while future possibilities evolve dynamically.
+MINTT v1 is a refactored financial analysis system that focuses on:
+- **Multiple profile ingestion** from PDF documents
+- **Feature selection** with dynamic unit detection
+- **Congruence triangle matching** for mesh interpolation
+- **Context-aware summarization** with number detection
+- **Real-time service** for PDF processing and analysis
 
-## 🎯 Core Concept
+## Key Components
 
-The system addresses your specific use case:
+### Core MINTT System
+- `src/mintt_core.py` - Core MINTT system with feature selection
+- `src/mintt_interpolation.py` - Multiple profile interpolation
+- `src/mintt_service.py` - Service for number detection and context analysis
 
-> *"Give the front-end the case PDF and the PDF gets life milestone and financial change moments. Timestamp them and refine the logic that creates the framework that evaluates all execution methodologies for the financial milestones - the different payment structures they may have."*
+### PDF Processing
+- `src/enhanced_pdf_processor.py` - Advanced PDF processing with NLP
+- `src/trial_people_manager.py` - Trial people management and interpolation
 
-The **Omega mesh** represents all possible financial states and decisions. As you progress through time and make payments:
-- Past paths in the omega disappear (solidify)
-- Future visibility adjusts based on your actions  
-- The system supports ultra-flexible payment structures
-- Accounting constraints are always respected
+### Mesh Engine
+- `src/mesh_congruence_engine.py` - Congruence triangle matching
+- `src/mesh_vector_database.py` - Vector database for similarity matching
+- `src/stochastic_mesh_engine.py` - Stochastic mesh generation
 
-## 🚀 Key Features
+### Synthetic Data
+- `src/synthetic_lifestyle_engine.py` - Synthetic lifestyle generation
+- `src/json_to_vector_converter.py` - JSON to vector conversion
+- `src/synthetic_data_generator.py` - Synthetic data generation
 
-### 1. PDF Processing & Milestone Extraction
-- **Enhanced PDF Processor** extracts life milestones and financial events
-- Automatically timestamps events and estimates financial impacts
-- Identifies payment flexibility requirements for each milestone
-- Supports various document formats and structures
+## Quick Start
 
-### 2. Stochastic Mesh Engine (The "Omega")
-- **Geometric Brownian Motion** modeling for wealth evolution
-- **Infinite path generation** with probabilistic branching
-- **Dynamic mesh evolution** where past alternatives disappear
-- **Visibility radius** that adjusts based on uncertainty and time
-- **Path solidification** as decisions are actualized
-
-### 3. Ultra-Flexible Payment System
-The system supports any payment structure imaginable:
-
-```python
-# Examples of supported payment flexibility:
-"1% today, 11% next Tuesday, 88% on grandmother's birthday"
-"Any amount on any date"
-"Milestone-triggered payments"
-"Percentage-based installments"
-"Custom frequency scheduling"
-```
-
-### 4. Accounting Reconciliation Engine
-- **Double-entry bookkeeping** for financial accuracy
-- **Payment constraint validation** (minimum balances, daily limits)
-- **Real-time balance checking** before payment execution
-- **Transaction approval workflows** for large amounts
-- **Comprehensive financial statements**
-
-## 🏗️ System Architecture
-
-```
-┌─────────────────┐    ┌──────────────────┐    ┌────────────────────┐
-│   PDF Input     │────│  Milestone       │────│   Omega Mesh       │
-│                 │    │  Extraction      │    │   Generation       │
-│ • IPS Documents │    │                  │    │                    │
-│ • Financial     │    │ • Event Dating   │    │ • GBM Modeling     │
-│   Plans         │    │ • Impact Analysis│    │ • Path Branching   │
-│ • Life Events   │    │ • Flexibility    │    │ • Probability      │
-└─────────────────┘    │   Assessment     │    │   Calculation      │
-                       └──────────────────┘    └────────────────────┘
-                                │                        │
-                                ▼                        ▼
-┌─────────────────┐    ┌──────────────────┐    ┌────────────────────┐
-│   Payment       │────│  Accounting      │────│   Mesh Evolution   │
-│   Execution     │    │  Validation      │    │                    │
-│                 │    │                  │    │ • Path Solidify    │
-│ • Flexible      │    │ • Balance Check  │    │ • Visibility Update│
-│   Scheduling    │    │ • Constraint     │    │ • Future Pruning   │
-│ • Amount        │    │   Validation     │    │ • Probability      │
-│   Customization │    │ • Double-entry   │    │   Recalculation    │
-└─────────────────┘    │   Recording      │    └────────────────────┘
-                       └──────────────────┘
-```
-
-## 🎬 Quick Start
-
-1. **Install Dependencies**
+1. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **Run the Demonstration**
+2. **Start the MINTT service:**
    ```bash
-   python demo_omega_mesh.py
+   python -c "from src.mintt_service import MINTTService; service = MINTTService()"
    ```
 
-3. **With Your Own PDF**
+3. **Process PDFs with feature selection:**
    ```python
-   # Place your IPS PDF in data/uploads/
-   # The system will automatically extract milestones
+   from src.mintt_core import MINTTCore
+   
+   mintt = MINTTCore()
+   result = mintt.process_pdf_with_feature_selection("path/to/document.pdf")
    ```
 
-## 💡 Example Usage
+4. **Interpolate multiple profiles:**
+   ```python
+   from src.mintt_interpolation import MINTTInterpolation
+   
+   interpolation = MINTTInterpolation(mintt_core, trial_manager)
+   result = interpolation.interpolate_profiles(target_id, source_ids)
+   ```
 
-```python
-from src.omega_mesh_integration import OmegaMeshIntegration
+## Architecture
 
-# Initialize with your financial state
-initial_state = {
-    'total_wealth': 500000,
-    'cash': 100000,
-    'savings': 150000,
-    'investments': 250000
-}
-
-# Create the Omega mesh system
-omega_system = OmegaMeshIntegration(initial_state)
-
-# Process your IPS document
-milestones = omega_system.process_ips_document("your_ips.pdf")
-
-# Demonstrate ultra-flexible payments
-payment_demo = omega_system.demonstrate_flexible_payment()
-
-# Show mesh evolution
-evolution = omega_system.show_omega_mesh_evolution()
+### Feature Selection Pipeline
+```
+PDF Input → Feature Detection → Unit Normalization → Context Analysis → Feature Summary
 ```
 
-## 🌊 The Stochastic Process Explained
-
-### Geometric Brownian Motion
-The system uses GBM to model wealth evolution:
+### Interpolation Pipeline
 ```
-dS(t) = μS(t)dt + σS(t)dW(t)
-```
-Where:
-- `S(t)` = wealth at time t
-- `μ` = drift (expected return)
-- `σ` = volatility
-- `dW(t)` = Wiener process (random component)
-
-### Mesh Evolution
-1. **Initial State**: Omega contains all possible financial paths
-2. **Decision Making**: When payments are made, paths solidify
-3. **Past Pruning**: Alternative histories disappear from the mesh
-4. **Future Adjustment**: Visibility and probabilities update
-5. **Continuous Process**: The mesh evolves continuously over time
-
-### Payment Flexibility
-The system supports any payment structure:
-
-```python
-# Ultra-flexible payment options
-options = {
-    'immediate': "1% payment today",
-    'scheduled': "11% payment next Tuesday", 
-    'custom_date': "88% on grandmother's birthday",
-    'milestone_triggered': "Pay when goal achieved",
-    'fully_custom': "Any amount, any date"
-}
+Multiple Profiles → Congruence Triangle Matching → Feature Interpolation → Quality Assessment
 ```
 
-## 📊 Generated Outputs
-
-### 1. Interactive Dashboard
-- **Milestone Timeline**: Visual representation of financial events
-- **Mesh Evolution**: Real-time view of path solidification
-- **Payment Options**: Flexible scheduling interface
-- **Wealth Trajectory**: Projected financial outcomes
-
-### 2. Comprehensive Reports
-- **System Overview**: High-level statistics and status
-- **Milestone Analysis**: Detailed event breakdown
-- **Mesh Statistics**: Node counts, probabilities, visibility
-- **Financial Statements**: Balance sheets and transaction history
-- **Payment History**: Complete record of all transactions
-
-### 3. Export Formats
-- **JSON**: Machine-readable system state
-- **HTML**: Interactive visualizations
-- **CSV**: Data for external analysis
-
-## 🔧 Configuration
-
-### Mesh Parameters
-```python
-{
-    'time_horizon_years': 10,
-    'visibility_decay_rate': 0.1,
-    'max_lookahead_days': 1825,
-    'scenario_branches': 50,
-    'probability_threshold': 0.001
-}
+### Service Pipeline
+```
+Service Request → Number Detection → Context Analysis → Summarization → Response
 ```
 
-### Accounting Constraints
-```python
-{
-    'min_balance': 1000,
-    'max_single_payment': 50000,
-    'daily_limit': 100000,
-    'monthly_limit': 500000,
-    'requires_approval': True
-}
+## Key Features
+
+### 1. Advanced Feature Selection
+- Automatic detection of financial amounts, dates, and categorical data
+- Dynamic unit detection and conversion
+- Confidence scoring for extracted features
+- Context-aware feature analysis
+
+### 2. Multiple Profile Interpolation
+- Congruence triangle matching for similarity
+- Multiple interpolation methods (linear, polynomial, spline, RBF)
+- Quality assessment and confidence scoring
+- Real-time interpolation network
+
+### 3. Context-Aware Service
+- Number detection with context analysis
+- Unit conversion and normalization
+- Summarization with backing analysis
+- Real-time processing capabilities
+
+### 4. Mesh Congruence Engine
+- Delaunay triangulation for optimal mesh structure
+- Centroidal Voronoi tessellations for density optimization
+- Edge collapsing for mesh decimation
+- Congruence scoring and validation
+
+## Data Structure
+
+### Trial People
+```
+data/inputs/trial_people/
+├── person_1/
+│   ├── PERSONAL_INFO.json
+│   ├── LIFESTYLE_EVENTS.json
+│   ├── FINANCIAL_PROFILE.json
+│   └── GOALS.json
+└── person_2/
+    └── ...
 ```
 
-## 🎯 Real-World Applications
+### Outputs
+```
+data/outputs/
+├── trial_analysis/          # Trial people analysis
+├── mesh_congruence/         # Congruence analysis
+├── vector_db/              # Vector database
+├── visual_timelines/       # Visualizations
+└── reports/                # Analysis reports
+```
 
-### Financial Planning
-- **Retirement Planning**: Model various contribution strategies
-- **Education Funding**: Flexible payment schedules for tuition
-- **Major Purchases**: Optimize timing for house/car purchases
-- **Investment Strategies**: Dynamic portfolio rebalancing
+## Development
 
-### Risk Management
-- **Scenario Planning**: Test multiple financial futures
-- **Stress Testing**: Evaluate performance under adverse conditions
-- **Liquidity Management**: Ensure adequate cash flow
-- **Constraint Compliance**: Maintain regulatory/personal limits
+### Adding New Features
+1. Extend `MINTTCore` for new feature types
+2. Add interpolation methods to `MINTTInterpolation`
+3. Implement service endpoints in `MINTTService`
 
-### Decision Support
-- **Payment Optimization**: Find optimal payment structures
-- **Timing Analysis**: Identify best execution windows
-- **Trade-off Evaluation**: Compare different milestone approaches
-- **Sensitivity Analysis**: Understand impact of parameter changes
+### Testing
+```bash
+python -m pytest tests/
+```
 
-## 🧮 Technical Details
+### Documentation
+- Core modules: `CORE_MODULES_SUMMARY.md`
+- Mesh database: `MESH_VECTOR_DATABASE_SUMMARY.md`
+- Synthetic engine: `SYNTHETIC_LIFESTYLE_ENGINE_SUMMARY.md`
 
-### Dependencies
-- **NumPy/SciPy**: Numerical computations and GBM modeling
-- **Pandas**: Data manipulation and analysis
-- **NetworkX**: Graph-based mesh representation
-- **Plotly**: Interactive visualizations
-- **PDFPlumber**: Advanced PDF text extraction
-- **Decimal**: Precise financial calculations
+## License
 
-### Performance
-- **Mesh Size**: Efficiently handles 10,000+ nodes
-- **Computation**: Optimized for real-time updates
-- **Memory**: Intelligent pruning of irrelevant paths
-- **Scalability**: Modular architecture for expansion
-
-## 🔮 Future Enhancements
-
-- **Machine Learning**: Improve milestone extraction accuracy
-- **Real-time Data**: Live market data integration
-- **Advanced Visualization**: 3D mesh representations
-- **Mobile Interface**: Responsive web application
-- **API Integration**: Connect to banking and investment platforms
-- **Collaborative Planning**: Multi-user financial planning
-
-## 📋 System Requirements
-
-- **Python**: 3.8 or higher
-- **Memory**: 4GB RAM minimum (8GB recommended)
-- **Storage**: 1GB for full system with data
-- **OS**: Linux, macOS, or Windows
-
-## 🤝 Contributing
-
-The Omega Mesh Financial System is designed to be extensible. Key areas for contribution:
-
-1. **Enhanced PDF Processing**: Better extraction algorithms
-2. **Alternative Models**: Additional stochastic processes
-3. **Visualization**: New dashboard components
-4. **Integration**: External system connectors
-5. **Testing**: Comprehensive test suites
-
-## 📄 License
-
-This project demonstrates advanced financial modeling concepts. Please ensure compliance with relevant financial regulations in your jurisdiction.
-
----
-
-**Built with ❤️ for sophisticated financial planning**
-
-*"The beauty of the model is that it supports a person wanting to pay for 1% of something today and 11% next Tuesday and the remaining on their grandmother's birthday. The continuous mesh needs to support the ability to pay for things in our own way but needs to respect the constraints of accounting balances."*
+MIT License - see LICENSE file for details.

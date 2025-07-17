@@ -1,0 +1,236 @@
+{
+  "client_id": "CLIENT_Case_1_IPS_Individual",
+  "pdf_path": "Case #1 IPS  Individual.pdf",
+  "processing_timestamp": "2025-07-16T14:18:06.007472",
+  "extraction_method": "enhanced_with_realistic_events",
+  "events": {
+    "extracted_events": 0,
+    "realistic_events": 6,
+    "total_events": 6,
+    "event_details": [
+      {
+        "event_type": "family_planning",
+        "description": "First child born - increased need for financial stability",
+        "planned_date": "2020-03-15T00:00:00",
+        "confidence": 1.0,
+        "cash_flow_impact": "negative",
+        "impact_amount": -25000,
+        "source_text": "Realistic event: Family expansion",
+        "status": "modeled"
+      },
+      {
+        "event_type": "career_advancement",
+        "description": "Promotion to senior role - increased income and bonus",
+        "planned_date": "2021-01-15T00:00:00",
+        "confidence": 0.95,
+        "cash_flow_impact": "positive",
+        "impact_amount": 30000,
+        "source_text": "Realistic event: Strong performance review",
+        "status": "modeled"
+      },
+      {
+        "event_type": "portfolio_rebalancing",
+        "description": "COVID market recovery - increased risk tolerance",
+        "planned_date": "2022-06-01T00:00:00",
+        "confidence": 0.85,
+        "cash_flow_impact": "neutral",
+        "impact_amount": 0,
+        "source_text": "Realistic event: Market conditions improved",
+        "status": "modeled"
+      },
+      {
+        "event_type": "education_planning",
+        "description": "Starting education fund - considering Johns Hopkins vs McGill",
+        "planned_date": "2023-09-01T00:00:00",
+        "confidence": 0.9,
+        "cash_flow_impact": "negative",
+        "impact_amount": -15000,
+        "source_text": "Realistic event: Child approaching school age",
+        "status": "modeled"
+      },
+      {
+        "event_type": "education_decision",
+        "description": "Chose McGill over Johns Hopkins - cost concerns",
+        "planned_date": "2024-02-15T00:00:00",
+        "confidence": 1.0,
+        "cash_flow_impact": "positive",
+        "impact_amount": 75000,
+        "source_text": "Realistic event: Financial stress analysis showed Johns Hopkins too risky",
+        "status": "modeled"
+      },
+      {
+        "event_type": "work_arrangement",
+        "description": "Switched to part-time work for better work-life balance",
+        "planned_date": "2025-01-01T00:00:00",
+        "confidence": 0.95,
+        "cash_flow_impact": "negative",
+        "impact_amount": -40000,
+        "source_text": "Realistic event: Quality of life priority after portfolio stress analysis",
+        "status": "modeled"
+      }
+    ]
+  },
+  "portfolio_analysis": {
+    "timeline_available": true,
+    "timeline_data": [
+      {
+        "year": 2020,
+        "portfolio_value": 470588.23529411765,
+        "equity_allocation": 0.5294117647058824,
+        "bonds_allocation": 0.4117647058823529,
+        "cash_allocation": 0.05882352941176471,
+        "annual_return": -0.008823529411764707,
+        "market_return": -0.05,
+        "major_events": [
+          "First child born - increased need for financial stability"
+        ],
+        "stress_level": 0.25,
+        "life_stage": "young_family"
+      },
+      {
+        "year": 2021,
+        "portfolio_value": 583532.55740799,
+        "equity_allocation": 0.572192513368984,
+        "bonds_allocation": 0.3743315508021391,
+        "cash_allocation": 0.05347593582887702,
+        "annual_return": 0.17625668449197865,
+        "market_return": 0.28,
+        "major_events": [
+          "Promotion to senior role - increased income and bonus"
+        ],
+        "stress_level": 0.09999999999999999,
+        "life_stage": "career_growth"
+      },
+      {
+        "year": 2022,
+        "portfolio_value": 523743.87398586655,
+        "equity_allocation": 0.64349376114082,
+        "bonds_allocation": 0.3119429590017826,
+        "cash_allocation": 0.04456327985739752,
+        "annual_return": -0.10245989304812834,
+        "market_return": -0.18,
+        "major_events": [
+          "COVID market recovery - increased risk tolerance"
+        ],
+        "stress_level": 0.15,
+        "life_stage": "accumulation"
+      },
+      {
+        "year": 2023,
+        "portfolio_value": 596632.0171178264,
+        "equity_allocation": 0.6434937611408199,
+        "bonds_allocation": 0.31194295900178254,
+        "cash_allocation": 0.04456327985739751,
+        "annual_return": 0.16780748663101602,
+        "market_return": 0.24,
+        "major_events": [
+          "Starting education fund - considering Johns Hopkins vs McGill"
+        ],
+        "stress_level": 0.25,
+        "life_stage": "education_planning"
+      },
+      {
+        "year": 2024,
+        "portfolio_value": 748715.5975112311,
+        "equity_allocation": 0.64349376114082,
+        "bonds_allocation": 0.3119429590017826,
+        "cash_allocation": 0.04456327985739752,
+        "annual_return": 0.12919786096256683,
+        "market_return": 0.18,
+        "major_events": [
+          "Chose McGill over Johns Hopkins - cost concerns"
+        ],
+        "stress_level": 0.09999999999999999,
+        "life_stage": "education_commitment"
+      },
+      {
+        "year": 2025,
+        "portfolio_value": 764560.9726667746,
+        "equity_allocation": 0.4434937611408199,
+        "bonds_allocation": 0.5119429590017824,
+        "cash_allocation": 0.04456327985739751,
+        "annual_return": 0.07458823529411762,
+        "market_return": 0.12,
+        "major_events": [
+          "Switched to part-time work for better work-life balance"
+        ],
+        "stress_level": 0.25,
+        "life_stage": "lifestyle_optimization"
+      }
+    ],
+    "analysis_report": {
+      "analysis_period": "2020-2025",
+      "total_events": 6,
+      "portfolio_performance": {
+        "starting_value": 470588.23529411765,
+        "ending_value": 764560.9726667746,
+        "total_return": 0.624692066916896,
+        "average_annual_return": 0.07276114081996433,
+        "volatility": 0.10981078835277981,
+        "best_year": "2021",
+        "worst_year": "2022"
+      },
+      "life_events_impact": {
+        "positive_events": 2,
+        "negative_events": 3,
+        "total_cash_impact": 25000,
+        "biggest_positive_impact": 75000,
+        "biggest_negative_impact": -40000
+      },
+      "stress_analysis": {
+        "average_stress": 0.18333333333333335,
+        "peak_stress_year": "2020",
+        "peak_stress_level": 0.25,
+        "stress_trend": "stable"
+      },
+      "portfolio_evolution": {
+        "equity_trend": "decreasing",
+        "final_allocation": {
+          "equity": 0.4434937611408199,
+          "bonds": 0.5119429590017824,
+          "cash": 0.04456327985739751
+        }
+      },
+      "key_decisions": [
+        {
+          "year": 2020,
+          "decision": "First child born - increased need for financial stability",
+          "impact": -25000,
+          "rationale": "Family expansion"
+        },
+        {
+          "year": 2021,
+          "decision": "Promotion to senior role - increased income and bonus",
+          "impact": 30000,
+          "rationale": "Strong performance review"
+        },
+        {
+          "year": 2024,
+          "decision": "Chose McGill over Johns Hopkins - cost concerns",
+          "impact": 75000,
+          "rationale": "Financial stress analysis showed Johns Hopkins too risky"
+        },
+        {
+          "year": 2025,
+          "decision": "Switched to part-time work for better work-life balance",
+          "impact": -40000,
+          "rationale": "Quality of life priority after portfolio stress analysis"
+        }
+      ]
+    }
+  },
+  "recommendations": [],
+  "stress_scenarios": {
+    "total_events": 6,
+    "negative_impact_events": 3,
+    "positive_impact_events": 2,
+    "high_confidence_events": 6,
+    "major_impact_events": 3,
+    "stress_indicators": {
+      "education_costs": true,
+      "work_changes": true,
+      "family_impacts": true,
+      "portfolio_adjustments": true
+    }
+  }
+}

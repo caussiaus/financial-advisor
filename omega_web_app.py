@@ -10,6 +10,17 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 
 from src.omega_mesh_integration import OmegaMeshIntegration
+from src.mesh_vector_database import MeshVectorDatabase
+from src.mesh_congruence_engine import MeshCongruenceEngine
+from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
+import threading
+
+# In-memory storage for demo
+client_db = {}
+event_log = []
+vector_db = MeshVectorDatabase()
+congruence_engine = MeshCongruenceEngine()
+lifestyle_engine = SyntheticLifestyleEngine()
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'data/inputs/uploads'
@@ -263,6 +274,81 @@ def execute_commutator_sequence():
     except Exception as e:
         print(f"Error executing commutator sequence: {e}")
         print(traceback.format_exc())
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/add_client', methods=['POST'])
+def add_client():
+    """Add a new client to the system"""
+    data = request.get_json()
+    if not data:
+        return jsonify({'error': 'No data provided'}), 400
+    try:
+        # Convert to synthetic client
+        client = lifestyle_engine.generate_synthetic_client()
+        # Overwrite with provided data if available
+        for k, v in data.items():
+            if hasattr(client.profile, k):
+                setattr(client.profile, k, v)
+        client_id = client.profile.name
+        client_db[client_id] = client
+        vector_db.add_client(client)
+        return jsonify({'success': True, 'client_id': client_id})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/clients', methods=['GET'])
+def list_clients():
+    """List all clients"""
+    return jsonify({'clients': list(client_db.keys())})
+
+@app.route('/api/simulate_event', methods=['POST'])
+def simulate_event():
+    """Simulate and log an event for a client"""
+    data = request.get_json()
+    client_id = data.get('client_id')
+    event_type = data.get('event_type', 'synthetic')
+    if client_id not in client_db:
+        return jsonify({'error': 'Client not found'}), 404
+    try:
+        # Simulate event (for demo, just log a random event)
+        event = {'client_id': client_id, 'event_type': event_type, 'timestamp': datetime.now().isoformat()}
+        event_log.append(event)
+        # Optionally update mesh/vector DB here
+        return jsonify({'success': True, 'event': event})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/mesh_dashboard', methods=['GET'])
+def mesh_dashboard():
+    """Get mesh congruence dashboard data"""
+    # For demo, compute congruence between all pairs
+    results = []
+    client_ids = list(client_db.keys())
+    for i in range(len(client_ids)):
+        for j in range(i+1, len(client_ids)):
+            c1 = client_db[client_ids[i]]
+            c2 = client_db[client_ids[j]]
+            try:
+                result = congruence_engine.compute_mesh_congruence(c1, c2)
+                results.append({
+                    'client_1': c1.client_id,
+                    'client_2': c2.client_id,
+                    'congruence': result.overall_congruence
+                })
+            except Exception as e:
+                continue
+    return jsonify({'congruence_results': results, 'clients': client_ids, 'event_log': event_log})
+
+@app.route('/api/recommendations', methods=['GET'])
+def get_recommendations():
+    """Get recommendations for a client"""
+    client_id = request.args.get('client_id')
+    if client_id not in client_db:
+        return jsonify({'error': 'Client not found'}), 404
+    try:
+        recs = vector_db.get_recommendations(client_id)
+        return jsonify({'client_id': client_id, 'recommendations': recs})
+    except Exception as e:
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':

@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "event_type": "career",
+      "expected_age": 32,
+      "estimated_cost": 78000,
+      "probability": 1.0
+    },
+    {
+      "event_type": "family",
+      "expected_age": 25,
+      "estimated_cost": 25000,
+      "probability": 0.9
+    }
+  ]
+}
