@@ -3,301 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omega Mesh Financial Engine</title>
+    <title>Unified Cash Flow Model - Interactive Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: #f5f7fa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .upload-section {
-            border: 2px dashed #3498db;
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            background: #f8fafc;
-        }
-        
-        .upload-section:hover {
-            border-color: #2980b9;
-            background: #f0f4f8;
-        }
-        
-        .button {
-            background: #3498db;
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 10px;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
         }
-        
-        .button:hover {
-            background: #2980b9;
-        }
-        
-        .button.demo {
-            background: #2ecc71;
-        }
-        
-        .button.demo:hover {
-            background: #27ae60;
-        }
-        
-        #results {
-            margin-top: 30px;
-            display: none;
-        }
-        
-        .milestone {
-            background: #f8fafc;
+        .decision-card {
+            background: #f8f9fa;
+            border-radius: 10px;
             padding: 15px;
             margin: 10px 0;
-            border-radius: 5px;
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #007bff;
         }
-        
-        .error {
-            background: #e74c3c;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            display: none;
+        .event-timeline {
+            position: relative;
+            padding: 20px 0;
         }
-        
+        .event-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #007bff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+        }
         .loading {
             text-align: center;
-            margin: 20px 0;
-            display: none;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .stat-card {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .stat-card h3 {
-            margin: 0;
-            color: #2c3e50;
-        }
-        
-        .stat-card p {
-            font-size: 24px;
-            color: #3498db;
-            margin: 10px 0;
+            padding: 50px;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🌐 Omega Mesh Financial Engine</h1>
-        
-        <div class="upload-section" id="dropZone">
-            <h2>Upload IPS Document</h2>
-            <p>Drag and drop your PDF file here or click to select</p>
-            <input type="file" id="fileInput" accept=".pdf" style="display: none;">
-            <button class="button" onclick="document.getElementById('fileInput').click()">Select File</button>
-            <button class="button demo" onclick="runDemo()">Run Demo</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center my-4">🎯 Unified Cash Flow Model Dashboard</h1>
+                <p class="text-center text-muted">Interactive visualization of time uncertainty mesh and key decision moments</p>
+            </div>
         </div>
-        
-        <div class="loading" id="loading">
-            <p>Processing... Please wait</p>
-        </div>
-        
-        <div class="error" id="error"></div>
-        
-        <div id="results">
-            <div class="stats">
-                <div class="stat-card">
-                    <h3>Total Nodes</h3>
-                    <p id="totalNodes">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Active Paths</h3>
-                    <p id="activePaths">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Processing Time</h3>
-                    <p id="processingTime">0ms</p>
+
+        <!-- Model Overview -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>📊 Model Overview</h5>
+                    </div>
+                    <div class="card-body" id="model-overview">
+                        <div class="loading">Loading model information...</div>
+                    </div>
                 </div>
             </div>
-            
-            <h2>Milestones</h2>
-            <div id="milestones"></div>
-            
-            <h2>Evolution</h2>
-            <div id="evolution"></div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>⚖️ Accounting Metrics</h5>
+                    </div>
+                    <div class="card-body" id="accounting-metrics">
+                        <div class="loading">Loading accounting metrics...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cash Flow Timeline -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>📈 Cash Flow Timeline</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="timeline-chart" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decision Moments -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>🎯 Key Decision Moments</h5>
+                    </div>
+                    <div class="card-body" id="decision-moments">
+                        <div class="loading">Loading decision moments...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mesh Visualization -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>🌐 Time Uncertainty Mesh</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="mesh-chart" class="chart-container"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>⚠️ Risk Analysis</h5>
+                    </div>
+                    <div class="card-body" id="risk-analysis">
+                        <div class="loading">Loading risk analysis...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Simulation -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>🔧 Custom Simulation</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="initial-wealth" class="form-label">Initial Wealth ($)</label>
+                                <input type="number" class="form-control" id="initial-wealth" value="1000000">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="event-type" class="form-label">Event Type</label>
+                                <select class="form-control" id="event-type">
+                                    <option value="income">Income</option>
+                                    <option value="expense">Expense</option>
+                                    <option value="transfer">Transfer</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary mt-4" onclick="runCustomSimulation()">Run Simulation</button>
+                            </div>
+                        </div>
+                        <div id="custom-simulation-results" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <script>
-        // File upload handling
-        const dropZone = document.getElementById('dropZone');
-        const fileInput = document.getElementById('fileInput');
-        
-        dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropZone.style.background = '#f0f4f8';
+        // Load data on page load
+        $(document).ready(function() {
+            loadModelInfo();
+            loadAccountingMetrics();
+            loadTimeline();
+            loadDecisionMoments();
+            loadMeshVisualization();
+            loadRiskAnalysis();
         });
-        
-        dropZone.addEventListener('dragleave', () => {
-            dropZone.style.background = '#f8fafc';
-        });
-        
-        dropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropZone.style.background = '#f8fafc';
-            const file = e.dataTransfer.files[0];
-            if (file) handleFile(file);
-        });
-        
-        fileInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) handleFile(file);
-        });
-        
-        function handleFile(file) {
-            if (!file.name.toLowerCase().endsWith('.pdf')) {
-                showError('Please upload a PDF file');
-                return;
-            }
-            
-            const formData = new FormData();
-            formData.append('file', file);
-            
-            showLoading();
-            hideError();
-            
-            fetch('/upload', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                hideLoading();
-                if (data.error) {
-                    showError(data.error);
-                } else {
-                    showResults(data);
-                }
-            })
-            .catch(error => {
-                hideLoading();
-                showError('Upload failed: ' + error.message);
-            });
-        }
-        
-        function runDemo() {
-            showLoading();
-            hideError();
-            
-            fetch('/demo')
-            .then(response => response.json())
-            .then(data => {
-                hideLoading();
-                if (data.error) {
-                    showError(data.error);
-                } else {
-                    showResults(data);
-                }
-            })
-            .catch(error => {
-                hideLoading();
-                showError('Demo failed: ' + error.message);
-            });
-        }
-        
-        function showResults(data) {
-            document.getElementById('results').style.display = 'block';
-            
-            // Update stats
-            document.getElementById('totalNodes').textContent = data.evolution?.total_nodes || 0;
-            document.getElementById('activePaths').textContent = data.evolution?.visible_nodes || 0;
-            document.getElementById('processingTime').textContent = data.evolution?.processing_time || '0ms';
-            
-            // Show milestones
-            const milestonesDiv = document.getElementById('milestones');
-            milestonesDiv.innerHTML = '';
-            
-            if (data.milestones) {
-                data.milestones.forEach(milestone => {
-                    const div = document.createElement('div');
-                    div.className = 'milestone';
-                    div.innerHTML = `
-                        <h3>${milestone.event_type}</h3>
-                        <p>${milestone.description}</p>
-                        <p>Impact: $${milestone.financial_impact?.toLocaleString()}</p>
-                        <p>Date: ${new Date(milestone.timestamp).toLocaleDateString()}</p>
-                        <p>Probability: ${(milestone.probability * 100).toFixed(1)}%</p>
-                    `;
-                    milestonesDiv.appendChild(div);
-                });
-            }
-            
-            // Show evolution data
-            const evolutionDiv = document.getElementById('evolution');
-            evolutionDiv.innerHTML = '';
-            
-            if (data.evolution) {
-                const div = document.createElement('div');
-                div.className = 'milestone';
-                div.innerHTML = `
-                    <h3>Mesh Evolution</h3>
-                    <p>Total Nodes: ${data.evolution.total_nodes}</p>
-                    <p>Visible Nodes: ${data.evolution.visible_nodes}</p>
-                    <p>Solidified Nodes: ${data.evolution.solidified_nodes}</p>
-                    <p>Current Wealth: $${data.evolution.wealth?.toLocaleString()}</p>
+
+        function loadModelInfo() {
+            $.get('/api/model_info', function(data) {
+                let html = `
+                    <div class="metric-card">
+                        <h6>Total Events</h6>
+                        <h3>${data.total_events}</h3>
+                    </div>
+                    <div class="metric-card">
+                        <h6>Initial Wealth</h6>
+                        <h3>$${data.initial_wealth.toLocaleString()}</h3>
+                    </div>
+                    <h6>Events:</h6>
+                    <div class="event-list">
                 `;
-                evolutionDiv.appendChild(div);
-            }
+                
+                data.events.forEach(event => {
+                    html += `
+                        <div class="decision-card">
+                            <strong>${event.description}</strong><br>
+                            <small>Date: ${event.date} | Amount: $${event.amount.toLocaleString()} | Type: ${event.type}</small>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+                $('#model-overview').html(html);
+            });
         }
-        
-        function showLoading() {
-            document.getElementById('loading').style.display = 'block';
+
+        function loadAccountingMetrics() {
+            $.get('/api/accounting_metrics', function(data) {
+                let html = `
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="metric-card">
+                                <h6>Net Worth</h6>
+                                <h3>$${data.metrics.net_worth.toLocaleString()}</h3>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="metric-card">
+                                <h6>Liquidity Ratio</h6>
+                                <h3>${(data.metrics.liquidity_ratio * 100).toFixed(1)}%</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="metric-card">
+                                <h6>Stress Level</h6>
+                                <h3>${(data.metrics.stress_level * 100).toFixed(1)}%</h3>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="metric-card">
+                                <h6>Validation</h6>
+                                <h3>${data.validation.is_valid ? '✅ Valid' : '❌ Invalid'}</h3>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                if (data.validation.warnings.length > 0) {
+                    html += '<div class="alert alert-warning mt-3"><strong>Warnings:</strong><ul>';
+                    data.validation.warnings.forEach(warning => {
+                        html += `<li>${warning}</li>`;
+                    });
+                    html += '</ul></div>';
+                }
+                
+                $('#accounting-metrics').html(html);
+            });
         }
-        
-        function hideLoading() {
-            document.getElementById('loading').style.display = 'none';
+
+        function loadTimeline() {
+            $.get('/api/cash_flow_timeline', function(data) {
+                const timestamps = data.map(d => d.timestamp);
+                const netWorth = data.map(d => d.net_worth);
+                const liquidity = data.map(d => d.liquidity_ratio * 100);
+                const stress = data.map(d => d.stress_level * 100);
+
+                const trace1 = {
+                    x: timestamps,
+                    y: netWorth,
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Net Worth',
+                    line: {color: '#007bff'}
+                };
+
+                const trace2 = {
+                    x: timestamps,
+                    y: liquidity,
+                    type: 'scatter',
+                    mode: 'lines',
+                    name: 'Liquidity Ratio (%)',
+                    yaxis: 'y2',
+                    line: {color: '#28a745'}
+                };
+
+                const trace3 = {
+                    x: timestamps,
+                    y: stress,
+                    type: 'scatter',
+                    mode: 'lines',
+                    name: 'Stress Level (%)',
+                    yaxis: 'y2',
+                    line: {color: '#dc3545'}
+                };
+
+                const layout = {
+                    title: 'Cash Flow Timeline',
+                    xaxis: {title: 'Date'},
+                    yaxis: {title: 'Net Worth ($)', side: 'left'},
+                    yaxis2: {title: 'Ratio (%)', side: 'right', overlaying: 'y'},
+                    height: 400
+                };
+
+                Plotly.newPlot('timeline-chart', [trace1, trace2, trace3], layout);
+            });
         }
-        
-        function showError(message) {
-            const errorDiv = document.getElementById('error');
-            errorDiv.textContent = message;
-            errorDiv.style.display = 'block';
+
+        function loadDecisionMoments() {
+            $.get('/api/decision_moments', function(data) {
+                let html = '';
+                data.forEach(moment => {
+                    const impactClass = moment.impact.net_worth_change > 0 ? 'text-success' : 'text-danger';
+                    html += `
+                        <div class="decision-card">
+                            <h6>${moment.description}</h6>
+                            <p><strong>Date:</strong> ${moment.date} | <strong>Amount:</strong> $${moment.amount.toLocaleString()}</p>
+                            <div class="row">
+                                <div class="col-4">
+                                    <small>Before:</small><br>
+                                    <strong>$${moment.before.net_worth.toLocaleString()}</strong>
+                                </div>
+                                <div class="col-4">
+                                    <small>After:</small><br>
+                                    <strong class="${impactClass}">$${moment.after.net_worth.toLocaleString()}</strong>
+                                </div>
+                                <div class="col-4">
+                                    <small>Impact:</small><br>
+                                    <strong class="${impactClass}">$${moment.impact.net_worth_change.toLocaleString()}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                $('#decision-moments').html(html);
+            });
         }
-        
-        function hideError() {
-            document.getElementById('error').style.display = 'none';
+
+        function loadMeshVisualization() {
+            $.get('/api/mesh_visualization', function(data) {
+                const trace = {
+                    x: ['Scenarios', 'Time Steps', 'Events'],
+                    y: [data.scenarios, data.time_steps, data.events],
+                    type: 'bar',
+                    marker: {
+                        color: ['#007bff', '#28a745', '#ffc107']
+                    }
+                };
+
+                const layout = {
+                    title: 'Mesh Components',
+                    yaxis: {title: 'Count'},
+                    height: 400
+                };
+
+                Plotly.newPlot('mesh-chart', [trace], layout);
+            });
+        }
+
+        function loadRiskAnalysis() {
+            $.get('/api/mesh_visualization', function(data) {
+                const riskMetrics = data.risk_metrics;
+                const trace = {
+                    x: Object.keys(riskMetrics),
+                    y: Object.values(riskMetrics),
+                    type: 'bar',
+                    marker: {
+                        color: ['#dc3545', '#fd7e14', '#ffc107', '#28a745']
+                    }
+                };
+
+                const layout = {
+                    title: 'Risk Metrics',
+                    yaxis: {title: 'Risk Level'},
+                    height: 400
+                };
+
+                Plotly.newPlot('risk-analysis', [trace], layout);
+            });
+        }
+
+        function runCustomSimulation() {
+            const initialWealth = parseFloat($('#initial-wealth').val());
+            const eventType = $('#event-type').val();
+            
+            const events = [{
+                id: 'custom_event',
+                description: 'Custom ' + eventType,
+                date: '2020-06-01',
+                amount: eventType === 'income' ? 50000 : -30000,
+                source_account: eventType === 'income' ? 'salary' : 'cash_checking',
+                target_account: eventType === 'income' ? 'cash_checking' : 'living_expenses',
+                type: eventType
+            }];
+
+            $.ajax({
+                url: '/api/run_simulation',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    initial_wealth: initialWealth,
+                    events: events
+                }),
+                success: function(data) {
+                    let html = `
+                        <div class="alert alert-info">
+                            <h6>Simulation Results:</h6>
+                            <p>Initial Wealth: $${initialWealth.toLocaleString()}</p>
+                            <p>Final Net Worth: $${data.summary.financial_summary.final_net_worth.toLocaleString()}</p>
+                            <p>Growth: ${(data.summary.financial_summary.net_worth_growth_rate * 100).toFixed(2)}%</p>
+                        </div>
+                    `;
+                    $('#custom-simulation-results').html(html);
+                }
+            });
         }
     </script>
 </body>
