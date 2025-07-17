@@ -32,7 +32,7 @@ from .json_to_vector_converter import (
     LifestyleEvent
 )
 from .synthetic_data_generator import SyntheticFinancialDataGenerator, PersonProfile
-from .time_uncertainty_mesh import TimeUncertaintyMeshEngine, SeedEvent
+from .core.time_uncertainty_mesh import TimeUncertaintyMeshEngine, SeedEvent
 
 
 @dataclass

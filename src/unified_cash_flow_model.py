@@ -17,7 +17,7 @@ from decimal import Decimal
 import json
 import logging
 
-from .time_uncertainty_mesh import TimeUncertaintyMeshEngine, SeedEvent, EventVector
+from .core.time_uncertainty_mesh import TimeUncertaintyMeshEngine, SeedEvent, EventVector
 from .accounting_reconciliation import AccountingReconciliationEngine, Account, AccountType, PaymentConstraint
 from .vectorized_accounting import VectorizedAccountingEngine, AccountingState
 

@@ -34,8 +34,8 @@ import pickle
 
 # Import existing components
 from .mesh_vector_database import MeshVectorDatabase, MeshEmbedding, SimilarityMatch
-from .synthetic_lifestyle_engine import SyntheticClientData
-from .time_uncertainty_mesh import TimeUncertaintyMeshEngine
+from ..synthetic_lifestyle_engine import SyntheticClientData
+from ..core.time_uncertainty_mesh import TimeUncertaintyMeshEngine
 
 
 @dataclass

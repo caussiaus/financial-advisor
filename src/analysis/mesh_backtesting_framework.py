@@ -34,7 +34,7 @@ import pickle
 
 # Import existing components
 from .mesh_congruence_engine import MeshCongruenceEngine, MeshCongruenceResult, BacktestResult
-from .synthetic_lifestyle_engine import SyntheticClientData
+from ..synthetic_lifestyle_engine import SyntheticClientData
 from .mesh_vector_database import MeshVectorDatabase
 
 

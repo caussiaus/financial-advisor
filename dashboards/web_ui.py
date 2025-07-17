@@ -26,7 +26,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 from flask import Flask, render_template, request, jsonify
 from src.unified_cash_flow_model import UnifiedCashFlowModel, CashFlowEvent
 from src.accounting_debugger import AccountingDebugger
-from src.time_uncertainty_mesh import TimeUncertaintyMeshEngine
+from src.core.time_uncertainty_mesh import TimeUncertaintyMeshEngine
 
 app = Flask(__name__)
 

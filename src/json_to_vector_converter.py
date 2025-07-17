@@ -24,7 +24,7 @@ from enum import Enum
 import logging
 
 # Import existing components
-from .time_uncertainty_mesh import SeedEvent, EventVector, TimeUncertaintyMeshEngine
+from .core.time_uncertainty_mesh import SeedEvent, EventVector, TimeUncertaintyMeshEngine
 from .synthetic_data_generator import PersonProfile
 
 

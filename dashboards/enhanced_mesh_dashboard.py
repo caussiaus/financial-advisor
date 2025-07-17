@@ -24,11 +24,11 @@ import numpy as np
 import pandas as pd
 
 # Import our mesh components
-from src.mesh_vector_database import MeshVectorDatabase
-from src.mesh_congruence_engine import MeshCongruenceEngine
+from src.analysis.mesh_vector_database import MeshVectorDatabase
+from src.analysis.mesh_congruence_engine import MeshCongruenceEngine
 from src.synthetic_lifestyle_engine import SyntheticLifestyleEngine, SyntheticClientData
 from src.unified_cash_flow_model import UnifiedCashFlowModel
-from src.time_uncertainty_mesh import TimeUncertaintyMeshEngine
+from src.core.time_uncertainty_mesh import TimeUncertaintyMeshEngine
 
 # Configure logging
 logging.basicConfig(

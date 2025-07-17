@@ -3,368 +3,466 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Mesh Congruence System Dashboard</title>
+    <title>TradingView-Style Mesh Dashboard</title>
+    
+    <!-- D3.js for advanced charting -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     
     <!-- CSS Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.css" rel="stylesheet">
     
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
     
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --danger-color: #e74c3c;
-            --light-bg: #ecf0f1;
-            --dark-bg: #34495e;
+            --tradingview-bg: #131722;
+            --tradingview-panel: #1e222d;
+            --tradingview-border: #2a2e39;
+            --tradingview-text: #d1d4dc;
+            --tradingview-accent: #2962ff;
+            --tradingview-success: #089981;
+            --tradingview-danger: #f23645;
+            --tradingview-warning: #ff9800;
         }
         
         body {
-            background-color: var(--light-bg);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--tradingview-bg);
+            color: var(--tradingview-text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
-        
-        .navbar-brand {
+
+        .tradingview-header {
+            background: var(--tradingview-panel);
+            border-bottom: 1px solid var(--tradingview-border);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tradingview-logo {
+            font-size: 18px;
             font-weight: bold;
-            font-size: 1.5rem;
+            color: var(--tradingview-accent);
         }
-        
-        .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+
+        .tradingview-controls {
+            display: flex;
+            gap: 10px;
         }
-        
-        .card-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+
+        .tradingview-btn {
+            background: var(--tradingview-panel);
+            border: 1px solid var(--tradingview-border);
+            color: var(--tradingview-text);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .tradingview-btn:hover {
+            background: var(--tradingview-accent);
             color: white;
-            border-radius: 15px 15px 0 0 !important;
-            font-weight: bold;
         }
-        
-        .metric-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .tradingview-btn.active {
+            background: var(--tradingview-accent);
             color: white;
-            border-radius: 15px;
+        }
+
+        .main-container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 300px;
+            background: var(--tradingview-panel);
+            border-right: 1px solid var(--tradingview-border);
             padding: 20px;
-            margin: 10px 0;
-            text-align: center;
+            overflow-y: auto;
         }
-        
-        .metric-card h3 {
-            margin: 0;
-            font-size: 2rem;
-            font-weight: bold;
+
+        .chart-area {
+            flex: 1;
+            position: relative;
+            background: var(--tradingview-bg);
         }
-        
-        .metric-card h6 {
-            margin: 0;
-            opacity: 0.9;
-        }
-        
-        .status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        
-        .status-healthy { background-color: var(--success-color); }
-        .status-degraded { background-color: var(--warning-color); }
-        .status-unhealthy { background-color: var(--danger-color); }
-        
-        .btn-control {
-            border-radius: 25px;
-            font-weight: 500;
-            padding: 8px 20px;
-        }
-        
-        .table-responsive {
-            border-radius: 10px;
+
+        .chart-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid var(--secondary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .alert-custom {
-            border-radius: 10px;
-            border: none;
-        }
-        
-        .chart-container {
-            position: relative;
-            height: 400px;
-            margin: 20px 0;
-        }
-        
-        .system-controls {
-            background: var(--dark-bg);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .performance-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .client-card {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 4px solid var(--secondary-color);
-            transition: transform 0.2s;
-        }
-        
-        .client-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        .event-timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-        
-        .event-marker {
+
+        .chart-overlay {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--secondary-color);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .analysis-window {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 8px;
+            background: linear-gradient(to bottom, #ffd700, #ffed4e, #ffd700);
+            border: 2px solid #333;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            z-index: 15;
+            left: 70%;
+        }
+
+        .now-marker {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, #00ff00, #32cd32, #00ff00);
+            border: 2px solid #333;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            z-index: 15;
+            left: 60%;
+        }
+
+        .chart-controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(30, 34, 45, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--tradingview-border);
+            z-index: 20;
+        }
+
+        .metrics-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 34, 45, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--tradingview-border);
+            z-index: 20;
+            min-width: 200px;
+        }
+
+        .metric-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .metric-label {
+            color: var(--tradingview-text);
+            opacity: 0.8;
+        }
+
+        .metric-value {
+            font-weight: bold;
+            color: var(--tradingview-accent);
+        }
+
+        .metric-value.positive {
+            color: var(--tradingview-success);
+        }
+
+        .metric-value.negative {
+            color: var(--tradingview-danger);
+        }
+
+        .time-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
             transform: translateX(-50%);
+            background: rgba(30, 34, 45, 0.9);
+            color: var(--tradingview-text);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid var(--tradingview-border);
+            z-index: 20;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--tradingview-accent);
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--tradingview-border);
+            padding-bottom: 5px;
+        }
+
+        .client-card {
+            background: var(--tradingview-panel);
+            border: 1px solid var(--tradingview-border);
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 8px;
             cursor: pointer;
+            transition: all 0.2s;
         }
-        
-        .modal-content {
-            border-radius: 15px;
+
+        .client-card:hover {
+            border-color: var(--tradingview-accent);
+            background: rgba(41, 98, 255, 0.1);
         }
-        
-        .modal-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+
+        .client-card.selected {
+            border-color: var(--tradingview-accent);
+            background: rgba(41, 98, 255, 0.2);
+        }
+
+        .client-name {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .client-details {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .status-healthy { background-color: var(--tradingview-success); }
+        .status-degraded { background-color: var(--tradingview-warning); }
+        .status-unhealthy { background-color: var(--tradingview-danger); }
+
+        .zoom-controls {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .zoom-btn {
+            background: var(--tradingview-panel);
+            border: 1px solid var(--tradingview-border);
+            color: var(--tradingview-text);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: all 0.2s;
+        }
+
+        .zoom-btn:hover {
+            background: var(--tradingview-accent);
             color: white;
-            border-radius: 15px 15px 0 0;
+        }
+
+        .alert-custom {
+            background: var(--tradingview-panel);
+            border: 1px solid var(--tradingview-border);
+            color: var(--tradingview-text);
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content {
+            background: var(--tradingview-panel);
+            border: 1px solid var(--tradingview-border);
+            color: var(--tradingview-text);
+        }
+
+        .modal-header {
+            background: var(--tradingview-panel);
+            border-bottom: 1px solid var(--tradingview-border);
+            color: var(--tradingview-text);
+        }
+
+        .form-control {
+            background: var(--tradingview-bg);
+            border: 1px solid var(--tradingview-border);
+            color: var(--tradingview-text);
+        }
+
+        .form-control:focus {
+            background: var(--tradingview-bg);
+            border-color: var(--tradingview-accent);
+            color: var(--tradingview-text);
+            box-shadow: 0 0 0 0.2rem rgba(41, 98, 255, 0.25);
+        }
+
+        .btn-primary {
+            background: var(--tradingview-accent);
+            border-color: var(--tradingview-accent);
+        }
+
+        .btn-primary:hover {
+            background: #1e4bd8;
+            border-color: #1e4bd8;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-project-diagram me-2"></i>
-                Enhanced Mesh Congruence System
-            </a>
-            <div class="navbar-nav ms-auto">
-                <span class="navbar-text me-3">
-                    <span id="system-status" class="status-indicator status-healthy"></span>
-                    <span id="status-text">System Healthy</span>
-                </span>
-                <button class="btn btn-outline-light btn-sm" onclick="showSystemControls()">
-                    <i class="fas fa-cog"></i> Controls
-                </button>
-            </div>
+    <!-- TradingView-Style Header -->
+    <div class="tradingview-header">
+        <div class="tradingview-logo">
+            <i class="fas fa-chart-line me-2"></i>
+            Mesh Portfolio Analysis
         </div>
-    </nav>
+        <div class="tradingview-controls">
+            <span class="status-indicator status-healthy" id="system-status"></span>
+            <span id="status-text">System Healthy</span>
+            <button class="tradingview-btn" onclick="showSystemControls()">
+                <i class="fas fa-cog"></i> Controls
+            </button>
+        </div>
+    </div>
 
-    <div class="container-fluid mt-4">
-        <!-- System Controls Modal -->
-        <div class="modal fade" id="systemControlsModal" tabindex="-1">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">
-                            <i class="fas fa-cogs me-2"></i>System Controls
-                        </h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-users me-2"></i>Clients
+                </div>
+                <div id="client-list">
+                    <div class="text-center text-muted">
+                        <i class="fas fa-users fa-2x mb-2"></i>
+                        <p>Loading clients...</p>
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h6><i class="fas fa-heartbeat me-2"></i>System Health</h6>
-                                <div id="health-status"></div>
-                                
-                                <h6 class="mt-3"><i class="fas fa-tachometer-alt me-2"></i>Performance Metrics</h6>
-                                <div id="performance-metrics"></div>
-                            </div>
-                            <div class="col-md-6">
-                                <h6><i class="fas fa-tools me-2"></i>System Actions</h6>
-                                <div class="d-grid gap-2">
-                                    <button class="btn btn-warning btn-control" onclick="restartComponents()">
-                                        <i class="fas fa-redo me-2"></i>Restart Components
-                                    </button>
-                                    <button class="btn btn-info btn-control" onclick="clearCache()">
-                                        <i class="fas fa-broom me-2"></i>Clear Cache
-                                    </button>
-                                    <button class="btn btn-success btn-control" onclick="exportData()">
-                                        <i class="fas fa-download me-2"></i>Export Data
-                                    </button>
-                                    <button class="btn btn-primary btn-control" onclick="importData()">
-                                        <i class="fas fa-upload me-2"></i>Import Data
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-chart-bar me-2"></i>System Health
+                </div>
+                <div id="health-status">
+                    <div class="alert alert-success alert-custom">
+                        <strong>Status:</strong> Healthy<br>
+                        <strong>Components:</strong> All operational
                     </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <i class="fas fa-lightbulb me-2"></i>Recommendations
+                </div>
+                <div id="recommendations-box">
+                    <div class="text-muted">Select a client to view recommendations</div>
                 </div>
             </div>
         </div>
 
-        <!-- Performance Metrics -->
-        <div class="performance-metrics" id="performance-metrics-display"></div>
+        <!-- Main Chart Area -->
+        <div class="chart-area">
+            <div class="chart-container">
+                <svg id="portfolio-chart" width="100%" height="100%"></svg>
+            </div>
+            
+            <div class="chart-overlay">
+                <div class="now-marker" id="now-marker"></div>
+                <div class="analysis-window" id="analysis-window"></div>
+            </div>
 
-        <!-- Main Dashboard -->
-        <div class="row">
-            <!-- Client Management -->
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h5><i class="fas fa-user-plus me-2"></i>Add New Client</h5>
+            <!-- Chart Controls -->
+            <div class="chart-controls">
+                <div class="zoom-controls">
+                    <button class="zoom-btn" onclick="adjustZoom(1.2)">Zoom In</button>
+                    <button class="zoom-btn" onclick="adjustZoom(0.8)">Zoom Out</button>
+                    <button class="zoom-btn" onclick="resetZoom()">Reset</button>
+                </div>
+                <div style="font-size: 11px; color: var(--tradingview-text); opacity: 0.8;">
+                    Fixed Analysis Window
+                </div>
+            </div>
+
+            <!-- Metrics Panel -->
+            <div class="metrics-panel">
+                <div class="sidebar-title">Portfolio Metrics</div>
+                <div class="metric-item">
+                    <span class="metric-label">Our Avg:</span>
+                    <span class="metric-value" id="our-avg">$0</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Competition Avg:</span>
+                    <span class="metric-value" id="competition-avg">$0</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Outperformance:</span>
+                    <span class="metric-value positive" id="outperformance">+0%</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Volatility:</span>
+                    <span class="metric-value" id="volatility">0%</span>
+                </div>
+            </div>
+
+            <!-- Time Indicator -->
+            <div class="time-indicator" id="time-indicator">
+                Portfolio Analysis Active
+            </div>
+        </div>
+    </div>
+
+    <!-- System Controls Modal -->
+    <div class="modal fade" id="systemControlsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">System Controls</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>System Health</h6>
+                            <div id="modal-health-status"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Performance Metrics</h6>
+                            <div id="modal-performance-metrics"></div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <form id="add-client-form">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" name="name" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Age</label>
-                                    <input type="number" class="form-control" name="age" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Income</label>
-                                    <input type="number" class="form-control" name="income" required>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-control mt-3">
-                                <i class="fas fa-plus me-2"></i>Add Client
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <h6>System Actions</h6>
+                            <button class="tradingview-btn" onclick="restartComponents()">
+                                <i class="fas fa-redo"></i> Restart Components
                             </button>
-                        </form>
-                        <div id="add-client-result" class="mt-3"></div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h5><i class="fas fa-users me-2"></i>Client List</h5>
-                    </div>
-                    <div class="card-body">
-                        <div id="client-list"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event Simulation & Recommendations -->
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h5><i class="fas fa-bolt me-2"></i>Simulate Event</h5>
-                    </div>
-                    <div class="card-body">
-                        <form id="simulate-event-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="form-label">Client</label>
-                                    <select class="form-control" name="client_id" id="event-client-select"></select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Event Type</label>
-                                    <input type="text" class="form-control" name="event_type" value="synthetic">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-warning btn-control mt-3">
-                                <i class="fas fa-play me-2"></i>Simulate Event
+                            <button class="tradingview-btn" onclick="clearCache()">
+                                <i class="fas fa-broom"></i> Clear Cache
                             </button>
-                        </form>
-                        <div id="simulate-event-result" class="mt-3"></div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h5><i class="fas fa-lightbulb me-2"></i>Recommendations</h5>
-                    </div>
-                    <div class="card-body" id="recommendations-box">
-                        <div class="text-center text-muted">
-                            <i class="fas fa-user-check fa-3x mb-3"></i>
-                            <p>Select a client to view recommendations</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mesh Congruence Dashboard -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5><i class="fas fa-chart-network me-2"></i>Mesh Congruence Dashboard</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="chart-container">
-                                    <canvas id="congruence-chart"></canvas>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div id="congruence-stats"></div>
-                            </div>
-                        </div>
-                        <div id="mesh-dashboard-table" class="mt-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Analytics Dashboard -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5><i class="fas fa-chart-bar me-2"></i>Analytics Dashboard</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="chart-container">
-                                    <canvas id="client-distribution-chart"></canvas>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="chart-container">
-                                    <canvas id="event-timeline-chart"></canvas>
-                                </div>
-                            </div>
+                            <button class="tradingview-btn" onclick="exportData()">
+                                <i class="fas fa-download"></i> Export Data
+                            </button>
+                            <button class="tradingview-btn" onclick="importData()">
+                                <i class="fas fa-upload"></i> Import Data
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -374,40 +472,344 @@
 
     <script>
         // Global variables
-        let congruenceChart = null;
-        let clientDistributionChart = null;
-        let eventTimelineChart = null;
         let selectedClient = null;
+        let currentZoom = 1;
+        let chartOffset = 0;
+        let allPaths = [];
+        let xScale, yScale, line;
+        let chart, svg;
+        let animationId = null;
+
+        // Configuration
+        const config = {
+            width: window.innerWidth - 300, // Account for sidebar
+            height: window.innerHeight - 60, // Account for header
+            margin: { top: 40, right: 60, bottom: 60, left: 60 }
+        };
 
         // Initialize dashboard
         document.addEventListener('DOMContentLoaded', function() {
-            loadDashboard();
-            setInterval(updateSystemStatus, 30000); // Update every 30 seconds
+            initChart();
+            loadSystemHealth();
+            loadClients();
+            startChartAnimation();
         });
 
-        async function loadDashboard() {
-            try {
-                await Promise.all([
-                    loadSystemHealth(),
-                    loadClients(),
-                    loadMeshDashboard(),
-                    loadAnalytics()
-                ]);
-            } catch (error) {
-                console.error('Error loading dashboard:', error);
-                showAlert('Error loading dashboard', 'danger');
-            }
+        // Initialize TradingView-style chart
+        function initChart() {
+            // Generate synthetic portfolio data
+            const people = generatePeopleData();
+            allPaths = generatePortfolioPaths(people);
+            
+            // Setup D3 chart
+            setupChart();
+            
+            // Initial draw
+            drawPortfolioLines();
         }
 
+        // Generate synthetic people data
+        function generatePeopleData() {
+            const people = [];
+            
+            // Our clients (15 people)
+            for (let i = 1; i <= 15; i++) {
+                people.push({
+                    id: `our_${i}`,
+                    name: `Client ${i}`,
+                    type: 'our',
+                    initialValue: 50000 + Math.random() * 150000,
+                    riskProfile: 0.3 + Math.random() * 0.4,
+                    incomeLevel: 50000 + Math.random() * 100000
+                });
+            }
+            
+            // Competition clients (12 people)
+            for (let i = 1; i <= 12; i++) {
+                people.push({
+                    id: `competition_${i}`,
+                    name: `Competitor ${i}`,
+                    type: 'competition',
+                    initialValue: 40000 + Math.random() * 120000,
+                    riskProfile: 0.2 + Math.random() * 0.3,
+                    incomeLevel: 40000 + Math.random() * 80000
+                });
+            }
+            
+            return people;
+        }
+
+        // Generate portfolio paths
+        function generatePortfolioPaths(people) {
+            const startDate = new Date('2022-01-01');
+            const endDate = new Date('2025-12-31');
+            const days = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+            
+            const allPaths = [];
+            
+            people.forEach(person => {
+                const path = [];
+                let currentValue = person.initialValue;
+                
+                for (let i = 0; i <= days; i += 7) {
+                    const date = new Date(startDate.getTime() + i * 24 * 60 * 60 * 1000);
+                    
+                    let volatility, drift;
+                    if (person.type === 'our') {
+                        volatility = 0.02 + person.riskProfile * 0.03;
+                        drift = 0.0008 + person.riskProfile * 0.0004;
+                    } else {
+                        volatility = 0.015 + person.riskProfile * 0.02;
+                        drift = 0.0005 + person.riskProfile * 0.0002;
+                    }
+                    
+                    const randomReturn = Math.random();
+                    const logReturn = Math.log(1 + drift) - 0.5 * volatility * volatility + 
+                                    volatility * Math.sqrt(1/52) * (randomReturn - 0.5);
+                    
+                    currentValue *= Math.exp(logReturn);
+                    
+                    path.push({
+                        date: date,
+                        value: currentValue,
+                        personId: person.id,
+                        personName: person.name,
+                        type: person.type,
+                        quarter: `Q${Math.floor((date.getMonth() / 3) + 1)} ${date.getFullYear()}`
+                    });
+                }
+                
+                allPaths.push({
+                    person: person,
+                    path: path
+                });
+            });
+            
+            return allPaths;
+        }
+
+        // Setup D3 chart
+        function setupChart() {
+            svg = d3.select('#portfolio-chart')
+                .attr('width', config.width)
+                .attr('height', config.height);
+            
+            const chartWidth = config.width - config.margin.left - config.margin.right;
+            const chartHeight = config.height - config.margin.top - config.margin.bottom;
+            
+            const allData = allPaths.flatMap(p => p.path);
+            const allDates = allData.map(d => d.date);
+            const allValues = allData.map(d => d.value);
+            
+            xScale = d3.scaleTime()
+                .domain(d3.extent(allDates))
+                .range([0, chartWidth]);
+            
+            yScale = d3.scaleLinear()
+                .domain([0, d3.max(allValues)])
+                .range([chartHeight, 0]);
+            
+            line = d3.line()
+                .x(d => xScale(d.date))
+                .y(d => yScale(d.value))
+                .curve(d3.curveMonotoneX);
+            
+            chart = svg.append('g')
+                .attr('transform', `translate(${config.margin.left}, ${config.margin.top})`);
+            
+            // Add grid
+            chart.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0, ${chartHeight})`)
+                .call(d3.axisBottom(xScale).tickSize(-chartHeight).tickFormat(''));
+            
+            chart.append('g')
+                .attr('class', 'grid')
+                .call(d3.axisLeft(yScale).tickSize(-chartWidth).tickFormat(''));
+            
+            // Add axes
+            chart.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0, ${chartHeight})`)
+                .call(d3.axisBottom(xScale));
+            
+            chart.append('g')
+                .attr('class', 'y-axis')
+                .call(d3.axisLeft(yScale));
+        }
+
+        // Draw portfolio lines
+        function drawPortfolioLines() {
+            chart.selectAll('.portfolio-line, .portfolio-outline').remove();
+            
+            const chartWidth = config.width - config.margin.left - config.margin.right;
+            const chartHeight = config.height - config.margin.top - config.margin.bottom;
+            
+            const allData = allPaths.flatMap(p => p.path);
+            const allDates = allData.map(d => d.date);
+            const allValues = allData.map(d => d.value);
+            
+            const dateRange = d3.extent(allDates);
+            const dateSpan = dateRange[1] - dateRange[0];
+            const zoomedDateRange = [
+                dateRange[0] + (dateSpan * chartOffset),
+                dateRange[0] + (dateSpan * (chartOffset + 1/currentZoom))
+            ];
+            
+            xScale.domain(zoomedDateRange);
+            
+            const visibleData = allPaths.map(portfolio => {
+                const visiblePath = portfolio.path.filter(d => 
+                    d.date >= zoomedDateRange[0] && d.date <= zoomedDateRange[1]
+                );
+                return visiblePath;
+            }).flat();
+            
+            const visibleValues = visibleData.map(d => d.value);
+            if (visibleValues.length > 0) {
+                const valueRange = d3.extent(visibleValues);
+                const valueSpan = valueRange[1] - valueRange[0];
+                const zoomedValueSpan = valueSpan / currentZoom;
+                const centerValue = (valueRange[0] + valueRange[1]) / 2;
+                
+                yScale.domain([
+                    Math.max(0, centerValue - zoomedValueSpan / 2),
+                    centerValue + zoomedValueSpan / 2
+                ]);
+            }
+            
+            line.x(d => xScale(d.date)).y(d => yScale(d.value));
+            
+            chart.select('.x-axis').call(d3.axisBottom(xScale));
+            chart.select('.y-axis').call(d3.axisLeft(yScale));
+            
+            allPaths.forEach((portfolio, index) => {
+                const isOurClient = portfolio.person.type === 'our';
+                const strokeColor = isOurClient ? '#2962ff' : '#787b86';
+                const outlineColor = isOurClient ? '#089981' : '#f23645';
+                const strokeWidth = isOurClient ? 2 : 1.5;
+                const opacity = isOurClient ? 0.8 : 0.6;
+                
+                const visiblePath = portfolio.path.filter(d => 
+                    d.date >= zoomedDateRange[0] && d.date <= zoomedDateRange[1]
+                );
+                
+                if (visiblePath.length > 0) {
+                    chart.append('path')
+                        .datum(visiblePath)
+                        .attr('class', `portfolio-line ${portfolio.person.type}-line`)
+                        .attr('d', line)
+                        .style('fill', 'none')
+                        .style('stroke', strokeColor)
+                        .style('stroke-width', strokeWidth)
+                        .style('opacity', opacity);
+                    
+                    chart.append('path')
+                        .datum(visiblePath)
+                        .attr('class', `portfolio-outline ${portfolio.person.type}-outline`)
+                        .attr('d', line)
+                        .style('fill', 'none')
+                        .style('stroke', outlineColor)
+                        .style('stroke-width', strokeWidth + 2)
+                        .style('opacity', 0.3);
+                }
+            });
+            
+            updateMetrics();
+        }
+
+        // Update metrics
+        function updateMetrics() {
+            const currentOurValues = allPaths
+                .filter(p => p.person.type === 'our')
+                .map(p => {
+                    const midIndex = Math.floor(p.path.length * 0.6);
+                    return p.path[midIndex]?.value || 0;
+                })
+                .filter(v => v > 0);
+            
+            const currentCompetitionValues = allPaths
+                .filter(p => p.person.type === 'competition')
+                .map(p => {
+                    const midIndex = Math.floor(p.path.length * 0.6);
+                    return p.path[midIndex]?.value || 0;
+                })
+                .filter(v => v > 0);
+            
+            const ourAvg = currentOurValues.length > 0 ? 
+                currentOurValues.reduce((a, b) => a + b, 0) / currentOurValues.length : 0;
+            const competitionAvg = currentCompetitionValues.length > 0 ? 
+                currentCompetitionValues.reduce((a, b) => a + b, 0) / currentCompetitionValues.length : 0;
+            const outperformance = ourAvg > 0 ? ((ourAvg - competitionAvg) / competitionAvg * 100) : 0;
+            
+            document.getElementById('our-avg').textContent = `$${ourAvg.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+            document.getElementById('competition-avg').textContent = `$${competitionAvg.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+            document.getElementById('outperformance').textContent = `${outperformance > 0 ? '+' : ''}${outperformance.toFixed(1)}%`;
+            document.getElementById('outperformance').className = `metric-value ${outperformance > 0 ? 'positive' : 'negative'}`;
+        }
+
+        // Start chart animation
+        function startChartAnimation() {
+            const maxOffset = 0.8;
+            let direction = 1;
+            
+            function animate() {
+                chartOffset += 0.002 * direction;
+                
+                if (chartOffset >= maxOffset) {
+                    direction = -1;
+                } else if (chartOffset <= 0) {
+                    direction = 1;
+                }
+                
+                drawPortfolioLines();
+                
+                const allData = allPaths.flatMap(p => p.path);
+                const allDates = allData.map(d => d.date);
+                const dateRange = d3.extent(allDates);
+                const currentDate = new Date(dateRange[0].getTime() + 
+                    (dateRange[1] - dateRange[0]) * (0.5 + chartOffset * 0.3));
+                const currentQuarter = `Q${Math.floor((currentDate.getMonth() / 3) + 1)} ${currentDate.getFullYear()}`;
+                
+                document.getElementById('time-indicator').textContent = `Moving: ${currentQuarter}`;
+                
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            animate();
+        }
+
+        // Zoom control functions
+        function adjustZoom(factor) {
+            currentZoom *= factor;
+            currentZoom = Math.max(0.5, Math.min(3, currentZoom));
+            drawPortfolioLines();
+        }
+
+        function resetZoom() {
+            currentZoom = 1;
+            chartOffset = 0;
+            drawPortfolioLines();
+        }
+
+        // API functions
         async function loadSystemHealth() {
             try {
                 const response = await axios.get('/api/health');
                 const data = response.data;
-                
                 updateSystemStatus(data.status, data.components);
-                updatePerformanceMetrics(data.performance);
             } catch (error) {
                 console.error('Error loading system health:', error);
+            }
+        }
+
+        async function loadClients() {
+            try {
+                const response = await axios.get('/api/clients');
+                const data = response.data;
+                displayClients(data.clients);
+            } catch (error) {
+                console.error('Error loading clients:', error);
             }
         }
 
@@ -417,64 +819,6 @@
             
             statusElement.className = `status-indicator status-${status}`;
             statusText.textContent = `System ${status.charAt(0).toUpperCase() + status.slice(1)}`;
-            
-            // Update health status in modal
-            const healthStatus = document.getElementById('health-status');
-            if (healthStatus) {
-                let html = `<div class="alert alert-${status === 'healthy' ? 'success' : status === 'degraded' ? 'warning' : 'danger'} alert-custom">`;
-                html += `<strong>Overall Status:</strong> ${status}<br>`;
-                html += '<strong>Components:</strong><br>';
-                for (const [component, compStatus] of Object.entries(components)) {
-                    html += `<span class="status-indicator status-${compStatus}"></span>${component}: ${compStatus}<br>`;
-                }
-                html += '</div>';
-                healthStatus.innerHTML = html;
-            }
-        }
-
-        function updatePerformanceMetrics(metrics) {
-            const metricsDisplay = document.getElementById('performance-metrics-display');
-            const modalMetrics = document.getElementById('performance-metrics');
-            
-            const metricsHtml = `
-                <div class="metric-card">
-                    <h6><i class="fas fa-clock me-2"></i>Uptime</h6>
-                    <h3>${formatUptime(metrics.uptime_seconds)}</h3>
-                </div>
-                <div class="metric-card">
-                    <h6><i class="fas fa-exchange-alt me-2"></i>Requests</h6>
-                    <h3>${metrics.requests_processed}</h3>
-                </div>
-                <div class="metric-card">
-                    <h6><i class="fas fa-tachometer-alt me-2"></i>Avg Response</h6>
-                    <h3>${metrics.avg_response_time.toFixed(2)}s</h3>
-                </div>
-                <div class="metric-card">
-                    <h6><i class="fas fa-exclamation-triangle me-2"></i>Errors</h6>
-                    <h3>${metrics.errors}</h3>
-                </div>
-            `;
-            
-            if (metricsDisplay) metricsDisplay.innerHTML = metricsHtml;
-            if (modalMetrics) modalMetrics.innerHTML = metricsHtml;
-        }
-
-        function formatUptime(seconds) {
-            const hours = Math.floor(seconds / 3600);
-            const minutes = Math.floor((seconds % 3600) / 60);
-            return `${hours}h ${minutes}m`;
-        }
-
-        async function loadClients() {
-            try {
-                const response = await axios.get('/api/clients');
-                const data = response.data;
-                
-                displayClients(data.clients);
-                updateClientSelect(data.clients);
-            } catch (error) {
-                console.error('Error loading clients:', error);
-            }
         }
 
         function displayClients(clients) {
@@ -489,16 +833,8 @@
             clients.forEach(client => {
                 html += `
                     <div class="client-card" onclick="selectClient('${client.id}')">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <h6 class="mb-1">${client.name}</h6>
-                                <small class="text-muted">Age: ${client.age} | Income: $${client.income.toLocaleString()}</small>
-                            </div>
-                            <div class="text-end">
-                                <span class="badge bg-primary">${client.life_stage}</span>
-                                <span class="badge bg-secondary">${client.risk_tolerance}</span>
-                            </div>
-                        </div>
+                        <div class="client-name">${client.name}</div>
+                        <div class="client-details">Age: ${client.age} | Income: $${client.income.toLocaleString()}</div>
                     </div>
                 `;
             });
@@ -506,222 +842,12 @@
             clientList.innerHTML = html;
         }
 
-        function updateClientSelect(clients) {
-            const select = document.getElementById('event-client-select');
-            select.innerHTML = '<option value="">Select a client</option>';
-            
-            clients.forEach(client => {
-                select.innerHTML += `<option value="${client.id}">${client.name}</option>`;
-            });
-        }
-
-        async function loadMeshDashboard() {
-            try {
-                const response = await axios.get('/api/mesh/congruence');
-                const data = response.data;
-                
-                displayMeshCongruence(data);
-            } catch (error) {
-                console.error('Error loading mesh dashboard:', error);
-            }
-        }
-
-        function displayMeshCongruence(data) {
-            const statsDiv = document.getElementById('congruence-stats');
-            const tableDiv = document.getElementById('mesh-dashboard-table');
-            
-            // Display stats
-            let statsHtml = `
-                <div class="metric-card">
-                    <h6>Total Clients</h6>
-                    <h3>${data.total_clients}</h3>
-                </div>
-                <div class="metric-card">
-                    <h6>Total Events</h6>
-                    <h3>${data.total_events}</h3>
-                </div>
-            `;
-            
-            if (data.congruence_results.length > 0) {
-                const avgCongruence = data.congruence_results.reduce((sum, r) => sum + r.congruence, 0) / data.congruence_results.length;
-                statsHtml += `
-                    <div class="metric-card">
-                        <h6>Avg Congruence</h6>
-                        <h3>${(avgCongruence * 100).toFixed(1)}%</h3>
-                    </div>
-                `;
-            }
-            
-            statsDiv.innerHTML = statsHtml;
-            
-            // Display table
-            if (data.congruence_results.length > 0) {
-                let tableHtml = `
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Client 1</th>
-                                    <th>Client 2</th>
-                                    <th>Congruence</th>
-                                    <th>Triangulation</th>
-                                    <th>Density</th>
-                                    <th>Efficiency</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                `;
-                
-                data.congruence_results.forEach(result => {
-                    tableHtml += `
-                        <tr>
-                            <td>${result.client_1}</td>
-                            <td>${result.client_2}</td>
-                            <td>${(result.congruence * 100).toFixed(1)}%</td>
-                            <td>${(result.triangulation_quality * 100).toFixed(1)}%</td>
-                            <td>${(result.density_score * 100).toFixed(1)}%</td>
-                            <td>${(result.edge_efficiency * 100).toFixed(1)}%</td>
-                        </tr>
-                    `;
-                });
-                
-                tableHtml += '</tbody></table></div>';
-                tableDiv.innerHTML = tableHtml;
-            } else {
-                tableDiv.innerHTML = '<div class="text-center text-muted">Need at least 2 clients for congruence analysis</div>';
-            }
-        }
-
-        async function loadAnalytics() {
-            try {
-                const response = await axios.get('/api/analytics/dashboard');
-                const data = response.data;
-                
-                createClientDistributionChart(data.clients);
-                createEventTimelineChart(data.events);
-            } catch (error) {
-                console.error('Error loading analytics:', error);
-            }
-        }
-
-        function createClientDistributionChart(clients) {
-            const ctx = document.getElementById('client-distribution-chart').getContext('2d');
-            
-            if (clientDistributionChart) {
-                clientDistributionChart.destroy();
-            }
-            
-            const labels = Object.keys(clients.by_life_stage);
-            const data = Object.values(clients.by_life_stage);
-            
-            clientDistributionChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: data,
-                        backgroundColor: [
-                            '#FF6384',
-                            '#36A2EB',
-                            '#FFCE56',
-                            '#4BC0C0',
-                            '#9966FF'
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Client Distribution by Life Stage'
-                        }
-                    }
-                }
-            });
-        }
-
-        function createEventTimelineChart(events) {
-            const ctx = document.getElementById('event-timeline-chart').getContext('2d');
-            
-            if (eventTimelineChart) {
-                eventTimelineChart.destroy();
-            }
-            
-            const labels = Object.keys(events.by_type);
-            const data = Object.values(events.by_type);
-            
-            eventTimelineChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Events by Type',
-                        data: data,
-                        backgroundColor: '#36A2EB'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Events by Type'
-                        }
-                    }
-                }
-            });
-        }
-
-        // Form handlers
-        document.getElementById('add-client-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = {
-                name: formData.get('name'),
-                age: parseInt(formData.get('age')),
-                income: parseFloat(formData.get('income'))
-            };
-            
-            try {
-                const response = await axios.post('/api/clients', data);
-                showAlert('Client added successfully!', 'success');
-                e.target.reset();
-                loadClients();
-            } catch (error) {
-                showAlert('Error adding client: ' + error.response?.data?.error || error.message, 'danger');
-            }
-        });
-
-        document.getElementById('simulate-event-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = {
-                client_id: formData.get('client_id'),
-                event_type: formData.get('event_type')
-            };
-            
-            if (!data.client_id) {
-                showAlert('Please select a client', 'warning');
-                return;
-            }
-            
-            try {
-                const response = await axios.post('/api/events', data);
-                showAlert('Event simulated successfully!', 'success');
-                loadMeshDashboard();
-            } catch (error) {
-                showAlert('Error simulating event: ' + error.response?.data?.error || error.message, 'danger');
-            }
-        });
-
-        // Client selection
         function selectClient(clientId) {
             selectedClient = clientId;
+            document.querySelectorAll('.client-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.target.closest('.client-card').classList.add('selected');
             loadRecommendations(clientId);
         }
 
@@ -729,11 +855,9 @@
             try {
                 const response = await axios.get(`/api/recommendations/${clientId}`);
                 const data = response.data;
-                
                 displayRecommendations(data.recommendations);
             } catch (error) {
                 console.error('Error loading recommendations:', error);
-                showAlert('Error loading recommendations', 'danger');
             }
         }
 
@@ -743,13 +867,15 @@
             let html = '';
             for (const [category, items] of Object.entries(recommendations)) {
                 html += `
-                    <div class="mb-3">
-                        <h6 class="text-primary">${category.replace('_', ' ').toUpperCase()}</h6>
-                        <ul class="list-unstyled">
+                    <div style="margin-bottom: 10px;">
+                        <div style="font-size: 12px; color: var(--tradingview-accent); margin-bottom: 5px;">
+                            ${category.replace('_', ' ').toUpperCase()}
+                        </div>
+                        <ul style="font-size: 11px; margin: 0; padding-left: 15px;">
                 `;
                 
                 items.forEach(item => {
-                    html += `<li><i class="fas fa-check text-success me-2"></i>${item}</li>`;
+                    html += `<li style="margin-bottom: 2px;">${item}</li>`;
                 });
                 
                 html += '</ul></div>';
@@ -758,7 +884,6 @@
             recommendationsBox.innerHTML = html;
         }
 
-        // System controls
         function showSystemControls() {
             const modal = new bootstrap.Modal(document.getElementById('systemControlsModal'));
             modal.show();
@@ -766,21 +891,20 @@
 
         async function restartComponents() {
             try {
-                const response = await axios.post('/api/system/control', { action: 'restart_components' });
-                showAlert('Components restarted successfully!', 'success');
+                await axios.post('/api/system/control', { action: 'restart_components' });
+                alert('Components restarted successfully!');
                 loadSystemHealth();
             } catch (error) {
-                showAlert('Error restarting components: ' + error.response?.data?.error || error.message, 'danger');
+                alert('Error restarting components: ' + error.response?.data?.error || error.message);
             }
         }
 
         async function clearCache() {
             try {
-                const response = await axios.post('/api/system/control', { action: 'clear_cache' });
-                showAlert('Cache cleared successfully!', 'success');
-                loadDashboard();
+                await axios.post('/api/system/control', { action: 'clear_cache' });
+                alert('Cache cleared successfully!');
             } catch (error) {
-                showAlert('Error clearing cache: ' + error.response?.data?.error || error.message, 'danger');
+                alert('Error clearing cache: ' + error.response?.data?.error || error.message);
             }
         }
 
@@ -797,9 +921,9 @@
                 a.click();
                 URL.revokeObjectURL(url);
                 
-                showAlert('Data exported successfully!', 'success');
+                alert('Data exported successfully!');
             } catch (error) {
-                showAlert('Error exporting data: ' + error.response?.data?.error || error.message, 'danger');
+                alert('Error exporting data: ' + error.response?.data?.error || error.message);
             }
         }
 
@@ -814,40 +938,30 @@
                         const text = await file.text();
                         const data = JSON.parse(text);
                         
-                        const response = await axios.post('/api/system/control', { 
+                        await axios.post('/api/system/control', { 
                             action: 'import_data',
                             data: data
                         });
                         
-                        showAlert('Data imported successfully!', 'success');
-                        loadDashboard();
+                        alert('Data imported successfully!');
+                        loadClients();
                     } catch (error) {
-                        showAlert('Error importing data: ' + error.message, 'danger');
+                        alert('Error importing data: ' + error.message);
                     }
                 }
             };
             input.click();
         }
 
-        // Utility functions
-        function showAlert(message, type) {
-            const alertDiv = document.createElement('div');
-            alertDiv.className = `alert alert-${type} alert-dismissible fade show alert-custom`;
-            alertDiv.innerHTML = `
-                ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `;
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            config.width = window.innerWidth - 300;
+            config.height = window.innerHeight - 60;
             
-            document.querySelector('.container-fluid').insertBefore(alertDiv, document.querySelector('.performance-metrics'));
-            
-            setTimeout(() => {
-                alertDiv.remove();
-            }, 5000);
-        }
-
-        function updateSystemStatus() {
-            loadSystemHealth();
-        }
+            svg.attr('width', config.width).attr('height', config.height);
+            setupChart();
+            drawPortfolioLines();
+        });
     </script>
 </body>
 </html> 

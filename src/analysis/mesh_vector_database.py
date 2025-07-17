@@ -27,9 +27,9 @@ from pathlib import Path
 import hashlib
 
 # Import existing components
-from .json_to_vector_converter import ClientVectorProfile, LifeStage, EventCategory
-from .synthetic_lifestyle_engine import SyntheticClientData
-from .time_uncertainty_mesh import TimeUncertaintyMeshEngine
+from ..json_to_vector_converter import ClientVectorProfile, LifeStage, EventCategory
+from ..synthetic_lifestyle_engine import SyntheticClientData
+from ..core.time_uncertainty_mesh import TimeUncertaintyMeshEngine
 
 
 @dataclass
