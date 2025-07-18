@@ -1,0 +1,11 @@
+{
+  "total_states": 700,
+  "average_optionality": 0.10354037267080746,
+  "median_optionality": 0.0,
+  "std_optionality": 0.24350335405168255,
+  "average_stress": 0.5571428571428572,
+  "good_region_count": "135",
+  "good_region_percentage": 19.28571428571429,
+  "wealth_correlation": 0.3048783535437595,
+  "stress_correlation": -0.5570277550897845
+}

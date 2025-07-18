@@ -1,0 +1,23 @@
+{
+  "session_id": "optionality_training_20250718_194615",
+  "num_states_explored": 137,
+  "num_paths_found": 0,
+  "average_optionality": 0.0,
+  "stress_minimization_success": 0.0,
+  "market_condition_performance": {
+    "normal": 0.0,
+    "high_stress": 0.0,
+    "low_stress": 0.0
+  },
+  "training_insights": {
+    "total_states": 137,
+    "good_region_states": 9,
+    "action_space_size": 23,
+    "average_stress_level": 0.7181387886629015,
+    "optionality_distribution": {
+      "high": 0,
+      "medium": 0,
+      "low": 137
+    }
+  }
+}

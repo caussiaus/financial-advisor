@@ -1,0 +1,65 @@
+{
+  "session_id": "integrated_training_20250718_194615",
+  "combined_insights": {
+    "mesh_insights": {
+      "successful_recoveries": 24,
+      "failed_recoveries": 26,
+      "average_recovery_time": 32.5,
+      "shock_type_performance": {
+        "market_crash": 0.4,
+        "job_loss": 0.6666666666666666,
+        "medical_emergency": 0.42857142857142855,
+        "divorce": 0.3333333333333333,
+        "natural_disaster": 0.0,
+        "interest_rate_spike": 0.375,
+        "inflation_shock": 0.6
+      }
+    },
+    "optionality_insights": {
+      "average_optionality": 0.0,
+      "stress_minimization_success": 0.0,
+      "market_condition_performance": {
+        "normal": 0.0,
+        "high_stress": 0.0,
+        "low_stress": 0.0
+      },
+      "optimal_paths_found": 0
+    },
+    "combined_metrics": {
+      "overall_success_rate": 0.288,
+      "flexibility_score": 0.4,
+      "stress_resilience": 0.22916666666666669
+    }
+  },
+  "optimal_strategies": [
+    {
+      "strategy_id": "commutator_recovery",
+      "name": "Commutator-Based Recovery Strategy",
+      "description": "Use commutator operations for financial recovery",
+      "approach": "commutator_focused",
+      "operations": [
+        "capital_efficiency",
+        "capital_efficiency",
+        "capital_efficiency",
+        "income_optimization",
+        "income_optimization"
+      ],
+      "expected_recovery_time": 90,
+      "success_score": 0.9850819229610543,
+      "shock_type": "none",
+      "confidence": 0.9850819229610543
+    },
+    {
+      "strategy_id": "balanced_approach",
+      "name": "Balanced Optionality and Recovery Strategy",
+      "description": "Combine optionality optimization with commutator recovery",
+      "approach": "integrated",
+      "optionality_weight": 0.3,
+      "stress_weight": 0.4,
+      "commutator_weight": 0.3,
+      "expected_flexibility": 0.4,
+      "expected_resilience": 0.22916666666666669,
+      "confidence": 0.288
+    }
+  ]
+}

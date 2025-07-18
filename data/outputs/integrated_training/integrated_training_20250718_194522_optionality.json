@@ -1,0 +1,10 @@
+{
+  "average_optionality": 0.0,
+  "stress_minimization_success": 0.0,
+  "market_condition_performance": {
+    "normal": 0.0,
+    "high_stress": 0.0,
+    "low_stress": 0.0
+  },
+  "optimal_paths_found": 0
+}

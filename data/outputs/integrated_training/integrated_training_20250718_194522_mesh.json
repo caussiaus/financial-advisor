@@ -1,0 +1,14 @@
+{
+  "successful_recoveries": 17,
+  "failed_recoveries": 33,
+  "average_recovery_time": 42.35294117647059,
+  "shock_type_performance": {
+    "market_crash": 0.5,
+    "job_loss": 0.2857142857142857,
+    "medical_emergency": 0.5,
+    "divorce": 0.0,
+    "natural_disaster": 0.0,
+    "interest_rate_spike": 0.16666666666666666,
+    "inflation_shock": 0.1111111111111111
+  }
+}
