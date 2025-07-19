@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_low_struggling_0_002",
+  "income_level": "low",
+  "savings_level": "struggling",
+  "monthly_income": 2670.61,
+  "monthly_expenses": 2487.16,
+  "savings_rate": 6.869217145146625,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 921.29,
+    "Transportation": 247.35,
+    "Food": 216.46,
+    "Healthcare": 220.16,
+    "Utilities": 225.68,
+    "Entertainment": 82.17,
+    "Shopping": 275.21,
+    "Education": 86.74,
+    "Insurance": 108.04,
+    "Miscellaneous": 104.06
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -54.02,
+      "category": "Insurance",
+      "description": "Vargas-Gomez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": 1335.31,
+      "category": "Income",
+      "description": "Warden/ranger",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -61.84,
+      "category": "Transportation",
+      "description": "Jacobs LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -75.23,
+      "category": "Utilities",
+      "description": "Jacobs-Woodard",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -61.84,
+      "category": "Transportation",
+      "description": "Fernandez and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -137.6,
+      "category": "Shopping",
+      "description": "Green and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -43.37,
+      "category": "Education",
+      "description": "Bennett Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": 1335.31,
+      "category": "Income",
+      "description": "Lecturer, further education",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -230.32,
+      "category": "Housing",
+      "description": "Martinez Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -73.39,
+      "category": "Healthcare",
+      "description": "Andrews, Hoffman and Crane",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -43.37,
+      "category": "Education",
+      "description": "Johnson and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -230.32,
+      "category": "Housing",
+      "description": "Hunter, Woodard and Thompson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -75.23,
+      "category": "Utilities",
+      "description": "Christian-Johnson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -52.03,
+      "category": "Miscellaneous",
+      "description": "Henry-Burnett",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -61.84,
+      "category": "Transportation",
+      "description": "Harris and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -52.03,
+      "category": "Miscellaneous",
+      "description": "Ortega-Nguyen",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -61.84,
+      "category": "Transportation",
+      "description": "Jones-Jordan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -27.39,
+      "category": "Entertainment",
+      "description": "Huerta, Edwards and Kaiser",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -54.02,
+      "category": "Insurance",
+      "description": "Garcia-Turner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -137.6,
+      "category": "Shopping",
+      "description": "Steele-Hernandez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -230.32,
+      "category": "Housing",
+      "description": "Bentley, Stout and Bender",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -73.39,
+      "category": "Healthcare",
+      "description": "Lester Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -230.32,
+      "category": "Housing",
+      "description": "Nelson Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -27.39,
+      "category": "Entertainment",
+      "description": "Anderson Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -54.12,
+      "category": "Food",
+      "description": "Williams, Le and Stanley",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -73.39,
+      "category": "Healthcare",
+      "description": "Fox, Mendez and Bell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -54.12,
+      "category": "Food",
+      "description": "Thompson, Bailey and Black",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -54.12,
+      "category": "Food",
+      "description": "Mccoy-Anderson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -54.12,
+      "category": "Food",
+      "description": "Smith, Montoya and Sanders",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -75.23,
+      "category": "Utilities",
+      "description": "Jones Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -27.39,
+      "category": "Entertainment",
+      "description": "Ellison LLC",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "struggling"
+}

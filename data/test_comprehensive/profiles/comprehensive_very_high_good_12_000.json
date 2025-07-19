@@ -1,0 +1,234 @@
+{
+  "profile_id": "comprehensive_very_high_good_12_000",
+  "income_level": "very_high",
+  "savings_level": "good",
+  "monthly_income": 65132.82,
+  "monthly_expenses": 37752.40000000001,
+  "savings_rate": 42.03782363484338,
+  "risk_tolerance": "high",
+  "expense_categories": {
+    "Housing": 14729.42,
+    "Transportation": 5446.26,
+    "Food": 4975.76,
+    "Healthcare": 2363.32,
+    "Utilities": 3623.58,
+    "Entertainment": 1422.21,
+    "Shopping": 3465.9,
+    "Education": 1605.47,
+    "Insurance": 63.44,
+    "Miscellaneous": 57.04
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -1732.95,
+      "category": "Shopping",
+      "description": "Wade Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -787.77,
+      "category": "Healthcare",
+      "description": "Lewis LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": 65132.82,
+      "category": "Income",
+      "description": "Doctor, general practice",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -3682.36,
+      "category": "Housing",
+      "description": "Marsh-Thompson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -1207.86,
+      "category": "Utilities",
+      "description": "Guzman Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -1207.86,
+      "category": "Utilities",
+      "description": "Oliver-Anderson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -474.07,
+      "category": "Entertainment",
+      "description": "Lee-Butler",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -474.07,
+      "category": "Entertainment",
+      "description": "Chapman Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -474.07,
+      "category": "Entertainment",
+      "description": "Ferrell, Peterson and Brown",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -28.52,
+      "category": "Miscellaneous",
+      "description": "Jones Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -1361.57,
+      "category": "Transportation",
+      "description": "Johnson LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -1243.94,
+      "category": "Food",
+      "description": "Hoffman-Chavez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -3682.36,
+      "category": "Housing",
+      "description": "Santiago, Watson and Harris",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -31.72,
+      "category": "Insurance",
+      "description": "Perez LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -1243.94,
+      "category": "Food",
+      "description": "Nixon LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -787.77,
+      "category": "Healthcare",
+      "description": "Stewart and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -3682.36,
+      "category": "Housing",
+      "description": "Gonzalez-Sanford",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -1361.57,
+      "category": "Transportation",
+      "description": "Deleon, Brown and Roth",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -1207.86,
+      "category": "Utilities",
+      "description": "Henry and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -31.72,
+      "category": "Insurance",
+      "description": "Walker-Weaver",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -1732.95,
+      "category": "Shopping",
+      "description": "Nelson, Cole and Snyder",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -1361.57,
+      "category": "Transportation",
+      "description": "Vance-Myers",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -1361.57,
+      "category": "Transportation",
+      "description": "Lara-Tucker",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -802.74,
+      "category": "Education",
+      "description": "Ellis, Alexander and Turner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -3682.36,
+      "category": "Housing",
+      "description": "Ramirez LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -802.74,
+      "category": "Education",
+      "description": "Alexander Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -28.52,
+      "category": "Miscellaneous",
+      "description": "Jimenez, Freeman and Long",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -1243.94,
+      "category": "Food",
+      "description": "Sparks and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -787.77,
+      "category": "Healthcare",
+      "description": "Mccormick-Briggs",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -1243.94,
+      "category": "Food",
+      "description": "Davis-Shaffer",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "good"
+}

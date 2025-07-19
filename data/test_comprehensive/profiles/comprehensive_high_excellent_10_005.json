@@ -1,0 +1,234 @@
+{
+  "profile_id": "comprehensive_high_excellent_10_005",
+  "income_level": "high",
+  "savings_level": "excellent",
+  "monthly_income": 48875.03,
+  "monthly_expenses": 9451.910000000002,
+  "savings_rate": 80.66106557888557,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 2089.61,
+    "Transportation": 1362.28,
+    "Food": 1452.7,
+    "Healthcare": 1033.25,
+    "Utilities": 843.24,
+    "Entertainment": 414.82,
+    "Shopping": 1015.45,
+    "Education": 471.01,
+    "Insurance": 419.11,
+    "Miscellaneous": 350.44
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -363.18,
+      "category": "Food",
+      "description": "Lee-Miller",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-19",
+      "amount": -138.27,
+      "category": "Entertainment",
+      "description": "Ramos PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -363.18,
+      "category": "Food",
+      "description": "Wagner, Lopez and Morgan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -344.42,
+      "category": "Healthcare",
+      "description": "Bowers, Walsh and Marquez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -522.4,
+      "category": "Housing",
+      "description": "Cohen, Welch and Green",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -340.57,
+      "category": "Transportation",
+      "description": "Jones, Sparks and Lopez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -281.08,
+      "category": "Utilities",
+      "description": "Gordon, Cooper and Green",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -235.5,
+      "category": "Education",
+      "description": "Nguyen, Williams and Vasquez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -522.4,
+      "category": "Housing",
+      "description": "King, Hicks and Gordon",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -235.5,
+      "category": "Education",
+      "description": "Gamble-Moore",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": 48875.03,
+      "category": "Income",
+      "description": "Designer, television/film set",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -281.08,
+      "category": "Utilities",
+      "description": "Anderson-Jones",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -522.4,
+      "category": "Housing",
+      "description": "Hanna-Payne",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -340.57,
+      "category": "Transportation",
+      "description": "Gutierrez Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -522.4,
+      "category": "Housing",
+      "description": "Mullins-Patrick",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -363.18,
+      "category": "Food",
+      "description": "Mann, Lynch and Gonzalez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -175.22,
+      "category": "Miscellaneous",
+      "description": "Johnson LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -175.22,
+      "category": "Miscellaneous",
+      "description": "Cunningham-Marks",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -340.57,
+      "category": "Transportation",
+      "description": "Charles Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -344.42,
+      "category": "Healthcare",
+      "description": "Vargas-Ellis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -344.42,
+      "category": "Healthcare",
+      "description": "Diaz LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -363.18,
+      "category": "Food",
+      "description": "Garcia Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -340.57,
+      "category": "Transportation",
+      "description": "Higgins-Moore",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -281.08,
+      "category": "Utilities",
+      "description": "Navarro, Bond and Hale",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -138.27,
+      "category": "Entertainment",
+      "description": "Bates and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -507.73,
+      "category": "Shopping",
+      "description": "Collins-Patel",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -209.56,
+      "category": "Insurance",
+      "description": "Smith-Caldwell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -507.73,
+      "category": "Shopping",
+      "description": "Franco and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -209.56,
+      "category": "Insurance",
+      "description": "Foley, Hunter and Osborn",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -138.27,
+      "category": "Entertainment",
+      "description": "Daniel Inc",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

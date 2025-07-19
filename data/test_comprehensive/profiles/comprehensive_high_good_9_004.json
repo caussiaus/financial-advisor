@@ -1,0 +1,234 @@
+{
+  "profile_id": "comprehensive_high_good_9_004",
+  "income_level": "high",
+  "savings_level": "good",
+  "monthly_income": 21154.88,
+  "monthly_expenses": 10465.61,
+  "savings_rate": 50.52862507374185,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 4719.34,
+    "Transportation": 1348.5,
+    "Food": 1161.48,
+    "Healthcare": 701.83,
+    "Utilities": 509.21,
+    "Entertainment": 465.2,
+    "Shopping": 1172.11,
+    "Education": 196.32,
+    "Insurance": 173.83,
+    "Miscellaneous": 17.79
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -337.12,
+      "category": "Transportation",
+      "description": "Young-Strong",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -155.07,
+      "category": "Entertainment",
+      "description": "Wheeler-Newton",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -1179.84,
+      "category": "Housing",
+      "description": "Johnson LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -290.37,
+      "category": "Food",
+      "description": "Austin-Carter",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -169.74,
+      "category": "Utilities",
+      "description": "Carrillo, Fitzgerald and Nguyen",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -8.89,
+      "category": "Miscellaneous",
+      "description": "White and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": 21154.88,
+      "category": "Income",
+      "description": "Computer games developer",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -1179.84,
+      "category": "Housing",
+      "description": "Jenkins Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -337.12,
+      "category": "Transportation",
+      "description": "Jackson, Bell and Turner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -290.37,
+      "category": "Food",
+      "description": "Russo, Rodgers and King",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -8.89,
+      "category": "Miscellaneous",
+      "description": "Terry-Horton",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -337.12,
+      "category": "Transportation",
+      "description": "Hill and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -98.16,
+      "category": "Education",
+      "description": "Anderson-Jackson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -86.92,
+      "category": "Insurance",
+      "description": "Horton and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -1179.84,
+      "category": "Housing",
+      "description": "Cook-Davis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -290.37,
+      "category": "Food",
+      "description": "Kim, Jones and Brennan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -169.74,
+      "category": "Utilities",
+      "description": "Young-Ho",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -586.05,
+      "category": "Shopping",
+      "description": "Warner, Martinez and Payne",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -98.16,
+      "category": "Education",
+      "description": "Lewis Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -86.92,
+      "category": "Insurance",
+      "description": "Thomas Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -1179.84,
+      "category": "Housing",
+      "description": "Macias PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -337.12,
+      "category": "Transportation",
+      "description": "Moreno PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -155.07,
+      "category": "Entertainment",
+      "description": "Ross PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -169.74,
+      "category": "Utilities",
+      "description": "Ponce-Jordan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -290.37,
+      "category": "Food",
+      "description": "Thomas Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -155.07,
+      "category": "Entertainment",
+      "description": "Huber Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -233.94,
+      "category": "Healthcare",
+      "description": "Martinez-Fletcher",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -233.94,
+      "category": "Healthcare",
+      "description": "Dixon-Harris",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -586.05,
+      "category": "Shopping",
+      "description": "Solis-Bailey",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -233.94,
+      "category": "Healthcare",
+      "description": "Anderson, Nelson and Thompson",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

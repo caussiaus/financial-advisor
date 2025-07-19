@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_high_good_9_001",
+  "income_level": "high",
+  "savings_level": "good",
+  "monthly_income": 29211.77,
+  "monthly_expenses": 13535.940000000002,
+  "savings_rate": 53.66271882874608,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 3862.37,
+    "Transportation": 2331.63,
+    "Food": 1534.38,
+    "Healthcare": 1303.57,
+    "Utilities": 770.78,
+    "Entertainment": 720.68,
+    "Shopping": 933.75,
+    "Education": 982.24,
+    "Insurance": 568.01,
+    "Miscellaneous": 528.53
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -264.26,
+      "category": "Miscellaneous",
+      "description": "Thompson, Harrell and Hudson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": 9737.26,
+      "category": "Income",
+      "description": "Development worker, community",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -434.52,
+      "category": "Healthcare",
+      "description": "Martin Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -582.91,
+      "category": "Transportation",
+      "description": "Martin, Cunningham and Long",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -284.0,
+      "category": "Insurance",
+      "description": "Silva PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -256.93,
+      "category": "Utilities",
+      "description": "Eaton, Carter and Griffin",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -240.23,
+      "category": "Entertainment",
+      "description": "Hoover, Anderson and Harris",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -466.88,
+      "category": "Shopping",
+      "description": "Chen, Hall and Morgan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -434.52,
+      "category": "Healthcare",
+      "description": "Garcia Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": 9737.26,
+      "category": "Income",
+      "description": "Chief Executive Officer",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -284.0,
+      "category": "Insurance",
+      "description": "Reilly PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -965.59,
+      "category": "Housing",
+      "description": "Murray PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -965.59,
+      "category": "Housing",
+      "description": "Ryan, Henry and Mcconnell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -240.23,
+      "category": "Entertainment",
+      "description": "Brooks PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -466.88,
+      "category": "Shopping",
+      "description": "Cervantes, Morris and Taylor",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -240.23,
+      "category": "Entertainment",
+      "description": "Patel-Clark",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -434.52,
+      "category": "Healthcare",
+      "description": "Nelson Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -256.93,
+      "category": "Utilities",
+      "description": "Taylor PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -256.93,
+      "category": "Utilities",
+      "description": "Clark PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -511.46,
+      "category": "Food",
+      "description": "Hall, Powell and Wagner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -965.59,
+      "category": "Housing",
+      "description": "Ward-Compton",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -965.59,
+      "category": "Housing",
+      "description": "Levy, Ray and Reed",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -582.91,
+      "category": "Transportation",
+      "description": "Wilkinson Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -511.46,
+      "category": "Food",
+      "description": "Graves-Perez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -491.12,
+      "category": "Education",
+      "description": "Rivera-Mays",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -582.91,
+      "category": "Transportation",
+      "description": "Anderson and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -491.12,
+      "category": "Education",
+      "description": "Hays-Lopez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -264.26,
+      "category": "Miscellaneous",
+      "description": "Walker and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": 9737.26,
+      "category": "Income",
+      "description": "Publishing rights manager",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -511.46,
+      "category": "Food",
+      "description": "Mitchell, Martinez and Pineda",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -582.91,
+      "category": "Transportation",
+      "description": "Brown Group",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

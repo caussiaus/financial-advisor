@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_medium_struggling_3_001",
+  "income_level": "medium",
+  "savings_level": "struggling",
+  "monthly_income": 11497.49,
+  "monthly_expenses": 8630.51,
+  "savings_rate": 24.93570335786332,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 1866.14,
+    "Transportation": 1172.32,
+    "Food": 1418.09,
+    "Healthcare": 739.8,
+    "Utilities": 765.04,
+    "Entertainment": 639.66,
+    "Shopping": 886.36,
+    "Education": 312.62,
+    "Insurance": 568.03,
+    "Miscellaneous": 262.45
+  },
+  "transactions": [
+    {
+      "date": "2025-06-21",
+      "amount": 3832.5,
+      "category": "Income",
+      "description": "Psychologist, counselling",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -131.22,
+      "category": "Miscellaneous",
+      "description": "Lewis LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -472.7,
+      "category": "Food",
+      "description": "Wilkins-Fuller",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": 3832.5,
+      "category": "Income",
+      "description": "Surveyor, planning and development",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -293.08,
+      "category": "Transportation",
+      "description": "Walker and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -156.31,
+      "category": "Education",
+      "description": "Martinez LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -131.22,
+      "category": "Miscellaneous",
+      "description": "Hall-Molina",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -466.54,
+      "category": "Housing",
+      "description": "Friedman-Alexander",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -293.08,
+      "category": "Transportation",
+      "description": "Ramirez Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -255.01,
+      "category": "Utilities",
+      "description": "Shaffer-Pena",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -443.18,
+      "category": "Shopping",
+      "description": "Pham Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -466.54,
+      "category": "Housing",
+      "description": "Jimenez LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -255.01,
+      "category": "Utilities",
+      "description": "Fuller, Morgan and Pierce",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -472.7,
+      "category": "Food",
+      "description": "Roberts, Richardson and Gould",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -284.01,
+      "category": "Insurance",
+      "description": "Lang, Farmer and Key",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -213.22,
+      "category": "Entertainment",
+      "description": "Brooks-Day",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -443.18,
+      "category": "Shopping",
+      "description": "Rhodes LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -466.54,
+      "category": "Housing",
+      "description": "Ward Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -213.22,
+      "category": "Entertainment",
+      "description": "Page, Black and Martinez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -284.01,
+      "category": "Insurance",
+      "description": "Garcia-Thomas",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": 3832.5,
+      "category": "Income",
+      "description": "Runner, broadcasting/film/video",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -246.6,
+      "category": "Healthcare",
+      "description": "Mckinney PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -466.54,
+      "category": "Housing",
+      "description": "Hale, Miles and Mckinney",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -156.31,
+      "category": "Education",
+      "description": "Holloway-Castillo",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -293.08,
+      "category": "Transportation",
+      "description": "Turner LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -246.6,
+      "category": "Healthcare",
+      "description": "Bennett LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -293.08,
+      "category": "Transportation",
+      "description": "Peters, Stone and Coffey",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -213.22,
+      "category": "Entertainment",
+      "description": "Morton, Reed and Lang",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -246.6,
+      "category": "Healthcare",
+      "description": "Pena LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -255.01,
+      "category": "Utilities",
+      "description": "Carter Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -472.7,
+      "category": "Food",
+      "description": "Smith and Sons",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "moderate"
+}

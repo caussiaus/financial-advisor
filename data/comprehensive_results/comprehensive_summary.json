@@ -1,0 +1,57 @@
+{
+  "test_date": "2025-07-19T00:42:29.122376",
+  "total_profiles": 100,
+  "financial_summary": {
+    "average_monthly_income": 33055.7639,
+    "average_monthly_expenses": 16052.853100000002,
+    "average_savings_rate": 40.19730361273185,
+    "total_annual_income": 39666916.68,
+    "total_annual_expenses": 19263423.720000003,
+    "total_annual_savings": 20403492.959999997
+  },
+  "risk_analysis": {
+    "risk_distribution": {
+      "low": 76,
+      "high": 9,
+      "medium": 15
+    },
+    "high_risk_profiles": 9,
+    "medium_risk_profiles": 15,
+    "low_risk_profiles": 76
+  },
+  "comprehensive_metadata": {
+    "test_date": "2025-07-19T00:42:29.117630",
+    "total_profiles": 100,
+    "income_levels": {
+      "medium": 24,
+      "high": 24,
+      "random": 10,
+      "low": 18,
+      "very": 24
+    },
+    "savings_levels": {
+      "struggling": 12,
+      "excellent": 6,
+      "008": 1,
+      "000": 1,
+      "001": 1,
+      "minimal": 18,
+      "moderate": 18,
+      "high": 24,
+      "002": 1,
+      "good": 12,
+      "003": 1,
+      "009": 1,
+      "004": 1,
+      "005": 1,
+      "006": 1,
+      "007": 1
+    },
+    "financial_health_levels": {}
+  },
+  "simulation_summary": {
+    "years_simulated": 30,
+    "simulations_per_profile": 100,
+    "total_portfolio_simulations": 100
+  }
+}

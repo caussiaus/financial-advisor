@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_medium_minimal_4_000",
+  "income_level": "medium",
+  "savings_level": "minimal",
+  "monthly_income": 9670.33,
+  "monthly_expenses": 8385.39,
+  "savings_rate": 13.287447274291575,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 2848.48,
+    "Transportation": 778.02,
+    "Food": 1130.8,
+    "Healthcare": 652.46,
+    "Utilities": 713.2,
+    "Entertainment": 654.52,
+    "Shopping": 564.53,
+    "Education": 639.28,
+    "Insurance": 326.68,
+    "Miscellaneous": 77.42
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -376.93,
+      "category": "Food",
+      "description": "Brock Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -194.5,
+      "category": "Transportation",
+      "description": "Anderson-Morales",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -163.34,
+      "category": "Insurance",
+      "description": "Gonzalez-Harvey",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -218.17,
+      "category": "Entertainment",
+      "description": "Martinez PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -319.64,
+      "category": "Education",
+      "description": "Swanson Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -712.12,
+      "category": "Housing",
+      "description": "Gillespie-Levine",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -712.12,
+      "category": "Housing",
+      "description": "Morgan Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -712.12,
+      "category": "Housing",
+      "description": "Dominguez-Lee",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -194.5,
+      "category": "Transportation",
+      "description": "Rivera Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -217.49,
+      "category": "Healthcare",
+      "description": "Maddox-Gates",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -376.93,
+      "category": "Food",
+      "description": "Harrison, Davis and Gould",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -218.17,
+      "category": "Entertainment",
+      "description": "Park-Johnston",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -237.73,
+      "category": "Utilities",
+      "description": "Simmons, Clarke and Pierce",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -38.71,
+      "category": "Miscellaneous",
+      "description": "Evans PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -217.49,
+      "category": "Healthcare",
+      "description": "Green LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -282.26,
+      "category": "Shopping",
+      "description": "Shields, Clark and Williams",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -38.71,
+      "category": "Miscellaneous",
+      "description": "Townsend, Rojas and Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -712.12,
+      "category": "Housing",
+      "description": "Williams, Bryant and Curtis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -194.5,
+      "category": "Transportation",
+      "description": "Jordan Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -376.93,
+      "category": "Food",
+      "description": "Hunter and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -237.73,
+      "category": "Utilities",
+      "description": "Nguyen-Williams",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -282.26,
+      "category": "Shopping",
+      "description": "Perez Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": 3223.44,
+      "category": "Income",
+      "description": "Embryologist, clinical",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -163.34,
+      "category": "Insurance",
+      "description": "Bridges-Cook",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -217.49,
+      "category": "Healthcare",
+      "description": "Coleman-Foster",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -319.64,
+      "category": "Education",
+      "description": "Robbins-Petty",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -237.73,
+      "category": "Utilities",
+      "description": "Dean, Schaefer and Carlson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -194.5,
+      "category": "Transportation",
+      "description": "Mcintosh PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": 3223.44,
+      "category": "Income",
+      "description": "Associate Professor",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": 3223.44,
+      "category": "Income",
+      "description": "Museum/gallery exhibitions officer",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -218.17,
+      "category": "Entertainment",
+      "description": "Miller-Suarez",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "struggling"
+}

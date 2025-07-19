@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_random_007",
+  "income_level": "very_high",
+  "savings_level": "exceptional",
+  "monthly_income": 84772.88,
+  "monthly_expenses": 15040.429999999998,
+  "savings_rate": 82.25796976580246,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 4331.45,
+    "Transportation": 1873.35,
+    "Food": 1974.36,
+    "Healthcare": 1149.57,
+    "Utilities": 1476.23,
+    "Entertainment": 920.88,
+    "Shopping": 1283.33,
+    "Education": 467.06,
+    "Insurance": 1195.68,
+    "Miscellaneous": 368.52
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": 28257.63,
+      "category": "Income",
+      "description": "Quality manager",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-19",
+      "amount": -468.34,
+      "category": "Transportation",
+      "description": "Gomez PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-19",
+      "amount": -233.53,
+      "category": "Education",
+      "description": "Johnson, Fisher and Wagner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -468.34,
+      "category": "Transportation",
+      "description": "Brown-Jones",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -597.84,
+      "category": "Insurance",
+      "description": "Dillon, Reed and Pacheco",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -184.26,
+      "category": "Miscellaneous",
+      "description": "Livingston, Page and Brown",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -658.12,
+      "category": "Food",
+      "description": "Scott Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -492.08,
+      "category": "Utilities",
+      "description": "Sims, Anderson and Cantu",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -306.96,
+      "category": "Entertainment",
+      "description": "Silva, Arroyo and Williams",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -641.66,
+      "category": "Shopping",
+      "description": "Adams LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": 28257.63,
+      "category": "Income",
+      "description": "Tree surgeon",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -492.08,
+      "category": "Utilities",
+      "description": "Barton LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": 28257.63,
+      "category": "Income",
+      "description": "Chartered legal executive (England and Wales)",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -468.34,
+      "category": "Transportation",
+      "description": "Hamilton PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -597.84,
+      "category": "Insurance",
+      "description": "Bradley, Barber and Hall",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -306.96,
+      "category": "Entertainment",
+      "description": "Bowers-Rivas",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -641.66,
+      "category": "Shopping",
+      "description": "Thompson-Wade",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -1082.86,
+      "category": "Housing",
+      "description": "Johnson-Shaw",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -658.12,
+      "category": "Food",
+      "description": "Guzman, Nguyen and Montgomery",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -383.19,
+      "category": "Healthcare",
+      "description": "Summers-Olson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -184.26,
+      "category": "Miscellaneous",
+      "description": "Smith LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -306.96,
+      "category": "Entertainment",
+      "description": "Good-Reyes",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -233.53,
+      "category": "Education",
+      "description": "Johnson LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -383.19,
+      "category": "Healthcare",
+      "description": "Wade, Jones and Castro",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -383.19,
+      "category": "Healthcare",
+      "description": "Gardner Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -1082.86,
+      "category": "Housing",
+      "description": "Landry-Lucas",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -1082.86,
+      "category": "Housing",
+      "description": "Moore PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -1082.86,
+      "category": "Housing",
+      "description": "Massey-Herring",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -468.34,
+      "category": "Transportation",
+      "description": "Clark, Jordan and Williams",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -658.12,
+      "category": "Food",
+      "description": "Brown-Reyes",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -492.08,
+      "category": "Utilities",
+      "description": "Martinez-Clark",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

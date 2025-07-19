@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_high_excellent_10_001",
+  "income_level": "high",
+  "savings_level": "excellent",
+  "monthly_income": 21537.26,
+  "monthly_expenses": 5066.179999999999,
+  "savings_rate": 76.47713776032792,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 1876.45,
+    "Transportation": 463.46,
+    "Food": 675.0,
+    "Healthcare": 387.42,
+    "Utilities": 478.86,
+    "Entertainment": 215.96,
+    "Shopping": 566.81,
+    "Education": 373.67,
+    "Insurance": 27.18,
+    "Miscellaneous": 1.37
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -129.14,
+      "category": "Healthcare",
+      "description": "Campbell Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -129.14,
+      "category": "Healthcare",
+      "description": "Williams Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -225.0,
+      "category": "Food",
+      "description": "Downs-Ward",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -13.59,
+      "category": "Insurance",
+      "description": "Murphy, Franklin and Little",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -129.14,
+      "category": "Healthcare",
+      "description": "Gonzalez PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -159.62,
+      "category": "Utilities",
+      "description": "Smith-Phillips",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -469.11,
+      "category": "Housing",
+      "description": "Lopez PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": 7179.09,
+      "category": "Income",
+      "description": "Clinical psychologist",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -115.86,
+      "category": "Transportation",
+      "description": "Sullivan, Obrien and Anderson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -0.69,
+      "category": "Miscellaneous",
+      "description": "Caldwell-Cook",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -115.86,
+      "category": "Transportation",
+      "description": "Barron, Jones and Hall",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -115.86,
+      "category": "Transportation",
+      "description": "Torres, Malone and Henderson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -71.99,
+      "category": "Entertainment",
+      "description": "Walton, Campbell and Pena",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -225.0,
+      "category": "Food",
+      "description": "Burke LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -469.11,
+      "category": "Housing",
+      "description": "Stewart, Salas and Davis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -225.0,
+      "category": "Food",
+      "description": "Martin LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -283.4,
+      "category": "Shopping",
+      "description": "Reeves, Kelly and Hawkins",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -71.99,
+      "category": "Entertainment",
+      "description": "Orr, Morgan and Willis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -469.11,
+      "category": "Housing",
+      "description": "Wood-Washington",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -115.86,
+      "category": "Transportation",
+      "description": "Palmer, Johnson and Lucas",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -71.99,
+      "category": "Entertainment",
+      "description": "Briggs-Cantrell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": 7179.09,
+      "category": "Income",
+      "description": "Catering manager",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": 7179.09,
+      "category": "Income",
+      "description": "Public librarian",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -13.59,
+      "category": "Insurance",
+      "description": "Flores-Clark",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -0.69,
+      "category": "Miscellaneous",
+      "description": "Perry-Walker",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -186.84,
+      "category": "Education",
+      "description": "Jones Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -186.84,
+      "category": "Education",
+      "description": "Jones, Morales and Nelson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -159.62,
+      "category": "Utilities",
+      "description": "Griffin, Lewis and Martin",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -283.4,
+      "category": "Shopping",
+      "description": "Reed-Galvan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -469.11,
+      "category": "Housing",
+      "description": "Guerrero Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -159.62,
+      "category": "Utilities",
+      "description": "Bender-Scott",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

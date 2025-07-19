@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_medium_minimal_4_005",
+  "income_level": "medium",
+  "savings_level": "minimal",
+  "monthly_income": 8819.75,
+  "monthly_expenses": 7933.44,
+  "savings_rate": 10.049151053034388,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 2617.83,
+    "Transportation": 1279.38,
+    "Food": 1080.64,
+    "Healthcare": 835.82,
+    "Utilities": 730.13,
+    "Entertainment": 355.53,
+    "Shopping": 341.46,
+    "Education": 538.61,
+    "Insurance": 108.74,
+    "Miscellaneous": 45.3
+  },
+  "transactions": [
+    {
+      "date": "2025-06-21",
+      "amount": -269.31,
+      "category": "Education",
+      "description": "Reed-Lee",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -243.38,
+      "category": "Utilities",
+      "description": "Rodriguez-Maldonado",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -243.38,
+      "category": "Utilities",
+      "description": "Thomas-Moore",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -243.38,
+      "category": "Utilities",
+      "description": "Santiago Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -360.21,
+      "category": "Food",
+      "description": "Lee, Hernandez and Mora",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": 2939.92,
+      "category": "Income",
+      "description": "Building surveyor",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -22.65,
+      "category": "Miscellaneous",
+      "description": "Barnes and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -654.46,
+      "category": "Housing",
+      "description": "Vega, Norris and Berry",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -319.85,
+      "category": "Transportation",
+      "description": "Brown, Torres and Randolph",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -654.46,
+      "category": "Housing",
+      "description": "Yoder-Davis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -319.85,
+      "category": "Transportation",
+      "description": "White, Davis and Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -278.61,
+      "category": "Healthcare",
+      "description": "Torres, Drake and Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -22.65,
+      "category": "Miscellaneous",
+      "description": "Guerra, Carson and Ramos",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": 2939.92,
+      "category": "Income",
+      "description": "Set designer",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -278.61,
+      "category": "Healthcare",
+      "description": "Anderson, Lee and Waters",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -54.37,
+      "category": "Insurance",
+      "description": "Byrd Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -118.51,
+      "category": "Entertainment",
+      "description": "Walls Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -118.51,
+      "category": "Entertainment",
+      "description": "Gonzalez-Morris",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -319.85,
+      "category": "Transportation",
+      "description": "Watson, Miller and Johnson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -170.73,
+      "category": "Shopping",
+      "description": "Moore-Jimenez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -170.73,
+      "category": "Shopping",
+      "description": "Lewis, Maldonado and Weber",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -654.46,
+      "category": "Housing",
+      "description": "Flores Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -654.46,
+      "category": "Housing",
+      "description": "Taylor, Hinton and Taylor",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -360.21,
+      "category": "Food",
+      "description": "Jones PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -269.31,
+      "category": "Education",
+      "description": "Hughes, Snyder and White",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": 2939.92,
+      "category": "Income",
+      "description": "Engineer, chemical",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -319.85,
+      "category": "Transportation",
+      "description": "Brown Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -54.37,
+      "category": "Insurance",
+      "description": "Carroll PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -118.51,
+      "category": "Entertainment",
+      "description": "Jones Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -360.21,
+      "category": "Food",
+      "description": "Sharp-Harmon",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -278.61,
+      "category": "Healthcare",
+      "description": "Tanner, Gomez and Hull",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "struggling"
+}

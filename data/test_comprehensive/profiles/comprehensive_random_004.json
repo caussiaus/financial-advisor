@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_random_004",
+  "income_level": "medium",
+  "savings_level": "struggling",
+  "monthly_income": 11085.33,
+  "monthly_expenses": 10364.74,
+  "savings_rate": 6.500392861556671,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 4122.64,
+    "Transportation": 1685.42,
+    "Food": 1123.78,
+    "Healthcare": 789.86,
+    "Utilities": 814.66,
+    "Entertainment": 549.83,
+    "Shopping": 743.09,
+    "Education": 498.1,
+    "Insurance": 34.55,
+    "Miscellaneous": 2.81
+  },
+  "transactions": [
+    {
+      "date": "2025-06-20",
+      "amount": 3695.11,
+      "category": "Income",
+      "description": "Actor",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": 3695.11,
+      "category": "Income",
+      "description": "Magazine features editor",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -249.05,
+      "category": "Education",
+      "description": "Diaz Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -1.41,
+      "category": "Miscellaneous",
+      "description": "Mendoza Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -183.28,
+      "category": "Entertainment",
+      "description": "Anderson Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -263.29,
+      "category": "Healthcare",
+      "description": "Barnes, Harvey and Sanders",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": 3695.11,
+      "category": "Income",
+      "description": "Fine artist",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -421.36,
+      "category": "Transportation",
+      "description": "Brown, Harding and Chen",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -271.55,
+      "category": "Utilities",
+      "description": "Barrera Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -271.55,
+      "category": "Utilities",
+      "description": "Lee-Rodriguez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -263.29,
+      "category": "Healthcare",
+      "description": "Cameron Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -1030.66,
+      "category": "Housing",
+      "description": "Stanton Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -271.55,
+      "category": "Utilities",
+      "description": "Barrett, Glover and Stone",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -183.28,
+      "category": "Entertainment",
+      "description": "Hogan Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -371.55,
+      "category": "Shopping",
+      "description": "Atkins-Collins",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -1.41,
+      "category": "Miscellaneous",
+      "description": "Rosario, Day and Daniels",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -17.27,
+      "category": "Insurance",
+      "description": "Smith-Rogers",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -374.59,
+      "category": "Food",
+      "description": "Washington-Hill",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -374.59,
+      "category": "Food",
+      "description": "Richard, Murphy and Ward",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -183.28,
+      "category": "Entertainment",
+      "description": "Carter, Chapman and Freeman",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -1030.66,
+      "category": "Housing",
+      "description": "Armstrong-Lewis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -421.36,
+      "category": "Transportation",
+      "description": "Crawford, King and Jackson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -371.55,
+      "category": "Shopping",
+      "description": "Kelly Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -263.29,
+      "category": "Healthcare",
+      "description": "Smith-Bray",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -1030.66,
+      "category": "Housing",
+      "description": "Silva, Gordon and Parker",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -374.59,
+      "category": "Food",
+      "description": "Schultz, Griffin and Jackson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -17.27,
+      "category": "Insurance",
+      "description": "Johnson Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -421.36,
+      "category": "Transportation",
+      "description": "Randall-Ponce",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -1030.66,
+      "category": "Housing",
+      "description": "Mcgee Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -421.36,
+      "category": "Transportation",
+      "description": "Solomon, Murphy and Moon",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -249.05,
+      "category": "Education",
+      "description": "Stewart Inc",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "struggling"
+}

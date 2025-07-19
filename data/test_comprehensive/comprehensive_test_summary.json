@@ -1,0 +1,36 @@
+{
+  "test_date": "2025-07-19T00:40:03.703262",
+  "total_profiles": 100,
+  "income_distribution": {
+    "low": 19,
+    "medium": 26,
+    "high": 25,
+    "very_high": 30
+  },
+  "savings_distribution": {
+    "struggling": 16,
+    "minimal": 21,
+    "moderate": 24,
+    "good": 20,
+    "excellent": 12,
+    "exceptional": 7
+  },
+  "financial_health_distribution": {
+    "critical": 3,
+    "moderate": 25,
+    "struggling": 14,
+    "good": 24,
+    "excellent": 34
+  },
+  "statistics": {
+    "average_income": 33055.7639,
+    "average_expenses": 16052.8531,
+    "average_savings_rate": 40.197303612731844,
+    "min_savings_rate": 2.5132000166299453,
+    "max_savings_rate": 90.57636003253205,
+    "income_range": {
+      "min": 2296.82,
+      "max": 98830.41
+    }
+  }
+}

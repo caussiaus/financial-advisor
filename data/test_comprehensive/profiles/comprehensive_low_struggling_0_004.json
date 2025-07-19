@@ -1,0 +1,234 @@
+{
+  "profile_id": "comprehensive_low_struggling_0_004",
+  "income_level": "low",
+  "savings_level": "struggling",
+  "monthly_income": 2313.6,
+  "monthly_expenses": 2065.69,
+  "savings_rate": 10.715335408022124,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 762.54,
+    "Transportation": 260.19,
+    "Food": 191.96,
+    "Healthcare": 148.21,
+    "Utilities": 130.17,
+    "Entertainment": 162.11,
+    "Shopping": 134.46,
+    "Education": 109.12,
+    "Insurance": 96.12,
+    "Miscellaneous": 70.81
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -47.99,
+      "category": "Food",
+      "description": "Conley Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -65.05,
+      "category": "Transportation",
+      "description": "Robinson, Martin and Perkins",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -43.39,
+      "category": "Utilities",
+      "description": "Bennett Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -54.04,
+      "category": "Entertainment",
+      "description": "Murray-Rodriguez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -35.41,
+      "category": "Miscellaneous",
+      "description": "Mcdonald, Martinez and Martin",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -54.04,
+      "category": "Entertainment",
+      "description": "Alexander-Hall",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -48.06,
+      "category": "Insurance",
+      "description": "Dillon PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -65.05,
+      "category": "Transportation",
+      "description": "Anderson-Reyes",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -47.99,
+      "category": "Food",
+      "description": "Morse LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -67.23,
+      "category": "Shopping",
+      "description": "Martinez, Hall and Parker",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -49.4,
+      "category": "Healthcare",
+      "description": "Mcdonald-Lopez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -43.39,
+      "category": "Utilities",
+      "description": "Lutz-Lewis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -47.99,
+      "category": "Food",
+      "description": "Richardson Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -49.4,
+      "category": "Healthcare",
+      "description": "Schaefer and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -190.63,
+      "category": "Housing",
+      "description": "Miller, Vargas and Gutierrez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -43.39,
+      "category": "Utilities",
+      "description": "Brown PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -67.23,
+      "category": "Shopping",
+      "description": "Hall, Miles and White",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": 2313.6,
+      "category": "Income",
+      "description": "Agricultural engineer",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -65.05,
+      "category": "Transportation",
+      "description": "Cannon, Knight and Galloway",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -47.99,
+      "category": "Food",
+      "description": "Moore, Brooks and Romero",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -190.63,
+      "category": "Housing",
+      "description": "Murray-Brown",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -190.63,
+      "category": "Housing",
+      "description": "Martin-Hester",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -49.4,
+      "category": "Healthcare",
+      "description": "Mathis-Tate",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -54.04,
+      "category": "Entertainment",
+      "description": "Johnson, Nichols and James",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -48.06,
+      "category": "Insurance",
+      "description": "Mueller, Freeman and Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -35.41,
+      "category": "Miscellaneous",
+      "description": "Holmes, Dalton and Long",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -54.56,
+      "category": "Education",
+      "description": "Ruiz, Johnston and Morris",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -190.63,
+      "category": "Housing",
+      "description": "Martin Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -65.05,
+      "category": "Transportation",
+      "description": "Taylor, Logan and Hall",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -54.56,
+      "category": "Education",
+      "description": "Davis and Sons",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "struggling"
+}

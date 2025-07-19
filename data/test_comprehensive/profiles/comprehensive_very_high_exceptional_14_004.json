@@ -1,0 +1,234 @@
+{
+  "profile_id": "comprehensive_very_high_exceptional_14_004",
+  "income_level": "very_high",
+  "savings_level": "exceptional",
+  "monthly_income": 84937.13,
+  "monthly_expenses": 11474.68,
+  "savings_rate": 86.49038412293895,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 4329.95,
+    "Transportation": 2199.66,
+    "Food": 1291.16,
+    "Healthcare": 739.05,
+    "Utilities": 1043.45,
+    "Entertainment": 475.55,
+    "Shopping": 1338.45,
+    "Education": 45.97,
+    "Insurance": 6.84,
+    "Miscellaneous": 4.6
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -322.79,
+      "category": "Food",
+      "description": "Peterson-Gross",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -549.91,
+      "category": "Transportation",
+      "description": "Lam LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -2.3,
+      "category": "Miscellaneous",
+      "description": "Graham-Duncan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -347.82,
+      "category": "Utilities",
+      "description": "Kline-Lopez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -549.91,
+      "category": "Transportation",
+      "description": "Fields LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -322.79,
+      "category": "Food",
+      "description": "Jones LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -158.52,
+      "category": "Entertainment",
+      "description": "Palmer and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -22.98,
+      "category": "Education",
+      "description": "Alexander LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -3.42,
+      "category": "Insurance",
+      "description": "Webb, Webb and Petersen",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -1082.49,
+      "category": "Housing",
+      "description": "Conley Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -322.79,
+      "category": "Food",
+      "description": "Rodriguez PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -2.3,
+      "category": "Miscellaneous",
+      "description": "Pierce-Caldwell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -322.79,
+      "category": "Food",
+      "description": "Miller, Ortiz and Chavez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -347.82,
+      "category": "Utilities",
+      "description": "Leon-Finley",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -3.42,
+      "category": "Insurance",
+      "description": "Lynch, Sanchez and Pratt",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -549.91,
+      "category": "Transportation",
+      "description": "Deleon, Greer and Thomas",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -549.91,
+      "category": "Transportation",
+      "description": "Garcia and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -669.23,
+      "category": "Shopping",
+      "description": "Watkins-Davila",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -246.35,
+      "category": "Healthcare",
+      "description": "Robinson PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -246.35,
+      "category": "Healthcare",
+      "description": "Hogan, Colon and Evans",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -246.35,
+      "category": "Healthcare",
+      "description": "Middleton and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -1082.49,
+      "category": "Housing",
+      "description": "James Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -1082.49,
+      "category": "Housing",
+      "description": "Wood and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -1082.49,
+      "category": "Housing",
+      "description": "Dorsey Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -22.98,
+      "category": "Education",
+      "description": "Sharp PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": 84937.13,
+      "category": "Income",
+      "description": "Lobbyist",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -669.23,
+      "category": "Shopping",
+      "description": "Gibbs-Schmidt",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -347.82,
+      "category": "Utilities",
+      "description": "Graham-Valdez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -158.52,
+      "category": "Entertainment",
+      "description": "Williams Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -158.52,
+      "category": "Entertainment",
+      "description": "Cole-Coleman",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

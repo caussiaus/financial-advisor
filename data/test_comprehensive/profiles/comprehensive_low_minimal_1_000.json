@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_low_minimal_1_000",
+  "income_level": "low",
+  "savings_level": "minimal",
+  "monthly_income": 3656.27,
+  "monthly_expenses": 2998.2799999999997,
+  "savings_rate": 17.996209251504954,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 1180.04,
+    "Transportation": 226.11,
+    "Food": 326.6,
+    "Healthcare": 201.08,
+    "Utilities": 211.47,
+    "Entertainment": 179.27,
+    "Shopping": 212.8,
+    "Education": 240.76,
+    "Insurance": 123.41,
+    "Miscellaneous": 96.74
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -61.7,
+      "category": "Insurance",
+      "description": "West, Bowen and Gates",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -56.53,
+      "category": "Transportation",
+      "description": "Jenkins-George",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -59.76,
+      "category": "Entertainment",
+      "description": "Mckinney, Young and Horne",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": 1218.76,
+      "category": "Income",
+      "description": "Fashion designer",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -56.53,
+      "category": "Transportation",
+      "description": "Hill-Blake",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": -67.03,
+      "category": "Healthcare",
+      "description": "Stone PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -48.37,
+      "category": "Miscellaneous",
+      "description": "Prince-Nelson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -56.53,
+      "category": "Transportation",
+      "description": "Lopez Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": 1218.76,
+      "category": "Income",
+      "description": "Information systems manager",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -59.76,
+      "category": "Entertainment",
+      "description": "Clark PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -108.87,
+      "category": "Food",
+      "description": "Roth-Nguyen",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -295.01,
+      "category": "Housing",
+      "description": "Baker-Jones",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -70.49,
+      "category": "Utilities",
+      "description": "Christensen-Barrett",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -106.4,
+      "category": "Shopping",
+      "description": "Jackson, Rodgers and Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -120.38,
+      "category": "Education",
+      "description": "Whitaker LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -120.38,
+      "category": "Education",
+      "description": "Dickerson and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -48.37,
+      "category": "Miscellaneous",
+      "description": "Hill, Turner and Love",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -67.03,
+      "category": "Healthcare",
+      "description": "Burton-Guerra",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -59.76,
+      "category": "Entertainment",
+      "description": "Hart, Bates and Bradley",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -295.01,
+      "category": "Housing",
+      "description": "Alvarez-Osborn",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -70.49,
+      "category": "Utilities",
+      "description": "Jones-Romero",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -106.4,
+      "category": "Shopping",
+      "description": "Diaz Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -108.87,
+      "category": "Food",
+      "description": "Sawyer-Wagner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -67.03,
+      "category": "Healthcare",
+      "description": "Weiss-Lynch",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -56.53,
+      "category": "Transportation",
+      "description": "Shelton LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -295.01,
+      "category": "Housing",
+      "description": "Rodriguez-Richards",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -295.01,
+      "category": "Housing",
+      "description": "Wagner, Estrada and Williams",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -108.87,
+      "category": "Food",
+      "description": "Alexander Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": 1218.76,
+      "category": "Income",
+      "description": "Consulting civil engineer",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -70.49,
+      "category": "Utilities",
+      "description": "Barrett-Baker",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -61.7,
+      "category": "Insurance",
+      "description": "Alvarado, Lane and Quinn",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "moderate"
+}

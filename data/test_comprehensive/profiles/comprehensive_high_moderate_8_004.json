@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_high_moderate_8_004",
+  "income_level": "high",
+  "savings_level": "moderate",
+  "monthly_income": 37096.17,
+  "monthly_expenses": 21440.679999999997,
+  "savings_rate": 42.202443001528195,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 6907.81,
+    "Transportation": 1764.19,
+    "Food": 3339.23,
+    "Healthcare": 2160.91,
+    "Utilities": 1199.96,
+    "Entertainment": 1648.8,
+    "Shopping": 1363.23,
+    "Education": 1126.07,
+    "Insurance": 1327.48,
+    "Miscellaneous": 603.0
+  },
+  "transactions": [
+    {
+      "date": "2025-06-20",
+      "amount": -720.3,
+      "category": "Healthcare",
+      "description": "Shepard-Wyatt",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -1726.95,
+      "category": "Housing",
+      "description": "Garcia LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -681.62,
+      "category": "Shopping",
+      "description": "Graham, Thompson and Wilkins",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -1113.08,
+      "category": "Food",
+      "description": "Hines-Wilson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -720.3,
+      "category": "Healthcare",
+      "description": "Martin, Williams and Kramer",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -1113.08,
+      "category": "Food",
+      "description": "Walter-Price",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -663.74,
+      "category": "Insurance",
+      "description": "Ramirez-Wilkerson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": 12365.39,
+      "category": "Income",
+      "description": "Education officer, community",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": 12365.39,
+      "category": "Income",
+      "description": "Firefighter",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -441.05,
+      "category": "Transportation",
+      "description": "Grant Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -399.99,
+      "category": "Utilities",
+      "description": "Foley Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -301.5,
+      "category": "Miscellaneous",
+      "description": "Jordan-Taylor",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -1726.95,
+      "category": "Housing",
+      "description": "Mosley, Garcia and Yoder",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -549.6,
+      "category": "Entertainment",
+      "description": "Brown, Valdez and Brooks",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -1113.08,
+      "category": "Food",
+      "description": "Williams-Robinson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -563.03,
+      "category": "Education",
+      "description": "Gonzalez Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -1726.95,
+      "category": "Housing",
+      "description": "Moore, Carter and Crawford",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -720.3,
+      "category": "Healthcare",
+      "description": "Lyons PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -1726.95,
+      "category": "Housing",
+      "description": "Smith-Vega",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -441.05,
+      "category": "Transportation",
+      "description": "Mcbride Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -441.05,
+      "category": "Transportation",
+      "description": "Fuentes PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -549.6,
+      "category": "Entertainment",
+      "description": "Fisher-Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -563.03,
+      "category": "Education",
+      "description": "Gallegos-Mills",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -399.99,
+      "category": "Utilities",
+      "description": "Smith and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -399.99,
+      "category": "Utilities",
+      "description": "Carter and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -549.6,
+      "category": "Entertainment",
+      "description": "Cisneros and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -681.62,
+      "category": "Shopping",
+      "description": "Hoover-Russell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": 12365.39,
+      "category": "Income",
+      "description": "Magazine features editor",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -301.5,
+      "category": "Miscellaneous",
+      "description": "Bass Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -663.74,
+      "category": "Insurance",
+      "description": "Black, Cruz and Anderson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -441.05,
+      "category": "Transportation",
+      "description": "Wood, Allen and Hamilton",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "good"
+}

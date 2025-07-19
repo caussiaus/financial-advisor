@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_very_high_excellent_13_005",
+  "income_level": "very_high",
+  "savings_level": "excellent",
+  "monthly_income": 60414.86,
+  "monthly_expenses": 20121.809999999998,
+  "savings_rate": 66.69393920634758,
+  "risk_tolerance": "medium",
+  "expense_categories": {
+    "Housing": 8901.47,
+    "Transportation": 3819.36,
+    "Food": 2786.65,
+    "Healthcare": 899.37,
+    "Utilities": 1347.11,
+    "Entertainment": 1097.45,
+    "Shopping": 915.84,
+    "Education": 169.44,
+    "Insurance": 177.67,
+    "Miscellaneous": 7.45
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": 20138.29,
+      "category": "Income",
+      "description": "Clinical research associate",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -365.82,
+      "category": "Entertainment",
+      "description": "Ponce-Anderson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -2225.37,
+      "category": "Housing",
+      "description": "Good-Holden",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -3.73,
+      "category": "Miscellaneous",
+      "description": "Harris-Walker",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -88.83,
+      "category": "Insurance",
+      "description": "Wise-Anderson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-25",
+      "amount": 20138.29,
+      "category": "Income",
+      "description": "Engineer, materials",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -449.04,
+      "category": "Utilities",
+      "description": "Fuller, Dawson and Gutierrez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -928.88,
+      "category": "Food",
+      "description": "Bishop and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -299.79,
+      "category": "Healthcare",
+      "description": "Gates-Richard",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -3.73,
+      "category": "Miscellaneous",
+      "description": "Jensen Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -365.82,
+      "category": "Entertainment",
+      "description": "Jackson Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -954.84,
+      "category": "Transportation",
+      "description": "Delgado LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -449.04,
+      "category": "Utilities",
+      "description": "Solis, Green and Graham",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -365.82,
+      "category": "Entertainment",
+      "description": "Cook-Hall",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -928.88,
+      "category": "Food",
+      "description": "Hernandez and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -457.92,
+      "category": "Shopping",
+      "description": "Stephens-Roman",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -954.84,
+      "category": "Transportation",
+      "description": "Jones, Smith and Duncan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -2225.37,
+      "category": "Housing",
+      "description": "Bradford, Martin and Flowers",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -299.79,
+      "category": "Healthcare",
+      "description": "Hunt and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -457.92,
+      "category": "Shopping",
+      "description": "Yoder, Carlson and Ryan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -2225.37,
+      "category": "Housing",
+      "description": "Howard, Williams and Kaufman",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -928.88,
+      "category": "Food",
+      "description": "Torres Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -84.72,
+      "category": "Education",
+      "description": "Dudley Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -299.79,
+      "category": "Healthcare",
+      "description": "Newman Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -88.83,
+      "category": "Insurance",
+      "description": "Sims Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -2225.37,
+      "category": "Housing",
+      "description": "Evans Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -449.04,
+      "category": "Utilities",
+      "description": "Patel, Schmidt and Ford",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -84.72,
+      "category": "Education",
+      "description": "Pearson, Williams and Kidd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": 20138.29,
+      "category": "Income",
+      "description": "Surveyor, mining",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -954.84,
+      "category": "Transportation",
+      "description": "Tucker Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -954.84,
+      "category": "Transportation",
+      "description": "Cook and Sons",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

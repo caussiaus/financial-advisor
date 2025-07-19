@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_high_good_9_002",
+  "income_level": "high",
+  "savings_level": "good",
+  "monthly_income": 42094.0,
+  "monthly_expenses": 20148.34,
+  "savings_rate": 52.13488858269587,
+  "risk_tolerance": "medium",
+  "expense_categories": {
+    "Housing": 7969.6,
+    "Transportation": 2523.35,
+    "Food": 2599.58,
+    "Healthcare": 1944.1,
+    "Utilities": 1748.54,
+    "Entertainment": 1587.16,
+    "Shopping": 514.17,
+    "Education": 1000.37,
+    "Insurance": 168.32,
+    "Miscellaneous": 93.15
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -257.08,
+      "category": "Shopping",
+      "description": "Lawrence PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -630.84,
+      "category": "Transportation",
+      "description": "Johnson Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": 21047.0,
+      "category": "Income",
+      "description": "Architect",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -649.89,
+      "category": "Food",
+      "description": "Rodriguez, Howell and Mendez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -500.19,
+      "category": "Education",
+      "description": "Frye-Santana",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -630.84,
+      "category": "Transportation",
+      "description": "Jones, Kidd and King",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": 21047.0,
+      "category": "Income",
+      "description": "Scientist, water quality",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -649.89,
+      "category": "Food",
+      "description": "Baxter Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -649.89,
+      "category": "Food",
+      "description": "Anthony, Soto and Haley",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -1992.4,
+      "category": "Housing",
+      "description": "Long-Patel",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -582.85,
+      "category": "Utilities",
+      "description": "Lewis, Moran and Brown",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -529.05,
+      "category": "Entertainment",
+      "description": "Fuller-Jennings",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -1992.4,
+      "category": "Housing",
+      "description": "Levine-Haley",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -84.16,
+      "category": "Insurance",
+      "description": "Oliver-Butler",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -529.05,
+      "category": "Entertainment",
+      "description": "Green, Mejia and Mcdonald",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -582.85,
+      "category": "Utilities",
+      "description": "Jones, Williams and Garcia",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -84.16,
+      "category": "Insurance",
+      "description": "Norman-Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -46.58,
+      "category": "Miscellaneous",
+      "description": "Richardson, Williamson and Webb",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -257.08,
+      "category": "Shopping",
+      "description": "Goodwin LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -529.05,
+      "category": "Entertainment",
+      "description": "Wilson-Carter",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -46.58,
+      "category": "Miscellaneous",
+      "description": "Morales-Valencia",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -1992.4,
+      "category": "Housing",
+      "description": "Blanchard, Davis and Alvarado",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -630.84,
+      "category": "Transportation",
+      "description": "Blackburn PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -648.03,
+      "category": "Healthcare",
+      "description": "Hubbard Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -630.84,
+      "category": "Transportation",
+      "description": "White-Odom",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -649.89,
+      "category": "Food",
+      "description": "Brown, Jones and Gordon",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -1992.4,
+      "category": "Housing",
+      "description": "Wu, Frederick and Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -648.03,
+      "category": "Healthcare",
+      "description": "Porter, Lam and Buchanan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -648.03,
+      "category": "Healthcare",
+      "description": "Small-Molina",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -582.85,
+      "category": "Utilities",
+      "description": "Johnston-Mccoy",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -500.19,
+      "category": "Education",
+      "description": "Contreras Inc",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

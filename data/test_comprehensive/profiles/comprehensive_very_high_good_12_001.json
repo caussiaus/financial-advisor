@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_very_high_good_12_001",
+  "income_level": "very_high",
+  "savings_level": "good",
+  "monthly_income": 71559.55,
+  "monthly_expenses": 40082.93,
+  "savings_rate": 43.98660975369465,
+  "risk_tolerance": "high",
+  "expense_categories": {
+    "Housing": 15914.69,
+    "Transportation": 2768.25,
+    "Food": 2767.3,
+    "Healthcare": 3439.55,
+    "Utilities": 3617.85,
+    "Entertainment": 2999.09,
+    "Shopping": 3825.18,
+    "Education": 2550.3,
+    "Insurance": 1755.36,
+    "Miscellaneous": 445.36
+  },
+  "transactions": [
+    {
+      "date": "2025-06-20",
+      "amount": -3978.67,
+      "category": "Housing",
+      "description": "Jackson, Bailey and Fitzgerald",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -922.43,
+      "category": "Food",
+      "description": "Myers, Johnson and Jackson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": 23853.18,
+      "category": "Income",
+      "description": "Accountant, chartered certified",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -692.06,
+      "category": "Transportation",
+      "description": "Miller-Huang",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -692.06,
+      "category": "Transportation",
+      "description": "Mendoza-Hart",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -922.43,
+      "category": "Food",
+      "description": "Singh Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -999.7,
+      "category": "Entertainment",
+      "description": "Morris-Martin",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -222.68,
+      "category": "Miscellaneous",
+      "description": "Andrade and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -692.06,
+      "category": "Transportation",
+      "description": "Greene, Robinson and Garza",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -1205.95,
+      "category": "Utilities",
+      "description": "Allison-Saunders",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -1146.52,
+      "category": "Healthcare",
+      "description": "Miller, Powell and Campbell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -1275.15,
+      "category": "Education",
+      "description": "Long and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -877.68,
+      "category": "Insurance",
+      "description": "Hood-Edwards",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -877.68,
+      "category": "Insurance",
+      "description": "Murphy, Perez and Gray",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -1146.52,
+      "category": "Healthcare",
+      "description": "Green and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -922.43,
+      "category": "Food",
+      "description": "Nguyen PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -1205.95,
+      "category": "Utilities",
+      "description": "Larsen-Poole",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -3978.67,
+      "category": "Housing",
+      "description": "Peterson, Hudson and Harris",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -1205.95,
+      "category": "Utilities",
+      "description": "Henry PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -1912.59,
+      "category": "Shopping",
+      "description": "Best-Barnes",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -1146.52,
+      "category": "Healthcare",
+      "description": "Maxwell-Moore",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -3978.67,
+      "category": "Housing",
+      "description": "Warner-Eaton",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -1912.59,
+      "category": "Shopping",
+      "description": "Ford, Turner and Hunter",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": 23853.18,
+      "category": "Income",
+      "description": "Visual merchandiser",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -3978.67,
+      "category": "Housing",
+      "description": "Mcintosh PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -999.7,
+      "category": "Entertainment",
+      "description": "Thompson, Murphy and Cowan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -1275.15,
+      "category": "Education",
+      "description": "Saunders PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": 23853.18,
+      "category": "Income",
+      "description": "Teacher, special educational needs",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -692.06,
+      "category": "Transportation",
+      "description": "Tucker PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -999.7,
+      "category": "Entertainment",
+      "description": "Ramirez-Bauer",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -222.68,
+      "category": "Miscellaneous",
+      "description": "Ray, Tran and Lee",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "good"
+}

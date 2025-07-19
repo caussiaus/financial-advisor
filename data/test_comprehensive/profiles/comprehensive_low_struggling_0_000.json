@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_low_struggling_0_000",
+  "income_level": "low",
+  "savings_level": "struggling",
+  "monthly_income": 3367.42,
+  "monthly_expenses": 3282.79,
+  "savings_rate": 2.5132000166299453,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 1607.29,
+    "Transportation": 494.88,
+    "Food": 473.55,
+    "Healthcare": 380.37,
+    "Utilities": 85.73,
+    "Entertainment": 57.68,
+    "Shopping": 112.75,
+    "Education": 35.4,
+    "Insurance": 23.94,
+    "Miscellaneous": 11.2
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -17.7,
+      "category": "Education",
+      "description": "Wheeler Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -401.82,
+      "category": "Housing",
+      "description": "Huber LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -126.79,
+      "category": "Healthcare",
+      "description": "Moore, Chaney and West",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -19.23,
+      "category": "Entertainment",
+      "description": "Hudson, Chapman and Salazar",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -123.72,
+      "category": "Transportation",
+      "description": "Sanford, Carlson and Wood",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -126.79,
+      "category": "Healthcare",
+      "description": "Fry, Kelly and Sanchez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -123.72,
+      "category": "Transportation",
+      "description": "Smith and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -401.82,
+      "category": "Housing",
+      "description": "Green, Davis and Stark",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": 1122.47,
+      "category": "Income",
+      "description": "Mining engineer",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -401.82,
+      "category": "Housing",
+      "description": "Lynch-Holmes",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -19.23,
+      "category": "Entertainment",
+      "description": "Hickman, Moore and Lewis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -157.85,
+      "category": "Food",
+      "description": "Larson Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": 1122.47,
+      "category": "Income",
+      "description": "Theme park manager",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -28.58,
+      "category": "Utilities",
+      "description": "Reed-Bowers",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -157.85,
+      "category": "Food",
+      "description": "Foley and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -28.58,
+      "category": "Utilities",
+      "description": "Webb, King and Dunn",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -19.23,
+      "category": "Entertainment",
+      "description": "Whitehead-Bennett",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -157.85,
+      "category": "Food",
+      "description": "Mcdonald-Mcbride",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -5.6,
+      "category": "Miscellaneous",
+      "description": "White and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -28.58,
+      "category": "Utilities",
+      "description": "Bradley Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -11.97,
+      "category": "Insurance",
+      "description": "Butler, Lucas and Zhang",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -5.6,
+      "category": "Miscellaneous",
+      "description": "Weaver LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": 1122.47,
+      "category": "Income",
+      "description": "Radio producer",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -11.97,
+      "category": "Insurance",
+      "description": "Thompson-Cooper",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -17.7,
+      "category": "Education",
+      "description": "Kaiser, Davis and Osborne",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -56.38,
+      "category": "Shopping",
+      "description": "Moses-Mason",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -56.38,
+      "category": "Shopping",
+      "description": "Thomas-Jacobs",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -401.82,
+      "category": "Housing",
+      "description": "Sheppard LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -123.72,
+      "category": "Transportation",
+      "description": "Neal Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -123.72,
+      "category": "Transportation",
+      "description": "Chavez-Martin",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -126.79,
+      "category": "Healthcare",
+      "description": "Taylor Inc",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "critical"
+}

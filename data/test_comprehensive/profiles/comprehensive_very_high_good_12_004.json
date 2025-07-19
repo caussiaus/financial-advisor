@@ -1,0 +1,234 @@
+{
+  "profile_id": "comprehensive_very_high_good_12_004",
+  "income_level": "very_high",
+  "savings_level": "good",
+  "monthly_income": 98830.41,
+  "monthly_expenses": 40311.06,
+  "savings_rate": 59.21188630098773,
+  "risk_tolerance": "high",
+  "expense_categories": {
+    "Housing": 17255.64,
+    "Transportation": 3307.83,
+    "Food": 3488.56,
+    "Healthcare": 2525.79,
+    "Utilities": 3413.27,
+    "Entertainment": 1980.44,
+    "Shopping": 2100.97,
+    "Education": 1449.59,
+    "Insurance": 2916.39,
+    "Miscellaneous": 1872.58
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -4313.91,
+      "category": "Housing",
+      "description": "Dillon Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-19",
+      "amount": -872.14,
+      "category": "Food",
+      "description": "Quinn, Brady and Garcia",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -1137.76,
+      "category": "Utilities",
+      "description": "Landry-Turner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -841.93,
+      "category": "Healthcare",
+      "description": "Martin LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -826.96,
+      "category": "Transportation",
+      "description": "Castillo-Farmer",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -1137.76,
+      "category": "Utilities",
+      "description": "Coleman Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -1050.48,
+      "category": "Shopping",
+      "description": "Weeks, Aguilar and Russell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -872.14,
+      "category": "Food",
+      "description": "Nelson Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -1137.76,
+      "category": "Utilities",
+      "description": "James-Davidson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -826.96,
+      "category": "Transportation",
+      "description": "Rivas LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -872.14,
+      "category": "Food",
+      "description": "Simon-Johnson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -724.79,
+      "category": "Education",
+      "description": "White-Gutierrez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -936.29,
+      "category": "Miscellaneous",
+      "description": "Harris-Carter",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -660.15,
+      "category": "Entertainment",
+      "description": "Haley-Bentley",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -4313.91,
+      "category": "Housing",
+      "description": "Maxwell LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -4313.91,
+      "category": "Housing",
+      "description": "Jenkins, Gregory and Mitchell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -1458.19,
+      "category": "Insurance",
+      "description": "Shah-Long",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -826.96,
+      "category": "Transportation",
+      "description": "Good, Cook and Cohen",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -841.93,
+      "category": "Healthcare",
+      "description": "Fowler-Davis",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -936.29,
+      "category": "Miscellaneous",
+      "description": "Galvan PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -872.14,
+      "category": "Food",
+      "description": "Smith-Villanueva",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": 98830.41,
+      "category": "Income",
+      "description": "Clinical embryologist",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -724.79,
+      "category": "Education",
+      "description": "Cox, Gonzalez and Hunter",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -1458.19,
+      "category": "Insurance",
+      "description": "Smith, Williams and Robinson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -841.93,
+      "category": "Healthcare",
+      "description": "Davis, Le and Abbott",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -4313.91,
+      "category": "Housing",
+      "description": "Fernandez Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -1050.48,
+      "category": "Shopping",
+      "description": "Nielsen-Martin",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -660.15,
+      "category": "Entertainment",
+      "description": "Horn-Barnes",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -660.15,
+      "category": "Entertainment",
+      "description": "Cabrera-Hines",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -826.96,
+      "category": "Transportation",
+      "description": "Hernandez-Tyler",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

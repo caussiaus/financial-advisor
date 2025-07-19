@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_very_high_moderate_11_002",
+  "income_level": "very_high",
+  "savings_level": "moderate",
+  "monthly_income": 68585.41,
+  "monthly_expenses": 50225.28000000001,
+  "savings_rate": 26.769731346652282,
+  "risk_tolerance": "high",
+  "expense_categories": {
+    "Housing": 21167.93,
+    "Transportation": 10039.48,
+    "Food": 5898.2,
+    "Healthcare": 1885.61,
+    "Utilities": 3774.91,
+    "Entertainment": 1953.04,
+    "Shopping": 4033.62,
+    "Education": 868.05,
+    "Insurance": 443.0,
+    "Miscellaneous": 161.44
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -628.54,
+      "category": "Healthcare",
+      "description": "Cox-Kelly",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-19",
+      "amount": -651.01,
+      "category": "Entertainment",
+      "description": "Hudson and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -434.02,
+      "category": "Education",
+      "description": "Baker, Santiago and Keith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-21",
+      "amount": -1474.55,
+      "category": "Food",
+      "description": "Green-Adams",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -2509.87,
+      "category": "Transportation",
+      "description": "Logan LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": 34292.71,
+      "category": "Income",
+      "description": "Buyer, retail",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -1474.55,
+      "category": "Food",
+      "description": "Werner, Rush and Miles",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -5291.98,
+      "category": "Housing",
+      "description": "Sexton, Kelly and Wallace",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -2016.81,
+      "category": "Shopping",
+      "description": "Rose, Wilson and Nunez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -5291.98,
+      "category": "Housing",
+      "description": "Hahn Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -2509.87,
+      "category": "Transportation",
+      "description": "Graham-Cohen",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -1258.3,
+      "category": "Utilities",
+      "description": "Baker-Smith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -434.02,
+      "category": "Education",
+      "description": "Boyd Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -5291.98,
+      "category": "Housing",
+      "description": "Estrada, Freeman and Vaughn",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -2016.81,
+      "category": "Shopping",
+      "description": "Martin, Franklin and Moore",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": 34292.71,
+      "category": "Income",
+      "description": "Environmental education officer",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -2509.87,
+      "category": "Transportation",
+      "description": "Johnson LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -2509.87,
+      "category": "Transportation",
+      "description": "Hoffman Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -1474.55,
+      "category": "Food",
+      "description": "Bryant, Lee and Ruiz",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -628.54,
+      "category": "Healthcare",
+      "description": "Ruiz PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -5291.98,
+      "category": "Housing",
+      "description": "Williams PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -1258.3,
+      "category": "Utilities",
+      "description": "Lee-Lopez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -221.5,
+      "category": "Insurance",
+      "description": "Bailey LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -80.72,
+      "category": "Miscellaneous",
+      "description": "Everett, Smith and Martinez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -1258.3,
+      "category": "Utilities",
+      "description": "Acosta PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -1474.55,
+      "category": "Food",
+      "description": "Guerra, Le and Miller",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -651.01,
+      "category": "Entertainment",
+      "description": "Fox Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -651.01,
+      "category": "Entertainment",
+      "description": "Kelly, Martinez and Koch",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -80.72,
+      "category": "Miscellaneous",
+      "description": "Johnson, Williams and Miller",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -221.5,
+      "category": "Insurance",
+      "description": "Gutierrez-Herrera",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -628.54,
+      "category": "Healthcare",
+      "description": "Brown, Collier and Gordon",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "moderate"
+}

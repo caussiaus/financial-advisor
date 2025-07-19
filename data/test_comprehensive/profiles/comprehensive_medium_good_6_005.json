@@ -1,0 +1,234 @@
+{
+  "profile_id": "comprehensive_medium_good_6_005",
+  "income_level": "medium",
+  "savings_level": "good",
+  "monthly_income": 12836.66,
+  "monthly_expenses": 5022.91,
+  "savings_rate": 60.87058471596194,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 1866.93,
+    "Transportation": 615.26,
+    "Food": 486.02,
+    "Healthcare": 366.73,
+    "Utilities": 294.23,
+    "Entertainment": 382.63,
+    "Shopping": 288.71,
+    "Education": 226.58,
+    "Insurance": 334.67,
+    "Miscellaneous": 161.15
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -121.5,
+      "category": "Food",
+      "description": "Rogers LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -144.35,
+      "category": "Shopping",
+      "description": "Arias Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -144.35,
+      "category": "Shopping",
+      "description": "Smith PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -167.34,
+      "category": "Insurance",
+      "description": "Cardenas Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-23",
+      "amount": -122.24,
+      "category": "Healthcare",
+      "description": "Butler, Davila and Long",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -121.5,
+      "category": "Food",
+      "description": "Robertson PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-24",
+      "amount": -122.24,
+      "category": "Healthcare",
+      "description": "Howard Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -153.81,
+      "category": "Transportation",
+      "description": "Harris LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -113.29,
+      "category": "Education",
+      "description": "Snyder-White",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -98.08,
+      "category": "Utilities",
+      "description": "Miller, Waters and Jordan",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -153.81,
+      "category": "Transportation",
+      "description": "Ford-Hudson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -127.54,
+      "category": "Entertainment",
+      "description": "Flores PLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -121.5,
+      "category": "Food",
+      "description": "Taylor, Mueller and Dalton",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -127.54,
+      "category": "Entertainment",
+      "description": "Bradford-Case",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -167.34,
+      "category": "Insurance",
+      "description": "Charles Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-06",
+      "amount": -80.58,
+      "category": "Miscellaneous",
+      "description": "Johnson-Reed",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -98.08,
+      "category": "Utilities",
+      "description": "Reynolds, Roman and Gonzales",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -127.54,
+      "category": "Entertainment",
+      "description": "Jenkins-Perry",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -153.81,
+      "category": "Transportation",
+      "description": "Wright, Bailey and Sanchez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -466.73,
+      "category": "Housing",
+      "description": "Smith LLC",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-12",
+      "amount": -153.81,
+      "category": "Transportation",
+      "description": "Charles-Carter",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -466.73,
+      "category": "Housing",
+      "description": "Lucas-Murillo",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": 12836.66,
+      "category": "Income",
+      "description": "Biomedical engineer",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -121.5,
+      "category": "Food",
+      "description": "Tyler Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -466.73,
+      "category": "Housing",
+      "description": "Madden, Baker and Thomas",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -466.73,
+      "category": "Housing",
+      "description": "Ramirez-Johnson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -122.24,
+      "category": "Healthcare",
+      "description": "Jones, Lopez and Watson",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-16",
+      "amount": -98.08,
+      "category": "Utilities",
+      "description": "Haynes, Graham and Hale",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -113.29,
+      "category": "Education",
+      "description": "Nguyen, Brewer and Carey",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -80.58,
+      "category": "Miscellaneous",
+      "description": "Salinas-Shannon",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "excellent"
+}

@@ -1,0 +1,2707 @@
+{
+  "simulation_date": "2025-07-19T00:42:26.763648",
+  "years_simulated": 30,
+  "simulations_per_profile": 100,
+  "portfolio_results": [
+    {
+      "profile_id": "comprehensive_medium_struggling_3_002",
+      "monthly_investment": 1622.328,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1295119.7398762116,
+        "std_final_value": 239254.15868757406,
+        "min_final_value": 766709.5949661321,
+        "max_final_value": 2008453.5315390658,
+        "var_95": 872888.4607837514,
+        "var_99": 803938.8208026856,
+        "median_final_value": 1299466.5826038183
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1622.328,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_excellent_10_005",
+      "monthly_investment": 31538.496,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 25177478.74388344,
+        "std_final_value": 4651165.687056756,
+        "min_final_value": 14905042.318200162,
+        "max_final_value": 39044880.98006738,
+        "var_95": 16969188.246072628,
+        "var_99": 15628788.558250997,
+        "median_final_value": 25261982.544580497
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 31538.496,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_008",
+      "monthly_investment": 6194.895999999997,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 7645900.434524043,
+        "std_final_value": 3374043.115233121,
+        "min_final_value": 2353261.056025141,
+        "max_final_value": 19170161.250682313,
+        "var_95": 3216274.7398054795,
+        "var_99": 2493183.5498280628,
+        "median_final_value": 7012831.963014225
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 6194.895999999997,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_000",
+      "monthly_investment": 1629.2799999999988,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1300669.587028969,
+        "std_final_value": 240279.41061640697,
+        "min_final_value": 769995.0989481981,
+        "max_final_value": 2017060.1566797865,
+        "var_95": 876628.9624451789,
+        "var_99": 807383.8594645523,
+        "median_final_value": 1305035.0568471784
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1629.2799999999988,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_001",
+      "monthly_investment": 17727.848000000005,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 14152308.220239777,
+        "std_final_value": 2614428.992522596,
+        "min_final_value": 8378152.358648409,
+        "max_final_value": 21947201.134535022,
+        "var_95": 9538412.672239173,
+        "var_99": 8784971.483257014,
+        "median_final_value": 14199807.965762831
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 17727.848000000005,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_minimal_1_003",
+      "monthly_investment": 724.4320000000004,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 578320.8965129146,
+        "std_final_value": 106836.2061718456,
+        "min_final_value": 342365.39423625026,
+        "max_final_value": 896851.9366983217,
+        "var_95": 389778.3514939595,
+        "var_99": 358989.6789254276,
+        "median_final_value": 580261.9293810191
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 724.4320000000004,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_moderate_8_002",
+      "monthly_investment": 6757.128000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 5394278.997631983,
+        "std_final_value": 996513.0200454151,
+        "min_final_value": 3193407.789309167,
+        "max_final_value": 8365372.227232403,
+        "var_95": 3635651.396782176,
+        "var_99": 3348470.5413041348,
+        "median_final_value": 5412383.9509498775
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 6757.128000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_excellent_10_002",
+      "monthly_investment": 24570.960000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 19615229.05584396,
+        "std_final_value": 3623622.5738236136,
+        "min_final_value": 11612196.047611354,
+        "max_final_value": 30419022.1615517,
+        "var_95": 13220327.488879798,
+        "var_99": 12176051.087320296,
+        "median_final_value": 19681064.138999976
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 24570.960000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_good_12_003",
+      "monthly_investment": 27540.176000000003,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 27867244.15965817,
+        "std_final_value": 8947497.755149134,
+        "min_final_value": 11625677.567553846,
+        "max_final_value": 57025138.77295495,
+        "var_95": 14269107.546308653,
+        "var_99": 11750058.379092723,
+        "median_final_value": 26640690.74999414
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 27540.176000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_minimal_7_005",
+      "monthly_investment": 5108.2880000000005,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 5168954.219241436,
+        "std_final_value": 1659626.1190435088,
+        "min_final_value": 2156388.1512668505,
+        "max_final_value": 10577304.66545383,
+        "var_95": 2646704.6125455806,
+        "var_99": 2179458.919115782,
+        "median_final_value": 4941447.028875412
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 5108.2880000000005,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_002",
+      "monthly_investment": 1990.655999999994,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 2456918.98223761,
+        "std_final_value": 1084208.5438718442,
+        "min_final_value": 756192.3946330578,
+        "max_final_value": 6160102.851547193,
+        "var_95": 1033511.556681854,
+        "var_99": 801154.8204467935,
+        "median_final_value": 2253489.9737083367
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 1990.655999999994,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_good_6_005",
+      "monthly_investment": 6251.0,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 4990232.242780893,
+        "std_final_value": 921871.3761680945,
+        "min_final_value": 2954212.5132114603,
+        "max_final_value": 7738782.185631251,
+        "var_95": 3363330.823581458,
+        "var_99": 3097660.6264809645,
+        "median_final_value": 5006981.083884709
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 6251.0,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_good_6_001",
+      "monthly_investment": 5231.96,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 4176723.0019100667,
+        "std_final_value": 771587.6124230378,
+        "min_final_value": 2472615.8535629134,
+        "max_final_value": 6477203.462475624,
+        "var_95": 2815039.5673884456,
+        "var_99": 2592679.0099701304,
+        "median_final_value": 4190741.441631952
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 5231.96,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_good_12_000",
+      "monthly_investment": 21904.335999999996,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 27034896.492267247,
+        "std_final_value": 11930171.88255516,
+        "min_final_value": 8320821.022159147,
+        "max_final_value": 67783164.27089794,
+        "var_95": 11372323.695024393,
+        "var_99": 8815568.523685807,
+        "median_final_value": 24796449.791796617
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 21904.335999999996,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_excellent_13_004",
+      "monthly_investment": 39015.656,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 39479007.389104225,
+        "std_final_value": 12675753.941284742,
+        "min_final_value": 16469881.55568039,
+        "max_final_value": 80786455.312337,
+        "var_95": 20214779.72594568,
+        "var_99": 16646089.542005725,
+        "median_final_value": 37741371.947083786
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 39015.656,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_moderate_5_001",
+      "monthly_investment": 1835.096,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1464974.4405372324,
+        "std_final_value": 270632.2948201163,
+        "min_final_value": 867263.4084377432,
+        "max_final_value": 2271861.81950457,
+        "var_95": 987367.6117470908,
+        "var_99": 909375.2399636451,
+        "median_final_value": 1469891.3708386647
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1835.096,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_moderate_2_004",
+      "monthly_investment": 758.3200000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 605374.0064542663,
+        "std_final_value": 111833.86689742177,
+        "min_final_value": 358380.8083536281,
+        "max_final_value": 938805.5202380214,
+        "var_95": 408011.6829528568,
+        "var_99": 375782.7557627681,
+        "median_final_value": 607405.8383508987
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 758.3200000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_minimal_1_005",
+      "monthly_investment": 524.5919999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 418786.74015436304,
+        "std_final_value": 77364.63749268495,
+        "min_final_value": 247921.33270366886,
+        "max_final_value": 649448.6041152888,
+        "var_95": 282255.07013345853,
+        "var_99": 259959.68378929934,
+        "median_final_value": 420192.32454923296
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 524.5919999999999,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_good_12_002",
+      "monthly_investment": 20887.976000000006,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 25780478.764248434,
+        "std_final_value": 11376612.55555463,
+        "min_final_value": 7934735.378929272,
+        "max_final_value": 64638029.13243188,
+        "var_95": 10844648.493608715,
+        "var_99": 8406526.623272333,
+        "median_final_value": 23645895.869030386
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 20887.976000000006,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_excellent_10_003",
+      "monthly_investment": 9231.895999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 7369909.627451585,
+        "std_final_value": 1361481.470190474,
+        "min_final_value": 4362979.15275428,
+        "max_final_value": 11429152.504303318,
+        "var_95": 4967192.509502217,
+        "var_99": 4574832.946243347,
+        "median_final_value": 7394645.439192263
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 9231.895999999999,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_excellent_10_000",
+      "monthly_investment": 21926.512,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 17504141.282054454,
+        "std_final_value": 3233630.425852836,
+        "min_final_value": 10362434.189966656,
+        "max_final_value": 27145176.845085446,
+        "var_95": 11797490.587622628,
+        "var_99": 10865604.367055304,
+        "median_final_value": 17562890.868592456
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 21926.512,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_minimal_7_002",
+      "monthly_investment": 1958.3839999999998,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1563396.4134612442,
+        "std_final_value": 288814.2942162205,
+        "min_final_value": 925529.1182967671,
+        "max_final_value": 2424493.234974463,
+        "var_95": 1053702.3310844228,
+        "var_99": 970470.1661062671,
+        "median_final_value": 1568643.679888416
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1958.3839999999998,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_moderate_5_000",
+      "monthly_investment": 2980.783999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 2379587.974014613,
+        "std_final_value": 439593.57673009543,
+        "min_final_value": 1408713.7085235121,
+        "max_final_value": 3690231.6618804326,
+        "var_95": 1603801.4246741964,
+        "var_99": 1477116.8185641349,
+        "median_final_value": 2387574.644560255
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 2980.783999999999,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_003",
+      "monthly_investment": 1863.8000000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1487889.1143969095,
+        "std_final_value": 274865.44087379694,
+        "min_final_value": 880828.8725201652,
+        "max_final_value": 2307397.574400833,
+        "var_95": 1002811.7083652443,
+        "var_99": 923599.4041969702,
+        "median_final_value": 1492882.953790492
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1863.8000000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_exceptional_14_005",
+      "monthly_investment": 42653.528000000006,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 34050713.596857935,
+        "std_final_value": 6290364.190654972,
+        "min_final_value": 20157988.505873732,
+        "max_final_value": 52805369.163449645,
+        "var_95": 22949596.1377213,
+        "var_99": 21136802.79412966,
+        "median_final_value": 34164998.857294574
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 42653.528000000006,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_struggling_3_004",
+      "monthly_investment": 1452.1680000000008,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1159279.4073803583,
+        "std_final_value": 214159.6724663694,
+        "min_final_value": 686292.2535410759,
+        "max_final_value": 1797794.2487512028,
+        "var_95": 781334.4097614158,
+        "var_99": 719616.6431987832,
+        "median_final_value": 1163170.3258074964
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1452.1680000000008,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_minimal_4_004",
+      "monthly_investment": 1064.9520000000011,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 850161.2233905,
+        "std_final_value": 157054.67377907128,
+        "min_final_value": 503294.59676364687,
+        "max_final_value": 1318418.103687798,
+        "var_95": 572994.0629074895,
+        "var_99": 527733.1434157972,
+        "median_final_value": 853014.6407367146
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1064.9520000000011,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_good_12_001",
+      "monthly_investment": 25181.296000000002,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 31079405.05026705,
+        "std_final_value": 13714964.44838579,
+        "min_final_value": 9565642.944940774,
+        "max_final_value": 77923746.39076431,
+        "var_95": 13073660.355293304,
+        "var_99": 10134406.283907214,
+        "median_final_value": 28506079.433605053
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 25181.296000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_good_6_003",
+      "monthly_investment": 3162.808,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 2524899.44958012,
+        "std_final_value": 466437.71612789744,
+        "min_final_value": 1494737.9572044907,
+        "max_final_value": 3915578.6605298454,
+        "var_95": 1701738.863457043,
+        "var_99": 1567318.1588096234,
+        "median_final_value": 2533373.8326602443
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 3162.808,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_good_6_004",
+      "monthly_investment": 5921.92,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 4727524.575774901,
+        "std_final_value": 873340.0319880567,
+        "min_final_value": 2798689.8362241467,
+        "max_final_value": 7331378.819506196,
+        "var_95": 3186270.368066456,
+        "var_99": 2934586.212953139,
+        "median_final_value": 4743391.684575013
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 5921.92,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_minimal_7_003",
+      "monthly_investment": 4629.4079999999985,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 4684387.022460361,
+        "std_final_value": 1504043.317939195,
+        "min_final_value": 1954236.0490598981,
+        "max_final_value": 9585727.906627297,
+        "var_95": 2398587.4537527137,
+        "var_99": 1975144.0317824823,
+        "median_final_value": 4478207.651379868
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 4629.4079999999985,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_good_9_005",
+      "monthly_investment": 14630.2,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 14803948.802092975,
+        "std_final_value": 4753189.727523256,
+        "min_final_value": 6175922.330664333,
+        "max_final_value": 30293531.358553536,
+        "var_95": 7580194.73891542,
+        "var_99": 6241997.295071865,
+        "median_final_value": 14152365.395579271
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 14630.2,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_minimal_4_000",
+      "monthly_investment": 1027.9520000000005,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 820623.774505058,
+        "std_final_value": 151598.06828903442,
+        "min_final_value": 485808.4564678826,
+        "max_final_value": 1272611.8421507063,
+        "var_95": 553086.3296692048,
+        "var_99": 509397.92614179285,
+        "median_final_value": 823378.0545739026
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1027.9520000000005,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_excellent_13_003",
+      "monthly_investment": 55611.8,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 56272247.81563029,
+        "std_final_value": 18067657.07161062,
+        "min_final_value": 23475698.04024818,
+        "max_final_value": 115150702.46514785,
+        "var_95": 28813568.767454784,
+        "var_99": 23726859.86343851,
+        "median_final_value": 53795471.96250738
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 55611.8,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_moderate_11_004",
+      "monthly_investment": 11578.320000000002,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 11715824.56113039,
+        "std_final_value": 3761667.7616148554,
+        "min_final_value": 4887616.371585961,
+        "max_final_value": 23974258.72505981,
+        "var_95": 5998955.608910202,
+        "var_99": 4939908.006826669,
+        "median_final_value": 11200162.3564233
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 11578.320000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_excellent_10_004",
+      "monthly_investment": 24173.992000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 19298325.758299056,
+        "std_final_value": 3565079.390900068,
+        "min_final_value": 11424589.611369947,
+        "max_final_value": 29927572.971555166,
+        "var_95": 13006740.10920041,
+        "var_99": 11979335.018919516,
+        "median_final_value": 19363097.211003125
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 24173.992000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_struggling_3_005",
+      "monthly_investment": 715.751999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 571391.5706662756,
+        "std_final_value": 105556.11601904649,
+        "min_final_value": 338263.2402425421,
+        "max_final_value": 886106.0353431284,
+        "var_95": 385108.10488562804,
+        "var_99": 354688.3360622293,
+        "median_final_value": 573309.3464649864
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 715.751999999999,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_excellent_13_000",
+      "monthly_investment": 48776.64000000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 38938851.643339835,
+        "std_final_value": 7193375.178636357,
+        "min_final_value": 23051761.356648777,
+        "max_final_value": 60385825.10109586,
+        "var_95": 26244117.226481654,
+        "var_99": 24171088.980969023,
+        "median_final_value": 39069543.08357945
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 48776.64000000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_minimal_4_005",
+      "monthly_investment": 709.0480000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 566039.7042520106,
+        "std_final_value": 104567.43809458164,
+        "min_final_value": 335094.9406603061,
+        "max_final_value": 877806.4359554385,
+        "var_95": 381501.0388415923,
+        "var_99": 351366.1929107481,
+        "median_final_value": 567939.5174478164
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 709.0480000000003,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_009",
+      "monthly_investment": 10570.200000000006,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 10695732.090325736,
+        "std_final_value": 3434140.7539108316,
+        "min_final_value": 4462053.438749169,
+        "max_final_value": 21886828.967900783,
+        "var_95": 5476628.783563033,
+        "var_99": 4509792.060830924,
+        "median_final_value": 10224968.401276305
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 10570.200000000006,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_minimal_1_004",
+      "monthly_investment": 739.4080000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 590276.3785266571,
+        "std_final_value": 109044.80411289475,
+        "min_final_value": 349443.0276705571,
+        "max_final_value": 915392.3305572323,
+        "var_95": 397836.1410338678,
+        "var_99": 366410.98200368445,
+        "median_final_value": 592257.5378776228
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 739.4080000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_excellent_13_001",
+      "monthly_investment": 48807.871999999996,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 49387516.11236429,
+        "std_final_value": 15857136.321627324,
+        "min_final_value": 20603520.566841606,
+        "max_final_value": 101062377.88794933,
+        "var_95": 25288319.677930262,
+        "var_99": 20823953.53462092,
+        "median_final_value": 47213765.95840576
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 48807.871999999996,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_minimal_7_004",
+      "monthly_investment": 7702.2400000000025,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 6148770.819010884,
+        "std_final_value": 1135894.191069748,
+        "min_final_value": 3640066.195450016,
+        "max_final_value": 9535427.563822886,
+        "var_95": 4144165.925871423,
+        "var_99": 3816817.4026086982,
+        "median_final_value": 6169408.092071747
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 7702.2400000000025,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_moderate_2_001",
+      "monthly_investment": 1156.9840000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 923631.2367911754,
+        "std_final_value": 170627.16881850478,
+        "min_final_value": 546788.7714582372,
+        "max_final_value": 1432354.370222433,
+        "var_95": 622511.5900800809,
+        "var_99": 573339.2708796132,
+        "median_final_value": 926731.2433782266
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1156.9840000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_excellent_10_001",
+      "monthly_investment": 13176.864,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 10519214.780281393,
+        "std_final_value": 1943268.8768612777,
+        "min_final_value": 6227364.663843509,
+        "max_final_value": 16313050.77358598,
+        "var_95": 7089770.092679731,
+        "var_99": 6529747.687297164,
+        "median_final_value": 10554520.683558088
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 13176.864,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_minimal_4_001",
+      "monthly_investment": 1915.3759999999995,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1529062.7215243473,
+        "std_final_value": 282471.653975256,
+        "min_final_value": 905203.6068956897,
+        "max_final_value": 2371249.026969378,
+        "var_95": 1030562.0124057243,
+        "var_99": 949157.7059841057,
+        "median_final_value": 1534194.7529238146
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1915.3759999999995,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_004",
+      "monthly_investment": 576.4720000000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 460203.0333483281,
+        "std_final_value": 85015.68324466063,
+        "min_final_value": 272439.736988649,
+        "max_final_value": 713676.410832703,
+        "var_95": 310168.9404145986,
+        "var_99": 285668.63168592943,
+        "median_final_value": 461747.6242823864
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 576.4720000000001,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_good_9_003",
+      "monthly_investment": 7497.279999999998,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 5985149.318374067,
+        "std_final_value": 1105667.5461714256,
+        "min_final_value": 3543202.4301791447,
+        "max_final_value": 9281685.635048727,
+        "var_95": 4033887.844668147,
+        "var_99": 3715250.2098389147,
+        "median_final_value": 6005237.4245060105
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 7497.279999999998,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_good_12_004",
+      "monthly_investment": 46815.48000000001,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 57780872.975826114,
+        "std_final_value": 25497998.34901751,
+        "min_final_value": 17783841.069022704,
+        "max_final_value": 144870922.8739439,
+        "var_95": 24305726.1584165,
+        "var_99": 18841250.057031795,
+        "median_final_value": 52996708.01702775
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 46815.48000000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_good_6_000",
+      "monthly_investment": 6205.335999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 4953778.240999692,
+        "std_final_value": 915137.0401384489,
+        "min_final_value": 2932631.780496158,
+        "max_final_value": 7682249.830852085,
+        "var_95": 3338761.4524843516,
+        "var_99": 3075031.9950863654,
+        "median_final_value": 4970404.730626919
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 6205.335999999999,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_struggling_0_005",
+      "monthly_investment": 74.10400000000045,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 59157.92195153357,
+        "std_final_value": 10928.548465775239,
+        "min_final_value": 35021.430823711846,
+        "max_final_value": 91741.27580931401,
+        "var_95": 39871.42334837323,
+        "var_99": 36721.97137493939,
+        "median_final_value": 59356.47516240497
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 74.10400000000045,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_minimal_1_000",
+      "monthly_investment": 526.3920000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 420223.6971271661,
+        "std_final_value": 77630.09397598373,
+        "min_final_value": 248772.0097991368,
+        "max_final_value": 651677.016838713,
+        "var_95": 283223.5544531573,
+        "var_99": 260851.6673323574,
+        "median_final_value": 421634.1044166109
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 526.3920000000002,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_005",
+      "monthly_investment": 3146.656,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 3184025.804281454,
+        "std_final_value": 1022313.6372195539,
+        "min_final_value": 1328314.2443246588,
+        "max_final_value": 6515517.368906847,
+        "var_95": 1630344.4420702592,
+        "var_99": 1342525.6141762494,
+        "median_final_value": 3043883.575493961
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 3146.656,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_moderate_5_004",
+      "monthly_investment": 2659.816,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 2123356.1930994387,
+        "std_final_value": 392258.55643480073,
+        "min_final_value": 1257024.7496464644,
+        "max_final_value": 3292871.009095685,
+        "var_95": 1431105.6051600033,
+        "var_99": 1318062.2775370572,
+        "median_final_value": 2130482.866519591
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 2659.816,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_minimal_1_002",
+      "monthly_investment": 370.28,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 295598.01549462654,
+        "std_final_value": 54607.34813110314,
+        "min_final_value": 174993.73050582915,
+        "max_final_value": 458409.2573501121,
+        "var_95": 199227.98549923836,
+        "var_99": 183490.92573562154,
+        "median_final_value": 296590.13849637314
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 370.28,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_moderate_11_001",
+      "monthly_investment": 22946.839999999993,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 28321581.81944522,
+        "std_final_value": 12497970.50965129,
+        "min_final_value": 8716838.011621127,
+        "max_final_value": 71009202.25192022,
+        "var_95": 11913572.374799792,
+        "var_99": 9235132.27801348,
+        "median_final_value": 25976599.607511137
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 22946.839999999993,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_good_9_001",
+      "monthly_investment": 12540.663999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 10011330.321337646,
+        "std_final_value": 1849444.757597475,
+        "min_final_value": 5926697.57043359,
+        "max_final_value": 15525430.676561758,
+        "var_95": 6747464.6903500585,
+        "var_99": 6214481.059466831,
+        "median_final_value": 10044931.599320734
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 12540.663999999999,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_exceptional_14_001",
+      "monthly_investment": 52945.272,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 42266709.87637242,
+        "std_final_value": 7808147.618018554,
+        "min_final_value": 25021850.11322735,
+        "max_final_value": 65546620.98336261,
+        "var_95": 28487036.519037586,
+        "var_99": 26236839.61489756,
+        "median_final_value": 42408570.69031042
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 52945.272,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_moderate_2_003",
+      "monthly_investment": 873.1200000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 697019.9289420636,
+        "std_final_value": 128764.09149894166,
+        "min_final_value": 412635.10310913203,
+        "max_final_value": 1080928.7317098596,
+        "var_95": 469779.46067596035,
+        "var_99": 432671.4839534557,
+        "median_final_value": 699359.3543371304
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 873.1200000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_minimal_7_000",
+      "monthly_investment": 6611.159999999998,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 5277751.366850656,
+        "std_final_value": 974986.268959765,
+        "min_final_value": 3124423.5480472054,
+        "max_final_value": 8184662.811447459,
+        "var_95": 3557113.775016616,
+        "var_99": 3276136.622518945,
+        "median_final_value": 5295465.215571167
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 6611.159999999998,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_good_9_004",
+      "monthly_investment": 8551.416000000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 6826676.026976917,
+        "std_final_value": 1261127.1214375128,
+        "min_final_value": 4041385.4027958573,
+        "max_final_value": 10586713.454282895,
+        "var_95": 4601062.392907992,
+        "var_99": 4237623.523253812,
+        "median_final_value": 6849588.5702174585
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 8551.416000000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_struggling_0_000",
+      "monthly_investment": 67.7040000000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 54048.74160378141,
+        "std_final_value": 9984.703191822775,
+        "min_final_value": 31996.801150931125,
+        "max_final_value": 83818.03057046475,
+        "var_95": 36427.92354499436,
+        "var_99": 33550.474332949634,
+        "median_final_value": 54230.14674505367
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 67.7040000000001,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_moderate_8_003",
+      "monthly_investment": 7073.912000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 5647170.651894824,
+        "std_final_value": 1043231.0014928677,
+        "min_final_value": 3343119.396537635,
+        "max_final_value": 8757553.058442278,
+        "var_95": 3806096.028299916,
+        "var_99": 3505451.7161400164,
+        "median_final_value": 5666124.391787702
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 7073.912000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_moderate_5_002",
+      "monthly_investment": 1811.6400000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1446249.294562722,
+        "std_final_value": 267173.10189108155,
+        "min_final_value": 856178.1406870018,
+        "max_final_value": 2242823.1257041954,
+        "var_95": 974747.1849677082,
+        "var_99": 897751.7033047543,
+        "median_final_value": 1451103.377189073
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1811.6400000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_moderate_5_005",
+      "monthly_investment": 2149.768,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1716180.065285327,
+        "std_final_value": 317038.8073271666,
+        "min_final_value": 1015976.8878741977,
+        "max_final_value": 2661427.9797856435,
+        "var_95": 1156675.8883297194,
+        "var_99": 1065309.8207756768,
+        "median_final_value": 1721940.123298776
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 2149.768,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_exceptional_14_000",
+      "monthly_investment": 54997.65600000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 43905147.37619141,
+        "std_final_value": 8110824.63969606,
+        "min_final_value": 25991803.479843054,
+        "max_final_value": 68087486.88278328,
+        "var_95": 29591315.2534841,
+        "var_99": 27253891.143808052,
+        "median_final_value": 44052507.31882881
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 54997.65600000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_struggling_0_002",
+      "monthly_investment": 146.76000000000022,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 117159.89184938783,
+        "std_final_value": 21643.55193831855,
+        "min_final_value": 69358.53918395724,
+        "max_final_value": 181689.9173833374,
+        "var_95": 78963.75486623168,
+        "var_99": 72726.3915441286,
+        "median_final_value": 117553.1185203839
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 146.76000000000022,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_moderate_2_002",
+      "monthly_investment": 1091.144,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 871070.5439636647,
+        "std_final_value": 160917.36056271874,
+        "min_final_value": 515672.8936994997,
+        "max_final_value": 1350843.9848277667,
+        "var_95": 587086.5858528125,
+        "var_99": 540712.4950601364,
+        "median_final_value": 873994.139784714
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1091.144,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_struggling_3_001",
+      "monthly_investment": 2293.584,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1830989.7341747559,
+        "std_final_value": 338248.1904394684,
+        "min_final_value": 1083944.0974086733,
+        "max_final_value": 2839473.2043591174,
+        "var_95": 1234055.6332863998,
+        "var_99": 1136577.3236804907,
+        "median_final_value": 1837135.1307471846
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 2293.584,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_excellent_13_005",
+      "monthly_investment": 32234.440000000002,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 32617257.41439896,
+        "std_final_value": 10472612.068219537,
+        "min_final_value": 13607291.616823936,
+        "max_final_value": 66745158.573732145,
+        "var_95": 16701298.170898711,
+        "var_99": 13752873.322863303,
+        "median_final_value": 31181636.150010146
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 32234.440000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_struggling_0_003",
+      "monthly_investment": 327.0720000000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 261104.66167186564,
+        "std_final_value": 48235.21272533195,
+        "min_final_value": 154573.69942746745,
+        "max_final_value": 404917.4479313352,
+        "var_95": 175980.05745167754,
+        "var_99": 162079.35633088814,
+        "median_final_value": 261981.01376873138
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 327.0720000000001,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_exceptional_14_004",
+      "monthly_investment": 58769.960000000014,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 46916613.22971454,
+        "std_final_value": 8667148.280682161,
+        "min_final_value": 27774588.263148084,
+        "max_final_value": 72757625.89957826,
+        "var_95": 31620991.516341515,
+        "var_99": 29123242.8590406,
+        "median_final_value": 47074080.63040526
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 58769.960000000014,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_moderate_11_005",
+      "monthly_investment": 26332.336000000007,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 32500048.308225513,
+        "std_final_value": 14341877.085395144,
+        "min_final_value": 10002889.60831117,
+        "max_final_value": 81485649.99753864,
+        "var_95": 13671258.906827541,
+        "var_99": 10597651.186354997,
+        "median_final_value": 29809095.67515388
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 26332.336000000007,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_exceptional_14_003",
+      "monthly_investment": 62892.90400000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 50207998.301539175,
+        "std_final_value": 9275182.844614867,
+        "min_final_value": 29723084.944649775,
+        "max_final_value": 77861859.71489577,
+        "var_95": 33839328.524675734,
+        "var_99": 31166352.968460366,
+        "median_final_value": 50376512.66014636
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 62892.90400000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_good_6_002",
+      "monthly_investment": 3466.24,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 2767132.0763424877,
+        "std_final_value": 511186.60037256975,
+        "min_final_value": 1638139.4307781286,
+        "max_final_value": 4291229.621360205,
+        "var_95": 1864999.493509993,
+        "var_99": 1717682.7979416663,
+        "median_final_value": 2776419.470837398
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 3466.24,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_good_9_000",
+      "monthly_investment": 6259.615999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 4997110.476824048,
+        "std_final_value": 923142.0278681621,
+        "min_final_value": 2958284.420908423,
+        "max_final_value": 7749448.854534071,
+        "var_95": 3367966.6351917423,
+        "var_99": 3101930.254373728,
+        "median_final_value": 5013882.403516561
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 6259.615999999999,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_moderate_8_001",
+      "monthly_investment": 11198.888,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 11331886.412514796,
+        "std_final_value": 3638394.512808027,
+        "min_final_value": 4727444.77025659,
+        "max_final_value": 23188600.621244498,
+        "var_95": 5802364.4173901845,
+        "var_99": 4778022.761398459,
+        "median_final_value": 10833122.923826633
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 11198.888,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_moderate_11_003",
+      "monthly_investment": 16642.551999999996,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 13285906.189818816,
+        "std_final_value": 2454374.070578938,
+        "min_final_value": 7865243.220312376,
+        "max_final_value": 20603597.015044164,
+        "var_95": 8954472.584331673,
+        "var_99": 8247156.943618973,
+        "median_final_value": 13330498.008569412
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 16642.551999999996,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_minimal_1_001",
+      "monthly_investment": 716.1759999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 571730.053864316,
+        "std_final_value": 105618.64576844625,
+        "min_final_value": 338463.621958365,
+        "max_final_value": 886630.9503402049,
+        "var_95": 385336.23674760346,
+        "var_99": 354898.44774126244,
+        "median_final_value": 573648.9657226375
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 716.1759999999999,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_minimal_4_003",
+      "monthly_investment": 1061.3199999999997,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 847261.7635431453,
+        "std_final_value": 156519.04158610041,
+        "min_final_value": 501578.1194243483,
+        "max_final_value": 1313921.6620147352,
+        "var_95": 571039.8767690717,
+        "var_99": 525933.3188444708,
+        "median_final_value": 850105.4493598638
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1061.3199999999997,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_moderate_11_000",
+      "monthly_investment": 19985.607999999997,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 15954699.317417853,
+        "std_final_value": 2947394.009041093,
+        "min_final_value": 9445166.091463609,
+        "max_final_value": 24742323.973669462,
+        "var_95": 10753193.315376056,
+        "var_99": 9903796.352244861,
+        "median_final_value": 16008248.473193772
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 19985.607999999997,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_struggling_0_004",
+      "monthly_investment": 198.3279999999999,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 158327.11250139942,
+        "std_final_value": 29248.58523318944,
+        "min_final_value": 93729.49277238871,
+        "max_final_value": 245531.46589535702,
+        "var_95": 106709.75453195663,
+        "var_99": 98280.72895996072,
+        "median_final_value": 158858.50974319072
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 198.3279999999999,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_good_9_002",
+      "monthly_investment": 17556.528000000002,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 17765029.982810453,
+        "std_final_value": 5703921.2410339955,
+        "min_final_value": 7411228.371733307,
+        "max_final_value": 36352833.967774116,
+        "var_95": 9096382.905170137,
+        "var_99": 7490519.629728404,
+        "median_final_value": 16983117.068373658
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 17556.528000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_006",
+      "monthly_investment": 39985.09600000001,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 40459960.4947832,
+        "std_final_value": 12990714.24595927,
+        "min_final_value": 16879116.299172755,
+        "max_final_value": 82793793.62898561,
+        "var_95": 20717065.681551117,
+        "var_99": 17059702.606607515,
+        "median_final_value": 38679149.22347742
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 39985.09600000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_excellent_13_002",
+      "monthly_investment": 34063.04,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 27192846.023857605,
+        "std_final_value": 5023474.893819969,
+        "min_final_value": 16098137.738925235,
+        "max_final_value": 42170284.296983235,
+        "var_95": 18327511.178513363,
+        "var_99": 16879817.281434197,
+        "median_final_value": 27284114.052088745
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 34063.04,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_moderate_5_003",
+      "monthly_investment": 1852.5519999999997,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1478909.7299357282,
+        "std_final_value": 273206.63280482154,
+        "min_final_value": 875513.0858702549,
+        "max_final_value": 2293472.4708935386,
+        "var_95": 996759.7574608088,
+        "var_99": 918025.4981456739,
+        "median_final_value": 1483873.431596992
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1852.5519999999997,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_moderate_2_005",
+      "monthly_investment": 749.4560000000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 598297.7916726307,
+        "std_final_value": 110526.6411929992,
+        "min_final_value": 354191.69625682646,
+        "max_final_value": 927831.8255822234,
+        "var_95": 403242.4357251762,
+        "var_99": 371390.23235961125,
+        "median_final_value": 600305.8734928682
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 749.4560000000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_random_007",
+      "monthly_investment": 55785.960000000014,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 44534457.89257517,
+        "std_final_value": 8227080.421701901,
+        "min_final_value": 26364354.678213958,
+        "max_final_value": 69063412.8069654,
+        "var_95": 30015459.733016096,
+        "var_99": 27644532.36321286,
+        "median_final_value": 44683930.00581527
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 55785.960000000014,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_good_12_005",
+      "monthly_investment": 31284.63200000001,
+      "allocation": {
+        "stocks": 0.6,
+        "bonds": 0.3,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 31656169.459085874,
+        "std_final_value": 10164029.982621273,
+        "min_final_value": 13206344.231481023,
+        "max_final_value": 64778470.59731302,
+        "var_95": 16209183.941115074,
+        "var_99": 13347636.281207155,
+        "median_final_value": 30262849.67602841
+      },
+      "recommendation": {
+        "stock_allocation": 0.6,
+        "bond_allocation": 0.3,
+        "cash_allocation": 0.1,
+        "monthly_investment": 31284.63200000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.062
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_moderate_8_005",
+      "monthly_investment": 5581.9760000000015,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 4456144.075128617,
+        "std_final_value": 823206.5104554847,
+        "min_final_value": 2638032.8503673156,
+        "max_final_value": 6910525.744588212,
+        "var_95": 3003364.5716352332,
+        "var_99": 2766128.1831965544,
+        "median_final_value": 4471100.342776887
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 5581.9760000000015,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_moderate_8_000",
+      "monthly_investment": 8653.088000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 6907841.7432763865,
+        "std_final_value": 1276121.2834208447,
+        "min_final_value": 4089435.425935039,
+        "max_final_value": 10712584.108958567,
+        "var_95": 4655766.691659399,
+        "var_99": 4288006.718137098,
+        "median_final_value": 6931026.705037593
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 8653.088000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_moderate_2_000",
+      "monthly_investment": 1366.4880000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1090880.2554748366,
+        "std_final_value": 201523.943861331,
+        "min_final_value": 645800.0237967249,
+        "max_final_value": 1691721.8031161174,
+        "var_95": 735234.5561436899,
+        "var_99": 677158.2265491511,
+        "median_final_value": 1094541.6041202187
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1366.4880000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_struggling_3_000",
+      "monthly_investment": 1260.2320000000016,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 1006055.0887512777,
+        "std_final_value": 185853.7527005392,
+        "min_final_value": 595583.6096543787,
+        "max_final_value": 1560176.1240381456,
+        "var_95": 678063.8506580847,
+        "var_99": 624503.4469095118,
+        "median_final_value": 1009431.7365711371
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 1260.2320000000016,
+        "recommendation": "Good savings rate, focus on investment allocation",
+        "priority": "medium",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_struggling_3_003",
+      "monthly_investment": 765.7600000000007,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 611313.4286085292,
+        "std_final_value": 112931.08702839268,
+        "min_final_value": 361896.9403482359,
+        "max_final_value": 948016.2928281896,
+        "var_95": 412014.75147428387,
+        "var_99": 379469.62107408047,
+        "median_final_value": 613365.19513607
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 765.7600000000007,
+        "recommendation": "Increase savings rate to at least 15%",
+        "priority": "high",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_medium_minimal_4_002",
+      "monthly_investment": 2713.2720000000004,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 2166030.6219540364,
+        "std_final_value": 400142.02408548363,
+        "min_final_value": 1282287.968988369,
+        "max_final_value": 3359049.914953143,
+        "var_95": 1459867.437267729,
+        "var_99": 1344552.2065802766,
+        "median_final_value": 2173300.52462552
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 2713.2720000000004,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_low_struggling_0_001",
+      "monthly_investment": 648.5360000000001,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 517732.404064015,
+        "std_final_value": 95643.38102936345,
+        "min_final_value": 306497.0671041595,
+        "max_final_value": 802892.1522221317,
+        "var_95": 348942.748200645,
+        "var_99": 321379.6883787337,
+        "median_final_value": 519470.08226176014
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 648.5360000000001,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_moderate_11_002",
+      "monthly_investment": 14688.103999999992,
+      "allocation": {
+        "stocks": 0.8,
+        "bonds": 0.15,
+        "cash": 0.05
+      },
+      "simulation_stats": {
+        "mean_final_value": 18128436.822173394,
+        "std_final_value": 7999859.26753703,
+        "min_final_value": 5579584.085035031,
+        "max_final_value": 45452469.60510579,
+        "var_95": 7625790.307187711,
+        "var_99": 5911340.443966091,
+        "median_final_value": 16627430.905583788
+      },
+      "recommendation": {
+        "stock_allocation": 0.8,
+        "bond_allocation": 0.15,
+        "cash_allocation": 0.05,
+        "monthly_investment": 14688.103999999992,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.07100000000000001
+      }
+    },
+    {
+      "profile_id": "comprehensive_very_high_exceptional_14_002",
+      "monthly_investment": 54829.088,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 43770577.952306874,
+        "std_final_value": 8085964.934986633,
+        "min_final_value": 25912138.51504911,
+        "max_final_value": 67878798.50724784,
+        "var_95": 29500617.773037866,
+        "var_99": 27170357.876093373,
+        "median_final_value": 43917486.23622611
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 54829.088,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_minimal_7_001",
+      "monthly_investment": 8733.240000000003,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 6971827.840656565,
+        "std_final_value": 1287941.7656705012,
+        "min_final_value": 4127315.131799571,
+        "max_final_value": 10811812.851518605,
+        "var_95": 4698892.222321992,
+        "var_99": 4327725.754216749,
+        "median_final_value": 6995227.560554421
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 8733.240000000003,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "comprehensive_high_moderate_8_004",
+      "monthly_investment": 12524.392000000002,
+      "allocation": {
+        "stocks": 0.3,
+        "bonds": 0.6,
+        "cash": 0.1
+      },
+      "simulation_stats": {
+        "mean_final_value": 9998340.230303515,
+        "std_final_value": 1847045.030988454,
+        "min_final_value": 5919007.44949056,
+        "max_final_value": 15505285.82554202,
+        "var_95": 6738709.592099982,
+        "var_99": 6206417.5282375915,
+        "median_final_value": 10031897.90931965
+      },
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 12524.392000000002,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    }
+  ]
+}

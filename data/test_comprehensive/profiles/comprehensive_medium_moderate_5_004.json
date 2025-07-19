@@ -1,0 +1,241 @@
+{
+  "profile_id": "comprehensive_medium_moderate_5_004",
+  "income_level": "medium",
+  "savings_level": "moderate",
+  "monthly_income": 8046.66,
+  "monthly_expenses": 4721.89,
+  "savings_rate": 41.31863406680535,
+  "risk_tolerance": "low",
+  "expense_categories": {
+    "Housing": 645.72,
+    "Transportation": 712.65,
+    "Food": 600.68,
+    "Healthcare": 441.03,
+    "Utilities": 554.27,
+    "Entertainment": 398.82,
+    "Shopping": 435.95,
+    "Education": 336.16,
+    "Insurance": 283.14,
+    "Miscellaneous": 313.47
+  },
+  "transactions": [
+    {
+      "date": "2025-06-19",
+      "amount": -156.74,
+      "category": "Miscellaneous",
+      "description": "Wheeler, Durham and Hernandez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-20",
+      "amount": -184.76,
+      "category": "Utilities",
+      "description": "Whitney, Sawyer and Hunter",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -178.16,
+      "category": "Transportation",
+      "description": "Brooks Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-22",
+      "amount": -178.16,
+      "category": "Transportation",
+      "description": "White Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-26",
+      "amount": -217.97,
+      "category": "Shopping",
+      "description": "Frey, Hamilton and Green",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": 4023.33,
+      "category": "Income",
+      "description": "Automotive engineer",
+      "type": "income"
+    },
+    {
+      "date": "2025-06-27",
+      "amount": -147.01,
+      "category": "Healthcare",
+      "description": "Barber, Newton and Schmidt",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-28",
+      "amount": -147.01,
+      "category": "Healthcare",
+      "description": "Cook, Perry and Medina",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-29",
+      "amount": -178.16,
+      "category": "Transportation",
+      "description": "Ballard, Ponce and Bradley",
+      "type": "expense"
+    },
+    {
+      "date": "2025-06-30",
+      "amount": -168.08,
+      "category": "Education",
+      "description": "Espinoza, Hayes and Williams",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -161.43,
+      "category": "Housing",
+      "description": "Moody and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-01",
+      "amount": -147.01,
+      "category": "Healthcare",
+      "description": "Navarro, Todd and Evans",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-02",
+      "amount": -141.57,
+      "category": "Insurance",
+      "description": "Moreno-Griffith",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-03",
+      "amount": -150.17,
+      "category": "Food",
+      "description": "Perkins and Sons",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-04",
+      "amount": -178.16,
+      "category": "Transportation",
+      "description": "Gardner, Martinez and Lopez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-05",
+      "amount": -156.74,
+      "category": "Miscellaneous",
+      "description": "Berry Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-07",
+      "amount": -132.94,
+      "category": "Entertainment",
+      "description": "Pena Inc",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": 4023.33,
+      "category": "Income",
+      "description": "Teacher, secondary school",
+      "type": "income"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -161.43,
+      "category": "Housing",
+      "description": "Clarke, Sharp and Lee",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-08",
+      "amount": -168.08,
+      "category": "Education",
+      "description": "Thompson, Kaiser and Bennett",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -161.43,
+      "category": "Housing",
+      "description": "Jenkins, House and Dean",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-09",
+      "amount": -132.94,
+      "category": "Entertainment",
+      "description": "Miller, Williams and Sims",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -150.17,
+      "category": "Food",
+      "description": "Parks, Davis and Turner",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-10",
+      "amount": -217.97,
+      "category": "Shopping",
+      "description": "Schroeder, Davis and Fitzgerald",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-11",
+      "amount": -141.57,
+      "category": "Insurance",
+      "description": "Williams, Lang and Jones",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-13",
+      "amount": -132.94,
+      "category": "Entertainment",
+      "description": "Odom Ltd",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-14",
+      "amount": -161.43,
+      "category": "Housing",
+      "description": "Ortiz-Russell",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-15",
+      "amount": -184.76,
+      "category": "Utilities",
+      "description": "Wagner-Hawkins",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-17",
+      "amount": -150.17,
+      "category": "Food",
+      "description": "Hines Group",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -150.17,
+      "category": "Food",
+      "description": "Hernandez-Perez",
+      "type": "expense"
+    },
+    {
+      "date": "2025-07-18",
+      "amount": -184.76,
+      "category": "Utilities",
+      "description": "Lee and Sons",
+      "type": "expense"
+    }
+  ],
+  "financial_health": "good"
+}
