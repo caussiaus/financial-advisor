@@ -1,0 +1,426 @@
+[
+  {
+    "date": "2025-07-19",
+    "description": "Freelance Payment",
+    "amount": 6486.456148123849,
+    "balance": 14337.278940697348,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-19",
+    "description": "Payroll",
+    "amount": 6661.281158477591,
+    "balance": 20998.560099174938,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-20",
+    "description": "Home Depot",
+    "amount": 40.235157839624705,
+    "balance": 21038.795257014564,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-20",
+    "description": "Aldi",
+    "amount": 84.38846670973616,
+    "balance": 21123.1837237243,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-22",
+    "description": "Water Department",
+    "amount": -56.47309770230772,
+    "balance": 21066.710626021995,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Doctor Office",
+    "amount": -31.312668085511884,
+    "balance": 21035.397957936482,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-24",
+    "description": "Disney+",
+    "amount": -95.95302849645051,
+    "balance": 20939.444929440033,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-25",
+    "description": "Vision Center",
+    "amount": 66.19160242993496,
+    "balance": 21005.636531869968,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Health Insurance",
+    "amount": 87.09223404712223,
+    "balance": 21092.72876591709,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Concert Venue",
+    "amount": 55.04283589061395,
+    "balance": 21147.771601807704,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Gas Company",
+    "amount": 45.99412977009943,
+    "balance": 21193.765731577805,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Restaurant",
+    "amount": -22.00821002241085,
+    "balance": 21171.757521555395,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Lab Services",
+    "amount": -50.32656391730031,
+    "balance": 21121.430957638095,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Medical Equipment",
+    "amount": 37.5992583897097,
+    "balance": 21159.030216027804,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Internet Provider",
+    "amount": -96.47420826074976,
+    "balance": 21062.556007767056,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Home Security",
+    "amount": -58.532904314522405,
+    "balance": 21004.023103452535,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Dental Office",
+    "amount": 26.05326371887496,
+    "balance": 21030.07636717141,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Disney+",
+    "amount": -54.93134430472177,
+    "balance": 20975.145022866687,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-30",
+    "description": "Home Maintenance",
+    "amount": -57.32951622805876,
+    "balance": 20917.815506638628,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-30",
+    "description": "Property Tax",
+    "amount": -37.32579541611558,
+    "balance": 20880.48971122251,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-30",
+    "description": "Fitness Center",
+    "amount": 65.62728322519726,
+    "balance": 20946.116994447708,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Food Lion",
+    "amount": -69.2238952699141,
+    "balance": 20876.893099177792,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Restaurant",
+    "amount": 86.43182881889226,
+    "balance": 20963.324927996684,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Spotify",
+    "amount": -31.11593627399754,
+    "balance": 20932.208991722688,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Waste Management",
+    "amount": 19.860728750374573,
+    "balance": 20952.06972047306,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Kroger",
+    "amount": -42.8230355573147,
+    "balance": 20909.246684915746,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Hulu",
+    "amount": -86.68075150445785,
+    "balance": 20822.56593341129,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Gym Membership",
+    "amount": 60.61335639720324,
+    "balance": 20883.179289808493,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Kroger",
+    "amount": 92.01986994115764,
+    "balance": 20975.199159749653,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-02",
+    "description": "Whole Foods Market",
+    "amount": 94.87619660530783,
+    "balance": 21070.07535635496,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-02",
+    "description": "Home Depot",
+    "amount": -10.817644936372593,
+    "balance": 21059.257711418588,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-03",
+    "description": "Amazon Prime",
+    "amount": -72.77726274352392,
+    "balance": 20986.480448675065,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Pharmacy",
+    "amount": 46.705172669036614,
+    "balance": 21033.185621344102,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Sprouts Farmers Market",
+    "amount": -34.49775828303673,
+    "balance": 20998.687863061066,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Sprouts Farmers Market",
+    "amount": 36.63099188681338,
+    "balance": 21035.31885494788,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-05",
+    "description": "Phone Company",
+    "amount": 37.00059334089791,
+    "balance": 21072.319448288777,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-05",
+    "description": "Electric Company",
+    "amount": -80.110985023569,
+    "balance": 20992.208463265208,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-06",
+    "description": "Medical Center",
+    "amount": -57.51840892154426,
+    "balance": 20934.690054343664,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-06",
+    "description": "Home Security",
+    "amount": 13.280072847115266,
+    "balance": 20947.97012719078,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-08",
+    "description": "Hospital",
+    "amount": 89.37380542370774,
+    "balance": 21037.343932614487,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-10",
+    "description": "Home Insurance",
+    "amount": -30.297162147121178,
+    "balance": 21007.046770467365,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Sports Arena",
+    "amount": 63.68575972808488,
+    "balance": 21070.732530195448,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Medical Center",
+    "amount": -96.90438063315837,
+    "balance": 20973.82814956229,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Target Grocery",
+    "amount": -72.18326921906127,
+    "balance": 20901.64488034323,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Restaurant",
+    "amount": -83.29527079569111,
+    "balance": 20818.34960954754,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Pharmacy",
+    "amount": 63.07141688884106,
+    "balance": 20881.42102643638,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-13",
+    "description": "Property Tax",
+    "amount": 74.31561426896693,
+    "balance": 20955.736640705345,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-13",
+    "description": "Vision Center",
+    "amount": -82.15468194012502,
+    "balance": 20873.58195876522,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-14",
+    "description": "Home Insurance",
+    "amount": -11.614147715210766,
+    "balance": 20861.967811050006,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-15",
+    "description": "Fitness Center",
+    "amount": -66.96296617969749,
+    "balance": 20795.00484487031,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-16",
+    "description": "Aldi",
+    "amount": -93.32347852350418,
+    "balance": 20701.681366346806,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-16",
+    "description": "Hulu",
+    "amount": -67.83904163577179,
+    "balance": 20633.842324711033,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-17",
+    "description": "Movie Theater",
+    "amount": 81.73641997834464,
+    "balance": 20715.578744689377,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  }
+]

@@ -1,0 +1,354 @@
+[
+  {
+    "date": "2025-06-19",
+    "description": "Spotify",
+    "amount": 185.7781664022226,
+    "balance": 61213.536873041514,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-20",
+    "description": "Food Lion",
+    "amount": -199.49847796223523,
+    "balance": 61014.03839507928,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Nordstrom",
+    "amount": -174.90587365023688,
+    "balance": 60839.13252142905,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "HEB",
+    "amount": -204.65764735259756,
+    "balance": 60634.47487407645,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-22",
+    "description": "Bonus Payment",
+    "amount": 15218.041185620583,
+    "balance": 45278.181493353106,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-22",
+    "description": "Payroll",
+    "amount": 15749.577213286182,
+    "balance": 61027.75870663929,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-23",
+    "description": "Apple Store",
+    "amount": 456.1710740165271,
+    "balance": 61090.64594809298,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-24",
+    "description": "Bar",
+    "amount": -282.66775507286104,
+    "balance": 60807.97819302011,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-24",
+    "description": "Nike",
+    "amount": -147.52927377726644,
+    "balance": 60660.448919242845,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-24",
+    "description": "Nordstrom",
+    "amount": -182.78518043695476,
+    "balance": 60477.66373880589,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-27",
+    "description": "Fitness Center",
+    "amount": -366.8277943373372,
+    "balance": 60110.83594446855,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-27",
+    "description": "Cable TV",
+    "amount": -293.71978485585726,
+    "balance": 59817.11615961269,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Nordstrom",
+    "amount": 121.19975527699405,
+    "balance": 59938.31591488969,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Lowe's",
+    "amount": -128.9639185606794,
+    "balance": 59809.35199632901,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Home Security",
+    "amount": 362.35012538328755,
+    "balance": 60171.7021217123,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Spotify",
+    "amount": -312.25663804054585,
+    "balance": 59859.44548367175,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-29",
+    "description": "Amazon Prime",
+    "amount": -498.80259896175846,
+    "balance": 59360.64288470999,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-29",
+    "description": "Kroger",
+    "amount": -377.42943488577146,
+    "balance": 58983.213449824216,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-30",
+    "description": "Gap",
+    "amount": -233.62147254913617,
+    "balance": 58749.59197727508,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-30",
+    "description": "Netflix",
+    "amount": -176.97623715955427,
+    "balance": 58572.61574011552,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Internet Provider",
+    "amount": -174.15889245835626,
+    "balance": 58398.456847657166,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Old Navy",
+    "amount": -305.1388745391201,
+    "balance": 58093.31797311804,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Home Insurance",
+    "amount": -477.35301078340774,
+    "balance": 57615.964962334634,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Bar",
+    "amount": -242.70494529202716,
+    "balance": 57373.26001704261,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Microsoft Store",
+    "amount": -308.2729046279337,
+    "balance": 57064.987112414674,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Internet Provider",
+    "amount": 72.74793714559712,
+    "balance": 57137.73504956027,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Costco",
+    "amount": -59.26795216937455,
+    "balance": 57078.4670973909,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-06",
+    "description": "Kroger",
+    "amount": -232.4827163640807,
+    "balance": 56845.98438102682,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-06",
+    "description": "Lowe's",
+    "amount": -86.35355667875004,
+    "balance": 56759.630824348074,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-07",
+    "description": "Kroger",
+    "amount": -178.417945949879,
+    "balance": 56581.2128783982,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-08",
+    "description": "Apple Store",
+    "amount": -434.7715502933392,
+    "balance": 56146.441328104855,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-08",
+    "description": "Sports Arena",
+    "amount": 283.7090595160296,
+    "balance": 56430.15038762088,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-08",
+    "description": "Electric Company",
+    "amount": -107.5337415456464,
+    "balance": 56322.616646075236,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Gym Membership",
+    "amount": -375.61309277485594,
+    "balance": 55947.00355330038,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Hulu",
+    "amount": -174.27944904761466,
+    "balance": 55772.72410425277,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-12",
+    "description": "IKEA",
+    "amount": -139.9114733478231,
+    "balance": 55632.81263090495,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-13",
+    "description": "Home Maintenance",
+    "amount": -493.5952799409284,
+    "balance": 55139.21735096402,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-14",
+    "description": "Best Buy",
+    "amount": -58.38142482247085,
+    "balance": 55080.835926141546,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-14",
+    "description": "Movie Theater",
+    "amount": -384.4842705802163,
+    "balance": 54696.35165556133,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-14",
+    "description": "Movie Theater",
+    "amount": -205.22039610693585,
+    "balance": 54491.13125945439,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-14",
+    "description": "Home Security",
+    "amount": -80.98562560015228,
+    "balance": 54410.14563385424,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Amazon",
+    "amount": -484.18195846064026,
+    "balance": 53925.9636753936,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Kroger",
+    "amount": -298.04073685294895,
+    "balance": 53627.92293854065,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-16",
+    "description": "Gym Membership",
+    "amount": 136.44422142452763,
+    "balance": 53764.36715996518,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  }
+]

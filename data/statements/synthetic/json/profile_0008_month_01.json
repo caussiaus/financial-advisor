@@ -1,0 +1,322 @@
+[
+  {
+    "date": "2025-06-19",
+    "description": "Salary Deposit",
+    "amount": 8456.825934357523,
+    "balance": 30523.08281853978,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Water Department",
+    "amount": -34.51605709180399,
+    "balance": 39050.319947279284,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Smart Home Services",
+    "amount": 15.106873832478193,
+    "balance": 39065.42682111176,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Health Insurance",
+    "amount": -24.933101147917057,
+    "balance": 39040.493719963844,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Home Depot",
+    "amount": 74.53062492382493,
+    "balance": 39115.02434488767,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-23",
+    "description": "Exxon",
+    "amount": -39.24879262431406,
+    "balance": 39075.77555226336,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-24",
+    "description": "Bonus Payment",
+    "amount": 8561.753185831303,
+    "balance": 39084.836004371085,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-25",
+    "description": "Mortgage Payment",
+    "amount": 63.575961392084125,
+    "balance": 39139.35151365544,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-26",
+    "description": "Home Insurance",
+    "amount": -88.24732132192447,
+    "balance": 39051.104192333514,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-26",
+    "description": "Electric Company",
+    "amount": -61.87690142782065,
+    "balance": 38989.22729090569,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-27",
+    "description": "Aldi",
+    "amount": -98.50552152527023,
+    "balance": 38890.72176938042,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-27",
+    "description": "Property Tax",
+    "amount": 42.66350925891589,
+    "balance": 38933.38527863933,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Amazon",
+    "amount": -46.53411875689839,
+    "balance": 38886.85115988243,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-29",
+    "description": "Exxon",
+    "amount": 52.74171375516823,
+    "balance": 38939.5928736376,
+    "category": "Transportation",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-29",
+    "description": "Kroger",
+    "amount": -20.268705278263184,
+    "balance": 38919.32416835934,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-29",
+    "description": "Medical Equipment",
+    "amount": -84.57508631510674,
+    "balance": 38834.74908204423,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-30",
+    "description": "Kroger",
+    "amount": -66.99792876647416,
+    "balance": 38767.75115327776,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-30",
+    "description": "Gap",
+    "amount": -71.10307027244158,
+    "balance": 38696.64808300532,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Pharmacy",
+    "amount": -57.972135865002485,
+    "balance": 38638.67594714031,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Metro Transit",
+    "amount": -66.77416566211818,
+    "balance": 38571.9017814782,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Home Maintenance",
+    "amount": -92.44022841686333,
+    "balance": 38479.46155306134,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Hospital",
+    "amount": -87.03918513905856,
+    "balance": 38392.42236792228,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Water Department",
+    "amount": 13.944195005535118,
+    "balance": 38406.36656292781,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-04",
+    "description": "Cable TV",
+    "amount": 44.42076354748968,
+    "balance": 38450.7873264753,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-04",
+    "description": "Nike",
+    "amount": 13.077556436540139,
+    "balance": 38463.86488291184,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-04",
+    "description": "Walmart",
+    "amount": 95.19594237133656,
+    "balance": 38559.06082528317,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-07",
+    "description": "Dental Office",
+    "amount": 75.13746023351054,
+    "balance": 38634.198285516686,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-08",
+    "description": "Home Security",
+    "amount": -36.5518050289396,
+    "balance": 38597.64648048775,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Medical Center",
+    "amount": -12.41715093040774,
+    "balance": 38585.22932955734,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Old Navy",
+    "amount": -75.08553037567445,
+    "balance": 38510.143799181664,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-11",
+    "description": "Rent Payment",
+    "amount": -34.35624431950269,
+    "balance": 38475.78755486216,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-12",
+    "description": "Metro Transit",
+    "amount": -40.01139013876757,
+    "balance": 38435.77616472339,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-13",
+    "description": "Waste Management",
+    "amount": -68.66846623737837,
+    "balance": 38367.10769848601,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-13",
+    "description": "Electric Company",
+    "amount": -63.3426981222448,
+    "balance": 38303.76500036377,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Cable TV",
+    "amount": 22.360516747220622,
+    "balance": 38326.12551711099,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-16",
+    "description": "Gas Company",
+    "amount": -44.88271185760126,
+    "balance": 38281.24280525339,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-16",
+    "description": "Doctor Office",
+    "amount": -69.67436732477427,
+    "balance": 38211.56843792861,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-17",
+    "description": "Food Lion",
+    "amount": 31.010136184500176,
+    "balance": 38242.57857411311,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-18",
+    "description": "Medical Equipment",
+    "amount": -80.94092898813805,
+    "balance": 38161.637645124974,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-18",
+    "description": "Adidas",
+    "amount": -47.229461368904055,
+    "balance": 38114.40818375607,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  }
+]

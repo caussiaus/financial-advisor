@@ -1,0 +1,578 @@
+[
+  {
+    "date": "2025-07-19",
+    "description": "Uber",
+    "amount": -23.308363894550546,
+    "balance": 30018.558233002153,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-19",
+    "description": "Waste Management",
+    "amount": -12.573847208121027,
+    "balance": 30005.984385794032,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-19",
+    "description": "Internet Provider",
+    "amount": -33.13687483003598,
+    "balance": 29972.847510963995,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-20",
+    "description": "Bonus Payment",
+    "amount": 12950.385433168512,
+    "balance": 16346.84510778943,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-20",
+    "description": "Commission",
+    "amount": 13695.021489107276,
+    "balance": 30041.866596896703,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-21",
+    "description": "Medical Center",
+    "amount": 28.669899352974554,
+    "balance": 30001.51741031697,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-22",
+    "description": "Sprouts Farmers Market",
+    "amount": 35.09855026094546,
+    "balance": 30036.615960577914,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-22",
+    "description": "Mobil",
+    "amount": 12.462998305097042,
+    "balance": 30049.078958883012,
+    "category": "Transportation",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-22",
+    "description": "Amazon",
+    "amount": 78.71167496589871,
+    "balance": 30127.790633848912,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-22",
+    "description": "Amazon",
+    "amount": 40.36043826777987,
+    "balance": 30168.151072116692,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-22",
+    "description": "Uber",
+    "amount": -34.55878629541404,
+    "balance": 30133.59228582128,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Cable TV",
+    "amount": 41.98696517121074,
+    "balance": 30175.57925099249,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Amazon",
+    "amount": -13.2522570841761,
+    "balance": 30162.326993908315,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Netflix",
+    "amount": -45.80297796670163,
+    "balance": 30116.524015941613,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Movie Theater",
+    "amount": -21.468264624318547,
+    "balance": 30095.055751317293,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Target Grocery",
+    "amount": -71.34033239457347,
+    "balance": 30023.71541892272,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Chevron",
+    "amount": -76.94648216269557,
+    "balance": 29946.76893676002,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Spotify",
+    "amount": 34.23490310040259,
+    "balance": 29981.003839860423,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-25",
+    "description": "Whole Foods Market",
+    "amount": -14.729732451871989,
+    "balance": 29966.27410740855,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-25",
+    "description": "Smart Home Services",
+    "amount": -92.85148433635021,
+    "balance": 29873.422623072198,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-25",
+    "description": "Taxi Service",
+    "amount": -32.258194605517374,
+    "balance": 29841.16442846668,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Macy's",
+    "amount": 57.40169746385143,
+    "balance": 29898.56612593053,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Food Lion",
+    "amount": 86.26698375766267,
+    "balance": 29984.833109688192,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Concert Venue",
+    "amount": -43.94669245722277,
+    "balance": 29940.88641723097,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-28",
+    "description": "Waste Management",
+    "amount": -34.246872066009686,
+    "balance": 29906.63954516496,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Chevron",
+    "amount": -81.74207288867687,
+    "balance": 29824.897472276283,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Exxon",
+    "amount": -38.12840419896688,
+    "balance": 29786.769068077316,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Amazon Prime",
+    "amount": 34.81637910985681,
+    "balance": 29821.58544718717,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Macy's",
+    "amount": 22.84091530321052,
+    "balance": 29844.426362490383,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-30",
+    "description": "Publix",
+    "amount": 29.172102451746788,
+    "balance": 29873.59846494213,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Gap",
+    "amount": -32.349010648163144,
+    "balance": 29841.249454293968,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Kroger",
+    "amount": 75.48616489187313,
+    "balance": 29916.73561918584,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Waste Management",
+    "amount": 93.33867728336148,
+    "balance": 30010.074296469204,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Adidas",
+    "amount": 41.56021765533497,
+    "balance": 30051.63451412454,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Gas Company",
+    "amount": -52.78488423236848,
+    "balance": 29998.84962989217,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-02",
+    "description": "Spotify",
+    "amount": -38.826546482709844,
+    "balance": 29960.023083409462,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-02",
+    "description": "Apple Store",
+    "amount": 64.9049857194419,
+    "balance": 30024.928069128902,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-02",
+    "description": "Metro Transit",
+    "amount": -38.10793886048488,
+    "balance": 29986.820130268417,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Apple Store",
+    "amount": -16.997884817323136,
+    "balance": 29969.822245451094,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Nike",
+    "amount": -70.91278759941147,
+    "balance": 29898.90945785168,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Home Security",
+    "amount": -84.21353335576302,
+    "balance": 29814.695924495918,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Budget Car Rental",
+    "amount": -19.816164232928625,
+    "balance": 29794.87976026299,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-05",
+    "description": "Safeway",
+    "amount": -84.19771582613961,
+    "balance": 29710.68204443685,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-05",
+    "description": "Walmart Grocery",
+    "amount": 95.46261593419587,
+    "balance": 29806.144660371046,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-06",
+    "description": "Medical Center",
+    "amount": 73.95447479652648,
+    "balance": 29880.099135167573,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-06",
+    "description": "Sports Arena",
+    "amount": 79.43165677519335,
+    "balance": 29959.530791942765,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-07",
+    "description": "Disney+",
+    "amount": -34.91565643530633,
+    "balance": 29924.615135507458,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-07",
+    "description": "BP",
+    "amount": -56.067387428922686,
+    "balance": 29868.547748078534,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-08",
+    "description": "Best Buy",
+    "amount": 70.26985667065242,
+    "balance": 29938.817604749187,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-08",
+    "description": "Apple Store",
+    "amount": -70.8272486206595,
+    "balance": 29867.99035612853,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-08",
+    "description": "Doctor Office",
+    "amount": 45.56967228367923,
+    "balance": 29913.56002841221,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-08",
+    "description": "Concert Venue",
+    "amount": -19.84336564746624,
+    "balance": 29893.716662764742,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-08",
+    "description": "Cable TV",
+    "amount": 77.62675078337509,
+    "balance": 29971.34341354812,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-09",
+    "description": "Exxon",
+    "amount": -31.16297883406633,
+    "balance": 29940.180434714053,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-10",
+    "description": "Phone Company",
+    "amount": 37.958978726368336,
+    "balance": 29978.13941344042,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Electric Company",
+    "amount": 50.7801154022859,
+    "balance": 30028.919528842707,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Sports Arena",
+    "amount": -25.551901958975197,
+    "balance": 30003.367626883733,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Disney+",
+    "amount": -60.38706729958887,
+    "balance": 29942.980559584146,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Pharmacy",
+    "amount": -95.68161019292971,
+    "balance": 29847.298949391217,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Shell",
+    "amount": 44.48482387088524,
+    "balance": 29891.7837732621,
+    "category": "Transportation",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Home Security",
+    "amount": -34.8043345674337,
+    "balance": 29856.979438694667,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-13",
+    "description": "Sprouts Farmers Market",
+    "amount": 42.0083446261847,
+    "balance": 29898.987783320852,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-14",
+    "description": "Nike",
+    "amount": -51.56345694153576,
+    "balance": 29847.424326379318,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-14",
+    "description": "Doctor Office",
+    "amount": -17.832799517467663,
+    "balance": 29829.591526861852,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-14",
+    "description": "Electric Company",
+    "amount": -15.41414678851557,
+    "balance": 29814.177380073335,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-14",
+    "description": "Chevron",
+    "amount": 56.66978532213322,
+    "balance": 29870.84716539547,
+    "category": "Transportation",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-14",
+    "description": "Gym Membership",
+    "amount": -14.133518700158383,
+    "balance": 29856.713646695312,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-15",
+    "description": "Restaurant",
+    "amount": -92.73121275426436,
+    "balance": 29763.982433941048,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-15",
+    "description": "Sprouts Farmers Market",
+    "amount": -68.69583579465781,
+    "balance": 29695.28659814639,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-15",
+    "description": "Parking Garage",
+    "amount": -43.08865828309866,
+    "balance": 29652.197939863294,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-16",
+    "description": "Sports Arena",
+    "amount": -11.229893754484769,
+    "balance": 29640.96804610881,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-17",
+    "description": "Restaurant",
+    "amount": 30.796878121804827,
+    "balance": 29671.764924230614,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  }
+]

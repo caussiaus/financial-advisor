@@ -1,0 +1,226 @@
+[
+  {
+    "date": "2025-07-19",
+    "description": "Freelance Payment",
+    "amount": 2455.268518166174,
+    "balance": 15169.178666968457,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-20",
+    "description": "Investment Income",
+    "amount": 3184.9731019569035,
+    "balance": 12713.910148802282,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-21",
+    "description": "Concert Venue",
+    "amount": -188.00893313575705,
+    "balance": 14981.1697338327,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-22",
+    "description": "Phone Company",
+    "amount": 69.83518467705176,
+    "balance": 15051.00491850975,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-24",
+    "description": "Gas Company",
+    "amount": -78.62229749818772,
+    "balance": 14972.382621011562,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-25",
+    "description": "Costco",
+    "amount": 57.97913902272168,
+    "balance": 15030.361760034284,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Budget Car Rental",
+    "amount": -31.459958756605936,
+    "balance": 14998.901801277678,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Budget Car Rental",
+    "amount": -137.69766840372233,
+    "balance": 14861.204132873956,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Netflix",
+    "amount": 57.64524276885469,
+    "balance": 14918.84937564281,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-28",
+    "description": "Enterprise Rent-A-Car",
+    "amount": -171.72396081299243,
+    "balance": 14747.125414829818,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-28",
+    "description": "Waste Management",
+    "amount": -58.3924905545147,
+    "balance": 14688.732924275302,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Budget Car Rental",
+    "amount": -39.58939731125293,
+    "balance": 14649.14352696405,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-30",
+    "description": "Aldi",
+    "amount": 70.80126241381801,
+    "balance": 14719.944789377867,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Waste Management",
+    "amount": -113.66420869945142,
+    "balance": 14606.280580678416,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-03",
+    "description": "Electric Company",
+    "amount": -177.84401461347161,
+    "balance": 14428.436566064946,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-03",
+    "description": "Kroger",
+    "amount": -117.93252223194315,
+    "balance": 14310.504043833002,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Cable TV",
+    "amount": -178.9263084927247,
+    "balance": 14131.577735340277,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-05",
+    "description": "Enterprise Rent-A-Car",
+    "amount": -50.43266053301085,
+    "balance": 14081.145074807266,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-05",
+    "description": "Cable TV",
+    "amount": -31.2415544111846,
+    "balance": 14049.903520396081,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-07",
+    "description": "Spotify",
+    "amount": 135.28247979741542,
+    "balance": 14185.186000193497,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-08",
+    "description": "Water Department",
+    "amount": -80.66731143814268,
+    "balance": 14104.518688755354,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-09",
+    "description": "Hertz",
+    "amount": -97.69628353514085,
+    "balance": 14006.822405220213,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-10",
+    "description": "Sprouts Farmers Market",
+    "amount": -148.8276302844049,
+    "balance": 13857.994774935809,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Walmart Grocery",
+    "amount": -34.15583913706875,
+    "balance": 13823.83893579874,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-13",
+    "description": "Costco",
+    "amount": -101.78430609144101,
+    "balance": 13722.0546297073,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-13",
+    "description": "Disney+",
+    "amount": -73.48369554115115,
+    "balance": 13648.570934166148,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-13",
+    "description": "Chevron",
+    "amount": -26.858563695556974,
+    "balance": 13621.71237047059,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-15",
+    "description": "Waste Management",
+    "amount": -117.81073905715104,
+    "balance": 13503.901631413439,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  }
+]

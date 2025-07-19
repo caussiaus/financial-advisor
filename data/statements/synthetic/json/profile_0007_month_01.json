@@ -1,0 +1,234 @@
+[
+  {
+    "date": "2025-06-20",
+    "description": "Freelance Payment",
+    "amount": 13176.85279834106,
+    "balance": 14387.796841467587,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Best Buy",
+    "amount": -66.8132208640419,
+    "balance": 27758.424581543764,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Vision Center",
+    "amount": 11.331260923769946,
+    "balance": 27769.755842467534,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-22",
+    "description": "Home Insurance",
+    "amount": -16.01659768890661,
+    "balance": 27753.739244778626,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-23",
+    "description": "Fitness Center",
+    "amount": 26.56761534104543,
+    "balance": 27780.306860119672,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-23",
+    "description": "Nordstrom",
+    "amount": -72.71105158608091,
+    "balance": 27707.59580853359,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-24",
+    "description": "Freelance Payment",
+    "amount": 13437.440960940221,
+    "balance": 27825.237802407806,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-26",
+    "description": "Gym Membership",
+    "amount": -15.577344020856017,
+    "balance": 27692.018464512734,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-27",
+    "description": "Restaurant",
+    "amount": -34.573525550519975,
+    "balance": 27657.444938962213,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Medical Center",
+    "amount": 30.121586595848207,
+    "balance": 27687.56652555806,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Water Department",
+    "amount": -10.76531755486407,
+    "balance": 27676.801208003195,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "IKEA",
+    "amount": 61.3134227107504,
+    "balance": 27738.114630713946,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Hulu",
+    "amount": -31.038858924105934,
+    "balance": 27707.07577178984,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Hulu",
+    "amount": 22.39867084208338,
+    "balance": 27729.474442631923,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Spotify",
+    "amount": 76.57804764733795,
+    "balance": 27806.05249027926,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Hulu",
+    "amount": -60.99603098903559,
+    "balance": 27745.056459290226,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Home Depot",
+    "amount": -49.43726963809176,
+    "balance": 27695.619189652134,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-04",
+    "description": "Electric Company",
+    "amount": 81.91688112488704,
+    "balance": 27777.53607077702,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-06",
+    "description": "Hulu",
+    "amount": -65.10748966606496,
+    "balance": 27712.428581110955,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-08",
+    "description": "Spotify",
+    "amount": 73.80420212637844,
+    "balance": 27786.232783237334,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-08",
+    "description": "Home Depot",
+    "amount": 56.28675108755343,
+    "balance": 27842.51953432489,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Water Department",
+    "amount": 52.165364592412125,
+    "balance": 27894.6848989173,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Cable TV",
+    "amount": -81.64315058189372,
+    "balance": 27813.041748335407,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-11",
+    "description": "Netflix",
+    "amount": -86.02473508355688,
+    "balance": 27727.01701325185,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-12",
+    "description": "Water Department",
+    "amount": -34.29958745808983,
+    "balance": 27692.717425793762,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-12",
+    "description": "Mortgage Payment",
+    "amount": 59.014616814463345,
+    "balance": 27751.732042608226,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-12",
+    "description": "Health Insurance",
+    "amount": -40.83984875616329,
+    "balance": 27710.89219385206,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-13",
+    "description": "Cable TV",
+    "amount": -53.62484475229531,
+    "balance": 27657.267349099766,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Property Tax",
+    "amount": 51.616919909240515,
+    "balance": 27708.884269009006,
+    "category": "Housing",
+    "transaction_type": "credit"
+  }
+]

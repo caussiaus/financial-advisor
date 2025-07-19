@@ -1,0 +1,242 @@
+[
+  {
+    "date": "2025-06-21",
+    "description": "Freelance Payment",
+    "amount": 12696.913535120171,
+    "balance": 29316.74969379951,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-22",
+    "description": "Trader Joe's",
+    "amount": -55.43217862902968,
+    "balance": 29261.317515170478,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-23",
+    "description": "Home Maintenance",
+    "amount": -41.461427422664755,
+    "balance": 29219.856087747812,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-23",
+    "description": "Doctor Office",
+    "amount": -95.41797628145277,
+    "balance": 29124.43811146636,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-24",
+    "description": "Target",
+    "amount": -92.07366322428867,
+    "balance": 29032.36444824207,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-25",
+    "description": "Investment Income",
+    "amount": 12663.1284377024,
+    "balance": 16619.83615867934,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-26",
+    "description": "Hulu",
+    "amount": 47.466819649646816,
+    "balance": 29079.831267891717,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-27",
+    "description": "IKEA",
+    "amount": 15.392224122083455,
+    "balance": 29095.2234920138,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Old Navy",
+    "amount": 71.79412373171472,
+    "balance": 29167.017615745513,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Walmart",
+    "amount": -48.36981049220016,
+    "balance": 29118.647805253313,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-30",
+    "description": "Pharmacy",
+    "amount": 34.33420857803348,
+    "balance": 29152.982013831348,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-03",
+    "description": "Macy's",
+    "amount": -67.4823670729285,
+    "balance": 29085.49964675842,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-04",
+    "description": "Home Insurance",
+    "amount": -18.029886902318708,
+    "balance": 29067.469759856103,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-04",
+    "description": "Adidas",
+    "amount": -13.041947740186679,
+    "balance": 29054.427812115915,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-06",
+    "description": "Sprouts Farmers Market",
+    "amount": -10.857613635523453,
+    "balance": 29043.570198480393,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-06",
+    "description": "Whole Foods Market",
+    "amount": -59.5357374160802,
+    "balance": 28984.03446106431,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-07",
+    "description": "Lab Services",
+    "amount": -35.918962609818756,
+    "balance": 28948.115498454492,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-07",
+    "description": "Kroger",
+    "amount": -86.5470493175224,
+    "balance": 28861.56844913697,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-08",
+    "description": "Property Tax",
+    "amount": 99.93241331517623,
+    "balance": 28961.500862452143,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Mortgage Payment",
+    "amount": 81.94075263646711,
+    "balance": 29043.44161508861,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Adidas",
+    "amount": -73.5292340878259,
+    "balance": 28969.912381000784,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Nordstrom",
+    "amount": -66.20658034583535,
+    "balance": 28903.70580065495,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Old Navy",
+    "amount": 19.766934157999525,
+    "balance": 28923.47273481295,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Medical Equipment",
+    "amount": -11.791467227255708,
+    "balance": 28911.681267585693,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Fitness Center",
+    "amount": 22.598706589514038,
+    "balance": 28934.279974175206,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-14",
+    "description": "Home Maintenance",
+    "amount": 40.61454190302847,
+    "balance": 28974.894516078235,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Sports Arena",
+    "amount": -59.064841722750806,
+    "balance": 28915.829674355486,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Walmart",
+    "amount": 19.987898794247016,
+    "balance": 28935.817573149732,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Adidas",
+    "amount": 66.97793828353184,
+    "balance": 29002.795511433265,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-16",
+    "description": "Target",
+    "amount": 44.29882747565519,
+    "balance": 29047.09433890892,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  }
+]

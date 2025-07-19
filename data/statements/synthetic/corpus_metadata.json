@@ -1,0 +1,369 @@
+{
+  "generation_date": "2025-07-19T00:27:09.923727",
+  "num_profiles": 10,
+  "months_per_profile": 2,
+  "profiles": [
+    {
+      "profile_id": 0,
+      "account_name": "Carolyn Williams",
+      "account_number": "6544747990024917",
+      "starting_balance": 7850.822792573499,
+      "monthly_income": 6248.134692785853,
+      "spending_pattern": "low",
+      "transaction_frequency": 54,
+      "categories": [
+        "Entertainment",
+        "Housing",
+        "Healthcare",
+        "Utilities",
+        "Groceries"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0000_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0000_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0000_month_00.pdf",
+          "num_transactions": 53,
+          "start_date": "2025-07-19",
+          "end_date": "2025-08-17"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0000_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0000_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0000_month_01.pdf",
+          "num_transactions": 49,
+          "start_date": "2025-06-19",
+          "end_date": "2025-07-18"
+        }
+      ]
+    },
+    {
+      "profile_id": 1,
+      "account_name": "Nancy Mclean",
+      "account_number": "4462933526749254938",
+      "starting_balance": 30060.140307732523,
+      "monthly_income": 14764.990187012812,
+      "spending_pattern": "high",
+      "transaction_frequency": 45,
+      "categories": [
+        "Shopping",
+        "Entertainment",
+        "Groceries",
+        "Utilities",
+        "Housing"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0001_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0001_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0001_month_00.pdf",
+          "num_transactions": 41,
+          "start_date": "2025-07-20",
+          "end_date": "2025-08-17"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0001_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0001_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0001_month_01.pdf",
+          "num_transactions": 44,
+          "start_date": "2025-06-19",
+          "end_date": "2025-07-16"
+        }
+      ]
+    },
+    {
+      "profile_id": 2,
+      "account_name": "Andrew Osborne",
+      "account_number": "6518886887312084",
+      "starting_balance": 34115.64994702674,
+      "monthly_income": 11886.273443458158,
+      "spending_pattern": "low",
+      "transaction_frequency": 80,
+      "categories": [
+        "Healthcare",
+        "Groceries",
+        "Utilities",
+        "Entertainment",
+        "Transportation",
+        "Shopping"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0002_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0002_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0002_month_00.pdf",
+          "num_transactions": 72,
+          "start_date": "2025-07-19",
+          "end_date": "2025-08-17"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0002_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0002_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0002_month_01.pdf",
+          "num_transactions": 76,
+          "start_date": "2025-06-19",
+          "end_date": "2025-07-18"
+        }
+      ]
+    },
+    {
+      "profile_id": 3,
+      "account_name": "Caleb Sandoval",
+      "account_number": "4806678118830282619",
+      "starting_balance": 9528.937046845378,
+      "monthly_income": 2194.772008556668,
+      "spending_pattern": "medium",
+      "transaction_frequency": 32,
+      "categories": [
+        "Transportation",
+        "Entertainment",
+        "Utilities",
+        "Groceries"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0003_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0003_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0003_month_00.pdf",
+          "num_transactions": 28,
+          "start_date": "2025-07-19",
+          "end_date": "2025-08-15"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0003_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0003_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0003_month_01.pdf",
+          "num_transactions": 30,
+          "start_date": "2025-06-19",
+          "end_date": "2025-07-18"
+        }
+      ]
+    },
+    {
+      "profile_id": 4,
+      "account_name": "Richard Davis",
+      "account_number": "30201077539078",
+      "starting_balance": 39101.35335423757,
+      "monthly_income": 12566.22779403951,
+      "spending_pattern": "medium",
+      "transaction_frequency": 60,
+      "categories": [
+        "Transportation",
+        "Housing",
+        "Shopping",
+        "Groceries"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0004_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0004_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0004_month_00.pdf",
+          "num_transactions": 55,
+          "start_date": "2025-07-19",
+          "end_date": "2025-08-17"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0004_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0004_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0004_month_01.pdf",
+          "num_transactions": 54,
+          "start_date": "2025-06-19",
+          "end_date": "2025-07-18"
+        }
+      ]
+    },
+    {
+      "profile_id": 5,
+      "account_name": "Austin Joyce",
+      "account_number": "180019202488724",
+      "starting_balance": 3956.7077209769413,
+      "monthly_income": 11961.106838689111,
+      "spending_pattern": "low",
+      "transaction_frequency": 33,
+      "categories": [
+        "Groceries",
+        "Housing",
+        "Entertainment",
+        "Shopping",
+        "Healthcare"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0005_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0005_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0005_month_00.pdf",
+          "num_transactions": 32,
+          "start_date": "2025-07-22",
+          "end_date": "2025-08-15"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0005_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0005_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0005_month_01.pdf",
+          "num_transactions": 30,
+          "start_date": "2025-06-21",
+          "end_date": "2025-07-16"
+        }
+      ]
+    },
+    {
+      "profile_id": 6,
+      "account_name": "George Wood",
+      "account_number": "4414922371346922",
+      "starting_balance": 3396.4596746209168,
+      "monthly_income": 12858.402882767485,
+      "spending_pattern": "low",
+      "transaction_frequency": 74,
+      "categories": [
+        "Healthcare",
+        "Utilities",
+        "Shopping",
+        "Groceries",
+        "Transportation",
+        "Entertainment"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0006_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0006_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0006_month_00.pdf",
+          "num_transactions": 72,
+          "start_date": "2025-07-19",
+          "end_date": "2025-08-17"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0006_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0006_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0006_month_01.pdf",
+          "num_transactions": 72,
+          "start_date": "2025-06-20",
+          "end_date": "2025-07-18"
+        }
+      ]
+    },
+    {
+      "profile_id": 7,
+      "account_name": "Victoria Pena",
+      "account_number": "213179432586423",
+      "starting_balance": 1210.9440431265261,
+      "monthly_income": 12835.464760211942,
+      "spending_pattern": "low",
+      "transaction_frequency": 31,
+      "categories": [
+        "Shopping",
+        "Entertainment",
+        "Housing",
+        "Utilities",
+        "Healthcare"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0007_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0007_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0007_month_00.pdf",
+          "num_transactions": 29,
+          "start_date": "2025-07-21",
+          "end_date": "2025-08-17"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0007_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0007_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0007_month_01.pdf",
+          "num_transactions": 29,
+          "start_date": "2025-06-20",
+          "end_date": "2025-07-15"
+        }
+      ]
+    },
+    {
+      "profile_id": 8,
+      "account_name": "Wendy Lucas",
+      "account_number": "4098107967118195470",
+      "starting_balance": 22066.256884182258,
+      "monthly_income": 7628.064360371221,
+      "spending_pattern": "low",
+      "transaction_frequency": 42,
+      "categories": [
+        "Utilities",
+        "Shopping",
+        "Healthcare",
+        "Transportation",
+        "Groceries",
+        "Housing"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0008_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0008_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0008_month_00.pdf",
+          "num_transactions": 39,
+          "start_date": "2025-07-19",
+          "end_date": "2025-08-16"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0008_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0008_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0008_month_01.pdf",
+          "num_transactions": 40,
+          "start_date": "2025-06-19",
+          "end_date": "2025-07-18"
+        }
+      ]
+    },
+    {
+      "profile_id": 9,
+      "account_name": "Brett Luna",
+      "account_number": "2290802884240387",
+      "starting_balance": 36840.22228812141,
+      "monthly_income": 7471.863552016923,
+      "spending_pattern": "medium",
+      "transaction_frequency": 80,
+      "categories": [
+        "Transportation",
+        "Housing",
+        "Groceries",
+        "Shopping",
+        "Healthcare",
+        "Utilities"
+      ],
+      "files": [
+        {
+          "month": 0,
+          "csv_file": "data/statements/synthetic/profile_0009_month_00.csv",
+          "json_file": "data/statements/synthetic/json/profile_0009_month_00.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0009_month_00.pdf",
+          "num_transactions": 79,
+          "start_date": "2025-07-19",
+          "end_date": "2025-08-17"
+        },
+        {
+          "month": 1,
+          "csv_file": "data/statements/synthetic/profile_0009_month_01.csv",
+          "json_file": "data/statements/synthetic/json/profile_0009_month_01.json",
+          "pdf_file": "data/statements/synthetic/pdf/profile_0009_month_01.pdf",
+          "num_transactions": 75,
+          "start_date": "2025-06-19",
+          "end_date": "2025-07-18"
+        }
+      ]
+    }
+  ]
+}

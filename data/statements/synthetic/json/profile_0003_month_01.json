@@ -1,0 +1,242 @@
+[
+  {
+    "date": "2025-06-19",
+    "description": "Phone Company",
+    "amount": -98.0577012974712,
+    "balance": 14422.596735629868,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-19",
+    "description": "Spotify",
+    "amount": 88.57142677726155,
+    "balance": 14511.16816240713,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-20",
+    "description": "Internet Provider",
+    "amount": -198.44762942132434,
+    "balance": 14312.720532985806,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-20",
+    "description": "Budget Car Rental",
+    "amount": 152.22345857023956,
+    "balance": 14464.943991556045,
+    "category": "Transportation",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-21",
+    "description": "Refund",
+    "amount": 2204.598564629999,
+    "balance": 11733.535611475378,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-22",
+    "description": "Chevron",
+    "amount": 193.31694015733905,
+    "balance": 14658.260931713385,
+    "category": "Transportation",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-24",
+    "description": "Uber",
+    "amount": -156.1986062561042,
+    "balance": 14502.06232545728,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-27",
+    "description": "Direct Deposit",
+    "amount": 2787.1188254519616,
+    "balance": 14520.65443692734,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-28",
+    "description": "Internet Provider",
+    "amount": 139.79144480899114,
+    "balance": 14641.85377026627,
+    "category": "Utilities",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-06-30",
+    "description": "Fitness Center",
+    "amount": -92.87806865114939,
+    "balance": 14548.975701615122,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-06-30",
+    "description": "Hulu",
+    "amount": 40.08972675185175,
+    "balance": 14589.065428366974,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-01",
+    "description": "Spotify",
+    "amount": -72.97854619827959,
+    "balance": 14516.086882168695,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Electric Company",
+    "amount": -162.43251928404342,
+    "balance": 14353.65436288465,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Target Grocery",
+    "amount": -155.76186451644853,
+    "balance": 14197.8924983682,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-02",
+    "description": "Water Department",
+    "amount": -90.04369381377836,
+    "balance": 14107.848804554422,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-04",
+    "description": "Phone Company",
+    "amount": -33.43472811274498,
+    "balance": 14074.414076441677,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-06",
+    "description": "7-Eleven Gas",
+    "amount": -27.26922035650712,
+    "balance": 14047.14485608517,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-06",
+    "description": "Gas Company",
+    "amount": -188.08856736571272,
+    "balance": 13859.056288719457,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Cable TV",
+    "amount": -42.69315823221713,
+    "balance": 13816.36313048724,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Costco",
+    "amount": -111.82582510443524,
+    "balance": 13704.537305382804,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-09",
+    "description": "Exxon",
+    "amount": -85.16771101896546,
+    "balance": 13619.36959436384,
+    "category": "Transportation",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Concert Venue",
+    "amount": -172.498318358291,
+    "balance": 13446.871276005548,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-10",
+    "description": "Internet Provider",
+    "amount": -97.69497331893263,
+    "balance": 13349.176302686616,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-11",
+    "description": "Movie Theater",
+    "amount": -177.23500648943158,
+    "balance": 13171.941296197185,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-11",
+    "description": "Amazon Prime",
+    "amount": 47.275389344488815,
+    "balance": 13219.216685541674,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-11",
+    "description": "Hulu",
+    "amount": -195.27348685572628,
+    "balance": 13023.943198685949,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-14",
+    "description": "Trader Joe's",
+    "amount": -172.82304011896787,
+    "balance": 12851.12015856698,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-15",
+    "description": "Disney+",
+    "amount": -126.23176474815442,
+    "balance": 12724.888393818826,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-17",
+    "description": "Food Lion",
+    "amount": 62.77423171278109,
+    "balance": 12787.662625531608,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-18",
+    "description": "Cable TV",
+    "amount": -114.23084805798383,
+    "balance": 12673.431777473625,
+    "category": "Utilities",
+    "transaction_type": "debit"
+  }
+]

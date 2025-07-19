@@ -1,0 +1,258 @@
+[
+  {
+    "date": "2025-07-22",
+    "description": "Lowe's",
+    "amount": -83.06426839094125,
+    "balance": 28331.10486787331,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-23",
+    "description": "Commission",
+    "amount": 12091.390167491714,
+    "balance": 28414.169136264252,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-24",
+    "description": "Microsoft Store",
+    "amount": -79.2918541886527,
+    "balance": 28251.813013684656,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-25",
+    "description": "Payroll",
+    "amount": 12366.071247795599,
+    "balance": 16322.77896877254,
+    "category": "Income",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Fitness Center",
+    "amount": 96.7167763716937,
+    "balance": 28348.52979005635,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-26",
+    "description": "Furniture Store",
+    "amount": 78.78247820361553,
+    "balance": 28427.312268259964,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Trader Joe's",
+    "amount": -27.31804356731611,
+    "balance": 28399.994224692648,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Walmart",
+    "amount": 33.10044431979952,
+    "balance": 28433.094669012447,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-27",
+    "description": "Movie Theater",
+    "amount": -20.37026895318845,
+    "balance": 28412.72440005926,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Mortgage Payment",
+    "amount": -35.33330253813296,
+    "balance": 28377.391097521126,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Safeway",
+    "amount": 78.85884871332263,
+    "balance": 28456.24994623445,
+    "category": "Groceries",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Macy's",
+    "amount": 45.991051707352256,
+    "balance": 28502.2409979418,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-07-29",
+    "description": "Safeway",
+    "amount": -79.41841105633499,
+    "balance": 28422.822586885464,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-07-31",
+    "description": "Concert Venue",
+    "amount": -91.8041262176411,
+    "balance": 28331.018460667823,
+    "category": "Entertainment",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Property Tax",
+    "amount": -96.86070968602193,
+    "balance": 28234.1577509818,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Pharmacy",
+    "amount": -38.22115819053295,
+    "balance": 28195.93659279127,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-01",
+    "description": "Lowe's",
+    "amount": -19.330513484571014,
+    "balance": 28176.606079306697,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-02",
+    "description": "Costco",
+    "amount": -92.26339928345058,
+    "balance": 28084.34268002325,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-03",
+    "description": "Target",
+    "amount": -58.820631279132755,
+    "balance": 28025.522048744115,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Adidas",
+    "amount": 50.76367957057656,
+    "balance": 28076.28572831469,
+    "category": "Shopping",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-04",
+    "description": "Lowe's",
+    "amount": 76.75904905061964,
+    "balance": 28153.04477736531,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-06",
+    "description": "Apple Store",
+    "amount": -25.794419440827323,
+    "balance": 28127.250357924484,
+    "category": "Shopping",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-06",
+    "description": "Restaurant",
+    "amount": 51.323490244277416,
+    "balance": 28178.573848168762,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-06",
+    "description": "Vision Center",
+    "amount": -90.15184253386914,
+    "balance": 28088.422005634893,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-10",
+    "description": "Property Tax",
+    "amount": -97.69817237114194,
+    "balance": 27990.72383326375,
+    "category": "Housing",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Dental Office",
+    "amount": 30.606983082526366,
+    "balance": 28021.330816346275,
+    "category": "Healthcare",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-11",
+    "description": "Dental Office",
+    "amount": -31.465845378600587,
+    "balance": 27989.864970967676,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Netflix",
+    "amount": 10.90591106738238,
+    "balance": 28000.770882035056,
+    "category": "Entertainment",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-12",
+    "description": "Safeway",
+    "amount": -47.62173596696905,
+    "balance": 27953.149146068088,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-13",
+    "description": "Lowe's",
+    "amount": 18.563112176907406,
+    "balance": 27971.712258244996,
+    "category": "Housing",
+    "transaction_type": "credit"
+  },
+  {
+    "date": "2025-08-14",
+    "description": "Food Lion",
+    "amount": -38.13879881032618,
+    "balance": 27933.57345943467,
+    "category": "Groceries",
+    "transaction_type": "debit"
+  },
+  {
+    "date": "2025-08-15",
+    "description": "Lab Services",
+    "amount": -45.569390025117116,
+    "balance": 27888.00406940955,
+    "category": "Healthcare",
+    "transaction_type": "debit"
+  }
+]
