@@ -1,0 +1,15 @@
+{
+  "filename": "profile_0003_month_00",
+  "num_transactions": 28,
+  "categories": [
+    "Groceries",
+    "Transportation",
+    "Entertainment",
+    "Income",
+    "Utilities"
+  ],
+  "types": [
+    "unknown"
+  ],
+  "vectorization_date": "2025-07-19T00:30:22.204027"
+}
