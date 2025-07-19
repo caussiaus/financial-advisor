@@ -1,0 +1,52 @@
+# Use CUDA-enabled base image
+FROM nvidia/cuda:11.7.1-base-ubuntu20.04
+
+# Set environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
+    wget \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Miniconda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh \
+    && bash /tmp/miniconda.sh -b -p /opt/conda \
+    && rm /tmp/miniconda.sh
+
+# Add conda to PATH
+ENV PATH="/opt/conda/bin:$PATH"
+
+# Copy environment file
+COPY environment.yml /tmp/environment.yml
+
+# Create conda environment
+RUN conda env create -f /tmp/environment.yml
+
+# Activate environment
+SHELL ["conda", "run", "-n", "financial-mesh", "/bin/bash", "-c"]
+
+# Install PyTorch with CUDA support
+RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
+
+# Set working directory
+WORKDIR /app
+
+# Copy application code
+COPY . /app/
+
+# Expose port for web interface
+EXPOSE 5000
+
+# Default command
+CMD ["conda", "run", "-n", "financial-mesh", "python", "start_enhanced_dashboard.py"]

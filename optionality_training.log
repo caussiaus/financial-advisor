@@ -1,0 +1,792 @@
+2025-07-18 19:44:23,551 - __main__ - INFO - 🎯 Starting Full Training Demonstration
+2025-07-18 19:44:23,551 - __main__ - INFO - Step 1: Demonstrating Optionality Algorithm
+2025-07-18 19:44:23,551 - __main__ - INFO - 🚀 Starting Optionality Algorithm Demonstration
+2025-07-18 19:44:23,553 - __main__ - INFO - Generated 700 sample financial states
+2025-07-18 19:44:23,554 - __main__ - INFO - Processed 1/700 states
+2025-07-18 19:44:23,559 - __main__ - INFO - Processed 11/700 states
+2025-07-18 19:44:23,559 - __main__ - INFO - Processed 21/700 states
+2025-07-18 19:44:23,561 - __main__ - INFO - Processed 31/700 states
+2025-07-18 19:44:23,573 - __main__ - INFO - Processed 41/700 states
+2025-07-18 19:44:23,573 - __main__ - INFO - Processed 51/700 states
+2025-07-18 19:44:23,575 - __main__ - INFO - Processed 61/700 states
+2025-07-18 19:44:23,592 - __main__ - INFO - Processed 71/700 states
+2025-07-18 19:44:23,593 - __main__ - INFO - Processed 81/700 states
+2025-07-18 19:44:23,596 - __main__ - INFO - Processed 91/700 states
+2025-07-18 19:44:23,615 - __main__ - INFO - Processed 101/700 states
+2025-07-18 19:44:23,616 - __main__ - INFO - Processed 111/700 states
+2025-07-18 19:44:23,628 - __main__ - INFO - Processed 121/700 states
+2025-07-18 19:44:23,638 - __main__ - INFO - Processed 131/700 states
+2025-07-18 19:44:23,639 - __main__ - INFO - Processed 141/700 states
+2025-07-18 19:44:23,643 - __main__ - INFO - Processed 151/700 states
+2025-07-18 19:44:23,643 - __main__ - INFO - Processed 161/700 states
+2025-07-18 19:44:23,645 - __main__ - INFO - Processed 171/700 states
+2025-07-18 19:44:23,657 - __main__ - INFO - Processed 181/700 states
+2025-07-18 19:44:23,657 - __main__ - INFO - Processed 191/700 states
+2025-07-18 19:44:23,660 - __main__ - INFO - Processed 201/700 states
+2025-07-18 19:44:23,677 - __main__ - INFO - Processed 211/700 states
+2025-07-18 19:44:23,678 - __main__ - INFO - Processed 221/700 states
+2025-07-18 19:44:23,680 - __main__ - INFO - Processed 231/700 states
+2025-07-18 19:44:23,700 - __main__ - INFO - Processed 241/700 states
+2025-07-18 19:44:23,700 - __main__ - INFO - Processed 251/700 states
+2025-07-18 19:44:23,713 - __main__ - INFO - Processed 261/700 states
+2025-07-18 19:44:23,723 - __main__ - INFO - Processed 271/700 states
+2025-07-18 19:44:23,724 - __main__ - INFO - Processed 281/700 states
+2025-07-18 19:44:23,728 - __main__ - INFO - Processed 291/700 states
+2025-07-18 19:44:23,728 - __main__ - INFO - Processed 301/700 states
+2025-07-18 19:44:23,730 - __main__ - INFO - Processed 311/700 states
+2025-07-18 19:44:23,743 - __main__ - INFO - Processed 321/700 states
+2025-07-18 19:44:23,743 - __main__ - INFO - Processed 331/700 states
+2025-07-18 19:44:23,745 - __main__ - INFO - Processed 341/700 states
+2025-07-18 19:44:23,764 - __main__ - INFO - Processed 351/700 states
+2025-07-18 19:44:23,765 - __main__ - INFO - Processed 361/700 states
+2025-07-18 19:44:23,767 - __main__ - INFO - Processed 371/700 states
+2025-07-18 19:44:23,787 - __main__ - INFO - Processed 381/700 states
+2025-07-18 19:44:23,788 - __main__ - INFO - Processed 391/700 states
+2025-07-18 19:44:23,802 - __main__ - INFO - Processed 401/700 states
+2025-07-18 19:44:23,812 - __main__ - INFO - Processed 411/700 states
+2025-07-18 19:44:23,813 - __main__ - INFO - Processed 421/700 states
+2025-07-18 19:44:23,818 - __main__ - INFO - Processed 431/700 states
+2025-07-18 19:44:23,818 - __main__ - INFO - Processed 441/700 states
+2025-07-18 19:44:23,820 - __main__ - INFO - Processed 451/700 states
+2025-07-18 19:44:23,834 - __main__ - INFO - Processed 461/700 states
+2025-07-18 19:44:23,835 - __main__ - INFO - Processed 471/700 states
+2025-07-18 19:44:23,837 - __main__ - INFO - Processed 481/700 states
+2025-07-18 19:44:23,860 - __main__ - INFO - Processed 491/700 states
+2025-07-18 19:44:23,861 - __main__ - INFO - Processed 501/700 states
+2025-07-18 19:44:23,864 - __main__ - INFO - Processed 511/700 states
+2025-07-18 19:44:23,890 - __main__ - INFO - Processed 521/700 states
+2025-07-18 19:44:23,891 - __main__ - INFO - Processed 531/700 states
+2025-07-18 19:44:23,909 - __main__ - INFO - Processed 541/700 states
+2025-07-18 19:44:23,922 - __main__ - INFO - Processed 551/700 states
+2025-07-18 19:44:23,923 - __main__ - INFO - Processed 561/700 states
+2025-07-18 19:44:23,928 - __main__ - INFO - Processed 571/700 states
+2025-07-18 19:44:23,928 - __main__ - INFO - Processed 581/700 states
+2025-07-18 19:44:23,931 - __main__ - INFO - Processed 591/700 states
+2025-07-18 19:44:23,945 - __main__ - INFO - Processed 601/700 states
+2025-07-18 19:44:23,945 - __main__ - INFO - Processed 611/700 states
+2025-07-18 19:44:23,948 - __main__ - INFO - Processed 621/700 states
+2025-07-18 19:44:23,971 - __main__ - INFO - Processed 631/700 states
+2025-07-18 19:44:23,972 - __main__ - INFO - Processed 641/700 states
+2025-07-18 19:44:23,975 - __main__ - INFO - Processed 651/700 states
+2025-07-18 19:44:24,001 - __main__ - INFO - Processed 661/700 states
+2025-07-18 19:44:24,002 - __main__ - INFO - Processed 671/700 states
+2025-07-18 19:44:24,020 - __main__ - INFO - Processed 681/700 states
+2025-07-18 19:44:24,032 - __main__ - INFO - Processed 691/700 states
+2025-07-18 19:44:24,033 - __main__ - INFO - 📊 Analyzing Optionality Results
+2025-07-18 19:44:24,033 - __main__ - INFO - Total states analyzed: 700
+2025-07-18 19:44:24,033 - __main__ - INFO - Average optionality score: 0.104
+2025-07-18 19:44:24,034 - __main__ - INFO - States in good region: 135
+2025-07-18 19:44:24,034 - __main__ - INFO - Average stress level: 0.557
+2025-07-18 19:44:40,536 - __main__ - INFO - 🎯 Starting Full Training Demonstration
+2025-07-18 19:44:40,536 - __main__ - INFO - Step 1: Demonstrating Optionality Algorithm
+2025-07-18 19:44:40,536 - __main__ - INFO - 🚀 Starting Optionality Algorithm Demonstration
+2025-07-18 19:44:40,539 - __main__ - INFO - Generated 700 sample financial states
+2025-07-18 19:44:40,540 - __main__ - INFO - Processed 1/700 states
+2025-07-18 19:44:40,544 - __main__ - INFO - Processed 11/700 states
+2025-07-18 19:44:40,544 - __main__ - INFO - Processed 21/700 states
+2025-07-18 19:44:40,546 - __main__ - INFO - Processed 31/700 states
+2025-07-18 19:44:40,558 - __main__ - INFO - Processed 41/700 states
+2025-07-18 19:44:40,558 - __main__ - INFO - Processed 51/700 states
+2025-07-18 19:44:40,560 - __main__ - INFO - Processed 61/700 states
+2025-07-18 19:44:40,578 - __main__ - INFO - Processed 71/700 states
+2025-07-18 19:44:40,579 - __main__ - INFO - Processed 81/700 states
+2025-07-18 19:44:40,581 - __main__ - INFO - Processed 91/700 states
+2025-07-18 19:44:40,600 - __main__ - INFO - Processed 101/700 states
+2025-07-18 19:44:40,601 - __main__ - INFO - Processed 111/700 states
+2025-07-18 19:44:40,614 - __main__ - INFO - Processed 121/700 states
+2025-07-18 19:44:40,623 - __main__ - INFO - Processed 131/700 states
+2025-07-18 19:44:40,624 - __main__ - INFO - Processed 141/700 states
+2025-07-18 19:44:40,629 - __main__ - INFO - Processed 151/700 states
+2025-07-18 19:44:40,629 - __main__ - INFO - Processed 161/700 states
+2025-07-18 19:44:40,631 - __main__ - INFO - Processed 171/700 states
+2025-07-18 19:44:40,643 - __main__ - INFO - Processed 181/700 states
+2025-07-18 19:44:40,643 - __main__ - INFO - Processed 191/700 states
+2025-07-18 19:44:40,645 - __main__ - INFO - Processed 201/700 states
+2025-07-18 19:44:40,662 - __main__ - INFO - Processed 211/700 states
+2025-07-18 19:44:40,663 - __main__ - INFO - Processed 221/700 states
+2025-07-18 19:44:40,665 - __main__ - INFO - Processed 231/700 states
+2025-07-18 19:44:40,684 - __main__ - INFO - Processed 241/700 states
+2025-07-18 19:44:40,685 - __main__ - INFO - Processed 251/700 states
+2025-07-18 19:44:40,697 - __main__ - INFO - Processed 261/700 states
+2025-07-18 19:44:40,707 - __main__ - INFO - Processed 271/700 states
+2025-07-18 19:44:40,708 - __main__ - INFO - Processed 281/700 states
+2025-07-18 19:44:40,713 - __main__ - INFO - Processed 291/700 states
+2025-07-18 19:44:40,713 - __main__ - INFO - Processed 301/700 states
+2025-07-18 19:44:40,715 - __main__ - INFO - Processed 311/700 states
+2025-07-18 19:44:40,727 - __main__ - INFO - Processed 321/700 states
+2025-07-18 19:44:40,727 - __main__ - INFO - Processed 331/700 states
+2025-07-18 19:44:40,730 - __main__ - INFO - Processed 341/700 states
+2025-07-18 19:44:40,748 - __main__ - INFO - Processed 351/700 states
+2025-07-18 19:44:40,749 - __main__ - INFO - Processed 361/700 states
+2025-07-18 19:44:40,751 - __main__ - INFO - Processed 371/700 states
+2025-07-18 19:44:40,771 - __main__ - INFO - Processed 381/700 states
+2025-07-18 19:44:40,772 - __main__ - INFO - Processed 391/700 states
+2025-07-18 19:44:40,786 - __main__ - INFO - Processed 401/700 states
+2025-07-18 19:44:40,795 - __main__ - INFO - Processed 411/700 states
+2025-07-18 19:44:40,796 - __main__ - INFO - Processed 421/700 states
+2025-07-18 19:44:40,801 - __main__ - INFO - Processed 431/700 states
+2025-07-18 19:44:40,801 - __main__ - INFO - Processed 441/700 states
+2025-07-18 19:44:40,803 - __main__ - INFO - Processed 451/700 states
+2025-07-18 19:44:40,817 - __main__ - INFO - Processed 461/700 states
+2025-07-18 19:44:40,818 - __main__ - INFO - Processed 471/700 states
+2025-07-18 19:44:40,820 - __main__ - INFO - Processed 481/700 states
+2025-07-18 19:44:40,843 - __main__ - INFO - Processed 491/700 states
+2025-07-18 19:44:40,844 - __main__ - INFO - Processed 501/700 states
+2025-07-18 19:44:40,847 - __main__ - INFO - Processed 511/700 states
+2025-07-18 19:44:40,872 - __main__ - INFO - Processed 521/700 states
+2025-07-18 19:44:40,873 - __main__ - INFO - Processed 531/700 states
+2025-07-18 19:44:40,891 - __main__ - INFO - Processed 541/700 states
+2025-07-18 19:44:40,903 - __main__ - INFO - Processed 551/700 states
+2025-07-18 19:44:40,905 - __main__ - INFO - Processed 561/700 states
+2025-07-18 19:44:40,909 - __main__ - INFO - Processed 571/700 states
+2025-07-18 19:44:40,909 - __main__ - INFO - Processed 581/700 states
+2025-07-18 19:44:40,912 - __main__ - INFO - Processed 591/700 states
+2025-07-18 19:44:40,926 - __main__ - INFO - Processed 601/700 states
+2025-07-18 19:44:40,926 - __main__ - INFO - Processed 611/700 states
+2025-07-18 19:44:40,928 - __main__ - INFO - Processed 621/700 states
+2025-07-18 19:44:40,951 - __main__ - INFO - Processed 631/700 states
+2025-07-18 19:44:40,952 - __main__ - INFO - Processed 641/700 states
+2025-07-18 19:44:40,955 - __main__ - INFO - Processed 651/700 states
+2025-07-18 19:44:40,980 - __main__ - INFO - Processed 661/700 states
+2025-07-18 19:44:40,982 - __main__ - INFO - Processed 671/700 states
+2025-07-18 19:44:40,999 - __main__ - INFO - Processed 681/700 states
+2025-07-18 19:44:41,012 - __main__ - INFO - Processed 691/700 states
+2025-07-18 19:44:41,012 - __main__ - INFO - 📊 Analyzing Optionality Results
+2025-07-18 19:44:41,014 - __main__ - INFO - Total states analyzed: 700
+2025-07-18 19:44:41,014 - __main__ - INFO - Average optionality score: 0.104
+2025-07-18 19:44:41,014 - __main__ - INFO - States in good region: 135
+2025-07-18 19:44:41,014 - __main__ - INFO - Average stress level: 0.557
+2025-07-18 19:44:41,015 - __main__ - INFO - Correlation Matrix:
+2025-07-18 19:44:41,015 - __main__ - INFO -                    optionality_score  stress_level  total_wealth
+optionality_score           1.000000 -5.576159e-01  3.080095e-01
+stress_level               -0.557616  1.000000e+00  2.459561e-16
+total_wealth                0.308009  2.459561e-16  1.000000e+00
+2025-07-18 19:44:41,018 - __main__ - INFO - 📈 Creating Optionality Visualizations
+2025-07-18 19:44:41,850 - __main__ - INFO - Visualizations saved to visualizations
+2025-07-18 19:44:41,853 - __main__ - INFO - Step 2: Running Optionality Training
+2025-07-18 19:44:41,855 - optionality_training_engine - INFO - Starting optionality training with 50 scenarios...
+2025-07-18 19:44:41,856 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_56
+2025-07-18 19:45:20,540 - __main__ - INFO - 🎯 Starting Full Training Demonstration
+2025-07-18 19:45:20,540 - __main__ - INFO - Step 1: Demonstrating Optionality Algorithm
+2025-07-18 19:45:20,540 - __main__ - INFO - 🚀 Starting Optionality Algorithm Demonstration
+2025-07-18 19:45:20,543 - __main__ - INFO - Generated 700 sample financial states
+2025-07-18 19:45:20,544 - __main__ - INFO - Processed 1/700 states
+2025-07-18 19:45:20,548 - __main__ - INFO - Processed 11/700 states
+2025-07-18 19:45:20,548 - __main__ - INFO - Processed 21/700 states
+2025-07-18 19:45:20,550 - __main__ - INFO - Processed 31/700 states
+2025-07-18 19:45:20,561 - __main__ - INFO - Processed 41/700 states
+2025-07-18 19:45:20,561 - __main__ - INFO - Processed 51/700 states
+2025-07-18 19:45:20,563 - __main__ - INFO - Processed 61/700 states
+2025-07-18 19:45:20,579 - __main__ - INFO - Processed 71/700 states
+2025-07-18 19:45:20,580 - __main__ - INFO - Processed 81/700 states
+2025-07-18 19:45:20,582 - __main__ - INFO - Processed 91/700 states
+2025-07-18 19:45:20,599 - __main__ - INFO - Processed 101/700 states
+2025-07-18 19:45:20,600 - __main__ - INFO - Processed 111/700 states
+2025-07-18 19:45:20,611 - __main__ - INFO - Processed 121/700 states
+2025-07-18 19:45:20,620 - __main__ - INFO - Processed 131/700 states
+2025-07-18 19:45:20,621 - __main__ - INFO - Processed 141/700 states
+2025-07-18 19:45:20,625 - __main__ - INFO - Processed 151/700 states
+2025-07-18 19:45:20,625 - __main__ - INFO - Processed 161/700 states
+2025-07-18 19:45:20,626 - __main__ - INFO - Processed 171/700 states
+2025-07-18 19:45:20,637 - __main__ - INFO - Processed 181/700 states
+2025-07-18 19:45:20,638 - __main__ - INFO - Processed 191/700 states
+2025-07-18 19:45:20,639 - __main__ - INFO - Processed 201/700 states
+2025-07-18 19:45:20,655 - __main__ - INFO - Processed 211/700 states
+2025-07-18 19:45:20,656 - __main__ - INFO - Processed 221/700 states
+2025-07-18 19:45:20,658 - __main__ - INFO - Processed 231/700 states
+2025-07-18 19:45:20,675 - __main__ - INFO - Processed 241/700 states
+2025-07-18 19:45:20,676 - __main__ - INFO - Processed 251/700 states
+2025-07-18 19:45:20,687 - __main__ - INFO - Processed 261/700 states
+2025-07-18 19:45:20,696 - __main__ - INFO - Processed 271/700 states
+2025-07-18 19:45:20,697 - __main__ - INFO - Processed 281/700 states
+2025-07-18 19:45:20,701 - __main__ - INFO - Processed 291/700 states
+2025-07-18 19:45:20,701 - __main__ - INFO - Processed 301/700 states
+2025-07-18 19:45:20,703 - __main__ - INFO - Processed 311/700 states
+2025-07-18 19:45:20,714 - __main__ - INFO - Processed 321/700 states
+2025-07-18 19:45:20,715 - __main__ - INFO - Processed 331/700 states
+2025-07-18 19:45:20,717 - __main__ - INFO - Processed 341/700 states
+2025-07-18 19:45:20,733 - __main__ - INFO - Processed 351/700 states
+2025-07-18 19:45:20,734 - __main__ - INFO - Processed 361/700 states
+2025-07-18 19:45:20,736 - __main__ - INFO - Processed 371/700 states
+2025-07-18 19:45:20,754 - __main__ - INFO - Processed 381/700 states
+2025-07-18 19:45:20,755 - __main__ - INFO - Processed 391/700 states
+2025-07-18 19:45:20,768 - __main__ - INFO - Processed 401/700 states
+2025-07-18 19:45:20,776 - __main__ - INFO - Processed 411/700 states
+2025-07-18 19:45:20,778 - __main__ - INFO - Processed 421/700 states
+2025-07-18 19:45:20,782 - __main__ - INFO - Processed 431/700 states
+2025-07-18 19:45:20,783 - __main__ - INFO - Processed 441/700 states
+2025-07-18 19:45:20,785 - __main__ - INFO - Processed 451/700 states
+2025-07-18 19:45:20,798 - __main__ - INFO - Processed 461/700 states
+2025-07-18 19:45:20,798 - __main__ - INFO - Processed 471/700 states
+2025-07-18 19:45:20,800 - __main__ - INFO - Processed 481/700 states
+2025-07-18 19:45:20,822 - __main__ - INFO - Processed 491/700 states
+2025-07-18 19:45:20,822 - __main__ - INFO - Processed 501/700 states
+2025-07-18 19:45:20,825 - __main__ - INFO - Processed 511/700 states
+2025-07-18 19:45:20,849 - __main__ - INFO - Processed 521/700 states
+2025-07-18 19:45:20,850 - __main__ - INFO - Processed 531/700 states
+2025-07-18 19:45:20,867 - __main__ - INFO - Processed 541/700 states
+2025-07-18 19:45:20,878 - __main__ - INFO - Processed 551/700 states
+2025-07-18 19:45:20,880 - __main__ - INFO - Processed 561/700 states
+2025-07-18 19:45:20,884 - __main__ - INFO - Processed 571/700 states
+2025-07-18 19:45:20,884 - __main__ - INFO - Processed 581/700 states
+2025-07-18 19:45:20,886 - __main__ - INFO - Processed 591/700 states
+2025-07-18 19:45:20,899 - __main__ - INFO - Processed 601/700 states
+2025-07-18 19:45:20,899 - __main__ - INFO - Processed 611/700 states
+2025-07-18 19:45:20,902 - __main__ - INFO - Processed 621/700 states
+2025-07-18 19:45:20,923 - __main__ - INFO - Processed 631/700 states
+2025-07-18 19:45:20,924 - __main__ - INFO - Processed 641/700 states
+2025-07-18 19:45:20,927 - __main__ - INFO - Processed 651/700 states
+2025-07-18 19:45:20,950 - __main__ - INFO - Processed 661/700 states
+2025-07-18 19:45:20,951 - __main__ - INFO - Processed 671/700 states
+2025-07-18 19:45:20,968 - __main__ - INFO - Processed 681/700 states
+2025-07-18 19:45:20,979 - __main__ - INFO - Processed 691/700 states
+2025-07-18 19:45:20,979 - __main__ - INFO - 📊 Analyzing Optionality Results
+2025-07-18 19:45:20,982 - __main__ - INFO - Total states analyzed: 700
+2025-07-18 19:45:20,982 - __main__ - INFO - Average optionality score: 0.104
+2025-07-18 19:45:20,982 - __main__ - INFO - States in good region: 135
+2025-07-18 19:45:20,982 - __main__ - INFO - Average stress level: 0.557
+2025-07-18 19:45:20,983 - __main__ - INFO - Correlation Matrix:
+2025-07-18 19:45:20,983 - __main__ - INFO -                    optionality_score  stress_level  total_wealth
+optionality_score           1.000000 -5.573520e-01  3.058181e-01
+stress_level               -0.557352  1.000000e+00  2.459561e-16
+total_wealth                0.305818  2.459561e-16  1.000000e+00
+2025-07-18 19:45:20,987 - __main__ - INFO - 📈 Creating Optionality Visualizations
+2025-07-18 19:45:21,793 - __main__ - INFO - Visualizations saved to visualizations
+2025-07-18 19:45:21,797 - __main__ - INFO - Step 2: Running Optionality Training
+2025-07-18 19:45:21,799 - optionality_training_engine - INFO - Starting optionality training with 50 scenarios...
+2025-07-18 19:45:21,799 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_58
+2025-07-18 19:45:21,799 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_44
+2025-07-18 19:45:21,800 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_51
+2025-07-18 19:45:21,800 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_59
+2025-07-18 19:45:21,801 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_26
+2025-07-18 19:45:21,801 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_40
+2025-07-18 19:45:21,801 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Karen_55
+2025-07-18 19:45:21,802 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_49
+2025-07-18 19:45:21,802 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_60
+2025-07-18 19:45:21,802 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Betty_31
+2025-07-18 19:45:21,803 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_41
+2025-07-18 19:45:21,803 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_32
+2025-07-18 19:45:21,803 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Betty_59
+2025-07-18 19:45:21,804 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_32
+2025-07-18 19:45:21,804 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_33
+2025-07-18 19:45:21,804 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Elizabeth_45
+2025-07-18 19:45:21,805 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Nancy_38
+2025-07-18 19:45:21,805 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_60
+2025-07-18 19:45:21,805 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_64
+2025-07-18 19:45:21,806 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donald_36
+2025-07-18 19:45:21,806 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_37
+2025-07-18 19:45:21,806 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_30
+2025-07-18 19:45:21,807 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_47
+2025-07-18 19:45:21,807 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Michael_62
+2025-07-18 19:45:21,807 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_50
+2025-07-18 19:45:21,808 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_55
+2025-07-18 19:45:21,808 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_28
+2025-07-18 19:45:21,808 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_35
+2025-07-18 19:45:21,809 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_42
+2025-07-18 19:45:21,809 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_58
+2025-07-18 19:45:21,809 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_38
+2025-07-18 19:45:21,809 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_25
+2025-07-18 19:45:21,810 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_27
+2025-07-18 19:45:21,810 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_49
+2025-07-18 19:45:21,810 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_56
+2025-07-18 19:45:21,811 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_51
+2025-07-18 19:45:21,811 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_35
+2025-07-18 19:45:21,811 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_45
+2025-07-18 19:45:21,812 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_26
+2025-07-18 19:45:21,812 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_35
+2025-07-18 19:45:21,812 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_32
+2025-07-18 19:45:21,813 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_39
+2025-07-18 19:45:21,813 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Elizabeth_49
+2025-07-18 19:45:21,813 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_62
+2025-07-18 19:45:21,814 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donald_65
+2025-07-18 19:45:21,814 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_50
+2025-07-18 19:45:21,814 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_34
+2025-07-18 19:45:21,815 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_25
+2025-07-18 19:45:21,815 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_64
+2025-07-18 19:45:21,815 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Barbara_33
+2025-07-18 19:45:21,880 - optionality_training_engine - INFO - Training completed. Average optionality: 0.000
+2025-07-18 19:45:21,881 - optionality_training_engine - INFO - Training results saved to data/outputs/optionality_training
+2025-07-18 19:45:21,881 - __main__ - INFO - Step 3: Running Integrated Training
+2025-07-18 19:45:21,886 - optionality_integration_engine - INFO - Starting integrated training with 50 scenarios...
+2025-07-18 19:45:21,886 - optionality_integration_engine - INFO - Running mesh training...
+2025-07-18 19:45:21,886 - mesh_training_engine - INFO - Generating 50 training scenarios...
+2025-07-18 19:45:21,886 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_29
+2025-07-18 19:45:21,895 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_65
+2025-07-18 19:45:21,904 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_49
+2025-07-18 19:45:21,912 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_56
+2025-07-18 19:45:21,921 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_30
+2025-07-18 19:45:21,930 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_57
+2025-07-18 19:45:21,939 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jessica_65
+2025-07-18 19:45:21,947 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_28
+2025-07-18 19:45:21,956 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_61
+2025-07-18 19:45:21,965 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_56
+2025-07-18 19:45:21,974 - mesh_training_engine - INFO - Generated 10/50 scenarios
+2025-07-18 19:45:21,974 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_56
+2025-07-18 19:45:21,982 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Susan_46
+2025-07-18 19:45:21,992 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_25
+2025-07-18 19:45:22,000 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Michael_39
+2025-07-18 19:45:22,009 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_34
+2025-07-18 19:45:22,018 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_42
+2025-07-18 19:45:22,027 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_58
+2025-07-18 19:45:22,035 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_46
+2025-07-18 19:45:22,044 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_51
+2025-07-18 19:45:22,053 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_James_60
+2025-07-18 19:45:22,061 - mesh_training_engine - INFO - Generated 20/50 scenarios
+2025-07-18 19:45:22,062 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_25
+2025-07-18 19:45:22,070 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_39
+2025-07-18 19:45:22,079 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_49
+2025-07-18 19:45:22,088 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jessica_36
+2025-07-18 19:45:22,096 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Daniel_38
+2025-07-18 19:45:22,105 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_29
+2025-07-18 19:45:22,114 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Nancy_50
+2025-07-18 19:45:22,123 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_49
+2025-07-18 19:45:22,132 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_38
+2025-07-18 19:45:22,140 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Susan_51
+2025-07-18 19:45:22,149 - mesh_training_engine - INFO - Generated 30/50 scenarios
+2025-07-18 19:45:22,149 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_58
+2025-07-18 19:45:22,158 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_56
+2025-07-18 19:45:22,167 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_47
+2025-07-18 19:45:22,175 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Susan_55
+2025-07-18 19:45:22,184 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_27
+2025-07-18 19:45:22,193 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_61
+2025-07-18 19:45:22,201 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Betty_26
+2025-07-18 19:45:22,210 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_26
+2025-07-18 19:45:22,219 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_David_26
+2025-07-18 19:45:22,228 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_38
+2025-07-18 19:45:22,237 - mesh_training_engine - INFO - Generated 40/50 scenarios
+2025-07-18 19:45:22,237 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_33
+2025-07-18 19:45:22,245 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_36
+2025-07-18 19:45:22,254 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donald_57
+2025-07-18 19:45:22,263 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_56
+2025-07-18 19:45:22,272 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_46
+2025-07-18 19:45:22,280 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_49
+2025-07-18 19:45:22,289 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_51
+2025-07-18 19:45:22,298 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Barbara_63
+2025-07-18 19:45:22,306 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Elizabeth_54
+2025-07-18 19:45:22,315 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_32
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Generated 50/50 scenarios
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Successfully generated 50 training scenarios
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Starting training session with 50 scenarios...
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 1/50: scenario_0000
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 2/50: scenario_0001
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 3/50: scenario_0002
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 4/50: scenario_0003
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 5/50: scenario_0004
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 6/50: scenario_0005
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 7/50: scenario_0006
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 8/50: scenario_0007
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 9/50: scenario_0008
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 10/50: scenario_0009
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 11/50: scenario_0010
+2025-07-18 19:45:22,324 - mesh_training_engine - INFO - Processing scenario 12/50: scenario_0011
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 13/50: scenario_0012
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 14/50: scenario_0013
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 15/50: scenario_0014
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 16/50: scenario_0015
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 17/50: scenario_0016
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 18/50: scenario_0017
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 19/50: scenario_0018
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 20/50: scenario_0019
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 21/50: scenario_0020
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 22/50: scenario_0021
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 23/50: scenario_0022
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 24/50: scenario_0023
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 25/50: scenario_0024
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 26/50: scenario_0025
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 27/50: scenario_0026
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 28/50: scenario_0027
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 29/50: scenario_0028
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 30/50: scenario_0029
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 31/50: scenario_0030
+2025-07-18 19:45:22,325 - mesh_training_engine - INFO - Processing scenario 32/50: scenario_0031
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 33/50: scenario_0032
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 34/50: scenario_0033
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 35/50: scenario_0034
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 36/50: scenario_0035
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 37/50: scenario_0036
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 38/50: scenario_0037
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 39/50: scenario_0038
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 40/50: scenario_0039
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 41/50: scenario_0040
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 42/50: scenario_0041
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 43/50: scenario_0042
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 44/50: scenario_0043
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 45/50: scenario_0044
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 46/50: scenario_0045
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 47/50: scenario_0046
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 48/50: scenario_0047
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 49/50: scenario_0048
+2025-07-18 19:45:22,326 - mesh_training_engine - INFO - Processing scenario 50/50: scenario_0049
+2025-07-18 19:45:22,327 - mesh_training_engine - INFO - Training session completed: 17/50 successful recoveries
+2025-07-18 19:45:22,327 - optionality_integration_engine - INFO - Running optionality training...
+2025-07-18 19:45:22,327 - optionality_training_engine - INFO - Starting optionality training with 50 scenarios...
+2025-07-18 19:45:22,327 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_40
+2025-07-18 19:45:22,327 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_41
+2025-07-18 19:45:22,327 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Betty_52
+2025-07-18 19:45:22,328 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Barbara_62
+2025-07-18 19:45:22,328 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_41
+2025-07-18 19:45:22,328 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_James_49
+2025-07-18 19:45:22,329 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_28
+2025-07-18 19:45:22,329 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_32
+2025-07-18 19:45:22,330 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_31
+2025-07-18 19:45:22,330 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_33
+2025-07-18 19:45:22,330 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_58
+2025-07-18 19:45:22,331 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_62
+2025-07-18 19:45:22,331 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_31
+2025-07-18 19:45:22,331 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_55
+2025-07-18 19:45:22,331 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_32
+2025-07-18 19:45:22,332 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Barbara_54
+2025-07-18 19:45:22,332 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_39
+2025-07-18 19:45:22,332 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_59
+2025-07-18 19:45:22,333 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Nancy_44
+2025-07-18 19:45:22,333 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Elizabeth_60
+2025-07-18 19:45:22,333 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_36
+2025-07-18 19:45:22,334 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_54
+2025-07-18 19:45:22,334 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_50
+2025-07-18 19:45:22,334 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Barbara_28
+2025-07-18 19:45:22,335 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_31
+2025-07-18 19:45:22,335 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Nancy_55
+2025-07-18 19:45:22,335 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_33
+2025-07-18 19:45:22,336 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_64
+2025-07-18 19:45:22,336 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_51
+2025-07-18 19:45:22,336 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_65
+2025-07-18 19:45:22,337 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_44
+2025-07-18 19:45:22,337 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_David_51
+2025-07-18 19:45:22,337 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Daniel_39
+2025-07-18 19:45:22,338 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Karen_27
+2025-07-18 19:45:22,338 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_57
+2025-07-18 19:45:22,338 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_30
+2025-07-18 19:45:22,339 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_55
+2025-07-18 19:45:22,339 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Betty_63
+2025-07-18 19:45:22,339 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_27
+2025-07-18 19:45:22,340 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_David_44
+2025-07-18 19:45:22,340 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_James_44
+2025-07-18 19:45:22,340 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_50
+2025-07-18 19:45:22,341 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_43
+2025-07-18 19:45:22,341 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_26
+2025-07-18 19:45:22,341 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_25
+2025-07-18 19:45:22,342 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_45
+2025-07-18 19:45:22,342 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_65
+2025-07-18 19:45:22,342 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_53
+2025-07-18 19:45:22,343 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_30
+2025-07-18 19:45:22,343 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_64
+2025-07-18 19:45:22,410 - optionality_training_engine - INFO - Training completed. Average optionality: 0.000
+2025-07-18 19:45:22,410 - optionality_integration_engine - INFO - Integrating training results...
+2025-07-18 19:45:22,410 - optionality_integration_engine - INFO - Integrated training completed successfully
+2025-07-18 19:45:22,410 - optionality_integration_engine - INFO - Integrated results saved to data/outputs/integrated_training
+2025-07-18 19:45:22,411 - __main__ - INFO - Step 4: Comparing Results
+2025-07-18 19:45:22,411 - __main__ - INFO - 📊 Comparing Training Results
+2025-07-18 19:45:22,411 - __main__ - INFO - ✅ Full Training Demonstration Completed
+2025-07-18 19:45:22,411 - __main__ - INFO - 🛤️ Demonstrating Path Optimization
+2025-07-18 19:46:13,930 - __main__ - INFO - 🎯 Starting Full Training Demonstration
+2025-07-18 19:46:13,930 - __main__ - INFO - Step 1: Demonstrating Optionality Algorithm
+2025-07-18 19:46:13,930 - __main__ - INFO - 🚀 Starting Optionality Algorithm Demonstration
+2025-07-18 19:46:13,932 - __main__ - INFO - Generated 700 sample financial states
+2025-07-18 19:46:13,933 - __main__ - INFO - Processed 1/700 states
+2025-07-18 19:46:13,937 - __main__ - INFO - Processed 11/700 states
+2025-07-18 19:46:13,937 - __main__ - INFO - Processed 21/700 states
+2025-07-18 19:46:13,939 - __main__ - INFO - Processed 31/700 states
+2025-07-18 19:46:13,951 - __main__ - INFO - Processed 41/700 states
+2025-07-18 19:46:13,951 - __main__ - INFO - Processed 51/700 states
+2025-07-18 19:46:13,953 - __main__ - INFO - Processed 61/700 states
+2025-07-18 19:46:13,969 - __main__ - INFO - Processed 71/700 states
+2025-07-18 19:46:13,970 - __main__ - INFO - Processed 81/700 states
+2025-07-18 19:46:13,973 - __main__ - INFO - Processed 91/700 states
+2025-07-18 19:46:13,991 - __main__ - INFO - Processed 101/700 states
+2025-07-18 19:46:13,992 - __main__ - INFO - Processed 111/700 states
+2025-07-18 19:46:14,004 - __main__ - INFO - Processed 121/700 states
+2025-07-18 19:46:14,013 - __main__ - INFO - Processed 131/700 states
+2025-07-18 19:46:14,014 - __main__ - INFO - Processed 141/700 states
+2025-07-18 19:46:14,018 - __main__ - INFO - Processed 151/700 states
+2025-07-18 19:46:14,018 - __main__ - INFO - Processed 161/700 states
+2025-07-18 19:46:14,020 - __main__ - INFO - Processed 171/700 states
+2025-07-18 19:46:14,031 - __main__ - INFO - Processed 181/700 states
+2025-07-18 19:46:14,031 - __main__ - INFO - Processed 191/700 states
+2025-07-18 19:46:14,033 - __main__ - INFO - Processed 201/700 states
+2025-07-18 19:46:14,050 - __main__ - INFO - Processed 211/700 states
+2025-07-18 19:46:14,051 - __main__ - INFO - Processed 221/700 states
+2025-07-18 19:46:14,053 - __main__ - INFO - Processed 231/700 states
+2025-07-18 19:46:14,071 - __main__ - INFO - Processed 241/700 states
+2025-07-18 19:46:14,072 - __main__ - INFO - Processed 251/700 states
+2025-07-18 19:46:14,084 - __main__ - INFO - Processed 261/700 states
+2025-07-18 19:46:14,093 - __main__ - INFO - Processed 271/700 states
+2025-07-18 19:46:14,094 - __main__ - INFO - Processed 281/700 states
+2025-07-18 19:46:14,098 - __main__ - INFO - Processed 291/700 states
+2025-07-18 19:46:14,098 - __main__ - INFO - Processed 301/700 states
+2025-07-18 19:46:14,100 - __main__ - INFO - Processed 311/700 states
+2025-07-18 19:46:14,112 - __main__ - INFO - Processed 321/700 states
+2025-07-18 19:46:14,112 - __main__ - INFO - Processed 331/700 states
+2025-07-18 19:46:14,115 - __main__ - INFO - Processed 341/700 states
+2025-07-18 19:46:14,132 - __main__ - INFO - Processed 351/700 states
+2025-07-18 19:46:14,133 - __main__ - INFO - Processed 361/700 states
+2025-07-18 19:46:14,135 - __main__ - INFO - Processed 371/700 states
+2025-07-18 19:46:14,154 - __main__ - INFO - Processed 381/700 states
+2025-07-18 19:46:14,155 - __main__ - INFO - Processed 391/700 states
+2025-07-18 19:46:14,169 - __main__ - INFO - Processed 401/700 states
+2025-07-18 19:46:14,178 - __main__ - INFO - Processed 411/700 states
+2025-07-18 19:46:14,179 - __main__ - INFO - Processed 421/700 states
+2025-07-18 19:46:14,184 - __main__ - INFO - Processed 431/700 states
+2025-07-18 19:46:14,184 - __main__ - INFO - Processed 441/700 states
+2025-07-18 19:46:14,186 - __main__ - INFO - Processed 451/700 states
+2025-07-18 19:46:14,200 - __main__ - INFO - Processed 461/700 states
+2025-07-18 19:46:14,200 - __main__ - INFO - Processed 471/700 states
+2025-07-18 19:46:14,203 - __main__ - INFO - Processed 481/700 states
+2025-07-18 19:46:14,225 - __main__ - INFO - Processed 491/700 states
+2025-07-18 19:46:14,226 - __main__ - INFO - Processed 501/700 states
+2025-07-18 19:46:14,229 - __main__ - INFO - Processed 511/700 states
+2025-07-18 19:46:14,253 - __main__ - INFO - Processed 521/700 states
+2025-07-18 19:46:14,255 - __main__ - INFO - Processed 531/700 states
+2025-07-18 19:46:14,272 - __main__ - INFO - Processed 541/700 states
+2025-07-18 19:46:14,284 - __main__ - INFO - Processed 551/700 states
+2025-07-18 19:46:14,285 - __main__ - INFO - Processed 561/700 states
+2025-07-18 19:46:14,290 - __main__ - INFO - Processed 571/700 states
+2025-07-18 19:46:14,290 - __main__ - INFO - Processed 581/700 states
+2025-07-18 19:46:14,292 - __main__ - INFO - Processed 591/700 states
+2025-07-18 19:46:14,306 - __main__ - INFO - Processed 601/700 states
+2025-07-18 19:46:14,306 - __main__ - INFO - Processed 611/700 states
+2025-07-18 19:46:14,308 - __main__ - INFO - Processed 621/700 states
+2025-07-18 19:46:14,330 - __main__ - INFO - Processed 631/700 states
+2025-07-18 19:46:14,331 - __main__ - INFO - Processed 641/700 states
+2025-07-18 19:46:14,334 - __main__ - INFO - Processed 651/700 states
+2025-07-18 19:46:14,359 - __main__ - INFO - Processed 661/700 states
+2025-07-18 19:46:14,360 - __main__ - INFO - Processed 671/700 states
+2025-07-18 19:46:14,377 - __main__ - INFO - Processed 681/700 states
+2025-07-18 19:46:14,389 - __main__ - INFO - Processed 691/700 states
+2025-07-18 19:46:14,389 - __main__ - INFO - 📊 Analyzing Optionality Results
+2025-07-18 19:46:14,390 - __main__ - INFO - Total states analyzed: 700
+2025-07-18 19:46:14,391 - __main__ - INFO - Average optionality score: 0.104
+2025-07-18 19:46:14,391 - __main__ - INFO - States in good region: 135
+2025-07-18 19:46:14,391 - __main__ - INFO - Average stress level: 0.557
+2025-07-18 19:46:14,391 - __main__ - INFO - Correlation Matrix:
+2025-07-18 19:46:14,391 - __main__ - INFO -                    optionality_score  stress_level  total_wealth
+optionality_score           1.000000 -5.570278e-01  3.048784e-01
+stress_level               -0.557028  1.000000e+00  2.459561e-16
+total_wealth                0.304878  2.459561e-16  1.000000e+00
+2025-07-18 19:46:14,394 - __main__ - INFO - 📈 Creating Optionality Visualizations
+2025-07-18 19:46:15,194 - __main__ - INFO - Visualizations saved to visualizations
+2025-07-18 19:46:15,198 - __main__ - INFO - Step 2: Running Optionality Training
+2025-07-18 19:46:15,200 - optionality_training_engine - INFO - Starting optionality training with 50 scenarios...
+2025-07-18 19:46:15,200 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_27
+2025-07-18 19:46:15,200 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_64
+2025-07-18 19:46:15,200 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_48
+2025-07-18 19:46:15,201 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_46
+2025-07-18 19:46:15,201 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_44
+2025-07-18 19:46:15,202 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Betty_36
+2025-07-18 19:46:15,202 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_40
+2025-07-18 19:46:15,202 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_26
+2025-07-18 19:46:15,203 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_52
+2025-07-18 19:46:15,203 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_David_63
+2025-07-18 19:46:15,203 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_48
+2025-07-18 19:46:15,204 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_62
+2025-07-18 19:46:15,204 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_40
+2025-07-18 19:46:15,204 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_60
+2025-07-18 19:46:15,205 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_42
+2025-07-18 19:46:15,205 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Elizabeth_62
+2025-07-18 19:46:15,205 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_James_36
+2025-07-18 19:46:15,206 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_59
+2025-07-18 19:46:15,206 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_60
+2025-07-18 19:46:15,206 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_35
+2025-07-18 19:46:15,207 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_38
+2025-07-18 19:46:15,207 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_28
+2025-07-18 19:46:15,207 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Michael_62
+2025-07-18 19:46:15,208 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Nancy_44
+2025-07-18 19:46:15,208 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_62
+2025-07-18 19:46:15,208 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jessica_60
+2025-07-18 19:46:15,209 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_60
+2025-07-18 19:46:15,209 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_57
+2025-07-18 19:46:15,209 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_30
+2025-07-18 19:46:15,210 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_David_37
+2025-07-18 19:46:15,210 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_36
+2025-07-18 19:46:15,210 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_26
+2025-07-18 19:46:15,211 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_63
+2025-07-18 19:46:15,211 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Barbara_28
+2025-07-18 19:46:15,211 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Karen_48
+2025-07-18 19:46:15,212 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_54
+2025-07-18 19:46:15,212 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Karen_56
+2025-07-18 19:46:15,212 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_40
+2025-07-18 19:46:15,213 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_38
+2025-07-18 19:46:15,213 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_36
+2025-07-18 19:46:15,213 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Nancy_41
+2025-07-18 19:46:15,214 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_52
+2025-07-18 19:46:15,214 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_54
+2025-07-18 19:46:15,214 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_53
+2025-07-18 19:46:15,215 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_27
+2025-07-18 19:46:15,215 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Betty_50
+2025-07-18 19:46:15,215 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_48
+2025-07-18 19:46:15,216 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_63
+2025-07-18 19:46:15,216 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_56
+2025-07-18 19:46:15,216 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_34
+2025-07-18 19:46:15,292 - optionality_training_engine - INFO - Training completed. Average optionality: 0.000
+2025-07-18 19:46:15,292 - optionality_training_engine - INFO - Training results saved to data/outputs/optionality_training
+2025-07-18 19:46:15,292 - __main__ - INFO - Step 3: Running Integrated Training
+2025-07-18 19:46:15,297 - optionality_integration_engine - INFO - Starting integrated training with 50 scenarios...
+2025-07-18 19:46:15,297 - optionality_integration_engine - INFO - Running mesh training...
+2025-07-18 19:46:15,298 - mesh_training_engine - INFO - Generating 50 training scenarios...
+2025-07-18 19:46:15,298 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_39
+2025-07-18 19:46:15,306 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_50
+2025-07-18 19:46:15,315 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_61
+2025-07-18 19:46:15,324 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_41
+2025-07-18 19:46:15,333 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_64
+2025-07-18 19:46:15,341 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_29
+2025-07-18 19:46:15,350 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_50
+2025-07-18 19:46:15,359 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_35
+2025-07-18 19:46:15,368 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_36
+2025-07-18 19:46:15,377 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_29
+2025-07-18 19:46:15,385 - mesh_training_engine - INFO - Generated 10/50 scenarios
+2025-07-18 19:46:15,385 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_55
+2025-07-18 19:46:15,394 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_50
+2025-07-18 19:46:15,403 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_52
+2025-07-18 19:46:15,412 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_60
+2025-07-18 19:46:15,421 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_31
+2025-07-18 19:46:15,430 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_32
+2025-07-18 19:46:15,439 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jessica_53
+2025-07-18 19:46:15,447 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_32
+2025-07-18 19:46:15,456 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Susan_55
+2025-07-18 19:46:15,465 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Elizabeth_64
+2025-07-18 19:46:15,474 - mesh_training_engine - INFO - Generated 20/50 scenarios
+2025-07-18 19:46:15,474 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_35
+2025-07-18 19:46:15,483 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_34
+2025-07-18 19:46:15,492 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_44
+2025-07-18 19:46:15,500 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donald_36
+2025-07-18 19:46:15,509 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_25
+2025-07-18 19:46:15,518 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Michael_59
+2025-07-18 19:46:15,527 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_David_31
+2025-07-18 19:46:15,536 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_31
+2025-07-18 19:46:15,544 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_58
+2025-07-18 19:46:15,553 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_35
+2025-07-18 19:46:15,562 - mesh_training_engine - INFO - Generated 30/50 scenarios
+2025-07-18 19:46:15,562 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_48
+2025-07-18 19:46:15,571 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Susan_61
+2025-07-18 19:46:15,579 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_James_52
+2025-07-18 19:46:15,589 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_34
+2025-07-18 19:46:15,597 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donald_48
+2025-07-18 19:46:15,606 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_44
+2025-07-18 19:46:15,615 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Christopher_47
+2025-07-18 19:46:15,624 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_43
+2025-07-18 19:46:15,633 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_36
+2025-07-18 19:46:15,641 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Daniel_57
+2025-07-18 19:46:15,650 - mesh_training_engine - INFO - Generated 40/50 scenarios
+2025-07-18 19:46:15,650 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jennifer_43
+2025-07-18 19:46:15,659 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Daniel_40
+2025-07-18 19:46:15,668 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_30
+2025-07-18 19:46:15,677 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_56
+2025-07-18 19:46:15,685 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_56
+2025-07-18 19:46:15,694 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_47
+2025-07-18 19:46:15,703 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Robert_26
+2025-07-18 19:46:15,712 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_41
+2025-07-18 19:46:15,720 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Karen_28
+2025-07-18 19:46:15,729 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_48
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Generated 50/50 scenarios
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Successfully generated 50 training scenarios
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Starting training session with 50 scenarios...
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 1/50: scenario_0000
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 2/50: scenario_0001
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 3/50: scenario_0002
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 4/50: scenario_0003
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 5/50: scenario_0004
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 6/50: scenario_0005
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 7/50: scenario_0006
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 8/50: scenario_0007
+2025-07-18 19:46:15,738 - mesh_training_engine - INFO - Processing scenario 9/50: scenario_0008
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 10/50: scenario_0009
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 11/50: scenario_0010
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 12/50: scenario_0011
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 13/50: scenario_0012
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 14/50: scenario_0013
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 15/50: scenario_0014
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 16/50: scenario_0015
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 17/50: scenario_0016
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 18/50: scenario_0017
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 19/50: scenario_0018
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 20/50: scenario_0019
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 21/50: scenario_0020
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 22/50: scenario_0021
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 23/50: scenario_0022
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 24/50: scenario_0023
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 25/50: scenario_0024
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 26/50: scenario_0025
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 27/50: scenario_0026
+2025-07-18 19:46:15,739 - mesh_training_engine - INFO - Processing scenario 28/50: scenario_0027
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 29/50: scenario_0028
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 30/50: scenario_0029
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 31/50: scenario_0030
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 32/50: scenario_0031
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 33/50: scenario_0032
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 34/50: scenario_0033
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 35/50: scenario_0034
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 36/50: scenario_0035
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 37/50: scenario_0036
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 38/50: scenario_0037
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 39/50: scenario_0038
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 40/50: scenario_0039
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 41/50: scenario_0040
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 42/50: scenario_0041
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 43/50: scenario_0042
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 44/50: scenario_0043
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 45/50: scenario_0044
+2025-07-18 19:46:15,740 - mesh_training_engine - INFO - Processing scenario 46/50: scenario_0045
+2025-07-18 19:46:15,741 - mesh_training_engine - INFO - Processing scenario 47/50: scenario_0046
+2025-07-18 19:46:15,741 - mesh_training_engine - INFO - Processing scenario 48/50: scenario_0047
+2025-07-18 19:46:15,741 - mesh_training_engine - INFO - Processing scenario 49/50: scenario_0048
+2025-07-18 19:46:15,741 - mesh_training_engine - INFO - Processing scenario 50/50: scenario_0049
+2025-07-18 19:46:15,741 - mesh_training_engine - INFO - Training session completed: 24/50 successful recoveries
+2025-07-18 19:46:15,741 - optionality_integration_engine - INFO - Running optionality training...
+2025-07-18 19:46:15,741 - optionality_training_engine - INFO - Starting optionality training with 50 scenarios...
+2025-07-18 19:46:15,741 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_46
+2025-07-18 19:46:15,741 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_58
+2025-07-18 19:46:15,742 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_50
+2025-07-18 19:46:15,742 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Lisa_42
+2025-07-18 19:46:15,742 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_William_40
+2025-07-18 19:46:15,743 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Nancy_27
+2025-07-18 19:46:15,743 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_51
+2025-07-18 19:46:15,743 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_36
+2025-07-18 19:46:15,744 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_41
+2025-07-18 19:46:15,744 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_James_46
+2025-07-18 19:46:15,745 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_53
+2025-07-18 19:46:15,745 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_53
+2025-07-18 19:46:15,745 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_26
+2025-07-18 19:46:15,746 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Patricia_26
+2025-07-18 19:46:15,746 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Barbara_62
+2025-07-18 19:46:15,746 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_43
+2025-07-18 19:46:15,747 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_60
+2025-07-18 19:46:15,747 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_26
+2025-07-18 19:46:15,747 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_31
+2025-07-18 19:46:15,748 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_58
+2025-07-18 19:46:15,748 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_John_42
+2025-07-18 19:46:15,748 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sandra_35
+2025-07-18 19:46:15,749 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Jessica_28
+2025-07-18 19:46:15,749 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_42
+2025-07-18 19:46:15,749 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Daniel_46
+2025-07-18 19:46:15,750 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donald_31
+2025-07-18 19:46:15,750 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Sarah_34
+2025-07-18 19:46:15,751 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Michael_35
+2025-07-18 19:46:15,751 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_65
+2025-07-18 19:46:15,751 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Thomas_45
+2025-07-18 19:46:15,752 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Michael_46
+2025-07-18 19:46:15,752 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_44
+2025-07-18 19:46:15,752 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Anthony_63
+2025-07-18 19:46:15,753 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Richard_26
+2025-07-18 19:46:15,753 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Matthew_56
+2025-07-18 19:46:15,753 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Michael_57
+2025-07-18 19:46:15,754 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Linda_29
+2025-07-18 19:46:15,754 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mary_65
+2025-07-18 19:46:15,754 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Joseph_31
+2025-07-18 19:46:15,755 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Karen_28
+2025-07-18 19:46:15,755 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donald_33
+2025-07-18 19:46:15,755 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_45
+2025-07-18 19:46:15,756 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_35
+2025-07-18 19:46:15,756 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Mark_59
+2025-07-18 19:46:15,756 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_52
+2025-07-18 19:46:15,757 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_David_59
+2025-07-18 19:46:15,757 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Donna_30
+2025-07-18 19:46:15,757 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Charles_59
+2025-07-18 19:46:15,758 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_Helen_25
+2025-07-18 19:46:15,758 - src.json_to_vector_converter - INFO - Converting JSON to vector profile for client: CLIENT_James_60
+2025-07-18 19:46:15,860 - optionality_training_engine - INFO - Training completed. Average optionality: 0.000
+2025-07-18 19:46:15,860 - optionality_integration_engine - INFO - Integrating training results...
+2025-07-18 19:46:15,860 - optionality_integration_engine - INFO - Integrated training completed successfully
+2025-07-18 19:46:15,860 - optionality_integration_engine - INFO - Integrated results saved to data/outputs/integrated_training
+2025-07-18 19:46:15,861 - __main__ - INFO - Step 4: Comparing Results
+2025-07-18 19:46:15,861 - __main__ - INFO - 📊 Comparing Training Results
+2025-07-18 19:46:15,861 - __main__ - INFO - ✅ Full Training Demonstration Completed
+2025-07-18 19:46:15,861 - __main__ - INFO - 🛤️ Demonstrating Path Optimization
