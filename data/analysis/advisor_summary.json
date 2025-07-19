@@ -1,0 +1,25 @@
+{
+  "analysis_date": "2025-07-19T00:36:29.643435",
+  "total_profiles": 20,
+  "financial_summary": {
+    "average_monthly_income": 22289.34712055632,
+    "average_monthly_expenses": 2908.204693113064,
+    "average_savings_rate": 84.73951342484602,
+    "total_annual_income": 5349443.308933516,
+    "total_annual_expenses": 697969.1263471354,
+    "total_annual_savings": 4651474.18258638
+  },
+  "risk_analysis": {
+    "risk_distribution": {
+      "low": 20
+    },
+    "high_risk_profiles": 0,
+    "medium_risk_profiles": 0,
+    "low_risk_profiles": 20
+  },
+  "simulation_summary": {
+    "years_simulated": 30,
+    "simulations_per_profile": 100,
+    "total_portfolio_simulations": 20
+  }
+}

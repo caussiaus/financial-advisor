@@ -1,0 +1,948 @@
+{
+  "analysis_date": "2025-07-19T00:36:29.111495",
+  "total_profiles": 20,
+  "financial_summary": {
+    "average_monthly_income": 22289.34712055632,
+    "average_monthly_expenses": 2908.204693113064,
+    "average_savings_rate": 84.73951342484602,
+    "total_annual_income": 5349443.308933516,
+    "total_annual_expenses": 697969.1263471354,
+    "total_annual_savings": 4651474.18258638
+  },
+  "risk_analysis": {
+    "risk_distribution": {
+      "low": 20
+    },
+    "high_risk_profiles": 0,
+    "medium_risk_profiles": 0,
+    "low_risk_profiles": 20
+  },
+  "investment_recommendations": {
+    "profile_0008_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 11886.959010658125,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0000_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 9927.106417443676,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0002_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 20406.312396911788,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0005_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 19145.037078746092,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0001_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 20346.96445130883,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0004_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 19068.998209792662,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0003_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 2515.595784502596,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0009_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 9900.827205330075,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0006_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 21020.244199687757,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0003_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 3179.9716676544504,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0005_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 20072.30929434559,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0004_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 19517.010866187204,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0009_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 9261.882533622802,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0008_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 12838.521039659056,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0007_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 21198.35218070599,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0006_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 21251.76856759923,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0007_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 20526.33861737822,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0001_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 18963.381481786124,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0000_month_00": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 10291.8047616927,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    },
+    "profile_0002_month_01": {
+      "stock_allocation": 0.3,
+      "bond_allocation": 0.6,
+      "cash_allocation": 0.1,
+      "monthly_investment": 18778.89307407906,
+      "recommendation": "Excellent savings rate, maximize investment returns",
+      "priority": "low",
+      "expected_return": 0.05
+    }
+  },
+  "profile_analyses": [
+    {
+      "profile_id": "profile_0008_month_00",
+      "monthly_income": 15898.833135052326,
+      "monthly_expenses": 1040.1343717296704,
+      "savings_rate": 93.45779427399313,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Transportation",
+          334.0037690965674
+        ],
+        [
+          "Utilities",
+          295.88634564029246
+        ],
+        [
+          "Housing",
+          188.21799141828797
+        ],
+        [
+          "Groceries",
+          110.0944953752341
+        ],
+        [
+          "Shopping",
+          89.08748280306169
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 11886.959010658125,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0000_month_01",
+      "monthly_income": 14317.99235373871,
+      "monthly_expenses": 1909.109331934114,
+      "savings_rate": 86.66636156265575,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Housing",
+          514.8895871286636
+        ],
+        [
+          "Entertainment",
+          435.4286623123823
+        ],
+        [
+          "Healthcare",
+          354.33402647378
+        ],
+        [
+          "Groceries",
+          351.42363666937285
+        ],
+        [
+          "Utilities",
+          253.03341934991508
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 9927.106417443676,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0002_month_00",
+      "monthly_income": 27049.598952541684,
+      "monthly_expenses": 1541.7084564019503,
+      "savings_rate": 94.30043876396516,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Healthcare",
+          626.775505719608
+        ],
+        [
+          "Shopping",
+          322.66630331635
+        ],
+        [
+          "Transportation",
+          227.76985188795868
+        ],
+        [
+          "Utilities",
+          176.6210822370242
+        ],
+        [
+          "Groceries",
+          102.18641559707909
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 20406.312396911788,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0005_month_00",
+      "monthly_income": 25029.83323979538,
+      "monthly_expenses": 1098.536891362768,
+      "savings_rate": 95.61108985090566,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Housing",
+          332.28696647080915
+        ],
+        [
+          "Groceries",
+          284.7603886843969
+        ],
+        [
+          "Healthcare",
+          205.4082361281198
+        ],
+        [
+          "Shopping",
+          163.90690490861277
+        ],
+        [
+          "Entertainment",
+          112.17439517082954
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 19145.037078746092,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0001_month_00",
+      "monthly_income": 32903.01258578402,
+      "monthly_expenses": 7469.30702164798,
+      "savings_rate": 77.29901782648575,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Housing",
+          2255.2376347496256
+        ],
+        [
+          "Shopping",
+          1488.5296485889776
+        ],
+        [
+          "Utilities",
+          1445.573601670612
+        ],
+        [
+          "Groceries",
+          1171.4354434806703
+        ],
+        [
+          "Entertainment",
+          1108.5306931580942
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 20346.96445130883,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0004_month_01",
+      "monthly_income": 27435.138056492553,
+      "monthly_expenses": 3598.890294251725,
+      "savings_rate": 86.88218631580735,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Groceries",
+          1033.9453944548184
+        ],
+        [
+          "Transportation",
+          975.8757202720057
+        ],
+        [
+          "Housing",
+          964.0705557471279
+        ],
+        [
+          "Shopping",
+          624.9986237777737
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 19068.998209792662,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0003_month_01",
+      "monthly_income": 5715.760008204914,
+      "monthly_expenses": 2571.265277576669,
+      "savings_rate": 55.01446397529559,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Utilities",
+          1025.1238189042087
+        ],
+        [
+          "Entertainment",
+          837.0951913010323
+        ],
+        [
+          "Groceries",
+          440.41072973985166
+        ],
+        [
+          "Transportation",
+          268.63553763157677
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 2515.595784502596,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0009_month_01",
+      "monthly_income": 18172.887409459567,
+      "monthly_expenses": 5796.8534027969745,
+      "savings_rate": 68.10163804911086,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Shopping",
+          1594.8249120203764
+        ],
+        [
+          "Housing",
+          1336.9445277296304
+        ],
+        [
+          "Utilities",
+          849.8054870156293
+        ],
+        [
+          "Transportation",
+          843.5037119040705
+        ],
+        [
+          "Groceries",
+          652.4323343953045
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 9900.827205330075,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0006_month_00",
+      "monthly_income": 28127.73442864972,
+      "monthly_expenses": 1852.4291790400264,
+      "savings_rate": 93.4142254373917,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Transportation",
+          475.18543168532244
+        ],
+        [
+          "Entertainment",
+          408.837098081197
+        ],
+        [
+          "Utilities",
+          360.02597738459764
+        ],
+        [
+          "Shopping",
+          255.9026457112691
+        ],
+        [
+          "Groceries",
+          238.9636164672429
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 21020.244199687757,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0003_month_00",
+      "monthly_income": 6031.784928802939,
+      "monthly_expenses": 2056.8203442348768,
+      "savings_rate": 65.90030366611445,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Utilities",
+          837.1689247648284
+        ],
+        [
+          "Transportation",
+          555.4584930482823
+        ],
+        [
+          "Groceries",
+          402.70029774485783
+        ],
+        [
+          "Entertainment",
+          261.4926286769082
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 3179.9716676544504,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0005_month_01",
+      "monthly_income": 25925.147362059666,
+      "monthly_expenses": 834.7607441276825,
+      "savings_rate": 96.78011186409178,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Shopping",
+          360.70360296326527
+        ],
+        [
+          "Groceries",
+          212.37257899815575
+        ],
+        [
+          "Healthcare",
+          143.12840611852724
+        ],
+        [
+          "Housing",
+          59.49131432498346
+        ],
+        [
+          "Entertainment",
+          59.064841722750806
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 20072.30929434559,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0004_month_00",
+      "monthly_income": 28694.88737445794,
+      "monthly_expenses": 4298.623791723932,
+      "savings_rate": 85.01954813194266,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Housing",
+          1299.6885351119079
+        ],
+        [
+          "Transportation",
+          1270.3435771697418
+        ],
+        [
+          "Groceries",
+          978.0486306266686
+        ],
+        [
+          "Shopping",
+          750.5430488156144
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 19517.010866187204,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0009_month_00",
+      "monthly_income": 17248.835077794007,
+      "monthly_expenses": 5671.481910765506,
+      "savings_rate": 67.11962352711622,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Transportation",
+          1068.9725652824648
+        ],
+        [
+          "Shopping",
+          1068.3594558196783
+        ],
+        [
+          "Healthcare",
+          1023.9602555376136
+        ],
+        [
+          "Utilities",
+          1006.070106209162
+        ],
+        [
+          "Groceries",
+          986.4413841191305
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 9261.882533622802,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0008_month_01",
+      "monthly_income": 17562.34437387743,
+      "monthly_expenses": 1514.1930743036098,
+      "savings_rate": 91.37818367486375,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Healthcare",
+          417.5519557104049
+        ],
+        [
+          "Utilities",
+          309.8386397657886
+        ],
+        [
+          "Shopping",
+          239.95218077391846
+        ],
+        [
+          "Housing",
+          215.04379405829053
+        ],
+        [
+          "Groceries",
+          185.77215557000756
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 12838.521039659056,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0007_month_01",
+      "monthly_income": 27217.409098997054,
+      "monthly_expenses": 719.4688731145668,
+      "savings_rate": 97.35658574077473,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Entertainment",
+          293.3179842341394
+        ],
+        [
+          "Utilities",
+          180.33290034714292
+        ],
+        [
+          "Shopping",
+          139.5242724501228
+        ],
+        [
+          "Housing",
+          65.45386732699838
+        ],
+        [
+          "Healthcare",
+          40.83984875616329
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 21198.35218070599,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0006_month_01",
+      "monthly_income": 28634.19312809669,
+      "monthly_expenses": 2069.482418597652,
+      "savings_rate": 92.77268820064283,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Utilities",
+          603.3061638338688
+        ],
+        [
+          "Entertainment",
+          489.82307806568724
+        ],
+        [
+          "Transportation",
+          343.7632104351122
+        ],
+        [
+          "Shopping",
+          299.7278634061321
+        ],
+        [
+          "Groceries",
+          243.10514553615317
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 21251.76856759923,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0007_month_00",
+      "monthly_income": 26512.48002162406,
+      "monthly_expenses": 854.5567499012823,
+      "savings_rate": 96.77677550646227,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Healthcare",
+          243.83249454264637
+        ],
+        [
+          "Entertainment",
+          204.01098053825746
+        ],
+        [
+          "Housing",
+          162.4402760568452
+        ],
+        [
+          "Utilities",
+          148.92607319843114
+        ],
+        [
+          "Shopping",
+          95.34692556510207
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 20526.33861737822,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0001_month_01",
+      "monthly_income": 32586.01873807195,
+      "monthly_expenses": 8881.791885839293,
+      "savings_rate": 72.74355005675415,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Entertainment",
+          3019.8331773737063
+        ],
+        [
+          "Shopping",
+          2329.588513157098
+        ],
+        [
+          "Groceries",
+          1549.7949115368874
+        ],
+        [
+          "Housing",
+          1326.1772393115887
+        ],
+        [
+          "Utilities",
+          656.3980444600122
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 18963.381481786124,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0000_month_00",
+      "monthly_income": 14515.563366167096,
+      "monthly_expenses": 1650.8074140512215,
+      "savings_rate": 88.6273279761299,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Entertainment",
+          581.5638119567228
+        ],
+        [
+          "Healthcare",
+          318.21670349763986
+        ],
+        [
+          "Groceries",
+          312.051436852831
+        ],
+        [
+          "Utilities",
+          291.5911953011489
+        ],
+        [
+          "Housing",
+          147.38426644287887
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 10291.8047616927,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    },
+    {
+      "profile_id": "profile_0002_month_01",
+      "monthly_income": 26207.488771458604,
+      "monthly_expenses": 2733.872428859782,
+      "savings_rate": 89.56835409641721,
+      "risk_tolerance": "low",
+      "top_categories": [
+        [
+          "Shopping",
+          745.4993624342808
+        ],
+        [
+          "Groceries",
+          552.0021722530591
+        ],
+        [
+          "Utilities",
+          489.83292251023556
+        ],
+        [
+          "Healthcare",
+          419.649504527969
+        ],
+        [
+          "Transportation",
+          360.77739677284563
+        ]
+      ],
+      "recommendation": {
+        "stock_allocation": 0.3,
+        "bond_allocation": 0.6,
+        "cash_allocation": 0.1,
+        "monthly_investment": 18778.89307407906,
+        "recommendation": "Excellent savings rate, maximize investment returns",
+        "priority": "low",
+        "expected_return": 0.05
+      }
+    }
+  ]
+}
