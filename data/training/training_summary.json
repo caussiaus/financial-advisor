@@ -1,0 +1,430 @@
+{
+  "profiles": [
+    {
+      "profile_id": "profile_0008_month_00",
+      "num_transactions": 39,
+      "total_amount": 14858.6962890625,
+      "mean_amount": 380.9922180175781,
+      "std_amount": 1688.433349609375,
+      "min_amount": -99.56796264648438,
+      "max_amount": 7643.74609375,
+      "categories": [
+        "Groceries",
+        "Housing",
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0000_month_01",
+      "num_transactions": 49,
+      "total_amount": 12408.8837890625,
+      "mean_amount": 253.24252319335938,
+      "std_amount": 1339.30224609375,
+      "min_amount": -92.41999053955078,
+      "max_amount": 7045.02587890625,
+      "categories": [
+        "Groceries",
+        "Housing",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0002_month_00",
+      "num_transactions": 72,
+      "total_amount": 25507.890625,
+      "mean_amount": 354.2762451171875,
+      "std_amount": 2047.3319091796875,
+      "min_amount": -99.30581665039062,
+      "max_amount": 12655.1357421875,
+      "categories": [
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Groceries",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0005_month_00",
+      "num_transactions": 32,
+      "total_amount": 23931.298828125,
+      "mean_amount": 747.8530883789062,
+      "std_amount": 2965.112060546875,
+      "min_amount": -97.69817352294922,
+      "max_amount": 12366.0712890625,
+      "categories": [
+        "Housing",
+        "Shopping",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Groceries"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0001_month_00",
+      "num_transactions": 41,
+      "total_amount": 25433.705078125,
+      "mean_amount": 620.3342895507812,
+      "std_amount": 3328.313720703125,
+      "min_amount": -489.9222717285156,
+      "max_amount": 15410.7607421875,
+      "categories": [
+        "Groceries",
+        "Housing",
+        "Shopping",
+        "Income",
+        "Entertainment",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0004_month_01",
+      "num_transactions": 54,
+      "total_amount": 23836.244140625,
+      "mean_amount": 441.41192626953125,
+      "std_amount": 2442.26708984375,
+      "min_amount": -193.43524169921875,
+      "max_amount": 13026.4873046875,
+      "categories": [
+        "Housing",
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Groceries"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0003_month_01",
+      "num_transactions": 30,
+      "total_amount": 3144.49462890625,
+      "mean_amount": 104.81649017333984,
+      "std_amount": 652.3552856445312,
+      "min_amount": -198.4476318359375,
+      "max_amount": 2787.118896484375,
+      "categories": [
+        "Groceries",
+        "Transportation",
+        "Entertainment",
+        "Income",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0009_month_01",
+      "num_transactions": 75,
+      "total_amount": 12376.0322265625,
+      "mean_amount": 165.01376342773438,
+      "std_amount": 1293.9649658203125,
+      "min_amount": -199.52911376953125,
+      "max_amount": 8067.4736328125,
+      "categories": [
+        "Groceries",
+        "Housing",
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0006_month_00",
+      "num_transactions": 72,
+      "total_amount": 26275.3046875,
+      "mean_amount": 364.9347839355469,
+      "std_amount": 2191.772705078125,
+      "min_amount": -95.68161010742188,
+      "max_amount": 13695.021484375,
+      "categories": [
+        "Groceries",
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0003_month_00",
+      "num_transactions": 28,
+      "total_amount": 3974.96484375,
+      "mean_amount": 141.96302795410156,
+      "std_amount": 753.62548828125,
+      "min_amount": -188.00892639160156,
+      "max_amount": 3184.97314453125,
+      "categories": [
+        "Groceries",
+        "Transportation",
+        "Income",
+        "Entertainment",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0005_month_01",
+      "num_transactions": 30,
+      "total_amount": 25090.388671875,
+      "mean_amount": 836.3463134765625,
+      "std_amount": 3165.821044921875,
+      "min_amount": -95.41797637939453,
+      "max_amount": 12696.9130859375,
+      "categories": [
+        "Housing",
+        "Shopping",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Groceries"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0004_month_00",
+      "num_transactions": 55,
+      "total_amount": 24396.263671875,
+      "mean_amount": 443.56842041015625,
+      "std_amount": 2520.462646484375,
+      "min_amount": -197.2965087890625,
+      "max_amount": 13418.994140625,
+      "categories": [
+        "Housing",
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Groceries"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0009_month_00",
+      "num_transactions": 79,
+      "total_amount": 11577.353515625,
+      "mean_amount": 146.5487823486328,
+      "std_amount": 1267.58447265625,
+      "min_amount": -197.912353515625,
+      "max_amount": 8204.087890625,
+      "categories": [
+        "Groceries",
+        "Housing",
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0008_month_01",
+      "num_transactions": 40,
+      "total_amount": 16048.150390625,
+      "mean_amount": 401.2037658691406,
+      "std_amount": 1860.900634765625,
+      "min_amount": -98.50552368164062,
+      "max_amount": 8561.7529296875,
+      "categories": [
+        "Groceries",
+        "Housing",
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0007_month_01",
+      "num_transactions": 29,
+      "total_amount": 26497.94140625,
+      "mean_amount": 913.7221069335938,
+      "std_amount": 3373.636962890625,
+      "min_amount": -86.02473449707031,
+      "max_amount": 13437.44140625,
+      "categories": [
+        "Housing",
+        "Shopping",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0006_month_01",
+      "num_transactions": 72,
+      "total_amount": 26564.708984375,
+      "mean_amount": 368.95428466796875,
+      "std_amount": 2233.677978515625,
+      "min_amount": -93.00257873535156,
+      "max_amount": 13645.876953125,
+      "categories": [
+        "Shopping",
+        "Transportation",
+        "Entertainment",
+        "Income",
+        "Healthcare",
+        "Groceries",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0007_month_00",
+      "num_transactions": 29,
+      "total_amount": 25657.921875,
+      "mean_amount": 884.7559204101562,
+      "std_amount": 3271.625244140625,
+      "min_amount": -95.41248321533203,
+      "max_amount": 12914.0400390625,
+      "categories": [
+        "Housing",
+        "Shopping",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0001_month_01",
+      "num_transactions": 44,
+      "total_amount": 23704.224609375,
+      "mean_amount": 538.7323608398438,
+      "std_amount": 3268.933349609375,
+      "min_amount": -498.8026123046875,
+      "max_amount": 15749.5771484375,
+      "categories": [
+        "Housing",
+        "Shopping",
+        "Entertainment",
+        "Income",
+        "Groceries",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0000_month_00",
+      "num_transactions": 53,
+      "total_amount": 12864.755859375,
+      "mean_amount": 242.7312469482422,
+      "std_amount": 1255.433837890625,
+      "min_amount": -96.90438079833984,
+      "max_amount": 6661.28125,
+      "categories": [
+        "Housing",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Groceries",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    },
+    {
+      "profile_id": "profile_0002_month_01",
+      "num_transactions": 76,
+      "total_amount": 23473.6171875,
+      "mean_amount": 308.8633728027344,
+      "std_amount": 1988.92333984375,
+      "min_amount": -99.74195098876953,
+      "max_amount": 12432.78515625,
+      "categories": [
+        "Shopping",
+        "Transportation",
+        "Income",
+        "Entertainment",
+        "Healthcare",
+        "Groceries",
+        "Utilities"
+      ],
+      "types": [
+        "unknown"
+      ]
+    }
+  ],
+  "total_transactions": 999,
+  "amount_statistics": {
+    "total_transactions": 999,
+    "total_amount": 387622.8125,
+    "mean_amount": 388.0108337402344,
+    "std_amount": 2208.397705078125,
+    "min_amount": -498.8026123046875,
+    "max_amount": 15749.5771484375
+  },
+  "category_distribution": {
+    "Housing": 123,
+    "Income": 40,
+    "Utilities": 158,
+    "Transportation": 124,
+    "Healthcare": 110,
+    "Shopping": 155,
+    "Groceries": 156,
+    "Entertainment": 133
+  },
+  "type_distribution": {
+    "unknown": 999
+  }
+}

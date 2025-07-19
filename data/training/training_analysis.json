@@ -1,0 +1,32 @@
+{
+  "training_date": "2025-07-19T00:32:36.171472",
+  "training_data_summary": {
+    "total_profiles": 20,
+    "total_transactions": 999,
+    "amount_statistics": {
+      "total_transactions": 999,
+      "total_amount": 387622.8125,
+      "mean_amount": 388.0108337402344,
+      "std_amount": 2208.397705078125,
+      "min_amount": -498.8026123046875,
+      "max_amount": 15749.5771484375
+    }
+  },
+  "simulation_summary": {
+    "profiles_simulated": 20,
+    "total_simulations": 50
+  },
+  "category_distribution": {
+    "Housing": 123,
+    "Income": 40,
+    "Utilities": 158,
+    "Transportation": 124,
+    "Healthcare": 110,
+    "Shopping": 155,
+    "Groceries": 156,
+    "Entertainment": 133
+  },
+  "type_distribution": {
+    "unknown": 999
+  }
+}

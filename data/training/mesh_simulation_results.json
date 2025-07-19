@@ -1,0 +1,487 @@
+{
+  "profiles_simulated": 20,
+  "total_simulations": 50,
+  "simulation_date": "2025-07-19T00:32:36.165694",
+  "profile_results": [
+    {
+      "profile_id": "profile_0008_month_00",
+      "mesh_params": {
+        "initial_value": 380.9922180175781,
+        "drift": 0.0,
+        "volatility": 4.431674003601074,
+        "time_steps": 39,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 470.7481178602146,
+        "std_final_value": 2546.208751047058,
+        "min_final_value": -2322.6834530531096,
+        "max_final_value": 16519.963814481416,
+        "var_95": -85.73593871637684,
+        "var_99": -1258.9686092730906
+      },
+      "actual_stats": {
+        "mean_amount": 380.9922180175781,
+        "std_amount": 1688.433349609375,
+        "min_amount": -99.56796264648438,
+        "max_amount": 7643.74609375
+      }
+    },
+    {
+      "profile_id": "profile_0000_month_01",
+      "mesh_params": {
+        "initial_value": 253.24252319335938,
+        "drift": 0.0,
+        "volatility": 5.2886152267456055,
+        "time_steps": 49,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 920.0957358430611,
+        "std_final_value": 3902.7910159465346,
+        "min_final_value": -37.63681740562322,
+        "max_final_value": 23699.7004164043,
+        "var_95": -0.018881855350177442,
+        "var_99": -19.229089522916272
+      },
+      "actual_stats": {
+        "mean_amount": 253.24252319335938,
+        "std_amount": 1339.30224609375,
+        "min_amount": -92.41999053955078,
+        "max_amount": 7045.02587890625
+      }
+    },
+    {
+      "profile_id": "profile_0002_month_00",
+      "mesh_params": {
+        "initial_value": 354.2762451171875,
+        "drift": 0.0,
+        "volatility": 5.778913974761963,
+        "time_steps": 72,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": -14.813934960344419,
+        "std_final_value": 62.40317963467745,
+        "min_final_value": -413.6422067089786,
+        "max_final_value": 3.304985500605046,
+        "var_95": -78.64491719782517,
+        "var_99": -279.84524522273557
+      },
+      "actual_stats": {
+        "mean_amount": 354.2762451171875,
+        "std_amount": 2047.3319091796875,
+        "min_amount": -99.30581665039062,
+        "max_amount": 12655.1357421875
+      }
+    },
+    {
+      "profile_id": "profile_0005_month_00",
+      "mesh_params": {
+        "initial_value": 747.8530883789062,
+        "drift": 0.0,
+        "volatility": 3.964832305908203,
+        "time_steps": 32,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": -188.24362301340582,
+        "std_final_value": 4411.495435837919,
+        "min_final_value": -24925.081725494423,
+        "max_final_value": 18321.78469500865,
+        "var_95": -382.0625265858135,
+        "var_99": -14659.284501172016
+      },
+      "actual_stats": {
+        "mean_amount": 747.8530883789062,
+        "std_amount": 2965.112060546875,
+        "min_amount": -97.69817352294922,
+        "max_amount": 12366.0712890625
+      }
+    },
+    {
+      "profile_id": "profile_0001_month_00",
+      "mesh_params": {
+        "initial_value": 620.3342895507812,
+        "drift": 0.0,
+        "volatility": 5.365355014801025,
+        "time_steps": 41,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": -632.4663660830039,
+        "std_final_value": 6699.221823538433,
+        "min_final_value": -45846.24042738911,
+        "max_final_value": 10268.902704268825,
+        "var_95": -765.192838168641,
+        "var_99": -25203.41581241948
+      },
+      "actual_stats": {
+        "mean_amount": 620.3342895507812,
+        "std_amount": 3328.313720703125,
+        "min_amount": -489.9222717285156,
+        "max_amount": 15410.7607421875
+      }
+    },
+    {
+      "profile_id": "profile_0004_month_01",
+      "mesh_params": {
+        "initial_value": 441.41192626953125,
+        "drift": 0.0,
+        "volatility": 5.532852649688721,
+        "time_steps": 54,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 1729.5712780885049,
+        "std_final_value": 9217.679652399256,
+        "min_final_value": -201.37626003854322,
+        "max_final_value": 63367.806086045406,
+        "var_95": -19.231204799183555,
+        "var_99": -122.8544294503797
+      },
+      "actual_stats": {
+        "mean_amount": 441.41192626953125,
+        "std_amount": 2442.26708984375,
+        "min_amount": -193.43524169921875,
+        "max_amount": 13026.4873046875
+      }
+    },
+    {
+      "profile_id": "profile_0003_month_01",
+      "mesh_params": {
+        "initial_value": 104.81649017333984,
+        "drift": 0.0,
+        "volatility": 6.223784923553467,
+        "time_steps": 30,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 1818.810728723777,
+        "std_final_value": 7735.856408421237,
+        "min_final_value": -4963.012973600662,
+        "max_final_value": 34528.17614321399,
+        "var_95": -365.83513526885565,
+        "var_99": -3265.3241634479314
+      },
+      "actual_stats": {
+        "mean_amount": 104.81649017333984,
+        "std_amount": 652.3552856445312,
+        "min_amount": -198.4476318359375,
+        "max_amount": 2787.118896484375
+      }
+    },
+    {
+      "profile_id": "profile_0009_month_01",
+      "mesh_params": {
+        "initial_value": 165.01376342773438,
+        "drift": 0.0,
+        "volatility": 7.84155797958374,
+        "time_steps": 75,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 422.8250168848439,
+        "std_final_value": 2960.393756818296,
+        "min_final_value": -50.845793643342056,
+        "max_final_value": 21145.46578363204,
+        "var_95": -0.7364282727118545,
+        "var_99": -27.169915772445936
+      },
+      "actual_stats": {
+        "mean_amount": 165.01376342773438,
+        "std_amount": 1293.9649658203125,
+        "min_amount": -199.52911376953125,
+        "max_amount": 8067.4736328125
+      }
+    },
+    {
+      "profile_id": "profile_0006_month_00",
+      "mesh_params": {
+        "initial_value": 364.9347839355469,
+        "drift": 0.0,
+        "volatility": 6.005929946899414,
+        "time_steps": 72,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": -31.209705116573137,
+        "std_final_value": 190.17519106781694,
+        "min_final_value": -1358.0712342351824,
+        "max_final_value": 2.189423342330111,
+        "var_95": -38.9622149375988,
+        "var_99": -738.0028337183594
+      },
+      "actual_stats": {
+        "mean_amount": 364.9347839355469,
+        "std_amount": 2191.772705078125,
+        "min_amount": -95.68161010742188,
+        "max_amount": 13695.021484375
+      }
+    },
+    {
+      "profile_id": "profile_0003_month_00",
+      "mesh_params": {
+        "initial_value": 141.96302795410156,
+        "drift": 0.0,
+        "volatility": 5.308603763580322,
+        "time_steps": 28,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 61.33202284437195,
+        "std_final_value": 1481.3619378621174,
+        "min_final_value": -6419.577821512623,
+        "max_final_value": 7744.024738680772,
+        "var_95": -428.99806185056985,
+        "var_99": -3936.196071236967
+      },
+      "actual_stats": {
+        "mean_amount": 141.96302795410156,
+        "std_amount": 753.62548828125,
+        "min_amount": -188.00892639160156,
+        "max_amount": 3184.97314453125
+      }
+    },
+    {
+      "profile_id": "profile_0005_month_01",
+      "mesh_params": {
+        "initial_value": 836.3463134765625,
+        "drift": 0.0,
+        "volatility": 3.785299301147461,
+        "time_steps": 30,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 48.235880264357974,
+        "std_final_value": 2314.474804841825,
+        "min_final_value": -8988.05750223724,
+        "max_final_value": 13326.59348436033,
+        "var_95": -385.77319814469286,
+        "var_99": -5986.409064267665
+      },
+      "actual_stats": {
+        "mean_amount": 836.3463134765625,
+        "std_amount": 3165.821044921875,
+        "min_amount": -95.41797637939453,
+        "max_amount": 12696.9130859375
+      }
+    },
+    {
+      "profile_id": "profile_0004_month_00",
+      "mesh_params": {
+        "initial_value": 443.56842041015625,
+        "drift": 0.0,
+        "volatility": 5.682240962982178,
+        "time_steps": 55,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 3765.8854586731422,
+        "std_final_value": 21908.988095612807,
+        "min_final_value": -2627.0806099709434,
+        "max_final_value": 154379.21703296065,
+        "var_95": -115.55512726614158,
+        "var_99": -1408.747410825916
+      },
+      "actual_stats": {
+        "mean_amount": 443.56842041015625,
+        "std_amount": 2520.462646484375,
+        "min_amount": -197.2965087890625,
+        "max_amount": 13418.994140625
+      }
+    },
+    {
+      "profile_id": "profile_0009_month_00",
+      "mesh_params": {
+        "initial_value": 146.5487823486328,
+        "drift": 0.0,
+        "volatility": 8.64957332611084,
+        "time_steps": 79,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 85.85660295167821,
+        "std_final_value": 704.6048422086096,
+        "min_final_value": -722.678995809917,
+        "max_final_value": 4966.538318634265,
+        "var_95": -7.445957686536659,
+        "var_99": -373.3345736924181
+      },
+      "actual_stats": {
+        "mean_amount": 146.5487823486328,
+        "std_amount": 1267.58447265625,
+        "min_amount": -197.912353515625,
+        "max_amount": 8204.087890625
+      }
+    },
+    {
+      "profile_id": "profile_0008_month_01",
+      "mesh_params": {
+        "initial_value": 401.2037658691406,
+        "drift": 0.0,
+        "volatility": 4.638293266296387,
+        "time_steps": 40,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 312.2718629134056,
+        "std_final_value": 2313.38244257664,
+        "min_final_value": -3743.964546523618,
+        "max_final_value": 15826.474712564903,
+        "var_95": -77.68961477337925,
+        "var_99": -2201.1800758537925
+      },
+      "actual_stats": {
+        "mean_amount": 401.2037658691406,
+        "std_amount": 1860.900634765625,
+        "min_amount": -98.50552368164062,
+        "max_amount": 8561.7529296875
+      }
+    },
+    {
+      "profile_id": "profile_0007_month_01",
+      "mesh_params": {
+        "initial_value": 913.7221069335938,
+        "drift": 0.0,
+        "volatility": 3.6921913623809814,
+        "time_steps": 29,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 35.73281788999325,
+        "std_final_value": 1780.745336437853,
+        "min_final_value": -5146.648949890013,
+        "max_final_value": 10328.046025286703,
+        "var_95": -206.96402343253308,
+        "var_99": -5044.919532130733
+      },
+      "actual_stats": {
+        "mean_amount": 913.7221069335938,
+        "std_amount": 3373.636962890625,
+        "min_amount": -86.02473449707031,
+        "max_amount": 13437.44140625
+      }
+    },
+    {
+      "profile_id": "profile_0006_month_01",
+      "mesh_params": {
+        "initial_value": 368.95428466796875,
+        "drift": 0.0,
+        "volatility": 6.054078102111816,
+        "time_steps": 72,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": -35.805952545381565,
+        "std_final_value": 226.8268525102682,
+        "min_final_value": -1621.1233480800934,
+        "max_final_value": 1.9696747942034503,
+        "var_95": -36.45926867201252,
+        "var_99": -862.674211674249
+      },
+      "actual_stats": {
+        "mean_amount": 368.95428466796875,
+        "std_amount": 2233.677978515625,
+        "min_amount": -93.00257873535156,
+        "max_amount": 13645.876953125
+      }
+    },
+    {
+      "profile_id": "profile_0007_month_00",
+      "mesh_params": {
+        "initial_value": 884.7559204101562,
+        "drift": 0.0,
+        "volatility": 3.6977715492248535,
+        "time_steps": 29,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 31.433423527923882,
+        "std_final_value": 1721.4966350585328,
+        "min_final_value": -5026.682531020716,
+        "max_final_value": 9929.308791310774,
+        "var_95": -197.11127170160123,
+        "var_99": -4932.395226160812
+      },
+      "actual_stats": {
+        "mean_amount": 884.7559204101562,
+        "std_amount": 3271.625244140625,
+        "min_amount": -95.41248321533203,
+        "max_amount": 12914.0400390625
+      }
+    },
+    {
+      "profile_id": "profile_0001_month_01",
+      "mesh_params": {
+        "initial_value": 538.7323608398438,
+        "drift": 0.0,
+        "volatility": 6.067824363708496,
+        "time_steps": 44,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 1190.758110028155,
+        "std_final_value": 10100.424808828215,
+        "min_final_value": -26309.503153323123,
+        "max_final_value": 64730.30987943666,
+        "var_95": -60.607752169215445,
+        "var_99": -16661.481554982973
+      },
+      "actual_stats": {
+        "mean_amount": 538.7323608398438,
+        "std_amount": 3268.933349609375,
+        "min_amount": -498.8026123046875,
+        "max_amount": 15749.5771484375
+      }
+    },
+    {
+      "profile_id": "profile_0000_month_00",
+      "mesh_params": {
+        "initial_value": 242.7312469482422,
+        "drift": 0.0,
+        "volatility": 5.172114849090576,
+        "time_steps": 53,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": 1314.9320084841436,
+        "std_final_value": 8071.3069598917755,
+        "min_final_value": -781.6540088658957,
+        "max_final_value": 57393.64021323223,
+        "var_95": -112.19883057576025,
+        "var_99": -667.6243682325577
+      },
+      "actual_stats": {
+        "mean_amount": 242.7312469482422,
+        "std_amount": 1255.433837890625,
+        "min_amount": -96.90438079833984,
+        "max_amount": 6661.28125
+      }
+    },
+    {
+      "profile_id": "profile_0002_month_01",
+      "mesh_params": {
+        "initial_value": 308.8633728027344,
+        "drift": 0.0,
+        "volatility": 6.439492225646973,
+        "time_steps": 76,
+        "num_paths": 50
+      },
+      "simulation_stats": {
+        "mean_final_value": -274.7186172696749,
+        "std_final_value": 1927.5639851424085,
+        "min_final_value": -13767.620672821864,
+        "max_final_value": 35.287329846184264,
+        "var_95": -1.7292826398387893,
+        "var_99": -7023.7421054524275
+      },
+      "actual_stats": {
+        "mean_amount": 308.8633728027344,
+        "std_amount": 1988.92333984375,
+        "min_amount": -99.74195098876953,
+        "max_amount": 12432.78515625
+      }
+    }
+  ]
+}
