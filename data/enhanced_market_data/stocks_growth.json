@@ -1,0 +1,29 @@
+{
+  "investment_class": "stocks",
+  "category": "growth",
+  "symbols": [
+    "TSLA",
+    "NVDA",
+    "AMD",
+    "NFLX",
+    "CRM",
+    "ADBE",
+    "PYPL",
+    "SQ",
+    "SHOP",
+    "ROKU",
+    "PLTR",
+    "COIN",
+    "HOOD",
+    "RBLX",
+    "SNAP"
+  ],
+  "data": {},
+  "summary": {
+    "total_symbols": 15,
+    "successful_downloads": 0,
+    "failed_downloads": 15,
+    "download_date": "2025-07-19T01:03:05.338050",
+    "enhanced_metrics": {}
+  }
+}

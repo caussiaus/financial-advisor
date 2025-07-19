@@ -1,0 +1,29 @@
+{
+  "investment_class": "stocks",
+  "category": "large_cap",
+  "symbols": [
+    "AMD",
+    "NFLX",
+    "CRM",
+    "ADBE",
+    "PYPL",
+    "INTC",
+    "QCOM",
+    "TXN",
+    "AVGO",
+    "ABT",
+    "PFE",
+    "KO",
+    "PEP",
+    "MRK",
+    "TMO"
+  ],
+  "data": {},
+  "summary": {
+    "total_symbols": 15,
+    "successful_downloads": 0,
+    "failed_downloads": 15,
+    "download_date": "2025-07-19T01:01:36.814380",
+    "enhanced_metrics": {}
+  }
+}

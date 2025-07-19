@@ -1,0 +1,29 @@
+{
+  "investment_class": "stocks",
+  "category": "mid_cap",
+  "symbols": [
+    "SNAP",
+    "UBER",
+    "LYFT",
+    "SPOT",
+    "ZM",
+    "SQ",
+    "SHOP",
+    "ROKU",
+    "PINS",
+    "SNAP",
+    "TWTR",
+    "RBLX",
+    "PLTR",
+    "COIN",
+    "HOOD"
+  ],
+  "data": {},
+  "summary": {
+    "total_symbols": 15,
+    "successful_downloads": 0,
+    "failed_downloads": 15,
+    "download_date": "2025-07-19T01:02:07.697588",
+    "enhanced_metrics": {}
+  }
+}

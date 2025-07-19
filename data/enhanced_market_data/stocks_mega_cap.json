@@ -1,0 +1,29 @@
+{
+  "investment_class": "stocks",
+  "category": "mega_cap",
+  "symbols": [
+    "AAPL",
+    "MSFT",
+    "GOOGL",
+    "AMZN",
+    "TSLA",
+    "NVDA",
+    "META",
+    "BRK.A",
+    "JNJ",
+    "V",
+    "PG",
+    "UNH",
+    "HD",
+    "JPM",
+    "MA"
+  ],
+  "data": {},
+  "summary": {
+    "total_symbols": 15,
+    "successful_downloads": 0,
+    "failed_downloads": 15,
+    "download_date": "2025-07-19T01:01:06.118115",
+    "enhanced_metrics": {}
+  }
+}

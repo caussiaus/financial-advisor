@@ -1,0 +1,29 @@
+{
+  "investment_class": "stocks",
+  "category": "small_cap",
+  "symbols": [
+    "AMC",
+    "GME",
+    "BBBY",
+    "NOK",
+    "BB",
+    "SNDL",
+    "TLRY",
+    "ACB",
+    "CGC",
+    "HEXO",
+    "APHA",
+    "CRON",
+    "WEED",
+    "OGI",
+    "HEXO"
+  ],
+  "data": {},
+  "summary": {
+    "total_symbols": 15,
+    "successful_downloads": 0,
+    "failed_downloads": 15,
+    "download_date": "2025-07-19T01:02:35.654166",
+    "enhanced_metrics": {}
+  }
+}
