@@ -1,15 +1,12 @@
 """
-Mesh Visualization Tools
+Visualization module for financial advisor system.
 
-Specialized visualization tools:
-- 2D financial state visualization (flexibility vs. comfort)
-- Mesh structure visualization
-- Financial scenario plotting
+This module contains various visualization components including:
+- Tunnel visualizations for high-dimensional financial data
+- Mesh visualizations for neural network data
+- Interactive dashboards and plotting utilities
 """
 
-from src.visualization.flexibility_comfort_mesh import FlexibilityComfortMeshEngine, PaymentType
+from .tunnel import *
 
-__all__ = [
-    'FlexibilityComfortMeshEngine',
-    'PaymentType'
-] 
+__all__ = ['tunnel'] 
